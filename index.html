@@ -515,15 +515,22 @@
         .pagination { width: 100%; justify-content: flex-end; gap: 6px; }
         .pagination button { padding-inline: 10px; }
     }
+    a.sidebar-brand { display: block; color: inherit; text-decoration: none; }
+    a.sidebar-brand:hover { color: #93c5fd; }
+    a.sidebar-brand:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; border-radius: 8px; }
+    .unit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 18px; }
+    .unit-grid h2 { margin-top: 0; }
+    .unit-coming { background: #f9fafb; border-style: dashed; }
 </style>
 </head>
 <body>
 <button id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="展開選單">☰</button>
 <button id="sidebarBackdrop" class="sidebar-backdrop" type="button" aria-label="關閉選單" tabindex="-1" hidden></button>
 <aside id="sidebar" class="sidebar collapsed" inert>
-    <div class="sidebar-brand">📚 演算法題庫</div>
+    <a class="sidebar-brand" href="https://canva.link/evygbbmrt3v2umy" target="_blank" rel="noopener noreferrer">📚 演算法題庫</a>
     <nav class="sidebar-nav">
         <button class="nav-btn active" data-panel="bank" type="button">🔎 題庫搜尋</button>
+        <button class="nav-btn" data-panel="units" type="button">📖 選擇單元</button>
         <button class="nav-btn" data-panel="add" type="button">➕ 新增題庫</button>
     </nav>
     <div class="sidebar-note">自行新增的題目會儲存在目前瀏覽器中。</div>
@@ -571,6 +578,24 @@
         題庫共 60 題｜由目前已整理的演算法訓練紀錄匯出
     </footer>
 
+    </section>
+
+    <section id="panel-units" class="panel">
+        <header>
+            <h1>選擇單元</h1>
+            <p class="subtitle">選擇想練習的題庫單元。</p>
+        </header>
+        <div class="unit-grid">
+            <div class="form-card">
+                <h2>演算法題庫</h2>
+                <p class="help-text">目前已整理的演算法題目與你自行新增的題目。</p>
+                <button id="openCurrentUnitBtn" class="primary-btn" type="button">進入題庫</button>
+            </div>
+            <div class="form-card unit-coming">
+                <h2>其他章節</h2>
+                <p class="help-text">尚未開放，之後會在這裡加入新的章節題庫。</p>
+            </div>
+        </div>
     </section>
 
     <section id="panel-add" class="panel">
@@ -956,6 +981,11 @@ document.querySelectorAll(".nav-btn").forEach(btn => {
     });
 });
 
+document.getElementById("openCurrentUnitBtn").addEventListener("click", () => {
+    document.querySelector('.nav-btn[data-panel="bank"]').click();
+    searchInput.focus({ preventScroll: true });
+});
+
 const sidebar = document.getElementById("sidebar");
 const menuButton = document.getElementById("mobileMenuBtn");
 const sidebarBackdrop = document.getElementById("sidebarBackdrop");
@@ -997,4 +1027,5 @@ render();
 </script>
 </body>
 </html>
+
 
