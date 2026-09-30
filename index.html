@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>演算法題庫搜尋系統</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    :root {
+        --bg: #f5f7fb;
+        --card: #ffffff;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --primary: #2563eb;
+        --primary-soft: #eff6ff;
+        --answer-bg: #f0fdf4;
+        --answer-border: #bbf7d0;
+        --answer-text: #166534;
+        --warning-bg: #fff7ed;
+        --warning-text: #9a3412;
+    }
+
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+                     "Microsoft JhengHei", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.65;
+    }
+
+    .container {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 32px 0 64px;
+    }
+
+    header {
+        margin-bottom: 22px;
+    }
+
+    h1 {
+        margin: 0 0 6px;
+        font-size: clamp(28px, 5vw, 42px);
+        letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+        color: var(--muted);
+        margin: 0;
+    }
+
+    .toolbar {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 18px;
+        box-shadow: 0 8px 26px rgba(0,0,0,.05);
+        position: sticky;
+        top: 10px;
+        z-index: 20;
+        margin-bottom: 20px;
+    }
+
+    .search-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+    }
+
+    #searchInput {
+        width: 100%;
+        padding: 13px 15px;
+        border-radius: 11px;
+        border: 1px solid var(--border);
+        font-size: 16px;
+        outline: none;
+        background: #fff;
+    }
+
+    #searchInput:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    }
+
+    button {
+        border: 1px solid var(--border);
+        background: #fff;
+        color: var(--text);
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #f9fafb;
+    }
+
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+        align-items: center;
+    }
+
+    .filter-btn.active {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: #fff;
+    }
+
+    .toolbar-right {
+        margin-left: auto;
+        display: flex;
+        gap: 8px;
+    }
+
+    .summary {
+        margin: 16px 2px 12px;
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    .question-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 14px;
+        box-shadow: 0 5px 18px rgba(0,0,0,.035);
+    }
+
+    .card-top {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .number {
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    .badges {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+    }
+
+    .badge {
+        font-size: 12px;
+        padding: 3px 9px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        white-space: nowrap;
+    }
+
+    .title {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 2px 0 8px;
+    }
+
+    .question {
+        white-space: pre-wrap;
+        word-break: break-word;
+        margin: 0 0 14px;
+    }
+
+    .options {
+        display: grid;
+        gap: 7px;
+        margin: 10px 0 14px;
+    }
+
+    .option {
+        padding: 9px 11px;
+        border-radius: 9px;
+        background: #f9fafb;
+        border: 1px solid #eef0f3;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    .missing {
+        margin: 10px 0 14px;
+        background: var(--warning-bg);
+        color: var(--warning-text);
+        border-radius: 9px;
+        padding: 9px 11px;
+        font-size: 14px;
+    }
+
+    .answer {
+        display: none;
+        margin-top: 12px;
+        padding: 12px 14px;
+        border: 1px solid var(--answer-border);
+        background: var(--answer-bg);
+        color: var(--answer-text);
+        border-radius: 10px;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-weight: 600;
+    }
+
+    .answer.show {
+        display: block;
+    }
+
+    .answer-btn {
+        border-color: #bfdbfe;
+        background: var(--primary-soft);
+        color: #1d4ed8;
+        font-weight: 600;
+    }
+
+    .meta {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 12px;
+    }
+
+    mark {
+        background: #fef08a;
+        padding: 0 1px;
+        border-radius: 2px;
+    }
+
+    .empty {
+        text-align: center;
+        padding: 48px 20px;
+        color: var(--muted);
+        background: var(--card);
+        border: 1px dashed var(--border);
+        border-radius: 14px;
+    }
+
+    footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 28px;
+    }
+
+    @media (max-width: 700px) {
+        .container {
+            width: min(100% - 20px, 1100px);
+            padding-top: 18px;
+        }
+
+        .toolbar {
+            top: 5px;
+            padding: 13px;
+        }
+
+        .search-row {
+            grid-template-columns: 1fr;
+        }
+
+        .toolbar-right {
+            width: 100%;
+            margin-left: 0;
+        }
+
+        .toolbar-right button {
+            flex: 1;
+        }
+
+        .question-card {
+            padding: 15px;
+        }
+
+        .card-top {
+            flex-direction: column;
+        }
+    }
+
+
+    /* 左側固定導覽列與新增題庫 */
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 230px;
+        background: #111827;
+        color: #fff;
+        padding: 22px 14px;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar-brand {
+        font-size: 20px;
+        font-weight: 800;
+        padding: 4px 10px 20px;
+    }
+
+    .sidebar-nav {
+        display: grid;
+        gap: 8px;
+    }
+
+    .nav-btn {
+        width: 100%;
+        border: 0;
+        background: transparent;
+        color: #d1d5db;
+        text-align: left;
+        padding: 12px 14px;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .nav-btn:hover, .nav-btn.active {
+        background: #1f2937;
+        color: #fff;
+    }
+
+    .nav-btn.active {
+        box-shadow: inset 3px 0 0 #60a5fa;
+    }
+
+    .sidebar-note {
+        margin-top: auto;
+        padding: 10px;
+        color: #9ca3af;
+        font-size: 12px;
+    }
+
+    .main-shell {
+        margin-left: 230px;
+        min-height: 100vh;
+    }
+
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    .form-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 22px;
+        box-shadow: 0 8px 26px rgba(0,0,0,.05);
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .field {
+        display: grid;
+        gap: 7px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    .field label {
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .field input, .field textarea, .field select {
+        width: 100%;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 11px 12px;
+        font: inherit;
+        color: var(--text);
+        background: #fff;
+        outline: none;
+    }
+
+    .field input:focus, .field textarea:focus, .field select:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(37,99,235,.10);
+    }
+
+    .field textarea {
+        resize: vertical;
+        min-height: 115px;
+    }
+
+    .option-fields {
+        display: grid;
+        gap: 9px;
+    }
+
+    .help-text {
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    .form-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+    }
+
+    .primary-btn {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .primary-btn:hover { background: #1d4ed8; }
+
+    .danger-btn {
+        color: #dc2626;
+        border-color: #fecaca;
+        background: #fff;
+    }
+
+    .user-badge {
+        color: #7c3aed;
+        background: #f5f3ff;
+        border-color: #ddd6fe;
+    }
+
+    .mobile-menu-btn {
+        display: none;
+    }
+
+    .toast {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        background: #111827;
+        color: #fff;
+        padding: 12px 16px;
+        border-radius: 10px;
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition: .2s;
+        z-index: 300;
+    }
+
+    .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 850px) {
+        .sidebar {
+            transform: translateX(-100%);
+            transition: .2s;
+        }
+        .sidebar.open { transform: translateX(0); }
+        .main-shell { margin-left: 0; }
+        .mobile-menu-btn {
+            display: block;
+            position: fixed;
+            top: 12px;
+            left: 12px;
+            z-index: 150;
+            background: #111827;
+            color: #fff;
+            border-color: #111827;
+        }
+        .container { padding-top: 62px; }
+        .form-grid { grid-template-columns: 1fr; }
+        .field.full { grid-column: auto; }
+    }
+
+</style>
+</head>
+<body>
+<button id="mobileMenuBtn" class="mobile-menu-btn" type="button">☰</button>
+<aside id="sidebar" class="sidebar">
+    <div class="sidebar-brand">📚 演算法題庫</div>
+    <nav class="sidebar-nav">
+        <button class="nav-btn active" data-panel="bank" type="button">🔎 題庫搜尋</button>
+        <button class="nav-btn" data-panel="add" type="button">➕ 新增題庫</button>
+    </nav>
+    <div class="sidebar-note">自行新增的題目會儲存在目前瀏覽器中。</div>
+</aside>
+<div class="main-shell">
+<div class="container">
+<section id="panel-bank" class="panel active">
+    <header>
+        <h1>演算法題庫搜尋系統</h1>
+        <p class="subtitle">輸入關鍵字，即時搜尋題目、選項與答案。</p>
+    </header>
+
+    <section class="toolbar">
+        <div class="search-row">
+            <input id="searchInput" type="search"
+                   placeholder="搜尋：Merge Sort、插入排序、omega、lg*、費氏數列……"
+                   autocomplete="off">
+            <button id="clearBtn" type="button">清除搜尋</button>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="choice">選擇題</button>
+            <button class="filter-btn" data-filter="fill_blank">填空題</button>
+            <button class="filter-btn" data-filter="choice_options_missing">選項未記錄</button>
+
+            <div class="toolbar-right">
+                <button id="showAllBtn" type="button">全部顯示答案</button>
+                <button id="hideAllBtn" type="button">全部隱藏答案</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="summary" class="summary"></div>
+    <main id="questionList"></main>
+
+    <footer>
+        題庫共 60 題｜由目前已整理的演算法訓練紀錄匯出
+    </footer>
+
+    </section>
+
+    <section id="panel-add" class="panel">
+        <header>
+            <h1>新增題庫</h1>
+            <p class="subtitle">自行建立題目，儲存後會立即加入題庫搜尋。</p>
+        </header>
+
+        <div class="form-card">
+            <div class="form-grid">
+                <div class="field">
+                    <label for="newType">題型</label>
+                    <select id="newType">
+                        <option value="choice">選擇題</option>
+                        <option value="fill_blank">填空題</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="newTitle">題目標題</label>
+                    <input id="newTitle" type="text" placeholder="例如：Merge Sort 時間複雜度">
+                </div>
+
+                <div class="field full">
+                    <label for="newQuestion">題目內容 *</label>
+                    <textarea id="newQuestion" placeholder="請輸入完整題目"></textarea>
+                </div>
+
+                <div id="choiceArea" class="field full">
+                    <label>選項</label>
+                    <div class="option-fields">
+                        <input id="optA" type="text" placeholder="A. 選項內容">
+                        <input id="optB" type="text" placeholder="B. 選項內容">
+                        <input id="optC" type="text" placeholder="C. 選項內容">
+                        <input id="optD" type="text" placeholder="D. 選項內容">
+                    </div>
+                    <div class="help-text">可以少於四個選項；空白的選項不會儲存。</div>
+                </div>
+
+                <div class="field full">
+                    <label for="newAnswer">正確答案 *</label>
+                    <textarea id="newAnswer" placeholder="例如：B. 分治法 (Divide-and-Conquer)"></textarea>
+                </div>
+
+                <div class="field full">
+                    <label for="newKeywords">搜尋關鍵字</label>
+                    <input id="newKeywords" type="text" placeholder="例如：merge sort, 合併排序, divide and conquer">
+                    <div class="help-text">多個關鍵字請用逗號分隔。</div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button id="saveQuestionBtn" class="primary-btn" type="button">儲存題目</button>
+                <button id="resetFormBtn" type="button">清空表單</button>
+            </div>
+        </div>
+
+        <div style="margin-top:22px">
+            <h2>我新增的題目</h2>
+            <div id="userQuestionList"></div>
+        </div>
+    </section>
+</div>
+</div>
+<div id="toast" class="toast"></div>
+
+<script>
+const QUESTIONS = [{"id": 1, "title": "漸進解計算", "type": "fill_blank", "question": "遞迴式 T(n) = 2T(n/2) + cn 的漸進解為 __________。（請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,}）", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "big-theta(nlogn)", "answer_variants": ["big-theta(nlogn)"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練三.txt", "0930訓練五.txt", "0930訓練四.txt"], "times_seen_in_0930": 4}, {"id": 2, "title": "合併排序法遞迴關係式", "type": "fill_blank", "question": "當問題規模 n > 1 時，合併排序法（Merge Sort）執行時間的遞迴關係式（Recurrence）為 T(n) = 2T(n/2) + __________。（請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,}）", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "big-theta(n)", "answer_variants": ["big-theta(n) （或 cn，依系統嚴格設定而定，此處依漸進符號格式應為 big-theta(n)）", "big-theta(n)"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練一.txt", "0930訓練三.txt"], "times_seen_in_0930": 2}, {"id": 3, "title": "天花板與地板函數", "type": "fill_blank", "question": "對於任意整數 n，天花板函數與地板函數的相加關係式為：⌈ n/2 ⌉ + ⌊ n/2 ⌋ = __________。（請用英文小寫回答）", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "n", "answer_variants": ["n"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練一.txt", "0930訓練三.txt", "0930訓練四.txt"], "times_seen_in_0930": 3}, {"id": 4, "title": "函數性質判斷（變體一：單調遞減）", "type": "fill_blank", "question": "若滿足 m ≤ n 則 f(m) ≥ f(n)，此函數性質稱為 __________。（請用英文小寫回答，單字間留一空白）", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "monotonically decreasing", "answer_variants": ["monotonically decreasing"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練三.txt"], "times_seen_in_0930": 1}, {"id": 5, "title": "函數性質判斷（變體二：嚴格遞增）", "type": "fill_blank", "question": "若滿足 m < n 則 f(m) < f(n)，此函數性質稱為 __________。（請用英文小寫回答，單字間留一空白）", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "strictly increasing", "answer_variants": ["strictly increasing"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練二.txt"], "times_seen_in_0930": 1}, {"id": 6, "title": "史特林近似公式（Stirling's approximation）極限與漸進公式", "type": "fill_blank", "question": "史特林近似公式（Stirling's approximation）指出階乘 n! 的增長趨勢。寫成極限與漸進公式時，\\log(n!) = __________。（請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,}）", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "big-theta(nlogn)", "answer_variants": ["big-theta(nlogn)"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練三.txt"], "times_seen_in_0930": 2}, {"id": 7, "title": "史特林近似公式與常數指數", "type": "fill_blank", "question": "史特林公式中指出，階乘 n! 的增長大於常數指數 2^n，即 n! = __________。（請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,}）", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "omega(2^n)", "answer_variants": ["omega(2^n)"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練五.txt", "0930訓練四.txt"], "times_seen_in_0930": 3}, {"id": 8, "title": "費氏數列程式碼填空", "type": "fill_blank", "question": "function fibonacci(n) { if (__________ ) { return 0; } else if (__________ ) { return 1; } int prev2 = 0; int prev1 = 1; int current = 0; for (int i = 2; i <= n; i++) { current = prev1 + prev2; prev2 = prev1; prev1 = current; } return current; }\n以上是計算費氏數列的函數 請正確地完成此程式 (用英文 變數要符合程式內的設定 填空格字裡不要有空白)", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "n<=0/n==1", "answer_variants": ["第一格 n<=0，第二格 n==1 （系統回傳正確答案格式為 n<=0/n==1）", "n<=0/n==1"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練三.txt", "0930訓練五.txt"], "times_seen_in_0930": 2}, {"id": 9, "title": "多對數有界定義（Polylogarithmically bounded）", "type": "fill_blank", "question": "若一個函數滿足 f(n) = __________，則稱此函數是多對數有界 (polylogarithmically bounded)。（請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^ 指數符號 用 k）", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "O(logn)^k", "answer_variants": ["O(logn)^k 或 O((logn)^k)", "O(logn)^k"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練二.txt"], "times_seen_in_0930": 2}, {"id": 10, "title": "多項式有界定義（Polynomially bounded）", "type": "fill_blank", "question": "若一個函數滿足 f(n) = __________，則稱此函數是多項式有界。（請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^ 指數符號 用 k）", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "O(n^k)", "answer_variants": ["O(n^k)"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練五.txt"], "times_seen_in_0930": 2}, {"id": 11, "title": "最壞與最佳情況符號", "type": "fill_blank", "question": "在漸進符號中，表示 f(n) 最壞情況或上限為 __________，而表示最佳情況或下限為 __________。（請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,}）", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "第一格 O(f(n))，第二格 big-omega(f(n))", "answer_variants": ["第一格 O(f(n))，第二格 big-omega(f(n))", "O(f(n)), big-omega(f(n))"], "answer_basis": "previous_bank", "sources": ["上週題庫.txt", "0930訓練-45.txt"], "times_seen_in_0930": 1}, {"id": 12, "title": "原地排序名詞填空", "type": "fill_blank", "question": "若一排序演算法在重排陣列時，最多僅需常數個額外記憶體空間在陣列外，此演算法被稱為 __________ 排序。（請用英文小寫回答，單字間留一空白）", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "in place", "answer_variants": ["in place"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練二.txt", "0930訓練四.txt"], "times_seen_in_0930": 3}, {"id": 13, "title": "漸進符號充分必要條件", "type": "choice", "question": "根據定理，f(n) = Θ(g(n)) 成立的充分且必要條件為下列哪些？", "options": ["A. f(n) = ω(g(n))", "B. f(n) = o(g(n))", "C. f(n) = Ω(g(n))", "D. f(n) = O(g(n))"], "options_status": "complete_from_source", "correct_answer": "f(n) = O(g(n))\nf(n) = Ω(g(n))", "answer_variants": ["C. f(n) = Ω(g(n)) 與 D. f(n) = O(g(n)) （兩者皆須成立）", "f(n) = O(g(n))\nf(n) = Ω(g(n))"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練五.txt", "0930訓練四.txt"], "times_seen_in_0930": 2}, {"id": 14, "title": "非漸進緊確的下界（Lower bound that is not asymptotically tight）", "type": "choice", "question": "非漸進緊確的下界是用下列哪一個符號表示？", "options": ["A. ω", "B. Ω", "C. o", "D. O"], "options_status": "complete_from_source", "correct_answer": "ω", "answer_variants": ["A. ω", "ω"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練四.txt"], "times_seen_in_0930": 1}, {"id": 15, "title": "非漸進緊確的上界（Upper bound that is not asymptotically tight）", "type": "choice", "question": "非漸進緊確的上界是用下列哪一個符號表示？", "options": ["A. O", "B. Ω", "C. ω", "D. o"], "options_status": "complete_from_source", "correct_answer": "o", "answer_variants": ["D. o", "o"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練一.txt", "0930訓練五.txt", "0930訓練四.txt"], "times_seen_in_0930": 3}, {"id": 16, "title": "漸進上界（Asymptotic upper bound）", "type": "choice", "question": "漸進上界是用下列哪一個漸進符號表示？", "options": ["A. O", "B. ω", "C. Θ", "D. Ω"], "options_status": "complete_from_source", "correct_answer": "O", "answer_variants": ["A. O", "O"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練四.txt"], "times_seen_in_0930": 1}, {"id": 17, "title": "漸進緊確界（Asymptotic tight bound）", "type": "choice", "question": "漸進緊確界是用下列哪一個漸進符號表示？", "options": ["A. Θ", "B. O", "C. Ω", "D. o"], "options_status": "complete_from_source", "correct_answer": "Θ", "answer_variants": ["A. Θ", "Θ"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練三.txt"], "times_seen_in_0930": 2}, {"id": 18, "title": "費氏數列黃金比例", "type": "choice", "question": "費氏數列（Fibonacci numbers）中定義的黃金比例 φ（Golden ratio）之近似值約為多少？", "options": ["A. 2.718", "B. 1.618", "C. 1.414", "D. 3.141"], "options_status": "complete_from_source", "correct_answer": "1.618", "answer_variants": ["B. 1.618", "1.618"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練三.txt", "0930訓練二.txt", "0930訓練五.txt", "0930訓練四.txt"], "times_seen_in_0930": 4}, {"id": 19, "title": "單處理器隨機存取機器（RAM）模型基礎假設", "type": "choice", "question": "在分析演算法時，我們常使用的單處理器隨機存取機器（RAM）模型中，做了哪些基礎假設？", "options": ["A. 每條基本指令（如加法、乘法、存取）花費常數時間", "B. 所有數據都能隨機存取", "C. 指令是逐一順序執行的（沒有並行運作）", "D. 數據傳輸頻寬是無限大的"], "options_status": "complete_from_source", "correct_answer": "指令是逐一順序執行的（沒有並行運作）\n每條基本指令（如加法、乘法、存取）花費常數時間\n所有數據都能隨機存取", "answer_variants": ["A, B, C （排除 D）", "指令是逐一順序執行的（沒有並行運作）\n每條基本指令（如加法、乘法、存取）花費常數時間\n所有數據都能隨機存取"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練一.txt", "0930訓練二.txt"], "times_seen_in_0930": 2}, {"id": 20, "title": "分治法（Divide-and-Conquer）核心步驟", "type": "choice", "question": "分治法通常包含下列哪些核心步驟？", "options": ["A. 回溯 (Backtrack)", "B. 合併 (Combine)", "C. 征服 (Conquer)", "D. 分割 (Divide)"], "options_status": "complete_from_source", "correct_answer": "分割 (Divide)\n征服 (Conquer)\n合併 (Combine)", "answer_variants": ["B. 合併 (Combine) , C. 征服 (Conquer) , D. 分割 (Divide)", "A, B, C", "分割 (Divide)\n征服 (Conquer)\n合併 (Combine)"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練三.txt", "0930訓練二.txt", "0930訓練五.txt"], "times_seen_in_0930": 4}, {"id": 21, "title": "插入排序法（Insertion Sort）最佳情況時間複雜度", "type": "choice", "question": "插入排序法在最佳情況（Best-case）下的時間複雜度為何？", "options": ["A. O(n \\log n)", "B. O(1)", "C. O(n)", "D. O(n^2)"], "options_status": "complete_from_source", "correct_answer": "O(n)", "answer_variants": ["C. O(n)", "O(n)"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練一.txt"], "times_seen_in_0930": 1}, {"id": 22, "title": "合併排序法（Merge Sort）演算法設計方法", "type": "choice", "question": "合併排序法採用的是下列哪一種演算法設計方法？", "options": ["A. 增量法 (Incremental Approach)", "B. 分治法 (Divide-and-Conquer)", "C. 貪婪法 (Greedy Approach)", "D. 回溯法 (Backtracking)"], "options_status": "complete_from_source", "correct_answer": "分治法 (Divide-and-Conquer)", "answer_variants": ["B. 分治法 (Divide-and-Conquer)", "C", "分治法 (Divide-and-Conquer)"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練一.txt", "0930訓練三.txt", "0930訓練四.txt"], "times_seen_in_0930": 4}, {"id": 23, "title": "合併排序法（Merge Sort）最壞情況時間複雜度", "type": "choice", "question": "合併排序法在最壞情況下的時間複雜度為何？", "options": ["A. O(n^2)", "B. O(n \\log n)", "C. O(n)", "D. O(\\log n)"], "options_status": "complete_from_source", "correct_answer": "B. O(n \\log n)", "answer_variants": ["B. O(n \\log n)"], "answer_basis": "previous_bank", "sources": ["上週題庫.txt"], "times_seen_in_0930": 0}, {"id": 24, "title": "費氏數列（Fibonacci numbers）定義與性質", "type": "choice", "question": "關於費氏數列，下列定義與數學公式哪些是正確的？", "options": ["A. 當 i ≥ 2 時，F_i = F_{i-1} + F_{i-2}", "B. 費氏數列隨指數級增長", "C. F_0 = 0 且 F_1 = 1", "D. F_i 可以用 φ（黃金比例）與其共軛值來精確表示"], "options_status": "complete_from_source", "correct_answer": "A, B, C, D（全選）", "answer_variants": ["A, B, C, D（全選）", "A, B, C, D"], "answer_basis": "previous_bank", "sources": ["上週題庫.txt", "0930訓練-45.txt"], "times_seen_in_0930": 1}, {"id": 25, "title": "合併排序法之輔助常規（Merge 步驟）", "type": "choice", "question": "在合併排序法的合併步驟 Merge(A, p, q, r) 中，使用了哪些輔助常規？", "options": ["A. 完全不需要額外的記憶體空間", "B. 在輔助陣列尾端放置無限大值（\\infty）作為哨兵（Sentinels）", "C. 將排序結果複製回原陣列 A", "D. 建立了兩個輔助陣列 L 和 R"], "options_status": "complete_from_source", "correct_answer": "建立了兩個輔助陣列 L 和 R\n在輔助陣列尾端放置無限大值（∞）作為哨兵（Sentinels）\n將排序結果複製回原陣列 A", "answer_variants": ["B, C, D（排除 A）", "建立了兩個輔助陣列 L 和 R\n在輔助陣列尾端放置無限大值（∞）作為哨兵（Sentinels）\n將排序結果複製回原陣列 A"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練二.txt"], "times_seen_in_0930": 1}, {"id": 26, "title": "漸進符號對稱性與轉置對稱性", "type": "choice", "question": "下列關於漸進符號對稱性（Symmetry）與轉置對稱性（Transpose Symmetry）的敘述，哪些是正確的？", "options": ["A. f(n) = o(g(n)) 若且唯若 g(n) = ω(f(n))", "B. f(n) = O(g(n)) 若且唯若 g(n) = O(f(n))", "C. f(n) = Θ(g(n)) 若且唯若 g(n) = Θ(f(n))", "D. f(n) = O(g(n)) 若且唯若 g(n) = Ω(f(n))"], "options_status": "complete_from_source", "correct_answer": "A, C, D （排除 B）", "answer_variants": ["A, C, D （排除 B）"], "answer_basis": "previous_bank", "sources": ["上週題庫.txt"], "times_seen_in_0930": 0}, {"id": 27, "title": "漸進符號遞移性（Transitivity）", "type": "choice", "question": "關於漸進符號的遞移性，下列哪些選項是正確的？", "options": ["A. 若 f(n) = O(g(n)) 且 g(n) = O(h(n))，則 f(n) = O(h(n))", "B. 若 f(n) = Ω(g(n)) 且 g(n) = Ω(h(n))，則 f(n) = Ω(h(n))", "C. 若 f(n) = Θ(g(n)) 且 g(n) = Θ(h(n))，則 f(n) = Θ(h(n))", "D. 若 f(n) = o(g(n)) 且 g(n) = o(h(n))，則 f(n) = o(h(n))"], "options_status": "complete_from_source", "correct_answer": "若 f(n) = O(g(n)) 且 g(n) = O(h(n))，則 f(n) = O(h(n))\n若 f(n) = Ω(g(n)) 且 g(n) = Ω(h(n))，則 f(n) = Ω(h(n))\n若 f(n) = Θ(g(n)) 且 g(n) = Θ(h(n))，則 f(n) = Θ(h(n))\n若 f(n) = o(g(n)) 且 g(n) = o(h(n))，則 f(n) = o(h(n))", "answer_variants": ["A, B, C, D（全選）", "A, B, C, D", "若 f(n) = O(g(n)) 且 g(n) = O(h(n))，則 f(n) = O(h(n))\n若 f(n) = Ω(g(n)) 且 g(n) = Ω(h(n))，則 f(n) = Ω(h(n))\n若 f(n) = Θ(g(n)) 且 g(n) = Θ(h(n))，則 f(n) = Θ(h(n))\n若 f(n) = o(g(n)) 且 g(n) = o(h(n))，則 f(n) = o(h(n))"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練三.txt"], "times_seen_in_0930": 2}, {"id": 28, "title": "原地排序演算法判別", "type": "choice", "question": "下列哪一個排序演算法是原地排序（Sorted in place），不需要額外的線性輔助空間？", "options": ["A. 合併排序 (Merge Sort)", "B. 基數排序 (Radix Sort)", "C. 插入排序 (Insertion Sort)", "D. 計數排序 (Counting Sort)"], "options_status": "complete_from_source", "correct_answer": "C. 插入排序 (Insertion Sort)", "answer_variants": ["C. 插入排序 (Insertion Sort)"], "answer_basis": "previous_bank", "sources": ["上週題庫.txt"], "times_seen_in_0930": 0}, {"id": 29, "title": "函數性質判斷（變體三：單調遞增）", "type": "choice", "question": "若滿足 m ≤ n 則 f(m) ≤ f(n)，此函數性質為何者？", "options": ["A. 嚴格遞減 (Strictly decreasing)", "B. 嚴格遞增 (Strictly increasing)", "C. 單調遞增 (Monotonically increasing)", "D. 單調遞減 (Monotonically decreasing)"], "options_status": "complete_from_source", "correct_answer": "單調遞增 (Monotonically increasing)", "answer_variants": ["C. 單調遞增 (Monotonically increasing)", "單調遞增 (Monotonically increasing)"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練五.txt"], "times_seen_in_0930": 1}, {"id": 30, "title": "漸進符號集合的數學定義", "type": "choice", "question": "下列漸進符號集合的數學定義，哪些是正確的？", "options": ["A. O(g(n)) 包含所有滿足 0 ≤ f(n) ≤ c * g(n) 的函數 f(n)（當 n ≥ n_0）", "B. Ω(g(n)) 包含所有滿足 0 ≤ c * g(n) ≤ f(n) 的函數 f(n)（當 n ≥ n_0）", "C. Θ(g(n)) 包含所有滿足 c_1 * g(n) ≤ f(n) ≤ c_2 * g(n) 的函數 f(n)（當 n ≥ n_0）", "D. o(g(n)) 的極限關係為 \\lim \\frac{f(n)}{g(n)} = 0"], "options_status": "complete_from_source", "correct_answer": "O(g(n)) 包含所有滿足 0 <= f(n) <= c*g(n) 的函數 f(n) (當 n >= n0)\nΩ(g(n)) 包含所有滿足 0 <= c*g(n) <= f(n) 的函數 f(n) (當 n >= n0)\nΘ(g(n)) 包含所有滿足 c1*g(n) <= f(n) <= c2*g(n) 的函數 f(n) (當 n >= n0)\no(g(n)) 的極限關係為 lim f(n)/g(n) = 0", "answer_variants": ["A, B, C, D（全選）", "A, B, C, D", "O(g(n)) 包含所有滿足 0 <= f(n) <= c*g(n) 的函數 f(n) (當 n >= n0)\nΩ(g(n)) 包含所有滿足 0 <= c*g(n) <= f(n) 的函數 f(n) (當 n >= n0)\nΘ(g(n)) 包含所有滿足 c1*g(n) <= f(n) <= c2*g(n) 的函數 f(n) (當 n >= n0)\no(g(n)) 的極限關係為 lim f(n)/g(n) = 0"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練二.txt", "0930訓練五.txt", "0930訓練四.txt"], "times_seen_in_0930": 4}, {"id": 31, "title": "階乘（Factorial）增長率的漸進關係", "type": "choice", "question": "下列關於階乘增長率的漸進關係，哪些選項是正確的？", "options": ["A. \\log(n!) = Θ(n \\log n)", "B. n! = O(2^n)", "C. n! = ω(2^n)", "D. n! = o(n^n)"], "options_status": "complete_from_source", "correct_answer": "n! = o(nⁿ)\nn! = ω(2ⁿ)\nlog(n!) = Θ(n log n)", "answer_variants": ["A, C, D（排除 B）", "A, B, C", "n! = o(nⁿ)\nn! = ω(2ⁿ)\nlog(n!) = Θ(n log n)"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練一.txt", "0930訓練三.txt", "0930訓練二.txt", "0930訓練五.txt", "0930訓練四.txt"], "times_seen_in_0930": 6}, {"id": 32, "title": "重複對數函數（Iterative logarithm function）性質", "type": "choice", "question": "關於重複對數函數 \\lg^* n，下列敘述哪些是正確的？", "options": ["A. 在可觀測宇宙中幾乎遇不到 n 使得 \\lg^* n > 5", "B. 它是極度緩慢增長的函數", "C. \\lg^* 65536 = 4", "D. \\lg^* 2 = 1"], "options_status": "complete_from_source", "correct_answer": "它是極度緩慢增長的函數\nlg* 2 = 1\nlg* 65536 = 4\n在可觀測宇宙中幾乎遇不到 n 使得 lg* n > 5", "answer_variants": ["A, B, C, D（全選）", "A, B, C, D", "它是極度緩慢增長的函數\nlg* 2 = 1\nlg* 65536 = 4\n在可觀測宇宙中幾乎遇不到 n 使得 lg* n > 5"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練二.txt", "0930訓練四.txt"], "times_seen_in_0930": 3}, {"id": 33, "title": "重複對數函數值運算 1", "type": "choice", "question": "重複對數函數值 \\lg^* 4 的結果為多少？", "options": ["A. 1", "B. 2", "C. 3", "D. 4"], "options_status": "complete_from_source", "correct_answer": "2", "answer_variants": ["B. 2", "2"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練一.txt", "0930訓練二.txt", "0930訓練四.txt"], "times_seen_in_0930": 3}, {"id": 34, "title": "重複對數函數值運算 2", "type": "choice", "question": "重複對數函數值 \\lg^* 16 的結果為多少？", "options": ["A. 1", "B. 2", "C. 3", "D. 4"], "options_status": "complete_from_source", "correct_answer": "3", "answer_variants": ["C. 3", "3"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練一.txt", "0930訓練三.txt", "0930訓練五.txt"], "times_seen_in_0930": 3}, {"id": 35, "title": "最壞情況執行時間（Worst-case running time）之意義", "type": "choice", "question": "演算法分析中，通常專注於尋找「最壞情況執行時間」的原因有哪些？", "options": ["A. 最壞情況發生的頻率在實際應用中相當高", "B. 平均情況往往和最壞情況一樣糟（例如插入排序）", "C. 它最容易被計算出精確的常數項", "D. 它提供了執行時間的保證上限（Upper Bound）"], "options_status": "complete_from_source", "correct_answer": "它提供了執行時間的保證上限（Upper Bound）\n最壞情況發生的頻率在實際應用中相當高\n平均情況往往和最壞情況一樣糟（例如插入排序）", "answer_variants": ["A, B, D（排除 C）", "它提供了執行時間的保證上限（Upper Bound）\n最壞情況發生的頻率在實際應用中相當高\n平均情況往往和最壞情況一樣糟（例如插入排序）"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練三.txt", "0930訓練四.txt"], "times_seen_in_0930": 2}, {"id": 36, "title": "多項式函數與指數函數極限", "type": "choice", "question": "對於任何常數 a > 1，當 n 趨近於無窮大時，多項式函數與指數函數的關係極限值為 (n^b / a^n)？", "options": ["A. 0(zero)", "B. 無窮大 (Infinity)", "C. Undefined", "D. 1(one)"], "options_status": "complete_from_source", "correct_answer": "0(zero)", "answer_variants": ["A. 0(zero)", "C", "0(zero)"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練三.txt", "0930訓練二.txt"], "times_seen_in_0930": 3}, {"id": 37, "title": "對數預設底數", "type": "choice", "question": "在計算機科學中，若無特別註明，常數「\\lg n」通常表示以下列哪一個數為底的對數？", "options": ["A. 2", "B. Infinity", "C. e", "D. 10"], "options_status": "complete_from_source", "correct_answer": "2", "answer_variants": ["A. 2", "A", "2"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練-45.txt", "0930訓練三.txt"], "times_seen_in_0930": 2}, {"id": 38, "title": "插入排序法（Insertion Sort）迴圈不變量", "type": "choice", "question": "關於插入排序法的迴圈不變量（Loop Invariant），下列敘述哪些是正確的？", "options": ["A. 子陣列 A[j \\,..\\, n] 中的元素是已排序的", "B. 子陣列 A[1 \\,..\\, j-1] 中的元素是已排序的", "C. 在每輪 for 迴圈開始時，子陣列 A[1 \\,..\\, j-1] 由原本的 A[1 \\,..\\, j-1] 元素組成", "D. 此不變量可用於證明演算法的正確性"], "options_status": "complete_from_source", "correct_answer": "B, C, D（排除 A）", "answer_variants": ["B, C, D（排除 A）"], "answer_basis": "previous_bank", "sources": ["上週題庫.txt"], "times_seen_in_0930": 0}, {"id": 39, "title": "函數增長率比較", "type": "choice", "question": "關於函數增長率的比較，下列哪些敘述是正確的？", "options": ["A. 任何正多項式函數增長速度都快於任何多對數（Polylogarithmic）函數", "B. 任何正指數函數增長速度都快於任何多項式函數", "C. n \\log n 增長速度快於 n^2", "D. 對數函數增長快於階乘函數"], "options_status": "complete_from_source", "correct_answer": "任何正指數函數增長速度都快於任何多項式函數\n任何正多項式函數增長速度都快於任何多對數（Polylogarithmic）函數", "answer_variants": ["A, B", "任何正指數函數增長速度都快於任何多項式函數\n任何正多項式函數增長速度都快於任何多對數（Polylogarithmic）函數"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練一.txt", "0930訓練三.txt", "0930訓練五.txt"], "times_seen_in_0930": 3}, {"id": 40, "title": "對數函數不等式", "type": "choice", "question": "對於所有 x > -1，下列關於對數函數（Logarithm）的數學不等式哪些是正確的？", "options": ["A. \\ln(1 + x) < x", "B. \\ln(1 + x) = x - x^2/2 + x^3/3 - x^4/4 + \\dots（當 |x| < 1）", "C. x / (1 + x) ≤ \\ln(1 + x)", "D. \\ln(1 + x) > x"], "options_status": "complete_from_source", "correct_answer": "x / (1 + x) <= ln(1 + x)\nln(1 + x) < x\nln(1 + x) = x - x²/2 + x³/3 - x⁴/4 + ... (當 |x| < 1)", "answer_variants": ["B, C（註：不等式原版多為 x / (1 + x) ≤ \\ln(1 + x) ≤ x，若 A 選項為純粹的 <，需視系統容錯，依常見解析 A 若為 ≤ 則選，此處嚴謹數學上選 B, C）", "x / (1 + x) <= ln(1 + x)\nln(1 + x) < x\nln(1 + x) = x - x²/2 + x³/3 - x⁴/4 + ... (當 |x| < 1)"], "answer_basis": "explicit_training_answer", "sources": ["上週題庫.txt", "0930訓練一.txt", "0930訓練二.txt"], "times_seen_in_0930": 2}, {"id": 41, "title": "", "type": "choice_options_missing", "question": "大於或等於實數 x 的最小整數是用下列哪一個函數表示？", "options": [], "options_status": "source_record_did_not_include_options", "correct_answer": "高斯函數 (Ceiling)", "answer_variants": ["A", "高斯函數 (Ceiling)"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練-45.txt", "0930訓練一.txt", "0930訓練五.txt"], "times_seen_in_0930": 3}, {"id": 42, "title": "", "type": "fill_blank", "question": "階乘增長率與指數增長率相比，n! 屬於 o(nⁿ)，但與常見的 2ⁿ 指數相比，n! 屬於 [__1__]\n關係。(請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta,\nbig-omega, omega, O, o,})", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "omega(2^n)", "answer_variants": ["omega(2^n)"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練-45.txt", "0930訓練一.txt", "0930訓練二.txt"], "times_seen_in_0930": 3}, {"id": 43, "title": "", "type": "choice_options_missing", "question": "對於所有實數 x，下列關於指數函數的性質哪些是正確的？", "options": [], "options_status": "source_record_did_not_include_options", "correct_answer": "1 + x <= eˣ\n當 |x| <= 1 時，eˣ <= 1 + x + x²/2\n當 n 趨向無窮大時，lim (1 + x/n)ⁿ = eˣ", "answer_variants": ["A, B, C", "1 + x <= eˣ\n當 |x| <= 1 時，eˣ <= 1 + x + x²/2\n當 n 趨向無窮大時，lim (1 + x/n)ⁿ = eˣ"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練-45.txt", "0930訓練一.txt", "0930訓練四.txt"], "times_seen_in_0930": 3}, {"id": 44, "title": "", "type": "choice_options_missing", "question": "插入排序法（Insertion Sort）在最壞情況（Worst-case）下的時間複雜度為何？", "options": [], "options_status": "source_record_did_not_include_options", "correct_answer": "O(n²)", "answer_variants": ["C", "O(n²)"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練-45.txt", "0930訓練三.txt", "0930訓練二.txt"], "times_seen_in_0930": 3}, {"id": 45, "title": "", "type": "choice_options_missing", "question": "漸進下界（Asymptotic lower bound）是用下列哪一個漸進符號表示？", "options": [], "options_status": "source_record_did_not_include_options", "correct_answer": "Ω", "answer_variants": ["B", "Ω"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練-45.txt", "0930訓練二.txt"], "times_seen_in_0930": 2}, {"id": 46, "title": "", "type": "choice_options_missing", "question": "小於或等於實數 x 的最大整數是用下列哪一個函數表示？", "options": [], "options_status": "source_record_did_not_include_options", "correct_answer": "地板函數 (Floor)", "answer_variants": ["B", "地板函數 (Floor)"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練-45.txt", "0930訓練二.txt", "0930訓練五.txt"], "times_seen_in_0930": 3}, {"id": 47, "title": "", "type": "choice_options_missing", "question": "插入排序法（Insertion Sort）採用的是下列哪一種演算法設計方法？", "options": [], "options_status": "source_record_did_not_include_options", "correct_answer": "增量法 (Incremental Approach)", "answer_variants": ["B", "增量法 (Incremental Approach)"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練-45.txt", "0930訓練一.txt", "0930訓練二.txt", "0930訓練五.txt"], "times_seen_in_0930": 4}, {"id": 48, "title": "", "type": "choice_options_missing", "question": "下列哪些函數屬於多對數有界（Polylogarithmically bounded）的範疇？", "options": [], "options_status": "source_record_did_not_include_options", "correct_answer": "A, B, D", "answer_variants": ["A, B, D"], "answer_basis": "inferred_from_full_score", "sources": ["0930訓練-45.txt"], "times_seen_in_0930": 1}, {"id": 49, "title": "", "type": "choice_options_missing", "question": "分析演算法（Analyzing algorithms）時，通常需要預測演算法所需的哪些資源？", "options": [], "options_status": "source_record_did_not_include_options", "correct_answer": "執行時間 (Time)\n記憶體空間 (Memory)\n網路頻寬 (Communication bandwidth)\n邏輯閘數量 (Logic gates)", "answer_variants": ["執行時間 (Time)\n記憶體空間 (Memory)\n網路頻寬 (Communication bandwidth)\n邏輯閘數量 (Logic gates)"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練一.txt", "0930訓練三.txt", "0930訓練五.txt"], "times_seen_in_0930": 3}, {"id": 50, "title": "", "type": "fill_blank", "question": "插入排序法的最壞情況執行時間是 n 的[__1__]函數，最佳情況執行時間是 n 的[__2__]函數(要用最嚴謹的答案回答)。(請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "big-theta(n^2)/big-theta(n)", "answer_variants": ["big-theta(n^2)/big-theta(n)"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練一.txt", "0930訓練三.txt"], "times_seen_in_0930": 2}, {"id": 51, "title": "", "type": "fill_blank", "question": "漸進上界與下界的轉換：f(n) = O(g(n)) 若且唯若 g(n) = [__1__]。(請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "big-omega(f(n))", "answer_variants": ["big-omega(f(n))"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練一.txt", "0930訓練四.txt"], "times_seen_in_0930": 2}, {"id": 52, "title": "", "type": "choice_options_missing", "question": "若一函數 f(n) 滿足 f(n) = n⁽ᴼ⁽¹⁾⁾，則此函數稱為多項式有界（Polynomial bounded）。下列哪些屬於此類別？", "options": [], "options_status": "source_record_did_not_include_options", "correct_answer": "f(n) = n³\nf(n) = 10n² + 5n\nf(n) = √n", "answer_variants": ["f(n) = n³\nf(n) = 10n² + 5n\nf(n) = √n"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練一.txt"], "times_seen_in_0930": 1}, {"id": 53, "title": "", "type": "fill_blank", "question": "Insertion-Sort(A)\n1  for j ← 2 to length[A]\n2    do key ← A[j]\n3       // Insert A[j] into the sorted sequence A[1 .. j - 1]\n4       i ← j - 1\n5       while i > 0 and A[i] > key\n6         do A[i + 1] ← A[i]\n7            i ← i - 1\n8       A[i + 1] ← key\n\n\n以上 為 insertion sort 的演算法 請問\n令A 長度為n , 每一行的執行成本都是 1 \n若第5行 每次都執行1次 請問這個程式執行的成本是多少[__1__] (答案用到英文字母請用小寫 裡面部要有空白)", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "5n-4", "answer_variants": ["5n-4"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練一.txt", "0930訓練二.txt", "0930訓練五.txt", "0930訓練四.txt"], "times_seen_in_0930": 4}, {"id": 54, "title": "", "type": "fill_blank", "question": "我們使用[__1__]（請填二個字的英文單字）來證明演算法的正確性。在迴圈每次迭代開始時，子序列的特定性質都保持不變。(請用英文小寫回答，單字間留一空白)", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "loop invariant", "answer_variants": ["loop invariant"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練一.txt", "0930訓練二.txt"], "times_seen_in_0930": 2}, {"id": 55, "title": "", "type": "fill_blank", "question": "當一個函數 f(n) 同時滿足 O(g(n)) 且 Ω(g(n)) 時，我們說 g(n) 是 f(n) 的漸進緊確界，其符號為 [__1__]。(請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "big-theta(g(n))", "answer_variants": ["big-theta(g(n))"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練二.txt"], "times_seen_in_0930": 1}, {"id": 56, "title": "", "type": "choice_options_missing", "question": "關於模運算（Modular arithmetic），下列哪些數學公式或關係是正確的？", "options": [], "options_status": "source_record_did_not_include_options", "correct_answer": "a mod n = a - ⌊a/n⌋ * n\n若 (a mod n) = (b mod n)，則寫作 a ≡ b (mod n)\na mod n 代表 a 除以 n 的餘數\n若 a ≡ b (mod n)，表示 a 與 b 模 n 等價", "answer_variants": ["a mod n = a - ⌊a/n⌋ * n\n若 (a mod n) = (b mod n)，則寫作 a ≡ b (mod n)\na mod n 代表 a 除以 n 的餘數\n若 a ≡ b (mod n)，表示 a 與 b 模 n 等價"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練三.txt", "0930訓練五.txt"], "times_seen_in_0930": 2}, {"id": 57, "title": "", "type": "fill_blank", "question": "表示重複對數函數（Iterative logarithm function）的數學寫法為 [__1__]。(請用小寫英文回答)", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "lg*(n)", "answer_variants": ["lg*(n)"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練五.txt", "0930訓練四.txt"], "times_seen_in_0930": 2}, {"id": 58, "title": "", "type": "choice_options_missing", "question": "對於任意實數 x 或整數 n，下列關於地板與天花板函數的數學性質哪些是正確的？", "options": [], "options_status": "source_record_did_not_include_options", "correct_answer": "x - 1 < ⌊x⌋ <= x\nx <= ⌈x⌉ < x + 1\n⌈n/2⌉ + ⌊n/2⌋ = n\n⌊⌊n/a⌋/b⌋ = ⌊n/ab⌋", "answer_variants": ["x - 1 < ⌊x⌋ <= x\nx <= ⌈x⌉ < x + 1\n⌈n/2⌉ + ⌊n/2⌋ = n\n⌊⌊n/a⌋/b⌋ = ⌊n/ab⌋"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練四.txt"], "times_seen_in_0930": 1}, {"id": 59, "title": "", "type": "choice_options_missing", "question": "史特林近似公式（Stirling's approximation）主要用於估算下列哪一種數學函數的增長？", "options": [], "options_status": "source_record_did_not_include_options", "correct_answer": "階乘函數 (Factorial)", "answer_variants": ["階乘函數 (Factorial)"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練四.txt"], "times_seen_in_0930": 1}, {"id": 60, "title": "", "type": "fill_blank", "question": "分治法將問題分解成子問題，遞迴求解。其三個主要動作分別為：[__1__]、[__2__]、[__3__]。(請用小寫英文回答)", "options": [], "options_status": "not_applicable_or_not_recorded", "correct_answer": "divide/conquer/combine", "answer_variants": ["divide/conquer/combine"], "answer_basis": "explicit_correct_answer", "sources": ["0930訓練五.txt"], "times_seen_in_0930": 1}];
+
+const STORAGE_KEY = "algorithm_question_bank_user_questions_v1";
+
+function loadUserQuestions() {
+    try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? parsed : [];
+    } catch {
+        return [];
+    }
+}
+
+function saveUserQuestions(items) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+}
+
+QUESTIONS.push(...loadUserQuestions());
+
+let currentFilter = "all";
+let answersVisible = new Set();
+
+const searchInput = document.getElementById("searchInput");
+const list = document.getElementById("questionList");
+const summary = document.getElementById("summary");
+
+function escapeHtml(value) {
+    return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+function normalize(value) {
+    return String(value ?? "").toLowerCase().replace(/\s+/g, " ").trim();
+}
+
+function highlight(value, term) {
+    const safe = escapeHtml(value);
+    if (!term) return safe;
+
+    const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    try {
+        return safe.replace(new RegExp(escapedTerm, "gi"), match => `<mark>${match}</mark>`);
+    } catch {
+        return safe;
+    }
+}
+
+function searchableText(q) {
+    return normalize([
+        q.id,
+        q.title,
+        q.type,
+        q.question,
+        ...(q.options || []),
+        q.correct_answer,
+        ...(q.answer_variants || []),
+        ...(q.keywords || []),
+        ...(q.sources || [])
+    ].join(" "));
+}
+
+function getTypeLabel(type) {
+    if (type === "fill_blank") return "填空題";
+    if (type === "choice") return "選擇題";
+    if (type === "choice_options_missing") return "選擇題／選項未記錄";
+    return type || "未分類";
+}
+
+function getFilteredQuestions() {
+    const term = normalize(searchInput.value);
+    return QUESTIONS.filter(q => {
+        const typeMatch = currentFilter === "all" || q.type === currentFilter;
+        const textMatch = !term || searchableText(q).includes(term);
+        return typeMatch && textMatch;
+    });
+}
+
+function render() {
+    const term = normalize(searchInput.value);
+    const filtered = getFilteredQuestions();
+
+    const userCount = QUESTIONS.filter(q => q.user_created).length;
+    summary.textContent =
+        `目前顯示 ${filtered.length} / ${QUESTIONS.length} 題｜自行新增 ${userCount} 題` +
+        (term ? `｜搜尋：「${searchInput.value.trim()}」` : "");
+
+    if (!filtered.length) {
+        list.innerHTML = `<div class="empty">找不到符合條件的題目，試試其他關鍵字。</div>`;
+        return;
+    }
+
+    list.innerHTML = filtered.map(q => {
+        const answerShown = answersVisible.has(q.id);
+        const options = q.options || [];
+
+        const optionsHtml = options.length
+            ? `<div class="options">${options.map(o =>
+                `<div class="option">${highlight(o, term)}</div>`
+              ).join("")}</div>`
+            : (q.type === "choice_options_missing"
+                ? `<div class="missing">這題的原始訓練紀錄沒有保存完整選項，因此未自行補寫。</div>`
+                : "");
+
+        const seenText = q.times_seen_in_0930
+            ? `｜0930 訓練出現 ${q.times_seen_in_0930} 次`
+            : "";
+
+        return `
+        <article class="question-card" data-id="${q.id}">
+            <div class="card-top">
+                <div class="number">#${q.id}</div>
+                <div class="badges">
+                    <span class="badge">${escapeHtml(getTypeLabel(q.type))}</span>
+                    ${q.times_seen_in_0930 ? `<span class="badge">刷過 ${q.times_seen_in_0930} 次</span>` : ""}
+                    ${q.user_created ? `<span class="badge user-badge">自行新增</span>` : ""}
+                </div>
+            </div>
+
+            <div class="title">${highlight(q.title || "", term)}</div>
+            <div class="question">${highlight(q.question || "", term)}</div>
+
+            ${optionsHtml}
+
+            <button class="answer-btn" type="button"
+                    onclick="toggleAnswer(${q.id})">
+                ${answerShown ? "隱藏答案" : "顯示正確答案"}
+            </button>
+
+            <div class="answer ${answerShown ? "show" : ""}">
+                正確答案：${highlight(q.correct_answer || "未記錄", term)}
+            </div>
+
+            <div class="meta">
+                題型：${escapeHtml(getTypeLabel(q.type))}${seenText}
+            </div>
+        </article>`;
+    }).join("");
+}
+
+window.toggleAnswer = function(id) {
+    if (answersVisible.has(id)) answersVisible.delete(id);
+    else answersVisible.add(id);
+    render();
+};
+
+searchInput.addEventListener("input", render);
+
+document.getElementById("clearBtn").addEventListener("click", () => {
+    searchInput.value = "";
+    searchInput.focus();
+    render();
+});
+
+document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentFilter = btn.dataset.filter;
+        render();
+    });
+});
+
+document.getElementById("showAllBtn").addEventListener("click", () => {
+    getFilteredQuestions().forEach(q => answersVisible.add(q.id));
+    render();
+});
+
+document.getElementById("hideAllBtn").addEventListener("click", () => {
+    answersVisible.clear();
+    render();
+});
+
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 1800);
+}
+
+function renderUserQuestions() {
+    const target = document.getElementById("userQuestionList");
+    const items = QUESTIONS.filter(q => q.user_created);
+
+    if (!items.length) {
+        target.innerHTML = `<div class="empty">你目前還沒有新增任何題目。</div>`;
+        return;
+    }
+
+    target.innerHTML = items.map(q => `
+        <article class="question-card">
+            <div class="card-top">
+                <div>
+                    <div class="number">${escapeHtml(q.title || "自訂題目")}</div>
+                    <div class="meta">${escapeHtml(getTypeLabel(q.type))}</div>
+                </div>
+                <button class="danger-btn" type="button" onclick="deleteUserQuestion(${q.id})">刪除</button>
+            </div>
+            <div class="question">${escapeHtml(q.question || "")}</div>
+            <div class="answer show">正確答案：${escapeHtml(q.correct_answer || "")}</div>
+        </article>
+    `).join("");
+}
+
+window.deleteUserQuestion = function(id) {
+    const saved = loadUserQuestions().filter(q => q.id !== id);
+    saveUserQuestions(saved);
+    const index = QUESTIONS.findIndex(q => q.user_created && q.id === id);
+    if (index >= 0) QUESTIONS.splice(index, 1);
+    answersVisible.delete(id);
+    renderUserQuestions();
+    render();
+    showToast("題目已刪除");
+};
+
+function resetQuestionForm() {
+    document.getElementById("newType").value = "choice";
+    document.getElementById("newTitle").value = "";
+    document.getElementById("newQuestion").value = "";
+    document.getElementById("optA").value = "";
+    document.getElementById("optB").value = "";
+    document.getElementById("optC").value = "";
+    document.getElementById("optD").value = "";
+    document.getElementById("newAnswer").value = "";
+    document.getElementById("newKeywords").value = "";
+    document.getElementById("choiceArea").style.display = "";
+}
+
+const newType = document.getElementById("newType");
+newType.addEventListener("change", () => {
+    document.getElementById("choiceArea").style.display = newType.value === "choice" ? "" : "none";
+});
+
+document.getElementById("saveQuestionBtn").addEventListener("click", () => {
+    const type = newType.value;
+    const title = document.getElementById("newTitle").value.trim();
+    const question = document.getElementById("newQuestion").value.trim();
+    const correctAnswer = document.getElementById("newAnswer").value.trim();
+    const keywords = document.getElementById("newKeywords").value
+        .split(",").map(v => v.trim()).filter(Boolean);
+
+    if (!question) {
+        alert("請輸入題目內容。");
+        return;
+    }
+    if (!correctAnswer) {
+        alert("請輸入正確答案。");
+        return;
+    }
+
+    const options = type === "choice"
+        ? ["optA", "optB", "optC", "optD"]
+            .map(id => document.getElementById(id).value.trim())
+            .filter(Boolean)
+        : [];
+
+    const item = {
+        id: Date.now(),
+        title,
+        type,
+        question,
+        options,
+        options_status: options.length ? "user_created" : "not_applicable_or_not_recorded",
+        correct_answer: correctAnswer,
+        answer_variants: [correctAnswer],
+        answer_basis: "user_created",
+        sources: ["使用者新增"],
+        keywords,
+        user_created: true,
+        created_at: new Date().toISOString()
+    };
+
+    const saved = loadUserQuestions();
+    saved.unshift(item);
+    saveUserQuestions(saved);
+    QUESTIONS.push(item);
+
+    resetQuestionForm();
+    renderUserQuestions();
+    render();
+    showToast("題目已新增到題庫");
+});
+
+document.getElementById("resetFormBtn").addEventListener("click", resetQuestionForm);
+
+document.querySelectorAll(".nav-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
+        document.getElementById("panel-" + btn.dataset.panel).classList.add("active");
+        document.getElementById("sidebar").classList.remove("open");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});
+
+document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+    document.getElementById("sidebar").classList.toggle("open");
+});
+
+renderUserQuestions();
+
+render();
+</script>
+</body>
+</html>
