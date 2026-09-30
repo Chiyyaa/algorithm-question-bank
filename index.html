@@ -479,11 +479,48 @@
         .field.full { grid-column: auto; }
     }
 
+    /* 桌機可收合導覽，手機使用抽屜選單。 */
+    .sidebar { padding-top: 70px; overflow-y: auto; }
+    .mobile-menu-btn {
+        display: block;
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 150;
+        background: #111827;
+        color: #fff;
+        border-color: #374151;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    .mobile-menu-btn:hover { background: #374151; }
+    .main-shell > .container { padding-top: 70px; }
+    .sidebar.collapsed { transform: translateX(-100%); }
+    .sidebar.collapsed ~ .main-shell { margin-left: 0; }
+    .summary { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .pagination { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+    .pagination button { min-height: 44px; }
+    button:disabled { opacity: .45; cursor: default; }
+    button:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+    .sidebar-backdrop {
+        position: fixed; inset: 0; z-index: 90; border: 0; border-radius: 0;
+        background: rgba(17, 24, 39, .45);
+    }
+    .sidebar-backdrop:hover { background: rgba(17, 24, 39, .45); }
+    @media (max-width: 850px) {
+        .sidebar.open { transform: translateX(0); }
+        .main-shell { margin-left: 0; }
+    }
+    @media (max-width: 420px) {
+        .pagination { width: 100%; justify-content: flex-end; gap: 6px; }
+        .pagination button { padding-inline: 10px; }
+    }
 </style>
 </head>
 <body>
-<button id="mobileMenuBtn" class="mobile-menu-btn" type="button">☰</button>
-<aside id="sidebar" class="sidebar">
+<button id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="展開選單">☰</button>
+<button id="sidebarBackdrop" class="sidebar-backdrop" type="button" aria-label="關閉選單" tabindex="-1" hidden></button>
+<aside id="sidebar" class="sidebar collapsed" inert>
     <div class="sidebar-brand">📚 演算法題庫</div>
     <nav class="sidebar-nav">
         <button class="nav-btn active" data-panel="bank" type="button">🔎 題庫搜尋</button>
@@ -520,7 +557,14 @@
         </div>
     </section>
 
-    <div id="summary" class="summary"></div>
+    <div class="summary">
+        <span id="summary" role="status" aria-live="polite"></span>
+        <nav class="pagination" aria-label="題庫分頁">
+            <button id="prevPageBtn" type="button">上一頁</button>
+            <span id="pageInfo" aria-live="polite"></span>
+            <button id="nextPageBtn" type="button">下一頁</button>
+        </nav>
+    </div>
     <main id="questionList"></main>
 
     <footer>
@@ -614,6 +658,8 @@ function saveUserQuestions(items) {
 
 QUESTIONS.push(...loadUserQuestions());
 
+const PAGE_SIZE = 25;
+let currentPage = 1;
 let currentFilter = "all";
 let answersVisible = new Set();
 
@@ -680,17 +726,24 @@ function render() {
     const term = normalize(searchInput.value);
     const filtered = getFilteredQuestions();
 
+    const pageCount = Math.ceil(filtered.length / PAGE_SIZE);
+    currentPage = Math.max(1, Math.min(currentPage, pageCount || 1));
+    const pageItems = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+    document.getElementById("pageInfo").textContent =
+        `第 ${pageCount ? currentPage : 0} / ${pageCount} 頁`;
+    document.getElementById("prevPageBtn").disabled = currentPage <= 1;
+    document.getElementById("nextPageBtn").disabled = currentPage >= pageCount;
+
     const userCount = QUESTIONS.filter(q => q.user_created).length;
     summary.textContent =
-        `目前顯示 ${filtered.length} / ${QUESTIONS.length} 題｜自行新增 ${userCount} 題` +
-        (term ? `｜搜尋：「${searchInput.value.trim()}」` : "");
+        `目前顯示 ${pageItems.length} / ${filtered.length} 題｜自行新增 ${userCount} 題`;
 
     if (!filtered.length) {
         list.innerHTML = `<div class="empty">找不到符合條件的題目，試試其他關鍵字。</div>`;
         return;
     }
 
-    list.innerHTML = filtered.map(q => {
+    list.innerHTML = pageItems.map(q => {
         const answerShown = answersVisible.has(q.id);
         const options = q.options || [];
 
@@ -702,9 +755,6 @@ function render() {
                 ? `<div class="missing">這題的原始訓練紀錄沒有保存完整選項，因此未自行補寫。</div>`
                 : "");
 
-        const seenText = q.times_seen_in_0930
-            ? `｜0930 訓練出現 ${q.times_seen_in_0930} 次`
-            : "";
 
         return `
         <article class="question-card" data-id="${q.id}">
@@ -712,7 +762,6 @@ function render() {
                 <div class="number">#${q.id}</div>
                 <div class="badges">
                     <span class="badge">${escapeHtml(getTypeLabel(q.type))}</span>
-                    ${q.times_seen_in_0930 ? `<span class="badge">刷過 ${q.times_seen_in_0930} 次</span>` : ""}
                     ${q.user_created ? `<span class="badge user-badge">自行新增</span>` : ""}
                 </div>
             </div>
@@ -732,7 +781,7 @@ function render() {
             </div>
 
             <div class="meta">
-                題型：${escapeHtml(getTypeLabel(q.type))}${seenText}
+                題型：${escapeHtml(getTypeLabel(q.type))}
             </div>
         </article>`;
     }).join("");
@@ -744,12 +793,24 @@ window.toggleAnswer = function(id) {
     render();
 };
 
-searchInput.addEventListener("input", render);
+function resetPagination() {
+    currentPage = 1;
+    render();
+}
+searchInput.addEventListener("input", resetPagination);
+
+function changePage(offset) {
+    currentPage += offset;
+    render();
+    document.querySelector(".toolbar").scrollIntoView({ block: "start" });
+}
+document.getElementById("prevPageBtn").addEventListener("click", () => changePage(-1));
+document.getElementById("nextPageBtn").addEventListener("click", () => changePage(1));
 
 document.getElementById("clearBtn").addEventListener("click", () => {
     searchInput.value = "";
     searchInput.focus();
-    render();
+    resetPagination();
 });
 
 document.querySelectorAll(".filter-btn").forEach(btn => {
@@ -757,7 +818,7 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
         document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         currentFilter = btn.dataset.filter;
-        render();
+        resetPagination();
     });
 });
 
@@ -890,14 +951,45 @@ document.querySelectorAll(".nav-btn").forEach(btn => {
         btn.classList.add("active");
         document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
         document.getElementById("panel-" + btn.dataset.panel).classList.add("active");
-        document.getElementById("sidebar").classList.remove("open");
+        if (mobileViewport.matches) setSidebarOpen(false);
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 });
 
-document.getElementById("mobileMenuBtn").addEventListener("click", () => {
-    document.getElementById("sidebar").classList.toggle("open");
+const sidebar = document.getElementById("sidebar");
+const menuButton = document.getElementById("mobileMenuBtn");
+const sidebarBackdrop = document.getElementById("sidebarBackdrop");
+const mobileViewport = window.matchMedia("(max-width: 850px)");
+let desktopSidebarOpen = false;
+let mobileSidebarOpen = false;
+
+function updateSidebar() {
+    const open = mobileViewport.matches ? mobileSidebarOpen : desktopSidebarOpen;
+    sidebar.classList.toggle("open", mobileViewport.matches && open);
+    sidebar.classList.toggle("collapsed", !mobileViewport.matches && !open);
+    sidebar.inert = !open;
+    menuButton.setAttribute("aria-expanded", String(open));
+    menuButton.setAttribute("aria-label", open ? "收合選單" : "展開選單");
+    sidebarBackdrop.hidden = !mobileViewport.matches || !open;
+    if (!open && sidebar.contains(document.activeElement)) menuButton.focus();
+}
+function setSidebarOpen(open) {
+    if (mobileViewport.matches) mobileSidebarOpen = open;
+    else desktopSidebarOpen = open;
+    updateSidebar();
+}
+menuButton.addEventListener("click", () => {
+    setSidebarOpen(!(mobileViewport.matches ? mobileSidebarOpen : desktopSidebarOpen));
 });
+sidebarBackdrop.addEventListener("click", () => setSidebarOpen(false));
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") setSidebarOpen(false);
+});
+mobileViewport.addEventListener("change", () => {
+    mobileSidebarOpen = false;
+    updateSidebar();
+});
+updateSidebar();
 
 renderUserQuestions();
 
@@ -905,3 +997,4 @@ render();
 </script>
 </body>
 </html>
+
