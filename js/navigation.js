@@ -11,7 +11,7 @@ document.querySelectorAll(".nav-btn[data-panel]").forEach(btn => {
     });
 });
 
-document.querySelectorAll("#sidebarUnitList, #unitGrid").forEach(target => {
+document.querySelectorAll("#unitGrid").forEach(target => {
     target.addEventListener("click", event => {
         const button = event.target.closest("[data-unit]");
         if (!button || button.disabled) return;

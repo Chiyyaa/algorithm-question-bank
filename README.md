@@ -7,6 +7,7 @@
 - js/app.js：題庫載入、搜尋、篩選、分頁與答案切換。
 - js/navigation.js：側欄、單元切換與粉色置頂按鈕。
 - js/custom-questions.js：自行新增／刪除題目與 localStorage。
+- js/music.js：首頁圓形音樂按鈕與按需載入的 YouTube 播放器。
 - js/units.js：科目與單元設定，每個開放單元指向自己的題庫檔案。
 - js/utils.js：共用文字處理與題型名稱。
 - data/questions.json：演算法 U2 的 60 題；後續單元使用各自的 JSON，透過 js/units.js 設定載入。
@@ -47,8 +48,14 @@ localStorage 名稱仍為 algorithm_question_bank_user_questions_v1；在原網�
 
 ## 科目與單元
 
-進入網站先選科目；演算法可進入，作業系統尚未開放。演算法預設進入 U2，U1、U3 尚未開放。側欄可直接切換該科目的單元，或回到科目選擇頁。每次重新開啟網站皆先顯示科目選擇頁。
+進入網站先選科目；演算法可進入，作業系統尚未開放。演算法預設進入 U2，U1、U3 尚未開放。從側欄點選「選擇單元」後切換單元，或點選「切換科目」回到首頁。每次重新開啟網站皆先顯示科目選擇頁。
 
 新增單元時建立獨立 JSON（例如 data/algorithm-u3.json），再設定 js/units.js 中對應單元的 dataUrl（相對於 js/app.js，例如 ../data/algorithm-u3.json）。搜尋、篩選、分頁與答案狀態只作用於目前單元；切換單元會重設搜尋、篩選、分頁與新增表單。題號只需在單元內唯一，其他單元可重複使用相同題號。
 
 演算法 U2 保留原 localStorage 名稱 algorithm_question_bank_user_questions_v1，舊自訂題繼續歸屬 U2，無需搬移或改寫。其他單元各自使用 question_bank_user_questions_v1_<科目ID>_<單元ID>，自訂題互不混用。
+
+## 首頁與音樂
+
+首頁採冰藍、淡粉與銀白星光風格，裝飾為頁面內的 SVG 與 CSS。側欄只保留「選擇單元」入口；隱藏捲動條但仍可捲動。
+
+右下角圓形音樂按鈕僅在首頁顯示，點擊後才建立 YouTube 官方嵌入播放器（影片 xKhBGvx4W98）。影片保留可見畫面、YouTube 控制與至少 200×200 的尺寸。瀏覽器可能要求再點一次播放器中的播放鍵。按圓形按鈕、關閉鍵或 Escape 會移除播放器並停止播放，進入題庫也會關閉。若影片無法嵌入，可透過播放器下方連結在 YouTube 開啟。

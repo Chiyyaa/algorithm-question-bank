@@ -25,19 +25,58 @@ server.listen(0, "127.0.0.1", async () => {
     const errors = [];
     const checks = [];
     const record = name => { checks.push(name); console.log("PASS " + name); };
+    async function openPanel(page, panel) {
+        if (await page.locator("#mobileMenuBtn").getAttribute("aria-expanded") !== "true") {
+            await page.locator("#mobileMenuBtn").click();
+        }
+        await page.locator('[data-panel="' + panel + '"]').click();
+    }
+    async function openUnit(page, unit) {
+        await openPanel(page, "units");
+        await page.locator('#unitGrid [data-unit="' + unit + '"]').click();
+    }
     try {
         const { chromium } = require("playwright");
         const edgePath = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe";
         const channel = !fs.existsSync(chromium.executablePath()) && fs.existsSync(edgePath) ? "msedge" : undefined;
         browser = await chromium.launch({ headless: true, channel });
         const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, reducedMotion: "reduce" });
+        // Stub third-party media for deterministic UI tests; do not claim audio playback verification.
+        await context.route("https://www.youtube.com/embed/**", route =>
+            route.fulfill({ contentType: "text/html", body: "<!doctype html><title>Test player</title><p>YouTube player fixture</p>" }));
         const page = await context.newPage();
         page.on("pageerror", error => errors.push(error.message));
         await page.goto(url);
         assert.equal(await page.locator("#subjectHome").isVisible(), true);
         assert.equal(await page.locator("#osSubjectBtn").isDisabled(), true);
         assert.equal(await page.locator("#mobileMenuBtn").isVisible(), false);
+        assert.equal(await page.locator("#subjectHome .subtitle").innerText(), "既然無法修仙 不如來魔修");
+        assert.equal(await page.locator("#musicPlayerHost iframe").count(), 0);
+        assert.equal(await page.locator("#musicToggleBtn").isVisible(), true);
+        await page.locator("#musicToggleBtn").click();
+        assert.equal(await page.locator("#musicPanel").isVisible(), true);
+        const playerSrc = new URL(await page.locator("#musicPlayerHost iframe").getAttribute("src"));
+        assert.equal(playerSrc.hostname, "www.youtube.com");
+        assert.equal(playerSrc.pathname, "/embed/xKhBGvx4W98");
+        assert.equal(playerSrc.searchParams.get("autoplay"), "1");
+        const size = await page.locator("#musicPlayerHost iframe").boundingBox();
+        assert.ok(size.width >= 200 && size.height >= 200);
+        assert.equal(await page.locator("#musicToggleBtn").getAttribute("aria-expanded"), "true");
+        await page.locator("#musicCloseBtn").click();
+        assert.equal(await page.locator("#musicPlayerHost iframe").count(), 0);
+        assert.equal(await page.locator("#musicToggleBtn").evaluate(el => document.activeElement === el), true);
+        await page.locator("#musicToggleBtn").click();
+        await page.keyboard.press("Escape");
+        assert.equal(await page.locator("#musicPanel").isVisible(), false);
+        await page.locator("#musicToggleBtn").click();
+        await page.locator("#musicToggleBtn").click();
+        assert.equal(await page.locator("#musicPlayerHost iframe").count(), 0);
+        await page.locator("#musicToggleBtn").click();
         await page.locator("#algorithmSubjectBtn").click();
+        assert.equal(await page.locator("#musicPlayerHost iframe").count(), 0);
+        assert.equal(await page.locator("#musicToggleBtn").isVisible(), false);
+        assert.equal(await page.locator("#sidebarUnitList").count(), 0);
+        record("Lazy music embed, configured video, close/Escape/toggle/entry cleanup and home copy");
         record("Subject entry, unavailable OS, algorithm opens U2");
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
         assert.equal(await page.locator("#questionList article").count(), 25);
@@ -126,11 +165,19 @@ server.listen(0, "127.0.0.1", async () => {
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
         record("Existing storage key and legacy custom questions survive refactor");
         const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, reducedMotion: "reduce" });
+        await mobile.route("https://www.youtube.com/embed/**", route =>
+            route.fulfill({ contentType: "text/html", body: "<!doctype html><title>Test player</title>" }));
         const phone = await mobile.newPage();
         phone.on("pageerror", e => errors.push(e.message));
         await phone.goto(url);
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
         await phone.screenshot({ path: path.join(root, "..", "subject-home-mobile.png") });
+        await phone.locator("#musicToggleBtn").click();
+        assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+        const mobilePlayer = await phone.locator("#musicPlayerHost iframe").boundingBox();
+        assert.ok(mobilePlayer.width >= 200 && mobilePlayer.height >= 200);
+        await phone.screenshot({ path: path.join(root, "..", "music-panel-mobile.png") });
+        await phone.locator("#musicCloseBtn").click();
         await phone.locator("#algorithmSubjectBtn").click();
         await phone.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
@@ -168,10 +215,35 @@ server.listen(0, "127.0.0.1", async () => {
         await page.locator("#algorithmSubjectBtn").click();
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
         await page.locator("#mobileMenuBtn").click();
-        assert.equal(await page.locator('#sidebarUnitList [data-unit="u1"]').isDisabled(), true);
-        assert.equal(await page.locator('#sidebarUnitList [data-unit="u3"]').isDisabled(), true);
-        assert.equal(await page.locator('#sidebarUnitList [data-unit="u2"]').getAttribute("aria-current"), "true");
-        record("Return to subjects; U2 selection and unavailable units");
+        await page.locator('[data-panel="units"]').click();
+        assert.equal(await page.locator('#unitGrid [data-unit="u1"]').isDisabled(), true);
+        assert.equal(await page.locator('#unitGrid [data-unit="u3"]').isDisabled(), true);
+        assert.equal(await page.locator('#unitGrid [data-unit="u2"]').getAttribute("aria-current"), "true");
+        assert.equal(await page.locator("#panel-units").isVisible(), true);
+        assert.equal(await page.locator("#unitGrid [data-unit]").count(), 3);
+        record("Return to subjects; units appear only through unit selection");
+
+        await phone.setViewportSize({ width: 390, height: 300 });
+        await phone.locator("#mobileMenuBtn").click();
+        const scrollbar = await phone.locator("#sidebar").evaluate(el => {
+            el.scrollTop = el.scrollHeight;
+            return {
+                scrolls: el.scrollTop > 0,
+                hidden: getComputedStyle(el).scrollbarWidth === "none",
+                webkitHidden: getComputedStyle(el, "::-webkit-scrollbar").display === "none"
+            };
+        });
+        assert.equal(scrollbar.scrolls, true);
+        assert.equal(scrollbar.hidden, true);
+        assert.equal(scrollbar.webkitHidden, true);
+        await phone.locator("#switchSubjectBtn").click();
+        await phone.setViewportSize({ width: 320, height: 568 });
+        await phone.locator("#musicToggleBtn").click();
+        const narrowPlayer = await phone.locator("#musicPlayerHost iframe").boundingBox();
+        assert.ok(narrowPlayer.width >= 200 && narrowPlayer.height >= 200);
+        assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+        await phone.locator("#musicCloseBtn").click();
+        record("Sidebar scrolls without a scrollbar; music fits a 320px phone");
 
         // Test future units through intercepted responses; no invented questions are published.
         const isolated = await context.newPage();
@@ -192,8 +264,7 @@ server.listen(0, "127.0.0.1", async () => {
         await isolated.locator("#showAllBtn").click();
         await isolated.locator("#nextPageBtn").click();
         await isolated.locator("#searchInput").fill("Legacy");
-        await isolated.locator("#mobileMenuBtn").click();
-        await isolated.locator('#sidebarUnitList [data-unit="u1"]').click();
+        await openUnit(isolated, "u1");
         await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 63"));
         assert.equal(await isolated.locator("#currentUnitLabel").innerText(), "演算法｜U1");
         assert.equal(await isolated.locator("#searchInput").inputValue(), "");
@@ -204,7 +275,7 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await isolated.locator("#questionList article").count(), 13);
         await isolated.locator("#searchInput").fill("Legacy");
         assert.equal(await isolated.locator("#questionList article").count(), 0);
-        await isolated.locator('[data-panel="add"]').click();
+        await openPanel(isolated, "add");
         assert.equal(await isolated.locator("#userQuestionList article").count(), 0);
         assert.match(await isolated.locator("#addUnitLabel").innerText(), /U1/);
         await isolated.locator("#newQuestion").fill("U1 custom question");
@@ -212,14 +283,14 @@ server.listen(0, "127.0.0.1", async () => {
         await isolated.locator("#saveQuestionBtn").click();
         assert.equal(await isolated.locator("#userQuestionList article").count(), 1);
         assert.equal(await isolated.evaluate(() => localStorage.getItem("algorithm_question_bank_user_questions_v1")), legacyBefore);
-        await isolated.locator('#sidebarUnitList [data-unit="u2"]').click();
+        await openUnit(isolated, "u2");
         await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
-        await isolated.locator('[data-panel="add"]').click();
+        await openPanel(isolated, "add");
         assert.match(await isolated.locator("#userQuestionList").innerText(), /Legacy content/);
         assert.doesNotMatch(await isolated.locator("#userQuestionList").innerText(), /U1 custom/);
-        await isolated.locator('#sidebarUnitList [data-unit="u1"]').click();
+        await openUnit(isolated, "u1");
         await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 64"));
-        await isolated.locator('[data-panel="add"]').click();
+        await openPanel(isolated, "add");
         assert.match(await isolated.locator("#userQuestionList").innerText(), /U1 custom/);
         await isolated.locator("[data-delete-question]").click();
         assert.equal(await isolated.evaluate(() => localStorage.getItem("algorithm_question_bank_user_questions_v1")), legacyBefore);
@@ -231,10 +302,10 @@ server.listen(0, "127.0.0.1", async () => {
             await slowResponse;
             await route.fulfill({contentType: "application/json", body: JSON.stringify(fixture)});
         });
-        await isolated.locator('#sidebarUnitList [data-unit="u2"]').click();
+        await openUnit(isolated, "u2");
         await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
-        await isolated.locator('#sidebarUnitList [data-unit="u1"]').click();
-        await isolated.locator('#sidebarUnitList [data-unit="u3"]').click();
+        await openUnit(isolated, "u1");
+        await openUnit(isolated, "u3");
         await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("1 / 1"));
         releaseSlow();
         await isolated.waitForTimeout(150);

@@ -2,6 +2,9 @@ import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "
 import { loadUserQuestions, initCustomQuestions } from "./custom-questions.js";
 import { initNavigation } from "./navigation.js";
 import { SUBJECTS, getUnit } from "./units.js";
+import { initMusic } from "./music.js";
+
+const { close: closeMusic } = initMusic();
 
 const QUESTIONS = [];
 let currentSubject = null;
@@ -166,7 +169,6 @@ function renderUnitChoices() {
             type="button" ${unit.dataUrl ? "" : "disabled"} ${active ? 'aria-current="true"' : ""}>
             ${escapeHtml(unit.name)}<span class="unit-status">${unit.dataUrl ? (active ? "目前單元" : "進入題庫") : "尚未開放"}</span></button>`;
     });
-    document.getElementById("sidebarUnitList").innerHTML = buttons.join("");
     document.getElementById("unitGrid").innerHTML = currentSubject.units.map((unit, i) =>
         `<div class="form-card ${unit.dataUrl ? "" : "unit-coming"}">${buttons[i]}</div>`).join("");
 }
@@ -211,6 +213,7 @@ function leaveSubject() {
     document.getElementById("sidebar").hidden = true;
     document.getElementById("mobileMenuBtn").hidden = true;
     document.getElementById("subjectHome").hidden = false;
+    document.body.classList.add("home-mode");
     document.title = "學習題庫";
     window.scrollTo({ top: 0, behavior: "instant" });
     updateBackToTop();
@@ -226,6 +229,8 @@ customQuestions = initCustomQuestions({
 document.getElementById("algorithmSubjectBtn").addEventListener("click", () => {
     currentSubject = SUBJECTS.find(subject => subject.id === "algorithm" && subject.available);
     if (!currentSubject) return;
+    closeMusic(false);
+    document.body.classList.remove("home-mode");
     document.getElementById("subjectHome").hidden = true;
     document.getElementById("studyShell").hidden = false;
     document.getElementById("sidebar").hidden = false;
