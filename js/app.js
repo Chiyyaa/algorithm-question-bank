@@ -5,6 +5,36 @@ import { SUBJECTS, getUnit } from "./units.js";
 import { initMusic } from "./music.js";
 
 const { close: closeMusic } = initMusic();
+const clearHomeSparkles = initHomeSparkles();
+
+function initHomeSparkles() {
+    const home = document.getElementById("subjectHome");
+    const layer = document.getElementById("homeSparkles");
+    const enabled = matchMedia("(hover: hover) and (pointer: fine)");
+    const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+    let lastSparkle = 0;
+    const clear = () => layer.replaceChildren();
+    home.addEventListener("pointermove", event => {
+        if (home.hidden || event.pointerType !== "mouse" || !enabled.matches || reduced.matches) return;
+        const now = performance.now();
+        if (now - lastSparkle < 45) return;
+        lastSparkle = now;
+        if (layer.childElementCount >= 18) layer.firstElementChild.remove();
+        const sparkle = document.createElement("span");
+        sparkle.className = "pointer-sparkle";
+        sparkle.textContent = "✦";
+        sparkle.style.left = event.clientX + "px";
+        sparkle.style.top = event.clientY + "px";
+        sparkle.style.fontSize = (8 + Math.random() * 7) + "px";
+        layer.append(sparkle);
+        sparkle.addEventListener("animationend", () => sparkle.remove(), { once: true });
+        setTimeout(() => sparkle.remove(), 1000);
+    });
+    home.addEventListener("pointerleave", clear);
+    enabled.addEventListener("change", clear);
+    reduced.addEventListener("change", clear);
+    return clear;
+}
 
 const QUESTIONS = [];
 let currentSubject = null;
@@ -230,6 +260,7 @@ document.getElementById("algorithmSubjectBtn").addEventListener("click", () => {
     currentSubject = SUBJECTS.find(subject => subject.id === "algorithm" && subject.available);
     if (!currentSubject) return;
     closeMusic(false);
+    clearHomeSparkles();
     document.body.classList.remove("home-mode");
     document.getElementById("subjectHome").hidden = true;
     document.getElementById("studyShell").hidden = false;
@@ -281,4 +312,3 @@ async function loadQuestionBank() {
         if (version === requestVersion) loading = false;
     }
 }
-

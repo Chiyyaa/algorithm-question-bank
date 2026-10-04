@@ -69,20 +69,28 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await page.locator("#subjectHome .subtitle").innerText(), "既然無法修仙 不如來魔修");
         assert.equal(await page.locator("#bgMusic").getAttribute("src"), null);
         assert.equal(await page.locator("#bgMusic").getAttribute("controls"), null);
-        assert.equal(await page.locator("#musicPanel").count(), 0);
+        assert.equal(await page.locator("#musicPanel").isVisible(), false);
         assert.equal(await page.locator("#musicToggleBtn").isVisible(), true);
         await page.emulateMedia({ reducedMotion: "no-preference" });
         assert.equal(await page.locator(".twinkle-star").first().evaluate(el => getComputedStyle(el).animationName), "star-shimmer");
         await page.locator("#musicToggleBtn").click();
+        assert.equal(await page.locator("#bgMusic").getAttribute("src"), null);
+        const parsed = await page.evaluate(async () => {
+            const { parseTrackName } = await import("./js/music.js");
+            return ["WINTER-Speed of Summer.mp3", "BLUE (WINTER Solo).mp3", "Artist — Song.MP3", "Only title.mp3"].map(parseTrackName);
+        });
+        assert.deepEqual(parsed, [{title:"Speed of Summer",artist:"WINTER"},{title:"BLUE",artist:"WINTER"},{title:"Song",artist:"Artist"},{title:"Only title",artist:""}]);
+        record("Filename recognition and panel opens without autoplay");
+        await page.locator("#musicPlayBtn").click();
         await page.waitForFunction(() => {
             const audio = document.querySelector("#bgMusic");
             return !audio.paused && audio.currentTime > .15;
         });
         assert.match(await page.locator("#bgMusic").getAttribute("src"), /music\/blue\.mp3$/);
-        assert.equal(await page.locator("#musicToggleBtn").getAttribute("aria-pressed"), "true");
+        assert.equal(await page.locator("#musicToggleBtn").getAttribute("data-state"), "playing");
         assert.equal(await page.locator(".vinyl-record").evaluate(el => getComputedStyle(el).animationPlayState), "running");
         assert.equal(await page.locator(".vinyl-record").evaluate(el => getComputedStyle(el).animationName), "record-spin");
-        await page.locator("#musicToggleBtn").click();
+        await page.locator("#musicPlayBtn").click();
         await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
         const pausedTime = await page.locator("#bgMusic").evaluate(el => el.currentTime);
         const pausedAngle = await page.locator(".vinyl-record").evaluate(el => getComputedStyle(el).transform);
@@ -90,19 +98,43 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await page.locator("#bgMusic").evaluate(el => el.currentTime), pausedTime);
         assert.equal(await page.locator(".vinyl-record").evaluate(el => getComputedStyle(el).transform), pausedAngle);
         assert.equal(await page.locator(".vinyl-record").evaluate(el => getComputedStyle(el).animationPlayState), "paused");
-        await page.locator("#musicToggleBtn").click();
+        await page.locator("#musicPlayBtn").click();
         await page.waitForFunction(time => document.querySelector("#bgMusic").currentTime > time + .1, pausedTime);
         await page.locator("#bgMusic").evaluate(el => { el.currentTime = el.duration - .15; });
         await page.waitForFunction(() => {
             const audio = document.querySelector("#bgMusic");
             return audio.src.endsWith("/music/speed-of-summer.mp3") && !audio.paused && audio.currentTime > .1;
         });
-        assert.match(await page.locator("#musicToggleBtn").getAttribute("aria-label"), /Speed of Summer/);
+        assert.equal(await page.locator("#musicTitle").innerText(), "Speed of Summer");
         await page.locator("#bgMusic").evaluate(el => { el.currentTime = el.duration - .15; });
         await page.waitForFunction(() => {
             const audio = document.querySelector("#bgMusic");
             return audio.src.endsWith("/music/blue.mp3") && !audio.paused && audio.currentTime > .1;
         });
+        await page.locator("#musicToggleBtn").click();
+        assert.equal(await page.locator("#musicPanel").isVisible(), false);
+        assert.equal(await page.locator("#bgMusic").evaluate(el => el.paused), false);
+        await page.locator("#musicToggleBtn").click();
+        await page.locator("#musicVolume").focus();
+        await page.keyboard.press("Home");
+        await page.keyboard.press("ArrowRight");
+        assert.equal(await page.locator("#bgMusic").evaluate(el => el.volume), .01);
+        await page.locator("#musicSeek").focus();
+        await page.keyboard.press("End");
+        await page.keyboard.press("Home");
+        await page.waitForFunction(() => document.querySelector("#bgMusic").currentTime < 2);
+        await page.locator("#musicNextBtn").click();
+        await page.waitForFunction(() => document.querySelector("#musicTitle").textContent === "Speed of Summer" && !document.querySelector("#bgMusic").paused);
+        await page.locator('[data-track="0"]').click();
+        await page.waitForFunction(() => document.querySelector("#musicTitle").textContent === "BLUE" && !document.querySelector("#bgMusic").paused);
+        assert.equal(await page.locator('[data-track="0"]').getAttribute("aria-current"), "true");
+        await page.screenshot({path: path.join(root, "..", "music-panel-desktop.png")});
+        for (let i = 0; i < 8; i++) { await page.mouse.move(100+i*30, 100); await page.waitForTimeout(50); }
+        assert.ok(await page.locator(".pointer-sparkle").count() > 0);
+        assert.ok(await page.locator(".pointer-sparkle").count() <= 18);
+        await page.waitForTimeout(1100);
+        assert.equal(await page.locator(".pointer-sparkle").count(), 0);
+        record("Panel collapse keeps playback; volume, seek, next, playlist and bounded fading sparkles");
         await page.emulateMedia({ reducedMotion: "reduce" });
         assert.equal(await page.locator(".twinkle-star").first().evaluate(el => getComputedStyle(el).animationName), "none");
         assert.equal(await page.locator(".vinyl-record").evaluate(el => getComputedStyle(el).animationName), "none");
@@ -205,10 +237,11 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
         await phone.screenshot({ path: path.join(root, "..", "subject-home-mobile.png") });
         await phone.locator("#musicToggleBtn").click();
+        await phone.locator("#musicPlayBtn").click();
         await phone.waitForFunction(() => !document.querySelector("#bgMusic").paused && document.querySelector("#bgMusic").currentTime > .1);
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
         await phone.screenshot({ path: path.join(root, "..", "record-playing-mobile.png") });
-        await phone.locator("#musicToggleBtn").click();
+        await phone.locator("#musicPlayBtn").click();
         assert.equal(await phone.locator("#bgMusic").evaluate(el => el.paused), true);
         await phone.locator("#algorithmSubjectBtn").click();
         await phone.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
@@ -271,9 +304,10 @@ server.listen(0, "127.0.0.1", async () => {
         await phone.locator("#switchSubjectBtn").click();
         await phone.setViewportSize({ width: 320, height: 568 });
         await phone.locator("#musicToggleBtn").click();
+        await phone.locator("#musicPlayBtn").click();
         await phone.waitForFunction(() => !document.querySelector("#bgMusic").paused && document.querySelector("#bgMusic").currentTime > .1);
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
-        await phone.locator("#musicToggleBtn").click();
+        await phone.locator("#musicPlayBtn").click();
         assert.equal(await phone.locator("#bgMusic").evaluate(el => el.paused), true);
         record("Sidebar scrolls without a scrollbar; record control fits a 320px phone");
 
@@ -282,13 +316,14 @@ server.listen(0, "127.0.0.1", async () => {
         await musicFailure.route("**/music/blue.mp3", route => route.fulfill({ status: 503, body: "Unavailable" }));
         await musicFailure.goto(url);
         await musicFailure.locator("#musicToggleBtn").click();
+        await musicFailure.locator("#musicPlayBtn").click();
         await musicFailure.waitForFunction(() => document.querySelector("#musicStatus").textContent.includes("失敗"));
-        assert.equal(await musicFailure.locator("#musicToggleBtn").getAttribute("aria-pressed"), "false");
+        assert.equal(await musicFailure.locator("#musicToggleBtn").getAttribute("data-state"), "paused");
         assert.equal(await musicFailure.locator("#musicToggleBtn").evaluate(el => el.classList.contains("is-playing")), false);
         await musicFailure.unroute("**/music/blue.mp3");
-        await musicFailure.locator("#musicToggleBtn").click();
+        await musicFailure.locator("#musicPlayBtn").click();
         await musicFailure.waitForFunction(() => !document.querySelector("#bgMusic").paused && document.querySelector("#bgMusic").currentTime > .1);
-        await musicFailure.locator("#musicToggleBtn").click();
+        await musicFailure.locator("#musicPlayBtn").click();
         assert.equal(await musicFailure.locator("#bgMusic").evaluate(el => el.paused), true);
         record("Audio request failure stops the record and recovers on the next click");
 
@@ -370,4 +405,3 @@ server.listen(0, "127.0.0.1", async () => {
         server.close();
     }
 });
-
