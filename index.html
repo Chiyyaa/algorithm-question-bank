@@ -30,7 +30,7 @@
             </g>
             <use href="#chromeFlower" x="1200" y="160" width="115" height="115" transform="rotate(15 1250 210)"/>
             <use href="#chromeFlower" x="80" y="660" width="82" height="82"/>
-            <g opacity=".95"><use href="#homeStar" x="120" y="220" width="52" height="52"/><use href="#homeStar" x="330" y="130" width="24" height="24"/><use href="#homeStar" x="1110" y="95" width="44" height="44"/><use href="#homeStar" x="1270" y="540" width="56" height="56"/><use href="#homeStar" x="185" y="585" width="30" height="30"/><use href="#homeStar" x="470" y="810" width="48" height="48"/><use href="#homeStar" x="950" y="740" width="30" height="30"/></g>
+            <g opacity=".95"><use class="twinkle-star" href="#homeStar" x="120" y="220" width="52" height="52"/><use class="twinkle-star" href="#homeStar" x="330" y="130" width="24" height="24"/><use class="twinkle-star" href="#homeStar" x="1110" y="95" width="44" height="44"/><use class="twinkle-star" href="#homeStar" x="1270" y="540" width="56" height="56"/><use class="twinkle-star" href="#homeStar" x="185" y="585" width="30" height="30"/><use class="twinkle-star" href="#homeStar" x="470" y="810" width="48" height="48"/><use class="twinkle-star" href="#homeStar" x="950" y="740" width="30" height="30"/></g>
             <g fill="url(#pearlSilver)"><circle cx="220" cy="150" r="7"/><circle cx="1280" cy="380" r="10"/><circle cx="1180" cy="710" r="6"/><circle cx="300" cy="740" r="9"/></g>
         </svg>
     </div>
@@ -42,15 +42,12 @@
     </div>
     <noscript><p class="missing">請啟用 JavaScript 才能選擇科目與使用題庫。</p></noscript>
     </div>
-    <button id="musicToggleBtn" class="music-toggle" type="button" aria-label="開啟音樂播放器" aria-controls="musicPanel" aria-expanded="false" title="播放音樂">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13M9 8l11-2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="6" cy="18" rx="3" ry="2.5" fill="currentColor"/><ellipse cx="17" cy="16" rx="3" ry="2.5" fill="currentColor"/></svg>
+    <button id="musicToggleBtn" class="music-toggle" type="button" aria-label="播放 BLUE (WINTER Solo)" aria-pressed="false" aria-controls="bgMusic" title="播放 BLUE (WINTER Solo)">
+        <span class="vinyl-record" aria-hidden="true"><span class="vinyl-label">♫</span></span>
+        <span class="music-action" aria-hidden="true">▶</span>
     </button>
-    <section id="musicPanel" class="music-panel" aria-labelledby="musicHeading" hidden>
-        <div class="music-panel-header"><h2 id="musicHeading">練習前，先聽首歌</h2><button id="musicCloseBtn" type="button" aria-label="關閉音樂播放器">✕</button></div>
-        <div id="musicPlayerHost"></div>
-        <p class="music-help">若未開始播放，請點播放器中的播放鍵。</p>
-        <a href="https://www.youtube.com/watch?v=xKhBGvx4W98" target="_blank" rel="noopener noreferrer">在 YouTube 開啟 ↗</a>
-    </section>
+    <audio id="bgMusic" preload="none"></audio>
+    <span id="musicStatus" class="sr-only" role="status" aria-live="polite"></span>
 </section>
 <button hidden id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="展開選單">☰</button>
 <button id="sidebarBackdrop" class="sidebar-backdrop" type="button" aria-label="關閉選單" tabindex="-1" hidden></button>

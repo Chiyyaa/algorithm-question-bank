@@ -7,7 +7,7 @@
 - js/app.js：題庫載入、搜尋、篩選、分頁與答案切換。
 - js/navigation.js：側欄、單元切換與粉色置頂按鈕。
 - js/custom-questions.js：自行新增／刪除題目與 localStorage。
-- js/music.js：首頁圓形音樂按鈕與按需載入的 YouTube 播放器。
+- js/music.js：首頁唱片播放按鈕、兩首 MP3 的順序播放與暫停控制。
 - js/units.js：科目與單元設定，每個開放單元指向自己的題庫檔案。
 - js/utils.js：共用文字處理與題型名稱。
 - data/questions.json：演算法 U2 的 60 題；後續單元使用各自的 JSON，透過 js/units.js 設定載入。
@@ -56,6 +56,10 @@ localStorage 名稱仍為 algorithm_question_bank_user_questions_v1；在原網�
 
 ## 首頁與音樂
 
-首頁採冰藍、淡粉與銀白星光風格，裝飾為頁面內的 SVG 與 CSS。側欄只保留「選擇單元」入口；隱藏捲動條但仍可捲動。
+首頁採冰藍、淡粉與銀白星光風格，SVG 星芒以不同節奏緩慢明暗變化。側欄只保留「選擇單元」入口；隱藏捲動條但仍可捲動。使用者啟用減少動態效果時，星光與唱片動畫停用。
 
-右下角圓形音樂按鈕僅在首頁顯示，點擊後才建立 YouTube 官方嵌入播放器（影片 xKhBGvx4W98）。影片保留可見畫面、YouTube 控制與至少 200×200 的尺寸。瀏覽器可能要求再點一次播放器中的播放鍵。按圓形按鈕、關閉鍵或 Escape 會移除播放器並停止播放，進入題庫也會關閉。若影片無法嵌入，可透過播放器下方連結在 YouTube 開啟。
+音樂檔案由使用者提供：
+- music/blue.mp3：BLUE (WINTER Solo)
+- music/speed-of-summer.mp3：WINTER - Speed of Summer
+
+右下角唱片以原生 audio 播放，不顯示原生播放器。首次點擊後才載入音訊，先播 BLUE，再接 Speed of Summer，兩首依序循環；預設音量 50%。再點一次暫停，保留播放位置，再點即可續播。唱片僅在音樂實際播放時旋轉；載入中、暫停或失敗時停止。進入題庫會暫停；返回首頁後可手動續播。重新整理後回到 BLUE，並等待使用者點擊。歌曲放在同一網站來源，不使用 YouTube、外部音訊直連或自動播放。

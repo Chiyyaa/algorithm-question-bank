@@ -615,26 +615,47 @@ body.home-mode {
 
 .music-toggle {
     position: fixed; right: max(24px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom));
-    z-index: 70; display: grid; place-items: center; width: 62px; height: 62px; padding: 17px;
+    z-index: 70; width: 68px; height: 68px; padding: 4px;
     border-radius: 50%; border: 1px solid #fff; color: #3e5a80;
-    background: linear-gradient(145deg, #fff 0%, #d8e4f5 48%, #f1dfe9 100%);
+    background: linear-gradient(145deg, #fff, #d8e4f5, #f1dfe9);
     box-shadow: inset 0 1px 4px #fff, 0 6px 22px rgba(72,91,127,.22);
 }
 .music-toggle:hover { background: linear-gradient(145deg, #fff, #e8dcf4); }
-.music-toggle svg { width: 26px; height: 26px; }
-.music-toggle[aria-expanded="true"] { outline: 3px solid rgba(255,255,255,.6); outline-offset: 4px; }
-.music-panel {
-    position: fixed; right: max(24px, env(safe-area-inset-right)); bottom: max(104px, calc(env(safe-area-inset-bottom) + 80px));
-    z-index: 70; width: min(360px, calc(100vw - 32px)); max-height: calc(100dvh - 128px); overflow-y: auto;
-    padding: 16px; border-radius: 20px; border: 1px solid white; background: #eff3fb;
-    box-shadow: 0 12px 40px rgba(48,65,98,.25);
+.vinyl-record {
+    display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%;
+    background: repeating-radial-gradient(circle, #243147 0 1px, #40506a 2px, #243147 3px 4px);
+    border: 1px solid #60738f;
+    animation: record-spin 6s linear infinite;
+    animation-play-state: paused;
 }
-.music-panel-header { display: flex; align-items: center; gap: 12px; justify-content: space-between; margin-bottom: 12px; }
-.music-panel-header h2 { font-size: 15px; margin: 0; font-weight: 700; color: #3c5474; }
-.music-panel-header button { min-width: 44px; min-height: 44px; padding: 8px; border-radius: 50%; background: rgba(255,255,255,.7); color: #3c5474; }
-#musicPlayerHost iframe { display: block; width: 100%; height: 220px; border: 0; background: #111827; }
-.music-help { color: #52637c; font-size: 12px; margin: 12px 0 6px; }
-.music-panel a { color: #3e5a80; font-size: 13px; text-underline-offset: 3px; }
+.vinyl-record::before {
+    content: ""; position: absolute; inset: 1px; border-radius: 50%;
+    background: conic-gradient(from 15deg, transparent 0 25%, rgba(231,241,255,.25) 30%, transparent 40% 75%, rgba(231,241,255,.22) 80%, transparent 90%);
+}
+.vinyl-label {
+    display: grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; z-index: 1;
+    color: #526787; font-size: 16px;
+    background: linear-gradient(145deg, #f7fbff, #c0d3ef, #efd4e7);
+    border: 1px solid #fff;
+}
+.music-action {
+    position: absolute; right: -2px; bottom: -2px; display: grid; place-items: center;
+    width: 23px; height: 23px; border-radius: 50%; border: 1px solid #fff;
+    background: #edf3fc; font-size: 10px; color: #405878;
+}
+.music-toggle.is-playing .vinyl-record { animation-play-state: running; }
+.music-toggle.is-playing { box-shadow: 0 0 0 4px rgba(255,255,255,.3), 0 6px 22px rgba(72,91,127,.22); }
+.music-toggle[data-state="loading"] .music-action { opacity: .6; }
+#bgMusic { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@keyframes record-spin { to { transform: rotate(360deg); } }
+.twinkle-star { transform-box: fill-box; transform-origin: center; animation: star-shimmer 5.6s ease-in-out infinite; }
+.twinkle-star:nth-child(2n) { animation-delay: -2.2s; animation-duration: 6.8s; }
+.twinkle-star:nth-child(3n) { animation-delay: -4.1s; animation-duration: 7.4s; }
+@keyframes star-shimmer {
+    0%, 100% { opacity: .25; transform: scale(.82); }
+    50% { opacity: 1; transform: scale(1.12); }
+}
 #switchSubjectBtn { margin-top: 18px; }
 @media (max-width: 600px) {
     .home-content { width: min(430px, calc(100% - 36px)); padding-top: 50px; padding-bottom: 115px; }
@@ -647,10 +668,10 @@ body.home-mode {
     .subject-icon { width: 54px; height: 54px; margin-bottom: 14px; }
     .subject-title { font-size: 24px; }
     .subject-description { margin-bottom: 18px; }
-    .music-toggle { width: 56px; height: 56px; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); padding: 14px; }
-    .music-panel { right: 16px; bottom: max(90px, calc(env(safe-area-inset-bottom) + 72px)); }
+    .music-toggle { width: 60px; height: 60px; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); padding: 4px; }
 }
 @media (prefers-reduced-motion: reduce) {
     .subject-card { transition: none; }
+    .twinkle-star, .vinyl-record { animation: none; }
     .subject-card:hover:not(:disabled) { transform: none; }
 }

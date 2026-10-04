@@ -3,7 +3,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const assert = require("node:assert/strict");
 const root = path.resolve(__dirname, "..");
-const types = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".json": "application/json; charset=utf-8" };
+const types = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".json": "application/json; charset=utf-8", ".mp3": "audio/mpeg" };
 const server = http.createServer((req, res) => {
     let route;
     try { route = decodeURIComponent(new URL(req.url, "http://localhost").pathname); }
@@ -13,8 +13,27 @@ const server = http.createServer((req, res) => {
     if (!filename.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
     fs.readFile(filename, (error, data) => {
         if (error) { res.writeHead(404).end("Not found"); return; }
-        res.writeHead(200, { "Content-Type": types[path.extname(filename)] || "application/octet-stream", "Cache-Control": "no-store" });
-        res.end(data);
+        const headers = {
+            "Content-Type": types[path.extname(filename)] || "application/octet-stream",
+            "Cache-Control": "no-store", "Accept-Ranges": "bytes"
+        };
+        const range = /^bytes=(\d+)-(\d*)$/.exec(req.headers.range || "");
+        if (range) {
+            const start = Number(range[1]);
+            const end = range[2] ? Math.min(Number(range[2]), data.length - 1) : data.length - 1;
+            if (start > end || start >= data.length) {
+                res.writeHead(416, { "Content-Range": "bytes */" + data.length }).end();
+                return;
+            }
+            headers["Content-Range"] = "bytes " + start + "-" + end + "/" + data.length;
+            headers["Content-Length"] = end - start + 1;
+            res.writeHead(206, headers);
+            res.end(req.method === "HEAD" ? undefined : data.subarray(start, end + 1));
+            return;
+        }
+        headers["Content-Length"] = data.length;
+        res.writeHead(200, headers);
+        res.end(req.method === "HEAD" ? undefined : data);
     });
 });
 server.listen(0, "127.0.0.1", async () => {
@@ -41,9 +60,6 @@ server.listen(0, "127.0.0.1", async () => {
         const channel = !fs.existsSync(chromium.executablePath()) && fs.existsSync(edgePath) ? "msedge" : undefined;
         browser = await chromium.launch({ headless: true, channel });
         const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, reducedMotion: "reduce" });
-        // Stub third-party media for deterministic UI tests; do not claim audio playback verification.
-        await context.route("https://www.youtube.com/embed/**", route =>
-            route.fulfill({ contentType: "text/html", body: "<!doctype html><title>Test player</title><p>YouTube player fixture</p>" }));
         const page = await context.newPage();
         page.on("pageerror", error => errors.push(error.message));
         await page.goto(url);
@@ -51,32 +67,50 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await page.locator("#osSubjectBtn").isDisabled(), true);
         assert.equal(await page.locator("#mobileMenuBtn").isVisible(), false);
         assert.equal(await page.locator("#subjectHome .subtitle").innerText(), "既然無法修仙 不如來魔修");
-        assert.equal(await page.locator("#musicPlayerHost iframe").count(), 0);
+        assert.equal(await page.locator("#bgMusic").getAttribute("src"), null);
+        assert.equal(await page.locator("#bgMusic").getAttribute("controls"), null);
+        assert.equal(await page.locator("#musicPanel").count(), 0);
         assert.equal(await page.locator("#musicToggleBtn").isVisible(), true);
+        await page.emulateMedia({ reducedMotion: "no-preference" });
+        assert.equal(await page.locator(".twinkle-star").first().evaluate(el => getComputedStyle(el).animationName), "star-shimmer");
         await page.locator("#musicToggleBtn").click();
-        assert.equal(await page.locator("#musicPanel").isVisible(), true);
-        const playerSrc = new URL(await page.locator("#musicPlayerHost iframe").getAttribute("src"));
-        assert.equal(playerSrc.hostname, "www.youtube.com");
-        assert.equal(playerSrc.pathname, "/embed/xKhBGvx4W98");
-        assert.equal(playerSrc.searchParams.get("autoplay"), "1");
-        const size = await page.locator("#musicPlayerHost iframe").boundingBox();
-        assert.ok(size.width >= 200 && size.height >= 200);
-        assert.equal(await page.locator("#musicToggleBtn").getAttribute("aria-expanded"), "true");
-        await page.locator("#musicCloseBtn").click();
-        assert.equal(await page.locator("#musicPlayerHost iframe").count(), 0);
-        assert.equal(await page.locator("#musicToggleBtn").evaluate(el => document.activeElement === el), true);
+        await page.waitForFunction(() => {
+            const audio = document.querySelector("#bgMusic");
+            return !audio.paused && audio.currentTime > .15;
+        });
+        assert.match(await page.locator("#bgMusic").getAttribute("src"), /music\/blue\.mp3$/);
+        assert.equal(await page.locator("#musicToggleBtn").getAttribute("aria-pressed"), "true");
+        assert.equal(await page.locator(".vinyl-record").evaluate(el => getComputedStyle(el).animationPlayState), "running");
+        assert.equal(await page.locator(".vinyl-record").evaluate(el => getComputedStyle(el).animationName), "record-spin");
         await page.locator("#musicToggleBtn").click();
-        await page.keyboard.press("Escape");
-        assert.equal(await page.locator("#musicPanel").isVisible(), false);
+        await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+        const pausedTime = await page.locator("#bgMusic").evaluate(el => el.currentTime);
+        const pausedAngle = await page.locator(".vinyl-record").evaluate(el => getComputedStyle(el).transform);
+        await page.waitForTimeout(150);
+        assert.equal(await page.locator("#bgMusic").evaluate(el => el.currentTime), pausedTime);
+        assert.equal(await page.locator(".vinyl-record").evaluate(el => getComputedStyle(el).transform), pausedAngle);
+        assert.equal(await page.locator(".vinyl-record").evaluate(el => getComputedStyle(el).animationPlayState), "paused");
         await page.locator("#musicToggleBtn").click();
-        await page.locator("#musicToggleBtn").click();
-        assert.equal(await page.locator("#musicPlayerHost iframe").count(), 0);
-        await page.locator("#musicToggleBtn").click();
+        await page.waitForFunction(time => document.querySelector("#bgMusic").currentTime > time + .1, pausedTime);
+        await page.locator("#bgMusic").evaluate(el => { el.currentTime = el.duration - .15; });
+        await page.waitForFunction(() => {
+            const audio = document.querySelector("#bgMusic");
+            return audio.src.endsWith("/music/speed-of-summer.mp3") && !audio.paused && audio.currentTime > .1;
+        });
+        assert.match(await page.locator("#musicToggleBtn").getAttribute("aria-label"), /Speed of Summer/);
+        await page.locator("#bgMusic").evaluate(el => { el.currentTime = el.duration - .15; });
+        await page.waitForFunction(() => {
+            const audio = document.querySelector("#bgMusic");
+            return audio.src.endsWith("/music/blue.mp3") && !audio.paused && audio.currentTime > .1;
+        });
+        await page.emulateMedia({ reducedMotion: "reduce" });
+        assert.equal(await page.locator(".twinkle-star").first().evaluate(el => getComputedStyle(el).animationName), "none");
+        assert.equal(await page.locator(".vinyl-record").evaluate(el => getComputedStyle(el).animationName), "none");
         await page.locator("#algorithmSubjectBtn").click();
-        assert.equal(await page.locator("#musicPlayerHost iframe").count(), 0);
+        assert.equal(await page.locator("#bgMusic").evaluate(el => el.paused), true);
         assert.equal(await page.locator("#musicToggleBtn").isVisible(), false);
         assert.equal(await page.locator("#sidebarUnitList").count(), 0);
-        record("Lazy music embed, configured video, close/Escape/toggle/entry cleanup and home copy");
+        record("Real MP3 playback: BLUE first, pause/resume, sequential loop, record animation, reduced motion and entry pause");
         record("Subject entry, unavailable OS, algorithm opens U2");
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
         assert.equal(await page.locator("#questionList article").count(), 25);
@@ -165,19 +199,17 @@ server.listen(0, "127.0.0.1", async () => {
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
         record("Existing storage key and legacy custom questions survive refactor");
         const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, reducedMotion: "reduce" });
-        await mobile.route("https://www.youtube.com/embed/**", route =>
-            route.fulfill({ contentType: "text/html", body: "<!doctype html><title>Test player</title>" }));
         const phone = await mobile.newPage();
         phone.on("pageerror", e => errors.push(e.message));
         await phone.goto(url);
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
         await phone.screenshot({ path: path.join(root, "..", "subject-home-mobile.png") });
         await phone.locator("#musicToggleBtn").click();
+        await phone.waitForFunction(() => !document.querySelector("#bgMusic").paused && document.querySelector("#bgMusic").currentTime > .1);
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
-        const mobilePlayer = await phone.locator("#musicPlayerHost iframe").boundingBox();
-        assert.ok(mobilePlayer.width >= 200 && mobilePlayer.height >= 200);
-        await phone.screenshot({ path: path.join(root, "..", "music-panel-mobile.png") });
-        await phone.locator("#musicCloseBtn").click();
+        await phone.screenshot({ path: path.join(root, "..", "record-playing-mobile.png") });
+        await phone.locator("#musicToggleBtn").click();
+        assert.equal(await phone.locator("#bgMusic").evaluate(el => el.paused), true);
         await phone.locator("#algorithmSubjectBtn").click();
         await phone.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
@@ -239,11 +271,26 @@ server.listen(0, "127.0.0.1", async () => {
         await phone.locator("#switchSubjectBtn").click();
         await phone.setViewportSize({ width: 320, height: 568 });
         await phone.locator("#musicToggleBtn").click();
-        const narrowPlayer = await phone.locator("#musicPlayerHost iframe").boundingBox();
-        assert.ok(narrowPlayer.width >= 200 && narrowPlayer.height >= 200);
+        await phone.waitForFunction(() => !document.querySelector("#bgMusic").paused && document.querySelector("#bgMusic").currentTime > .1);
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
-        await phone.locator("#musicCloseBtn").click();
-        record("Sidebar scrolls without a scrollbar; music fits a 320px phone");
+        await phone.locator("#musicToggleBtn").click();
+        assert.equal(await phone.locator("#bgMusic").evaluate(el => el.paused), true);
+        record("Sidebar scrolls without a scrollbar; record control fits a 320px phone");
+
+        const musicFailure = await context.newPage();
+        musicFailure.on("pageerror", error => errors.push(error.message));
+        await musicFailure.route("**/music/blue.mp3", route => route.fulfill({ status: 503, body: "Unavailable" }));
+        await musicFailure.goto(url);
+        await musicFailure.locator("#musicToggleBtn").click();
+        await musicFailure.waitForFunction(() => document.querySelector("#musicStatus").textContent.includes("失敗"));
+        assert.equal(await musicFailure.locator("#musicToggleBtn").getAttribute("aria-pressed"), "false");
+        assert.equal(await musicFailure.locator("#musicToggleBtn").evaluate(el => el.classList.contains("is-playing")), false);
+        await musicFailure.unroute("**/music/blue.mp3");
+        await musicFailure.locator("#musicToggleBtn").click();
+        await musicFailure.waitForFunction(() => !document.querySelector("#bgMusic").paused && document.querySelector("#bgMusic").currentTime > .1);
+        await musicFailure.locator("#musicToggleBtn").click();
+        assert.equal(await musicFailure.locator("#bgMusic").evaluate(el => el.paused), true);
+        record("Audio request failure stops the record and recovers on the next click");
 
         // Test future units through intercepted responses; no invented questions are published.
         const isolated = await context.newPage();
