@@ -34,6 +34,11 @@ server.listen(0, "127.0.0.1", async () => {
         const page = await context.newPage();
         page.on("pageerror", error => errors.push(error.message));
         await page.goto(url);
+        assert.equal(await page.locator("#subjectHome").isVisible(), true);
+        assert.equal(await page.locator("#osSubjectBtn").isDisabled(), true);
+        assert.equal(await page.locator("#mobileMenuBtn").isVisible(), false);
+        await page.locator("#algorithmSubjectBtn").click();
+        record("Subject entry, unavailable OS, algorithm opens U2");
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
         assert.equal(await page.locator("#questionList article").count(), 25);
         assert.equal(await page.locator("#sidebar").evaluate(el => el.inert), true);
@@ -95,7 +100,7 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await page.locator("#sidebar").evaluate(el => el.inert), false);
         assert.equal(await page.locator(".sidebar-brand").getAttribute("href"), "https://canva.link/evygbbmrt3v2umy");
         await page.locator('[data-panel="units"]').click();
-        await page.locator("#openCurrentUnitBtn").click();
+        await page.locator('#unitGrid [data-unit="u2"]').click();
         assert.equal(await page.locator("#panel-bank").isVisible(), true);
         await page.locator('[data-panel="add"]').click();
         await page.locator("#newQuestion").fill("Regression test question");
@@ -104,6 +109,7 @@ server.listen(0, "127.0.0.1", async () => {
         await page.locator("#saveQuestionBtn").click();
         assert.equal(await page.locator("#userQuestionList article").count(), 1);
         await page.reload();
+        await page.locator("#algorithmSubjectBtn").click();
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
         await page.locator("#mobileMenuBtn").click();
         await page.locator('[data-panel="add"]').click();
@@ -116,19 +122,23 @@ server.listen(0, "127.0.0.1", async () => {
             { id: 9001, type: "fill_blank", title: "Legacy question", question: "Legacy content", correct_answer: "Legacy answer", options: [], user_created: true }
         ])));
         await page.reload();
+        await page.locator("#algorithmSubjectBtn").click();
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
         record("Existing storage key and legacy custom questions survive refactor");
         const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, reducedMotion: "reduce" });
         const phone = await mobile.newPage();
         phone.on("pageerror", e => errors.push(e.message));
         await phone.goto(url);
+        assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+        await phone.screenshot({ path: path.join(root, "..", "subject-home-mobile.png") });
+        await phone.locator("#algorithmSubjectBtn").click();
         await phone.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
         await phone.locator("#mobileMenuBtn").click();
         assert.equal(await phone.locator("#sidebarBackdrop").isVisible(), true);
         await phone.locator('[data-panel="units"]').click();
         assert.equal(await phone.locator("#sidebar").evaluate(el => el.inert), true);
-        await phone.locator("#openCurrentUnitBtn").click();
+        await phone.locator('#unitGrid [data-unit="u2"]').click();
         await phone.locator('[data-filter="disputed"]').click();
         await phone.locator(".answer-btn").click();
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
@@ -136,6 +146,7 @@ server.listen(0, "127.0.0.1", async () => {
         const failure = await context.newPage();
         await failure.route("**/data/questions.json", route => route.fulfill({ status: 503, body: "Unavailable" }));
         await failure.goto(url);
+        await failure.locator("#algorithmSubjectBtn").click();
         await failure.locator("#retryLoadBtn").waitFor();
         await failure.unroute("**/data/questions.json");
         await failure.locator("#retryLoadBtn").click();
@@ -147,6 +158,89 @@ server.listen(0, "127.0.0.1", async () => {
         questionData.filter(q => q.answer_basis === "content_verified_2026_10_04").forEach(q => {
             q.correct_answer.split("\n").forEach(answer => assert.ok(q.options.includes(answer), "Answer mismatch #" + q.id));
         });
+        
+        await page.locator("#mobileMenuBtn").click();
+        await page.locator("#switchSubjectBtn").click();
+        assert.equal(await page.locator("#subjectHome").isVisible(), true);
+        assert.equal(await page.locator("#studyShell").isVisible(), false);
+        assert.equal(await page.locator("#backToTopBtn").isVisible(), false);
+        await page.screenshot({ path: path.join(root, "..", "subject-home-desktop.png") });
+        await page.locator("#algorithmSubjectBtn").click();
+        await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
+        await page.locator("#mobileMenuBtn").click();
+        assert.equal(await page.locator('#sidebarUnitList [data-unit="u1"]').isDisabled(), true);
+        assert.equal(await page.locator('#sidebarUnitList [data-unit="u3"]').isDisabled(), true);
+        assert.equal(await page.locator('#sidebarUnitList [data-unit="u2"]').getAttribute("aria-current"), "true");
+        record("Return to subjects; U2 selection and unavailable units");
+
+        // Test future units through intercepted responses; no invented questions are published.
+        const isolated = await context.newPage();
+        isolated.on("pageerror", e => errors.push(e.message));
+        const catalog = fs.readFileSync(path.join(root, "js/units.js"), "utf8")
+            .replace('{ id: "u1", name: "U1", dataUrl: null }', '{ id: "u1", name: "U1", dataUrl: "../data/test-u1.json" }')
+            .replace('{ id: "u3", name: "U3", dataUrl: null }', '{ id: "u3", name: "U3", dataUrl: "../data/test-u3.json" }');
+        await isolated.route("**/js/units.js", route => route.fulfill({ contentType: "text/javascript", body: catalog }));
+        const fixture = Array.from({length: 63}, (_, i) => ({
+            id: i + 1, type: "fill_blank", question: "U1 fixture " + (i + 1), correct_answer: "U1 answer", options: []
+        }));
+        await isolated.route("**/data/test-u1.json", route => route.fulfill({ contentType: "application/json", body: JSON.stringify(fixture) }));
+        await isolated.route("**/data/test-u3.json", route => route.fulfill({ contentType: "application/json", body: JSON.stringify([{...fixture[0], question: "U3 fixture"}]) }));
+        await isolated.goto(url);
+        await isolated.locator("#algorithmSubjectBtn").click();
+        await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
+        const legacyBefore = await isolated.evaluate(() => localStorage.getItem("algorithm_question_bank_user_questions_v1"));
+        await isolated.locator("#showAllBtn").click();
+        await isolated.locator("#nextPageBtn").click();
+        await isolated.locator("#searchInput").fill("Legacy");
+        await isolated.locator("#mobileMenuBtn").click();
+        await isolated.locator('#sidebarUnitList [data-unit="u1"]').click();
+        await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 63"));
+        assert.equal(await isolated.locator("#currentUnitLabel").innerText(), "演算法｜U1");
+        assert.equal(await isolated.locator("#searchInput").inputValue(), "");
+        assert.equal(await isolated.locator("#pageInfo").innerText(), "第 1 / 3 頁");
+        assert.equal(await isolated.locator("#questionList .answer.show").count(), 0);
+        await isolated.locator("#nextPageBtn").click();
+        await isolated.locator("#nextPageBtn").click();
+        assert.equal(await isolated.locator("#questionList article").count(), 13);
+        await isolated.locator("#searchInput").fill("Legacy");
+        assert.equal(await isolated.locator("#questionList article").count(), 0);
+        await isolated.locator('[data-panel="add"]').click();
+        assert.equal(await isolated.locator("#userQuestionList article").count(), 0);
+        assert.match(await isolated.locator("#addUnitLabel").innerText(), /U1/);
+        await isolated.locator("#newQuestion").fill("U1 custom question");
+        await isolated.locator("#newAnswer").fill("U1 custom answer");
+        await isolated.locator("#saveQuestionBtn").click();
+        assert.equal(await isolated.locator("#userQuestionList article").count(), 1);
+        assert.equal(await isolated.evaluate(() => localStorage.getItem("algorithm_question_bank_user_questions_v1")), legacyBefore);
+        await isolated.locator('#sidebarUnitList [data-unit="u2"]').click();
+        await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
+        await isolated.locator('[data-panel="add"]').click();
+        assert.match(await isolated.locator("#userQuestionList").innerText(), /Legacy content/);
+        assert.doesNotMatch(await isolated.locator("#userQuestionList").innerText(), /U1 custom/);
+        await isolated.locator('#sidebarUnitList [data-unit="u1"]').click();
+        await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 64"));
+        await isolated.locator('[data-panel="add"]').click();
+        assert.match(await isolated.locator("#userQuestionList").innerText(), /U1 custom/);
+        await isolated.locator("[data-delete-question]").click();
+        assert.equal(await isolated.evaluate(() => localStorage.getItem("algorithm_question_bank_user_questions_v1")), legacyBefore);
+        record("Independent 63/60-question units, pagination, answer reset and scoped custom storage");
+
+        let releaseSlow;
+        const slowResponse = new Promise(resolve => { releaseSlow = resolve; });
+        await isolated.route("**/data/test-u1.json", async route => {
+            await slowResponse;
+            await route.fulfill({contentType: "application/json", body: JSON.stringify(fixture)});
+        });
+        await isolated.locator('#sidebarUnitList [data-unit="u2"]').click();
+        await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
+        await isolated.locator('#sidebarUnitList [data-unit="u1"]').click();
+        await isolated.locator('#sidebarUnitList [data-unit="u3"]').click();
+        await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("1 / 1"));
+        releaseSlow();
+        await isolated.waitForTimeout(150);
+        assert.match(await isolated.locator("#questionList").innerText(), /U3 fixture/);
+        assert.equal(await isolated.locator("#currentUnitLabel").innerText(), "演算法｜U3");
+        record("Fast unit switching ignores stale responses");
         assert.deepEqual(errors, []);
         record("Unique IDs, verified option/answer mapping, and no browser exceptions");
         console.log(JSON.stringify({ passed: checks.length, checks }));

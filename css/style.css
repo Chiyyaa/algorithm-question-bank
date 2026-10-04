@@ -537,3 +537,33 @@
     .back-to-top[hidden] { display: none; }
     .toast { bottom: 88px; }
 
+
+/* 科目入口與獨立單元導覽 */
+[hidden] { display: none !important; }
+.subject-home { width: min(860px, calc(100% - 40px)); margin: 0 auto; padding: clamp(56px, 12vh, 120px) 0 64px; }
+.subject-home header { text-align: center; margin-bottom: 36px; }
+.home-eyebrow { color: var(--primary); font-weight: 700; margin: 0 0 12px; }
+.subject-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.subject-card { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: 32px; border-radius: 20px; box-shadow: 0 8px 26px rgba(0,0,0,.05); min-height: 250px; }
+.subject-card:hover:not(:disabled) { border-color: var(--primary); background: var(--primary-soft); }
+.subject-icon { font-size: 36px; margin-bottom: 18px; }
+.subject-title { font-size: 26px; font-weight: 800; }
+.subject-description { color: var(--muted); margin: 8px 0 24px; }
+.subject-status { color: var(--primary); font-weight: 700; margin-top: auto; }
+.subject-card.subject-coming { opacity: 1; background: #f0f2f6; border-style: dashed; }
+.subject-coming .subject-title, .subject-coming .subject-icon { opacity: .55; }
+.subject-coming .subject-status { color: var(--muted); }
+.unit-context { color: var(--primary); font-weight: 700; margin: 0 0 8px; }
+.sidebar-units { margin: 20px 0; }
+.sidebar-section-title { color: #9ca3af; font-size: 12px; margin: 0 14px 8px; }
+.unit-btn { width: 100%; text-align: left; }
+.sidebar-units .unit-btn { border: 0; background: transparent; color: #d1d5db; padding: 12px 14px; }
+.sidebar-units .unit-btn:hover:not(:disabled), .sidebar-units .unit-btn.active { background: #1f2937; color: #fff; }
+.sidebar-units .unit-btn.active { box-shadow: inset 3px 0 0 #60a5fa; }
+.unit-status { display: block; font-size: 12px; font-weight: 400; margin-top: 4px; }
+.unit-grid .unit-btn.active { border-color: var(--primary); background: var(--primary-soft); }
+@media (max-width: 600px) {
+    .subject-grid { grid-template-columns: 1fr; gap: 16px; }
+    .subject-card { min-height: 210px; padding: 24px; }
+    .subject-home { padding-top: 48px; }
+}

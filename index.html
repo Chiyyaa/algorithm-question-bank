@@ -3,26 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>演算法題庫搜尋系統</title>
+<title>學習題庫</title>
 <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<button id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="展開選單">☰</button>
+<section id="subjectHome" class="subject-home" aria-labelledby="subjectHeading">
+    <header><p class="home-eyebrow">學習題庫</p><h1 id="subjectHeading" tabindex="-1">今天要學習哪個科目？</h1><p class="subtitle">選擇科目，開始今天的練習。</p></header>
+    <div class="subject-grid">
+        <button id="algorithmSubjectBtn" class="subject-card" type="button"><span class="subject-icon" aria-hidden="true">📚</span><span class="subject-title">演算法</span><span class="subject-description">依單元練習與搜尋題目</span><span class="subject-status">進入題庫 →</span></button>
+        <button id="osSubjectBtn" class="subject-card subject-coming" type="button" disabled><span class="subject-icon" aria-hidden="true">💻</span><span class="subject-title">作業系統</span><span class="subject-description">更多單元題庫準備中</span><span class="subject-status">尚未開放</span></button>
+    </div>
+    <noscript><p class="missing">請啟用 JavaScript 才能選擇科目與使用題庫。</p></noscript>
+</section>
+<button hidden id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="展開選單">☰</button>
 <button id="sidebarBackdrop" class="sidebar-backdrop" type="button" aria-label="關閉選單" tabindex="-1" hidden></button>
-<aside id="sidebar" class="sidebar collapsed" inert>
+<aside hidden id="sidebar" class="sidebar collapsed" inert>
     <a class="sidebar-brand" href="https://canva.link/evygbbmrt3v2umy" target="_blank" rel="noopener noreferrer">📚 演算法題庫</a>
     <nav class="sidebar-nav">
         <button class="nav-btn active" data-panel="bank" type="button">🔎 題庫搜尋</button>
         <button class="nav-btn" data-panel="units" type="button">📖 選擇單元</button>
         <button class="nav-btn" data-panel="add" type="button">➕ 新增題庫</button>
     </nav>
+    <div class="sidebar-units"><p class="sidebar-section-title">演算法單元</p><div id="sidebarUnitList" class="sidebar-nav"></div></div>
+    <button id="switchSubjectBtn" class="nav-btn" type="button">↩ 切換科目</button>
     <div class="sidebar-note">自行新增的題目會儲存在目前瀏覽器中。</div>
 </aside>
-<div class="main-shell">
+<div id="studyShell" class="main-shell" hidden>
 <div class="container">
 <section id="panel-bank" class="panel active">
     <header>
-        <h1>演算法題庫搜尋系統</h1>
+        <p id="currentUnitLabel" class="unit-context">演算法｜U2</p>
+        <h1 id="bankHeading" tabindex="-1">演算法題庫搜尋系統</h1>
         <p class="subtitle">輸入關鍵字，即時搜尋題目、選項與答案。</p>
     </header>
 
@@ -58,9 +69,7 @@
     <main id="questionList"><div class="empty" role="status">題庫載入中……</div></main>
     <noscript><p class="missing">請啟用 JavaScript 才能使用題庫搜尋。</p></noscript>
 
-    <footer>
-        題庫共 60 題｜由目前已整理的演算法訓練紀錄匯出
-    </footer>
+    <footer id="bankFooter"></footer>
 
     </section>
 
@@ -69,26 +78,17 @@
             <h1>選擇單元</h1>
             <p class="subtitle">選擇想練習的題庫單元。</p>
         </header>
-        <div class="unit-grid">
-            <div class="form-card">
-                <h2>演算法題庫</h2>
-                <p class="help-text">目前已整理的演算法題目與你自行新增的題目。</p>
-                <button id="openCurrentUnitBtn" class="primary-btn" type="button">進入題庫</button>
-            </div>
-            <div class="form-card unit-coming">
-                <h2>其他章節</h2>
-                <p class="help-text">尚未開放，之後會在這裡加入新的章節題庫。</p>
-            </div>
-        </div>
+        <div id="unitGrid" class="unit-grid"></div>
     </section>
 
     <section id="panel-add" class="panel">
         <header>
             <h1>新增題庫</h1>
-            <p class="subtitle">自行建立題目，儲存後會立即加入題庫搜尋。</p>
+            <p class="subtitle">自行建立題目，儲存後會加入目前單元的題庫。</p>
         </header>
 
         <div class="form-card">
+            <p id="addUnitLabel" class="unit-context"></p>
             <div class="form-grid">
                 <div class="field">
                     <label for="newType">題型</label>

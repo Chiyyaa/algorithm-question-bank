@@ -1,5 +1,5 @@
-export function initNavigation() {
-document.querySelectorAll(".nav-btn").forEach(btn => {
+export function initNavigation({ onSelectUnit, onLeaveSubject }) {
+document.querySelectorAll(".nav-btn[data-panel]").forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
@@ -11,9 +11,21 @@ document.querySelectorAll(".nav-btn").forEach(btn => {
     });
 });
 
-document.getElementById("openCurrentUnitBtn").addEventListener("click", () => {
-    document.querySelector('.nav-btn[data-panel="bank"]').click();
-    document.getElementById("searchInput").focus({ preventScroll: true });
+document.querySelectorAll("#sidebarUnitList, #unitGrid").forEach(target => {
+    target.addEventListener("click", event => {
+        const button = event.target.closest("[data-unit]");
+        if (!button || button.disabled) return;
+        onSelectUnit(button.dataset.unit);
+        document.querySelector('.nav-btn[data-panel="bank"]').click();
+        if (mobileViewport.matches) setSidebarOpen(false);
+        document.getElementById("bankHeading").focus({ preventScroll: true });
+    });
+});
+document.getElementById("switchSubjectBtn").addEventListener("click", () => {
+    desktopSidebarOpen = false;
+    mobileSidebarOpen = false;
+    updateSidebar();
+    onLeaveSubject();
 });
 
 const sidebar = document.getElementById("sidebar");
@@ -54,7 +66,7 @@ updateSidebar();
 function updateBackToTop() {
     const scrollRoot = document.scrollingElement || document.documentElement;
     const maxScroll = scrollRoot.scrollHeight - scrollRoot.clientHeight;
-    const onBank = document.getElementById("panel-bank").classList.contains("active");
+    const onBank = !document.getElementById("studyShell").hidden && document.getElementById("panel-bank").classList.contains("active");
     const visible = onBank && maxScroll > 0 && scrollRoot.scrollTop >= maxScroll * 0.75;
     const button = document.getElementById("backToTopBtn");
     button.hidden = !visible;

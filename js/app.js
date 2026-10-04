@@ -1,13 +1,23 @@
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js";
 import { loadUserQuestions, initCustomQuestions } from "./custom-questions.js";
 import { initNavigation } from "./navigation.js";
+import { SUBJECTS, getUnit } from "./units.js";
 
 const QUESTIONS = [];
-const { updateBackToTop } = initNavigation();
+let currentSubject = null;
+let currentUnit = null;
+let requestVersion = 0;
+let loading = false;
+let ready = false;
+let customQuestions;
+const { updateBackToTop } = initNavigation({
+    onSelectUnit: selectUnit,
+    onLeaveSubject: leaveSubject
+});
 const PAGE_SIZE = 25;
 let currentPage = 1;
 let currentFilter = "all";
-let answersVisible = new Set();
+const answersVisible = new Set();
 
 const searchInput = document.getElementById("searchInput");
 const list = document.getElementById("questionList");
@@ -149,19 +159,96 @@ list.addEventListener("click", event => {
     if (button) toggleAnswer(Number(button.dataset.toggleAnswer));
 });
 
-let loading = false;
-let ready = false;
+function renderUnitChoices() {
+    const buttons = currentSubject.units.map(unit => {
+        const active = unit.id === currentUnit?.id;
+        return `<button class="unit-btn ${active ? "active" : ""}" data-unit="${escapeHtml(unit.id)}"
+            type="button" ${unit.dataUrl ? "" : "disabled"} ${active ? 'aria-current="true"' : ""}>
+            ${escapeHtml(unit.name)}<span class="unit-status">${unit.dataUrl ? (active ? "目前單元" : "進入題庫") : "尚未開放"}</span></button>`;
+    });
+    document.getElementById("sidebarUnitList").innerHTML = buttons.join("");
+    document.getElementById("unitGrid").innerHTML = currentSubject.units.map((unit, i) =>
+        `<div class="form-card ${unit.dataUrl ? "" : "unit-coming"}">${buttons[i]}</div>`).join("");
+}
+
+function selectUnit(unitId) {
+    const unit = getUnit(currentSubject?.id, unitId);
+    if (!unit) return;
+    if (unit.id === currentUnit?.id && ready) return;
+    currentUnit = unit;
+    ready = false;
+    loading = false;
+    requestVersion++;
+    QUESTIONS.length = 0;
+    answersVisible.clear();
+    searchInput.value = "";
+    currentFilter = "all";
+    currentPage = 1;
+    document.querySelectorAll(".filter-btn").forEach(button =>
+        button.classList.toggle("active", button.dataset.filter === "all"));
+    customQuestions.resetForm();
+    customQuestions.refresh();
+    const label = currentSubject.name + "｜" + unit.name;
+    document.getElementById("currentUnitLabel").textContent = label;
+    document.getElementById("addUnitLabel").textContent = "新增至：" + label;
+    document.getElementById("bankFooter").textContent = "";
+    document.title = label + " 題庫";
+    renderUnitChoices();
+    loadQuestionBank();
+}
+
+function leaveSubject() {
+    requestVersion++;
+    loading = false;
+    ready = false;
+    currentSubject = null;
+    currentUnit = null;
+    QUESTIONS.length = 0;
+    answersVisible.clear();
+    customQuestions.resetForm();
+    customQuestions.refresh();
+    document.getElementById("studyShell").hidden = true;
+    document.getElementById("sidebar").hidden = true;
+    document.getElementById("mobileMenuBtn").hidden = true;
+    document.getElementById("subjectHome").hidden = false;
+    document.title = "學習題庫";
+    window.scrollTo({ top: 0, behavior: "instant" });
+    updateBackToTop();
+    document.getElementById("subjectHeading").focus({ preventScroll: true });
+}
+
+customQuestions = initCustomQuestions({
+    questions: QUESTIONS, answersVisible,
+    getCurrentUnit: () => ready && currentUnit
+        ? { subjectId: currentSubject.id, unitId: currentUnit.id } : null,
+    onChange: render
+});
+document.getElementById("algorithmSubjectBtn").addEventListener("click", () => {
+    currentSubject = SUBJECTS.find(subject => subject.id === "algorithm" && subject.available);
+    if (!currentSubject) return;
+    document.getElementById("subjectHome").hidden = true;
+    document.getElementById("studyShell").hidden = false;
+    document.getElementById("sidebar").hidden = false;
+    document.getElementById("mobileMenuBtn").hidden = false;
+    document.querySelector('.nav-btn[data-panel="bank"]').click();
+    selectUnit(currentSubject.defaultUnit);
+    document.getElementById("bankHeading").focus({ preventScroll: true });
+});
+
 async function loadQuestionBank() {
-    if (loading || ready) return;
+    if (loading || ready || !currentUnit) return;
+    const version = requestVersion;
+    const unit = currentUnit;
+    const subject = currentSubject;
     loading = true;
     const controls = document.querySelectorAll(
-        ".toolbar button, #searchInput, #prevPageBtn, #nextPageBtn, #saveQuestionBtn, #resetFormBtn"
+        ".toolbar button, #searchInput, #prevPageBtn, #nextPageBtn, #panel-add input, #panel-add textarea, #panel-add select, #saveQuestionBtn, #resetFormBtn"
     );
     controls.forEach(control => { control.disabled = true; });
     summary.textContent = "題庫載入中……";
     list.innerHTML = '<div class="empty" role="status">題庫載入中……</div>';
     try {
-        const response = await fetch(new URL("../data/questions.json", import.meta.url));
+        const response = await fetch(new URL(unit.dataUrl, import.meta.url));
         if (!response.ok) throw new Error("HTTP " + response.status);
         const builtInQuestions = await response.json();
         if (!Array.isArray(builtInQuestions) || !builtInQuestions.length ||
@@ -170,20 +257,23 @@ async function loadQuestionBank() {
             new Set(builtInQuestions.map(q => q.id)).size !== builtInQuestions.length) {
             throw new Error("Invalid question data");
         }
-        QUESTIONS.push(...builtInQuestions, ...loadUserQuestions());
-        initCustomQuestions({ questions: QUESTIONS, answersVisible, onChange: render });
+        if (version !== requestVersion) return;
+        QUESTIONS.push(...builtInQuestions, ...loadUserQuestions(subject.id, unit.id));
+        customQuestions.refresh();
+        document.getElementById("bankFooter").textContent =
+            subject.name + "｜" + unit.name + "｜內建 " + builtInQuestions.length + " 題";
         ready = true;
         controls.forEach(control => { control.disabled = false; });
         render();
     } catch (error) {
+        if (version !== requestVersion) return;
         console.error("Question bank could not be loaded:", error);
         summary.textContent = "題庫尚未載入";
         list.innerHTML = '<div class="empty" role="alert">題庫載入失敗，請檢查網路後重試。<br><button id="retryLoadBtn" type="button">重新載入</button></div>';
         document.getElementById("retryLoadBtn").addEventListener("click", loadQuestionBank);
         updateBackToTop();
     } finally {
-        loading = false;
+        if (version === requestVersion) loading = false;
     }
 }
-loadQuestionBank();
 

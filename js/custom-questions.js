@@ -1,10 +1,16 @@
 import { escapeHtml, getTypeLabel } from "./utils.js";
 
-const STORAGE_KEY = "algorithm_question_bank_user_questions_v1";
+const LEGACY_STORAGE_KEY = "algorithm_question_bank_user_questions_v1";
 
-export function loadUserQuestions() {
+function storageKey(subjectId, unitId) {
+    return subjectId === "algorithm" && unitId === "u2"
+        ? LEGACY_STORAGE_KEY
+        : "question_bank_user_questions_v1_" + subjectId + "_" + unitId;
+}
+
+export function loadUserQuestions(subjectId, unitId) {
     try {
-        const raw = localStorage.getItem(STORAGE_KEY);
+        const raw = localStorage.getItem(storageKey(subjectId, unitId));
         const parsed = raw ? JSON.parse(raw) : [];
         return Array.isArray(parsed) ? parsed : [];
     } catch {
@@ -12,15 +18,17 @@ export function loadUserQuestions() {
     }
 }
 
-function saveUserQuestions(items) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+function saveUserQuestions(items, subjectId, unitId) {
+    localStorage.setItem(storageKey(subjectId, unitId), JSON.stringify(items));
 }
 
 
-export function initCustomQuestions({ questions, answersVisible, onChange }) {
+export function initCustomQuestions({ questions, answersVisible, getCurrentUnit, onChange }) {
     function persistUserQuestions(items) {
         try {
-            saveUserQuestions(items);
+            const unit = getCurrentUnit();
+            if (!unit) return false;
+            saveUserQuestions(items, unit.subjectId, unit.unitId);
             return true;
         } catch {
             showToast("無法儲存，請確認瀏覽器允許本機儲存且空間足夠。");
@@ -62,7 +70,9 @@ function renderUserQuestions() {
 }
 
 function deleteUserQuestion(id) {
-    const saved = loadUserQuestions().filter(q => q.id !== id);
+    const unit = getCurrentUnit();
+    if (!unit) return;
+    const saved = loadUserQuestions(unit.subjectId, unit.unitId).filter(q => q.id !== id);
     if (!persistUserQuestions(saved)) return;
     const index = questions.findIndex(q => q.user_created && q.id === id);
     if (index >= 0) questions.splice(index, 1);
@@ -91,6 +101,8 @@ newType.addEventListener("change", () => {
 });
 
 document.getElementById("saveQuestionBtn").addEventListener("click", () => {
+    const unit = getCurrentUnit();
+    if (!unit) return;
     const type = newType.value;
     const title = document.getElementById("newTitle").value.trim();
     const question = document.getElementById("newQuestion").value.trim();
@@ -126,12 +138,14 @@ document.getElementById("saveQuestionBtn").addEventListener("click", () => {
         sources: ["使用者新增"],
         keywords,
         user_created: true,
+        subject_id: unit.subjectId,
+        unit_id: unit.unitId,
         created_at: new Date().toISOString()
     };
 
-    const saved = loadUserQuestions();
+    const saved = loadUserQuestions(unit.subjectId, unit.unitId);
     saved.unshift(item);
-    saveUserQuestions(saved);
+    if (!persistUserQuestions(saved)) return;
     questions.push(item);
 
     resetQuestionForm();
@@ -148,5 +162,6 @@ document.getElementById("resetFormBtn").addEventListener("click", resetQuestionF
         if (button) deleteUserQuestion(Number(button.dataset.deleteQuestion));
     });
     renderUserQuestions();
+    return { refresh: renderUserQuestions, resetForm: resetQuestionForm };
 }
 

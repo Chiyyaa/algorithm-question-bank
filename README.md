@@ -1,4 +1,4 @@
-# 演算法題庫
+# 學習題庫
 
 ## 檔案分工
 
@@ -7,8 +7,9 @@
 - js/app.js：題庫載入、搜尋、篩選、分頁與答案切換。
 - js/navigation.js：側欄、單元切換與粉色置頂按鈕。
 - js/custom-questions.js：自行新增／刪除題目與 localStorage。
+- js/units.js：科目與單元設定，每個開放單元指向自己的題庫檔案。
 - js/utils.js：共用文字處理與題型名稱。
-- data/questions.json：內建題目；新增章節時可另增 JSON，並接上單元選擇功能。目前尚未實作多章節載入。
+- data/questions.json：演算法 U2 的 60 題；後續單元使用各自的 JSON，透過 js/units.js 設定載入。
 - tests/run.cjs：本機瀏覽器回歸測試與預覽伺服器，不是網站執行必要檔案。
 
 ## 本機預覽
@@ -43,3 +44,11 @@ localStorage 名稱仍為 algorithm_question_bank_user_questions_v1；在原網�
 
 將 index.html、css/、js/、data/ 在同一個 commit 更新，避免新頁面先上線但依賴檔案尚未齊全。
 
+
+## 科目與單元
+
+進入網站先選科目；演算法可進入，作業系統尚未開放。演算法預設進入 U2，U1、U3 尚未開放。側欄可直接切換該科目的單元，或回到科目選擇頁。每次重新開啟網站皆先顯示科目選擇頁。
+
+新增單元時建立獨立 JSON（例如 data/algorithm-u3.json），再設定 js/units.js 中對應單元的 dataUrl（相對於 js/app.js，例如 ../data/algorithm-u3.json）。搜尋、篩選、分頁與答案狀態只作用於目前單元；切換單元會重設搜尋、篩選、分頁與新增表單。題號只需在單元內唯一，其他單元可重複使用相同題號。
+
+演算法 U2 保留原 localStorage 名稱 algorithm_question_bank_user_questions_v1，舊自訂題繼續歸屬 U2，無需搬移或改寫。其他單元各自使用 question_bank_user_questions_v1_<科目ID>_<單元ID>，自訂題互不混用。
