@@ -715,3 +715,68 @@ body.home-mode {
     .subject-card:hover:not(:disabled), .subject-card:active:not(:disabled) { transform: none; }
     .subject-card::before { animation: none !important; }
 }
+
+/* Home themes stay scoped to subject selection, including its music panel. */
+.home-theme-toggle {
+    position: absolute; top: max(22px, env(safe-area-inset-top)); right: max(24px, env(safe-area-inset-right));
+    z-index: 66; display: flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: 999px;
+    background: rgba(255,255,255,.48); border: 1px solid rgba(255,255,255,.85); color: #435979;
+    box-shadow: 0 4px 16px rgba(68,86,120,.08); backdrop-filter: blur(12px);
+}
+.home-theme-toggle:hover { background: rgba(255,255,255,.8); }
+.theme-icon { font-size: 18px; line-height: 1; }
+.theme-label { font-size: 12px; font-weight: 650; letter-spacing: .04em; }
+.subject-home[data-theme="night"] {
+    color-scheme: dark; color: #e0e8ff;
+    background: radial-gradient(ellipse at 72% 30%, rgba(112,72,141,.23), transparent 45%),
+        radial-gradient(ellipse at 18% 64%, rgba(40,73,132,.36), transparent 50%),
+        radial-gradient(ellipse at 80% 90%, rgba(64,59,125,.27), transparent 48%),
+        linear-gradient(135deg, #0d1428, #17223e 48%, #10172d);
+}
+.subject-home[data-theme="night"]::before { opacity: .5; }
+.subject-home[data-theme="night"] .silver-ribbons { opacity: .25; }
+.subject-home[data-theme="night"] .corner-glow { opacity: .14; }
+.subject-home[data-theme="night"] h1 { color: #e4ecff; text-shadow: 0 0 24px rgba(158,183,255,.18); }
+.subject-home[data-theme="night"] .subtitle { color: #bbc8e4; }
+.subject-home[data-theme="night"] .home-eyebrow { color: #c0cce7; border-color: #556180; background: rgba(55,68,104,.38); box-shadow: inset 0 1px 8px rgba(157,178,234,.08); }
+.subject-home[data-theme="night"] .subject-card {
+    color: #e0e9ff; border-color: #526486;
+    background: linear-gradient(130deg, rgba(43,61,97,.84), rgba(31,45,77,.78) 54%, rgba(64,47,83,.7));
+    box-shadow: inset 0 1px 0 rgba(199,217,255,.12), 0 18px 44px rgba(0,0,0,.22);
+}
+.subject-home[data-theme="night"] .subject-icon { color: #a4bde7; filter: none; }
+.subject-home[data-theme="night"] .subject-description { color: #bdcce5; }
+.subject-home[data-theme="night"] .subject-status { color: #c2d7ff; }
+.subject-home[data-theme="night"] .subject-coming { background: rgba(29,40,64,.68); border-color: #3d4c6b; }
+.subject-home[data-theme="night"] .subject-coming .subject-title,
+.subject-home[data-theme="night"] .subject-coming .subject-icon { color: #a1aec8; }
+.subject-home[data-theme="night"] .subject-coming .subject-status { color: #b9c4da; background: rgba(56,68,95,.45); border-color: #4d5a76; }
+.subject-home[data-theme="night"] .home-theme-toggle { color: #d5e2ff; background: rgba(39,53,84,.75); border-color: #536484; }
+.subject-home[data-theme="night"] .home-theme-toggle:hover { background: #35476d; }
+.subject-home[data-theme="night"] .music-panel {
+    color: #e2eaff; border-color: #546385;
+    background: linear-gradient(135deg, rgba(30,43,73,.97), rgba(42,39,69,.97), rgba(53,36,66,.96));
+    box-shadow: inset 0 1px 0 rgba(210,226,255,.1), 0 16px 45px rgba(0,0,0,.4);
+}
+.subject-home[data-theme="night"] .music-now p,
+.subject-home[data-theme="night"] .music-time { color: #b6c4e0; }
+.subject-home[data-theme="night"] .music-controls button { color: #d3e1ff; border-color: #576581; background: #354363; }
+.subject-home[data-theme="night"] .music-controls button:hover { background: #495b7f; }
+.subject-home[data-theme="night"] .music-volume { color: #b3c5e8; }
+.subject-home[data-theme="night"] .music-track-list { border-color: #50607d; }
+.subject-home[data-theme="night"] .music-track { color: #c3d1eb; }
+.subject-home[data-theme="night"] .music-track:hover { background: rgba(113,131,170,.18); }
+.subject-home[data-theme="night"] .music-track.is-current { color: #eef3ff; background: rgba(114,119,168,.22); border-color: #637295; }
+.subject-home[data-theme="night"] .music-panel input[type="range"] { background: linear-gradient(to right, #c6a4d0 var(--range-progress, 0%), #53617e var(--range-progress, 0%)); }
+.subject-home[data-theme="night"] .track-artist { opacity: .85; }
+.subject-home[data-theme="night"] .subject-card:focus-visible { outline-color: #b2c9fa; }
+@media (hover: hover) and (pointer: fine) {
+    .subject-home[data-theme="night"] .subject-card:hover:not(:disabled) {
+        background: linear-gradient(130deg, rgba(57,80,122,.95), rgba(40,59,96,.9), rgba(86,59,106,.8));
+        box-shadow: inset 0 0 0 1px #8398c3, 0 24px 48px rgba(0,0,0,.35), 0 0 26px rgba(120,154,239,.2);
+    }
+}
+@media (max-width: 600px) {
+    .home-theme-toggle { top: max(16px, env(safe-area-inset-top)); right: max(18px, env(safe-area-inset-right)); }
+    .home-content { padding-top: 90px; }
+}

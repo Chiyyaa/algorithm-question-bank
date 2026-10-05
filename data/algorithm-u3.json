@@ -1,0 +1,1107 @@
+[
+  {
+    "id": 1,
+    "title": "",
+    "type": "choice",
+    "question": "遞迴樹法在下列哪些情況下特別有用？",
+    "options": [
+      "當 f(n) 在遞迴樹中變化時",
+      "當使用代入法過於複雜時",
+      "當需要產生好的猜測時",
+      "當遞迴樹非常對稱時"
+    ],
+    "options_status": "provided",
+    "correct_answer": "當 f(n) 在遞迴樹中變化時\n當需要產生好的猜測時\n當使用代入法過於複雜時\n當遞迴樹非常對稱時",
+    "answer_variants": [
+      "當 f(n) 在遞迴樹中變化時\n當需要產生好的猜測時\n當使用代入法過於複雜時\n當遞迴樹非常對稱時"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "",
+    "type": "choice",
+    "question": "遞迴式 T(n) = T(n/2) + T(n/2) + 1 的解時間複雜度級別為何？",
+    "options": [
+      "階乘 O(n!)",
+      "線性 O(n)",
+      "對數 O(\\log n)",
+      "平方 O(n^2)"
+    ],
+    "options_status": "provided",
+    "correct_answer": "線性 O(n)",
+    "answer_variants": [
+      "線性 O(n)"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "",
+    "type": "fill_blank",
+    "question": "代入法需確保初始 [__1__] 也滿足 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "conditions",
+    "answer_variants": [
+      "conditions"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "",
+    "type": "choice",
+    "question": "下列何者可用於分析 T(n) =n²logn？",
+    "options": [
+      "遞迴樹法",
+      "代入法",
+      "大師定理的變形",
+      "暴力破解"
+    ],
+    "options_status": "provided",
+    "correct_answer": "代入法\n遞迴樹法\n大師定理的變形",
+    "answer_variants": [
+      "代入法\n遞迴樹法\n大師定理的變形"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "",
+    "type": "fill_blank",
+    "question": "T(n) = 2T(n/2) + n\n\n以代入法證明\n我們先猜 他是 O(nlogn)\n請依此寫出之後帶入的式子 [__1__] (請用小寫英文回答 答案中間不要留空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "T(n/2)<=c(n/2)log(n/2)",
+    "answer_variants": [
+      "T(n/2)<=c(n/2)log(n/2)"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "",
+    "type": "choice",
+    "question": "在處理 T(n) = 2T(n/2 + 17) + n 時，我們通常使用？",
+    "options": [
+      "圖形繪製",
+      "陣列平移",
+      "代入法",
+      "硬編碼"
+    ],
+    "options_status": "provided",
+    "correct_answer": "代入法",
+    "answer_variants": [
+      "代入法"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "",
+    "type": "choice",
+    "question": "遞迴式 T(n) = 2T(n/2 + 17) + n 的分析難點在於？",
+    "options": [
+      "不能直接使用大師定理",
+      "17 的存在使得 n/2 不純粹",
+      "無法使用歸納法",
+      "需要更複雜的代數變換"
+    ],
+    "options_status": "provided",
+    "correct_answer": "17 的存在使得 n/2 不純粹\n不能直接使用大師定理\n需要更複雜的代數變換",
+    "answer_variants": [
+      "17 的存在使得 n/2 不純粹\n不能直接使用大師定理\n需要更複雜的代數變換"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "",
+    "type": "choice",
+    "question": "下列何者不是大師定理分析的變數？",
+    "options": [
+      "a",
+      "n!",
+      "b",
+      "f(n)"
+    ],
+    "options_status": "provided",
+    "correct_answer": "n!",
+    "answer_variants": [
+      "n!"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "",
+    "type": "choice",
+    "question": "哪些方法可以求解 T(n) = 2T(n/2) + n？",
+    "options": [
+      "代入法",
+      "以上皆非",
+      "遞迴樹法",
+      "大師定理"
+    ],
+    "options_status": "provided",
+    "correct_answer": "代入法\n遞迴樹法\n大師定理",
+    "answer_variants": [
+      "代入法\n遞迴樹法\n大師定理"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "",
+    "type": "choice",
+    "question": "歸納法中的「歸納假設」是？",
+    "options": [
+      "假設對於較小的輸入值解是正確的",
+      "假設遞迴式永遠收斂",
+      "假設參數 n 為無限大",
+      "假設常數 c 為 0"
+    ],
+    "options_status": "provided",
+    "correct_answer": "假設對於較小的輸入值解是正確的",
+    "answer_variants": [
+      "假設對於較小的輸入值解是正確的"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "",
+    "type": "fill_blank",
+    "question": "遞迴關係式分析中，我們通常會忽略 [__1__] 條件 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "boundary",
+    "answer_variants": [
+      "boundary"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "",
+    "type": "choice",
+    "question": "下列何者不是求解遞迴關係式的主要方法？",
+    "options": [
+      "主定理",
+      "代入法",
+      "遞迴樹法",
+      "暴力列舉法"
+    ],
+    "options_status": "provided",
+    "correct_answer": "暴力列舉法",
+    "answer_variants": [
+      "暴力列舉法"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "",
+    "type": "fill_blank",
+    "question": "遞迴樹法的核心是將問題拆解為 [__1__] 結構 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "tree",
+    "answer_variants": [
+      "tree"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "",
+    "type": "choice",
+    "question": "下列關於漸進符號 (Asymptotic Notation) 的敘述，何者正確？",
+    "options": [
+      "O 符號代表上界",
+      "\\Omega 符號代表下界",
+      "\\Theta 符號代表緊確界",
+      "這些符號都只用於遞迴式"
+    ],
+    "options_status": "provided",
+    "correct_answer": "O 符號代表上界\nΩ 符號代表下界\nΘ 符號代表緊確界",
+    "answer_variants": [
+      "O 符號代表上界\nΩ 符號代表下界\nΘ 符號代表緊確界"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "",
+    "type": "fill_blank",
+    "question": "遞迴樹中，每一層的代價總和稱為 [__1__] 代價 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "level",
+    "answer_variants": [
+      "level"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "",
+    "type": "fill_blank",
+    "question": "遞迴關係式 T(n) = T(⌊ n/2 ⌋) + T(⌈ n/2 ⌉) + 1 的解為 O([__1__]) (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "n",
+    "answer_variants": [
+      "n"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "",
+    "type": "choice",
+    "question": "關於遞迴式 T(n) = T(n-1) + n 的描述，何者正確？",
+    "options": [
+      "適用大師定理",
+      "屬於線性遞迴",
+      "不能使用大師定理",
+      "解為 O(n^2)"
+    ],
+    "options_status": "provided",
+    "correct_answer": "屬於線性遞迴\n解為 O(n²)\n不能使用大師定理",
+    "answer_variants": [
+      "屬於線性遞迴\n解為 O(n²)\n不能使用大師定理"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "",
+    "type": "fill_blank",
+    "question": "大師定理是用來解決 [__1__] 形式的遞迴關係式 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "t(n)=at(n/b)+f(n)",
+    "answer_variants": [
+      "t(n)=at(n/b)+f(n)"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "",
+    "type": "choice",
+    "question": "下列何者是代入法驗證時使用的核心數學工具？",
+    "options": [
+      "微積分",
+      "線性代數",
+      "數學歸納法",
+      "集合論"
+    ],
+    "options_status": "provided",
+    "correct_answer": "數學歸納法",
+    "answer_variants": [
+      "數學歸納法"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "",
+    "type": "choice",
+    "question": "當遞迴式包含下取整或上取整時，我們通常？",
+    "options": [
+      "將其改為絕對值",
+      "將其改為階乘",
+      "忽略它們",
+      "將其改為指數"
+    ],
+    "options_status": "provided",
+    "correct_answer": "忽略它們",
+    "answer_variants": [
+      "忽略它們"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "",
+    "type": "choice",
+    "question": "使用歸納法證明遞迴式時，需確保？",
+    "options": [
+      "歸納步驟正確",
+      "猜測的函數形式符合 O 符號",
+      "基礎情況成立",
+      "變數為複數"
+    ],
+    "options_status": "provided",
+    "correct_answer": "基礎情況成立\n歸納步驟正確\n猜測的函數形式符合 O 符號",
+    "answer_variants": [
+      "基礎情況成立\n歸納步驟正確\n猜測的函數形式符合 O 符號"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "",
+    "type": "fill_blank",
+    "question": "大師定理分析中 f(n) 與 nˡᵒᵍᵇ⁽ᵃ⁾ 的成長率需進行 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "comparison",
+    "answer_variants": [
+      "comparison"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "對於 T(n) = T(n/2) + n，其複雜度為何？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "O(n)",
+    "answer_variants": [
+      "O(n)"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "",
+    "type": "choice",
+    "question": "在遞迴樹法中，我們關注的是？",
+    "options": [
+      "樹的節點數量",
+      "樹的根節點代價",
+      "樹中所有節點的成本總和",
+      "樹的高度"
+    ],
+    "options_status": "provided",
+    "correct_answer": "樹中所有節點的成本總和",
+    "answer_variants": [
+      "樹中所有節點的成本總和"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "",
+    "type": "fill_blank",
+    "question": "使用遞迴樹法時，最後需將所有層的代價進行 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "summation",
+    "answer_variants": [
+      "summation"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "",
+    "type": "choice",
+    "question": "遞迴樹的總成本計算，需考慮？",
+    "options": [
+      "根節點代價",
+      "中間層節點代價",
+      "葉節點代價",
+      "全域變數值"
+    ],
+    "options_status": "provided",
+    "correct_answer": "根節點代價\n中間層節點代價\n葉節點代價",
+    "answer_variants": [
+      "根節點代價\n中間層節點代價\n葉節點代價"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "",
+    "type": "choice",
+    "question": "大師定理中 a 與 b 的物理意義為何？",
+    "options": [
+      "a 為子問題個數",
+      "b 為單層處理成本",
+      "a 為遞迴深度",
+      "b 為輸入大小縮減因子"
+    ],
+    "options_status": "provided",
+    "correct_answer": "a 為子問題個數\nb 為輸入大小縮減因子",
+    "answer_variants": [
+      "a 為子問題個數\nb 為輸入大小縮減因子"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "",
+    "type": "fill_blank",
+    "question": "在代入法中，證明常數通常使用數學 [__1__] 法 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "induction",
+    "answer_variants": [
+      "induction"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "證明一個遞迴式的 O(n) 上界，通常需要？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "找到一個常數 c\n找到一個邊界值 n0\n使用數學歸納法",
+    "answer_variants": [
+      "找到一個常數 c\n找到一個邊界值 n0\n使用數學歸納法"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "",
+    "type": "choice",
+    "question": "關於「技術細節」的處理，下列哪些正確？",
+    "options": [
+      "忽略樓板函數（floor）",
+      "忽略初始邊界條件",
+      "忽略複雜的數學常數",
+      "忽略天花板函數（ceiling）"
+    ],
+    "options_status": "provided",
+    "correct_answer": "忽略樓板函數(floor)\n忽略天花板函數(ceiling)\n忽略初始邊界條件",
+    "answer_variants": [
+      "忽略樓板函數(floor)\n忽略天花板函數(ceiling)\n忽略初始邊界條件"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "",
+    "type": "fill_blank",
+    "question": "遞迴樹的高度通常為 [__1__] (請用小寫英文回答 不留空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "logn",
+    "answer_variants": [
+      "logn"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "遞迴樹的葉節點代價總和通常為？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "線性時間 O(n)",
+    "answer_variants": [
+      "線性時間 O(n)"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "",
+    "type": "choice",
+    "question": "大師定理中，若 f(n) 成長速度慢於 O(nˡᵒᵍᵇ⁽ᵃ⁾)，則複雜度為？",
+    "options": [
+      "O(n \\log n)",
+      "O(f(n))",
+      "O(n)",
+      "O(n^{\\log_b a})"
+    ],
+    "options_status": "provided",
+    "correct_answer": "O(nˡᵒᵍᵇ⁽ᵃ⁾)",
+    "answer_variants": [
+      "O(nˡᵒᵍᵇ⁽ᵃ⁾)"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "下列哪些技術常用來改善遞迴解的猜測？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "觀察遞迴樹結構\n利用歸納法證明\n觀察小樣本數據",
+    "answer_variants": [
+      "觀察遞迴樹結構\n利用歸納法證明\n觀察小樣本數據"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "大師定理 Case 3 的條件包含？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "f(n) 成長速度大於 nˡᵒᵍᵇ⁽ᵃ⁾\n存在常數 epsilon > 0\n滿足規則性條件 (regularity condition)",
+    "answer_variants": [
+      "f(n) 成長速度大於 nˡᵒᵍᵇ⁽ᵃ⁾\n存在常數 epsilon > 0\n滿足規則性條件 (regularity condition)"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "",
+    "type": "fill_blank",
+    "question": "大師定理 Case 3 要求 f(n) 必須 [__1__] 大於 nˡᵒᵍᵇ⁽ᵃ⁾ (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "polynomially",
+    "answer_variants": [
+      "polynomially"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "",
+    "type": "fill_blank",
+    "question": "若遞迴式的解是 O(nlogn)，其中的 log 底數通常為 [__1__] (請用數字回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "2",
+    "answer_variants": [
+      "2"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "遞迴樹的每一層代表？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "該層遞迴分解的成本",
+    "answer_variants": [
+      "該層遞迴分解的成本"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "",
+    "type": "choice",
+    "question": "大師定理 Case 1 的條件包含？",
+    "options": [
+      "f(n) 為 O(n^{\\log_b(a-\\epsilon)})",
+      "\\epsilon>0",
+      "f(n) 成長較快",
+      "a、b 是常數"
+    ],
+    "options_status": "provided",
+    "correct_answer": "f(n) 為 O(nˡᵒᵍᵇ⁽ᵃ⁾(a - ε))\nε > 0\na, b 是常數",
+    "answer_variants": [
+      "f(n) 為 O(nˡᵒᵍᵇ⁽ᵃ⁾(a - ε))\nε > 0\na, b 是常數"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ],
+    "answer_note": "原檔的 A 選項與對應答案公式寫法不一致；此處保留原始內容，請對照課程資料確認。"
+  },
+  {
+    "id": 40,
+    "title": "",
+    "type": "fill_blank",
+    "question": "大師定理若適用，必須滿足 a >= [__1__] (請用數字回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "1",
+    "answer_variants": [
+      "1"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "",
+    "type": "choice",
+    "question": "「忽略技術細節」(neglecting technical details)在演算法分析中代表？",
+    "options": [
+      "捨棄對漸進複雜度無影響的因素",
+      "簡化代數運算",
+      "只關注最好情況",
+      "錯誤的分析方式"
+    ],
+    "options_status": "provided",
+    "correct_answer": "捨棄對漸進複雜度無影響的因素",
+    "answer_variants": [
+      "捨棄對漸進複雜度無影響的因素"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "",
+    "type": "choice",
+    "question": "遞迴樹法中，若每一層成本相等，且有 log n 層，總成本為？",
+    "options": [
+      "O(n log n)",
+      "O(n²)",
+      "O(n)",
+      "O(log n)"
+    ],
+    "options_status": "provided",
+    "correct_answer": "O(n log n)",
+    "answer_variants": [
+      "O(n log n)"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "",
+    "type": "choice",
+    "question": "為何遞迴分析中要忽略底數的取整函數？",
+    "options": [
+      "因為它們會導致計算錯誤",
+      "因為它們對漸進複雜度影響微乎其微",
+      "因為它們屬於硬體層面",
+      "因為它們在程式語言中不適用"
+    ],
+    "options_status": "provided",
+    "correct_answer": "因為它們對漸進複雜度影響微乎其微",
+    "answer_variants": [
+      "因為它們對漸進複雜度影響微乎其微"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "遞迴樹法主要由哪幾個步驟組成？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "繪製遞迴樹\n計算每層代價\n將所有層級代價加總",
+    "answer_variants": [
+      "繪製遞迴樹\n計算每層代價\n將所有層級代價加總"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "",
+    "type": "choice",
+    "question": "在遞迴求解時，若猜測解不準確，我們應該？",
+    "options": [
+      "改善解的上下界並縮小差距",
+      "假設 n 為無限大",
+      "直接放棄該方法",
+      "將係數平方"
+    ],
+    "options_status": "provided",
+    "correct_answer": "改善解的上下界並縮小差距",
+    "answer_variants": [
+      "改善解的上下界並縮小差距"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "",
+    "type": "choice",
+    "question": "大師定理適用於？",
+    "options": [
+      "圖論中的最短路徑",
+      "資料結構的記憶體分配",
+      "分治演算法的複雜度分析",
+      "動態規劃的路徑選擇"
+    ],
+    "options_status": "provided",
+    "correct_answer": "分治演算法的複雜度分析",
+    "answer_variants": [
+      "分治演算法的複雜度分析"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "",
+    "type": "choice",
+    "question": "關於大師定理 (Master Method) 的限制，下列敘述何者正確？",
+    "options": [
+      "不適用於 f(n) 與 n^{\\log_b a} 成長率相差非多項式的情況",
+      "必須滿足 a\\ge1 及 b>1",
+      "適用於所有遞迴式",
+      "無法判斷分治代價 f(n) 的情況"
+    ],
+    "options_status": "provided",
+    "correct_answer": "不適用於 f(n) 與 nˡᵒᵍᵇ⁽ᵃ⁾ 成長率相差非多項式的情況\n必須滿足 a >= 1 及 b > 1",
+    "answer_variants": [
+      "不適用於 f(n) 與 nˡᵒᵍᵇ⁽ᵃ⁾ 成長率相差非多項式的情況\n必須滿足 a >= 1 及 b > 1"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 48,
+    "title": "",
+    "type": "fill_blank",
+    "question": "對於 T(n) = 2T(n/2) + n，其複雜度為 O(n [__1__] n) (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "log",
+    "answer_variants": [
+      "log"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "",
+    "type": "fill_blank",
+    "question": "大師定理是一種 [__1__] 分析工具 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "asymptotic",
+    "answer_variants": [
+      "asymptotic"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 50,
+    "title": "",
+    "type": "choice",
+    "question": "代入法中，為了證明 T(n) <= cn log n，通常需要？",
+    "options": [
+      "修改原始遞迴式",
+      "將 log 換成 ln",
+      "選擇適當的常數 c",
+      "忽略初始條件"
+    ],
+    "options_status": "provided",
+    "correct_answer": "選擇適當的常數 c",
+    "answer_variants": [
+      "選擇適當的常數 c"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 51,
+    "title": "",
+    "type": "fill_blank",
+    "question": "T(n) = 2T(sqrt(n)) + logn\n這問題需要用變數變換的技巧，我們會設定 m=[__1__] 來做變數變換 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "logn",
+    "answer_variants": [
+      "logn"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 52,
+    "title": "",
+    "type": "choice",
+    "question": "遞迴樹的葉節點深度通常為？",
+    "options": [
+      "n^2",
+      "\\log(n!)",
+      "n",
+      "\\log_b n，_b表示下標"
+    ],
+    "options_status": "provided",
+    "correct_answer": "log_b(n), _b表示下標",
+    "answer_variants": [
+      "log_b(n), _b表示下標"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 53,
+    "title": "",
+    "type": "choice",
+    "question": "大師定理主要用於解決哪種形式的遞迴？",
+    "options": [
+      "T(n)=2T(n/2)+n²",
+      "T(n)=aT(n-b)+f(n)",
+      "T(n)=T(n-1)+f(n)",
+      "T(n)=aT(n/b)+f(n)"
+    ],
+    "options_status": "provided",
+    "correct_answer": "T(n)=aT(n/b)+f(n)",
+    "answer_variants": [
+      "T(n)=aT(n/b)+f(n)"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 54,
+    "title": "",
+    "type": "choice",
+    "question": "關於遞迴關係式的技術細節，我們通常會？",
+    "options": [
+      "忽略邊界條件與取整函數",
+      "強制包含常數因子",
+      "將函數定義域限制為實數",
+      "嚴格計算每一步"
+    ],
+    "options_status": "provided",
+    "correct_answer": "忽略邊界條件與取整函數",
+    "answer_variants": [
+      "忽略邊界條件與取整函數"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 55,
+    "title": "",
+    "type": "choice",
+    "question": "代入法求解遞迴關係式的第一步是？",
+    "options": [
+      "猜測解的形式",
+      "忽略常數項",
+      "進行數學歸納法",
+      "驗證邊界條件"
+    ],
+    "options_status": "provided",
+    "correct_answer": "猜測解的形式",
+    "answer_variants": [
+      "猜測解的形式"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 56,
+    "title": "",
+    "type": "choice",
+    "question": "在使用代入法時，常遇到的困難包含？",
+    "options": [
+      "無法進行代數變換",
+      "猜測解的正確形式",
+      "遞迴樹過於龐大",
+      "證明邊界條件的繁瑣"
+    ],
+    "options_status": "provided",
+    "correct_answer": "猜測解的正確形式\n證明邊界條件的繁瑣\n無法進行代數變換",
+    "answer_variants": [
+      "猜測解的正確形式\n證明邊界條件的繁瑣\n無法進行代數變換"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 57,
+    "title": "",
+    "type": "fill_blank",
+    "question": "當 f(n) 在大師定理中成長速度大於 nˡᵒᵍᵇ⁽ᵃ⁾ 時，我們稱之為 Case [__1__] (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "three",
+    "answer_variants": [
+      "three"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 58,
+    "title": "",
+    "type": "fill_blank",
+    "question": "處理遞迴中的 n/b 時，若非整數，我們常會忽略 [__1__] 函數 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "floor",
+    "answer_variants": [
+      "floor"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  },
+  {
+    "id": 59,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "若遞迴關係式包含下取整 (floor)，在分析時我們通常？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "忽略它以簡化分析\n僅在最後驗證時考慮",
+    "answer_variants": [
+      "忽略它以簡化分析\n僅在最後驗證時考慮"
+    ],
+    "answer_basis": "provided_unit3_answer",
+    "sources": [
+      "第三單元練習_不重複題庫_題目選項答案.txt"
+    ]
+  }
+]

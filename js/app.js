@@ -4,7 +4,36 @@ import { initNavigation } from "./navigation.js";
 import { SUBJECTS, getUnit } from "./units.js";
 import { initMusic } from "./music.js";
 
+initHomeTheme();
 const { close: closeMusic } = initMusic();
+
+function initHomeTheme() {
+    const home = document.getElementById("subjectHome");
+    const button = document.getElementById("homeThemeBtn");
+    const systemTheme = matchMedia("(prefers-color-scheme: dark)");
+    const storageKey = "question_bank_home_theme_v1";
+    let preference = null;
+    try {
+        const saved = localStorage.getItem(storageKey);
+        if (saved === "night" || saved === "day") preference = saved;
+    } catch { /* Theme remains usable when storage is unavailable. */ }
+    function apply() {
+        const night = preference ? preference === "night" : systemTheme.matches;
+        home.dataset.theme = night ? "night" : "day";
+        button.setAttribute("aria-pressed", String(night));
+        button.setAttribute("aria-label", night ? "切換日間模式" : "切換夜間星空模式");
+        button.title = night ? "切換日間模式" : "切換夜間星空模式";
+        button.querySelector(".theme-icon").textContent = night ? "☀" : "☾";
+        button.querySelector(".theme-label").textContent = night ? "日間模式" : "夜間星空";
+    }
+    button.addEventListener("click", () => {
+        preference = home.dataset.theme === "night" ? "day" : "night";
+        try { localStorage.setItem(storageKey, preference); } catch { /* Session-only fallback. */ }
+        apply();
+    });
+    systemTheme.addEventListener("change", () => { if (!preference) apply(); });
+    apply();
+}
 const clearHomeSparkles = initHomeSparkles();
 
 function initHomeSparkles() {
@@ -197,7 +226,7 @@ function renderUnitChoices() {
         const active = unit.id === currentUnit?.id;
         return `<button class="unit-btn ${active ? "active" : ""}" data-unit="${escapeHtml(unit.id)}"
             type="button" ${unit.dataUrl ? "" : "disabled"} ${active ? 'aria-current="true"' : ""}>
-            ${escapeHtml(unit.name)}<span class="unit-status">${unit.dataUrl ? (active ? "目前單元" : "進入題庫") : "尚未開放"}</span></button>`;
+            ${escapeHtml(unit.name)}${unit.questionCount ? ` · ${unit.questionCount} 題` : ""}<span class="unit-status">${unit.dataUrl ? (active ? "目前單元" : "進入題庫") : "尚未開放"}</span></button>`;
     });
     document.getElementById("unitGrid").innerHTML = currentSubject.units.map((unit, i) =>
         `<div class="form-card ${unit.dataUrl ? "" : "unit-coming"}">${buttons[i]}</div>`).join("");

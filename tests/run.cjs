@@ -240,6 +240,11 @@ server.listen(0, "127.0.0.1", async () => {
         await phone.locator("#musicPlayBtn").click();
         await phone.waitForFunction(() => !document.querySelector("#bgMusic").paused && document.querySelector("#bgMusic").currentTime > .1);
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+        await phone.locator("#homeThemeBtn").click();
+        assert.equal(await phone.locator("#subjectHome").getAttribute("data-theme"),"night");
+        assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+        await phone.screenshot({path:path.join(root,"..","night-home-mobile.png")});
+        await phone.locator("#homeThemeBtn").click();
         await phone.screenshot({ path: path.join(root, "..", "record-playing-mobile.png") });
         await phone.locator("#musicPlayBtn").click();
         assert.equal(await phone.locator("#bgMusic").evaluate(el => el.paused), true);
@@ -282,7 +287,8 @@ server.listen(0, "127.0.0.1", async () => {
         await page.locator("#mobileMenuBtn").click();
         await page.locator('[data-panel="units"]').click();
         assert.equal(await page.locator('#unitGrid [data-unit="u1"]').isDisabled(), true);
-        assert.equal(await page.locator('#unitGrid [data-unit="u3"]').isDisabled(), true);
+        assert.equal(await page.locator('#unitGrid [data-unit="u3"]').isDisabled(), false);
+        assert.match(await page.locator('#unitGrid [data-unit="u3"]').innerText(), /59 題/);
         assert.equal(await page.locator('#unitGrid [data-unit="u2"]').getAttribute("aria-current"), "true");
         assert.equal(await page.locator("#panel-units").isVisible(), true);
         assert.equal(await page.locator("#unitGrid [data-unit]").count(), 3);
@@ -327,12 +333,92 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await musicFailure.locator("#bgMusic").evaluate(el => el.paused), true);
         record("Audio request failure stops the record and recovers on the next click");
 
+
+        const u3Data = JSON.parse(fs.readFileSync(path.join(root, "data/algorithm-u3.json"), "utf8"));
+        assert.equal(u3Data.length, 59);
+        assert.deepEqual(u3Data.map(q => q.id), Array.from({length: 59}, (_, i) => i + 1));
+        assert.equal(new Set(u3Data.map(q => q.question)).size, 59);
+        assert.equal(u3Data.filter(q => q.type === "choice").length, 32);
+        assert.equal(u3Data.filter(q => q.type === "fill_blank").length, 19);
+        assert.equal(u3Data.filter(q => q.type === "choice_options_missing").length, 8);
+        u3Data.forEach(q => {
+            assert.ok(q.question && q.correct_answer);
+            assert.equal(q.options.length, q.type === "choice" ? 4 : 0);
+            assert.equal(q.answer_basis, "provided_unit3_answer");
+        });
+        assert.equal(u3Data[4].correct_answer, "T(n/2)<=c(n/2)log(n/2)");
+        assert.equal(u3Data[0].correct_answer.split("\n").length, 4);
+        assert.match(u3Data[38].answer_note, /不一致/);
+        const fresh = await browser.newContext({viewport:{width:1280,height:800},colorScheme:"dark",reducedMotion:"reduce"});
+        const themePage = await fresh.newPage();
+        themePage.on("pageerror", e => errors.push(e.message));
+        await themePage.goto(url);
+        assert.equal(await themePage.locator("#subjectHome").getAttribute("data-theme"), "night");
+        assert.equal(await themePage.locator("#homeThemeBtn").getAttribute("aria-pressed"), "true");
+        await themePage.locator("#musicToggleBtn").click();
+        await themePage.locator("#musicPlayBtn").click();
+        await themePage.waitForFunction(() => document.querySelector("#bgMusic").currentTime > .1);
+        await themePage.screenshot({path:path.join(root,"..","night-home-desktop.png")});
+        await themePage.locator("#homeThemeBtn").click();
+        assert.equal(await themePage.locator("#subjectHome").getAttribute("data-theme"), "day");
+        assert.equal(await themePage.locator("#bgMusic").evaluate(el => el.paused), false);
+        await themePage.reload();
+        assert.equal(await themePage.locator("#subjectHome").getAttribute("data-theme"), "day");
+        await themePage.locator("#homeThemeBtn").click();
+        await themePage.reload();
+        assert.equal(await themePage.locator("#subjectHome").getAttribute("data-theme"), "night");
+        await themePage.locator("#algorithmSubjectBtn").click();
+        await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
+        await openPanel(themePage,"units");
+        assert.match(await themePage.locator('[data-unit="u2"]').innerText(), /60 題/);
+        assert.match(await themePage.locator('[data-unit="u3"]').innerText(), /59 題/);
+        await themePage.locator('[data-unit="u3"]').click();
+        await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 59"));
+        assert.equal(await themePage.locator("#bankFooter").innerText(),"演算法｜U3｜內建 59 題");
+        await themePage.locator("#nextPageBtn").click();
+        await themePage.locator("#nextPageBtn").click();
+        assert.equal(await themePage.locator("#questionList article").count(),9);
+        await themePage.locator("#searchInput").fill("Case 1");
+        await themePage.locator(".answer-btn").click();
+        assert.match(await themePage.locator(".answer-note").innerText(),/原檔/);
+        await themePage.locator("#searchInput").fill("對於 T(n) = T(n/2) + n");
+        assert.equal(await themePage.locator("#questionList .option").count(),0);
+        assert.match(await themePage.locator("#questionList").innerText(), /沒有保存完整選項/);
+        await themePage.locator(".answer-btn").click();
+        assert.equal(await themePage.locator(".answer-content").innerText(), "O(n)");
+        await themePage.locator("#clearBtn").click();
+        await openPanel(themePage,"add");
+        await themePage.locator("#newQuestion").fill("U3 custom isolated");
+        await themePage.locator("#newAnswer").fill("U3 answer");
+        await themePage.locator("#saveQuestionBtn").click();
+        await openUnit(themePage,"u2");
+        await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
+        await openPanel(themePage,"add");
+        assert.equal(await themePage.locator("#userQuestionList article").count(),0);
+        await openUnit(themePage,"u3");
+        await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
+        await openPanel(themePage,"add");
+        assert.match(await themePage.locator("#userQuestionList").innerText(),/U3 custom isolated/);
+        record("Actual U3: 59 source questions, 25/25/9 pages, missing options, source reminder and isolated custom storage");
+        record("Night theme follows device, manual preference persists and music continues during theme switching");
+        await fresh.close();
+        const blocked = await context.newPage();
+        await blocked.addInitScript(() => {
+            Object.defineProperty(Storage.prototype,"getItem",{value:()=>{throw new Error("blocked");}});
+            Object.defineProperty(Storage.prototype,"setItem",{value:()=>{throw new Error("blocked");}});
+        });
+        await blocked.goto(url);
+        await blocked.locator("#homeThemeBtn").click();
+        assert.equal(await blocked.locator("#subjectHome").getAttribute("data-theme"),"night");
+        await blocked.close();
+        record("Theme remains usable without localStorage");
+
         // Test future units through intercepted responses; no invented questions are published.
         const isolated = await context.newPage();
         isolated.on("pageerror", e => errors.push(e.message));
         const catalog = fs.readFileSync(path.join(root, "js/units.js"), "utf8")
             .replace('{ id: "u1", name: "U1", dataUrl: null }', '{ id: "u1", name: "U1", dataUrl: "../data/test-u1.json" }')
-            .replace('{ id: "u3", name: "U3", dataUrl: null }', '{ id: "u3", name: "U3", dataUrl: "../data/test-u3.json" }');
+            .replace('../data/algorithm-u3.json', '../data/test-u3.json');
         await isolated.route("**/js/units.js", route => route.fulfill({ contentType: "text/javascript", body: catalog }));
         const fixture = Array.from({length: 63}, (_, i) => ({
             id: i + 1, type: "fill_blank", question: "U1 fixture " + (i + 1), correct_answer: "U1 answer", options: []

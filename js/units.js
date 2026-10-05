@@ -4,8 +4,8 @@ export const SUBJECTS = [
         id: "algorithm", name: "演算法", available: true, defaultUnit: "u2",
         units: [
             { id: "u1", name: "U1", dataUrl: null },
-            { id: "u2", name: "U2", dataUrl: "../data/questions.json" },
-            { id: "u3", name: "U3", dataUrl: null }
+            { id: "u2", name: "U2", questionCount: 60, dataUrl: "../data/questions.json" },
+            { id: "u3", name: "U3", questionCount: 59, dataUrl: "../data/algorithm-u3.json" }
         ]
     },
     { id: "os", name: "作業系統", available: false, units: [] }
