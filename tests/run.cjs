@@ -77,9 +77,9 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await page.locator("#bgMusic").getAttribute("src"), null);
         const parsed = await page.evaluate(async () => {
             const { parseTrackName } = await import("./js/music.js");
-            return ["WINTER-Speed of Summer.mp3", "BLUE (WINTER Solo).mp3", "Artist — Song.MP3", "Only title.mp3"].map(parseTrackName);
+            return ["WINTER-Speed of Summer.mp3", "BLUE (WINTER Solo).mp3", "Artist — Song.MP3", "Only title.mp3", "aespa -Supernova.mp3", "UP (KARINA Solo).mp3"].map(parseTrackName);
         });
-        assert.deepEqual(parsed, [{title:"Speed of Summer",artist:"WINTER"},{title:"BLUE",artist:"WINTER"},{title:"Song",artist:"Artist"},{title:"Only title",artist:""}]);
+        assert.deepEqual(parsed, [{title:"Speed of Summer",artist:"WINTER"},{title:"BLUE",artist:"WINTER"},{title:"Song",artist:"Artist"},{title:"Only title",artist:""},{title:"Supernova",artist:"aespa"},{title:"UP",artist:"KARINA"}]);
         record("Filename recognition and panel opens without autoplay");
         await page.locator("#musicPlayBtn").click();
         await page.waitForFunction(() => {
@@ -106,11 +106,26 @@ server.listen(0, "127.0.0.1", async () => {
             return audio.src.endsWith("/music/speed-of-summer.mp3") && !audio.paused && audio.currentTime > .1;
         });
         assert.equal(await page.locator("#musicTitle").innerText(), "Speed of Summer");
-        await page.locator("#bgMusic").evaluate(el => { el.currentTime = el.duration - .15; });
-        await page.waitForFunction(() => {
-            const audio = document.querySelector("#bgMusic");
-            return audio.src.endsWith("/music/blue.mp3") && !audio.paused && audio.currentTime > .1;
-        });
+        assert.equal(await page.locator("#musicTrackList button").count(), 4);
+        for (const track of [{path:"supernova",title:"Supernova",artist:"aespa"},{path:"up",title:"UP",artist:"KARINA"},{path:"blue",title:"BLUE",artist:"WINTER"}]) {
+            await page.locator("#bgMusic").evaluate(el => { el.currentTime = el.duration - .15; });
+            await page.waitForFunction(track => {
+                const audio = document.querySelector("#bgMusic");
+                return audio.src.endsWith("/music/" + track.path + ".mp3") && !audio.paused && audio.currentTime > .1;
+            }, track);
+            assert.equal(await page.locator("#musicTitle").innerText(), track.title);
+            assert.equal(await page.locator("#musicArtist").innerText(), track.artist);
+        }
+        for (const index of [2, 3, 0]) {
+            await page.locator('[data-track="' + index + '"]').click();
+            await page.waitForFunction(index => {
+                const paths = ["blue", "speed-of-summer", "supernova", "up"];
+                const audio = document.querySelector("#bgMusic");
+                return audio.src.endsWith("/music/" + paths[index] + ".mp3") && !audio.paused && audio.currentTime > .1;
+            }, index);
+            assert.equal(await page.locator('[data-track="' + index + '"]').getAttribute("aria-current"), "true");
+        }
+        record("Four tracks: actual new MP3 playback, parsed artists, direct song selection and full sequential loop");
         await page.locator("#musicToggleBtn").click();
         assert.equal(await page.locator("#musicPanel").isVisible(), false);
         assert.equal(await page.locator("#bgMusic").evaluate(el => el.paused), false);
@@ -248,6 +263,7 @@ server.listen(0, "127.0.0.1", async () => {
         await phone.screenshot({ path: path.join(root, "..", "record-playing-mobile.png") });
         await phone.locator("#musicPlayBtn").click();
         assert.equal(await phone.locator("#bgMusic").evaluate(el => el.paused), true);
+        await phone.locator("#musicToggleBtn").click();
         await phone.locator("#algorithmSubjectBtn").click();
         await phone.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);

@@ -11,7 +11,9 @@ export function parseTrackName(filename) {
 // Keep original filenames as metadata, even when URLs use shorter deployment filenames.
 const TRACKS = [
     { filename: "BLUE (WINTER Solo).mp3", path: "../music/blue.mp3" },
-    { filename: "WINTER-Speed of Summer.mp3", path: "../music/speed-of-summer.mp3" }
+    { filename: "WINTER-Speed of Summer.mp3", path: "../music/speed-of-summer.mp3" },
+    { filename: "aespa -Supernova.mp3", path: "../music/supernova.mp3" },
+    { filename: "UP (KARINA Solo).mp3", path: "../music/up.mp3" }
 ].map(track => ({ ...parseTrackName(track.filename), url: new URL(track.path, import.meta.url).href }));
 
 export function initMusic() {

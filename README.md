@@ -7,7 +7,7 @@
 - js/app.js：題庫載入、搜尋、篩選、分頁與答案切換。
 - js/navigation.js：側欄、單元切換與粉色置頂按鈕。
 - js/custom-questions.js：自行新增／刪除題目與 localStorage。
-- js/music.js：首頁唱片播放按鈕、兩首 MP3 的順序播放與暫停控制。
+- js/music.js：首頁唱片播放按鈕、四首 MP3 的順序播放與暫停控制。
 - js/units.js：科目與單元設定，每個開放單元指向自己的題庫檔案。
 - js/utils.js：共用文字處理與題型名稱。
 - data/questions.json：演算法 U2 的 60 題；後續單元使用各自的 JSON，透過 js/units.js 設定載入。
@@ -61,8 +61,10 @@ localStorage 名稱仍為 algorithm_question_bank_user_questions_v1；在原網�
 音樂檔案由使用者提供：
 - music/blue.mp3：BLUE (WINTER Solo)
 - music/speed-of-summer.mp3：WINTER - Speed of Summer
+- music/supernova.mp3：aespa -Supernova
+- music/up.mp3：UP (KARINA Solo)
 
-右下角唱片點擊展開／收起音樂面板，收起不會暫停。面板提供歌曲與作者、可拖曳進度、播放／暫停、下一首、音量與可點選歌單；不提供額外播放模式或關閉按鈕。原生 audio 在首次播放後才載入音訊，先播 BLUE，再接 Speed of Summer，兩首依序循環，預設音量 50%。唱片僅在實際播放時旋轉；進入題庫會暫停並收起面板，返回首頁可續播。
+右下角唱片點擊展開／收起音樂面板，收起不會暫停。面板提供歌曲與作者、可拖曳進度、播放／暫停、下一首、音量與可點選歌單；不提供額外播放模式或關閉按鈕。原生 audio 在首次播放後才載入音訊，先播 BLUE，再接 Speed of Summer、Supernova、UP，四首依序循環，預設音量 50%。唱片僅在實際播放時旋轉；進入題庫會暫停並收起面板，返回首頁可續播。
 
 歌曲原始檔名保留於 js/music.js 的 filename 資料，parseTrackName 會識別「作者-歌曲名稱」及「歌曲 (作者 Solo)」，無符合格式時以檔名作為歌名。部署用音訊網址維持不變；新增歌曲需在 TRACKS 加入檔名及路徑。
 
