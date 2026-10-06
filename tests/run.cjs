@@ -307,7 +307,8 @@ server.listen(0, "127.0.0.1", async () => {
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
         if (await page.locator("#mobileMenuBtn").getAttribute("aria-expanded") !== "true") await page.locator("#mobileMenuBtn").click();
         await page.locator('[data-panel="units"]').click();
-        assert.equal(await page.locator('#unitGrid [data-unit="u1"]').isDisabled(), true);
+        assert.equal(await page.locator('#unitGrid [data-unit="u1"]').count(), 0);
+        assert.match(await page.locator('#unitGrid [data-unit="u4"]').innerText(), /59 題/);
         assert.equal(await page.locator('#unitGrid [data-unit="u3"]').isDisabled(), false);
         assert.match(await page.locator('#unitGrid [data-unit="u3"]').innerText(), /60 題/);
         assert.equal(await page.locator('#unitGrid [data-unit="u2"]').getAttribute("aria-current"), "true");
@@ -512,17 +513,47 @@ server.listen(0, "127.0.0.1", async () => {
         await blocked.close();
         record("Theme remains usable without localStorage");
 
+        const u4Data = JSON.parse(fs.readFileSync(path.join(root, 'data/algorithm-u4.json'), 'utf8'));
+        assert.equal(u4Data.length, 59);
+        assert.equal(u4Data.filter(q=>q.type==='fill_blank').length, 19);
+        assert.equal(new Set(u4Data.map(q=>q.id)).size, 59);
+        const u4Page = await context.newPage();
+        u4Page.on('pageerror', e=>errors.push(e.message));
+        await u4Page.goto(url);
+        await u4Page.locator('#algorithmSubjectBtn').click();
+        await openUnit(u4Page, 'u4');
+        await u4Page.waitForFunction(()=>document.querySelector('#bankFooter').textContent.includes('U4'));
+        assert.equal(await u4Page.locator('#bankFooter').innerText(), '演算法｜U4｜內建 59 題');
+        await u4Page.locator('#hideAllBtn').click();
+        assert.equal(await u4Page.locator('#questionList .answer.always-visible.show').count(), u4Data.slice(0,25).filter(q=>q.type==='choice_options_missing').length);
+        assert.equal(await u4Page.locator('#questionList .answer:not(.always-visible).show').count(), 0);
+        await u4Page.locator('#nextPageBtn').click();
+        await u4Page.locator('#nextPageBtn').click();
+        assert.equal(await u4Page.locator('#questionList article').count(), 9);
+        await u4Page.locator('#showAllBtn').click();
+        await u4Page.locator('#searchInput').fill('2i+1');
+        assert.equal(await u4Page.locator('#questionList article').count(), 1);
+        assert.equal(await u4Page.locator('#questionList .answer.show').count(), 1);
+        await u4Page.locator('#searchInput').fill('');
+        await openPanel(u4Page, 'units');
+        await u4Page.screenshot({path:path.join(root,'..','u4-unit-preview.png')});
+        await openUnit(u4Page, 'u3');
+        await u4Page.waitForFunction(()=>document.querySelector('#bankFooter').textContent.includes('U3'));
+        assert.equal(await u4Page.locator('#bankFooter').innerText(), '演算法｜U3｜內建 60 題');
+        await u4Page.close();
+        record('U4: 59 source questions, 19 fill blanks, 25/25/9 pages, persistent missing-option answers and isolated search');
+
         // Test future units through intercepted responses; no invented questions are published.
         const isolated = await context.newPage();
         isolated.on("pageerror", e => errors.push(e.message));
         const catalog = fs.readFileSync(path.join(root, "js/units.js"), "utf8")
-            .replace('{ id: "u1", name: "U1", dataUrl: null }', '{ id: "u1", name: "U1", dataUrl: "../data/test-u1.json" }')
+            .replace('../data/algorithm-u4.json', '../data/test-u4.json')
             .replace('../data/algorithm-u3.json', '../data/test-u3.json');
         await isolated.route("**/js/units.js", route => route.fulfill({ contentType: "text/javascript", body: catalog }));
         const fixture = Array.from({length: 63}, (_, i) => ({
-            id: i + 1, type: "fill_blank", question: "U1 fixture " + (i + 1), correct_answer: "U1 answer", options: []
+            id: i + 1, type: "fill_blank", question: "U4 fixture " + (i + 1), correct_answer: "U4 answer", options: []
         }));
-        await isolated.route("**/data/test-u1.json", route => route.fulfill({ contentType: "application/json", body: JSON.stringify(fixture) }));
+        await isolated.route("**/data/test-u4.json", route => route.fulfill({ contentType: "application/json", body: JSON.stringify(fixture) }));
         await isolated.route("**/data/test-u3.json", route => route.fulfill({ contentType: "application/json", body: JSON.stringify([{...fixture[0], question: "U3 fixture"}]) }));
         await isolated.goto(url);
         await isolated.locator("#algorithmSubjectBtn").click();
@@ -531,9 +562,9 @@ server.listen(0, "127.0.0.1", async () => {
         await isolated.locator("#showAllBtn").click();
         await isolated.locator("#nextPageBtn").click();
         await isolated.locator("#searchInput").fill("Legacy");
-        await openUnit(isolated, "u1");
+        await openUnit(isolated, "u4");
         await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 63"));
-        assert.equal(await isolated.locator("#currentUnitLabel").innerText(), "演算法｜U1");
+        assert.equal(await isolated.locator("#currentUnitLabel").innerText(), "演算法｜U4");
         assert.equal(await isolated.locator("#searchInput").inputValue(), "");
         assert.equal(await isolated.locator("#pageInfo").innerText(), "第 1 / 3 頁");
         assert.equal(await isolated.locator("#questionList .answer.show").count(), 25);
@@ -544,9 +575,9 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await isolated.locator("#questionList article").count(), 0);
         await openPanel(isolated, "add");
         assert.equal(await isolated.locator("#userQuestionList article").count(), 0);
-        assert.match(await isolated.locator("#addUnitLabel").innerText(), /U1/);
-        await isolated.locator("#newQuestion").fill("U1 custom question");
-        await isolated.locator("#newAnswer").fill("U1 custom answer");
+        assert.match(await isolated.locator("#addUnitLabel").innerText(), /U4/);
+        await isolated.locator("#newQuestion").fill("U4 custom question");
+        await isolated.locator("#newAnswer").fill("U4 custom answer");
         await isolated.locator("#saveQuestionBtn").click();
         assert.equal(await isolated.locator("#userQuestionList article").count(), 1);
         assert.equal(await isolated.evaluate(() => localStorage.getItem("algorithm_question_bank_user_questions_v1")), legacyBefore);
@@ -554,24 +585,24 @@ server.listen(0, "127.0.0.1", async () => {
         await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
         await openPanel(isolated, "add");
         assert.match(await isolated.locator("#userQuestionList").innerText(), /Legacy content/);
-        assert.doesNotMatch(await isolated.locator("#userQuestionList").innerText(), /U1 custom/);
-        await openUnit(isolated, "u1");
+        assert.doesNotMatch(await isolated.locator("#userQuestionList").innerText(), /U4 custom/);
+        await openUnit(isolated, "u4");
         await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 64"));
         await openPanel(isolated, "add");
-        assert.match(await isolated.locator("#userQuestionList").innerText(), /U1 custom/);
+        assert.match(await isolated.locator("#userQuestionList").innerText(), /U4 custom/);
         await isolated.locator("[data-delete-question]").click();
         assert.equal(await isolated.evaluate(() => localStorage.getItem("algorithm_question_bank_user_questions_v1")), legacyBefore);
         record("Independent 63/60-question units, pagination, answer reset and scoped custom storage");
 
         let releaseSlow;
         const slowResponse = new Promise(resolve => { releaseSlow = resolve; });
-        await isolated.route("**/data/test-u1.json", async route => {
+        await isolated.route("**/data/test-u4.json", async route => {
             await slowResponse;
             await route.fulfill({contentType: "application/json", body: JSON.stringify(fixture)});
         });
         await openUnit(isolated, "u2");
         await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
-        await openUnit(isolated, "u1");
+        await openUnit(isolated, "u4");
         await openUnit(isolated, "u3");
         await isolated.waitForFunction(() => document.querySelector("#summary").textContent.includes("1 / 1"));
         releaseSlow();
@@ -590,3 +621,6 @@ server.listen(0, "127.0.0.1", async () => {
         server.close();
     }
 });
+
+
+

@@ -3,9 +3,9 @@ export const SUBJECTS = [
     {
         id: "algorithm", name: "演算法", available: true, defaultUnit: "u2",
         units: [
-            { id: "u1", name: "U1", dataUrl: null },
             { id: "u2", name: "U2", questionCount: 60, dataUrl: "../data/questions.json" },
-            { id: "u3", name: "U3", questionCount: 60, dataUrl: "../data/algorithm-u3.json" }
+            { id: "u3", name: "U3", questionCount: 60, dataUrl: "../data/algorithm-u3.json" },
+            { id: "u4", name: "U4", questionCount: 59, dataUrl: "../data/algorithm-u4.json" }
         ]
     },
     { id: "os", name: "作業系統", available: false, units: [] }
@@ -15,3 +15,5 @@ export function getUnit(subjectId, unitId) {
     const subject = SUBJECTS.find(item => item.id === subjectId && item.available);
     return subject?.units.find(item => item.id === unitId && item.dataUrl);
 }
+
+
