@@ -1,7 +1,7 @@
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js";
-import { loadUserQuestions, initCustomQuestions } from "./custom-questions.js";
+import { loadUserQuestions, initCustomQuestions } from "./custom-questions.js?v=20261006-add";
 import { initNavigation } from "./navigation.js";
-import { SUBJECTS, getUnit } from "./units.js";
+import { SUBJECTS, getUnit } from "./units.js?v=20261006-add";
 import { initMusic } from "./music.js";
 
 initHomeTheme();

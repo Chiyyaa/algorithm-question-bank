@@ -625,7 +625,7 @@ server.listen(0, "127.0.0.1", async () => {
         const catalog = fs.readFileSync(path.join(root, "js/units.js"), "utf8")
             .replace('../data/algorithm-u4.json', '../data/test-u4.json')
             .replace('../data/algorithm-u3.json', '../data/test-u3.json');
-        await isolated.route("**/js/units.js", route => route.fulfill({ contentType: "text/javascript", body: catalog }));
+        await isolated.route("**/js/units.js*", route => route.fulfill({ contentType: "text/javascript", body: catalog }));
         const fixture = Array.from({length: 63}, (_, i) => ({
             id: i + 1, type: "fill_blank", question: "U4 fixture " + (i + 1), correct_answer: "U4 answer", options: []
         }));
