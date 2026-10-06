@@ -72,7 +72,7 @@ let requestVersion = 0;
 let loading = false;
 let ready = false;
 let customQuestions;
-const { updateBackToTop } = initNavigation({
+const { updateBackToTop, setSidebarOpen } = initNavigation({
     onSelectUnit: selectUnit,
     onLeaveSubject: leaveSubject
 });
@@ -80,12 +80,15 @@ const PAGE_SIZE = 25;
 let currentPage = 1;
 let currentFilter = "all";
 const answersVisible = new Set();
+const answersHidden = new Set();
 const ANSWER_DISPLAY_KEY = "question_bank_answers_shown_v1";
 let answersShown = false;
 try { answersShown = localStorage.getItem(ANSWER_DISPLAY_KEY) === "true"; } catch { /* Session-only fallback. */ }
 
 function setAnswersShown(shown) {
     answersShown = shown;
+    answersVisible.clear();
+    answersHidden.clear();
     try { localStorage.setItem(ANSWER_DISPLAY_KEY, String(shown)); } catch { /* Keep controls usable without storage. */ }
     render();
 }
@@ -127,7 +130,8 @@ function render() {
     }
 
     list.innerHTML = pageItems.map(q => {
-        const answerShown = answersShown;
+        const alwaysShowAnswer = q.type === "choice_options_missing";
+        const answerShown = alwaysShowAnswer || answersVisible.has(q.id) || (answersShown && !answersHidden.has(q.id));
         const options = q.options || [];
 
         const partialOptionsNote = q.options_status === "known_options_only"
@@ -159,12 +163,12 @@ function render() {
             ${optionsHtml}
             ${partialOptionsNote}
 
-            <button class="answer-btn" type="button"
-                    data-toggle-answer="${q.id}">
+            ${alwaysShowAnswer ? "" : `<button class="answer-btn" type="button"
+                    aria-expanded="${answerShown}" data-toggle-answer="${q.id}">
                 ${answerShown ? "隱藏答案" : (q.type === "disputed" ? "顯示原標準答案與提醒" : "顯示正確答案")}
-            </button>
+            </button>`}
 
-            <div class="answer ${answerShown ? "show" : ""}">
+            <div class="answer ${answerShown ? "show" : ""} ${alwaysShowAnswer ? "always-visible" : ""}">
                 <div class="answer-label">${q.type === "disputed" ? "題庫原標準答案（含爭議項）：" : "正確答案："}</div>
                 <div class="answer-content">${highlight(q.correct_answer || "未記錄", term)}</div>
                 ${q.answer_note ? `<div class="answer-note">${escapeHtml(q.answer_note)}</div>` : ""}
@@ -178,8 +182,18 @@ function render() {
     updateBackToTop();
 }
 
-function toggleAnswer() {
-    setAnswersShown(!answersShown);
+function toggleAnswer(id) {
+    const question = QUESTIONS.find(q => q.id === id);
+    if (!question || question.type === "choice_options_missing") return;
+    const shown = answersVisible.has(id) || (answersShown && !answersHidden.has(id));
+    if (shown) {
+        answersVisible.delete(id);
+        answersHidden.add(id);
+    } else {
+        answersVisible.add(id);
+        answersHidden.delete(id);
+    }
+    render();
 }
 
 function resetPagination() {
@@ -227,14 +241,17 @@ list.addEventListener("click", event => {
 });
 
 function renderUnitChoices() {
-    const buttons = currentSubject.units.map(unit => {
+    document.getElementById("unitGrid").innerHTML = currentSubject.units.map(unit => {
         const active = unit.id === currentUnit?.id;
-        return `<button class="unit-btn ${active ? "active" : ""}" data-unit="${escapeHtml(unit.id)}"
-            type="button" ${unit.dataUrl ? "" : "disabled"} ${active ? 'aria-current="true"' : ""}>
-            ${escapeHtml(unit.name)}${unit.questionCount ? ` · ${unit.questionCount} 題` : ""}<span class="unit-status">${unit.dataUrl ? (active ? "目前單元" : "進入題庫") : "尚未開放"}</span></button>`;
-    });
-    document.getElementById("unitGrid").innerHTML = currentSubject.units.map((unit, i) =>
-        `<div class="form-card ${unit.dataUrl ? "" : "unit-coming"}">${buttons[i]}</div>`).join("");
+        const available = !!unit.dataUrl;
+        return `<button class="unit-card ${active ? "active" : ""}" data-unit="${escapeHtml(unit.id)}"
+            type="button" ${available ? "" : "disabled"} ${active ? 'aria-current="true"' : ""}>
+            <span class="unit-card-top"><span class="unit-card-name">${escapeHtml(unit.name)}</span>
+            <span class="unit-card-status">${active ? "目前單元" : available ? "可練習" : "尚未開放"}</span></span>
+            <span class="unit-card-count">${unit.questionCount ? `<strong>${unit.questionCount}</strong> 題` : "準備中"}</span>
+            <span class="unit-card-action">${active ? "繼續練習" : available ? "進入題庫" : "敬請期待"}<span aria-hidden="true">${available ? "↗" : "—"}</span></span>
+        </button>`;
+    }).join("");
 }
 
 function selectUnit(unitId) {
@@ -247,6 +264,7 @@ function selectUnit(unitId) {
     requestVersion++;
     QUESTIONS.length = 0;
     answersVisible.clear();
+    answersHidden.clear();
     searchInput.value = "";
     currentFilter = "all";
     currentPage = 1;
@@ -260,10 +278,15 @@ function selectUnit(unitId) {
     document.getElementById("bankFooter").textContent = "";
     document.title = label + " 題庫";
     renderUnitChoices();
+    if (history.state?.questionBank?.view === "bank") {
+        history.replaceState({ ...history.state, questionBank: { view: "bank", unitId: unit.id } }, "");
+    }
     loadQuestionBank();
 }
 
-function leaveSubject() {
+function leaveSubject(fromHistory = false) {
+    if (!fromHistory && history.state?.questionBank?.view === "bank") { history.back(); return; }
+    setSidebarOpen(false);
     requestVersion++;
     loading = false;
     ready = false;
@@ -271,6 +294,7 @@ function leaveSubject() {
     currentUnit = null;
     QUESTIONS.length = 0;
     answersVisible.clear();
+    answersHidden.clear();
     customQuestions.resetForm();
     customQuestions.refresh();
     document.getElementById("studyShell").hidden = true;
@@ -290,9 +314,17 @@ customQuestions = initCustomQuestions({
         ? { subjectId: currentSubject.id, unitId: currentUnit.id } : null,
     onChange: render
 });
-document.getElementById("algorithmSubjectBtn").addEventListener("click", () => {
+history.replaceState({ ...history.state, questionBank: { view: "home" } }, "");
+window.addEventListener("popstate", event => {
+    if (event.state?.questionBank?.view === "bank") enterAlgorithm(event.state.questionBank.unitId, false);
+    else leaveSubject(true);
+});
+
+function enterAlgorithm(unitId, pushHistory = true) {
     currentSubject = SUBJECTS.find(subject => subject.id === "algorithm" && subject.available);
     if (!currentSubject) return;
+    const selected = getUnit(currentSubject.id, unitId) || getUnit(currentSubject.id, currentSubject.defaultUnit);
+    if (pushHistory) history.pushState({ ...history.state, questionBank: { view: "bank", unitId: selected.id } }, "");
     closeMusic(false);
     clearHomeSparkles();
     document.body.classList.remove("home-mode");
@@ -301,9 +333,11 @@ document.getElementById("algorithmSubjectBtn").addEventListener("click", () => {
     document.getElementById("sidebar").hidden = false;
     document.getElementById("mobileMenuBtn").hidden = false;
     document.querySelector('.nav-btn[data-panel="bank"]').click();
-    selectUnit(currentSubject.defaultUnit);
+    selectUnit(selected.id);
+    setSidebarOpen(true);
     document.getElementById("bankHeading").focus({ preventScroll: true });
-});
+}
+document.getElementById("algorithmSubjectBtn").addEventListener("click", () => enterAlgorithm());
 
 async function loadQuestionBank() {
     if (loading || ready || !currentUnit) return;

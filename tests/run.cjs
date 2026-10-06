@@ -46,7 +46,7 @@ server.listen(0, "127.0.0.1", async () => {
     const record = name => { checks.push(name); console.log("PASS " + name); };
     async function openPanel(page, panel) {
         if (await page.locator("#mobileMenuBtn").getAttribute("aria-expanded") !== "true") {
-            await page.locator("#mobileMenuBtn").click();
+            if (await page.locator("#mobileMenuBtn").getAttribute("aria-expanded") !== "true") await page.locator("#mobileMenuBtn").click();
         }
         await page.locator('[data-panel="' + panel + '"]').click();
     }
@@ -161,8 +161,10 @@ server.listen(0, "127.0.0.1", async () => {
         record("Subject entry, unavailable OS, algorithm opens U2");
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
         assert.equal(await page.locator("#questionList article").count(), 25);
+        assert.equal(await page.locator("#sidebar").evaluate(el => el.inert), false);
+        await page.locator("#mobileMenuBtn").click();
         assert.equal(await page.locator("#sidebar").evaluate(el => el.inert), true);
-        record("GitHub Pages subpath loads all modules/data; 60 questions; sidebar closed");
+        record("GitHub Pages subpath loads all modules/data; 60 questions; sidebar initially open and collapsible");
         await page.locator("#nextPageBtn").click();
         await page.locator("#nextPageBtn").click();
         assert.equal(await page.locator("#questionList article").count(), 10);
@@ -202,7 +204,7 @@ server.listen(0, "127.0.0.1", async () => {
         await page.locator("#showAllBtn").click();
         assert.equal(await page.locator("#questionList .answer.show").count(), 25);
         await page.locator("#hideAllBtn").click();
-        assert.equal(await page.locator("#questionList .answer.show").count(), 0);
+        assert.equal(await page.locator("#questionList .answer.show:not(.always-visible)").count(), 0);
         await page.evaluate(() => {
             const el = document.scrollingElement;
             window.scrollTo(0, (el.scrollHeight - el.clientHeight) * .74);
@@ -218,7 +220,7 @@ server.listen(0, "127.0.0.1", async () => {
         await page.locator("#backToTopBtn").click();
         await page.waitForFunction(() => document.scrollingElement.scrollTop === 0);
         record("Show/hide answers; pink button appears after 75% and returns to top");
-        await page.locator("#mobileMenuBtn").click();
+        if (await page.locator("#mobileMenuBtn").getAttribute("aria-expanded") !== "true") await page.locator("#mobileMenuBtn").click();
         assert.equal(await page.locator("#sidebar").evaluate(el => el.inert), false);
         assert.equal(await page.locator(".sidebar-brand").getAttribute("href"), "https://canva.link/evygbbmrt3v2umy");
         await page.locator('[data-panel="units"]').click();
@@ -233,7 +235,7 @@ server.listen(0, "127.0.0.1", async () => {
         await page.reload();
         await page.locator("#algorithmSubjectBtn").click();
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
-        await page.locator("#mobileMenuBtn").click();
+        if (await page.locator("#mobileMenuBtn").getAttribute("aria-expanded") !== "true") await page.locator("#mobileMenuBtn").click();
         await page.locator('[data-panel="add"]').click();
         assert.match(await page.locator("#userQuestionList").innerText(), /Regression test question/);
         await page.locator("[data-delete-question]").click();
@@ -269,7 +271,7 @@ server.listen(0, "127.0.0.1", async () => {
         await phone.locator("#algorithmSubjectBtn").click();
         await phone.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
         assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
-        await phone.locator("#mobileMenuBtn").click();
+        if (await phone.locator("#mobileMenuBtn").getAttribute("aria-expanded") !== "true") await phone.locator("#mobileMenuBtn").click();
         assert.equal(await phone.locator("#sidebarBackdrop").isVisible(), true);
         await phone.locator('[data-panel="units"]').click();
         assert.equal(await phone.locator("#sidebar").evaluate(el => el.inert), true);
@@ -294,15 +296,16 @@ server.listen(0, "127.0.0.1", async () => {
             q.correct_answer.split("\n").forEach(answer => assert.ok(q.options.includes(answer), "Answer mismatch #" + q.id));
         });
         
-        await page.locator("#mobileMenuBtn").click();
+        if (await page.locator("#mobileMenuBtn").getAttribute("aria-expanded") !== "true") await page.locator("#mobileMenuBtn").click();
         await page.locator("#switchSubjectBtn").click();
+        await page.locator("#subjectHome").waitFor({state:"visible"});
         assert.equal(await page.locator("#subjectHome").isVisible(), true);
         assert.equal(await page.locator("#studyShell").isVisible(), false);
         assert.equal(await page.locator("#backToTopBtn").isVisible(), false);
         await page.screenshot({ path: path.join(root, "..", "subject-home-desktop.png") });
         await page.locator("#algorithmSubjectBtn").click();
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
-        await page.locator("#mobileMenuBtn").click();
+        if (await page.locator("#mobileMenuBtn").getAttribute("aria-expanded") !== "true") await page.locator("#mobileMenuBtn").click();
         await page.locator('[data-panel="units"]').click();
         assert.equal(await page.locator('#unitGrid [data-unit="u1"]').isDisabled(), true);
         assert.equal(await page.locator('#unitGrid [data-unit="u3"]').isDisabled(), false);
@@ -313,7 +316,7 @@ server.listen(0, "127.0.0.1", async () => {
         record("Return to subjects; units appear only through unit selection");
 
         await phone.setViewportSize({ width: 390, height: 300 });
-        await phone.locator("#mobileMenuBtn").click();
+        if (await phone.locator("#mobileMenuBtn").getAttribute("aria-expanded") !== "true") await phone.locator("#mobileMenuBtn").click();
         const scrollbar = await phone.locator("#sidebar").evaluate(el => {
             el.scrollTop = el.scrollHeight;
             return {
@@ -409,6 +412,7 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await themePage.locator("#questionList .option").count(),0);
         assert.match(await themePage.locator("#questionList").innerText(), /沒有保存完整選項/);
         assert.equal(await themePage.locator("#questionList .answer").isVisible(), true);
+        assert.equal(await themePage.locator("#questionList .answer-btn").count(),0);
         assert.equal(await themePage.locator("#questionList .answer-content").innerText(), "O(n)");
         await themePage.locator("#clearBtn").click();
         await openPanel(themePage,"add");
@@ -425,24 +429,35 @@ server.listen(0, "127.0.0.1", async () => {
         assert.match(await themePage.locator("#userQuestionList").innerText(),/U3 custom isolated/);
         record("Actual U3: 60 questions, 25/25/10 pages, missing options, source reminder and isolated custom storage");
 
-        // A single show/hide action controls every query and unit, with browser persistence.
-        await themePage.locator('.nav-btn[data-panel="bank"]').click();
+
+        // Individual actions never change the toolbar preference.
+        await openPanel(themePage,"bank");
+        await themePage.locator("#hideAllBtn").click();
         await themePage.locator("#searchInput").fill("猜測解的[__1__]");
-        assert.equal(await themePage.locator("#questionList article").getAttribute("data-id"), "60");
-        assert.equal(await themePage.locator("#questionList .answer").isVisible(), true);
-        assert.equal(await themePage.locator("#questionList .answer-content").innerText(), "form");
+        assert.equal(await themePage.locator("#questionList .answer").isVisible(),false);
         await themePage.locator("#questionList .answer-btn").click();
-        assert.equal(await themePage.locator("#questionList .answer").isVisible(), false);
+        assert.equal(await themePage.locator("#questionList .answer").isVisible(),true);
+        assert.equal(await themePage.evaluate(() => localStorage.getItem("question_bank_answers_shown_v1")),"false");
+        await themePage.locator("#searchInput").fill("遞迴樹的每一層代表");
+        assert.equal(await themePage.locator("#questionList .answer").isVisible(),false);
+        await themePage.locator("#searchInput").fill("猜測解的[__1__]");
+        assert.equal(await themePage.locator("#questionList .answer").isVisible(),true);
+        await themePage.locator("#questionList .answer-btn").click();
         await themePage.locator("#clearBtn").click();
-        assert.equal(await themePage.locator("#questionList .answer.show").count(), 0);
-        await themePage.locator("#questionList .answer-btn").first().click();
+        assert.equal(await themePage.locator("#questionList .answer.show:not(.always-visible)").count(),0);
+        assert.equal(await themePage.locator('[data-id="23"] .answer').isVisible(),true);
+        assert.equal(await themePage.locator('[data-id="23"] .answer-btn').count(),0);
+        await themePage.locator("#showAllBtn").click();
         assert.equal(await themePage.locator("#questionList .answer.show").count(),25);
         await themePage.locator("#nextPageBtn").click();
         assert.equal(await themePage.locator("#questionList .answer.show").count(),25);
         await themePage.locator("#searchInput").fill("遞迴樹的每一層代表");
         assert.equal(await themePage.locator("#questionList .answer").isVisible(),true);
-        assert.equal(await themePage.locator("#questionList .option").count(),4);
-        await themePage.screenshot({path:path.join(root,"..","u3-answers-persistent.png")});
+        await themePage.locator("#questionList .answer-btn").click();
+        assert.equal(await themePage.locator("#questionList .answer").isVisible(),false);
+        assert.equal(await themePage.evaluate(() => localStorage.getItem("question_bank_answers_shown_v1")),"true");
+        await themePage.locator("#searchInput").fill("猜測解的[__1__]");
+        assert.equal(await themePage.locator("#questionList .answer").isVisible(),true);
         await openUnit(themePage,"u2");
         await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
         assert.equal(await themePage.locator("#questionList .answer.show").count(),25);
@@ -454,14 +469,36 @@ server.listen(0, "127.0.0.1", async () => {
         await themePage.reload();
         await themePage.locator("#algorithmSubjectBtn").click();
         await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
-        assert.equal(await themePage.locator("#questionList .answer.show").count(),0);
+        assert.equal(await themePage.locator("#questionList .answer.show:not(.always-visible)").count(),0);
         await themePage.locator("#searchInput").fill("no-result-123");
         await themePage.locator("#showAllBtn").click();
         await themePage.locator("#clearBtn").click();
         assert.equal(await themePage.locator("#questionList .answer.show").count(),25);
         await themePage.locator("#hideAllBtn").click();
-        record("One show/hide action persists across queries, pages, units, reload and empty search");
-
+        await openUnit(themePage,"u3");
+        await themePage.waitForFunction(() => document.querySelector("#bankFooter").textContent.includes("U3"));
+        await themePage.locator("#searchInput").fill("對於 T(n) = T(n/2) + n");
+        assert.equal(await themePage.locator("#questionList .answer").isVisible(),true);
+        assert.equal(await themePage.locator("#questionList .answer-btn").count(),0);
+        await themePage.locator("#hideAllBtn").click();
+        assert.equal(await themePage.locator("#questionList .answer").isVisible(),true);
+        await openPanel(themePage,"units");
+        await themePage.screenshot({path:path.join(root,"..","unit-cards-desktop.png")});
+        assert.equal(await themePage.locator(".unit-card").count(),3);
+        const historySize = await themePage.evaluate(() => history.length);
+        await themePage.goBack();
+        await themePage.locator("#subjectHome").waitFor({state:"visible"});
+        assert.equal(await themePage.locator("#studyShell").isVisible(),false);
+        await themePage.goForward();
+        await themePage.waitForFunction(() => document.querySelector("#bankFooter").textContent.includes("U3"));
+        assert.equal(await themePage.locator("#currentUnitLabel").innerText(),"演算法｜U3");
+        assert.equal(await themePage.locator("#mobileMenuBtn").getAttribute("aria-expanded"),"true");
+        await themePage.locator("#switchSubjectBtn").click();
+        await themePage.locator("#subjectHome").waitFor({state:"visible"});
+        await themePage.locator("#algorithmSubjectBtn").click();
+        assert.equal(await themePage.evaluate(() => history.length),historySize);
+        record("Individual answer controls are isolated; toolbar mode persists; missing-option answers cannot be hidden");
+        record("Unit cards, browser Back/Forward, return to subjects and sidebar default open");
         record("Night theme follows device, manual preference persists and music continues during theme switching");
         await fresh.close();
         const blocked = await context.newPage();

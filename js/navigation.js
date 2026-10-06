@@ -79,6 +79,5 @@ document.getElementById("backToTopBtn").addEventListener("click", () => {
     document.getElementById("searchInput").focus({ preventScroll: true });
 });
 
-    return { updateBackToTop };
+    return { updateBackToTop, setSidebarOpen };
 }
-
