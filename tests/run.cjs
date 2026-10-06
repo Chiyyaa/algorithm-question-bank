@@ -173,6 +173,7 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await page.locator("#questionList article").count(), 1);
         await page.locator(".answer-btn").click();
         assert.match(await page.locator(".answer-content").innerText(), /n<=0\/n==1/);
+        await page.locator(".answer-btn").click();
         record("Search resets page; Fibonacci answer retained");
         await page.locator("#searchInput").fill("no-match-xyz");
         assert.equal(await page.locator("#pageInfo").innerText(), "第 0 / 0 頁");
@@ -195,6 +196,7 @@ server.listen(0, "127.0.0.1", async () => {
             });
         });
         assert.ok(Math.abs(starts[0] - starts[1]) < 1);
+        await page.locator("#hideAllBtn").click();
         record("Empty results, disputed #43, four choices, and multiline alignment");
         await page.locator('[data-filter="all"]').click();
         await page.locator("#showAllBtn").click();
@@ -304,7 +306,7 @@ server.listen(0, "127.0.0.1", async () => {
         await page.locator('[data-panel="units"]').click();
         assert.equal(await page.locator('#unitGrid [data-unit="u1"]').isDisabled(), true);
         assert.equal(await page.locator('#unitGrid [data-unit="u3"]').isDisabled(), false);
-        assert.match(await page.locator('#unitGrid [data-unit="u3"]').innerText(), /59 題/);
+        assert.match(await page.locator('#unitGrid [data-unit="u3"]').innerText(), /60 題/);
         assert.equal(await page.locator('#unitGrid [data-unit="u2"]').getAttribute("aria-current"), "true");
         assert.equal(await page.locator("#panel-units").isVisible(), true);
         assert.equal(await page.locator("#unitGrid [data-unit]").count(), 3);
@@ -351,20 +353,26 @@ server.listen(0, "127.0.0.1", async () => {
 
 
         const u3Data = JSON.parse(fs.readFileSync(path.join(root, "data/algorithm-u3.json"), "utf8"));
-        assert.equal(u3Data.length, 59);
-        assert.deepEqual(u3Data.map(q => q.id), Array.from({length: 59}, (_, i) => i + 1));
-        assert.equal(new Set(u3Data.map(q => q.question)).size, 59);
-        assert.equal(u3Data.filter(q => q.type === "choice").length, 32);
-        assert.equal(u3Data.filter(q => q.type === "fill_blank").length, 19);
-        assert.equal(u3Data.filter(q => q.type === "choice_options_missing").length, 8);
+        assert.equal(u3Data.length, 60);
+        assert.deepEqual(u3Data.map(q => q.id), Array.from({length: 60}, (_, i) => i + 1));
+        assert.equal(new Set(u3Data.map(q => q.question)).size, 60);
+        assert.equal(u3Data.filter(q => q.type === "choice").length, 33);
+        assert.equal(u3Data.filter(q => q.type === "fill_blank").length, 20);
+        assert.equal(u3Data.filter(q => q.type === "choice_options_missing").length, 7);
         u3Data.forEach(q => {
             assert.ok(q.question && q.correct_answer);
             assert.equal(q.options.length, q.type === "choice" ? 4 : 0);
-            assert.equal(q.answer_basis, "provided_unit3_answer");
+            assert.equal(q.answer_basis, q.id === 60 ? "provided_lms_correct_answer" : "provided_unit3_answer");
         });
         assert.equal(u3Data[4].correct_answer, "T(n/2)<=c(n/2)log(n/2)");
         assert.equal(u3Data[0].correct_answer.split("\n").length, 4);
         assert.match(u3Data[38].answer_note, /不一致/);
+
+        assert.deepEqual(u3Data[37].options, ["常數項","樹的深度","遞迴的總次數","該層遞迴分解的成本"]);
+        assert.equal(u3Data[37].type, "choice");
+        assert.equal(u3Data[59].correct_answer, "form");
+        assert.match(u3Data[59].question, /小寫英文/);
+
         const fresh = await browser.newContext({viewport:{width:1280,height:800},colorScheme:"dark",reducedMotion:"reduce"});
         const themePage = await fresh.newPage();
         themePage.on("pageerror", e => errors.push(e.message));
@@ -387,21 +395,21 @@ server.listen(0, "127.0.0.1", async () => {
         await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
         await openPanel(themePage,"units");
         assert.match(await themePage.locator('[data-unit="u2"]').innerText(), /60 題/);
-        assert.match(await themePage.locator('[data-unit="u3"]').innerText(), /59 題/);
+        assert.match(await themePage.locator('[data-unit="u3"]').innerText(), /60 題/);
         await themePage.locator('[data-unit="u3"]').click();
-        await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 59"));
-        assert.equal(await themePage.locator("#bankFooter").innerText(),"演算法｜U3｜內建 59 題");
+        await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
+        assert.equal(await themePage.locator("#bankFooter").innerText(),"演算法｜U3｜內建 60 題");
         await themePage.locator("#nextPageBtn").click();
         await themePage.locator("#nextPageBtn").click();
-        assert.equal(await themePage.locator("#questionList article").count(),9);
+        assert.equal(await themePage.locator("#questionList article").count(),10);
         await themePage.locator("#searchInput").fill("Case 1");
-        await themePage.locator(".answer-btn").click();
-        assert.match(await themePage.locator(".answer-note").innerText(),/原檔/);
+        await themePage.locator("#questionList .answer-btn").click();
+        assert.match(await themePage.locator("#questionList .answer-note").innerText(),/原檔/);
         await themePage.locator("#searchInput").fill("對於 T(n) = T(n/2) + n");
         assert.equal(await themePage.locator("#questionList .option").count(),0);
         assert.match(await themePage.locator("#questionList").innerText(), /沒有保存完整選項/);
-        await themePage.locator(".answer-btn").click();
-        assert.equal(await themePage.locator(".answer-content").innerText(), "O(n)");
+        assert.equal(await themePage.locator("#questionList .answer").isVisible(), true);
+        assert.equal(await themePage.locator("#questionList .answer-content").innerText(), "O(n)");
         await themePage.locator("#clearBtn").click();
         await openPanel(themePage,"add");
         await themePage.locator("#newQuestion").fill("U3 custom isolated");
@@ -412,10 +420,48 @@ server.listen(0, "127.0.0.1", async () => {
         await openPanel(themePage,"add");
         assert.equal(await themePage.locator("#userQuestionList article").count(),0);
         await openUnit(themePage,"u3");
-        await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
+        await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
         await openPanel(themePage,"add");
         assert.match(await themePage.locator("#userQuestionList").innerText(),/U3 custom isolated/);
-        record("Actual U3: 59 source questions, 25/25/9 pages, missing options, source reminder and isolated custom storage");
+        record("Actual U3: 60 questions, 25/25/10 pages, missing options, source reminder and isolated custom storage");
+
+        // A single show/hide action controls every query and unit, with browser persistence.
+        await themePage.locator('.nav-btn[data-panel="bank"]').click();
+        await themePage.locator("#searchInput").fill("猜測解的[__1__]");
+        assert.equal(await themePage.locator("#questionList article").getAttribute("data-id"), "60");
+        assert.equal(await themePage.locator("#questionList .answer").isVisible(), true);
+        assert.equal(await themePage.locator("#questionList .answer-content").innerText(), "form");
+        await themePage.locator("#questionList .answer-btn").click();
+        assert.equal(await themePage.locator("#questionList .answer").isVisible(), false);
+        await themePage.locator("#clearBtn").click();
+        assert.equal(await themePage.locator("#questionList .answer.show").count(), 0);
+        await themePage.locator("#questionList .answer-btn").first().click();
+        assert.equal(await themePage.locator("#questionList .answer.show").count(),25);
+        await themePage.locator("#nextPageBtn").click();
+        assert.equal(await themePage.locator("#questionList .answer.show").count(),25);
+        await themePage.locator("#searchInput").fill("遞迴樹的每一層代表");
+        assert.equal(await themePage.locator("#questionList .answer").isVisible(),true);
+        assert.equal(await themePage.locator("#questionList .option").count(),4);
+        await themePage.screenshot({path:path.join(root,"..","u3-answers-persistent.png")});
+        await openUnit(themePage,"u2");
+        await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
+        assert.equal(await themePage.locator("#questionList .answer.show").count(),25);
+        await themePage.reload();
+        await themePage.locator("#algorithmSubjectBtn").click();
+        await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
+        assert.equal(await themePage.locator("#questionList .answer.show").count(),25);
+        await themePage.locator("#hideAllBtn").click();
+        await themePage.reload();
+        await themePage.locator("#algorithmSubjectBtn").click();
+        await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
+        assert.equal(await themePage.locator("#questionList .answer.show").count(),0);
+        await themePage.locator("#searchInput").fill("no-result-123");
+        await themePage.locator("#showAllBtn").click();
+        await themePage.locator("#clearBtn").click();
+        assert.equal(await themePage.locator("#questionList .answer.show").count(),25);
+        await themePage.locator("#hideAllBtn").click();
+        record("One show/hide action persists across queries, pages, units, reload and empty search");
+
         record("Night theme follows device, manual preference persists and music continues during theme switching");
         await fresh.close();
         const blocked = await context.newPage();
@@ -453,7 +499,7 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await isolated.locator("#currentUnitLabel").innerText(), "演算法｜U1");
         assert.equal(await isolated.locator("#searchInput").inputValue(), "");
         assert.equal(await isolated.locator("#pageInfo").innerText(), "第 1 / 3 頁");
-        assert.equal(await isolated.locator("#questionList .answer.show").count(), 0);
+        assert.equal(await isolated.locator("#questionList .answer.show").count(), 25);
         await isolated.locator("#nextPageBtn").click();
         await isolated.locator("#nextPageBtn").click();
         assert.equal(await isolated.locator("#questionList article").count(), 13);

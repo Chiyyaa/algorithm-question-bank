@@ -80,6 +80,15 @@ const PAGE_SIZE = 25;
 let currentPage = 1;
 let currentFilter = "all";
 const answersVisible = new Set();
+const ANSWER_DISPLAY_KEY = "question_bank_answers_shown_v1";
+let answersShown = false;
+try { answersShown = localStorage.getItem(ANSWER_DISPLAY_KEY) === "true"; } catch { /* Session-only fallback. */ }
+
+function setAnswersShown(shown) {
+    answersShown = shown;
+    try { localStorage.setItem(ANSWER_DISPLAY_KEY, String(shown)); } catch { /* Keep controls usable without storage. */ }
+    render();
+}
 
 const searchInput = document.getElementById("searchInput");
 const list = document.getElementById("questionList");
@@ -118,7 +127,7 @@ function render() {
     }
 
     list.innerHTML = pageItems.map(q => {
-        const answerShown = answersVisible.has(q.id);
+        const answerShown = answersShown;
         const options = q.options || [];
 
         const partialOptionsNote = q.options_status === "known_options_only"
@@ -169,11 +178,9 @@ function render() {
     updateBackToTop();
 }
 
-function toggleAnswer(id) {
-    if (answersVisible.has(id)) answersVisible.delete(id);
-    else answersVisible.add(id);
-    render();
-};
+function toggleAnswer() {
+    setAnswersShown(!answersShown);
+}
 
 function resetPagination() {
     currentPage = 1;
@@ -205,13 +212,11 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
 });
 
 document.getElementById("showAllBtn").addEventListener("click", () => {
-    getFilteredQuestions().forEach(q => answersVisible.add(q.id));
-    render();
+    setAnswersShown(true);
 });
 
 document.getElementById("hideAllBtn").addEventListener("click", () => {
-    answersVisible.clear();
-    render();
+    setAnswersShown(false);
 });
 
 
