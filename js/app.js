@@ -274,7 +274,6 @@ function selectUnit(unitId) {
     customQuestions.refresh();
     const label = currentSubject.name + "｜" + unit.name;
     document.getElementById("currentUnitLabel").textContent = label;
-    document.getElementById("addUnitLabel").textContent = "新增至：" + label;
     document.getElementById("bankFooter").textContent = "";
     document.title = label + " 題庫";
     renderUnitChoices();
@@ -310,7 +309,7 @@ function leaveSubject(fromHistory = false) {
 
 customQuestions = initCustomQuestions({
     questions: QUESTIONS, answersVisible,
-    getCurrentUnit: () => ready && currentUnit
+    getCurrentUnit: () => currentUnit
         ? { subjectId: currentSubject.id, unitId: currentUnit.id } : null,
     onChange: render
 });
@@ -346,7 +345,7 @@ async function loadQuestionBank() {
     const subject = currentSubject;
     loading = true;
     const controls = document.querySelectorAll(
-        ".toolbar button, #searchInput, #prevPageBtn, #nextPageBtn, #panel-add input, #panel-add textarea, #panel-add select, #saveQuestionBtn, #resetFormBtn"
+        ".toolbar button, #searchInput, #prevPageBtn, #nextPageBtn, #panel-add input, #panel-add textarea, #panel-add select, #addUnitLabel, #saveQuestionBtn, #resetFormBtn"
     );
     controls.forEach(control => { control.disabled = true; });
     summary.textContent = "題庫載入中……";
@@ -380,3 +379,6 @@ async function loadQuestionBank() {
         if (version === requestVersion) loading = false;
     }
 }
+
+
+

@@ -140,51 +140,18 @@
     <section id="panel-add" class="panel">
         <header>
             <h1>新增題庫</h1>
-            <p class="subtitle">自行建立題目，儲存後會加入目前單元的題庫。</p>
+            <p class="subtitle">貼上題目與正確答案，即可新增。</p>
         </header>
 
         <div class="form-card">
-            <p id="addUnitLabel" class="unit-context"></p>
-            <div class="form-grid">
-                <div class="field">
-                    <label for="newType">題型</label>
-                    <select id="newType">
-                        <option value="choice">選擇題</option>
-                        <option value="fill_blank">填空題</option>
-                    </select>
-                </div>
-
-                <div class="field">
-                    <label for="newTitle">題目標題</label>
-                    <input id="newTitle" type="text" placeholder="例如：Merge Sort 時間複雜度">
-                </div>
-
-                <div class="field full">
-                    <label for="newQuestion">題目內容 *</label>
-                    <textarea id="newQuestion" placeholder="請輸入完整題目"></textarea>
-                </div>
-
-                <div id="choiceArea" class="field full">
-                    <label>選項</label>
-                    <div class="option-fields">
-                        <input id="optA" type="text" placeholder="A. 選項內容">
-                        <input id="optB" type="text" placeholder="B. 選項內容">
-                        <input id="optC" type="text" placeholder="C. 選項內容">
-                        <input id="optD" type="text" placeholder="D. 選項內容">
-                    </div>
-                    <div class="help-text">可以少於四個選項；空白的選項不會儲存。</div>
-                </div>
-
-                <div class="field full">
-                    <label for="newAnswer">正確答案 *</label>
-                    <textarea id="newAnswer" placeholder="例如：B. 分治法 (Divide-and-Conquer)"></textarea>
-                </div>
-
-                <div class="field full">
-                    <label for="newKeywords">搜尋關鍵字</label>
-                    <input id="newKeywords" type="text" placeholder="例如：merge sort, 合併排序, divide and conquer">
-                    <div class="help-text">多個關鍵字請用逗號分隔。</div>
-                </div>
+            <div class="add-destination">
+                <button id="addUnitLabel" class="unit-context destination-toggle" type="button" aria-expanded="false" aria-controls="addUnitPicker"></button>
+                <div id="addUnitPicker" class="add-unit-picker" hidden></div>
+            </div>
+            <div class="field">
+                <label class="sr-only" for="questionDraft">題目與答案</label>
+                <textarea id="questionDraft" class="question-draft" rows="12" placeholder="題目：漸進下界（Asymptotic lower bound）是用下列哪一個漸進符號表示？&#10;&#10;你的答案：&#10;Ω&#10;&#10;正確答案：&#10;Ω" aria-describedby="draftError"></textarea>
+                <p id="draftError" class="draft-error" role="alert" hidden></p>
             </div>
 
             <div class="form-actions">
@@ -206,3 +173,6 @@
 <script type="module" src="./js/app.js"></script>
 </body>
 </html>
+
+
+

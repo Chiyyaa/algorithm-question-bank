@@ -1,7 +1,7 @@
 // 每個單元指向獨立題庫；尚未有資料的單元保持 dataUrl: null。
 export const SUBJECTS = [
     {
-        id: "algorithm", name: "演算法", available: true, defaultUnit: "u2",
+        id: "algorithm", name: "演算法", available: true, defaultUnit: "u3",
         units: [
             { id: "u2", name: "U2", questionCount: 60, dataUrl: "../data/questions.json" },
             { id: "u3", name: "U3", questionCount: 60, dataUrl: "../data/algorithm-u3.json" },
