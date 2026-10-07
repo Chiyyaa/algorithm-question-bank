@@ -820,7 +820,7 @@ body.home-mode {
 /* Operating systems: plum navigation and lavender study surfaces */
 body[data-subject="os"] { --bg: #f6f3fb; --primary: #7c3fb5; --primary-soft: #f1e8fa; --border: #e7dfee; --answer-bg: #f6effc; --answer-border: #dfc9ef; --answer-text: #64318e; }
 body[data-subject="os"] .sidebar { background: #2c1c3b; }
-body[data-subject="os"] .nav-btn.active { background: #49305d; border-left-color: #c8a2ec; }
+body[data-subject="os"] .nav-btn.active { background: #49305d; box-shadow: inset 3px 0 0 #c8a2ec; }
 body[data-subject="os"] #mobileMenuBtn { background: #2c1c3b; }
 body[data-subject="os"] .unit-card { background: linear-gradient(145deg,#fff,#f6f0fc); border-color: #e5d7ee; }
 body[data-subject="os"] .unit-card-name, body[data-subject="os"] .unit-card-count strong { color: #684181; }
