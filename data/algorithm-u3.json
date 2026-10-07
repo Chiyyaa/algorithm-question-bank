@@ -588,17 +588,23 @@
   {
     "id": 32,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "遞迴樹的葉節點代價總和通常為？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "平方時間 O(n²)",
+      "對數時間 O(log n)",
+      "線性時間 O(n)",
+      "常數時間 O(1)"
+    ],
+    "options_status": "provided",
     "correct_answer": "線性時間 O(n)",
     "answer_variants": [
       "線性時間 O(n)"
     ],
     "answer_basis": "provided_unit3_answer",
     "sources": [
-      "第三單元練習_不重複題庫_題目選項答案.txt"
+      "第三單元練習_不重複題庫_題目選項答案.txt",
+      "使用者提供題目與選項（2026-10-07）"
     ]
   },
   {
@@ -641,17 +647,23 @@
   {
     "id": 35,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "大師定理 Case 3 的條件包含？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "f(n) 成長速度大於 nˡᵒᵍᵇ⁽ᵃ⁾\n存在常數 epsilon > 0\n滿足規則性條件 (regularity condition)",
+    "options": [
+      "f(n) 成長速度大於 n^log_b(a)",
+      "存在常數 epsilon > 0",
+      "滿足規則性條件（regularity condition）",
+      "a 必須小於 1"
+    ],
+    "options_status": "provided",
+    "correct_answer": "f(n) 成長速度大於 n^log_b(a)\n存在常數 epsilon > 0\n滿足規則性條件（regularity condition）",
     "answer_variants": [
-      "f(n) 成長速度大於 nˡᵒᵍᵇ⁽ᵃ⁾\n存在常數 epsilon > 0\n滿足規則性條件 (regularity condition)"
+      "f(n) 成長速度大於 n^log_b(a)\n存在常數 epsilon > 0\n滿足規則性條件（regularity condition）"
     ],
     "answer_basis": "provided_unit3_answer",
     "sources": [
-      "第三單元練習_不重複題庫_題目選項答案.txt"
+      "第三單元練習_不重複題庫_題目選項答案.txt",
+      "使用者提供題目與選項（2026-10-07）"
     ]
   },
   {
@@ -692,9 +704,9 @@
     "type": "choice",
     "question": "遞迴樹的每一層代表？",
     "options": [
-      "常數項",
-      "樹的深度",
       "遞迴的總次數",
+      "樹的深度",
+      "常數項",
       "該層遞迴分解的成本"
     ],
     "options_status": "provided",
@@ -705,7 +717,8 @@
     "answer_basis": "provided_unit3_answer",
     "sources": [
       "第三單元練習_不重複題庫_題目選項答案.txt",
-      "螢幕擷取畫面 2026-10-06 181545.png"
+      "螢幕擷取畫面 2026-10-06 181545.png",
+      "使用者提供題目與選項（2026-10-07）"
     ]
   },
   {
@@ -1097,17 +1110,23 @@
   {
     "id": 59,
     "title": "",
-    "type": "choice_options_missing",
-    "question": "若遞迴關係式包含下取整 (floor)，在分析時我們通常？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "忽略它以簡化分析\n僅在最後驗證時考慮",
+    "type": "choice",
+    "question": "若遞迴關係式包含下取整（floor），在分析時我們通常？",
+    "options": [
+      "視為變數處理",
+      "僅在最後驗證時考慮",
+      "嚴格遵守其影響",
+      "忽略它以簡化分析"
+    ],
+    "options_status": "provided",
+    "correct_answer": "僅在最後驗證時考慮\n忽略它以簡化分析",
     "answer_variants": [
-      "忽略它以簡化分析\n僅在最後驗證時考慮"
+      "僅在最後驗證時考慮\n忽略它以簡化分析"
     ],
     "answer_basis": "provided_unit3_answer",
     "sources": [
-      "第三單元練習_不重複題庫_題目選項答案.txt"
+      "第三單元練習_不重複題庫_題目選項答案.txt",
+      "使用者提供題目與選項（2026-10-07）"
     ]
   },
   {
@@ -1128,3 +1147,4 @@
     ]
   }
 ]
+

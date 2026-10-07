@@ -363,9 +363,9 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(u3Data.length, 60);
         assert.deepEqual(u3Data.map(q => q.id), Array.from({length: 60}, (_, i) => i + 1));
         assert.equal(new Set(u3Data.map(q => q.question)).size, 60);
-        assert.equal(u3Data.filter(q => q.type === "choice").length, 33);
+        assert.equal(u3Data.filter(q => q.type === "choice").length, 36);
         assert.equal(u3Data.filter(q => q.type === "fill_blank").length, 20);
-        assert.equal(u3Data.filter(q => q.type === "choice_options_missing").length, 7);
+        assert.equal(u3Data.filter(q => q.type === "choice_options_missing").length, 4);
         u3Data.forEach(q => {
             assert.ok(q.question && q.correct_answer);
             assert.equal(q.options.length, q.type === "choice" ? 4 : 0);
@@ -375,7 +375,7 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(u3Data[0].correct_answer.split("\n").length, 4);
         assert.match(u3Data[38].answer_note, /不一致/);
 
-        assert.deepEqual(u3Data[37].options, ["常數項","樹的深度","遞迴的總次數","該層遞迴分解的成本"]);
+        assert.deepEqual(u3Data[37].options, ["遞迴的總次數","樹的深度","常數項","該層遞迴分解的成本"]);
         assert.equal(u3Data[37].type, "choice");
         assert.equal(u3Data[59].correct_answer, "form");
         assert.match(u3Data[59].question, /小寫英文/);
@@ -432,6 +432,35 @@ server.listen(0, "127.0.0.1", async () => {
         await openPanel(themePage,"add");
         assert.match(await themePage.locator("#userQuestionList").innerText(),/U3 custom isolated/);
         record("Actual U3: 60 questions, 25/25/10 pages, missing options, source reminder and isolated custom storage");
+        await openPanel(themePage,'bank');
+        await themePage.locator('#hideAllBtn').click();
+        const completedChoices = [
+            [38, '遞迴樹的每一層代表？', [3]],
+            [59, '若遞迴關係式包含下取整', [1,3]],
+            [35, '大師定理 Case 3 的條件包含？', [0,1,2]],
+            [32, '遞迴樹的葉節點代價總和通常為？', [2]]
+        ];
+        for(const [id,term,correct] of completedChoices){
+            await themePage.locator('#searchInput').fill(term);
+            assert.equal(await themePage.locator('#questionList article').count(),1);
+            const card=themePage.locator('[data-id="'+id+'"]');
+            assert.equal(await card.locator('.option').count(),4);
+            assert.equal(await card.locator('.missing').count(),0);
+            assert.equal(await card.locator('.answer').isVisible(),false);
+            const q=u3Data.find(q=>q.id===id);
+            assert.equal(q.correct_answer,correct.map(i=>q.options[i]).join('\n'));
+            await card.locator('.answer-btn').click();
+            assert.equal(await card.locator('.answer-content').innerText(),q.correct_answer);
+            await themePage.locator('#hideAllBtn').click();
+            assert.equal(await card.locator('.answer').isVisible(),false);
+        }
+        await themePage.locator('#searchInput').fill('大師定理 Case 3 的條件包含？');
+        await themePage.locator('#questionList .answer-btn').click();
+        await themePage.screenshot({path:path.join(root,'..','u3-options-completed.png')});
+        await themePage.locator('#hideAllBtn').click();
+        await themePage.locator('#clearBtn').click();
+        record('Four U3 questions have exact option order, source answers, and normal show/hide controls');
+
 
 
         // Individual actions never change the toolbar preference.

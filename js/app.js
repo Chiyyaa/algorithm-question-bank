@@ -351,7 +351,7 @@ async function loadQuestionBank() {
     summary.textContent = "題庫載入中……";
     list.innerHTML = '<div class="empty" role="status">題庫載入中……</div>';
     try {
-        const response = await fetch(new URL(unit.dataUrl, import.meta.url));
+        const response = await fetch(new URL(unit.dataUrl, import.meta.url), { cache: "no-cache" });
         if (!response.ok) throw new Error("HTTP " + response.status);
         const builtInQuestions = await response.json();
         if (!Array.isArray(builtInQuestions) || !builtInQuestions.length ||
