@@ -1,7 +1,7 @@
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js";
-import { loadUserQuestions, initCustomQuestions } from "./custom-questions.js?v=20261006-add";
+import { loadUserQuestions, initCustomQuestions } from "./custom-questions.js?v=20261007-os";
 import { initNavigation } from "./navigation.js";
-import { SUBJECTS, getUnit } from "./units.js?v=20261006-add";
+import { SUBJECTS, getUnit } from "./units.js?v=20261007-os";
 import { initMusic } from "./music.js";
 
 initHomeTheme();
@@ -257,7 +257,7 @@ function renderUnitChoices() {
 function selectUnit(unitId) {
     const unit = getUnit(currentSubject?.id, unitId);
     if (!unit) return;
-    if (unit.id === currentUnit?.id && ready) return;
+    if (unit === currentUnit && ready) return;
     currentUnit = unit;
     ready = false;
     loading = false;
@@ -278,7 +278,7 @@ function selectUnit(unitId) {
     document.title = label + " 題庫";
     renderUnitChoices();
     if (history.state?.questionBank?.view === "bank") {
-        history.replaceState({ ...history.state, questionBank: { view: "bank", unitId: unit.id } }, "");
+        history.replaceState({ ...history.state, questionBank: { view: "bank", subjectId: currentSubject.id, unitId: unit.id } }, "");
     }
     loadQuestionBank();
 }
@@ -301,6 +301,7 @@ function leaveSubject(fromHistory = false) {
     document.getElementById("mobileMenuBtn").hidden = true;
     document.getElementById("subjectHome").hidden = false;
     document.body.classList.add("home-mode");
+    delete document.body.dataset.subject;
     document.title = "學習題庫";
     window.scrollTo({ top: 0, behavior: "instant" });
     updateBackToTop();
@@ -315,15 +316,22 @@ customQuestions = initCustomQuestions({
 });
 history.replaceState({ ...history.state, questionBank: { view: "home" } }, "");
 window.addEventListener("popstate", event => {
-    if (event.state?.questionBank?.view === "bank") enterAlgorithm(event.state.questionBank.unitId, false);
+    if (event.state?.questionBank?.view === "bank") enterSubject(event.state.questionBank.subjectId || "algorithm", event.state.questionBank.unitId, false);
     else leaveSubject(true);
 });
 
-function enterAlgorithm(unitId, pushHistory = true) {
-    currentSubject = SUBJECTS.find(subject => subject.id === "algorithm" && subject.available);
+function enterSubject(subjectId, unitId, pushHistory = true) {
+    currentSubject = SUBJECTS.find(subject => subject.id === subjectId && subject.available);
     if (!currentSubject) return;
     const selected = getUnit(currentSubject.id, unitId) || getUnit(currentSubject.id, currentSubject.defaultUnit);
-    if (pushHistory) history.pushState({ ...history.state, questionBank: { view: "bank", unitId: selected.id } }, "");
+    if (pushHistory) history.pushState({ ...history.state, questionBank: { view: "bank", subjectId: currentSubject.id, unitId: selected.id } }, "");
+    document.body.dataset.subject = currentSubject.id;
+    document.getElementById("bankHeading").textContent = currentSubject.name + "題庫搜尋系統";
+    document.getElementById("unitSubjectDescription").textContent = currentSubject.name + " · 選擇今天的練習單元";
+    const brand = document.querySelector(".sidebar-brand");
+    brand.textContent = "📚 " + currentSubject.name + "題庫";
+    if (currentSubject.id === "algorithm") brand.setAttribute("href", "https://canva.link/evygbbmrt3v2umy");
+    else brand.removeAttribute("href");
     closeMusic(false);
     clearHomeSparkles();
     document.body.classList.remove("home-mode");
@@ -336,7 +344,8 @@ function enterAlgorithm(unitId, pushHistory = true) {
     setSidebarOpen(true);
     document.getElementById("bankHeading").focus({ preventScroll: true });
 }
-document.getElementById("algorithmSubjectBtn").addEventListener("click", () => enterAlgorithm());
+document.getElementById("algorithmSubjectBtn").addEventListener("click", () => enterSubject("algorithm"));
+ document.getElementById("osSubjectBtn").addEventListener("click", () => enterSubject("os"));
 
 async function loadQuestionBank() {
     if (loading || ready || !currentUnit) return;
@@ -379,6 +388,5 @@ async function loadQuestionBank() {
         if (version === requestVersion) loading = false;
     }
 }
-
 
 

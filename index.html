@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>學習題庫</title>
-<link rel="stylesheet" href="./css/style.css?v=20261006-add">
+<link rel="stylesheet" href="./css/style.css?v=20261007-os">
 </head>
 <body class="home-mode">
 <section id="subjectHome" class="subject-home" aria-labelledby="subjectHeading">
@@ -49,7 +49,7 @@
     <header><p class="home-eyebrow">學習題庫</p><h1 id="subjectHeading" tabindex="-1">今天要學習哪個科目？</h1><p class="subtitle">既然無法修仙 不如來魔修</p></header>
     <div class="subject-grid">
         <button id="algorithmSubjectBtn" class="subject-card" type="button"><span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="40" cy="40" rx="34" ry="13" transform="rotate(-35 40 40)"/><ellipse cx="40" cy="40" rx="34" ry="13" transform="rotate(35 40 40)"/><circle cx="40" cy="40" r="22"/><path d="M28 35 22 40 28 45 M52 35 58 40 52 45 M43 30 37 50"/></g><circle cx="67" cy="20" r="4" fill="currentColor"/></svg></span><span class="subject-title">演算法</span><span class="subject-description">依單元練習與搜尋題目</span><span class="subject-status">進入題庫 →</span></button>
-        <button id="osSubjectBtn" class="subject-card subject-coming" type="button" disabled><span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="20" y="20" width="40" height="40" rx="8"/><rect x="30" y="30" width="20" height="20" rx="4"/><path d="M30 12V20 M40 12V20 M50 12V20 M30 60V68 M40 60V68 M50 60V68 M12 30H20 M12 40H20 M12 50H20 M60 30H68 M60 40H68 M60 50H68"/></g></svg></span><span class="subject-title">作業系統</span><span class="subject-description">更多單元題庫準備中</span><span class="subject-status">尚未開放</span></button>
+        <button id="osSubjectBtn" class="subject-card" type="button"><span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="20" y="20" width="40" height="40" rx="8"/><rect x="30" y="30" width="20" height="20" rx="4"/><path d="M30 12V20 M40 12V20 M50 12V20 M30 60V68 M40 60V68 M50 60V68 M12 30H20 M12 40H20 M12 50H20 M60 30H68 M60 40H68 M60 50H68"/></g></svg></span><span class="subject-title">作業系統</span><span class="subject-description">依單元練習與搜尋題目</span><span class="subject-status">進入題庫 →</span></button>
     </div>
     <noscript><p class="missing">請啟用 JavaScript 才能選擇科目與使用題庫。</p></noscript>
     </div>
@@ -88,7 +88,7 @@
 <div class="container">
 <section id="panel-bank" class="panel active">
     <header>
-        <p id="currentUnitLabel" class="unit-context">演算法｜U2</p>
+        <p id="currentUnitLabel" class="unit-context">演算法｜U3</p>
         <h1 id="bankHeading" tabindex="-1">演算法題庫搜尋系統</h1>
         <p class="subtitle">輸入關鍵字，即時搜尋題目、選項與答案。</p>
     </header>
@@ -132,7 +132,7 @@
     <section id="panel-units" class="panel unit-selection">
         <header>
             <h1>選擇單元</h1>
-            <p class="subtitle">演算法 · 選擇今天的練習單元</p>
+            <p id="unitSubjectDescription" class="subtitle">演算法 · 選擇今天的練習單元</p>
         </header>
         <div id="unitGrid" class="unit-grid"></div>
     </section>
@@ -170,9 +170,8 @@
 <button id="backToTopBtn" class="back-to-top" type="button" aria-label="回到頁面頂端" hidden>↑ 回到頂端</button>
 <div id="toast" class="toast"></div>
 
-<script type="module" src="./js/app.js?v=20261007-options"></script>
+<script type="module" src="./js/app.js?v=20261007-os"></script>
 </body>
 </html>
-
 
 

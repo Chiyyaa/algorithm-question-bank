@@ -1,5 +1,5 @@
 import { escapeHtml, getTypeLabel } from "./utils.js";
-import { SUBJECTS, getUnit } from "./units.js?v=20261006-add";
+import { SUBJECTS, getUnit } from "./units.js?v=20261007-os";
 
 const LEGACY_STORAGE_KEY = "algorithm_question_bank_user_questions_v1";
 function storageKey(subjectId, unitId) {
@@ -133,4 +133,3 @@ export function initCustomQuestions({ questions, answersVisible, getCurrentUnit,
     resetQuestionForm();
     return { refresh: renderUserQuestions, resetForm: resetQuestionForm };
 }
-

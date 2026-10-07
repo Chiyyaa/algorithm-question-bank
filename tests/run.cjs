@@ -64,7 +64,7 @@ server.listen(0, "127.0.0.1", async () => {
         page.on("pageerror", error => errors.push(error.message));
         await page.goto(url);
         assert.equal(await page.locator("#subjectHome").isVisible(), true);
-        assert.equal(await page.locator("#osSubjectBtn").isDisabled(), true);
+        assert.equal(await page.locator("#osSubjectBtn").isDisabled(), false);
         assert.equal(await page.locator("#mobileMenuBtn").isVisible(), false);
         assert.equal(await page.locator("#subjectHome .subtitle").innerText(), "既然無法修仙 不如來魔修");
         assert.equal(await page.locator("#bgMusic").getAttribute("src"), null);
@@ -159,7 +159,7 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await page.locator("#musicToggleBtn").isVisible(), false);
         assert.equal(await page.locator("#sidebarUnitList").count(), 0);
         record("Real MP3 playback: BLUE first, pause/resume, sequential loop, record animation, reduced motion and entry pause");
-        record("Subject entry, unavailable OS, U2 remains selectable");
+        record("Both subjects available; U2 remains selectable");
         await page.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 60"));
         assert.equal(await page.locator("#questionList article").count(), 25);
         assert.equal(await page.locator("#sidebar").evaluate(el => el.inert), false);
@@ -648,6 +648,56 @@ server.listen(0, "127.0.0.1", async () => {
         await addContext.close();
         record('Default U3, single pasted form, correct-answer extraction, target unit storage, persistence, mobile layout and failed-save recovery');
 
+        const os3=JSON.parse(fs.readFileSync(path.join(root,'data/os-u3.json'),'utf8'));
+        const os4=JSON.parse(fs.readFileSync(path.join(root,'data/os-u4.json'),'utf8'));
+        assert.equal(os3.length,204); assert.equal(os4.length,104);
+        assert.equal(new Set(os3.map(q=>q.source_question_number)).size,198);
+        assert.equal(os3.filter(q=>q.source_option_version).length,12);
+        for(const unit of [os3,os4]){
+            assert.equal(new Set(unit.map(q=>q.id)).size,unit.length);
+            unit.forEach(q=>{assert.ok(q.question&&q.correct_answer);if(q.options.length)q.correct_answer.split('\n').forEach(a=>assert.ok(q.options.includes(a)));});
+        }
+        assert.ok(os3.some(q=>q.answer_note?.includes('由滿分作答推定')));
+        assert.ok(os3.some(q=>q.answer_note?.includes('來源記錄存在差異')));
+        const osContext=await browser.newContext({viewport:{width:1280,height:900},reducedMotion:'reduce'});
+        const osPage=await osContext.newPage();osPage.on('pageerror',e=>errors.push(e.message));
+        await osPage.goto(url); await osPage.locator('#osSubjectBtn').click();
+        await osPage.waitForFunction(()=>document.querySelector('#bankFooter').textContent==='作業系統｜U3｜內建 204 題');
+        assert.equal(await osPage.locator('#bankHeading').innerText(),'作業系統題庫搜尋系統');
+        assert.equal(await osPage.locator('body').getAttribute('data-subject'),'os');
+        assert.equal(await osPage.locator('#mobileMenuBtn').getAttribute('aria-expanded'),'true');
+        assert.equal(await osPage.locator('#pageInfo').innerText(),'第 1 / 9 頁');
+        await osPage.locator('#hideAllBtn').click();
+        await osPage.locator('#searchInput').fill('read(int fd');
+        assert.equal(await osPage.locator('#questionList article').count(),2);
+        assert.equal(await osPage.locator('#questionList .option').count(),8);
+        await osPage.locator('#showAllBtn').click();
+        assert.equal(await osPage.locator('#questionList .answer.show').count(),2);
+        await openUnit(osPage,'u4');
+        await osPage.waitForFunction(()=>document.querySelector('#bankFooter').textContent==='作業系統｜U4｜內建 104 題');
+        await osPage.locator('#nextPageBtn').click();await osPage.locator('#nextPageBtn').click();await osPage.locator('#nextPageBtn').click();await osPage.locator('#nextPageBtn').click();
+        assert.equal(await osPage.locator('#questionList article').count(),4);
+        await osPage.locator('#hideAllBtn').click();
+        await osPage.locator('#searchInput').fill('一個程序（process）包含');
+        assert.equal(await osPage.locator('#questionList .answer').isVisible(),true);
+        assert.equal(await osPage.locator('#questionList .answer-btn').count(),0);
+        await openPanel(osPage,'add');
+        assert.match(await osPage.locator('#addUnitLabel').innerText(),/作業系統｜U4/);
+        await osPage.locator('#questionDraft').fill('題目：OS isolated question\n正確答案：OS answer');
+        await osPage.locator('#addUnitLabel').click();
+        assert.equal(await osPage.locator('#addUnitPicker button').count(),2);
+        await osPage.locator('[data-add-unit="u3"]').click();await osPage.locator('#saveQuestionBtn').click();
+        assert.equal(await osPage.evaluate(()=>JSON.parse(localStorage.getItem('question_bank_user_questions_v1_os_u3')).length),1);
+        await osPage.goBack();await osPage.locator('#subjectHome').waitFor({state:'visible'});
+        assert.equal(await osPage.locator('body').getAttribute('data-subject'),null);
+        await osPage.goForward();await osPage.waitForFunction(()=>document.querySelector('#bankFooter').textContent.includes('作業系統｜U4'));
+        await osPage.locator('#switchSubjectBtn').click();await osPage.locator('#subjectHome').waitFor({state:'visible'});
+        await osPage.locator('#algorithmSubjectBtn').click();await osPage.waitForFunction(()=>document.querySelector('#bankFooter').textContent.includes('演算法｜U3'));
+        assert.equal(await osPage.locator('body').getAttribute('data-subject'),'algorithm');
+        await openPanel(osPage,'add');assert.equal(await osPage.locator('#userQuestionList article').count(),0);
+        await osContext.close();
+        record('OS U3/U4 import, distinct theme, versions, pagination, scoped custom storage and subject-aware history');
+
         // Test future units through intercepted responses; no invented questions are published.
         const isolated = await context.newPage();
         isolated.on("pageerror", e => errors.push(e.message));
@@ -726,6 +776,5 @@ server.listen(0, "127.0.0.1", async () => {
         server.close();
     }
 });
-
 
 
