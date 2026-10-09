@@ -1,5 +1,5 @@
 import { escapeHtml, getTypeLabel } from "./utils.js";
-import { SUBJECTS, getUnit } from "./units.js?v=20261007-os";
+import { SUBJECTS, getUnit } from "./units.js?v=20261009-os";
 
 const LEGACY_STORAGE_KEY = "algorithm_question_bank_user_questions_v1";
 function storageKey(subjectId, unitId) {

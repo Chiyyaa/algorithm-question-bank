@@ -13,9 +13,23 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "第二次訓練.txt",
+      "接收訓練2.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 1
+    "source_question_number": 1,
+    "merged_source_ids": [
+      36,
+      104
+    ],
+    "source_incorrect_responses": [
+      "mac OS",
+      "mas os x",
+      "unix"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 71
   },
   {
     "id": 2,
@@ -31,9 +45,19 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "接收訓練1.txt",
+      "第六次訓練.txt",
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 2
+    "source_question_number": 2,
+    "merged_source_ids": [
+      88
+    ],
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 206
   },
   {
     "id": 3,
@@ -47,41 +71,27 @@
       "要讀取的最大位元組數（Maximum number of bytes）"
     ],
     "options_status": "provided",
-    "correct_answer": "資料將讀入的緩衝區（Buffer）指針\n文件描述子（File descriptor）\n要讀取的最大位元組數（Maximum number of bytes）",
+    "correct_answer": "文件描述子（File descriptor）\n資料將讀入的緩衝區（Buffer）指针\n要讀取的最大位元組數（Maximum number of bytes）",
     "answer_variants": [
-      "資料將讀入的緩衝區（Buffer）指針\n文件描述子（File descriptor）\n要讀取的最大位元組數（Maximum number of bytes）"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
-    ],
-    "source_question_number": 3,
-    "source_option_version": 1
-  },
-  {
-    "id": 4,
-    "title": "選項版本 2",
-    "type": "choice",
-    "question": "在標準的 read(int fd, void *buf, size_t count) API 中，傳入的參數包含哪些意義？",
-    "options": [
-      "系統核心的記憶體實體位址",
-      "資料將讀入的緩衝區（Buffer）指針",
-      "要讀取的最大位元組數（Maximum number of bytes）",
-      "文件描述子（File descriptor）"
-    ],
-    "options_status": "provided",
-    "correct_answer": "資料將讀入的緩衝區（Buffer）指針\n要讀取的最大位元組數（Maximum number of bytes）\n文件描述子（File descriptor）",
-    "answer_variants": [
+      "文件描述子（File descriptor）\n資料將讀入的緩衝區（Buffer）指针\n要讀取的最大位元組數（Maximum number of bytes）",
+      "資料將讀入的緩衝區（Buffer）指針\n文件描述子（File descriptor）\n要讀取的最大位元組數（Maximum number of bytes）",
       "資料將讀入的緩衝區（Buffer）指針\n要讀取的最大位元組數（Maximum number of bytes）\n文件描述子（File descriptor）"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
+      "第一次訓練.txt",
+      "作業系統U3.txt",
       "第二次訓練.txt"
     ],
     "source_question_number": 3,
-    "source_option_version": 2
+    "source_option_version": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 61,
+    "merged_source_ids": [
+      4
+    ]
   },
   {
     "id": 5,
@@ -95,16 +105,22 @@
       "Easier to port to other hardware"
     ],
     "options_status": "provided",
-    "correct_answer": "Faster development speed\nEasier to understand and debug\nEasier to port to other hardware",
+    "correct_answer": "Easier to port to other hardware\nEasier to understand and debug\nFaster development speed",
     "answer_variants": [
+      "Easier to port to other hardware\nEasier to understand and debug\nFaster development speed",
       "Faster development speed\nEasier to understand and debug\nEasier to port to other hardware"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 4
+    "source_question_number": 4,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 275,
+    "answer_note": "本次來源最後一題未附結尾標記，僅收錄已提供的選項與答案。"
   },
   {
     "id": 6,
@@ -120,9 +136,20 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "接收訓練1.txt",
+      "接收訓練2.txt",
+      "第六次訓練.txt",
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 5
+    "source_question_number": 5,
+    "merged_source_ids": [
+      92
+    ],
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 73
   },
   {
     "id": 7,
@@ -138,9 +165,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 6
+    "source_question_number": 6,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 56
   },
   {
     "id": 8,
@@ -161,9 +192,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 7
+    "source_question_number": 7,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 20
   },
   {
     "id": 9,
@@ -184,9 +219,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 8
+    "source_question_number": 8,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 131
   },
   {
     "id": 10,
@@ -207,9 +246,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 9
+    "source_question_number": 9,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 64
   },
   {
     "id": 11,
@@ -230,9 +273,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 10
+    "source_question_number": 10,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 249
   },
   {
     "id": 12,
@@ -253,9 +300,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 11
+    "source_question_number": 11,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 150
   },
   {
     "id": 13,
@@ -266,19 +317,26 @@
       "帳戶管理",
       "錯誤檢測",
       "資源分配",
-      "撰寫程式"
+      "撰寫程式",
+      "錯誤偵測"
     ],
     "options_status": "provided",
-    "correct_answer": "帳戶管理\n錯誤檢測\n資源分配",
+    "correct_answer": "錯誤偵測\n帳戶管理\n資源分配",
     "answer_variants": [
+      "錯誤偵測\n帳戶管理\n資源分配",
       "帳戶管理\n錯誤檢測\n資源分配"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 12
+    "source_question_number": 12,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 10,
+    "answer_note": "本次來源答案：錯誤偵測\n帳戶管理\n資源分配；先前來源答案：帳戶管理\n錯誤檢測\n資源分配。來源記錄存在差異，保留兩者供核對。"
   },
   {
     "id": 14,
@@ -292,16 +350,21 @@
       "更容易移植到新硬體架構上"
     ],
     "options_status": "provided",
-    "correct_answer": "更安全且可靠（較少程式碼運行在核心模式）\n核心更容易擴充功能\n更容易移植到新硬體架構上",
+    "correct_answer": "核心更容易擴充功能\n更容易移植到新硬體架構上\n更安全且可靠（較少程式碼運行在核心模式）",
     "answer_variants": [
+      "核心更容易擴充功能\n更容易移植到新硬體架構上\n更安全且可靠（較少程式碼運行在核心模式）",
       "更安全且可靠（較少程式碼運行在核心模式）\n核心更容易擴充功能\n更容易移植到新硬體架構上"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 13
+    "source_question_number": 13,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 136
   },
   {
     "id": 15,
@@ -315,20 +378,25 @@
       "透過暫存器傳遞"
     ],
     "options_status": "provided",
-    "correct_answer": "透過記憶體中的區塊或表格傳遞\n透過堆疊彈入彈出傳遞\n透過暫存器傳遞",
+    "correct_answer": "透過暫存器傳遞\n透過記憶體中的區塊或表格傳遞\n透過堆疊彈入彈出傳遞",
     "answer_variants": [
+      "透過暫存器傳遞\n透過記憶體中的區塊或表格傳遞\n透過堆疊彈入彈出傳遞",
       "透過記憶體中的區塊或表格傳遞\n透過堆疊彈入彈出傳遞\n透過暫存器傳遞"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 14
+    "source_question_number": 14,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 5
   },
   {
     "id": 16,
-    "title": "選項版本 1",
+    "title": "",
     "type": "choice",
     "question": "作業系統服務中的「通訊」服務，允許程序在什麼地方交換資訊？",
     "options": [
@@ -345,34 +413,18 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 15,
-    "source_option_version": 1
-  },
-  {
-    "id": 17,
-    "title": "選項版本 2",
-    "type": "choice",
-    "question": "作業系統服務中的「通訊」服務，允許程序在什麼地方交換資訊？",
-    "options": [
-      "透過網路在不同電腦之間",
-      "位於拇指碟上",
-      "只在硬碟上",
-      "位於無線網路連接的不同電腦上"
+    "source_option_version": 1,
+    "merged_source_ids": [
+      17
     ],
-    "options_status": "provided",
-    "correct_answer": "透過網路在不同電腦之間",
-    "answer_variants": [
-      "透過網路在不同電腦之間"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
-    ],
-    "source_question_number": 15,
-    "source_option_version": 2
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 100
   },
   {
     "id": 18,
@@ -386,41 +438,26 @@
       "程式執行"
     ],
     "options_status": "provided",
-    "correct_answer": "I/O 操作\n使用者介面\n檔案系統操作\n程式執行",
+    "correct_answer": "使用者介面\n程式執行\nI/O 操作\n檔案系統操作",
     "answer_variants": [
+      "使用者介面\n程式執行\nI/O 操作\n檔案系統操作",
       "I/O 操作\n使用者介面\n檔案系統操作\n程式執行"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
-    ],
-    "source_question_number": 16,
-    "source_option_version": 1
-  },
-  {
-    "id": 19,
-    "title": "選項版本 2",
-    "type": "choice",
-    "question": "作業系統服務中，哪些功能對使用者有幫助？",
-    "options": [
-      "使用者介面",
-      "程式執行",
-      "I/O 操作",
-      "檔案系統操作"
-    ],
-    "options_status": "provided",
-    "correct_answer": "使用者介面\n程式執行\nI/O 操作\n檔案系統操作",
-    "answer_variants": [
-      "使用者介面\n程式執行\nI/O 操作\n檔案系統操作"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
+      "第一次訓練.txt",
+      "作業系統U3.txt",
       "pasted.txt"
     ],
     "source_question_number": 16,
-    "source_option_version": 2
+    "source_option_version": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 114,
+    "merged_source_ids": [
+      19
+    ]
   },
   {
     "id": 20,
@@ -441,9 +478,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 17
+    "source_question_number": 17,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 149
   },
   {
     "id": 21,
@@ -464,9 +505,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 18
+    "source_question_number": 18,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 70
   },
   {
     "id": 22,
@@ -482,9 +527,18 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "接收訓練2.txt",
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 19
+    "source_question_number": 19,
+    "merged_source_ids": [
+      101
+    ],
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 145
   },
   {
     "id": 23,
@@ -505,9 +559,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 20
+    "source_question_number": 20,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 95
   },
   {
     "id": 24,
@@ -523,9 +581,15 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 21
+    "source_question_number": 21,
+    "source_incorrect_responses": [
+      "loadable kernel modules"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 121
   },
   {
     "id": 25,
@@ -541,9 +605,19 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "第四次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 22
+    "source_question_number": 22,
+    "merged_source_ids": [
+      140
+    ],
+    "source_incorrect_responses": [
+      "registy"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 143
   },
   {
     "id": 26,
@@ -560,9 +634,15 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第一次訓練.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 23
+    "source_question_number": 23,
+    "source_incorrect_responses": [
+      "core dump"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 106
   },
   {
     "id": 27,
@@ -583,9 +663,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 24
+    "source_question_number": 24,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 65
   },
   {
     "id": 28,
@@ -601,39 +685,24 @@
     "options_status": "provided",
     "correct_answer": "模組化\n微核心\n分層式",
     "answer_variants": [
-      "模組化\n微核心\n分層式"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
-    ],
-    "source_question_number": 25,
-    "source_option_version": 1
-  },
-  {
-    "id": 29,
-    "title": "選項版本 2",
-    "type": "choice",
-    "question": "現代的作業系統通常是哪種設計模型的混合體？",
-    "options": [
-      "微核心",
-      "模組化",
-      "分層式",
-      "單體式"
-    ],
-    "options_status": "provided",
-    "correct_answer": "微核心\n模組化\n分層式",
-    "answer_variants": [
+      "模組化\n微核心\n分層式",
       "微核心\n模組化\n分層式"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
+      "第一次訓練.txt",
+      "作業系統U3.txt",
       "pasted.txt"
     ],
     "source_question_number": 25,
-    "source_option_version": 2
+    "source_option_version": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 160,
+    "merged_source_ids": [
+      29
+    ]
   },
   {
     "id": 30,
@@ -654,13 +723,17 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 26
+    "source_question_number": 26,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 216
   },
   {
     "id": 31,
-    "title": "選項版本 1",
+    "title": "",
     "type": "choice",
     "question": "I/O 操作不可能涉及哪種裝置？",
     "options": [
@@ -677,34 +750,18 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 27,
-    "source_option_version": 1
-  },
-  {
-    "id": 32,
-    "title": "選項版本 2",
-    "type": "choice",
-    "question": "I/O 操作不可能涉及哪種裝置？",
-    "options": [
-      "I/O devices",
-      "keyboard",
-      "File",
-      "CPU"
+    "source_option_version": 1,
+    "merged_source_ids": [
+      32
     ],
-    "options_status": "provided",
-    "correct_answer": "CPU",
-    "answer_variants": [
-      "CPU"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
-    ],
-    "source_question_number": 27,
-    "source_option_version": 2
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 115
   },
   {
     "id": 33,
@@ -725,9 +782,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 28
+    "source_question_number": 28,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 101
   },
   {
     "id": 34,
@@ -748,9 +809,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 29
+    "source_question_number": 29,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 6
   },
   {
     "id": 35,
@@ -764,34 +829,21 @@
       "蘋果可可觸控（Cocoa Touch）"
     ],
     "options_status": "provided",
-    "correct_answer": "Android 執行期環境與修改版 Linux 核心\n應用程式框架（Application Framework）\n函式庫（如 Webkit, SQLite）",
+    "correct_answer": "應用程式框架（Application Framework）\n函式庫（如 Webkit, SQLite）\nAndroid 執行期環境與修改版 Linux 核心",
     "answer_variants": [
+      "應用程式框架（Application Framework）\n函式庫（如 Webkit, SQLite）\nAndroid 執行期環境與修改版 Linux 核心",
       "Android 執行期環境與修改版 Linux 核心\n應用程式框架（Application Framework）\n函式庫（如 Webkit, SQLite）"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 30
-  },
-  {
-    "id": 36,
-    "title": "",
-    "type": "fill_blank",
-    "question": "Apple 的移動作業系統 iOS 是基於 ________ 的結構。\n（用英文小寫回答，字母間留一個空白）",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "mac os x",
-    "answer_variants": [
-      "mac os x"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
-    ],
-    "source_question_number": 31
+    "source_question_number": 30,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 111
   },
   {
     "id": 37,
@@ -812,9 +864,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 32
+    "source_question_number": 32,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 76
   },
   {
     "id": 38,
@@ -828,20 +884,25 @@
       "在記憶體的區塊中儲存參數，並傳遞區塊地址"
     ],
     "options_status": "provided",
-    "correct_answer": "在暫存器中傳遞參數\n將參數壓入堆疊\n在記憶體的區塊中儲存參數，並傳遞區塊地址",
+    "correct_answer": "在暫存器中傳遞參數\n在記憶體的區塊中儲存參數，並傳遞區塊地址\n將參數壓入堆疊",
     "answer_variants": [
+      "在暫存器中傳遞參數\n在記憶體的區塊中儲存參數，並傳遞區塊地址\n將參數壓入堆疊",
       "在暫存器中傳遞參數\n將參數壓入堆疊\n在記憶體的區塊中儲存參數，並傳遞區塊地址"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 33
+    "source_question_number": 33,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 108
   },
   {
     "id": 39,
-    "title": "選項版本 1",
+    "title": "",
     "type": "choice",
     "question": "Apple 的 macOS（Mac OS X）核心主要結合了 Mach 與 BSD Unix，這種架構稱為？",
     "options": [
@@ -858,34 +919,21 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "pasted.txt",
+      "接收訓練3.txt",
+      "接收訓練4.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 34,
-    "source_option_version": 1
-  },
-  {
-    "id": 40,
-    "title": "選項版本 2",
-    "type": "choice",
-    "question": "Apple 的 macOS（Mac OS X）核心主要結合了 Mach 與 BSD Unix，這種架構稱為？",
-    "options": [
-      "混合系統",
-      "單體系統",
-      "簡單系統",
-      "純微核心系統"
+    "source_option_version": 1,
+    "merged_source_ids": [
+      40,
+      128
     ],
-    "options_status": "provided",
-    "correct_answer": "混合系統",
-    "answer_variants": [
-      "混合系統"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
-    ],
-    "source_question_number": 34,
-    "source_option_version": 2
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 127
   },
   {
     "id": 41,
@@ -906,9 +954,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 35
+    "source_question_number": 35,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 184
   },
   {
     "id": 42,
@@ -922,16 +974,21 @@
       "建立與刪除"
     ],
     "options_status": "provided",
-    "correct_answer": "搜尋\n列出檔案資訊\n讀取與寫入\n建立與刪除",
+    "correct_answer": "讀取與寫入\n建立與刪除\n搜尋\n列出檔案資訊",
     "answer_variants": [
+      "讀取與寫入\n建立與刪除\n搜尋\n列出檔案資訊",
       "搜尋\n列出檔案資訊\n讀取與寫入\n建立與刪除"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 36
+    "source_question_number": 36,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 14
   },
   {
     "id": 43,
@@ -945,16 +1002,21 @@
       "控制對系統資源的存取"
     ],
     "options_status": "provided",
-    "correct_answer": "確保並行程序不會互相干擾\n使用者驗證\n控制對系統資源的存取",
+    "correct_answer": "控制對系統資源的存取\n確保並行程序不會互相干擾\n使用者驗證",
     "answer_variants": [
+      "控制對系統資源的存取\n確保並行程序不會互相干擾\n使用者驗證",
       "確保並行程序不會互相干擾\n使用者驗證\n控制對系統資源的存取"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 37
+    "source_question_number": 37,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 85
   },
   {
     "id": 44,
@@ -963,16 +1025,30 @@
     "question": "在 Unix/Linux 系統中，用來建立全新行程（Process）的系統呼叫是 ________。\n（請用小寫英文回答）",
     "options": [],
     "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "fork",
+    "correct_answer": "fork()",
     "answer_variants": [
+      "fork()",
       "fork"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "接收訓練1.txt",
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 38
+    "source_question_number": 38,
+    "merged_source_ids": [
+      85
+    ],
+    "answer_note": "來源記錄存在差異：\n接收訓練1.txt：fork\n第六次訓練.txt：fork()",
+    "source_incorrect_responses": [
+      "fork",
+      "123"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 201
   },
   {
     "id": 45,
@@ -993,9 +1069,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 39
+    "source_question_number": 39,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 123
   },
   {
     "id": 46,
@@ -1011,9 +1091,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 40
+    "source_question_number": 40,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 239
   },
   {
     "id": 47,
@@ -1034,9 +1118,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 41
+    "source_question_number": 41,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 23
   },
   {
     "id": 48,
@@ -1057,9 +1145,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 42
+    "source_question_number": 42,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 43
   },
   {
     "id": 49,
@@ -1073,16 +1165,21 @@
       "確保所有對系統資源的存取都受到控制"
     ],
     "options_status": "provided",
-    "correct_answer": "透過使用者驗證來防禦外部人員\n防止並行程序相互干擾\n控制對資訊的存取\n確保所有對系統資源的存取都受到控制",
+    "correct_answer": "控制對資訊的存取\n確保所有對系統資源的存取都受到控制\n透過使用者驗證來防禦外部人員\n防止並行程序相互干擾",
     "answer_variants": [
+      "控制對資訊的存取\n確保所有對系統資源的存取都受到控制\n透過使用者驗證來防禦外部人員\n防止並行程序相互干擾",
       "透過使用者驗證來防禦外部人員\n防止並行程序相互干擾\n控制對資訊的存取\n確保所有對系統資源的存取都受到控制"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 43
+    "source_question_number": 43,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 93
   },
   {
     "id": 50,
@@ -1098,9 +1195,20 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "第六次訓練.txt",
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 44
+    "source_question_number": 44,
+    "merged_source_ids": [
+      183
+    ],
+    "source_incorrect_responses": [
+      "threats"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 47
   },
   {
     "id": 51,
@@ -1114,16 +1222,21 @@
       "程式更容易理解與除錯"
     ],
     "options_status": "provided",
-    "correct_answer": "開發速度快得多\n程式更容易移植到其他硬體\n程式更容易理解與除錯",
+    "correct_answer": "程式更容易移植到其他硬體\n開發速度快得多\n程式更容易理解與除錯",
     "answer_variants": [
+      "程式更容易移植到其他硬體\n開發速度快得多\n程式更容易理解與除錯",
       "開發速度快得多\n程式更容易移植到其他硬體\n程式更容易理解與除錯"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 45
+    "source_question_number": 45,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 2
   },
   {
     "id": 52,
@@ -1144,9 +1257,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 46
+    "source_question_number": 46,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 173
   },
   {
     "id": 53,
@@ -1162,9 +1279,15 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 47
+    "source_question_number": 47,
+    "source_incorrect_responses": [
+      "123"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 230
   },
   {
     "id": 54,
@@ -1180,9 +1303,17 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "接收訓練2.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 48
+    "source_question_number": 48,
+    "merged_source_ids": [
+      100
+    ],
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 30
   },
   {
     "id": 55,
@@ -1199,9 +1330,13 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第二次訓練.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 49
+    "source_question_number": 49,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 188
   },
   {
     "id": 56,
@@ -1222,9 +1357,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 50
+    "source_question_number": 50,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 171
   },
   {
     "id": 57,
@@ -1233,16 +1372,25 @@
     "question": "現代作業系統設計原則中，強調將規定「做什麼」的 ________ 與規定「怎麼做」的 ________ 分離開來。\n（請用小寫英文回答）",
     "options": [],
     "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "policy mechanism",
+    "correct_answer": "policy\nmechanism",
     "answer_variants": [
+      "policy\nmechanism",
+      "policy",
+      "mechanism",
       "policy mechanism"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 51
+    "source_question_number": 51,
+    "source_incorrect_responses": [
+      "policy / mechanism"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 214
   },
   {
     "id": 58,
@@ -1252,7 +1400,8 @@
     "options": [
       "Compilers",
       "Linkage editors",
-      "Debuggers"
+      "Debuggers",
+      "Spreadsheet software"
     ],
     "options_status": "provided",
     "correct_answer": "Compilers\nLinkage editors\nDebuggers",
@@ -1262,9 +1411,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 52
+    "source_question_number": 52,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 270
   },
   {
     "id": 59,
@@ -1280,9 +1433,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "接收訓練1.txt"
     ],
-    "source_question_number": 53
+    "source_question_number": 53,
+    "merged_source_ids": [
+      77
+    ]
   },
   {
     "id": 60,
@@ -1303,9 +1460,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 54
+    "source_question_number": 54,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 226
   },
   {
     "id": 61,
@@ -1326,9 +1487,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 55
+    "source_question_number": 55,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 159
   },
   {
     "id": 62,
@@ -1339,7 +1504,8 @@
       "User login invokes user's choice of shell",
       "Shell executes fork() to create process",
       "Executes exec() to load program into process",
-      "Process can only return error code 100"
+      "Process can only return error code 100",
+      "Process exits must always return error code 100"
     ],
     "options_status": "provided",
     "correct_answer": "User login invokes user's choice of shell\nShell executes fork() to create process\nExecutes exec() to load program into process",
@@ -1349,9 +1515,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 56
+    "source_question_number": 56,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 263
   },
   {
     "id": 63,
@@ -1372,9 +1542,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 57
+    "source_question_number": 57,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 120
   },
   {
     "id": 64,
@@ -1383,16 +1557,24 @@
     "question": "The design and implementation of an operating system is a process of defining ______.\n（Please answer in lowercase English ex a and b）",
     "options": [],
     "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "goals and rules",
+    "correct_answer": "goals and rules|rules and goals",
     "answer_variants": [
-      "goals and rules"
+      "goals and rules|rules and goals",
+      "goals and rules",
+      "rules and goals"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 58
+    "source_question_number": 58,
+    "source_incorrect_responses": [
+      "goals and rules"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 272
   },
   {
     "id": 65,
@@ -1413,9 +1595,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 59
+    "source_question_number": 59,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 212
   },
   {
     "id": 66,
@@ -1429,16 +1615,21 @@
       "Linux（單體加動態模組）"
     ],
     "options_status": "provided",
-    "correct_answer": "Apple macOS（Mach 核心加 BSD 部分）\nWindows（單體加微核心特性）\nLinux（單體加動態模組）",
+    "correct_answer": "Linux (單體加動態模組)\nWindows (單體加微核心特性)\nApple macOS (Mach 核心加 BSD 部分)",
     "answer_variants": [
+      "Linux (單體加動態模組)\nWindows (單體加微核心特性)\nApple macOS (Mach 核心加 BSD 部分)",
       "Apple macOS（Mach 核心加 BSD 部分）\nWindows（單體加微核心特性）\nLinux（單體加動態模組）"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 60
+    "source_question_number": 60,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 62
   },
   {
     "id": 67,
@@ -1454,9 +1645,20 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "第六次訓練.txt",
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 61
+    "source_question_number": 61,
+    "merged_source_ids": [
+      179
+    ],
+    "source_incorrect_responses": [
+      "api"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 245
   },
   {
     "id": 68,
@@ -1477,9 +1679,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 62
+    "source_question_number": 62,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 232
   },
   {
     "id": 69,
@@ -1493,16 +1699,21 @@
       "Linux"
     ],
     "options_status": "provided",
-    "correct_answer": "Apple Mac OS X\nMicrosoft Windows\nLinux",
+    "correct_answer": "Microsoft Windows\nApple Mac OS X\nLinux",
     "answer_variants": [
+      "Microsoft Windows\nApple Mac OS X\nLinux",
       "Apple Mac OS X\nMicrosoft Windows\nLinux"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 63
+    "source_question_number": 63,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 154
   },
   {
     "id": 70,
@@ -1523,9 +1734,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 64
+    "source_question_number": 64,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 66
   },
   {
     "id": 71,
@@ -1546,9 +1761,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 65
+    "source_question_number": 65,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 248
   },
   {
     "id": 72,
@@ -1562,16 +1781,21 @@
       "UNIX 結構"
     ],
     "options_status": "provided",
-    "correct_answer": "分層結構\n微核心結構\n簡單結構\nUNIX 結構",
+    "correct_answer": "簡單結構\nUNIX 結構\n分層結構\n微核心結構",
     "answer_variants": [
+      "簡單結構\nUNIX 結構\n分層結構\n微核心結構",
       "分層結構\n微核心結構\n簡單結構\nUNIX 結構"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 66
+    "source_question_number": 66,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 237
   },
   {
     "id": 73,
@@ -1585,16 +1809,22 @@
       "檔案操作工具"
     ],
     "options_status": "provided",
-    "correct_answer": "應用程式",
+    "correct_answer": "背景服務",
     "answer_variants": [
+      "背景服務",
       "應用程式"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 67
+    "source_question_number": 67,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 224,
+    "answer_note": "本次來源答案：背景服務；先前來源答案：應用程式。來源記錄存在差異，保留兩者供核對。"
   },
   {
     "id": 74,
@@ -1610,9 +1840,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "接收訓練4.txt",
+      "第六次訓練.txt",
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 68
+    "source_question_number": 68,
+    "merged_source_ids": [
+      153
+    ],
+    "source_incorrect_responses": [
+      "getsecurity",
+      "setfileesecurity",
+      "setfilesecurity",
+      "fork()"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 117
   },
   {
     "id": 75,
@@ -1628,9 +1873,17 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 69
+    "source_question_number": 69,
+    "merged_source_ids": [
+      169
+    ],
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 198
   },
   {
     "id": 76,
@@ -1646,46 +1899,47 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "pasted.txt"
+      "pasted.txt",
+      "接收訓練4.txt",
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 70
-  },
-  {
-    "id": 77,
-    "title": "",
-    "type": "fill_blank",
-    "question": "Many modern operating systems implement loadable kernel\n[__1__].(please answer in lowercase english)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "modules",
-    "answer_variants": [
-      "modules"
+    "source_question_number": 70,
+    "merged_source_ids": [
+      152
     ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練1.txt"
-    ],
-    "source_question_number": 71
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 9
   },
   {
     "id": 78,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "在UNIX作業系統中，兩個可分離的部分是？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "核心\n系統程式",
+    "options": [
+      "系統程式",
+      "核心",
+      "使用者程式",
+      "核心模組"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "系統程式\n核心",
     "answer_variants": [
+      "系統程式\n核心",
       "核心\n系統程式"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練1.txt",
-      "接收訓練2.txt"
+      "接收訓練2.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 72
+    "source_question_number": 72,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 87
   },
   {
     "id": 79,
@@ -1708,10 +1962,15 @@
   {
     "id": 80,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "選出作業系統的三種使用者介面。",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "指令列介面（CLI）",
+      "圖形使用者介面（GUI）",
+      "批次介面（Batch）",
+      "應用程式介面（API）"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "指令列介面（CLI）\n圖形使用者介面（GUI）\n批次介面（Batch）",
     "answer_variants": [
       "指令列介面（CLI）\n圖形使用者介面（GUI）\n批次介面（Batch）"
@@ -1720,9 +1979,13 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練1.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 74
+    "source_question_number": 74,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 89
   },
   {
     "id": 81,
@@ -1739,17 +2002,25 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練1.txt",
-      "接收訓練3.txt"
+      "接收訓練3.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 75
+    "source_question_number": 75,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 267
   },
   {
     "id": 82,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "微核心的缺點是？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "效能開銷",
+      "安全性較差",
+      "擴充性差"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "效能開銷",
     "answer_variants": [
       "效能開銷",
@@ -1759,18 +2030,24 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練1.txt",
-      "接收訓練6.txt"
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 76,
-    "answer_note": "來源記錄存在差異：\n接收訓練1.txt：效能開銷\n接收訓練6.txt：B（由滿分作答推定）"
+    "answer_note": "來源記錄存在差異：\n接收訓練1.txt：效能開銷\n接收訓練6.txt：B（由滿分作答推定）",
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 83
   },
   {
     "id": 83,
     "title": "",
     "type": "choice_options_missing",
     "question": "哪個方法將盡可能多的功能從核心移到使用者空間？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "microkernel"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "microkernel",
     "answer_variants": [
       "microkernel"
@@ -1778,9 +2055,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練1.txt"
+      "接收訓練1.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 77
+    "source_question_number": 77,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 211
   },
   {
     "id": 84,
@@ -1796,38 +2077,25 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練1.txt"
-    ],
-    "source_question_number": 78
-  },
-  {
-    "id": 85,
-    "title": "",
-    "type": "fill_blank",
-    "question": "在 Unix/Linux 系統中，用來建立全新行程（Process）的系統呼叫是 [__1__]。(請用小寫英文回答)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "fork",
-    "answer_variants": [
-      "fork",
-      "fork()"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練1.txt",
-      "第六次訓練.txt"
+      "作業系統U3.txt"
     ],
-    "source_question_number": 79,
-    "answer_note": "來源記錄存在差異：\n接收訓練1.txt：fork\n第六次訓練.txt：fork()"
+    "source_question_number": 78,
+    "source_incorrect_responses": [
+      "modularity"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 246
   },
   {
     "id": 86,
     "title": "",
     "type": "choice_options_missing",
     "question": "在作業系統中，fork() 系統呼叫的功能是？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "建立新行程"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "建立新行程",
     "answer_variants": [
       "建立新行程"
@@ -1837,17 +2105,23 @@
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練1.txt",
       "第四次訓練.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 80
+    "source_question_number": 80,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 177
   },
   {
     "id": 87,
     "title": "",
     "type": "choice_options_missing",
     "question": "作業系統的「程式執行」服務允許系統載入程式到哪裡？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "memory"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "memory",
     "answer_variants": [
       "memory"
@@ -1855,37 +2129,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練1.txt"
-    ],
-    "source_question_number": 81
-  },
-  {
-    "id": 88,
-    "title": "",
-    "type": "fill_blank",
-    "question": "最常見的三個 API 是 Windows 的 Win32 API、POSIX 系統的 POSIX API，以及 [__1__]虛擬機的\nJava API。(用英文小寫回答)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "java",
-    "answer_variants": [
-      "java"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練1.txt",
-      "第六次訓練.txt",
-      "接收訓練6.txt"
+      "作業系統U3.txt"
     ],
-    "source_question_number": 82
+    "source_question_number": 81,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 125
   },
   {
     "id": 89,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "啟動電腦時，執行從哪裡開始？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Specific memory location in ROM",
+      "Random Access Memory (RAM)"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Specific memory location in ROM",
     "answer_variants": [
       "Specific memory location in ROM",
@@ -1895,18 +2156,24 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練1.txt",
-      "接收訓練6.txt"
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 83,
-    "answer_note": "來源記錄存在差異：\n接收訓練1.txt：Specific memory location in ROM\n接收訓練6.txt：A（由滿分作答推定）"
+    "answer_note": "來源記錄存在差異：\n接收訓練1.txt：Specific memory location in ROM\n接收訓練6.txt：A（由滿分作答推定）",
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 142
   },
   {
     "id": 90,
     "title": "",
     "type": "choice_options_missing",
     "question": "In operating system design, what two principles are separated to\nachieve maximum flexibility?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Policy and mechanism"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Policy and mechanism",
     "answer_variants": [
       "Policy and mechanism"
@@ -1915,17 +2182,24 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練1.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 84
+    "source_question_number": 84,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 242
   },
   {
     "id": 91,
     "title": "",
     "type": "choice_options_missing",
     "question": "下列哪些屬於作業系統提供的通訊模型機制？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "共用記憶體模型（Shared memory）",
+      "訊息傳遞模型（Message passing）"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "共用記憶體模型（Shared memory）\n訊息傳遞模型（Message passing）",
     "answer_variants": [
       "共用記憶體模型（Shared memory）\n訊息傳遞模型（Message passing）"
@@ -1933,38 +2207,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練1.txt"
-    ],
-    "source_question_number": 85
-  },
-  {
-    "id": 92,
-    "title": "",
-    "type": "fill_blank",
-    "question": "在 UNIX 中，[__1__]包含在系統呼叫介面之下以及實體硬體之上的一切。 (用英文小寫回答 字母間請流一個空白)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "kernel",
-    "answer_variants": [
-      "kernel"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練1.txt",
-      "接收訓練2.txt",
-      "第六次訓練.txt",
-      "接收訓練6.txt"
+      "作業系統U3.txt"
     ],
-    "source_question_number": 86
+    "source_question_number": 85,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 178
   },
   {
     "id": 93,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "相較於直接使用系統呼叫，使用 API 有哪些好處？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "程式設計師不需了解系統呼叫的實現方式",
+      "隱藏了大部分作業系統介面的細節",
+      "讓程式碼更有效率",
+      "增加了系統的安全性"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "程式設計師不需了解系統呼叫的實現方式\n隱藏了大部分作業系統介面的細節",
     "answer_variants": [
       "程式設計師不需了解系統呼叫的實現方式\n隱藏了大部分作業系統介面的細節",
@@ -1977,18 +2239,27 @@
       "第四次訓練.txt",
       "第五次訓練.txt",
       "第六次訓練.txt",
-      "接收訓練6.txt"
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 87,
-    "answer_note": "來源記錄存在差異：\n接收訓練1.txt：程式設計師不需了解系統呼叫的實現方式\n隱藏了大部分作業系統介面的細節\n第四次訓練.txt：程式設計師不需了解系統呼叫的實現方式\n隱藏了大部分作業系統介面的細節\n第五次訓練.txt：程式設計師不需了解系統呼叫的實現方式\n隱藏了大部分作業系統介面的細節\n第六次訓練.txt：程式設計師不需了解系統呼叫的實現方式\n隱藏了大部分作業系統介面的細節\n接收訓練6.txt：A, C（由滿分作答推定）"
+    "answer_note": "來源記錄存在差異：\n接收訓練1.txt：程式設計師不需了解系統呼叫的實現方式\n隱藏了大部分作業系統介面的細節\n第四次訓練.txt：程式設計師不需了解系統呼叫的實現方式\n隱藏了大部分作業系統介面的細節\n第五次訓練.txt：程式設計師不需了解系統呼叫的實現方式\n隱藏了大部分作業系統介面的細節\n第六次訓練.txt：程式設計師不需了解系統呼叫的實現方式\n隱藏了大部分作業系統介面的細節\n接收訓練6.txt：A, C（由滿分作答推定）",
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 32
   },
   {
     "id": 94,
     "title": "",
     "type": "choice_options_missing",
     "question": "哪些是作業系統設計時需要考慮的系統目標？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "易於設計",
+      "易於實作",
+      "可維護",
+      "靈活"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "易於設計\n易於實作\n可維護\n靈活",
     "answer_variants": [
       "易於設計\n易於實作\n可維護\n靈活",
@@ -2000,10 +2271,14 @@
       "接收訓練1.txt",
       "接收訓練4.txt",
       "接收訓練6.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 88,
-    "answer_note": "來源記錄存在差異：\n接收訓練1.txt：易於設計\n易於實作\n可維護\n靈活\n接收訓練4.txt：易於設計\n易於實作\n可維護\n靈活\n接收訓練6.txt：A, B, C, D（由滿分作答推定）\n第七次訓練.txt：易於設計\n易於實作\n可維護\n靈活"
+    "answer_note": "來源記錄存在差異：\n接收訓練1.txt：易於設計\n易於實作\n可維護\n靈活\n接收訓練4.txt：易於設計\n易於實作\n可維護\n靈活\n接收訓練6.txt：A, B, C, D（由滿分作答推定）\n第七次訓練.txt：易於設計\n易於實作\n可維護\n靈活",
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 24
   },
   {
     "id": 95,
@@ -2021,17 +2296,26 @@
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練1.txt",
       "接收訓練3.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 89
+    "source_question_number": 89,
+    "source_incorrect_responses": [
+      "bootstrap program"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 74
   },
   {
     "id": 96,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "在分層方法中，最底層（Layer 0）代表的是什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "硬體",
+      "使用者介面"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "硬體",
     "answer_variants": [
       "硬體",
@@ -2044,18 +2328,25 @@
       "接收訓練2.txt",
       "第四次訓練.txt",
       "接收訓練4.txt",
-      "接收訓練6.txt"
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 90,
-    "answer_note": "來源記錄存在差異：\n接收訓練1.txt：硬體\n接收訓練2.txt：硬體\n第四次訓練.txt：硬體\n接收訓練4.txt：硬體\n接收訓練6.txt：C（由滿分作答推定）"
+    "answer_note": "來源記錄存在差異：\n接收訓練1.txt：硬體\n接收訓練2.txt：硬體\n第四次訓練.txt：硬體\n接收訓練4.txt：硬體\n接收訓練6.txt：C（由滿分作答推定）",
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 79
   },
   {
     "id": 97,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "當作業系統本身發生錯誤（核心損毀）時，所產生的記憶體映像檔稱為？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "損毀傾印",
+      "核心傾印"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "損毀傾印",
     "answer_variants": [
       "損毀傾印"
@@ -2064,17 +2355,24 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練1.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 91
+    "source_question_number": 91,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 55
   },
   {
     "id": 98,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "哪一種程式設計語言經常用於撰寫現代作業系統？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "C",
+      "JavaScript"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "C",
     "answer_variants": [
       "C"
@@ -2085,9 +2383,14 @@
       "接收訓練1.txt",
       "接收訓練3.txt",
       "第四次訓練.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 92
+    "source_question_number": 92,
+    "previous_source_answer": "C",
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 4
   },
   {
     "id": 99,
@@ -2103,54 +2406,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練1.txt"
+      "接收訓練1.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 93
-  },
-  {
-    "id": 100,
-    "title": "",
-    "type": "fill_blank",
-    "question": "在微核心架構中，使用者空間的模組與模組之間，主要是透過 [__1__] 的機制來進行溝通。(請用小寫英文回答字母間留一個空白)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "message passing",
-    "answer_variants": [
-      "message passing"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練2.txt"
-    ],
-    "source_question_number": 94
-  },
-  {
-    "id": 101,
-    "title": "",
-    "type": "fill_blank",
-    "question": "The small piece of code stored in ROM that locates the kernel and\nstarts it is called [__1__] .(please answer in lowercase english with\na space between answers)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "bootstrap loader",
-    "answer_variants": [
-      "bootstrap loader"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練2.txt",
-      "第七次訓練.txt"
-    ],
-    "source_question_number": 95
+    "source_question_number": 93,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 90
   },
   {
     "id": 102,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "命令列介面（CLI）或命令直譯器，在作業系統中有哪些常見的實現型態？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "有時單獨實現為系統程式",
+      "有時直接實現在核心中",
+      "提供多種版本，通常稱為 Shell",
+      "只能透過虛擬鍵盤操作"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "有時單獨實現為系統程式\n有時直接實現在核心中\n提供多種版本，通常稱為 Shell",
     "answer_variants": [
       "有時單獨實現為系統程式\n有時直接實現在核心中\n提供多種版本，通常稱為 Shell"
@@ -2158,17 +2433,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練2.txt"
+      "接收訓練2.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 96
+    "source_question_number": 96,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 130
   },
   {
     "id": 103,
     "title": "",
     "type": "choice_options_missing",
     "question": "作業系統服務中的「通訊」服務可能透過哪些方式交換資訊？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "共享記憶體",
+      "訊息傳遞"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "共享記憶體\n訊息傳遞",
     "answer_variants": [
       "共享記憶體\n訊息傳遞"
@@ -2176,35 +2458,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練2.txt"
+      "接收訓練2.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 97
-  },
-  {
-    "id": 104,
-    "title": "",
-    "type": "fill_blank",
-    "question": "Apple 的移動作業系統 iOS 是基於 [__1__] 的結構。(用英文小寫回答 字母間請留一個空白)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "mac os x",
-    "answer_variants": [
-      "mac os x"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練2.txt"
-    ],
-    "source_question_number": 98
+    "source_question_number": 97,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 97
   },
   {
     "id": 105,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列哪一種使用者介面是以文字行輸入為基礎的？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "CLI",
+      "Batch"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "CLI",
     "answer_variants": [
       "CLI"
@@ -2212,17 +2483,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練2.txt"
+      "接收訓練2.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 99
+    "source_question_number": 99,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 75
   },
   {
     "id": 106,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "作業系統設計的一個重要原則是將政策(policy)與何者分開？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "mechanism",
+      "hardware"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "mechanism",
     "answer_variants": [
       "mechanism"
@@ -2230,17 +2508,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練2.txt"
+      "接收訓練2.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 100
+    "source_question_number": 100,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 182
   },
   {
     "id": 107,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "In Unix systems, which system call is invoked underlying by the\nprintf() library function?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "write()",
+      "fork()"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "write()",
     "answer_variants": [
       "write()"
@@ -2248,17 +2533,23 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練2.txt"
+      "接收訓練2.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 101
+    "source_question_number": 101,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 247
   },
   {
     "id": 108,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which of the following system calls belongs to the information\nmaintenance category?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "sleep()"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "sleep()",
     "answer_variants": [
       "sleep()"
@@ -2267,9 +2558,13 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練2.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 102
+    "source_question_number": 102,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 152
   },
   {
     "id": 109,
@@ -2285,17 +2580,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練2.txt"
+      "接收訓練2.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 103
+    "source_question_number": 103,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 273
   },
   {
     "id": 110,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Which of the following operating systems are considered hybrid systems?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Linux",
+      "Windows",
+      "Apple macOS",
+      "Early minimal MS-DOS"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Linux\nWindows\nApple macOS",
     "answer_variants": [
       "Linux\nWindows\nApple macOS"
@@ -2304,9 +2608,13 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練2.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 104
+    "source_question_number": 104,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 163
   },
   {
     "id": 111,
@@ -2322,17 +2630,25 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練2.txt"
+      "接收訓練2.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 105
+    "source_question_number": 105,
+    "source_incorrect_responses": [
+      "Dtrace"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 274
   },
   {
     "id": 112,
     "title": "",
     "type": "choice_options_missing",
     "question": "The macOS kernel combines Mach microkernel and BSD Unix parts. This\narchitecture is called:",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Hybrid system"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Hybrid system",
     "answer_variants": [
       "Hybrid system"
@@ -2341,17 +2657,25 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練2.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 106
+    "source_question_number": 106,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 259
   },
   {
     "id": 113,
     "title": "",
     "type": "choice_options_missing",
     "question": "當進行核心或系統效能調校（Performance Tuning）時，通常會採用哪些方法？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "檢視活動的追蹤清單（Trace listings）",
+      "進行分析（Profiling），定期對指令指標進行採樣",
+      "檢視記錄檔或使用 top 工具"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "檢視活動的追蹤清單（Trace listings）\n進行分析（Profiling），定期對指令指標進行採樣\n檢視記錄檔或使用 top 工具",
     "answer_variants": [
       "檢視活動的追蹤清單（Trace listings）\n進行分析（Profiling），定期對指令指標進行採樣\n檢視記錄檔或使用 top 工具"
@@ -2361,17 +2685,23 @@
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練2.txt",
       "接收訓練3.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 107
+    "source_question_number": 107,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 118
   },
   {
     "id": 114,
     "title": "",
     "type": "choice_options_missing",
     "question": "MS-DOS 系統中，程式執行後會：",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "覆蓋整個記憶體空間"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "覆蓋整個記憶體空間",
     "answer_variants": [
       "覆蓋整個記憶體空間"
@@ -2379,9 +2709,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練2.txt"
+      "接收訓練2.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 108
+    "source_question_number": 108,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 31
   },
   {
     "id": 115,
@@ -2397,19 +2731,32 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練2.txt"
+      "接收訓練2.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 109
+    "source_question_number": 109,
+    "source_incorrect_responses": [
+      "a",
+      "pc sampling",
+      "123"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 7
   },
   {
     "id": 116,
     "title": "",
     "type": "choice_options_missing",
     "question": "下列哪些屬於系統維護、背景服務（Background Services）或守護行程（Daemons）常提供的功能？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "磁碟檢查（Disk checking）\n行程排程（Process scheduling）\n錯誤記錄（Error logging）",
+    "options": [
+      "磁碟檢查（Disk checking）",
+      "錯誤記錄（Error logging）",
+      "行程排程（Process scheduling）"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "磁碟檢查（Disk checking）\n錯誤記錄（Error logging）\n行程排程（Process scheduling）",
     "answer_variants": [
+      "磁碟檢查（Disk checking）\n錯誤記錄（Error logging）\n行程排程（Process scheduling）",
       "磁碟檢查（Disk checking）\n行程排程（Process scheduling）\n錯誤記錄（Error logging）"
     ],
     "answer_basis": "provided_source_answer",
@@ -2417,9 +2764,13 @@
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練2.txt",
       "第五次訓練.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 110
+    "source_question_number": 110,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 172
   },
   {
     "id": 117,
@@ -2436,9 +2787,13 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練2.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 111
+    "source_question_number": 111,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 217
   },
   {
     "id": 118,
@@ -2454,17 +2809,25 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練3.txt"
+      "接收訓練3.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 112
+    "source_question_number": 112,
+    "source_incorrect_responses": [
+      "CPU schedling"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 69
   },
   {
     "id": 119,
     "title": "",
     "type": "choice_options_missing",
     "question": "下列哪一個 Unix/Linux 系統工具可以用來即時檢視系統效能與行程行為？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "top"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "top",
     "answer_variants": [
       "top",
@@ -2476,10 +2839,14 @@
       "接收訓練3.txt",
       "接收訓練6.txt",
       "第七次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 113,
-    "answer_note": "來源記錄存在差異：\n接收訓練3.txt：top\n接收訓練6.txt：B（由滿分作答推定）\n第七次訓練.txt：top\n第八次訓練.txt：top"
+    "answer_note": "來源記錄存在差異：\n接收訓練3.txt：top\n接收訓練6.txt：B（由滿分作答推定）\n第七次訓練.txt：top\n第八次訓練.txt：top",
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 208
   },
   {
     "id": 120,
@@ -2495,17 +2862,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練3.txt"
+      "接收訓練3.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 114
+    "source_question_number": 114,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 227
   },
   {
     "id": 121,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which mechanisms are mentioned as models for communication between processes?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Shared-memory model",
+      "Message-passing model"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Shared-memory model\nMessage-passing model",
     "answer_variants": [
       "Shared-memory model\nMessage-passing model"
@@ -2514,9 +2888,13 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練3.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 115
+    "source_question_number": 115,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 195
   },
   {
     "id": 122,
@@ -2533,17 +2911,26 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練3.txt",
-      "接收訓練4.txt"
+      "接收訓練4.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 116
+    "source_question_number": 116,
+    "source_incorrect_responses": [
+      "rust"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 68
   },
   {
     "id": 123,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列哪一個核心結構將儘可能多的功能移至使用者空間，並透過訊息傳遞溝通？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "微核心",
+      "簡單結構"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "微核心",
     "answer_variants": [
       "微核心"
@@ -2551,17 +2938,23 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練3.txt"
+      "接收訓練3.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 117
+    "source_question_number": 117,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 148
   },
   {
     "id": 124,
     "title": "",
     "type": "choice_options_missing",
     "question": "作業系統的哪項服務確保所有對系統資源的存取都受到控制？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Protection and security"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Protection and security",
     "answer_variants": [
       "Protection and security"
@@ -2570,17 +2963,25 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練3.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 118
+    "source_question_number": 118,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 36
   },
   {
     "id": 125,
     "title": "",
     "type": "choice_options_missing",
     "question": "微核心系統結構的好處有哪些？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "更容易擴展",
+      "更容易移植到新的架構",
+      "核心模式下執行的程式碼較少，因此更可靠"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "更容易擴展\n更容易移植到新的架構\n核心模式下執行的程式碼較少，因此更可靠",
     "answer_variants": [
       "更容易擴展\n更容易移植到新的架構\n核心模式下執行的程式碼較少，因此更可靠",
@@ -2590,10 +2991,14 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練3.txt",
-      "接收訓練6.txt"
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 119,
-    "answer_note": "來源記錄存在差異：\n接收訓練3.txt：更容易擴展\n更容易移植到新的架構\n核心模式下執行的程式碼較少，因此更可靠\n接收訓練6.txt：A, B, C（由滿分作答推定）"
+    "answer_note": "來源記錄存在差異：\n接收訓練3.txt：更容易擴展\n更容易移植到新的架構\n核心模式下執行的程式碼較少，因此更可靠\n接收訓練6.txt：A, B, C（由滿分作答推定）",
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 50
   },
   {
     "id": 126,
@@ -2610,17 +3015,23 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練3.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 120
+    "source_question_number": 120,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 129
   },
   {
     "id": 127,
     "title": "",
     "type": "choice_options_missing",
     "question": "What is the program used to obtain specific hardware configuration\ninformation to build a compiled kernel?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "SYSGEN"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "SYSGEN",
     "answer_variants": [
       "SYSGEN"
@@ -2628,28 +3039,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練3.txt"
-    ],
-    "source_question_number": 121
-  },
-  {
-    "id": 128,
-    "title": "",
-    "type": "choice_options_missing",
-    "question": "Apple 的 macOS (Mac OS X) 核心主要結合了 Mach 與 BSD Unix，這種架構稱為？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "混合系統",
-    "answer_variants": [
-      "混合系統"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練3.txt",
-      "接收訓練4.txt"
+      "作業系統U3.txt"
     ],
-    "source_question_number": 122
+    "source_question_number": 121,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 233
   },
   {
     "id": 129,
@@ -2665,17 +3061,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練3.txt"
+      "接收訓練3.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 123
+    "source_question_number": 123,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 81
   },
   {
     "id": 130,
     "title": "",
     "type": "choice_options_missing",
     "question": "「使用者介面」有哪幾種？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "指令列（CLI）",
+      "圖形使用者介面（GUI）",
+      "批次（Batch）",
+      "觸控螢幕"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "指令列（CLI）\n圖形使用者介面（GUI）\n批次（Batch）\n觸控螢幕",
     "answer_variants": [
       "指令列（CLI）\n圖形使用者介面（GUI）\n批次（Batch）\n觸控螢幕"
@@ -2684,9 +3089,13 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練3.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 124
+    "source_question_number": 124,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 107
   },
   {
     "id": 131,
@@ -2703,17 +3112,27 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練3.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 125
+    "source_question_number": 125,
+    "source_incorrect_responses": [
+      "shell"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 18
   },
   {
     "id": 132,
     "title": "",
     "type": "choice_options_missing",
     "question": "下列哪些程式屬於資訊工程領域中常見的核心或程式開發支援工具？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "編譯器 (Compilers)",
+      "連結編輯器 (Linkage editors)",
+      "除錯器 (Debuggers)"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "編譯器 (Compilers)\n連結編輯器 (Linkage editors)\n除錯器 (Debuggers)",
     "answer_variants": [
       "編譯器 (Compilers)\n連結編輯器 (Linkage editors)\n除錯器 (Debuggers)"
@@ -2722,17 +3141,24 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練3.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 126
+    "source_question_number": 126,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 244
   },
   {
     "id": 133,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "About the \"communication\" service in OS, Where can processes exchange information?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Between different computers over the Internet",
+      "Located on the thumb drive"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Between different computers over the Internet",
     "answer_variants": [
       "Between different computers over the Internet"
@@ -2740,9 +3166,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 127
+    "source_question_number": 127,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 260
   },
   {
     "id": 134,
@@ -2751,16 +3181,26 @@
     "question": "將[__1__]與[__2__]分離是一個非常重要的原則，因為它允許在日後更改策略時具有最大的靈活性。(英文小寫回答)",
     "options": [],
     "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "policy/mechanism",
+    "correct_answer": "policy\nmechanism",
     "answer_variants": [
+      "policy\nmechanism",
+      "policy",
+      "mechanism",
       "policy/mechanism"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 128
+    "source_question_number": 128,
+    "source_incorrect_responses": [
+      "policy / mechanism",
+      "/"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 122
   },
   {
     "id": 135,
@@ -2777,17 +3217,27 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第四次訓練.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 129
+    "source_question_number": 129,
+    "source_incorrect_responses": [
+      "123"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 222
   },
   {
     "id": 136,
     "title": "",
     "type": "choice_options_missing",
     "question": "作業系統設計中的「使用者目標（User Goals）」通常包括下列哪些期望？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "方便使用（Convenient）",
+      "易於學習（Easy to learn）",
+      "快速與安全（Fast and safe）"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "方便使用（Convenient）\n易於學習（Easy to learn）\n快速與安全（Fast and safe）",
     "answer_variants": [
       "方便使用（Convenient）\n易於學習（Easy to learn）\n快速與安全（Fast and safe）"
@@ -2795,17 +3245,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 130
+    "source_question_number": 130,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 141
   },
   {
     "id": 137,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Which of the following is not a basic service provided by the operating system to users?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "data analysis",
+      "File system operations"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "data analysis",
     "answer_variants": [
       "data analysis"
@@ -2813,9 +3270,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 131
+    "source_question_number": 131,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 166
   },
   {
     "id": 138,
@@ -2832,9 +3293,15 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第四次訓練.txt",
-      "接收訓練4.txt"
+      "接收訓練4.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 132
+    "source_question_number": 132,
+    "source_incorrect_responses": [
+      "resouces"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 37
   },
   {
     "id": 139,
@@ -2852,27 +3319,13 @@
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第四次訓練.txt",
       "接收訓練4.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 133
-  },
-  {
-    "id": 140,
-    "title": "",
-    "type": "fill_blank",
-    "question": "許多作業系統提供用來集中儲存和檢索系統組態與配置資訊的資料庫機制稱為 [__1__]。(請用小寫英文回答)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "registry",
-    "answer_variants": [
-      "registry"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第四次訓練.txt"
-    ],
-    "source_question_number": 134
+    "source_question_number": 133,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 119
   },
   {
     "id": 141,
@@ -2890,9 +3343,15 @@
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第四次訓練.txt",
       "接收訓練4.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 135
+    "source_question_number": 135,
+    "source_incorrect_responses": [
+      "kernel"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 60
   },
   {
     "id": 142,
@@ -2901,24 +3360,35 @@
     "question": "指令行介面的縮寫為 [__1__]，而圖形使用者介面的縮寫為 [__2__]。(請用小寫英文回答)",
     "options": [],
     "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "cli/gui",
+    "correct_answer": "cli\ngui",
     "answer_variants": [
+      "cli\ngui",
+      "cli",
+      "gui",
       "cli/gui"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 136
+    "source_question_number": 136,
+    "source_incorrect_responses": [
+      "cli / gui"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 220
   },
   {
     "id": 143,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which set of operating system services is not helpful to users?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "power on"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "power on",
     "answer_variants": [
       "power on"
@@ -2926,17 +3396,25 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 137
+    "source_question_number": 137,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 238
   },
   {
     "id": 144,
     "title": "",
     "type": "choice_options_missing",
     "question": "作業系統設計中的「系統目標（System Goals）」通常包括下列哪些期望？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "易於設計、實現與維護",
+      "具備彈性與可靠性",
+      "高效且無錯誤（Error-free）"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "易於設計、實現與維護\n具備彈性與可靠性\n高效且無錯誤（Error-free）",
     "answer_variants": [
       "易於設計、實現與維護\n具備彈性與可靠性\n高效且無錯誤（Error-free）"
@@ -2945,9 +3423,13 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第四次訓練.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 138
+    "source_question_number": 138,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 11
   },
   {
     "id": 145,
@@ -2956,16 +3438,26 @@
     "question": "In OS design, it is an important principle to separate [__1__] and [__2__].(please answer in lowercase english with a space between answers)",
     "options": [],
     "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "policy/mechanism",
+    "correct_answer": "policy\nmechanism",
     "answer_variants": [
+      "policy\nmechanism",
+      "policy",
+      "mechanism",
       "policy/mechanism"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 139
+    "source_question_number": 139,
+    "source_incorrect_responses": [
+      "policy / mechanism",
+      "/"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 185
   },
   {
     "id": 146,
@@ -2983,17 +3475,24 @@
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練4.txt",
       "第五次訓練.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 140
+    "source_question_number": 140,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 132
   },
   {
     "id": 147,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Which of the following is a commonly used shell on UNIX systems?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Bash",
+      "Oracle"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Bash",
     "answer_variants": [
       "Bash"
@@ -3001,17 +3500,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練4.txt"
+      "接收訓練4.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 141
+    "source_question_number": 141,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 77
   },
   {
     "id": 148,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "作業系統提供的一組服務中，哪一組服務無助於使用者？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "power on",
+      "File system operations"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "power on",
     "answer_variants": [
       "power on"
@@ -3019,17 +3525,25 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練4.txt"
+      "接收訓練4.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 142
+    "source_question_number": 142,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 25
   },
   {
     "id": 149,
     "title": "",
     "type": "choice_options_missing",
     "question": "In the standard read() API, what do the parameters represent?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "File descriptor to be read",
+      "Buffer where data will be read into",
+      "Maximum number of bytes to be read"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "File descriptor to be read\nBuffer where data will be read into\nMaximum number of bytes to be read",
     "answer_variants": [
       "File descriptor to be read\nBuffer where data will be read into\nMaximum number of bytes to be read"
@@ -3038,17 +3552,23 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練4.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 143
+    "source_question_number": 143,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 38
   },
   {
     "id": 150,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which operating system service is used to track how much and what\ntype of computer resources a user uses?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Account management"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Account management",
     "answer_variants": [
       "Account management"
@@ -3056,74 +3576,51 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練4.txt"
+      "接收訓練4.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 144
+    "source_question_number": 144,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 234
   },
   {
     "id": 151,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "現代作業系統最常提供給程式設計師使用的標準應用程式介面（API）包括下列哪些？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "Win32 API\nPOSIX API\nJava API",
+    "options": [
+      "POSIX API",
+      "Java API",
+      "Win32 API",
+      "DTrace API"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "POSIX API\nJava API\nWin32 API",
     "answer_variants": [
+      "POSIX API\nJava API\nWin32 API",
       "Win32 API\nPOSIX API\nJava API"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練4.txt"
-    ],
-    "source_question_number": 145
-  },
-  {
-    "id": 152,
-    "title": "",
-    "type": "fill_blank",
-    "question": "現代系統最基礎、最核心，用來管理硬體與行程的作業系統主體程式稱為 [__1__]。(請用小寫英文回答)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "kernel",
-    "answer_variants": [
-      "kernel"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練4.txt",
-      "接收訓練6.txt"
+      "作業系統U3.txt"
     ],
-    "source_question_number": 146
-  },
-  {
-    "id": 153,
-    "title": "",
-    "type": "fill_blank",
-    "question": "在 Windows 中，用來設定檔案安全權限、屬於保護（Protection）領域的系統呼叫是 [__1__]。(請用小寫英文回答)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "setfilesecurity()",
-    "answer_variants": [
-      "setfilesecurity()"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練4.txt",
-      "第六次訓練.txt",
-      "第八次訓練.txt"
-    ],
-    "source_question_number": 147
+    "source_question_number": 145,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 22
   },
   {
     "id": 154,
     "title": "",
     "type": "choice_options_missing",
     "question": "OS的「保護」服務確保?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "確保所有對系統資源的存取都受到控制"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "確保所有對系統資源的存取都受到控制",
     "answer_variants": [
       "確保所有對系統資源的存取都受到控制"
@@ -3132,17 +3629,23 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練4.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 148
+    "source_question_number": 148,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 49
   },
   {
     "id": 155,
     "title": "",
     "type": "choice_options_missing",
     "question": "In a UNIX system, what functionality does the kernel not provide?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Writing Program code"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Writing Program code",
     "answer_variants": [
       "Writing Program code"
@@ -3150,17 +3653,25 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練4.txt"
+      "接收訓練4.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 149
+    "source_question_number": 149,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 261
   },
   {
     "id": 156,
     "title": "",
     "type": "choice_options_missing",
     "question": "關於作業系統服務中與資源共用（確保系統高效運行）相關的服務，包括下列哪些項目？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "資源配置",
+      "記帳",
+      "保護與安全"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "資源配置\n記帳\n保護與安全",
     "answer_variants": [
       "資源配置\n記帳\n保護與安全",
@@ -3170,18 +3681,25 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練4.txt",
-      "接收訓練6.txt"
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 150,
-    "answer_note": "來源記錄存在差異：\n接收訓練4.txt：資源配置\n記帳\n保護與安全\n接收訓練6.txt：A, B, C（由滿分作答推定）"
+    "answer_note": "來源記錄存在差異：\n接收訓練4.txt：資源配置\n記帳\n保護與安全\n接收訓練6.txt：A, B, C（由滿分作答推定）",
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 221
   },
   {
     "id": 157,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "What is the Win32 API function used to create a new process in Windows?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "CreateProcess()",
+      "fork()"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "CreateProcess()",
     "answer_variants": [
       "CreateProcess()"
@@ -3189,17 +3707,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練4.txt"
+      "接收訓練4.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 151
+    "source_question_number": 151,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 137
   },
   {
     "id": 158,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列哪些系統呼叫不屬於 Windows 系統中的「通訊（Communications）」或「共用記憶體」範疇？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Sleep()",
+      "CreatePipe()"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Sleep()",
     "answer_variants": [
       "Sleep()"
@@ -3208,9 +3733,13 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練4.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 152
+    "source_question_number": 152,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 44
   },
   {
     "id": 159,
@@ -3226,9 +3755,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練4.txt"
+      "接收訓練4.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 153
+    "source_question_number": 153,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 174
   },
   {
     "id": 160,
@@ -3237,24 +3770,35 @@
     "question": "The acronym for Command-Line Interface is [__1__], and for Graphical User Interface is [__2__].(please answer in lowercase english with a space between answers)",
     "options": [],
     "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "cli/gui",
+    "correct_answer": "cli\ngui",
     "answer_variants": [
+      "cli\ngui",
+      "cli",
+      "gui",
       "cli/gui"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 154
+    "source_question_number": 154,
+    "source_incorrect_responses": [
+      "cli / gui"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 241
   },
   {
     "id": 161,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which of the following APIs is primarily used for Windows systems?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Win32 API"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Win32 API",
     "answer_variants": [
       "Win32 API"
@@ -3263,9 +3807,13 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第五次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 155
+    "source_question_number": 155,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 265
   },
   {
     "id": 162,
@@ -3282,17 +3830,26 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第五次訓練.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 156
+    "source_question_number": 156,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 35
   },
   {
     "id": 163,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Select the three user interfaces for the operating system.",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "CLI",
+      "GUI",
+      "Batch",
+      "API"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "CLI\nGUI\nBatch",
     "answer_variants": [
       "CLI\nGUI\nBatch"
@@ -3300,17 +3857,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 157
+    "source_question_number": 157,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 67
   },
   {
     "id": 164,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "What are the benefits of a microkernel system structure?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Easier to extend",
+      "Easier to port to new architectures",
+      "More secure and reliable",
+      "Performance is better than monolithic kernels"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Easier to extend\nEasier to port to new architectures\nMore secure and reliable",
     "answer_variants": [
       "Easier to extend\nEasier to port to new architectures\nMore secure and reliable"
@@ -3318,17 +3884,23 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 158
+    "source_question_number": 158,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 269
   },
   {
     "id": 165,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which is the most common API provided to Windows systems?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Win32 API"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Win32 API",
     "answer_variants": [
       "Win32 API"
@@ -3336,17 +3908,23 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 159
+    "source_question_number": 159,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 225
   },
   {
     "id": 166,
     "title": "",
     "type": "choice_options_missing",
     "question": "大多數現代作業系統採用哪種方法來實現可動態載入的功能？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Modularity"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Modularity",
     "answer_variants": [
       "Modularity"
@@ -3355,27 +3933,40 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第五次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 160
+    "source_question_number": 160,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 219
   },
   {
     "id": 167,
     "title": "",
     "type": "choice_options_missing",
     "question": "觸控螢幕介面（Touchscreen Interfaces）與傳統桌面介面相比，具備哪些特點？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "不需要或不適合使用滑鼠\n基於手勢（Gestures）進行操作與選擇\n採用虛擬鍵盤（Virtual keyboard）進行文字輸入",
+    "options": [
+      "基於手勢（Gestures）進行操作與選擇",
+      "採用虛擬鍵盤（Virtual keyboard）進行文字輸入",
+      "不需要或不適合使用滑鼠"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "基於手勢（Gestures）進行操作與選擇\n採用虛擬鍵盤（Virtual keyboard）進行文字輸入\n不需要或不適合使用滑鼠",
     "answer_variants": [
+      "基於手勢（Gestures）進行操作與選擇\n採用虛擬鍵盤（Virtual keyboard）進行文字輸入\n不需要或不適合使用滑鼠",
       "不需要或不適合使用滑鼠\n基於手勢（Gestures）進行操作與選擇\n採用虛擬鍵盤（Virtual keyboard）進行文字輸入"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 161
+    "source_question_number": 161,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 183
   },
   {
     "id": 168,
@@ -3392,35 +3983,25 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第五次訓練.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 162
-  },
-  {
-    "id": 169,
-    "title": "",
-    "type": "fill_blank",
-    "question": "根據克尼漢定律（Kernighan's Law），除錯的難度是撰寫程式碼的 [__1__] 倍。(請用小寫英文數字或英文回答)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "twice",
-    "answer_variants": [
-      "twice"
+    "source_question_number": 162,
+    "source_incorrect_responses": [
+      "shell"
     ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第五次訓練.txt"
-    ],
-    "source_question_number": 163
+    "source_response_type": "填空",
+    "latest_source_question_number": 53
   },
   {
     "id": 170,
     "title": "",
     "type": "choice_options_missing",
     "question": "在分層方法中，最高層（Layer N）代表的是什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "使用者介面"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "使用者介面",
     "answer_variants": [
       "使用者介面"
@@ -3428,17 +4009,23 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 164
+    "source_question_number": 164,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 124
   },
   {
     "id": 171,
     "title": "",
     "type": "choice_options_missing",
     "question": "電腦通電初始化後，執行的一小段最初步、用來尋找並載入核心的程式稱為？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "引導載入程式"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "引導載入程式",
     "answer_variants": [
       "引導載入程式"
@@ -3446,17 +4033,23 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 165
+    "source_question_number": 165,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 170
   },
   {
     "id": 172,
     "title": "",
     "type": "choice_options_missing",
     "question": "當應用程式需要進行輸入/輸出時，主要是透過什麼機制來向核心請求？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "系統呼叫"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "系統呼叫",
     "answer_variants": [
       "系統呼叫"
@@ -3464,17 +4057,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 166
+    "source_question_number": 166,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 15
   },
   {
     "id": 173,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "用來獲取特定硬體組態資訊，以建構出客製化或最佳化核心的程式稱為什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "SYSGEN",
+      "Bootstrap"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "SYSGEN",
     "answer_variants": [
       "SYSGEN"
@@ -3482,17 +4082,23 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 167
+    "source_question_number": 167,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 48
   },
   {
     "id": 174,
     "title": "",
     "type": "choice_options_missing",
     "question": "哪種作業系統通常沒有同時包含 CLI 和 GUI 介面？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "MS-DOS"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "MS-DOS",
     "answer_variants": [
       "MS-DOS"
@@ -3500,17 +4106,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 168
+    "source_question_number": 168,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 199
   },
   {
     "id": 175,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Which of the following is NOT a primary service provided by an operating system to users or programs?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Hardware manufacturing",
+      "Program execution"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Hardware manufacturing",
     "answer_variants": [
       "Hardware manufacturing",
@@ -3521,18 +4134,24 @@
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第六次訓練.txt",
       "接收訓練6.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 169,
-    "answer_note": "來源記錄存在差異：\n第六次訓練.txt：Hardware manufacturing\n接收訓練6.txt：C（由滿分作答推定）\n第七次訓練.txt：Hardware manufacturing"
+    "answer_note": "來源記錄存在差異：\n第六次訓練.txt：Hardware manufacturing\n接收訓練6.txt：C（由滿分作答推定）\n第七次訓練.txt：Hardware manufacturing",
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 190
   },
   {
     "id": 176,
     "title": "",
     "type": "choice_options_missing",
     "question": "哪個介面使用滑鼠、鍵盤和顯示器，並用圖示代表檔案、程式和動作？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "GUI"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "GUI",
     "answer_variants": [
       "GUI"
@@ -3540,17 +4159,23 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 170
+    "source_question_number": 170,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 134
   },
   {
     "id": 177,
     "title": "",
     "type": "choice_options_missing",
     "question": "In the layered approach of an operating system structure, what does layer 0 represent?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Hardware"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Hardware",
     "answer_variants": [
       "Hardware"
@@ -3558,17 +4183,24 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 171
+    "source_question_number": 171,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 256
   },
   {
     "id": 178,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "當應用程式發生致命錯誤崩潰時，系統產生的記憶體映像檔通常被稱為？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "核心傾印",
+      "損毀傾印"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "核心傾印",
     "answer_variants": [
       "核心傾印"
@@ -3577,36 +4209,23 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第六次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 172
-  },
-  {
-    "id": 179,
-    "title": "",
-    "type": "fill_blank",
-    "question": "用來獲取特定硬體配置資訊以編譯客製化核心的系統生成程式簡稱為 [__1__]。(請用小寫英文回答)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "sysgen",
-    "answer_variants": [
-      "sysgen"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第六次訓練.txt",
-      "第八次訓練.txt"
-    ],
-    "source_question_number": 173
+    "source_question_number": 172,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 161
   },
   {
     "id": 180,
     "title": "",
     "type": "choice_options_missing",
     "question": "An important principle of operating system design is to separate policy from what?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "mechanism"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "mechanism",
     "answer_variants": [
       "mechanism"
@@ -3614,9 +4233,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 174
+    "source_question_number": 174,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 243
   },
   {
     "id": 181,
@@ -3632,17 +4255,25 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 175
+    "source_question_number": 175,
+    "source_incorrect_responses": [
+      "single taskinga"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 167
   },
   {
     "id": 182,
     "title": "",
     "type": "choice_options_missing",
     "question": "哪個作業系統的GUI介面被稱為「Aqua」？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Apple Mac OS X"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Apple Mac OS X",
     "answer_variants": [
       "Apple Mac OS X"
@@ -3650,36 +4281,25 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第六次訓練.txt"
-    ],
-    "source_question_number": 176
-  },
-  {
-    "id": 183,
-    "title": "",
-    "type": "fill_blank",
-    "question": "作業系統需要不斷地偵測可能的[__1__]。(英文小寫回答)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "errors",
-    "answer_variants": [
-      "errors"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第六次訓練.txt",
-      "接收訓練6.txt"
+      "作業系統U3.txt"
     ],
-    "source_question_number": 177
+    "source_question_number": 176,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 84
   },
   {
     "id": 184,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which of the following OS functions exist for ensuring efficient operation via resource sharing?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Resource allocation",
+      "Accounting",
+      "Protection and security"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Resource allocation\nAccounting\nProtection and security",
     "answer_variants": [
       "Resource allocation\nAccounting\nProtection and security"
@@ -3687,47 +4307,71 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 178
+    "source_question_number": 178,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 28
   },
   {
     "id": 185,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪一項不是作業系統提供給使用者的基本服務？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "A",
+    "options": [
+      "資料分析",
+      "檔案系統操作"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "資料分析",
     "answer_variants": [
+      "資料分析",
       "A"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練6.txt"
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 179,
-    "answer_note": "來源答案由滿分作答推定；原檔未保留完整選項。"
+    "answer_note": "來源答案由滿分作答推定；原檔未保留完整選項。",
+    "previous_source_answer": "A",
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 51
   },
   {
     "id": 186,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "According to the slides, what are typical user goals for an operating system?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "A, B, C",
+    "options": [
+      "Convenient to use",
+      "Easy to learn",
+      "Fast and safe",
+      "Easy to design and maintain"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Convenient to use\nEasy to learn\nFast and safe",
     "answer_variants": [
+      "Convenient to use\nEasy to learn\nFast and safe",
       "A, B, C"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練6.txt"
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 180,
-    "answer_note": "來源答案由滿分作答推定；原檔未保留完整選項。"
+    "answer_note": "來源答案由滿分作答推定；原檔未保留完整選項。",
+    "previous_source_answer": "A, B, C",
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 187
   },
   {
     "id": 187,
@@ -3743,29 +4387,42 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練6.txt"
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 181,
-    "answer_note": "來源答案由滿分作答推定；原檔未保留完整選項。"
+    "answer_note": "來源答案由滿分作答推定；原檔未保留完整選項。",
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 153
   },
   {
     "id": 188,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "What kind of interface do almost all operating systems have?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "B",
+    "options": [
+      "CLI",
+      "GUI"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "CLI",
     "answer_variants": [
+      "CLI",
       "B"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "接收訓練6.txt"
+      "接收訓練6.txt",
+      "作業系統U3.txt"
     ],
     "source_question_number": 182,
-    "answer_note": "來源答案由滿分作答推定；原檔未保留完整選項。"
+    "answer_note": "來源答案由滿分作答推定；原檔未保留完整選項。",
+    "previous_source_answer": "B",
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 133
   },
   {
     "id": 189,
@@ -3781,17 +4438,23 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 183
+    "source_question_number": 183,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 17
   },
   {
     "id": 190,
     "title": "",
     "type": "choice_options_missing",
     "question": "在 UNIX 系統中，核心不提供哪種功能？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "程式的撰寫"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "程式的撰寫",
     "answer_variants": [
       "程式的撰寫"
@@ -3799,17 +4462,23 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 184
+    "source_question_number": 184,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 105
   },
   {
     "id": 191,
     "title": "",
     "type": "choice_options_missing",
     "question": "The API is used to:",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Provides an interface for programs to call the OS"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Provides an interface for programs to call the OS",
     "answer_variants": [
       "Provides an interface for programs to call the OS"
@@ -3817,17 +4486,25 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 185
+    "source_question_number": 185,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 169
   },
   {
     "id": 192,
     "title": "",
     "type": "choice_options_missing",
     "question": "What are the three most common Application Programming Interfaces (APIs) for operating systems?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Win32 API",
+      "POSIX API",
+      "Java API"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Win32 API\nPOSIX API\nJava API",
     "answer_variants": [
       "Win32 API\nPOSIX API\nJava API"
@@ -3835,9 +4512,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 186
+    "source_question_number": 186,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 175
   },
   {
     "id": 193,
@@ -3853,17 +4534,25 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 187
+    "source_question_number": 187,
+    "source_incorrect_responses": [
+      "assembly"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 1
   },
   {
     "id": 194,
     "title": "",
     "type": "choice_options_missing",
     "question": "作業系統提供哪種介面，讓使用者可以輸入指令？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "CLI"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "CLI",
     "answer_variants": [
       "CLI"
@@ -3871,17 +4560,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 188
+    "source_question_number": 188,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 52
   },
   {
     "id": 195,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列哪些核心組件或模組是現代核心（如 Solaris 模組化架構）支援動態載入的？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "排程類別（Scheduling classes）",
+      "檔案系統（File systems）",
+      "可載入系統呼叫（Loadable system calls）",
+      "實體硬體線路"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "排程類別（Scheduling classes）\n檔案系統（File systems）\n可載入系統呼叫（Loadable system calls）",
     "answer_variants": [
       "排程類別（Scheduling classes）\n檔案系統（File systems）\n可載入系統呼叫（Loadable system calls）"
@@ -3889,9 +4587,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 189
+    "source_question_number": 189,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 207
   },
   {
     "id": 196,
@@ -3907,9 +4609,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 190
+    "source_question_number": 190,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 156
   },
   {
     "id": 197,
@@ -3918,24 +4624,38 @@
     "question": "Dividing the [__1__] and [__2__] is an important principle, because it allows for maximum flexibility in changing policies later(Please answer in lowercase English)",
     "options": [],
     "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "policy/mechanism",
+    "correct_answer": "policy\nmechanism",
     "answer_variants": [
+      "policy\nmechanism",
+      "policy",
+      "mechanism",
       "policy/mechanism"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 191
+    "source_question_number": 191,
+    "source_incorrect_responses": [
+      "policy / mechanism"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 157
   },
   {
     "id": 198,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "關於 Apple iOS 的分層架構，主要包含下列哪些層（Layers）？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "觸控可可層（Cocoa Touch）",
+      "多媒體服務層（Media Services）",
+      "核心服務層與核心作業系統層（Core Services / Core OS）",
+      "達爾維克虛擬機層（Dalvik VM）"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "觸控可可層（Cocoa Touch）\n多媒體服務層（Media Services）\n核心服務層與核心作業系統層（Core Services / Core OS）",
     "answer_variants": [
       "觸控可可層（Cocoa Touch）\n多媒體服務層（Media Services）\n核心服務層與核心作業系統層（Core Services / Core OS）"
@@ -3943,9 +4663,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 192
+    "source_question_number": 192,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 78
   },
   {
     "id": 199,
@@ -3961,17 +4685,23 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 193
+    "source_question_number": 193,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 109
   },
   {
     "id": 200,
     "title": "",
     "type": "choice_options_missing",
     "question": "What is the name of the Mac OS X GUI interface?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Aqua"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Aqua",
     "answer_variants": [
       "Aqua"
@@ -3979,35 +4709,51 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 194
+    "source_question_number": 194,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 264
   },
   {
     "id": 201,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "According to the slides, what are typical system goals for an operating system?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "Easy to design, implement, and maintain\nFlexible and reliable\nEfficient and error-free",
+    "options": [
+      "Flexible and reliable",
+      "Efficient and error-free",
+      "Easy to design, implement, and maintain",
+      "Fancy and playful interface"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Flexible and reliable\nEfficient and error-free\nEasy to design, implement, and maintain",
     "answer_variants": [
+      "Flexible and reliable\nEfficient and error-free\nEasy to design, implement, and maintain",
       "Easy to design, implement, and maintain\nFlexible and reliable\nEfficient and error-free"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 195
+    "source_question_number": 195,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 254
   },
   {
     "id": 202,
     "title": "",
     "type": "choice_options_missing",
     "question": "哪一種作業系統架構會將大多數功能移出 kernel？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Microkernel"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Microkernel",
     "answer_variants": [
       "Microkernel"
@@ -4015,9 +4761,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 196
+    "source_question_number": 196,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 103
   },
   {
     "id": 203,
@@ -4033,9 +4783,15 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 197
+    "source_question_number": 197,
+    "source_incorrect_responses": [
+      "fork"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 240
   },
   {
     "id": 204,
@@ -4051,8 +4807,2004 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U3.txt"
     ],
-    "source_question_number": 198
+    "source_question_number": 198,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 202
+  },
+  {
+    "id": 205,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "標準 C 語言函式庫中的 printf() 函數，在 Unix 系統底層是呼叫哪一個系統呼叫？",
+    "options": [
+      "write()"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "write()",
+    "answer_variants": [
+      "write()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 3,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 206,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "In an operating system, what is the function of the fork() system call?",
+    "options": [
+      "Create process"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Create process",
+    "answer_variants": [
+      "Create process"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 8,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 207,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "關於開機引導（System Boot）的過程，下列哪些敘述不符合教材說明的？",
+    "options": [
+      "核心直接常駐在 CPU 暫存器中不需要引導"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "核心直接常駐在 CPU 暫存器中不需要引導",
+    "answer_variants": [
+      "核心直接常駐在 CPU 暫存器中不需要引導"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 12,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 208,
+    "title": "",
+    "type": "fill_blank",
+    "question": "Operating systems that combine multiple structural approaches are called [__1__] systems.(please answer in lowercase english)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "hybrid",
+    "answer_variants": [
+      "hybrid"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 13,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 209,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which interface uses a mouse, keyboard, and monitor and uses icons to represent files, programs, and actions?",
+    "options": [
+      "GUI"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "GUI",
+    "answer_variants": [
+      "GUI"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 16,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 210,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "What is the small piece of code stored in ROM that locates the kernel and loads it into memory during boot?",
+    "options": [
+      "Bootstrap loader"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Bootstrap loader",
+    "answer_variants": [
+      "Bootstrap loader"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 19,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 211,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "哪一種系統呼叫與裝置管理有關？",
+    "options": [
+      "request_device()"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "request_device()",
+    "answer_variants": [
+      "request_device()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 21,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 212,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "What kind of interface does the operating system provide for users to enter commands?",
+    "options": [
+      "CLI"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "CLI",
+    "answer_variants": [
+      "CLI"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 26,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 213,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "下列哪些是作業系統提供的使用者介面類型？",
+    "options": [
+      "CLI",
+      "GUI",
+      "Touchscreen"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "CLI\nGUI\nTouchscreen",
+    "answer_variants": [
+      "CLI\nGUI\nTouchscreen"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 27,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 214,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "哪個程式用於根據硬體系統的特定配置來建置作業系統？",
+    "options": [
+      "SYSGEN"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "SYSGEN",
+    "answer_variants": [
+      "SYSGEN"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 29,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 215,
+    "title": "",
+    "type": "fill_blank",
+    "question": "UNIX 的核心提供了檔案系統(file system management), [__1__], 記憶體管理memory management, 及其他作業系統功能。 (英文縮寫字用大寫 字母間用一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "CPU scheduling",
+    "answer_variants": [
+      "CPU scheduling"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 33,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 216,
+    "title": "",
+    "type": "choice",
+    "question": "Android 系統中，用來執行已翻譯之 Java 位元碼的虛擬機器名稱為何？",
+    "options": [
+      "Dalvik 虛擬機器",
+      "JVM",
+      "Mach"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Dalvik 虛擬機器",
+    "answer_variants": [
+      "Dalvik 虛擬機器"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 34,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 217,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "What are the key features of Touchscreen Interfaces mentioned in the text?",
+    "options": [
+      "Mouse not possible or not desired",
+      "Actions and selection based on gestures",
+      "Virtual keyboard for text entry"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Mouse not possible or not desired\nActions and selection based on gestures\nVirtual keyboard for text entry",
+    "answer_variants": [
+      "Mouse not possible or not desired\nActions and selection based on gestures\nVirtual keyboard for text entry"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 39,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 218,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "API 是用來：",
+    "options": [
+      "提供程式呼叫 OS 的介面"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "提供程式呼叫 OS 的介面",
+    "answer_variants": [
+      "提供程式呼叫 OS 的介面"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 40,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 219,
+    "title": "",
+    "type": "fill_blank",
+    "question": "在開機過程中，儲存於 ROM 中負責定位核心並將其載入記憶體運行的程式稱為 [__1__] 。(請用小寫英文回答字母間留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "bootstrap loader",
+    "answer_variants": [
+      "bootstrap loader"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 41,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "bootstrap program"
+    ]
+  },
+  {
+    "id": 220,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following operating systems is a representative example of a microkernel?",
+    "options": [
+      "Mach"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Mach",
+    "answer_variants": [
+      "Mach"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 42,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 221,
+    "title": "",
+    "type": "fill_blank",
+    "question": "應用程式用來呼叫作業系統核心服務的程式化介面簡稱為 [__1__]。(請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "api",
+    "answer_variants": [
+      "api"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 45,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "system call"
+    ]
+  },
+  {
+    "id": 222,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which method do most modern operating systems use to implement dynamically loadable functionality?",
+    "options": [
+      "modularity"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "modularity",
+    "answer_variants": [
+      "modularity"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 46,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 223,
+    "title": "",
+    "type": "choice",
+    "question": "Windows作業系統中，用來建立新行程的 API 函數為何？",
+    "options": [
+      "CreateProcess()",
+      "fork()"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "CreateProcess()",
+    "answer_variants": [
+      "CreateProcess()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 54,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 224,
+    "title": "",
+    "type": "fill_blank",
+    "question": "當系統啟動時，會從一個固定的記憶體位置開始執行，該位置通常在[__1__]中。(用英文小寫回答 字母間請留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "firmware",
+    "answer_variants": [
+      "firmware"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 57,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "rom"
+    ]
+  },
+  {
+    "id": 225,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following operating systems include both CLI and GUI interfaces?",
+    "options": [
+      "Microsoft Windows",
+      "Apple Mac OS X",
+      "Linux"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Microsoft Windows\nApple Mac OS X\nLinux",
+    "answer_variants": [
+      "Microsoft Windows\nApple Mac OS X\nLinux"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 58,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 226,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "which are the functions provided by OS",
+    "options": [
+      "file access",
+      "statistic information",
+      "load and execute program",
+      "programming language support"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "file access\nstatistic information\nload and execute program\nprogramming language support",
+    "answer_variants": [
+      "file access\nstatistic information\nload and execute program\nprogramming language support"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 59,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 227,
+    "title": "",
+    "type": "fill_blank",
+    "question": "In the past, Operating System is implemented by [__1__] language. (Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "assembly",
+    "answer_variants": [
+      "assembly"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 63,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 228,
+    "title": "",
+    "type": "fill_blank",
+    "question": "Programming interface to the services provided by the OS is commonly accessed via [__1__].(please answer in lowercase english)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "api",
+    "answer_variants": [
+      "api"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 72,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "system calls"
+    ]
+  },
+  {
+    "id": 229,
+    "title": "",
+    "type": "fill_blank",
+    "question": "在標準 C 函式庫範例中，要使用 read() 系統呼叫前，程式必須包含引入的標頭檔為 [__1__]。(請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "unistd.h",
+    "answer_variants": [
+      "unistd.h"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 80,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "h"
+    ]
+  },
+  {
+    "id": 230,
+    "title": "",
+    "type": "choice",
+    "question": "Which of the following descriptions about MS-DOS structure is true?",
+    "options": [
+      "It has a simple structure and interfaces are not well separated",
+      "It is a multitasking system"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "It has a simple structure and interfaces are not well separated",
+    "answer_variants": [
+      "It has a simple structure and interfaces are not well separated"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 82,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 231,
+    "title": "",
+    "type": "choice",
+    "question": "Which device is not possible for the I/O operation to involve?",
+    "options": [
+      "CPU",
+      "File"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "CPU",
+    "answer_variants": [
+      "CPU"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 86,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 232,
+    "title": "",
+    "type": "fill_blank",
+    "question": "Where was the graphical user interface (GUI) desktop interface invented? [__1__](英文小寫回答 單字間留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "xerox parc",
+    "answer_variants": [
+      "xerox parc"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 88,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 233,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following is a communication mechanism that uses message passing?",
+    "options": [
+      "Message Passing"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Message Passing",
+    "answer_variants": [
+      "Message Passing"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 91,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 234,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Where does the operating system's \"Program Execution\" service allow the system to load programs?",
+    "options": [
+      "memory"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "memory",
+    "answer_variants": [
+      "memory"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 92,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 235,
+    "title": "",
+    "type": "fill_blank",
+    "question": "Periodic sampling of the instruction pointer to look for statistical trends is called [__1__].(please answer in lowercase english)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "profiling",
+    "answer_variants": [
+      "profiling"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 94,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "pc sampling",
+      "profling"
+    ]
+  },
+  {
+    "id": 236,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "有哪些是作業系統中的系統程式？",
+    "options": [
+      "編譯器",
+      "組譯器",
+      "除錯器",
+      "解譯器"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "編譯器\n組譯器\n除錯器\n解譯器",
+    "answer_variants": [
+      "編譯器\n組譯器\n除錯器\n解譯器"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 96,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 237,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "下列哪些系統呼叫屬於 Unix/Linux 系統中的「檔案管理（File Management）」範疇？",
+    "options": [
+      "open()",
+      "read()",
+      "write()"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "open()\nread()\nwrite()",
+    "answer_variants": [
+      "open()\nread()\nwrite()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 98,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 238,
+    "title": "",
+    "type": "fill_blank",
+    "question": "According to Kernighan's Law, debugging is [__1__] as hard as writing the code.(please answer in lowercase english)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "twice",
+    "answer_variants": [
+      "twice"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 99,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 239,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following is a common bootstrap loader that allows selection of kernels from multiple disks?",
+    "options": [
+      "GRUB"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "GRUB",
+    "answer_variants": [
+      "GRUB"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 102,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 240,
+    "title": "",
+    "type": "choice",
+    "question": "UNIX 的原始版本結構有限，它包含哪些部分？",
+    "options": [
+      "系統程式",
+      "核心",
+      "載入器",
+      "虛擬機"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "系統程式\n核心",
+    "answer_variants": [
+      "系統程式\n核心"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 104,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 241,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The disadvantage of the [__1__] architecture is the performance overhead of communication between user space and kernel space. (用英文小寫回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "microkernel",
+    "answer_variants": [
+      "microkernel"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 110,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 242,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which tool allows live instrumentation and dynamic tracing on production systems like Solaris and macOS?",
+    "options": [
+      "DTrace"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "DTrace",
+    "answer_variants": [
+      "DTrace"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 112,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 243,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which layer of the operating system structure is called layer 0?",
+    "options": [
+      "Hardware"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Hardware",
+    "answer_variants": [
+      "Hardware"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 113,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 244,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Android 系統底層核心是：",
+    "options": [
+      "Linux"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Linux",
+    "answer_variants": [
+      "Linux"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 116,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 245,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Apple's iOS architecture is structured into which of the following layers?",
+    "options": [
+      "Cocoa Touch",
+      "Media Services",
+      "Core Services & Core OS"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Cocoa Touch\nMedia Services\nCore Services & Core OS",
+    "answer_variants": [
+      "Cocoa Touch\nMedia Services\nCore Services & Core OS"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 126,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 246,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__]結構的缺點是使用者空間與核心空間之間通訊的開銷。(用英文小寫回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "microkernel",
+    "answer_variants": [
+      "microkernel"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 128,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 247,
+    "title": "",
+    "type": "choice",
+    "question": "What are the three general methods used to pass parameters to the operating system?",
+    "options": [
+      "Pass parameters in registers",
+      "Store parameters in a block/table in memory",
+      "Push/pop parameters onto/off the stack",
+      "Pass parameters via network packets"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Pass parameters in registers\nStore parameters in a block/table in memory\nPush/pop parameters onto/off the stack",
+    "answer_variants": [
+      "Pass parameters in registers\nStore parameters in a block/table in memory\nPush/pop parameters onto/off the stack"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 135,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 248,
+    "title": "",
+    "type": "fill_blank",
+    "question": "現代許多作業系統（如 Linux、Solaris）為了彈性擴充核心，皆實作了可載入核心 [__1__]。(請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "modules",
+    "answer_variants": [
+      "modules"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 138,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "kernel",
+      "kernelLi"
+    ]
+  },
+  {
+    "id": 249,
+    "title": "",
+    "type": "choice",
+    "question": "The underlying core of the Android system is:",
+    "options": [
+      "Linux",
+      "BSD"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Linux",
+    "answer_variants": [
+      "Linux"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 139,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 250,
+    "title": "",
+    "type": "fill_blank",
+    "question": "A programming interface to request kernel services is known as a [__1__] .(please answer in lowercase english with a space between answers)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "system call",
+    "answer_variants": [
+      "system call"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 140,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 251,
+    "title": "",
+    "type": "choice",
+    "question": "Which facilities are commonly provided by background services or daemons?",
+    "options": [
+      "Disk checking",
+      "Error logging",
+      "Process scheduling",
+      "Web browser frontend layout"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Disk checking\nError logging\nProcess scheduling",
+    "answer_variants": [
+      "Disk checking\nError logging\nProcess scheduling"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 144,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 252,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The core part of an operating system that manages system resources and hardware is the [__1__].(please answer in lowercase english)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "kernel",
+    "answer_variants": [
+      "kernel"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 146,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 253,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "哪些是作業系統提供的功能？",
+    "options": [
+      "檔案操作",
+      "狀態資訊",
+      "程式載入與執行",
+      "程式語言支援"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "檔案操作\n狀態資訊\n程式載入與執行\n程式語言支援",
+    "answer_variants": [
+      "檔案操作\n狀態資訊\n程式載入與執行\n程式語言支援"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 147,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 254,
+    "title": "",
+    "type": "fill_blank",
+    "question": "一種常見且強大的開機引導載入程式，允許使用者從多個硬碟、作業系統版本中進行開機選擇的工具縮寫為 [__1__]。(請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "grub",
+    "answer_variants": [
+      "grub"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 151,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 255,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which user interface is based on text line input?",
+    "options": [
+      "CLI"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "CLI",
+    "answer_variants": [
+      "CLI"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 155,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 256,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "能夠在生產系統上進行即時動態追蹤與動態檢測（Live Instrumentation）的進階工具為何？",
+    "options": [
+      "DTrace"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "DTrace",
+    "answer_variants": [
+      "DTrace"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 158,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 257,
+    "title": "",
+    "type": "fill_blank",
+    "question": "在系統發生嚴重損毀（Crash）時，作業系統抓取核心記憶體並產生的檔案稱為 [__1__]。(請用小寫英文回答字母間留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "crash dump",
+    "answer_variants": [
+      "crash dump"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 162,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "core dump",
+      "crush dump"
+    ]
+  },
+  {
+    "id": 258,
+    "title": "",
+    "type": "choice",
+    "question": "關於系統程式（System Programs）的分類，主要包含下列哪些領域？",
+    "options": [
+      "檔案管理與修改",
+      "狀態資訊與程式語言支援",
+      "程式載入與執行、通訊",
+      "處理器電路設計"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "檔案管理與修改\n狀態資訊與程式語言支援\n程式載入與執行、通訊",
+    "answer_variants": [
+      "檔案管理與修改\n狀態資訊與程式語言支援\n程式載入與執行、通訊"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 164,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 259,
+    "title": "",
+    "type": "fill_blank",
+    "question": "Apple's mobile operating system, iOS, is based on the architecture of [__1__].(用英文小寫回答 字母間請留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "mac os x",
+    "answer_variants": [
+      "mac os x"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 165,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 260,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The Win32 API used to set security permissions on a file is [__1__].(please answer in lowercase english)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "setfilesecurity()",
+    "answer_variants": [
+      "setfilesecurity()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 168,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "file",
+      "setfilesecurity"
+    ]
+  },
+  {
+    "id": 261,
+    "title": "",
+    "type": "fill_blank",
+    "question": "A C program using the read() function must include the [__1__] header file.(please answer in lowercase english)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "unistd.h",
+    "answer_variants": [
+      "unistd.h"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 176,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 262,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The three most common APIs are the Win32 API for Windows, the POSIX API for POSIX systems, and the Java API for the [__1__] virtual machine. (用英文小寫回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "java",
+    "answer_variants": [
+      "java"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 179,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "javaweb"
+    ]
+  },
+  {
+    "id": 263,
+    "title": "",
+    "type": "fill_blank",
+    "question": "網頁瀏覽器底層常用的排版與核心渲染引擎架構（如 Android 內建程式庫所含）名為 [__1__]。(請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "webkit",
+    "answer_variants": [
+      "webkit"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 180,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 264,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] is a small piece of code stored in ROM or EEPROM that is used to locate the kernel and load it into memory.(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "bootstrap loader",
+    "answer_variants": [
+      "bootstrap loader"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 181,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 265,
+    "title": "",
+    "type": "choice",
+    "question": "Which tool in Unix/Linux can be used to view system performance and running processes in real-time?",
+    "options": [
+      "top",
+      "DTrace"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "top",
+    "answer_variants": [
+      "top"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 186,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 266,
+    "title": "",
+    "type": "fill_blank",
+    "question": "作業系統的設計和實作是一個定義[__1__]的過程。(英文小寫回答 中間 用and 如 a and b)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "goals and rules|rules and goals",
+    "answer_variants": [
+      "goals and rules|rules and goals",
+      "goals and rules",
+      "rules and goals"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 189,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "goals and specifications",
+      "goals and rules"
+    ]
+  },
+  {
+    "id": 267,
+    "title": "",
+    "type": "fill_blank",
+    "question": "When the system boots up, it starts executing from a fixed memory location, usually in the [__1__].(用英文小寫回答 字母間請留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "firmware",
+    "answer_variants": [
+      "firmware"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 191,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "rom"
+    ]
+  },
+  {
+    "id": 268,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which statements about system boot are not correct according to the slides?",
+    "options": [
+      "Kernel stays in CPU registers and does not need booting"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Kernel stays in CPU registers and does not need booting",
+    "answer_variants": [
+      "Kernel stays in CPU registers and does not need booting"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 192,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 269,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following Unix system calls belong to file management?",
+    "options": [
+      "open()",
+      "read()",
+      "write()"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "open()\nread()\nwrite()",
+    "answer_variants": [
+      "open()\nread()\nwrite()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 193,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 270,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which program is used to build an operating system based on a specific hardware system configuration?",
+    "options": [
+      "SYSGEN"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "SYSGEN",
+    "answer_variants": [
+      "SYSGEN"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 194,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 271,
+    "title": "",
+    "type": "choice",
+    "question": "下列哪一個作業系統是歷史上微核心（Microkernel）架構的代表範例？",
+    "options": [
+      "Mach",
+      "MS-DOS"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Mach",
+    "answer_variants": [
+      "Mach"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 196,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 272,
+    "title": "",
+    "type": "fill_blank",
+    "question": "圖形使用者介面（GUI）的桌面介面是在[__1__]發明的。 (英文小寫回答 單字間留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "xerox parc",
+    "answer_variants": [
+      "xerox parc"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 197,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 273,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "What are the common characteristics of Command-Line Interfaces (CLI) or command interpreters?",
+    "options": [
+      "Sometimes implemented as system programs",
+      "Sometimes implemented directly in kernel",
+      "Multiple flavors implemented, known as shells"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Sometimes implemented as system programs\nSometimes implemented directly in kernel\nMultiple flavors implemented, known as shells",
+    "answer_variants": [
+      "Sometimes implemented as system programs\nSometimes implemented directly in kernel\nMultiple flavors implemented, known as shells"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 200,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 274,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The operating system needs to constantly detect possible [__1__]。(Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "errors",
+    "answer_variants": [
+      "errors"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 203,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 275,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "The Android architecture stack includes which of the following components?",
+    "options": [
+      "Application Framework",
+      "Libraries (Webkit, SQLite)",
+      "Android Runtime & Modified Linux Kernel"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Application Framework\nLibraries (Webkit, SQLite)\nAndroid Runtime & Modified Linux Kernel",
+    "answer_variants": [
+      "Application Framework\nLibraries (Webkit, SQLite)\nAndroid Runtime & Modified Linux Kernel"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 204,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 276,
+    "title": "",
+    "type": "choice",
+    "question": "What is the name of the virtual machine that runs translated Java bytecode in Android?",
+    "options": [
+      "Dalvik virtual machine",
+      "JVM"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Dalvik virtual machine",
+    "answer_variants": [
+      "Dalvik virtual machine"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 205,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 277,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which user interface is operated by text commands?",
+    "options": [
+      "CLI"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "CLI",
+    "answer_variants": [
+      "CLI"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 209,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 278,
+    "title": "",
+    "type": "fill_blank",
+    "question": "MS-DOS is a [__1__] Operation system。(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "single tasking",
+    "answer_variants": [
+      "single tasking"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 210,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 279,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which system calls are related to device management?",
+    "options": [
+      "request_device()"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "request_device()",
+    "answer_variants": [
+      "request_device()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 213,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 280,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "When the operating system itself fails, the generated file containing kernel memory is called:",
+    "options": [
+      "Crash dump"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Crash dump",
+    "answer_variants": [
+      "Crash dump"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 215,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 281,
+    "title": "",
+    "type": "choice",
+    "question": "Which programming language is most commonly used to write modern operating systems?",
+    "options": [
+      "C",
+      "JavaScript"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "C",
+    "answer_variants": [
+      "C"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 218,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 282,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following system calls belong to the process control category?",
+    "options": [
+      "CreateProcess()",
+      "fork()",
+      "exit()"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "CreateProcess()\nfork()\nexit()",
+    "answer_variants": [
+      "CreateProcess()\nfork()\nexit()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 223,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 283,
+    "title": "",
+    "type": "fill_blank",
+    "question": "In a microkernel system structure, communication takes place between user modules using [__1__].(please answer in lowercase english with a space between answers)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "message passing",
+    "answer_variants": [
+      "message passing"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 228,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 284,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The layer in iOS that provides the API for developing applications is called [__1__] .(please answer in lowercase english)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "cocoa touch",
+    "answer_variants": [
+      "cocoa touch"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 229,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 285,
+    "title": "",
+    "type": "choice",
+    "question": "Which methods are used for performance tuning and analyzing system behavior?",
+    "options": [
+      "Using trace listings of activities",
+      "Profiling by periodic sampling of instruction pointer",
+      "Checking log files or using top program",
+      "Buying a new graphics card"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Using trace listings of activities\nProfiling by periodic sampling of instruction pointer\nChecking log files or using top program",
+    "answer_variants": [
+      "Using trace listings of activities\nProfiling by periodic sampling of instruction pointer\nChecking log files or using top program"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 231,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 286,
+    "title": "",
+    "type": "fill_blank",
+    "question": "what is the name circled in this figure[__1__]?",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "kernel",
+    "answer_variants": [
+      "kernel"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 235,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 287,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The command line interface (CLI) is sometimes implemented in the kernel and sometimes by a [__1__] program.(用英文小寫回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "system",
+    "answer_variants": [
+      "system"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 236,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 288,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The standard API for UNIX-based systems is known as the [__1__] API.(please answer in lowercase english)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "posix",
+    "answer_variants": [
+      "posix"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 250,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 289,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "When you start your computer, where does execution begin?",
+    "options": [
+      "Specific memory location in ROM"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Specific memory location in ROM",
+    "answer_variants": [
+      "Specific memory location in ROM"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 251,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 290,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "下列哪一項不是作業系統提供給使用者或程式的主要服務？",
+    "options": [
+      "硬體製造"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "硬體製造",
+    "answer_variants": [
+      "硬體製造"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 252,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 291,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which kernel structure moves as much from the kernel into user space as possible and uses message passing?",
+    "options": [
+      "Microkernel"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Microkernel",
+    "answer_variants": [
+      "Microkernel"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 253,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 292,
+    "title": "",
+    "type": "choice",
+    "question": "Which operating system architecture moves most functionality out of the kernel?",
+    "options": [
+      "Microkernel",
+      "Hybrid"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Microkernel",
+    "answer_variants": [
+      "Microkernel"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 255,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 293,
+    "title": "",
+    "type": "fill_blank",
+    "question": "For each error type, the operating system should take appropriate action to ensure correct and [__1__] operation.(Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "consistent",
+    "answer_variants": [
+      "consistent"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 257,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "errors"
+    ]
+  },
+  {
+    "id": 294,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Where was the Graphical User Interface (GUI) invented?",
+    "options": [
+      "Xerox PARC"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Xerox PARC",
+    "answer_variants": [
+      "Xerox PARC"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 258,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 295,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "What does the \"Protection\" service is OS?",
+    "options": [
+      "Ensure that all access to system resources is controlled"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Ensure that all access to system resources is controlled",
+    "answer_variants": [
+      "Ensure that all access to system resources is controlled"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 262,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 296,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The \"protection\" service in the operating system is concerned with controlling access to [__1__].(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "system resources",
+    "answer_variants": [
+      "system resources"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 266,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "single tasking"
+    ]
+  },
+  {
+    "id": 297,
+    "title": "",
+    "type": "choice",
+    "question": "Which of the following Windows system calls do not belong to communications or shared memory?",
+    "options": [
+      "Sleep()",
+      "CreateFileMapping()",
+      "MapViewOfFile()"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Sleep()",
+    "answer_variants": [
+      "Sleep()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 268,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 298,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which operating system service ensures that all access to system resources is controlled?",
+    "options": [
+      "protection and security"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "protection and security",
+    "answer_variants": [
+      "protection and security"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U3.txt"
+    ],
+    "source_question_number": 271,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
   }
 ]

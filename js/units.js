@@ -9,8 +9,10 @@ export const SUBJECTS = [
         ]
     },
     { id: "os", name: "作業系統", available: true, defaultUnit: "u3", units: [
-        { id: "u3", name: "U3", questionCount: 204, dataUrl: "../data/os-u3.json" },
-        { id: "u4", name: "U4", questionCount: 104, dataUrl: "../data/os-u4.json" }
+        { id: "u3", name: "U3", questionCount: 277, dataUrl: "../data/os-u3.json" },
+        { id: "u4", name: "U4", questionCount: 143, dataUrl: "../data/os-u4.json" },
+        { id: "u5", name: "U5", questionCount: 125, dataUrl: "../data/os-u5.json" },
+        { id: "u6", name: "U6", questionCount: 229, dataUrl: "../data/os-u6.json" }
     ] }
 ];
 

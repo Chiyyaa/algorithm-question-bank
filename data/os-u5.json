@@ -1,0 +1,2801 @@
+[
+  {
+    "id": 1,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The popularity of [__1__] techniques is due to the difficulty of ensuring program correctness as the number of threads increases.(請用英文小寫回答，單字間留一空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "implicit threading",
+    "answer_variants": [
+      "implicit threading"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 1,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "ads"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "",
+    "type": "choice",
+    "question": "In multicore programming, what type of parallelism involves distributing subsets of the same data set to multiple cores and performing the same operation on each core?",
+    "options": [
+      "Data parallelism",
+      "System parallelism"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Data parallelism",
+    "answer_variants": [
+      "Data parallelism"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 2,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 3,
+    "title": "",
+    "type": "choice",
+    "question": "使用者層級執行緒（User-levelr threads）的管理主要由誰負責？",
+    "options": [
+      "使用者層級執行緒函式庫",
+      "硬體"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "使用者層級執行緒函式庫",
+    "answer_variants": [
+      "使用者層級執行緒函式庫"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 3,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 4,
+    "title": "",
+    "type": "choice",
+    "question": "Which of the following statements about threads in the Linux system are correct?",
+    "options": [
+      "Linux refers to threads as tasks",
+      "clone() allows child tasks to share the parent's address space",
+      "Thread creation is done via the clone() system call",
+      "clone() always creates a child process that is completely independent of the parent"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Linux refers to threads as tasks\nclone() allows child tasks to share the parent's address space\nThread creation is done via the clone() system call",
+    "answer_variants": [
+      "Linux refers to threads as tasks\nclone() allows child tasks to share the parent's address space\nThread creation is done via the clone() system call"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 4,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 5,
+    "title": "",
+    "type": "fill_blank",
+    "question": "Amdahl's Law is formulated as: speedup = 1/(S+(1-S)/N), where N represents the number of [__1__].(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "processing cores",
+    "answer_variants": [
+      "processing cores"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 5,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "",
+    "type": "choice",
+    "question": "What are the characteristics of the Many-to-One model?",
+    "options": [
+      "Multiple user-level threads are mapped to a single kernel thread",
+      "The blocking of one thread blocks all threads",
+      "Multiple threads cannot run in parallel on a multicore system",
+      "Each user thread creates a kernel thread"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Multiple user-level threads are mapped to a single kernel thread\nThe blocking of one thread blocks all threads\nMultiple threads cannot run in parallel on a multicore system",
+    "answer_variants": [
+      "Multiple user-level threads are mapped to a single kernel thread\nThe blocking of one thread blocks all threads\nMultiple threads cannot run in parallel on a multicore system"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 6,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 7,
+    "title": "",
+    "type": "choice",
+    "question": "執行緒本地儲存（Thread-local storage TLS）有何用途？",
+    "options": [
+      "允許每個執行緒擁有自己的資料副本",
+      "儲存全域變數"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "允許每個執行緒擁有自己的資料副本",
+    "answer_variants": [
+      "允許每個執行緒擁有自己的資料副本"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 7,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 8,
+    "title": "",
+    "type": "choice",
+    "question": "POSIX Pthreads 是什麼？",
+    "options": [
+      "一個用於執行緒創建和同步的 API 標準",
+      "一個只在 Java 虛擬機中使用的函式庫",
+      "一個 Windows 專用的執行緒函式庫",
+      "一個特定的執行緒實作"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "一個用於執行緒創建和同步的 API 標準",
+    "answer_variants": [
+      "一個用於執行緒創建和同步的 API 標準"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 8,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 9,
+    "title": "",
+    "type": "choice",
+    "question": "多執行緒伺服器架構中，當一個客戶端請求到達時，伺服器會做什麼？",
+    "options": [
+      "創建一個新執行緒來服務請求",
+      "終止現有程序"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "創建一個新執行緒來服務請求",
+    "answer_variants": [
+      "創建一個新執行緒來服務請求"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 9,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 10,
+    "title": "",
+    "type": "choice",
+    "question": "What company developed Grand Central Dispatch?",
+    "options": [
+      "Apple",
+      "Google"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Apple",
+    "answer_variants": [
+      "Apple"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 10,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 11,
+    "title": "",
+    "type": "choice",
+    "question": "下列關於 fork() 和 exec() 系統呼叫在多執行緒環境下的語義描述，哪些是正確的？",
+    "options": [
+      "fork() 有時只複製呼叫執行緒",
+      "fork() 有時會複製所有執行緒",
+      "exec() 通常會替換整個正在運行的程序，包括所有執行緒",
+      "exec() 會創建新的執行緒"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "fork() 有時只複製呼叫執行緒\nfork() 有時會複製所有執行緒\nexec() 通常會替換整個正在運行的程序，包括所有執行緒",
+    "answer_variants": [
+      "fork() 有時只複製呼叫執行緒\nfork() 有時會複製所有執行緒\nexec() 通常會替換整個正在運行的程序，包括所有執行緒"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 11,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 12,
+    "title": "",
+    "type": "fill_blank",
+    "question": "在 [__1__] 模型中，多個使用者層級執行緒映射到單一核心執行緒。(請用小寫英文回答 字母間用-連接)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "many-to-one",
+    "answer_variants": [
+      "many-to-one"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 12,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "gh"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "",
+    "type": "choice",
+    "question": "In Java, what are the two methods for creating a thread?",
+    "options": [
+      "Inheriting the Thread class",
+      "Implementing the Runnable interface",
+      "Using the Runnable class",
+      "Creating a new process"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Inheriting the Thread class\nImplementing the Runnable interface",
+    "answer_variants": [
+      "Inheriting the Thread class\nImplementing the Runnable interface"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 13,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 14,
+    "title": "",
+    "type": "choice",
+    "question": "下列哪些屬於使用者層級執行緒函式庫？",
+    "options": [
+      "POSIX Pthreads",
+      "Win32 threads",
+      "Java threads",
+      "Linux threads"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "POSIX Pthreads\nWin32 threads\nJava threads",
+    "answer_variants": [
+      "POSIX Pthreads\nWin32 threads\nJava threads"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 14,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 15,
+    "title": "",
+    "type": "fill_blank",
+    "question": "在 [__1__] 模型中，每個使用者層級執行緒映射到一個核心執行緒。(請用小寫英文回答 字母間用-連接)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "one-to-one",
+    "answer_variants": [
+      "one-to-one"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 15,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "多執行緒程式設計的好處包括？",
+    "options": [
+      "響應性",
+      "資源共享",
+      "經濟性",
+      "可擴展性"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "響應性\n資源共享\n經濟性\n可擴展性",
+    "answer_variants": [
+      "響應性\n資源共享\n經濟性\n可擴展性"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 16,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 17,
+    "title": "",
+    "type": "fill_blank",
+    "question": "Amdahl's Law 的公式為：speedup? (1/(S+(1-S)/N)) ，其中 S 代表應用程式的[__1__]部分。(請用英文小寫回答，單字間留一空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "serial portion",
+    "answer_variants": [
+      "serial portion"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 17,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "afds"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "",
+    "type": "choice",
+    "question": "下列哪一個不是隱式執行緒（Implicit Threading）的方法？",
+    "options": [
+      "pthread_create()",
+      "Thread Pools"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "pthread_create()",
+    "answer_variants": [
+      "pthread_create()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 18,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 19,
+    "title": "",
+    "type": "choice",
+    "question": "Java 執行緒通常由誰管理？",
+    "options": [
+      "Java 虛擬機（JVM）",
+      "程式設計師"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Java 虛擬機（JVM）",
+    "answer_variants": [
+      "Java 虛擬機（JVM）"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 19,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 20,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "One-to-One 模型有何特性？",
+    "options": [
+      "每個使用者層級執行緒映射到一個核心執行緒",
+      "創建使用者層級執行緒會創建一個核心執行緒",
+      "比 Many-to-One 模型提供更多的並行性",
+      "程序中執行緒數量有時會因為開銷而受限"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "每個使用者層級執行緒映射到一個核心執行緒\n創建使用者層級執行緒會創建一個核心執行緒\n比 Many-to-One 模型提供更多的並行性\n程序中執行緒數量有時會因為開銷而受限",
+    "answer_variants": [
+      "每個使用者層級執行緒映射到一個核心執行緒\n創建使用者層級執行緒會創建一個核心執行緒\n比 Many-to-One 模型提供更多的並行性\n程序中執行緒數量有時會因為開銷而受限"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 20,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 21,
+    "title": "",
+    "type": "choice",
+    "question": "執行緒池（Thread Pools）的優點包括？",
+    "options": [
+      "使用現有執行緒服務請求比創建新執行緒更快",
+      "允許應用程式中的執行緒數量被限制在池的大小",
+      "將任務與創建任務的機制分離",
+      "能夠確保每個請求都使用一個新的執行緒"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "使用現有執行緒服務請求比創建新執行緒更快\n允許應用程式中的執行緒數量被限制在池的大小\n將任務與創建任務的機制分離",
+    "answer_variants": [
+      "使用現有執行緒服務請求比創建新執行緒更快\n允許應用程式中的執行緒數量被限制在池的大小\n將任務與創建任務的機制分離"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 21,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 22,
+    "title": "",
+    "type": "fill_blank",
+    "question": "在 [__1__] 模型中，許多使用者層級執行緒可以被映射到許多核心執行緒。(請用小寫英文回答 字母間用-連接)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "many-to-many",
+    "answer_variants": [
+      "many-to-many"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 22,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "",
+    "type": "fill_blank",
+    "question": "Windows 執行緒實作了 [__1__] 模型。(請用小寫英文回答 字母間用-連接)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "one-to-one",
+    "answer_variants": [
+      "one-to-one"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 23,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "",
+    "type": "fill_blank",
+    "question": "有三種主要的使用者層級執行緒函式庫：POSIX Pthreads Win32 threads 和[__1__]。(請用小寫英文回答 字母間留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "java threads",
+    "answer_variants": [
+      "java threads"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 24,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf",
+      "java theads"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "下列何者是多執行緒程式設計的一個優點？",
+    "options": [
+      "簡化程式碼並提高效率"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "簡化程式碼並提高效率",
+    "answer_variants": [
+      "簡化程式碼並提高效率"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 25,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 26,
+    "title": "",
+    "type": "choice",
+    "question": "Which of the following is not a method of implicit threading?",
+    "options": [
+      "pthread_create()",
+      "Grand Central Dispatch"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "pthread_create()",
+    "answer_variants": [
+      "pthread_create()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 26,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 27,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] is a method for terminating a thread that allows the target thread to periodically check whether it should be canceled.(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "deferred cancellation",
+    "answer_variants": [
+      "deferred cancellation"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 27,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "哪一種多執行緒模型允許一個核心執行緒與一個使用者執行緒綁定？",
+    "options": [
+      "Many-to-One",
+      "One-to-One",
+      "Many-to-Many",
+      "Two-level"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Many-to-One\nOne-to-One\nMany-to-Many\nTwo-level",
+    "answer_variants": [
+      "Many-to-One\nOne-to-One\nMany-to-Many\nTwo-level"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 28,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 29,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "What are the benefits of multithreaded programming?",
+    "options": [
+      "Responsiveness",
+      "Resource sharing",
+      "Economy",
+      "Scalability"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Responsiveness\nResource sharing\nEconomy\nScalability",
+    "answer_variants": [
+      "Responsiveness\nResource sharing\nEconomy\nScalability"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 29,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 30,
+    "title": "",
+    "type": "fill_blank",
+    "question": "由於執行緒共用程序的資源，因此[__1__]比共享記憶體或訊息傳遞更容易實現。(請用英文小寫回答，單字間留一空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "resource sharing",
+    "answer_variants": [
+      "resource sharing"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 30,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf",
+      "resource"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Grand Central Dispatch 是由哪家公司開發的技術？",
+    "options": [
+      "Apple"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Apple",
+    "answer_variants": [
+      "Apple"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 31,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 32,
+    "title": "",
+    "type": "choice",
+    "question": "哪一種多執行緒模型為每個使用者層級執行緒映射一個核心執行緒？",
+    "options": [
+      "One-to-One",
+      "Many-to-One"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "One-to-One",
+    "answer_variants": [
+      "One-to-One"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 32,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 33,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following is not a major user-level thread library?",
+    "options": [
+      "Android threads"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Android threads",
+    "answer_variants": [
+      "Android threads"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 33,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 34,
+    "title": "",
+    "type": "fill_blank",
+    "question": "在 [__1__] 模型中，會創建一定數量的執行緒，並將其放置在池中等待工作。(請用小寫英文回答 字母間留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "thread pools",
+    "answer_variants": [
+      "thread pools"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 34,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "one-to-one",
+      "thread pool"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] 是一個 Apple 的技術，用於 Mac OS X 和 iOS 作業系統，允許識別平行區域並管理執行緒的細節。(請用小寫英文回答 字母間留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "grand central dispatch",
+    "answer_variants": [
+      "grand central dispatch"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 35,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf",
+      "gread central dispatch"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "",
+    "type": "choice",
+    "question": "在 Linux 系統中，關於執行緒的敘述哪些是正確的？",
+    "options": [
+      "Linux 將執行緒稱為任務（tasks）",
+      "執行緒創建是透過 clone() 系統呼叫完成",
+      "clone() 允許子任務與父任務共享位址空間",
+      "clone() 總是創建一個與父程序完全獨立的子程序"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Linux 將執行緒稱為任務（tasks）\n執行緒創建是透過 clone() 系統呼叫完成\nclone() 允許子任務與父任務共享位址空間",
+    "answer_variants": [
+      "Linux 將執行緒稱為任務（tasks）\n執行緒創建是透過 clone() 系統呼叫完成\nclone() 允許子任務與父任務共享位址空間"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 36,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 37,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] 指將執行緒分配到不同的核心上，每個執行緒執行獨特的任務。(請用英文小寫回答，單字間留一空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "task parallelism",
+    "answer_variants": [
+      "task parallelism"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 37,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "",
+    "type": "choice",
+    "question": "OpenMP 主要提供在哪種環境下進行平行程式設計的支援？",
+    "options": [
+      "共享記憶體環境",
+      "僅限於單核心系統",
+      "雲端運算環境",
+      "分散式記憶體環境"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "共享記憶體環境",
+    "answer_variants": [
+      "共享記憶體環境"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 38,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 39,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "How does the creation cost of a thread compare to that of a process?",
+    "options": [
+      "Thread creation is lightweight"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Thread creation is lightweight",
+    "answer_variants": [
+      "Thread creation is lightweight"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 39,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 40,
+    "title": "",
+    "type": "choice",
+    "question": "What are the advantages of Implicit Threading?",
+    "options": [
+      "Reduces the programmer's burden of managing threads",
+      "Thread creation and management are done by the compiler and runtime libraries",
+      "Helps solve the issue of program correctness as the number of threads increases",
+      "Increases control over the thread creation process"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Reduces the programmer's burden of managing threads\nThread creation and management are done by the compiler and runtime libraries\nHelps solve the issue of program correctness as the number of threads increases",
+    "answer_variants": [
+      "Reduces the programmer's burden of managing threads\nThread creation and management are done by the compiler and runtime libraries\nHelps solve the issue of program correctness as the number of threads increases"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 40,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 41,
+    "title": "",
+    "type": "choice",
+    "question": "哪一種多執行緒模型將多個使用者層級執行緒映射到單一核心執行緒？",
+    "options": [
+      "Many-to-One",
+      "One-to-One",
+      "Many-to-Many",
+      "Two-level"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Many-to-One",
+    "answer_variants": [
+      "Many-to-One"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 41,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 42,
+    "title": "",
+    "type": "choice",
+    "question": "延遲取消（Deferred cancellation）有何特性？",
+    "options": [
+      "允許目標執行緒定期檢查是否應被取消",
+      "只有當執行緒到達取消點時才會發生取消",
+      "屬於 Pthread 的預設取消類型",
+      "會立即終止目標執行緒"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "允許目標執行緒定期檢查是否應被取消\n只有當執行緒到達取消點時才會發生取消\n屬於 Pthread 的預設取消類型",
+    "answer_variants": [
+      "允許目標執行緒定期檢查是否應被取消\n只有當執行緒到達取消點時才會發生取消\n屬於 Pthread 的預設取消類型"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 42,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 43,
+    "title": "",
+    "type": "choice",
+    "question": "在多核心系統中進行程式設計時，可能遇到的挑戰包括？",
+    "options": [
+      "分割活動（Dividing activities）",
+      "測試與除錯",
+      "資料相依性（Data dependency）",
+      "硬體成本"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "分割活動（Dividing activities）\n測試與除錯\n資料相依性（Data dependency）",
+    "answer_variants": [
+      "分割活動（Dividing activities）\n測試與除錯\n資料相依性（Data dependency）"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 43,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 44,
+    "title": "",
+    "type": "choice",
+    "question": "Which of the following are considered user-level thread libraries?",
+    "options": [
+      "POSIX Pthreads",
+      "Win32 threads",
+      "Java threads",
+      "Linux threads"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "POSIX Pthreads\nWin32 threads\nJava threads",
+    "answer_variants": [
+      "POSIX Pthreads\nWin32 threads\nJava threads"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 44,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 45,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "多執行緒程式設計的好處中，下列哪一項與使用者介面特別相關？",
+    "options": [
+      "響應性"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "響應性",
+    "answer_variants": [
+      "響應性"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 45,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 46,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following statements about Parallelism and Concurrency are correct?",
+    "options": [
+      "Parallelism means a system can execute more than one task simultaneously",
+      "Concurrency means a system can support the progression of more than one task at the same time",
+      "A single-core system can provide concurrency",
+      "A multicore system can provide parallelism"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Parallelism means a system can execute more than one task simultaneously\nConcurrency means a system can support the progression of more than one task at the same time\nA single-core system can provide concurrency\nA multicore system can provide parallelism",
+    "answer_variants": [
+      "Parallelism means a system can execute more than one task simultaneously\nConcurrency means a system can support the progression of more than one task at the same time\nA single-core system can provide concurrency\nA multicore system can provide parallelism"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 46,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 47,
+    "title": "",
+    "type": "choice",
+    "question": "多執行緒伺服器架構的優點包含？",
+    "options": [
+      "伺服器可以同時服務多個客戶端請求",
+      "當一個執行緒被阻塞時，其他執行緒可以繼續執行",
+      "執行緒創建比程序創建更輕量級",
+      "程式碼更難以理解"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "伺服器可以同時服務多個客戶端請求\n當一個執行緒被阻塞時，其他執行緒可以繼續執行\n執行緒創建比程序創建更輕量級",
+    "answer_variants": [
+      "伺服器可以同時服務多個客戶端請求\n當一個執行緒被阻塞時，其他執行緒可以繼續執行\n執行緒創建比程序創建更輕量級"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 47,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 48,
+    "title": "",
+    "type": "choice",
+    "question": "下列哪些作業系統採用 One-to-One 模型？",
+    "options": [
+      "Windows NT/XP/2000",
+      "Linux",
+      "Solaris 9 和更高版本",
+      "Solaris Green Threads"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Windows NT/XP/2000\nLinux\nSolaris 9 和更高版本",
+    "answer_variants": [
+      "Windows NT/XP/2000\nLinux\nSolaris 9 和更高版本"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 48,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 49,
+    "title": "",
+    "type": "choice",
+    "question": "Which multithreading model maps many user-level threads to a single kernel thread?",
+    "options": [
+      "Many-to-One",
+      "One-to-One"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Many-to-One",
+    "answer_variants": [
+      "Many-to-One"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 49,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 50,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] refers to a system's ability to support the progression of more than one task at the same time.(Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "concurrency",
+    "answer_variants": [
+      "concurrency"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 50,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf",
+      "parallelism"
+    ]
+  },
+  {
+    "id": 51,
+    "title": "",
+    "type": "choice",
+    "question": "在多核心程式設計中，將相同資料集的子集分配到多個核心上，並在每個核心上執行相同的操作，這屬於哪種類型的平行處理？",
+    "options": [
+      "資料平行（Data parallelism）",
+      "任務平行（Task parallelism）",
+      "程式平行",
+      "系統平行"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "資料平行（Data parallelism）",
+    "answer_variants": [
+      "資料平行（Data parallelism）"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 51,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 52,
+    "title": "",
+    "type": "choice",
+    "question": "Linux 創建執行緒的系統呼叫是什麼？",
+    "options": [
+      "clone()",
+      "create_thread()"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "clone()",
+    "answer_variants": [
+      "clone()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 52,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 53,
+    "title": "",
+    "type": "fill_blank",
+    "question": "創建執行緒的成本比程序(process)少，且執行緒切換的開銷也低於[__1__]。 (請用小寫英文回答 文字間留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "context switch",
+    "answer_variants": [
+      "context switch"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 53,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf",
+      "thread switching"
+    ]
+  },
+  {
+    "id": 54,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] refers to the distribution of subsets of the same data set to multiple cores, with the same operation being performed on each core.(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "data parallelism",
+    "answer_variants": [
+      "data parallelism"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 54,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 55,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Who is primarily responsible for the management of user-level threads?",
+    "options": [
+      "User-level thread library"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "User-level thread library",
+    "answer_variants": [
+      "User-level thread library"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 55,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 56,
+    "title": "",
+    "type": "choice",
+    "question": "Amdahl's Law 主要用來識別什麼樣的效能提升？",
+    "options": [
+      "增加額外核心所帶來的效能提升",
+      "增加記憶體所帶來的效能提升"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "增加額外核心所帶來的效能提升",
+    "answer_variants": [
+      "增加額外核心所帶來的效能提升"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 56,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 57,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "在多執行緒環境中，處理信號的方式可以有哪幾種？",
+    "options": [
+      "將信號傳遞給應用該信號的特定執行緒",
+      "將信號傳遞給程序中的每個執行緒",
+      "將信號傳遞給程序中的某些特定執行緒",
+      "指定一個特定執行緒來接收所有信號"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "將信號傳遞給應用該信號的特定執行緒\n將信號傳遞給程序中的每個執行緒\n將信號傳遞給程序中的某些特定執行緒\n指定一個特定執行緒來接收所有信號",
+    "answer_variants": [
+      "將信號傳遞給應用該信號的特定執行緒\n將信號傳遞給程序中的每個執行緒\n將信號傳遞給程序中的某些特定執行緒\n指定一個特定執行緒來接收所有信號"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 57,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 58,
+    "title": "",
+    "type": "choice",
+    "question": "單執行緒程序和多執行緒程序共享哪些資源？",
+    "options": [
+      "資料",
+      "檔案",
+      "程式碼",
+      "堆疊（Stack）"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "資料\n檔案\n程式碼",
+    "answer_variants": [
+      "資料\n檔案\n程式碼"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 58,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 59,
+    "title": "",
+    "type": "choice",
+    "question": "隱式執行緒（Implicit Threading）的優勢在於？",
+    "options": [
+      "減少程式設計師管理執行緒的負擔",
+      "創建和管理執行緒由編譯器和執行時期函式庫完成",
+      "有助於解決執行緒數量增加時的程式正確性問題",
+      "增加了對執行緒創建過程的控制"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "減少程式設計師管理執行緒的負擔\n創建和管理執行緒由編譯器和執行時期函式庫完成\n有助於解決執行緒數量增加時的程式正確性問題",
+    "answer_variants": [
+      "減少程式設計師管理執行緒的負擔\n創建和管理執行緒由編譯器和執行時期函式庫完成\n有助於解決執行緒數量增加時的程式正確性問題"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 59,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 60,
+    "title": "",
+    "type": "fill_blank",
+    "question": "There are three major user-level thread libraries: POSIX Pthreads, Win32 threads, and [__1__].(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "java threads",
+    "answer_variants": [
+      "java threads"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 60,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asfd"
+    ]
+  },
+  {
+    "id": 61,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "在 Windows 系統中，每個執行緒的「上下文（context）」不包含下列哪一項？",
+    "options": [
+      "其他程序執行緒的ID"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "其他程序執行緒的ID",
+    "answer_variants": [
+      "其他程序執行緒的ID"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 61,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 62,
+    "title": "",
+    "type": "choice",
+    "question": "OpenMP primarily provides support for parallel programming in what kind of environment?",
+    "options": [
+      "Shared memory environment",
+      "Distributed memory environment"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Shared memory environment",
+    "answer_variants": [
+      "Shared memory environment"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 62,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 63,
+    "title": "",
+    "type": "choice",
+    "question": "執行緒本地儲存（Thread-local storage TLS）與區域變數有何不同？",
+    "options": [
+      "TLS 在多次函式呼叫中可見",
+      "區域變數只在單次函式呼叫中可見",
+      "TLS 在所有執行緒中共享",
+      "區域變數在不同執行緒中是獨特的"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "TLS 在多次函式呼叫中可見\n區域變數只在單次函式呼叫中可見",
+    "answer_variants": [
+      "TLS 在多次函式呼叫中可見\n區域變數只在單次函式呼叫中可見"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 63,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 64,
+    "title": "",
+    "type": "choice",
+    "question": "Among the benefits of multithreaded programming, which one is particularly relevant to user interfaces?",
+    "options": [
+      "Responsiveness",
+      "Economy"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Responsiveness",
+    "answer_variants": [
+      "Responsiveness"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 64,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 65,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] 用於在 UNIX 系統中通知程序發生特定事件。(請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "signals",
+    "answer_variants": [
+      "signals"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 65,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 66,
+    "title": "",
+    "type": "choice",
+    "question": "What is the purpose of Thread-local storage (TLS)?",
+    "options": [
+      "To allow each thread to have its own copy of data",
+      "To store variables visible only within a single function call"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "To allow each thread to have its own copy of data",
+    "answer_variants": [
+      "To allow each thread to have its own copy of data"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 66,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 67,
+    "title": "",
+    "type": "fill_blank",
+    "question": "In the [__1__] model, each user-level thread is mapped to one kernel thread.(Please answer in lowercase English, connecting letters with hyphens)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "one-to-one",
+    "answer_variants": [
+      "one-to-one"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 67,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 68,
+    "title": "",
+    "type": "choice",
+    "question": "下列哪一個不是主要的使用者層級執行緒函式庫？",
+    "options": [
+      "Android threads",
+      "Java threads"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Android threads",
+    "answer_variants": [
+      "Android threads"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 68,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 69,
+    "title": "",
+    "type": "choice",
+    "question": "執行緒（Thread）與程序（Process）相比，其創建成本有何不同？",
+    "options": [
+      "執行緒創建是輕量級的",
+      "程序創建是輕量級的"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "執行緒創建是輕量級的",
+    "answer_variants": [
+      "執行緒創建是輕量級的"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 69,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 70,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] 允許每個執行緒擁有自己的資料副本。(請用小寫英文回答 字母間留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "thread local storage",
+    "answer_variants": [
+      "thread local storage"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 70,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf",
+      "thread local storge"
+    ]
+  },
+  {
+    "id": 71,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following is an advantage of multithreaded programming?",
+    "options": [
+      "Simplifies code and improves efficiency"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Simplifies code and improves efficiency",
+    "answer_variants": [
+      "Simplifies code and improves efficiency"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 71,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 72,
+    "title": "",
+    "type": "fill_blank",
+    "question": "In the [__1__] model, many user-level threads can be mapped to many kernel threads.(Please answer in lowercase English, connecting letters with hyphens)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "many-to-many",
+    "answer_variants": [
+      "many-to-many"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 72,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 73,
+    "title": "",
+    "type": "choice",
+    "question": "Many-to-One 模型有何特性？",
+    "options": [
+      "多個使用者層級執行緒映射到單一核心執行緒",
+      "一個執行緒阻塞會導致所有執行緒阻塞",
+      "在多核心系統上無法平行執行多個執行緒",
+      "每個使用者執行緒創建一個核心執行緒"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "多個使用者層級執行緒映射到單一核心執行緒\n一個執行緒阻塞會導致所有執行緒阻塞\n在多核心系統上無法平行執行多個執行緒",
+    "answer_variants": [
+      "多個使用者層級執行緒映射到單一核心執行緒\n一個執行緒阻塞會導致所有執行緒阻塞\n在多核心系統上無法平行執行多個執行緒"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 73,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 74,
+    "title": "",
+    "type": "choice",
+    "question": "執行緒取消（Thread Cancellation）的兩種方法中，哪一種會立即終止目標執行緒？",
+    "options": [
+      "異步取消（Asynchronous cancellation）",
+      "協作取消（Cooperative cancellation）",
+      "自動取消（Automatic cancellation）",
+      "延遲取消（Deferred cancellation）"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "異步取消（Asynchronous cancellation）",
+    "answer_variants": [
+      "異步取消（Asynchronous cancellation）"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 74,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 75,
+    "title": "",
+    "type": "choice",
+    "question": "What resources are shared by single-threaded processes and multithreaded processes?",
+    "options": [
+      "Data",
+      "Files",
+      "Program code",
+      "Stack"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Data\nFiles\nProgram code",
+    "answer_variants": [
+      "Data\nFiles\nProgram code"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 75,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 76,
+    "title": "",
+    "type": "fill_blank",
+    "question": "多執行緒應用程式的優點之一是[__1__]，因為即使程序的一部分被阻塞，程式碼也能繼續執行。(請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "responsiveness",
+    "answer_variants": [
+      "responsiveness"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 76,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 77,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] refers to the distribution of threads to different cores, with each thread performing a unique task.(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "task parallelism",
+    "answer_variants": [
+      "task parallelism"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 77,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 78,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Of the two methods of thread cancellation, which one immediately terminates the target thread?",
+    "options": [
+      "Asynchronous cancellation"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Asynchronous cancellation",
+    "answer_variants": [
+      "Asynchronous cancellation"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 78,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 79,
+    "title": "",
+    "type": "choice",
+    "question": "In the Windows thread data structure, what blocks are contained in user space?",
+    "options": [
+      "TEB",
+      "Thread-local storage",
+      "ETHREAD",
+      "KTHREAD"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "TEB\nThread-local storage",
+    "answer_variants": [
+      "TEB\nThread-local storage"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 79,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 80,
+    "title": "",
+    "type": "fill_blank",
+    "question": "Amdahl's Law 的公式為：speedup? (1/(S+(1-S)/N)) ，N 代表[__1__]的數量。(請用英文小寫回答，單字間留一空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "processing cores",
+    "answer_variants": [
+      "processing cores"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 80,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "serial portion"
+    ]
+  },
+  {
+    "id": 81,
+    "title": "",
+    "type": "choice",
+    "question": "In a multiprocessor architecture, what is the advantage of utilizing multiple processor cores?",
+    "options": [
+      "Scalability",
+      "Responsiveness"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Scalability",
+    "answer_variants": [
+      "Scalability"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 81,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 82,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] 指將相同資料集的子集分配到多個核心上，並在每個核心上執行相同的操作。(請用英文小寫回答，單字間留一空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "data parallelism",
+    "answer_variants": [
+      "data parallelism"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 82,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 83,
+    "title": "",
+    "type": "choice",
+    "question": "OpenMP 提供哪些特性來支援平行程式設計？",
+    "options": [
+      "一組編譯器指令和 API",
+      "在共享記憶體環境中支援平行程式設計",
+      "允許程式設計師明確標識平行區域",
+      "只能在 Apple 系統上使用"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "一組編譯器指令和 API\n在共享記憶體環境中支援平行程式設計\n允許程式設計師明確標識平行區域",
+    "answer_variants": [
+      "一組編譯器指令和 API\n在共享記憶體環境中支援平行程式設計\n允許程式設計師明確標識平行區域"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 83,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 84,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] refers to a system's ability to execute more than one task simultaneously.(Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "parallelism",
+    "answer_variants": [
+      "parallelism"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 84,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 85,
+    "title": "",
+    "type": "choice",
+    "question": "下列哪一個作業系統的執行緒實作採用 One-to-One 模型？",
+    "options": [
+      "Windows NT/XP/2000",
+      "GNU Portable Threads",
+      "Solaris prior to version 9",
+      "Solaris Green Threads"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Windows NT/XP/2000",
+    "answer_variants": [
+      "Windows NT/XP/2000"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 85,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 86,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] 是指一個系統可以支援一個以上的任務同時取得進展。(請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "concurrency",
+    "answer_variants": [
+      "concurrency"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 86,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 87,
+    "title": "",
+    "type": "choice",
+    "question": "在 Windows 執行緒的資料結構中，使用者空間（user space）包含哪些區塊？",
+    "options": [
+      "TEB",
+      "執行緒本地儲存",
+      "ETHREAD",
+      "KTHREAD"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "TEB\n執行緒本地儲存",
+    "answer_variants": [
+      "TEB\n執行緒本地儲存"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 87,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 88,
+    "title": "",
+    "type": "choice",
+    "question": "What kind of performance gain is Amdahl's Law primarily used to identify?",
+    "options": [
+      "Performance gain from adding extra cores",
+      "Performance gain from reducing I/O operations"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Performance gain from adding extra cores",
+    "answer_variants": [
+      "Performance gain from adding extra cores"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 88,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 89,
+    "title": "",
+    "type": "choice",
+    "question": "What is the Linux system call for creating a thread?",
+    "options": [
+      "clone()",
+      "fork()",
+      "exec()",
+      "create_thread()"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "clone()",
+    "answer_variants": [
+      "clone()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 89,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 90,
+    "title": "",
+    "type": "choice",
+    "question": "在 Java 中，創建執行緒的方法有哪兩種？",
+    "options": [
+      "繼承 Thread 類別",
+      "實作 Runnable 介面",
+      "使用 Runnable 類別",
+      "創建一個新的程序"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "繼承 Thread 類別\n實作 Runnable 介面",
+    "answer_variants": [
+      "繼承 Thread 類別\n實作 Runnable 介面"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 90,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 91,
+    "title": "",
+    "type": "choice",
+    "question": "Which of the following operating systems use the One-to-One model?",
+    "options": [
+      "Windows NT/XP/2000",
+      "Linux",
+      "Solaris 9 and higher",
+      "Solaris Green Threads"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Windows NT/XP/2000\nLinux\nSolaris 9 and higher",
+    "answer_variants": [
+      "Windows NT/XP/2000\nLinux\nSolaris 9 and higher"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 91,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 92,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] 是 CPU 利用率的基本單位，也是多執行緒電腦系統的基礎。 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "thread",
+    "answer_variants": [
+      "thread"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 92,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asd"
+    ]
+  },
+  {
+    "id": 93,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] 是指一個系統可以同時執行一個以上的任務。(請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "parallelism",
+    "answer_variants": [
+      "parallelism"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 93,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "concurrency"
+    ]
+  },
+  {
+    "id": 94,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] are used in UNIX systems to notify a process that a specific event has occurred.(Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "signals",
+    "answer_variants": [
+      "signals"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 94,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "ass"
+    ]
+  },
+  {
+    "id": 95,
+    "title": "",
+    "type": "choice",
+    "question": "What are some of the challenges you might encounter when programming for multicore systems?",
+    "options": [
+      "Dividing activities",
+      "Testing and debugging",
+      "Data dependency",
+      "Hardware cost"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Dividing activities\nTesting and debugging\nData dependency",
+    "answer_variants": [
+      "Dividing activities\nTesting and debugging\nData dependency"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 95,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 96,
+    "title": "",
+    "type": "choice",
+    "question": "Which multithreading model maps one kernel thread for each user-level thread?",
+    "options": [
+      "One-to-One",
+      "Many-to-Many",
+      "Two-level",
+      "Many-to-One"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "One-to-One",
+    "answer_variants": [
+      "One-to-One"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 96,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 97,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] 是一種終止執行緒的方法，它允許目標執行緒定期檢查是否應被取消。(請用小寫英文回答 字母間留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "deferred cancellation",
+    "answer_variants": [
+      "deferred cancellation"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 97,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 98,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "下列關於平行性（Parallelism）與並行性（Concurrency）的敘述，哪些是正確的？",
+    "options": [
+      "平行性意指一個系統可以同時執行多個任務",
+      "並行性意指一個系統可以支援多個任務同時進展",
+      "單核心系統可以提供並行性",
+      "多核心系統可以提供平行性"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "平行性意指一個系統可以同時執行多個任務\n並行性意指一個系統可以支援多個任務同時進展\n單核心系統可以提供並行性\n多核心系統可以提供平行性",
+    "answer_variants": [
+      "平行性意指一個系統可以同時執行多個任務\n並行性意指一個系統可以支援多個任務同時進展\n單核心系統可以提供並行性\n多核心系統可以提供平行性"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 98,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 99,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "In the Windows system, which of the following is not included in each thread's \"context\"?",
+    "options": [
+      "IDs of other process threads"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "IDs of other process threads",
+    "answer_variants": [
+      "IDs of other process threads"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 99,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 100,
+    "title": "",
+    "type": "choice",
+    "question": "What characteristics does OpenMP provide to support parallel programming?",
+    "options": [
+      "A set of compiler directives and APIs",
+      "Supports parallel programming in a shared-memory environment",
+      "Allows programmers to explicitly identify parallel regions",
+      "Can only be used on Apple systems"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "A set of compiler directives and APIs\nSupports parallel programming in a shared-memory environment\nAllows programmers to explicitly identify parallel regions",
+    "answer_variants": [
+      "A set of compiler directives and APIs\nSupports parallel programming in a shared-memory environment\nAllows programmers to explicitly identify parallel regions"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 100,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 101,
+    "title": "",
+    "type": "fill_blank",
+    "question": "Windows threads implement the [__1__] model.(Please answer in lowercase English, connecting letters with hyphens)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "one-to-one",
+    "answer_variants": [
+      "one-to-one"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 101,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 102,
+    "title": "",
+    "type": "choice",
+    "question": "What are the advantages of Thread Pools?",
+    "options": [
+      "Using existing threads to service requests is faster than creating new threads",
+      "Allows the number of threads in the application to be limited to the size of the pool",
+      "Separates the task from the mechanism that creates the task",
+      "Ensures that each request uses a new thread"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Using existing threads to service requests is faster than creating new threads\nAllows the number of threads in the application to be limited to the size of the pool\nSeparates the task from the mechanism that creates the task",
+    "answer_variants": [
+      "Using existing threads to service requests is faster than creating new threads\nAllows the number of threads in the application to be limited to the size of the pool\nSeparates the task from the mechanism that creates the task"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 102,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 103,
+    "title": "",
+    "type": "fill_blank",
+    "question": "Because threads share a process's resources, [__1__] is easier to achieve than shared memory or message passing.(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "resource sharing",
+    "answer_variants": [
+      "resource sharing"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 103,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf",
+      "communication"
+    ]
+  },
+  {
+    "id": 104,
+    "title": "",
+    "type": "fill_blank",
+    "question": "One of the advantages of multithreaded applications is [__1__], as code can continue to run even if part of the process is blocked. (Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "responsiveness",
+    "answer_variants": [
+      "responsiveness"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 104,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  },
+  {
+    "id": 105,
+    "title": "",
+    "type": "choice",
+    "question": "在多處理器架構中，可利用多個處理器核心優勢的優點是？",
+    "options": [
+      "可擴展性",
+      "資源共享"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "可擴展性",
+    "answer_variants": [
+      "可擴展性"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 105,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 106,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following descriptions about the semantics of fork() and exec() system calls in a multithreaded environment are correct?",
+    "options": [
+      "fork() sometimes duplicates only the calling thread",
+      "fork() sometimes duplicates all threads",
+      "exec() typically replaces the entire running process, including all threads"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "fork() sometimes duplicates only the calling thread\nfork() sometimes duplicates all threads\nexec() typically replaces the entire running process, including all threads",
+    "answer_variants": [
+      "fork() sometimes duplicates only the calling thread\nfork() sometimes duplicates all threads\nexec() typically replaces the entire running process, including all threads"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 106,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 107,
+    "title": "",
+    "type": "choice",
+    "question": "在 Windows 執行緒的資料結構中，核心空間（kernel space）包含哪些區塊？",
+    "options": [
+      "ETHREAD",
+      "KTHREAD",
+      "TEB"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "ETHREAD\nKTHREAD",
+    "answer_variants": [
+      "ETHREAD\nKTHREAD"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 107,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 108,
+    "title": "",
+    "type": "choice",
+    "question": "Who typically manages Java threads?",
+    "options": [
+      "Java Virtual Machine (JVM)",
+      "Programmer",
+      "Operating system",
+      "Compiler"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Java Virtual Machine (JVM)",
+    "answer_variants": [
+      "Java Virtual Machine (JVM)"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 108,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 109,
+    "title": "",
+    "type": "choice",
+    "question": "Which of the following operating systems implements the One-to-One model for threads?",
+    "options": [
+      "Windows NT/XP/2000",
+      "Solaris prior to version 9"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Windows NT/XP/2000",
+    "answer_variants": [
+      "Windows NT/XP/2000"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 109,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 110,
+    "title": "",
+    "type": "choice",
+    "question": "How is Thread-local storage (TLS) different from local variables?",
+    "options": [
+      "TLS is visible across multiple function calls",
+      "Local variables are only visible within a single function call",
+      "TLS is shared among all threads",
+      "Local variables are unique across different threads"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "TLS is visible across multiple function calls\nLocal variables are only visible within a single function call",
+    "answer_variants": [
+      "TLS is visible across multiple function calls\nLocal variables are only visible within a single function call"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 110,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 111,
+    "title": "",
+    "type": "fill_blank",
+    "question": "In the [__1__] model, a number of threads are created and placed in a pool to await work.(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "thread pools",
+    "answer_variants": [
+      "thread pools"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 111,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "one-to-one"
+    ]
+  },
+  {
+    "id": 112,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] is the basic unit of CPU utilization and the foundation of multithreaded computer systems.(Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "thread",
+    "answer_variants": [
+      "thread"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 112,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 113,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "What are the characteristics of the One-to-One model?",
+    "options": [
+      "Each user-level thread maps to one kernel thread",
+      "Provides more concurrency than the Many-to-One model",
+      "The number of threads in a process can sometimes be limited by overhead",
+      "Creating a user-level thread creates a kernel thread"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Each user-level thread maps to one kernel thread\nProvides more concurrency than the Many-to-One model\nThe number of threads in a process can sometimes be limited by overhead\nCreating a user-level thread creates a kernel thread",
+    "answer_variants": [
+      "Each user-level thread maps to one kernel thread\nProvides more concurrency than the Many-to-One model\nThe number of threads in a process can sometimes be limited by overhead\nCreating a user-level thread creates a kernel thread"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 113,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 114,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "What is POSIX Pthreads?",
+    "options": [
+      "An API standard for thread creation and synchronization"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "An API standard for thread creation and synchronization",
+    "answer_variants": [
+      "An API standard for thread creation and synchronization"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 114,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 115,
+    "title": "",
+    "type": "choice",
+    "question": "In a multithreaded server architecture, what does the server do when a client request arrives?",
+    "options": [
+      "Creates a new thread to service the request",
+      "Immediately closes the connection"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Creates a new thread to service the request",
+    "answer_variants": [
+      "Creates a new thread to service the request"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 115,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 116,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which multithreading model allows a single kernel thread to be bound to a single user thread?",
+    "options": [
+      "Many-to-One",
+      "One-to-One",
+      "Many-to-Many",
+      "Two-level"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Many-to-One\nOne-to-One\nMany-to-Many\nTwo-level",
+    "answer_variants": [
+      "Many-to-One\nOne-to-One\nMany-to-Many\nTwo-level"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 116,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 117,
+    "title": "",
+    "type": "choice",
+    "question": "What are the advantages of a multithreaded server architecture?",
+    "options": [
+      "The server can service multiple client requests simultaneously",
+      "When one thread is blocked, other threads can continue to run",
+      "Thread creation is more lightweight than process creation",
+      "The code is more difficult to understand"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "The server can service multiple client requests simultaneously\nWhen one thread is blocked, other threads can continue to run\nThread creation is more lightweight than process creation",
+    "answer_variants": [
+      "The server can service multiple client requests simultaneously\nWhen one thread is blocked, other threads can continue to run\nThread creation is more lightweight than process creation"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 117,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 118,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "In a multithreaded environment, what are the ways to handle signals?",
+    "options": [
+      "Delivers the signal to a specific thread to which the signal applies",
+      "Delivers the signal to every thread in the process",
+      "Delivers the signal to certain specific threads in the process",
+      "Designates a specific thread to receive all signals"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Delivers the signal to a specific thread to which the signal applies\nDelivers the signal to every thread in the process\nDelivers the signal to certain specific threads in the process\nDesignates a specific thread to receive all signals",
+    "answer_variants": [
+      "Delivers the signal to a specific thread to which the signal applies\nDelivers the signal to every thread in the process\nDelivers the signal to certain specific threads in the process\nDesignates a specific thread to receive all signals"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 118,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 119,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] is an Apple technology used in the Mac OS X and iOS operating systems that allows for the identification of parallel regions and management of thread details.(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "grand central dispatch",
+    "answer_variants": [
+      "grand central dispatch"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 119,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 120,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The cost of creating a thread is less than a process, and the overhead of a thread switch is also lower than a [__1__].(Please answer in lowercase English with a blank between words)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "context switch",
+    "answer_variants": [
+      "context switch"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 120,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 121,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] 技術的流行，是因為當執行緒數量增加時，程式的正確性變得更難以確保。(請用小寫英文回答 字母間留一個空白)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "implicit threading",
+    "answer_variants": [
+      "implicit threading"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 121,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf",
+      "implicit"
+    ]
+  },
+  {
+    "id": 122,
+    "title": "",
+    "type": "choice",
+    "question": "In the Windows thread data structure, what blocks are contained in kernel space?",
+    "options": [
+      "ETHREAD",
+      "KTHREAD",
+      "TEB",
+      "Thread ID"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "ETHREAD\nKTHREAD",
+    "answer_variants": [
+      "ETHREAD\nKTHREAD"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 122,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 123,
+    "title": "",
+    "type": "choice",
+    "question": "What are the characteristics of deferred cancellation?",
+    "options": [
+      "Allows the target thread to periodically check if it should be canceled",
+      "Cancellation only occurs when the thread reaches a cancellation point",
+      "It is the default cancellation type for Pthreads",
+      "Immediately terminates the target thread"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Allows the target thread to periodically check if it should be canceled\nCancellation only occurs when the thread reaches a cancellation point\nIt is the default cancellation type for Pthreads",
+    "answer_variants": [
+      "Allows the target thread to periodically check if it should be canceled\nCancellation only occurs when the thread reaches a cancellation point\nIt is the default cancellation type for Pthreads"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 123,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 124,
+    "title": "",
+    "type": "fill_blank",
+    "question": "[__1__] allows each thread to have its own copy of the data.(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "thread local storage",
+    "answer_variants": [
+      "thread local storage"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 124,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asd"
+    ]
+  },
+  {
+    "id": 125,
+    "title": "",
+    "type": "fill_blank",
+    "question": "Amdahl's Law is formulated as: speedup = 1/(S+(1-S)/N), where S represents the [__1__] of the application.(Please answer in lowercase English, leaving a space between each word)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "serial portion",
+    "answer_variants": [
+      "serial portion"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U5.txt"
+    ],
+    "source_question_number": 125,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "asdf"
+    ]
+  }
+]

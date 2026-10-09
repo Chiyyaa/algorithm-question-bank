@@ -4,10 +4,16 @@
     "title": "",
     "type": "choice_options_missing",
     "question": "一個程序（process）包含哪些多個部分？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "程式碼（text section）\n程式計數器和暫存器(program counter and registers)\n堆疊（stack）\n堆（heap）",
+    "options": [
+      "程式計數器和暫存器(program counter and registers)",
+      "堆疊（stack）",
+      "堆（heap）",
+      "程式碼（text section）"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "程式計數器和暫存器(program counter and registers)\n堆疊（stack）\n堆（heap）\n程式碼（text section）",
     "answer_variants": [
+      "程式計數器和暫存器(program counter and registers)\n堆疊（stack）\n堆（heap）\n程式碼（text section）",
       "程式碼（text section）\n程式計數器和暫存器(program counter and registers)\n堆疊（stack）\n堆（heap）"
     ],
     "answer_basis": "provided_source_answer",
@@ -15,17 +21,26 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
       "第四次訓練.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 52
   },
   {
     "id": 2,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "什麼名詞指的是在單一程序中有一個以上的執行程序的分支？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "執行緒(Thread）",
+      "多程式處理(multiprogramming)",
+      "上下文切換(context switch)",
+      "多工(multitasking)"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "執行緒(Thread）",
     "answer_variants": [
       "執行緒(Thread）"
@@ -37,9 +52,13 @@
       "第四次訓練.txt",
       "第五次訓練.txt",
       "help1.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 5
+    "source_occurrences": 5,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 80
   },
   {
     "id": 3,
@@ -58,17 +77,26 @@
       "第一次訓練.txt",
       "第九次訓練.txt",
       "help1.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 69
   },
   {
     "id": 4,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "在程序控制區塊（PCB）中，哪一項資訊記錄了下一個要執行的指令的位置？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "程式計數器",
+      "CPU暫存器",
+      "I/O狀態資訊",
+      "程序狀態"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "程式計數器",
     "answer_variants": [
       "程式計數器"
@@ -80,17 +108,26 @@
       "第二次訓練.txt",
       "第六次訓練.txt",
       "第七次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 5
+    "source_occurrences": 5,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 19
   },
   {
     "id": 5,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Which of the following are process execution options?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "parent and child execute concurrently",
+      "parent waits for the child process to terminate",
+      "the child process must also terminate when the parent process terminates",
+      "the child process can inherit the parent's state"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "parent and child execute concurrently\nparent waits for the child process to terminate",
     "answer_variants": [
       "parent and child execute concurrently\nparent waits for the child process to terminate"
@@ -98,9 +135,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 134
   },
   {
     "id": 6,
@@ -118,17 +159,28 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
       "第七次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [
+      "PCB"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 77
   },
   {
     "id": 7,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "In direct communication, is a link established automatically?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Yes, as long as processes explicitly name each other",
+      "Only after a message is sent",
+      "No, it needs to be established manually",
+      "Only after a message is received"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Yes, as long as processes explicitly name each other",
     "answer_variants": [
       "Yes, as long as processes explicitly name each other"
@@ -136,17 +188,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 106
   },
   {
     "id": 8,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "在訊息傳遞模型中，阻塞式傳送（blocking send）意味著什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "傳送者被阻塞直到訊息被接收",
+      "接收者在接收後立即繼續執行",
+      "接收者被阻塞直到訊息可用",
+      "傳送者在傳送後立即繼續執行"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "傳送者被阻塞直到訊息被接收",
     "answer_variants": [
       "傳送者被阻塞直到訊息被接收"
@@ -158,17 +219,26 @@
       "第三次訓練.txt",
       "第四次訓練.txt",
       "第六次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 5
+    "source_occurrences": 5,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 44
   },
   {
     "id": 9,
     "title": "",
     "type": "choice_options_missing",
     "question": "下列哪些是程序狀態？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "new",
+      "ready",
+      "running",
+      "waiting"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "new\nready\nrunning\nwaiting",
     "answer_variants": [
       "new\nready\nrunning\nwaiting"
@@ -178,9 +248,13 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
       "第七次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 103
   },
   {
     "id": 10,
@@ -201,17 +275,28 @@
       "第五次訓練.txt",
       "第六次訓練.txt",
       "第七次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 6
+    "source_occurrences": 6,
+    "source_incorrect_responses": [
+      "terminal"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 15
   },
   {
     "id": 11,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列哪些是 Cooperating Process 的優點？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "information sharing",
+      "computation speedup",
+      "modularity",
+      "efficiency"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "information sharing\ncomputation speedup\nmodularity",
     "answer_variants": [
       "information sharing\ncomputation speedup\nmodularity"
@@ -221,9 +306,13 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
       "第五次訓練.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 112
   },
   {
     "id": 12,
@@ -243,9 +332,15 @@
       "第三次訓練.txt",
       "第四次訓練.txt",
       "第七次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 5
+    "source_occurrences": 5,
+    "source_incorrect_responses": [
+      "pipe"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 32
   },
   {
     "id": 13,
@@ -264,17 +359,23 @@
       "第一次訓練.txt",
       "第二次訓練.txt",
       "第六次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 7
   },
   {
     "id": 14,
     "title": "",
     "type": "choice_options_missing",
     "question": "In an operating system, what does a program become after it is loaded into memory?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "a process"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "a process",
     "answer_variants": [
       "a process"
@@ -282,17 +383,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 23
   },
   {
     "id": 15,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪些是作業系統中的佇列？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "作業佇列",
+      "就緒佇列",
+      "設備佇列",
+      "交換佇列"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "作業佇列\n就緒佇列\n設備佇列",
     "answer_variants": [
       "作業佇列\n就緒佇列\n設備佇列"
@@ -305,9 +415,13 @@
       "第五次訓練.txt",
       "第六次訓練.txt",
       "第八次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 6
+    "source_occurrences": 6,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 16
   },
   {
     "id": 16,
@@ -324,17 +438,26 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 107
   },
   {
     "id": 17,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which of the following are reasons for process cooperation?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "information sharing",
+      "computation speedup",
+      "modularity",
+      "convenience"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "information sharing\ncomputation speedup\nmodularity\nconvenience",
     "answer_variants": [
       "information sharing\ncomputation speedup\nmodularity\nconvenience"
@@ -343,17 +466,26 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 5
   },
   {
     "id": 18,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "如果一個子程序在父程序終止後仍然存在，這會導致什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "孤兒程序（orphan process）",
+      "資源洩漏",
+      "殭屍程序（zombie process）",
+      "無限循環"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "孤兒程序（orphan process）",
     "answer_variants": [
       "孤兒程序（orphan process）"
@@ -363,9 +495,13 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
       "第三次訓練.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 25
   },
   {
     "id": 19,
@@ -384,9 +520,13 @@
       "第一次訓練.txt",
       "第六次訓練.txt",
       "第七次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 92
   },
   {
     "id": 20,
@@ -402,17 +542,29 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第一次訓練.txt"
+      "第一次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [
+      "pipe",
+      "a"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 39
   },
   {
     "id": 21,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪些是普通管道（Ordinary Pipes）的特性？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "通訊是單向的",
+      "需要親子關係",
+      "通訊是雙向的",
+      "不需要親子關係"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "通訊是單向的\n需要親子關係",
     "answer_variants": [
       "通訊是單向的\n需要親子關係"
@@ -421,17 +573,26 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 67
   },
   {
     "id": 22,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "訊息傳遞設施提供的兩種操作是什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "發送訊息",
+      "接收訊息",
+      "建立連結",
+      "終止連結"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "發送訊息\n接收訊息",
     "answer_variants": [
       "發送訊息\n接收訊息"
@@ -441,17 +602,26 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
       "第四次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 71
   },
   {
     "id": 23,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "哪種排程器負責選擇要進入就緒佇列的程序？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "長期排程器",
+      "短期排程器",
+      "中期排程器",
+      "分派器"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "長期排程器",
     "answer_variants": [
       "長期排程器"
@@ -462,17 +632,24 @@
       "第一次訓練.txt",
       "第四次訓練.txt",
       "第九次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 30
   },
   {
     "id": 24,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "CPU綁定型程序（CPU-bound process）的特徵是什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "花費大部分時間進行計算",
+      "花費大部分時間進行I/O操作"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "花費大部分時間進行計算",
     "answer_variants": [
       "花費大部分時間進行計算"
@@ -482,17 +659,26 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
       "第六次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 73
   },
   {
     "id": 25,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "UNIX系統中，哪一個系統呼叫用來替換程序的記憶體空間，載入一個新程式？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "exec()",
+      "wait()",
+      "exit()",
+      "fork()"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "exec()",
     "answer_variants": [
       "exec()"
@@ -502,9 +688,13 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
       "第三次訓練.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 11
   },
   {
     "id": 26,
@@ -523,9 +713,15 @@
       "第二次訓練.txt",
       "第六次訓練.txt",
       "第九次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [
+      "pipe"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 109
   },
   {
     "id": 27,
@@ -543,17 +739,28 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
       "第八次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [
+      "exec"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 89
   },
   {
     "id": 28,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "在直接通訊（direct communication）中，鏈結是自動建立的嗎？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "是的，只要程序明確命名對方",
+      "僅在接收訊息後建立",
+      "不，需要手動建立",
+      "僅在訊息傳送後建立"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "是的，只要程序明確命名對方",
     "answer_variants": [
       "是的，只要程序明確命名對方"
@@ -566,17 +773,26 @@
       "第四次訓練.txt",
       "第七次訓練.txt",
       "第八次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 6
+    "source_occurrences": 6,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 58
   },
   {
     "id": 29,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "哪一種 IPC 系統被描述為「訊息傳遞中心」，程序可以在其中收發訊息？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "信箱（Mailbox）",
+      "管道",
+      "共享記憶體",
+      "遠端程序呼叫"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "信箱（Mailbox）",
     "answer_variants": [
       "信箱（Mailbox）"
@@ -584,17 +800,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 22
   },
   {
     "id": 30,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "What is a characteristic of an I/O-bound process?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "spends most of its time performing I/O operations",
+      "spends most of its time computing",
+      "rarely performs I/O operations",
+      "has only one CPU burst"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "spends most of its time performing I/O operations",
     "answer_variants": [
       "spends most of its time performing I/O operations"
@@ -604,17 +829,26 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
       "第三次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 141
   },
   {
     "id": 31,
     "title": "",
     "type": "choice_options_missing",
     "question": "以下哪些是通訊連結的實作問題？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "如何建立連結",
+      "一個連結是否可以與多個程序相關聯",
+      "通訊連結的容量如何",
+      "訊息的大小是固定的還是變動的"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "如何建立連結\n一個連結是否可以與多個程序相關聯\n通訊連結的容量如何\n訊息的大小是固定的還是變動的",
     "answer_variants": [
       "如何建立連結\n一個連結是否可以與多個程序相關聯\n通訊連結的容量如何\n訊息的大小是固定的還是變動的"
@@ -626,17 +860,26 @@
       "第五次訓練.txt",
       "第七次訓練.txt",
       "第八次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 5
+    "source_occurrences": 5,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 2
   },
   {
     "id": 32,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "哪一個UNIX系統呼叫會創建一個新的程序？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "fork()",
+      "abort()",
+      "wait()",
+      "exec()"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "fork()",
     "answer_variants": [
       "fork()"
@@ -648,9 +891,13 @@
       "第七次訓練.txt",
       "第八次訓練.txt",
       "第九次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 5
+    "source_occurrences": 5,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 41
   },
   {
     "id": 33,
@@ -666,17 +913,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 124
   },
   {
     "id": 34,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪些是遠端程序呼叫（RPC）的特點？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "抽象化了網路系統中的程序呼叫",
+      "使用樁（stubs）來定位伺服器並封送參數",
+      "使用外部資料表示法（XDL）格式處理資料",
+      "需要親屬關係"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "抽象化了網路系統中的程序呼叫\n使用樁（stubs）來定位伺服器並封送參數\n使用外部資料表示法（XDL）格式處理資料",
     "answer_variants": [
       "抽象化了網路系統中的程序呼叫\n使用樁（stubs）來定位伺服器並封送參數\n使用外部資料表示法（XDL）格式處理資料"
@@ -685,17 +941,26 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 9
   },
   {
     "id": 35,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪些是程序的執行選項？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "父子程序並行執行",
+      "父程序等待子程序終止",
+      "子程序在父程序終止時也必須終止",
+      "子程序可以繼承父程序的狀態"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "父子程序並行執行\n父程序等待子程序終止",
     "answer_variants": [
       "父子程序並行執行\n父程序等待子程序終止"
@@ -705,17 +970,26 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
       "第九次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 13
   },
   {
     "id": 36,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "在作業系統中，一個「程序」（process）被定義為一個在執行中的什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "執行中的程式",
+      "程式碼的複製本",
+      "記憶體區塊",
+      "磁碟上的靜態檔案"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "執行中的程式",
     "answer_variants": [
       "執行中的程式"
@@ -726,9 +1000,13 @@
       "第二次訓練.txt",
       "第四次訓練.txt",
       "第七次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 54
   },
   {
     "id": 37,
@@ -746,17 +1024,28 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
       "第三次訓練.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [
+      "pipe"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 4
   },
   {
     "id": 38,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪些是 iOS 行動系統中的多工處理限制？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "僅允許一個前景程序",
+      "允許多個背景程序",
+      "允許多個前景程序",
+      "背景程序沒有任何限制"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "僅允許一個前景程序\n允許多個背景程序",
     "answer_variants": [
       "僅允許一個前景程序\n允許多個背景程序"
@@ -765,17 +1054,26 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 70
   },
   {
     "id": 39,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "哪一種管道（Pipes），它允許沒有親屬關係的程序之間進行通信？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "具名管道",
+      "普通管道",
+      "匿名管道",
+      "UNIX管道"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "具名管道",
     "answer_variants": [
       "具名管道"
@@ -787,17 +1085,23 @@
       "第四次訓練.txt",
       "第六次訓練.txt",
       "第七次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 5
+    "source_occurrences": 5,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 93
   },
   {
     "id": 40,
     "title": "",
     "type": "choice_options_missing",
     "question": "In UNIX systems, which system call is used to replace a process's memory space and load a new program?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "exec()"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "exec()",
     "answer_variants": [
       "exec()"
@@ -806,17 +1110,26 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 117
   },
   {
     "id": 41,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "一個佇列圖可以代表什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "佇列",
+      "資源",
+      "流程",
+      "時間片"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "佇列\n資源\n流程",
     "answer_variants": [
       "佇列\n資源\n流程"
@@ -825,9 +1138,13 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 50
   },
   {
     "id": 42,
@@ -843,17 +1160,29 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第二次訓練.txt"
+      "第二次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [
+      "STACK",
+      "msg_rpc()"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 18
   },
   {
     "id": 43,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "共享記憶體（Shared memory）通訊模型的主要問題是什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "同步",
+      "訊息容量",
+      "尋找伺服器",
+      "訊息傳遞"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "同步",
     "answer_variants": [
       "同步"
@@ -864,17 +1193,26 @@
       "第二次訓練.txt",
       "第三次訓練.txt",
       "第七次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 51
   },
   {
     "id": 44,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪些是 Chrome 瀏覽器的多程序架構中不同類型的程序？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "瀏覽器程序",
+      "渲染程序",
+      "外掛程序",
+      "核心程序"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "瀏覽器程序\n渲染程序\n外掛程序",
     "answer_variants": [
       "瀏覽器程序\n渲染程序\n外掛程序"
@@ -885,9 +1223,13 @@
       "第二次訓練.txt",
       "第五次訓練.txt",
       "第七次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 20
   },
   {
     "id": 45,
@@ -923,17 +1265,25 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
-      "第三次訓練.txt"
+      "第三次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 1
   },
   {
     "id": 47,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which of the following are queues in an operating system?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "job queue",
+      "ready queue",
+      "device queue"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "job queue\nready queue\ndevice queue",
     "answer_variants": [
       "job queue\nready queue\ndevice queue"
@@ -941,9 +1291,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第三次訓練.txt"
+      "第三次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 128
   },
   {
     "id": 48,
@@ -961,17 +1315,26 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第三次訓練.txt",
       "第四次訓練.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 14
   },
   {
     "id": 49,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "哪一種排程器負責將程序從磁碟載入到主記憶體中，以控制多重程式化的程度？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "長期排程器",
+      "短期排程器",
+      "分派器",
+      "中期排程器"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "長期排程器",
     "answer_variants": [
       "長期排程器"
@@ -981,9 +1344,13 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第三次訓練.txt",
       "第六次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 26
   },
   {
     "id": 50,
@@ -1002,17 +1369,27 @@
       "第三次訓練.txt",
       "第五次訓練.txt",
       "第六次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [
+      "CPU bound"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 65
   },
   {
     "id": 51,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which of the following reasons might cause a parent process to terminate a child process?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "the child process has exceeded allocated resources",
+      "the task assigned to the child process is no longer needed",
+      "the parent process is exiting, and the operating system does not allow the child process to continue"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "the child process has exceeded allocated resources\nthe task assigned to the child process is no longer needed\nthe parent process is exiting, and the operating system does not allow the child process to continue",
     "answer_variants": [
       "the child process has exceeded allocated resources\nthe task assigned to the child process is no longer needed\nthe parent process is exiting, and the operating system does not allow the child process to continue"
@@ -1021,19 +1398,29 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第三次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 113
   },
   {
     "id": 52,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "父程序創建子程序時，可能的資源共享選項有哪些？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "父子程序共享所有資源\n子程序共享父程序資源的子集\n父子程序不共享資源",
+    "options": [
+      "子程序共享父程序資源的子集",
+      "父子程序不共享資源",
+      "父子程序共享所有資源",
+      "父程序將所有資源轉移給子程序"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "子程序共享父程序資源的子集\n父子程序不共享資源\n父子程序共享所有資源",
     "answer_variants": [
+      "子程序共享父程序資源的子集\n父子程序不共享資源\n父子程序共享所有資源",
       "父子程序共享所有資源\n子程序共享父程序資源的子集\n父子程序不共享資源"
     ],
     "answer_basis": "provided_source_answer",
@@ -1042,9 +1429,13 @@
       "第三次訓練.txt",
       "第六次訓練.txt",
       "第八次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 74
   },
   {
     "id": 53,
@@ -1063,17 +1454,29 @@
       "第三次訓練.txt",
       "第七次訓練.txt",
       "第九次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [
+      "123",
+      "aa"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 116
   },
   {
     "id": 54,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "在間接通訊（indirect communication）中，以下哪些敘述是正確的？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "信箱有唯一的 ID",
+      "一個連結可能與許多程序相關聯",
+      "程序只有在共享信箱時才能通訊",
+      "程序必須明確命名對方"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "信箱有唯一的 ID\n一個連結可能與許多程序相關聯\n程序只有在共享信箱時才能通訊",
     "answer_variants": [
       "信箱有唯一的 ID\n一個連結可能與許多程序相關聯\n程序只有在共享信箱時才能通訊"
@@ -1081,17 +1484,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第三次訓練.txt"
+      "第三次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 62
   },
   {
     "id": 55,
     "title": "",
     "type": "choice_options_missing",
     "question": "下列哪些項目與程序控制區塊（PCB）相關？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "程序狀態",
+      "CPU暫存器",
+      "I/O狀態資訊",
+      "程式計數器"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "程序狀態\nCPU暫存器\nI/O狀態資訊\n程式計數器",
     "answer_variants": [
       "程序狀態\nCPU暫存器\nI/O狀態資訊\n程式計數器"
@@ -1100,17 +1512,26 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第三次訓練.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 29
   },
   {
     "id": 56,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "程序（Process）的哪一個部分包含用於動態記憶體分配的記憶體？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "堆積",
+      "文字區",
+      "資料區",
+      "堆疊"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "堆積",
     "answer_variants": [
       "堆積"
@@ -1119,17 +1540,23 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第三次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 38
   },
   {
     "id": 57,
     "title": "",
     "type": "choice_options_missing",
     "question": "After a process completes its last statement, what system call does it use to request the operating system to delete it?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "exit()"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "exit()",
     "answer_variants": [
       "exit()"
@@ -1137,17 +1564,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第三次訓練.txt"
+      "第三次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 129
   },
   {
     "id": 58,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪些是命名管道（Named Pipes）的特性？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "雙向通訊",
+      "不需要有父行程與子行程關係",
+      "需要有父行程與子行程關係",
+      "單向通訊"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "雙向通訊\n不需要有父行程與子行程關係",
     "answer_variants": [
       "雙向通訊\n不需要有父行程與子行程關係"
@@ -1157,9 +1593,13 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第三次訓練.txt",
       "第四次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 36
   },
   {
     "id": 59,
@@ -1179,9 +1619,16 @@
       "第四次訓練.txt",
       "第七次訓練.txt",
       "第八次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 5
+    "source_occurrences": 5,
+    "source_incorrect_responses": [
+      "pipe",
+      "context seitch"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 81
   },
   {
     "id": 60,
@@ -1199,17 +1646,26 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第三次訓練.txt",
       "help1.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 3
   },
   {
     "id": 61,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "What are the synchronization types in message passing?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "blocking (synchronous)",
+      "non-blocking (asynchronous)",
+      "bounded capacity",
+      "infinite capacity"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "blocking (synchronous)\nnon-blocking (asynchronous)",
     "answer_variants": [
       "blocking (synchronous)\nnon-blocking (asynchronous)"
@@ -1217,17 +1673,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第三次訓練.txt"
+      "第三次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 125
   },
   {
     "id": 62,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪些是在 IPC 中，共享記憶體和訊息傳遞模型的區別？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "一個是記憶體區域共享，另一個是訊息交換",
+      "共享記憶體主要關注同步化",
+      "訊息傳遞主要關注通訊連結的建立",
+      "一個由用戶程序控制，另一個由作業系統控制"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "一個是記憶體區域共享，另一個是訊息交換\n共享記憶體主要關注同步化\n訊息傳遞主要關注通訊連結的建立",
     "answer_variants": [
       "一個是記憶體區域共享，另一個是訊息交換\n共享記憶體主要關注同步化\n訊息傳遞主要關注通訊連結的建立"
@@ -1238,9 +1703,13 @@
       "第三次訓練.txt",
       "第四次訓練.txt",
       "第六次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 60
   },
   {
     "id": 63,
@@ -1258,17 +1727,25 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第四次訓練.txt",
       "第七次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [
+      "bidirectinal"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 142
   },
   {
     "id": 64,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which part of a process's memory contains memory used for dynamic memory allocation?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "heap"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "heap",
     "answer_variants": [
       "heap"
@@ -1278,9 +1755,13 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第四次訓練.txt",
       "第八次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 135
   },
   {
     "id": 65,
@@ -1296,9 +1777,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第四次訓練.txt"
+      "第四次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 96
   },
   {
     "id": 66,
@@ -1315,9 +1800,15 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第四次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [
+      "pipe"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 43
   },
   {
     "id": 67,
@@ -1335,17 +1826,30 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第四次訓練.txt",
       "第五次訓練.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [
+      "pipe",
+      "zero capacity",
+      "rendezbous"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 61
   },
   {
     "id": 68,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "當一個程序完成其最後一個陳述後，它會呼叫哪個系統呼叫來請求作業系統刪除它？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "exit()",
+      "fork()",
+      "exec()",
+      "abort()"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "exit()",
     "answer_variants": [
       "exit()"
@@ -1354,17 +1858,26 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第四次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 45
   },
   {
     "id": 69,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "哪些是訊息傳遞中的同步化類型？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "blocking (synchronous)",
+      "non-blocking (asynchronous)",
+      "infinite capacity",
+      "bounded capacity"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "blocking (synchronous)\nnon-blocking (asynchronous)",
     "answer_variants": [
       "blocking (synchronous)\nnon-blocking (asynchronous)"
@@ -1375,19 +1888,29 @@
       "第四次訓練.txt",
       "第六次訓練.txt",
       "第七次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 31
   },
   {
     "id": 70,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪些原因可能導致父程序終止子程序？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "子程序超出分配的資源\n分配給子程序的任務不再需要\n父程序正在退出，且作業系統不允許子程序繼續",
+    "options": [
+      "子程序超出分配的資源",
+      "父程序正在退出，且作業系統不允許子程序繼續",
+      "分配給子程序的任務不再需要",
+      "子程序陷入無限迴圈"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "子程序超出分配的資源\n父程序正在退出，且作業系統不允許子程序繼續\n分配給子程序的任務不再需要",
     "answer_variants": [
+      "子程序超出分配的資源\n父程序正在退出，且作業系統不允許子程序繼續\n分配給子程序的任務不再需要",
       "子程序超出分配的資源\n分配給子程序的任務不再需要\n父程序正在退出，且作業系統不允許子程序繼續"
     ],
     "answer_basis": "provided_source_answer",
@@ -1395,17 +1918,23 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第四次訓練.txt",
       "第五次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 42
   },
   {
     "id": 71,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which scheduler is responsible for loading processes from disk into main memory to control the degree of multiprogramming?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Long-term scheduler"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Long-term scheduler",
     "answer_variants": [
       "Long-term scheduler"
@@ -1414,17 +1943,26 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第四次訓練.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 49
   },
   {
     "id": 72,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "哪種排程器控制多重程式化的程度？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "長期排程器",
+      "CPU排程器",
+      "短期排程器",
+      "中期排程器"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "長期排程器",
     "answer_variants": [
       "長期排程器"
@@ -1436,17 +1974,24 @@
       "第六次訓練.txt",
       "第九次訓練.txt",
       "help1.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 5
+    "source_occurrences": 5,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 47
   },
   {
     "id": 73,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which of the following are mechanisms provided by the operating system for process manipulation?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "process creation",
+      "process termination"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "process creation\nprocess termination",
     "answer_variants": [
       "process creation\nprocess termination"
@@ -1454,17 +1999,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 138
   },
   {
     "id": 74,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "I/O綁定型程序（I/O-bound process）的特徵是什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "花費大部分時間進行I/O操作",
+      "很少進行I/O操作",
+      "只有一個CPU突發",
+      "花費大部分時間進行計算"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "花費大部分時間進行I/O操作",
     "answer_variants": [
       "花費大部分時間進行I/O操作"
@@ -1473,17 +2027,26 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第五次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 53
   },
   {
     "id": 75,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "花費大部分時間進行 I/O 操作的程序被稱為哪一種類型？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "I/O綁定型程序",
+      "CPU綁定型程序",
+      "背景程序",
+      "前景程序"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "I/O綁定型程序",
     "answer_variants": [
       "I/O綁定型程序"
@@ -1494,17 +2057,26 @@
       "第五次訓練.txt",
       "第七次訓練.txt",
       "第九次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 68
   },
   {
     "id": 76,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "在程序狀態圖中，從「就緒」狀態轉換到「執行中」狀態是由誰完成的？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "排程器分派",
+      "中斷",
+      "I/O完成",
+      "事件等待"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "排程器分派",
     "answer_variants": [
       "排程器分派"
@@ -1513,9 +2085,13 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第五次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 64
   },
   {
     "id": 77,
@@ -1531,9 +2107,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 127
   },
   {
     "id": 78,
@@ -1549,17 +2129,28 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第五次訓練.txt"
+      "第五次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [
+      "123"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 140
   },
   {
     "id": 79,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "In an operating system, what is a \"process\" defined as being in execution?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "an executing program",
+      "a memory block",
+      "a static file on disk",
+      "a copy of code"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "an executing program",
     "answer_variants": [
       "an executing program"
@@ -1569,9 +2160,13 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第五次訓練.txt",
       "第六次訓練.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 72
   },
   {
     "id": 80,
@@ -1588,17 +2183,28 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第五次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [
+      "pope"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 27
   },
   {
     "id": 81,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "哪兩種 IPC 系統是基於訊息傳遞的？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "Mach",
+      "Windows 的 LPC",
+      "Java 的 RMI",
+      "POSIX 共享記憶體"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "Mach\nWindows 的 LPC",
     "answer_variants": [
       "Mach\nWindows 的 LPC"
@@ -1610,27 +2216,41 @@
       "第七次訓練.txt",
       "第八次訓練.txt",
       "help1.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 5
+    "source_occurrences": 5,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 24
   },
   {
     "id": 82,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Which of the following are characteristics of Remote Procedure Calls (RPC)?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "abstracts procedure calls in a network system\nuses stubs to locate the server and marshal parameters\nuses External Data Representation (XDR) format for data handling",
+    "options": [
+      "uses stubs to locate the server and marshal parameters",
+      "uses External Data Representation (XDR) format for data handling",
+      "abstracts procedure calls in a network system",
+      "requires a parent-child relationship"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "uses stubs to locate the server and marshal parameters\nuses External Data Representation (XDR) format for data handling\nabstracts procedure calls in a network system",
     "answer_variants": [
+      "uses stubs to locate the server and marshal parameters\nuses External Data Representation (XDR) format for data handling\nabstracts procedure calls in a network system",
       "abstracts procedure calls in a network system\nuses stubs to locate the server and marshal parameters\nuses External Data Representation (XDR) format for data handling"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 28
   },
   {
     "id": 83,
@@ -1649,17 +2269,29 @@
       "第六次訓練.txt",
       "第九次訓練.txt",
       "help1.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 4
+    "source_occurrences": 4,
+    "source_incorrect_responses": [
+      "task control block",
+      "process control bloack"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 10
   },
   {
     "id": 84,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "在程序狀態圖中，從「執行中」轉換到「等待中」的原因是什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "I/O 或事件等待",
+      "中斷",
+      "排程器分派",
+      "I/O 或事件完成"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "I/O 或事件等待",
     "answer_variants": [
       "I/O 或事件等待"
@@ -1669,9 +2301,13 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第六次訓練.txt",
       "第八次訓練.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 48
   },
   {
     "id": 85,
@@ -1687,17 +2323,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 133
   },
   {
     "id": 86,
     "title": "",
     "type": "choice_options_missing",
     "question": "以下哪些是程序合作的理由？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "資訊共享",
+      "計算加速",
+      "模組化",
+      "方便性"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "資訊共享\n計算加速\n模組化\n方便性",
     "answer_variants": [
       "資訊共享\n計算加速\n模組化\n方便性"
@@ -1706,9 +2351,13 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第六次訓練.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 86
   },
   {
     "id": 87,
@@ -1724,17 +2373,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第六次訓練.txt"
+      "第六次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [
+      "pipe"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 56
   },
   {
     "id": 88,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which of the following are characteristics of Named Pipes?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "communication is bidirectional",
+      "does not require a parent-child relationship"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "communication is bidirectional\ndoes not require a parent-child relationship",
     "answer_variants": [
       "communication is bidirectional\ndoes not require a parent-child relationship"
@@ -1742,17 +2400,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 91
   },
   {
     "id": 89,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "What is a characteristic of an CPU-bound process?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "spends most of its time computing",
+      "spends most of its time performing I/O operations",
+      "has only one CPU burst",
+      "rarely performs I/O operations"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "spends most of its time computing",
     "answer_variants": [
       "spends most of its time computing"
@@ -1760,17 +2427,25 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第七次訓練.txt"
+      "第七次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 99
   },
   {
     "id": 90,
     "title": "",
     "type": "choice_options_missing",
     "question": "Which of the following are the advantages of process cooperation?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "information sharing",
+      "computation speedup",
+      "modularity"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "information sharing\ncomputation speedup\nmodularity",
     "answer_variants": [
       "information sharing\ncomputation speedup\nmodularity"
@@ -1779,17 +2454,24 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第七次訓練.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 2
+    "source_occurrences": 2,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 123
   },
   {
     "id": 91,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "What is the time for a context switch considered?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "overhead for the system",
+      "effective time for the process"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "overhead for the system",
     "answer_variants": [
       "overhead for the system"
@@ -1797,19 +2479,29 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 94
   },
   {
     "id": 92,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "哪些是程序之間通訊的兩種模型？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "共享記憶體\n訊息傳遞",
+    "options": [
+      "訊息傳遞",
+      "共享記憶體",
+      "管道",
+      "信箱"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "訊息傳遞\n共享記憶體",
     "answer_variants": [
+      "訊息傳遞\n共享記憶體",
       "共享記憶體\n訊息傳遞"
     ],
     "answer_basis": "provided_source_answer",
@@ -1817,9 +2509,13 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第八次訓練.txt",
       "help1.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 3
+    "source_occurrences": 3,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 46
   },
   {
     "id": 93,
@@ -1835,35 +2531,56 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [
+      "orphan"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 57
   },
   {
     "id": 94,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "請選出訊息傳遞的佇列有三種實作的方式",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "Zero capacity\nBounded capacity\nUnbounded capacity",
+    "options": [
+      "Zero capacity",
+      "Unbounded capacity",
+      "Bounded capacity",
+      "Full capacity"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Zero capacity\nUnbounded capacity\nBounded capacity",
     "answer_variants": [
+      "Zero capacity\nUnbounded capacity\nBounded capacity",
       "Zero capacity\nBounded capacity\nUnbounded capacity"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第八次訓練.txt"
+      "第八次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 37
   },
   {
     "id": 95,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Which of the following are characteristics of Ordinary Pipes?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "communication is unidirectional",
+      "requires a parent-child relationship",
+      "does not require a parent-child relationship",
+      "communication is bidirectional"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "communication is unidirectional\nrequires a parent-child relationship",
     "answer_variants": [
       "communication is unidirectional\nrequires a parent-child relationship"
@@ -1871,17 +2588,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 114
   },
   {
     "id": 96,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "在作業系統中，一個程式被載入到記憶體中後會變成什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "一個程序",
+      "一個資料區塊",
+      "一個檔案",
+      "一個行程"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "一個程序",
     "answer_variants": [
       "一個程序"
@@ -1889,9 +2615,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "第九次訓練.txt"
+      "第九次訓練.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 105
   },
   {
     "id": 97,
@@ -1907,9 +2637,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "填空",
+    "latest_source_question_number": 132
   },
   {
     "id": 98,
@@ -1925,9 +2659,15 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [
+      "blocking"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 83
   },
   {
     "id": 99,
@@ -1943,17 +2683,26 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [
+      "123"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 104
   },
   {
     "id": 100,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "In a process state diagram, what causes a transition from \"running\"\nto \"waiting\"?",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "I/O or event wait",
+      "Scheduler dispatch"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "I/O or event wait",
     "answer_variants": [
       "I/O or event wait"
@@ -1961,9 +2710,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "help1.txt"
+      "help1.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 122
   },
   {
     "id": 101,
@@ -1979,17 +2732,29 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [
+      "123",
+      "pipe"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 102
   },
   {
     "id": 102,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪些是作業系統提供給程序操作的機制？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "程序創建",
+      "程序終止",
+      "訊息傳遞",
+      "I/O管理"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "程序創建\n程序終止",
     "answer_variants": [
       "程序創建\n程序終止"
@@ -1997,9 +2762,13 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "複選",
+    "latest_source_question_number": 84
   },
   {
     "id": 103,
@@ -2015,17 +2784,28 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [
+      "pipe"
+    ],
+    "source_response_type": "填空",
+    "latest_source_question_number": 63
   },
   {
     "id": 104,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "上下文切換（context switch）的時間屬於什麼？",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options": [
+      "系統的開銷",
+      "系統的正常操作",
+      "系統的有益工作",
+      "程序的有效時間"
+    ],
+    "options_status": "known_options_only",
     "correct_answer": "系統的開銷",
     "answer_variants": [
       "系統的開銷"
@@ -2033,8 +2813,881 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
-      "help2.txt"
+      "help2.txt",
+      "作業系統U4.txt"
     ],
-    "source_occurrences": 1
+    "source_occurrences": 1,
+    "source_incorrect_responses": [],
+    "source_response_type": "單選",
+    "latest_source_question_number": 6
+  },
+  {
+    "id": 105,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which scheduler controls the degree of multiprogramming?",
+    "options": [
+      "long-term scheduler"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "long-term scheduler",
+    "answer_variants": [
+      "long-term scheduler"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 8,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 106,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "In a process state diagram, what completes the transition from the \"ready\" state to the \"running\" state?",
+    "options": [
+      "scheduler dispatch"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "scheduler dispatch",
+    "answer_variants": [
+      "scheduler dispatch"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 12,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 107,
+    "title": "",
+    "type": "choice",
+    "question": "哪一個名詞通常與「程序」（process）互換使用？",
+    "options": [
+      "工作（Job）",
+      "檔案"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "工作（Job）",
+    "answer_variants": [
+      "工作（Job）"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 17,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 108,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "In indirect communication, which of the following statements are correct?",
+    "options": [
+      "a mailbox has a unique ID",
+      "a link can be associated with many processes",
+      "processes can only communicate when they share a mailbox"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "a mailbox has a unique ID\na link can be associated with many processes\nprocesses can only communicate when they share a mailbox",
+    "answer_variants": [
+      "a mailbox has a unique ID\na link can be associated with many processes\nprocesses can only communicate when they share a mailbox"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 21,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 109,
+    "title": "",
+    "type": "choice",
+    "question": "Which two IPC systems are based on message passing?",
+    "options": [
+      "Windows's LPC",
+      "Mach",
+      "Java's RMI",
+      "POSIX shared memory"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Windows's LPC\nMach",
+    "answer_variants": [
+      "Windows's LPC\nMach"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 33,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 110,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The five states of a process are: new, running, waiting, ready, and [__1__].(Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "terminated",
+    "answer_variants": [
+      "terminated"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 34,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "pipe"
+    ]
+  },
+  {
+    "id": 111,
+    "title": "",
+    "type": "choice",
+    "question": "當一個程序正在等待某個事件發生時，它的狀態是什麼？",
+    "options": [
+      "等待中",
+      "新建立",
+      "就緒",
+      "執行中"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "等待中",
+    "answer_variants": [
+      "等待中"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 35,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 112,
+    "title": "",
+    "type": "fill_blank",
+    "question": "A [__1__] abstracts the procedure calls between processes in a networked system. (Please answer in lowercase English and leave a blank between words)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "remote procedure call",
+    "answer_variants": [
+      "remote procedure call"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 40,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "pipe"
+    ]
+  },
+  {
+    "id": 113,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The [__1__] problem is a paradigm for cooperating processes, where one process produces information and another process consumes that information.(Please answer in lowercase English. Use - between words. No spaces.)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "producer-consumer",
+    "answer_variants": [
+      "producer-consumer"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 55,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "pipe"
+    ]
+  },
+  {
+    "id": 114,
+    "title": "",
+    "type": "fill_blank",
+    "question": "The iOS mobile system provides a single [__1__] process, which is controlled through the user interface.(Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "foreground",
+    "answer_variants": [
+      "foreground"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 59,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "pipe"
+    ]
+  },
+  {
+    "id": 115,
+    "title": "",
+    "type": "choice",
+    "question": "What happens if a child process remains after its parent process has terminated?",
+    "options": [
+      "orphan process",
+      "infinite loop",
+      "zombie process",
+      "resource leak"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "orphan process",
+    "answer_variants": [
+      "orphan process"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 66,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 116,
+    "title": "",
+    "type": "choice",
+    "question": "Select the three ways to implement Queue of messages attached to the link",
+    "options": [
+      "Zero capacity",
+      "Bounded capacity",
+      "Unbounded capacity",
+      "Full capacity"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "Zero capacity\nBounded capacity\nUnbounded capacity",
+    "answer_variants": [
+      "Zero capacity\nBounded capacity\nUnbounded capacity"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 75,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 117,
+    "title": "",
+    "type": "fill_blank",
+    "question": "In the Mach IPC system, the message passing system calls include msg_send(), msg_receive(), and [__1__].(Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "msg_rpc()",
+    "answer_variants": [
+      "msg_rpc()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 76,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 118,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following are associated with the process control block (PCB)?",
+    "options": [
+      "process state",
+      "CPU registers",
+      "I/O status information",
+      "program counter"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "process state\nCPU registers\nI/O status information\nprogram counter",
+    "answer_variants": [
+      "process state\nCPU registers\nI/O status information\nprogram counter"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 78,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 119,
+    "title": "",
+    "type": "fill_blank",
+    "question": "In the UNIX system, the [__1__] system call is used after fork() to replace a process's memory space with a new program.(Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "exec()",
+    "answer_variants": [
+      "exec()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 79,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 120,
+    "title": "",
+    "type": "choice",
+    "question": "Which of the following are different types of processes in the Chrome browser's multi-process architecture?",
+    "options": [
+      "browser process",
+      "renderer process",
+      "plug-in process",
+      "kernel process"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "browser process\nrenderer process\nplug-in process",
+    "answer_variants": [
+      "browser process\nrenderer process\nplug-in process"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 82,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 121,
+    "title": "",
+    "type": "fill_blank",
+    "question": "中期排程器可以將一個程序從記憶體中移除並存儲到磁碟上，然後再將其帶回，這個過程稱為[__1__]。(請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "swapping",
+    "answer_variants": [
+      "swapping"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 85,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "pipe"
+    ]
+  },
+  {
+    "id": 122,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "What are the two operations provided by the message passing facility?",
+    "options": [
+      "send message",
+      "receive message"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "send message\nreceive message",
+    "answer_variants": [
+      "send message\nreceive message"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 87,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 123,
+    "title": "",
+    "type": "fill_blank",
+    "question": "A process is organized into several parts in memory, where the [__1__] contains temporary data such as function parameters, return addresses, and local variables. (Please answer using English abbreviations and uppercase letters.)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "PCB",
+    "answer_variants": [
+      "PCB"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 88,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "STACK"
+    ]
+  },
+  {
+    "id": 124,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following are multitasking limitations in the iOS mobile system?",
+    "options": [
+      "allows only one foreground process",
+      "allows multiple background processes"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "allows only one foreground process\nallows multiple background processes",
+    "answer_variants": [
+      "allows only one foreground process\nallows multiple background processes"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 90,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 125,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "What are the possible resource-sharing options when a parent process creates a child process?",
+    "options": [
+      "parent and child share all resources",
+      "child process shares a subset of the parent's resources",
+      "parent and child do not share resources"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "parent and child share all resources\nchild process shares a subset of the parent's resources\nparent and child do not share resources",
+    "answer_variants": [
+      "parent and child share all resources\nchild process shares a subset of the parent's resources\nparent and child do not share resources"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 95,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 126,
+    "title": "",
+    "type": "choice",
+    "question": "What term refers to having more than one executing branch in a single process?",
+    "options": [
+      "thread",
+      "multiprogramming"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "thread",
+    "answer_variants": [
+      "thread"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 97,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 127,
+    "title": "",
+    "type": "choice",
+    "question": "What is the state of a process when it is waiting for some event to occur?",
+    "options": [
+      "waiting",
+      "ready",
+      "running",
+      "new"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "waiting",
+    "answer_variants": [
+      "waiting"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 98,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 128,
+    "title": "",
+    "type": "fill_blank",
+    "question": "An ordinary pipe is [__1__], and requires a parent-child relationship between the communicating processes.(Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "unidirectional",
+    "answer_variants": [
+      "unidirectional"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 100,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 129,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which UNIX system call creates a new process?",
+    "options": [
+      "fork()"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "fork()",
+    "answer_variants": [
+      "fork()"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 101,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 130,
+    "title": "",
+    "type": "choice",
+    "question": "Which term is often used interchangeably with \"process\"?",
+    "options": [
+      "job",
+      "thread",
+      "file",
+      "memory block"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "job",
+    "answer_variants": [
+      "job"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 108,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 131,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "What can a queue diagram represent?",
+    "options": [
+      "a queue",
+      "a resource",
+      "a process"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "a queue\na resource\na process",
+    "answer_variants": [
+      "a queue\na resource\na process"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 110,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 132,
+    "title": "",
+    "type": "fill_blank",
+    "question": "If a child process remains after its parent process has terminated without the parent calling wait(), the child becomes an [__1__] process. (Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "orphan",
+    "answer_variants": [
+      "orphan"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 111,
+    "source_response_type": "填空",
+    "source_incorrect_responses": [
+      "und"
+    ]
+  },
+  {
+    "id": 133,
+    "title": "",
+    "type": "choice",
+    "question": "In a process control block (PCB), which piece of information records the location of the next instruction to be executed?",
+    "options": [
+      "program counter",
+      "CPU registers",
+      "I/O status information",
+      "process state"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "program counter",
+    "answer_variants": [
+      "program counter"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 115,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 134,
+    "title": "",
+    "type": "choice",
+    "question": "What are the two models of communication between processes?",
+    "options": [
+      "shared memory",
+      "message passing",
+      "mailbox",
+      "pipes"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "shared memory\nmessage passing",
+    "answer_variants": [
+      "shared memory\nmessage passing"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 118,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 135,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following are process states?",
+    "options": [
+      "new",
+      "ready",
+      "running",
+      "waiting"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "new\nready\nrunning\nwaiting",
+    "answer_variants": [
+      "new\nready\nrunning\nwaiting"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 119,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 136,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which parts does a process contain?",
+    "options": [
+      "text section",
+      "program counter and registers",
+      "stack",
+      "heap"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "text section\nprogram counter and registers\nstack\nheap",
+    "answer_variants": [
+      "text section\nprogram counter and registers\nstack\nheap"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 120,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 137,
+    "title": "",
+    "type": "choice",
+    "question": "What is the main issue with the shared memory communication model?",
+    "options": [
+      "synchronization",
+      "finding the server",
+      "message passing",
+      "message capacity"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "synchronization",
+    "answer_variants": [
+      "synchronization"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 121,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 138,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which of the following are implementation issues for a communication link?",
+    "options": [
+      "how to establish a link",
+      "whether a link can be associated with multiple processes",
+      "what the capacity of the communication link is",
+      "whether the message size is fixed or variable"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "how to establish a link\nwhether a link can be associated with multiple processes\nwhat the capacity of the communication link is\nwhether the message size is fixed or variable",
+    "answer_variants": [
+      "how to establish a link\nwhether a link can be associated with multiple processes\nwhat the capacity of the communication link is\nwhether the message size is fixed or variable"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 126,
+    "source_response_type": "複選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 139,
+    "title": "",
+    "type": "choice",
+    "question": "Which type of scheduler is responsible for selecting which processes to load into the ready queue?",
+    "options": [
+      "long-term scheduler",
+      "medium-term scheduler",
+      "short-term scheduler",
+      "dispatcher"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "long-term scheduler",
+    "answer_variants": [
+      "long-term scheduler"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 130,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 140,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "In the message passing model, what does \"blocking send\" mean?",
+    "options": [
+      "the sender is blocked until the message is received"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "the sender is blocked until the message is received",
+    "answer_variants": [
+      "the sender is blocked until the message is received"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 131,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 141,
+    "title": "",
+    "type": "fill_blank",
+    "question": "In a Remote Procedure Call (RPC), the [__1__] is the client-side proxy for the actual procedure on the server.(Please answer in lowercase English)",
+    "options": [],
+    "options_status": "not_applicable_or_not_recorded",
+    "correct_answer": "stubs",
+    "answer_variants": [
+      "stubs"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 136,
+    "source_response_type": "填空",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 142,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "Which IPC system is described as a \"message center\" where processes can send and receive messages?",
+    "options": [
+      "mailbox"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "mailbox",
+    "answer_variants": [
+      "mailbox"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 137,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
+  },
+  {
+    "id": 143,
+    "title": "",
+    "type": "choice",
+    "question": "What type of process spends most of its time performing I/O operations?",
+    "options": [
+      "I/O-bound process",
+      "Background process",
+      "Foreground process",
+      "CPU-bound process"
+    ],
+    "options_status": "known_options_only",
+    "correct_answer": "I/O-bound process",
+    "answer_variants": [
+      "I/O-bound process"
+    ],
+    "answer_basis": "provided_source_answer",
+    "sources": [
+      "作業系統U4.txt"
+    ],
+    "source_question_number": 139,
+    "source_response_type": "單選",
+    "source_incorrect_responses": []
   }
 ]

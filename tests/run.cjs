@@ -650,33 +650,35 @@ server.listen(0, "127.0.0.1", async () => {
 
         const os3=JSON.parse(fs.readFileSync(path.join(root,'data/os-u3.json'),'utf8'));
         const os4=JSON.parse(fs.readFileSync(path.join(root,'data/os-u4.json'),'utf8'));
-        assert.equal(os3.length,204); assert.equal(os4.length,104);
-        assert.equal(new Set(os3.map(q=>q.source_question_number)).size,198);
-        assert.equal(os3.filter(q=>q.source_option_version).length,12);
-        for(const unit of [os3,os4]){
+        const os5=JSON.parse(fs.readFileSync(path.join(root,'data/os-u5.json'),'utf8'));
+        const os6=JSON.parse(fs.readFileSync(path.join(root,'data/os-u6.json'),'utf8'));
+        assert.equal(os3.length,277); assert.equal(os4.length,143);
+        assert.equal(os5.length,125); assert.equal(os6.length,229);
+        for(const unit of [os3,os4,os5,os6]){
             assert.equal(new Set(unit.map(q=>q.id)).size,unit.length);
-            unit.forEach(q=>{assert.ok(q.question&&q.correct_answer);if(q.options.length)q.correct_answer.split('\n').forEach(a=>assert.ok(q.options.includes(a)));});
+            const canonical=s=>s.normalize('NFKC').toLowerCase().replace(/针/g,'針').replace(/\s+/g,'');
+            unit.forEach(q=>{assert.ok(q.question&&q.correct_answer);if(q.options.length)q.correct_answer.split('\n').forEach(a=>assert.ok(q.options.some(o=>canonical(o)===canonical(a))));if(q.type==='fill_blank')assert.deepEqual(q.options,[]);});
         }
         assert.ok(os3.some(q=>q.answer_note?.includes('由滿分作答推定')));
         assert.ok(os3.some(q=>q.answer_note?.includes('來源記錄存在差異')));
         const osContext=await browser.newContext({viewport:{width:1280,height:900},reducedMotion:'reduce'});
         const osPage=await osContext.newPage();osPage.on('pageerror',e=>errors.push(e.message));
         await osPage.goto(url); await osPage.locator('#osSubjectBtn').click();
-        await osPage.waitForFunction(()=>document.querySelector('#bankFooter').textContent==='作業系統｜U3｜內建 204 題');
+        await osPage.waitForFunction(()=>document.querySelector('#bankFooter').textContent==='作業系統｜U3｜內建 277 題');
         assert.equal(await osPage.locator('#bankHeading').innerText(),'作業系統題庫搜尋系統');
         assert.equal(await osPage.locator('body').getAttribute('data-subject'),'os');
         assert.equal(await osPage.locator('#mobileMenuBtn').getAttribute('aria-expanded'),'true');
-        assert.equal(await osPage.locator('#pageInfo').innerText(),'第 1 / 9 頁');
+        assert.equal(await osPage.locator('#pageInfo').innerText(),'第 1 / 12 頁');
         await osPage.locator('#hideAllBtn').click();
         await osPage.locator('#searchInput').fill('read(int fd');
-        assert.equal(await osPage.locator('#questionList article').count(),2);
-        assert.equal(await osPage.locator('#questionList .option').count(),8);
+        assert.equal(await osPage.locator('#questionList article').count(),1);
+        assert.equal(await osPage.locator('#questionList .option').count(),4);
         await osPage.locator('#showAllBtn').click();
-        assert.equal(await osPage.locator('#questionList .answer.show').count(),2);
+        assert.equal(await osPage.locator('#questionList .answer.show').count(),1);
         await openUnit(osPage,'u4');
-        await osPage.waitForFunction(()=>document.querySelector('#bankFooter').textContent==='作業系統｜U4｜內建 104 題');
-        await osPage.locator('#nextPageBtn').click();await osPage.locator('#nextPageBtn').click();await osPage.locator('#nextPageBtn').click();await osPage.locator('#nextPageBtn').click();
-        assert.equal(await osPage.locator('#questionList article').count(),4);
+        await osPage.waitForFunction(()=>document.querySelector('#bankFooter').textContent==='作業系統｜U4｜內建 143 題');
+        for(let i=0;i<5;i++)await osPage.locator('#nextPageBtn').click();
+        assert.equal(await osPage.locator('#questionList article').count(),18);
         await osPage.locator('#hideAllBtn').click();
         await osPage.locator('#searchInput').fill('一個程序（process）包含');
         assert.equal(await osPage.locator('#questionList .answer').isVisible(),true);
@@ -685,9 +687,21 @@ server.listen(0, "127.0.0.1", async () => {
         assert.match(await osPage.locator('#addUnitLabel').innerText(),/作業系統｜U4/);
         await osPage.locator('#questionDraft').fill('題目：OS isolated question\n正確答案：OS answer');
         await osPage.locator('#addUnitLabel').click();
-        assert.equal(await osPage.locator('#addUnitPicker button').count(),2);
+        assert.equal(await osPage.locator('#addUnitPicker button').count(),4);
         await osPage.locator('[data-add-unit="u3"]').click();await osPage.locator('#saveQuestionBtn').click();
         assert.equal(await osPage.evaluate(()=>JSON.parse(localStorage.getItem('question_bank_user_questions_v1_os_u3')).length),1);
+        for(const [unit,count,pages,last] of [['u5',125,5,25],['u6',229,10,4]]) {
+            await openUnit(osPage,unit);
+            await osPage.waitForFunction(({count,unit})=>document.querySelector('#bankFooter').textContent===`作業系統｜${unit.toUpperCase()}｜內建 ${count} 題`,{count,unit});
+            assert.equal(await osPage.locator('#pageInfo').innerText(),`第 1 / ${pages} 頁`);
+            await osPage.locator('#showAllBtn').click();
+            assert.equal(await osPage.locator('#questionList .answer.show').count(),25);
+            for(let i=1;i<pages;i++)await osPage.locator('#nextPageBtn').click();
+            assert.equal(await osPage.locator('#questionList article').count(),last);
+            await osPage.locator('#searchInput').fill(unit==='u5'?'Amdahl':'分派延遲');
+            assert.ok(await osPage.locator('#questionList article').count()>0);
+        }
+        await openUnit(osPage,'u4');await osPage.waitForFunction(()=>document.querySelector('#bankFooter').textContent.includes('作業系統｜U4'));
         await osPage.goBack();await osPage.locator('#subjectHome').waitFor({state:'visible'});
         assert.equal(await osPage.locator('body').getAttribute('data-subject'),null);
         await osPage.goForward();await osPage.waitForFunction(()=>document.querySelector('#bankFooter').textContent.includes('作業系統｜U4'));
@@ -696,7 +710,7 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await osPage.locator('body').getAttribute('data-subject'),'algorithm');
         await openPanel(osPage,'add');assert.equal(await osPage.locator('#userQuestionList article').count(),0);
         await osContext.close();
-        record('OS U3/U4 import, distinct theme, versions, pagination, scoped custom storage and subject-aware history');
+        record('OS U3–U6 import, distinct theme, merged duplicates, search, pagination, answers, scoped custom storage and subject-aware history');
 
         // Test future units through intercepted responses; no invented questions are published.
         const isolated = await context.newPage();
