@@ -9,7 +9,14 @@ const server = http.createServer((req, res) => {
     try { route = decodeURIComponent(new URL(req.url, "http://localhost").pathname); }
     catch { res.writeHead(400).end(); return; }
     if (route.startsWith("/algorithm-question-bank/")) route = route.slice("/algorithm-question-bank".length);
-    const filename = path.resolve(root, "." + (route.endsWith("/") ? route + "index.html" : route));
+    let filename = path.resolve(root, "." + (route.endsWith("/") ? route + "index.html" : route));
+    // Stable historical cases exercise incomplete choices and per-question state.
+    // The preview server and published site always use the current real dataset.
+    if (!process.argv.includes("--serve") && route === "/data/algorithm-u3.json") filename = path.join(__dirname,"fixtures/algorithm-u3-legacy.json");
+    if (!process.argv.includes("--serve") && route === "/js/collaboration-config.js") {
+        res.writeHead(200,{"Content-Type":"text/javascript","Cache-Control":"no-store"});
+        res.end('export const collaborationConfig={enabled:false,url:"",publishableKey:""};'); return;
+    }
     if (!filename.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
     fs.readFile(filename, (error, data) => {
         if (error) { res.writeHead(404).end("Not found"); return; }
@@ -359,7 +366,10 @@ server.listen(0, "127.0.0.1", async () => {
         record("Audio request failure stops the record and recovers on the next click");
 
 
-        const u3Data = JSON.parse(fs.readFileSync(path.join(root, "data/algorithm-u3.json"), "utf8"));
+        const releaseU3 = JSON.parse(fs.readFileSync(path.join(root, "data/algorithm-u3.json"), "utf8"));
+        assert.equal(releaseU3.length,60); assert.equal(new Set(releaseU3.map(q=>q.id)).size,60);
+        releaseU3.forEach(q=>assert.ok(q.question && q.correct_answer && Array.isArray(q.options)));
+        const u3Data = JSON.parse(fs.readFileSync(path.join(__dirname,"fixtures/algorithm-u3-legacy.json"), "utf8"));
         assert.equal(u3Data.length, 60);
         assert.deepEqual(u3Data.map(q => q.id), Array.from({length: 60}, (_, i) => i + 1));
         assert.equal(new Set(u3Data.map(q => q.question)).size, 60);
@@ -431,7 +441,7 @@ server.listen(0, "127.0.0.1", async () => {
         await themePage.waitForFunction(() => document.querySelector("#summary").textContent.includes("25 / 61"));
         await openPanel(themePage,"add");
         assert.match(await themePage.locator("#userQuestionList").innerText(),/U3 custom isolated/);
-        record("Actual U3: 60 questions, 25/25/10 pages, missing options, source reminder and isolated custom storage");
+        record("Current U3 data valid; legacy fixture covers 60 questions, missing options, source reminder and isolated custom storage");
         await openPanel(themePage,'bank');
         await themePage.locator('#hideAllBtn').click();
         const completedChoices = [

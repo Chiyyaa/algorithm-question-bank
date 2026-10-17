@@ -12,7 +12,7 @@ export function loadUserQuestions(subjectId, unitId) {
         return Array.isArray(parsed) ? parsed : [];
     } catch { return []; }
 }
-function parseDraft(text) {
+export function parseDraft(text) {
     const normalized = text.replace(/\r\n?/g, "\n")
         .replace(/\*\*(題目|你的答案|正確答案|選項|得分)[：:]\*\*/g, "$1：");
     const headings = [...normalized.matchAll(/^\s*(題目|你的答案|正確答案|選項|得分)[：:]\s*/gm)];

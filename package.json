@@ -1,0 +1,16 @@
+{
+  "name": "study-question-bank",
+  "private": true,
+  "version": "1.0.0",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "test": "node tests/run.cjs",
+    "test:db": "node tests/collaboration-db.cjs",
+    "test:edge": "node tests/collaboration-edge.cjs",
+    "test:collaboration": "node tests/collaboration-all.cjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.10",
+    "playwright": "1.62.1"
+  }
+}

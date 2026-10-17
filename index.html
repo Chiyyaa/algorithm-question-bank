@@ -51,6 +51,7 @@
         <button id="algorithmSubjectBtn" class="subject-card" type="button"><span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="40" cy="40" rx="34" ry="13" transform="rotate(-35 40 40)"/><ellipse cx="40" cy="40" rx="34" ry="13" transform="rotate(35 40 40)"/><circle cx="40" cy="40" r="22"/><path d="M28 35 22 40 28 45 M52 35 58 40 52 45 M43 30 37 50"/></g><circle cx="67" cy="20" r="4" fill="currentColor"/></svg></span><span class="subject-title">演算法</span><span class="subject-description">依單元練習與搜尋題目</span><span class="subject-status">進入題庫 →</span></button>
         <button id="osSubjectBtn" class="subject-card" type="button"><span class="subject-icon" aria-hidden="true"><svg viewBox="0 0 80 80"><g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="20" y="20" width="40" height="40" rx="8"/><rect x="30" y="30" width="20" height="20" rx="4"/><path d="M30 12V20 M40 12V20 M50 12V20 M30 60V68 M40 60V68 M50 60V68 M12 30H20 M12 40H20 M12 50H20 M60 30H68 M60 40H68 M60 50H68"/></g></svg></span><span class="subject-title">作業系統</span><span class="subject-description">依單元練習與搜尋題目</span><span class="subject-status">進入題庫 →</span></button>
     </div>
+    <p class="home-collaboration"><a href="./collaborate.html">題庫協作登入 ↗</a></p>
     <noscript><p class="missing">請啟用 JavaScript 才能選擇科目與使用題庫。</p></noscript>
     </div>
     <button id="musicToggleBtn" class="music-toggle" type="button" aria-label="展開音樂面板" aria-expanded="false" aria-controls="musicPanel" title="展開音樂面板">
@@ -79,10 +80,11 @@
     <nav class="sidebar-nav">
         <button class="nav-btn active" data-panel="bank" type="button">🔎 題庫搜尋</button>
         <button class="nav-btn" data-panel="units" type="button">📖 選擇單元</button>
-        <button class="nav-btn" data-panel="add" type="button">➕ 新增題庫</button>
+        <button class="nav-btn" data-panel="add" type="button">➕ 私人題目</button>
     </nav>
     <button id="switchSubjectBtn" class="nav-btn" type="button">↩ 切換科目</button>
-    <div class="sidebar-note">自行新增的題目會儲存在目前瀏覽器中。</div>
+    <a class="nav-btn" href="./collaborate.html">✎ 題庫協作／審核</a>
+    <div class="sidebar-note">私人題目只儲存在目前瀏覽器；共用題目請登入協作頁面提交。</div>
 </aside>
 <div id="studyShell" class="main-shell" hidden>
 <div class="container">
@@ -139,8 +141,8 @@
 
     <section id="panel-add" class="panel">
         <header>
-            <h1>新增題庫</h1>
-            <p class="subtitle">貼上題目與正確答案，即可新增。</p>
+            <h1>私人題目</h1>
+            <p class="subtitle">僅儲存在這個瀏覽器。要提供給所有人練習，請至 <a href="./collaborate.html">題庫協作</a> 送出審核。</p>
         </header>
 
         <div class="form-card">
@@ -170,7 +172,7 @@
 <button id="backToTopBtn" class="back-to-top" type="button" aria-label="回到頁面頂端" hidden>↑ 回到頂端</button>
 <div id="toast" class="toast"></div>
 
-<script type="module" src="./js/app.js?v=20261009-os"></script>
+<script type="module" src="./js/app.js?v=20261017"></script>
 </body>
 </html>
 

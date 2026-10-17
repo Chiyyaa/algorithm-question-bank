@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="referrer" content="strict-origin-when-cross-origin">
+ <title>題庫協作</title>
+ <link rel="stylesheet" href="./css/style.css?v=20261009-os">
+ <link rel="stylesheet" href="./css/collaboration.css?v=20261017">
+</head>
+<body class="collaboration-page">
+<main class="collab-container">
+ <a class="back-link" href="./index.html">← 回到題庫</a>
+ <header class="collab-header"><div><p class="eyebrow">一起整理，安心練習</p><h1>題庫協作</h1><p class="subtitle">提交題目，由管理員審核後發布。</p></div>
+ <div id="accountBar" hidden><span id="accountName"></span><button id="passwordOpen" type="button">變更密碼</button><button id="logoutBtn" type="button">登出</button></div></header>
+ <p id="collabMessage" role="status" aria-live="polite" hidden></p>
+ <section id="notConfigured" class="form-card" hidden><h2>協作服務準備中</h2><p>目前仍可正常使用公開題庫，協作登入將在服務啟用後開放。</p></section>
+ <section id="loginCard" class="form-card login-card" hidden>
+  <h2>協作者登入</h2><p class="subtitle">請使用管理員提供的帳號。</p>
+  <form id="loginForm"><label for="loginEmail">Email</label><input id="loginEmail" type="email" autocomplete="username" required maxlength="254">
+  <label for="loginPassword">密碼</label><input id="loginPassword" type="password" autocomplete="current-password" required>
+  <button class="primary-btn" type="submit">登入</button></form>
+ </section>
+ <section id="collabWorkspace" hidden>
+  <nav class="collab-tabs" aria-label="協作功能">
+   <button type="button" data-tab="mine" aria-pressed="true">我的題目</button>
+   <button type="button" data-tab="pending" data-admin hidden>待審核</button>
+   <button type="button" data-tab="published" data-admin hidden>已發布</button>
+   <button type="button" data-tab="members" data-admin hidden>協作者</button>
+   <button type="button" data-tab="audit">操作紀錄</button>
+   <button id="refreshCollab" type="button">重新整理</button>
+  </nav>
+  <div id="questionsView" class="collab-grid">
+   <section class="form-card" id="submissionEditor">
+    <div class="section-heading"><h2 id="editorHeading">新增題目</h2><button id="newSubmission" type="button">開新草稿</button></div>
+    <form id="submissionForm">
+     <div class="destination-fields"><div><label for="submissionSubject">科目</label><select id="submissionSubject"></select></div><div><label for="submissionUnit">單元</label><select id="submissionUnit"></select></div></div>
+     <label for="submissionDraft">題目與答案</label>
+     <textarea id="submissionDraft" rows="12" required maxlength="30000" placeholder="題目：請輸入題目&#10;&#10;A. 選項一&#10;B. 選項二&#10;&#10;正確答案：&#10;選項一"></textarea>
+     <div class="form-actions"><button id="saveSubmission" type="button">儲存草稿</button><button id="submitForReview" class="primary-btn" type="submit">送出審核</button></div>
+     <p class="help-text">草稿只有你與管理員可見；送審後需待審核或退回，才能繼續修改。</p>
+    </form>
+   </section>
+   <section><div class="section-heading"><h2 id="listHeading">我的題目</h2><span id="submissionCount"></span></div><div id="submissionList"></div><button id="moreSubmissions" type="button" hidden>載入更多</button></section>
+  </div>
+  <section id="membersView" hidden>
+   <div class="form-card"><h2>新增協作者</h2><form id="memberForm" class="member-form">
+    <div><label for="memberName">顯示名稱</label><input id="memberName" required maxlength="80" autocomplete="off"></div>
+    <div><label for="memberEmail">Email</label><input id="memberEmail" type="email" required maxlength="254" autocomplete="off"></div>
+    <button class="primary-btn" type="submit">建立帳號</button></form>
+    <p class="help-text">建立後顯示一次初始密碼，由你交給本人；不會自動寄信。</p>
+    <div id="createdCredentials" hidden><p>帳號已建立。請私下交給本人，並提醒登入後變更密碼。</p><label for="initialPassword">初始密碼（離開本頁即不再顯示）</label><input id="initialPassword" readonly autocomplete="off"><button id="dismissCredentials" type="button">已保存，隱藏密碼</button></div>
+   </div><h2>協作者帳號</h2><div id="memberList"></div>
+  </section>
+  <section id="auditView" hidden><h2>操作紀錄</h2><p class="help-text">最近 100 筆紀錄；資料庫保留完整歷程。</p><div id="auditList"></div></section>
+ </section>
+</main>
+<dialog id="reviewDialog"><div class="section-heading"><h2 id="reviewHeading">審核題目</h2><button id="closeReview" type="button" aria-label="關閉審核視窗">✕</button></div>
+ <p id="reviewContext" class="subtitle"></p><label for="reviewDraft">題目與答案</label><textarea id="reviewDraft" rows="12" maxlength="30000"></textarea>
+ <label for="reviewNote">審核備註／退回原因</label><textarea id="reviewNote" rows="3" maxlength="2000"></textarea>
+ <div class="form-actions"><button id="returnSubmission" type="button">退回修改</button><button id="approveSubmission" class="primary-btn" type="button">核准並發布</button></div>
+</dialog>
+<dialog id="passwordDialog"><h2>變更密碼</h2><form id="passwordForm"><label for="newPassword">新密碼（至少 12 個字元）</label><input id="newPassword" type="password" autocomplete="new-password" minlength="12" required><label for="confirmPassword">再次輸入新密碼</label><input id="confirmPassword" type="password" autocomplete="new-password" minlength="12" required><div class="form-actions"><button id="cancelPassword" type="button">取消</button><button type="submit" class="primary-btn">更新密碼</button></div></form></dialog>
+<script type="module" src="./js/collaboration.js?v=20261017"></script>
+</body></html>

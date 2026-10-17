@@ -1,8 +1,9 @@
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js";
-import { loadUserQuestions, initCustomQuestions } from "./custom-questions.js?v=20261009-os";
+import { loadUserQuestions, initCustomQuestions } from "./custom-questions.js?v=20261017";
 import { initNavigation } from "./navigation.js";
 import { SUBJECTS, getUnit } from "./units.js?v=20261009-os";
 import { initMusic } from "./music.js";
+import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017";
 
 initHomeTheme();
 const { close: closeMusic } = initMusic();
@@ -66,6 +67,7 @@ function initHomeSparkles() {
 }
 
 const QUESTIONS = [];
+const sharedCounts = new Map();
 let currentSubject = null;
 let currentUnit = null;
 let requestVersion = 0;
@@ -241,6 +243,7 @@ list.addEventListener("click", event => {
 });
 
 function renderUnitChoices() {
+    if (!currentSubject) return;
     document.getElementById("unitGrid").innerHTML = currentSubject.units.map(unit => {
         const active = unit.id === currentUnit?.id;
         const available = !!unit.dataUrl;
@@ -248,11 +251,15 @@ function renderUnitChoices() {
             type="button" ${available ? "" : "disabled"} ${active ? 'aria-current="true"' : ""}>
             <span class="unit-card-top"><span class="unit-card-name">${escapeHtml(unit.name)}</span>
             <span class="unit-card-status">${active ? "目前單元" : available ? "可練習" : "尚未開放"}</span></span>
-            <span class="unit-card-count">${unit.questionCount ? `<strong>${unit.questionCount}</strong> 題` : "準備中"}</span>
+            <span class="unit-card-count">${unit.questionCount ? `<strong>${unit.questionCount + (sharedCounts.get(currentSubject.id + ':' + unit.id) || 0)}</strong> 題` : "準備中"}</span>
             <span class="unit-card-action">${active ? "繼續練習" : available ? "進入題庫" : "敬請期待"}<span aria-hidden="true">${available ? "↗" : "—"}</span></span>
         </button>`;
     }).join("");
 }
+if (collaborationEnabled()) publishedCounts().then(rows => {
+    rows.forEach(row => sharedCounts.set(row.subject_id + ':' + row.unit_id, Number(row.question_count)));
+    renderUnitChoices();
+}).catch(() => { /* Built-in counts remain available if the shared service is offline. */ });
 
 function selectUnit(unitId) {
     const unit = getUnit(currentSubject?.id, unitId);
@@ -370,10 +377,23 @@ async function loadQuestionBank() {
             throw new Error("Invalid question data");
         }
         if (version !== requestVersion) return;
-        QUESTIONS.push(...builtInQuestions, ...loadUserQuestions(subject.id, unit.id));
+        let sharedQuestions = [], sharedFailed = false;
+        try { sharedQuestions = await loadPublishedQuestions(subject.id, unit.id); }
+        catch { sharedFailed = true; }
+        if (version !== requestVersion) return;
+        QUESTIONS.push(...builtInQuestions, ...sharedQuestions, ...loadUserQuestions(subject.id, unit.id));
+        if (!sharedFailed && collaborationEnabled()) { sharedCounts.set(subject.id + ':' + unit.id, sharedQuestions.length); renderUnitChoices(); }
         customQuestions.refresh();
         document.getElementById("bankFooter").textContent =
-            subject.name + "｜" + unit.name + "｜內建 " + builtInQuestions.length + " 題";
+            subject.name + "｜" + unit.name + "｜內建 " + builtInQuestions.length + " 題" +
+            (collaborationEnabled() ? "｜共用 " + sharedQuestions.length + " 題" : "");
+        if (sharedFailed) {
+            const warning = document.createElement("p"); warning.className = "missing"; warning.setAttribute("role", "status");
+            warning.append("共用題庫暫時無法載入，目前僅顯示內建與私人題目。 ");
+            const retry = document.createElement("button"); retry.type = "button"; retry.textContent = "重試共用題庫";
+            retry.addEventListener("click", () => { if (loading) return; ready = false; QUESTIONS.length = 0; loadQuestionBank(); });
+            warning.append(retry); document.getElementById("bankFooter").append(warning);
+        }
         ready = true;
         controls.forEach(control => { control.disabled = false; });
         render();

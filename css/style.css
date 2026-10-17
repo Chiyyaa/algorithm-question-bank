@@ -832,3 +832,7 @@ body[data-subject="os"] .unit-card:hover:not(:disabled) { background: #f4ebfb; }
 body[data-subject="os"] .destination-toggle { color: #7c3fb5; }
 body[data-subject="os"] .add-unit-picker button[aria-pressed="true"] { color: #7c3fb5; border-color: #af82cf; background: #f1e8fa; }
 body[data-subject="os"] .destination-toggle:focus-visible { outline-color: #af82cf; }
+.home-collaboration { margin:24px 0 0; text-align:center; }
+.home-collaboration a { color:#506987; font-size:14px; text-underline-offset:4px; }
+.subject-home[data-theme="night"] .home-collaboration a { color:#c5d5ed; }
+a.nav-btn { display:block; text-decoration:none; }
