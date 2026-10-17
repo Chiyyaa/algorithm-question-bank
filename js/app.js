@@ -163,6 +163,7 @@ function render() {
             <div class="question">${highlight(q.question || "", term)}</div>
 
             ${q.type === "disputed" ? '<div class="missing">本題原標準答案含爭議項，請留意答案下方提醒。</div>' : ""}
+            ${q.image && q.image.startsWith("../images/") ? `<img class="question-image" src="${escapeHtml(new URL(q.image, import.meta.url).href)}" alt="${escapeHtml(q.image_alt || "題目附圖")}" loading="lazy" style="display:block;max-width:100%;height:auto;margin:1rem 0">` : ""}
             ${optionsHtml}
             ${partialOptionsNote}
 

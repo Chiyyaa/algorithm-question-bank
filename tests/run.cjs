@@ -663,7 +663,7 @@ server.listen(0, "127.0.0.1", async () => {
         const os5=JSON.parse(fs.readFileSync(path.join(root,'data/os-u5.json'),'utf8'));
         const os6=JSON.parse(fs.readFileSync(path.join(root,'data/os-u6.json'),'utf8'));
         assert.equal(os3.length,277); assert.equal(os4.length,143);
-        assert.equal(os5.length,125); assert.equal(os6.length,229);
+        assert.equal(os5.length,125); assert.equal(os6.length,288);
         for(const unit of [os3,os4,os5,os6]){
             assert.equal(new Set(unit.map(q=>q.id)).size,unit.length);
             const canonical=s=>s.normalize('NFKC').toLowerCase().replace(/针/g,'針').replace(/\s+/g,'');
@@ -700,7 +700,7 @@ server.listen(0, "127.0.0.1", async () => {
         assert.equal(await osPage.locator('#addUnitPicker button').count(),4);
         await osPage.locator('[data-add-unit="u3"]').click();await osPage.locator('#saveQuestionBtn').click();
         assert.equal(await osPage.evaluate(()=>JSON.parse(localStorage.getItem('question_bank_user_questions_v1_os_u3')).length),1);
-        for(const [unit,count,pages,last] of [['u5',125,5,25],['u6',229,10,4]]) {
+        for(const [unit,count,pages,last] of [['u5',125,5,25],['u6',288,12,13]]) {
             await openUnit(osPage,unit);
             await osPage.waitForFunction(({count,unit})=>document.querySelector('#bankFooter').textContent===`作業系統｜${unit.toUpperCase()}｜內建 ${count} 題`,{count,unit});
             assert.equal(await osPage.locator('#pageInfo').innerText(),`第 1 / ${pages} 頁`);
@@ -710,6 +710,16 @@ server.listen(0, "127.0.0.1", async () => {
             assert.equal(await osPage.locator('#questionList article').count(),last);
             await osPage.locator('#searchInput').fill(unit==='u5'?'Amdahl':'分派延遲');
             assert.ok(await osPage.locator('#questionList article').count()>0);
+        }
+        for (const [term, id] of [['RR 排程：P1', 47], ['圖中時間邊界', 163]]) {
+            await osPage.locator('#searchInput').fill(term);
+            const diagram = osPage.locator('[data-id="' + id + '"] img.question-image');
+            await diagram.scrollIntoViewIfNeeded();
+            await osPage.waitForFunction(id => {
+                const img = document.querySelector('[data-id="' + id + '"] img.question-image');
+                return img && img.complete && img.naturalWidth > 0;
+            }, id);
+            assert.match(await diagram.getAttribute('src'), /images\/os-u6-rr\.png$/);
         }
         await openUnit(osPage,'u4');await osPage.waitForFunction(()=>document.querySelector('#bankFooter').textContent.includes('作業系統｜U4'));
         await osPage.goBack();await osPage.locator('#subjectHome').waitFor({state:'visible'});
