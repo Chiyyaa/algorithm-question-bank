@@ -1,4 +1,5 @@
 // Pure study rules, shared by the page and boundary tests.
+export const QUIZ_AUDIO = Object.freeze({ autoDelayMs:1000, manualReplays:2 });
 export const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 
 export function weekInfo(now, schedule, wordCount) {
@@ -46,14 +47,14 @@ export function createQuiz(words, info, count, random = Math.random) {
     return {
         week: info.week, start: info.start, end: info.end, index: 0,
         items: sampleWords(wordsForWeek(words, info), count, random)
-            .map(word => ({ word, input: '', answered: false, correct: false, plays: 0 })),
-        complete: false
+            .map(word => ({ word, input: '', answered: false, correct: false, manualPlays: 0, autoAttempted: false })),
+        complete: false, gaveUp: false
     };
 }
 
 export function submitAnswer(quiz, value) {
     const item = quiz.items[quiz.index];
-    if (!item || item.answered || !String(value).trim()) return false;
+    if (quiz.complete || !item || item.answered || !String(value).trim()) return false;
     item.input = String(value).trim();
     item.correct = isCorrect(item.input, item.word.word);
     item.answered = true;
@@ -72,4 +73,26 @@ export function serverTime(dateHeader, ageHeader, roundTripMs = 0) {
     const age = Number(ageHeader || 0);
     if (!Number.isFinite(date) || !Number.isFinite(age) || age < 0) throw new Error('無法取得網站時間');
     return date + age * 1000 + Math.max(0, roundTripMs) / 2;
+}
+
+
+export function resultRating(correct) {
+    if (correct >= 20) return { key:'perfect', text:'很棒 恭喜過關', image:'./images/english-result-perfect.jpg' };
+    if (correct === 19) return { key:'almost', text:'嘻嘻 差一題 ! !', image:'./images/english-result-almost.jpg' };
+    if (correct >= 8) return { key:'good', text:'還不錯 就只有不錯', image:'./images/english-result-good.jpg' };
+    return { key:'low', text:'你拉完了還不背...', image:'./images/english-result-low.jpg' };
+}
+
+export function quizSummary(quiz) {
+    const correct = quiz.items.filter(item => item.answered && item.correct).length;
+    const incorrect = quiz.items.filter(item => item.answered && !item.correct);
+    const unanswered = quiz.items.filter(item => !item.answered);
+    return { correct, incorrect, unanswered, score:Math.round(correct / quiz.items.length * 100) };
+}
+
+export function finishQuiz(quiz) {
+    if (!quiz || quiz.complete) return false;
+    quiz.complete = true;
+    quiz.gaveUp = true;
+    return true;
 }

@@ -1,4 +1,4 @@
-import { weekInfo, wordsForWeek, quizPrompt, normalizeAnswer, createQuiz, submitAnswer, advanceQuiz, serverTime } from './english-core.js?v=20261017-english1';
+import { weekInfo, wordsForWeek, quizPrompt, normalizeAnswer, createQuiz, submitAnswer, advanceQuiz, serverTime, QUIZ_AUDIO, resultRating, quizSummary, finishQuiz } from './english-core.js?v=20261017-english2';
 
 const $ = id => document.getElementById(id);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -8,7 +8,7 @@ const taipei = new Intl.DateTimeFormat('zh-TW', { timeZone:'Asia/Taipei', month:
 let data, currentWeek, quiz = null;
 let view = location.hash === '#quiz' ? 'quiz' : 'vocabulary';
 let clockBase = Date.now(), clockStart = performance.now(), clockSource = 'device', syncing = false;
-let activeSpeech = null, speechToken = 0, speechTimer;
+let activeSpeech = null, speechToken = 0, speechTimer, autoSpeechTimer;
 const hasSpeech = !!window.speechSynthesis && typeof window.SpeechSynthesisUtterance === 'function';
 const now = () => clockBase + performance.now() - clockStart;
 
@@ -38,20 +38,29 @@ updateMenu();
 function stopSpeech() {
     speechToken++;
     clearTimeout(speechTimer);
+    clearTimeout(autoSpeechTimer);
     activeSpeech = null;
     if (hasSpeech) speechSynthesis.cancel();
     updateSpeechButtons();
 }
+
 function updateSpeechButtons() {
     document.querySelectorAll('[data-speak]').forEach(button => {
-        const current = button.dataset.speak === 'quiz' ? quiz?.items[quiz.index] : null;
-        button.disabled = !hasSpeech || !!activeSpeech || !!(current && current.plays >= data.schedule.maxPlays);
+        const current = button.dataset.speak === 'quiz' && !quiz?.complete ? quiz?.items[quiz.index] : null;
+        button.disabled = !hasSpeech || !!activeSpeech ||
+            !!(current && (!current.autoAttempted || current.manualPlays >= QUIZ_AUDIO.manualReplays));
     });
     const count = $('playCount');
-    if (count && quiz) count.textContent = `剩餘 ${Math.max(0, data.schedule.maxPlays - quiz.items[quiz.index].plays)} 次`;
+    if (count && quiz && !quiz.complete) {
+        const current = quiz.items[quiz.index];
+        count.textContent = current.autoAttempted
+            ? `手動剩餘 ${Math.max(0, QUIZ_AUDIO.manualReplays - current.manualPlays)} 次`
+            : '1 秒後自動播放';
+    }
 }
-function speak(word, item = null) {
-    if (!hasSpeech || activeSpeech || (item && item.plays >= data.schedule.maxPlays)) return;
+
+function speak(word, item = null, automatic = false) {
+    if (!hasSpeech || activeSpeech || (item && !automatic && item.manualPlays >= QUIZ_AUDIO.manualReplays)) return;
     const token = ++speechToken;
     const utterance = new SpeechSynthesisUtterance(word.word);
     const voices = speechSynthesis.getVoices();
@@ -60,32 +69,52 @@ function speak(word, item = null) {
     utterance.lang = voice?.lang || 'en-US';
     utterance.rate = 0.85;
     let counted = false;
-    activeSpeech = utterance; // Keep a reference until completion.
+    activeSpeech = utterance;
     $('speechStatus').textContent = '';
+    const inlineNote = $('quizAudioNotice');
+    if (inlineNote) inlineNote.hidden = true;
     function finish(failed) {
         if (token !== speechToken) return;
         clearTimeout(speechTimer);
         activeSpeech = null;
         if (failed) {
-            if (counted && item) item.plays--;
-            $('speechStatus').textContent = '這次發音未能完成，未扣除播放次數。請確認裝置音量及英文語音設定後重試。';
+            if (counted && item) item.manualPlays--;
+            const message = automatic
+                ? '自動發音未能播放。請按發音按鈕手動播放，每題仍可手動播放 2 次。'
+                : '這次發音未能完成，未扣除手動次數。請確認裝置音量及英文語音設定後重試。';
+            $('speechStatus').textContent = message;
+            const note = $('quizAudioNotice');
+            if (note) { note.textContent = message; note.hidden = false; }
         }
         updateSpeechButtons();
     }
+    function timeout() {
+        if (token !== speechToken) return;
+        finish(true); speechToken++; speechSynthesis.cancel();
+    }
     utterance.onstart = () => {
         if (token !== speechToken) return;
-        if (item) { item.plays++; counted = true; }
+        clearTimeout(speechTimer);
+        speechTimer = setTimeout(timeout, 20000);
+        if (item && !automatic) { item.manualPlays++; counted = true; }
         updateSpeechButtons();
     };
     utterance.onend = () => finish(false);
     utterance.onerror = () => finish(true);
-    // Browsers with missing voices can otherwise leave the button waiting forever.
-    speechTimer = setTimeout(() => {
-        if (token !== speechToken) return;
-        finish(true); speechToken++; speechSynthesis.cancel();
-    }, 20000);
+    speechTimer = setTimeout(timeout, 8000);
     updateSpeechButtons();
     try { speechSynthesis.cancel(); speechSynthesis.speak(utterance); } catch { finish(true); }
+}
+
+function scheduleQuestionAudio(item) {
+    clearTimeout(autoSpeechTimer);
+    if (!hasSpeech || !item || item.answered || item.autoAttempted || view !== 'quiz' || document.hidden || quiz?.complete) return;
+    autoSpeechTimer = setTimeout(() => {
+        if (view !== 'quiz' || document.hidden || quiz?.complete || quiz?.items[quiz.index] !== item || item.answered || item.autoAttempted) return;
+        item.autoAttempted = true;
+        speak(item.word, item, true);
+        updateSpeechButtons();
+    }, QUIZ_AUDIO.autoDelayMs);
 }
 document.addEventListener('click', event => {
     const button = event.target.closest('[data-speak]');
@@ -121,7 +150,7 @@ async function syncClock() {
 }
 $('syncClockBtn').addEventListener('click', syncClock);
 window.addEventListener('online', syncClock);
-document.addEventListener('visibilitychange', () => { if (!document.hidden) { updateWeek(); syncClock(); } });
+document.addEventListener('visibilitychange', () => { if (document.hidden) { stopSpeech(); } else { updateWeek(); syncClock(); if (view === 'quiz' && quiz && !quiz.complete) scheduleQuestionAudio(quiz.items[quiz.index]); } });
 setInterval(syncClock, 5 * 60 * 1000);
 setInterval(() => { if (!document.hidden) updateWeek(); }, 1000);
 
@@ -187,12 +216,13 @@ $('goQuizBtn').addEventListener('click', () => showView('quiz'));
 window.addEventListener('popstate', () => showView(location.hash === '#quiz' ? 'quiz' : 'vocabulary', false));
 
 function renderQuiz(focus = false) {
+    clearTimeout(autoSpeechTimer);
     if (!data || !currentWeek) return;
     const content = $('quizContent');
     if (!quiz) {
         const available = wordsForWeek(data.words, currentWeek).length;
         const count = Math.min(data.schedule.quizSize, available);
-        content.innerHTML = `<div class="quiz-intro"><div class="quiz-emblem" aria-hidden="true">Aa</div><h3>來試試這週記住了多少</h3><p>第 ${currentWeek.week} 週 · ${currentWeek.start}–${currentWeek.end} 號</p><div class="quiz-facts"><span>隨機 ${count} 題</span><span>中文 → 英文</span><span>立即看答案</span></div><p>看中文與詞性，輸入英文單字或片語。</p><p>每題可按發音 ${data.schedule.maxPlays} 次，聽一聽再作答。</p><button id="startQuizBtn" class="primary-btn" type="button" style="margin-top:22px"${count ? '' : ' disabled'}>開始本週測驗 →</button></div>`;
+        content.innerHTML = `<div class="quiz-intro"><div class="quiz-emblem" aria-hidden="true">Aa</div><h3>來試試這週記住了多少</h3><p>第 ${currentWeek.week} 週 · ${currentWeek.start}–${currentWeek.end} 號</p><div class="quiz-facts"><span>隨機 ${count} 題</span><span>中文 → 英文</span><span>立即看答案</span></div><p>看中文與詞性，輸入英文單字或片語。</p><p>每題出現 1 秒後自動發音，另可手動重播 2 次。</p><button id="startQuizBtn" class="primary-btn" type="button" style="margin-top:22px"${count ? '' : ' disabled'}>開始本週測驗 →</button></div>`;
         $('startQuizBtn').addEventListener('click', () => {
             updateWeek();
             quiz = createQuiz(data.words, currentWeek, data.schedule.quizSize);
@@ -202,8 +232,13 @@ function renderQuiz(focus = false) {
     }
     if (quiz.complete) { renderResults(); return; }
     const item = quiz.items[quiz.index];
+    if (item.answered) item.autoAttempted = true;
     const answered = quiz.items.filter(i => i.answered).length;
-    content.innerHTML = `<article class="quiz-card" data-question-id="${item.word.id}"><div class="quiz-progress-row"><span>第 ${quiz.week} 週 · 單字測驗</span><span>第 ${quiz.index + 1} / ${quiz.items.length} 題</span></div><div class="quiz-progress" role="progressbar" aria-label="已作答題數" aria-valuemin="0" aria-valuemax="${quiz.items.length}" aria-valuenow="${answered}"><span style="width:${answered / quiz.items.length * 100}%"></span></div><div class="prompt-top"><div><p class="prompt-label">請寫出對應的英文</p><p class="quiz-meaning">${escape(quizPrompt(item.word.meaning))}</p><span class="quiz-pos">${escape(item.word.pos)}</span></div><div class="quiz-audio"><button class="speak-button" type="button" data-speak="quiz" aria-label="播放這題的英文發音">${speakerIcon}</button><small id="playCount"></small></div></div><form id="spellingForm"><div class="answer-field"><label for="spellingAnswer">英文作答</label><input id="spellingAnswer" name="answer" type="text" lang="en" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="輸入英文單字或片語" value="${escape(item.input)}"${item.answered ? ' disabled' : ''} aria-describedby="answerHint answerError"><p id="answerHint" class="answer-hint">不分大小寫；單字間請保留空格，連字號及其他符號須正確。</p><p id="answerError" class="answer-error" role="alert" hidden>請先輸入英文答案。</p></div>${item.answered ? `<div id="answerFeedback" class="feedback ${item.correct ? 'correct' : 'incorrect'}" role="status"><h3>${item.correct ? '✓ 答對了' : '再記一次，下一題加油'}</h3><p>正確答案：<span class="correct-word" lang="en">${escape(item.word.word)}</span></p>${item.correct ? '' : `<p>你的答案：${escape(item.input)}</p>`}<p>${escape(item.word.meaning)} · ${escape(item.word.pos)}</p></div><div class="quiz-actions"><button id="nextQuestionBtn" class="primary-btn" type="button">${quiz.index === quiz.items.length - 1 ? '查看測驗結果' : '下一題 →'}</button></div>` : '<div class="quiz-actions"><button class="primary-btn" type="submit">送出答案</button></div>'}</form></article>`;
+    content.innerHTML = `<article class="quiz-card" data-question-id="${item.word.id}"><div class="quiz-quit-row"><button id="giveUpQuizBtn" class="give-up-button" type="button">我想放棄</button></div><div class="quiz-progress-row"><span>第 ${quiz.week} 週 · 單字測驗</span><span>第 ${quiz.index + 1} / ${quiz.items.length} 題</span></div><div class="quiz-progress" role="progressbar" aria-label="已作答題數" aria-valuemin="0" aria-valuemax="${quiz.items.length}" aria-valuenow="${answered}"><span style="width:${answered / quiz.items.length * 100}%"></span></div><div class="prompt-top"><div><p class="prompt-label">請寫出對應的英文</p><p class="quiz-meaning">${escape(quizPrompt(item.word.meaning))}</p><span class="quiz-pos">${escape(item.word.pos)}</span></div><div class="quiz-audio"><button class="speak-button" type="button" data-speak="quiz" aria-label="播放這題的英文發音">${speakerIcon}</button><small id="playCount"></small></div></div><p id="quizAudioNotice" class="audio-notice" role="status" hidden></p><form id="spellingForm"><div class="answer-field"><label for="spellingAnswer">英文作答</label><input id="spellingAnswer" name="answer" type="text" lang="en" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="輸入英文單字或片語" value="${escape(item.input)}"${item.answered ? ' disabled' : ''} aria-describedby="answerHint answerError"><p id="answerHint" class="answer-hint">不分大小寫；單字間請保留空格，連字號及其他符號須正確。</p><p id="answerError" class="answer-error" role="alert" hidden>請先輸入英文答案。</p></div>${item.answered ? `<div id="answerFeedback" class="feedback ${item.correct ? 'correct' : 'incorrect'}" role="status"><h3>${item.correct ? '✓ 答對了' : '再記一次，下一題加油'}</h3><p>正確答案：<span class="correct-word" lang="en">${escape(item.word.word)}</span></p>${item.correct ? '' : `<p>你的答案：${escape(item.input)}</p>`}<p>${escape(item.word.meaning)} · ${escape(item.word.pos)}</p></div><div class="quiz-actions"><button id="nextQuestionBtn" class="primary-btn" type="button">${quiz.index === quiz.items.length - 1 ? '查看測驗結果' : '下一題 →'}</button></div>` : '<div class="quiz-actions"><button class="primary-btn" type="submit">送出答案</button></div>'}</form></article>`;
+    $('giveUpQuizBtn').addEventListener('click', () => {
+        stopSpeech();
+        if (finishQuiz(quiz)) { renderResults(); updateWeek(); $('resultHeading').focus({preventScroll:true}); window.scrollTo({top:0,behavior:'instant'}); }
+    });
     $('spellingAnswer').addEventListener('input', event => { if (!item.answered) item.input = event.target.value; });
     $('spellingForm').addEventListener('submit', event => {
         event.preventDefault();
@@ -216,14 +251,16 @@ function renderQuiz(focus = false) {
         if (advanceQuiz(quiz)) renderQuiz(true);
     });
     updateSpeechButtons();
+    scheduleQuestionAudio(item);
     if (focus && !item.answered) $('spellingAnswer').focus({preventScroll:true});
 }
 
 function renderResults() {
-    const correct = quiz.items.filter(i => i.correct).length;
-    const wrong = quiz.items.filter(i => !i.correct);
-    const score = Math.round(correct / quiz.items.length * 100);
-    $('quizContent').innerHTML = `<section class="result-card"><header><p class="prompt-label">第 ${quiz.week} 週 · 測驗完成</p><h3>今天的練習，完成了。</h3><p class="result-score">${score}<small> / 100</small></p><p class="result-caption">答對 ${correct} / ${quiz.items.length} 題 · ${wrong.length ? `再複習 ${wrong.length} 個單字` : '全部答對，繼續保持！'}</p></header><h3>${wrong.length ? '這些單字，再看一次' : '本次單字回顧'}</h3>${(wrong.length ? wrong : quiz.items).map(item => `<div class="review-item"><p>${escape(item.word.meaning)} <span class="word-pos">${escape(item.word.pos)}</span></p><p class="review-answer" lang="en">${escape(item.word.word)}</p>${item.correct ? '' : `<p class="review-input">你的答案：${escape(item.input)}</p>`}</div>`).join('')}<div class="quiz-actions"><button id="returnWordsBtn" type="button">回到單字表</button><button id="restartQuizBtn" class="primary-btn" type="button">再測驗一次</button></div></section>`;
+    stopSpeech();
+    const summary = quizSummary(quiz);
+    const rating = resultRating(summary.correct);
+    const review = quiz.items.filter(item => !item.answered || !item.correct);
+    $('quizContent').innerHTML = `<section class="result-card" data-rating="${rating.key}"><header><p class="prompt-label">第 ${quiz.week} 週 · ${quiz.gaveUp ? '提前結算' : '測驗完成'}</p><h3 id="resultHeading" tabindex="-1">${escape(rating.text)}</h3><img class="result-rating-image" src="${escape(rating.image)}" alt="${escape(rating.text)}"><p class="result-score">${summary.score}<small> / 100</small></p><p class="result-caption">答對 ${summary.correct} / ${quiz.items.length} 題 · 答錯 ${summary.incorrect.length} 題 · 未作答 ${summary.unanswered.length} 題</p></header>${review.length ? `<h3>錯誤與未作答的單字</h3>${review.map(item => `<div class="review-item" data-review-status="${item.answered ? 'incorrect' : 'unanswered'}"><span class="review-status ${item.answered ? 'incorrect' : 'unanswered'}">${item.answered ? '答錯' : '未作答'}</span><p>${escape(item.word.meaning)} <span class="word-pos">${escape(item.word.pos)}</span></p><p class="review-answer" lang="en">${escape(item.word.word)}</p>${item.answered ? `<p class="review-input">你的答案：${escape(item.input)}</p>` : item.input ? `<p class="review-input">尚未送出：${escape(item.input)}</p>` : ''}</div>`).join('')}` : '<p class="all-correct-note">20 題全對，這次沒有錯誤或未作答的單字！</p>'}<div class="quiz-actions"><button id="returnWordsBtn" type="button">回到單字表</button><button id="restartQuizBtn" class="primary-btn" type="button">再測驗一次</button></div></section>`;
     $('returnWordsBtn').addEventListener('click', () => { quiz = null; showView('vocabulary'); });
     $('restartQuizBtn').addEventListener('click', () => { stopSpeech(); updateWeek(); quiz = createQuiz(data.words, currentWeek, data.schedule.quizSize); renderQuiz(true); updateWeek(); });
 }
