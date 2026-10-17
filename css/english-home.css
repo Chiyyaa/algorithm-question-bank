@@ -1,0 +1,11 @@
+/* The new subject shares the existing home composition and its day/night theme. */
+.subject-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+a.subject-card { text-decoration: none; font-family: inherit; }
+.subject-card.english-subject { background: linear-gradient(135deg,rgba(255,255,255,.83),rgba(218,239,228,.65) 65%,rgba(224,237,225,.65)); }
+.english-subject .subject-icon { color: #608c7c; }
+.english-subject .subject-status { color: #366553; }
+.subject-home[data-theme="night"] .english-subject { background: linear-gradient(135deg,rgba(33,59,63,.75),rgba(35,70,59,.62)); }
+.subject-home[data-theme="night"] .english-subject .subject-icon,
+.subject-home[data-theme="night"] .english-subject .subject-status { color: #b3d7c6; }
+@media(min-width:951px) { .subject-card { padding:30px 27px; } }
+@media(max-width:950px) { .subject-grid { grid-template-columns:1fr; max-width:560px; margin:0 auto; } }

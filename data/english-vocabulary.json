@@ -1,0 +1,3883 @@
+{
+  "title": "專業英文｜計算機應用",
+  "source": "專業英文單字.txt",
+  "schedule": {
+    "timeZone": "Asia/Taipei",
+    "weekOneStartsAt": "2026-10-02T16:00:00+08:00",
+    "wordsPerWeek": 50,
+    "quizSize": 20,
+    "maxPlays": 3
+  },
+  "words": [
+    {
+      "id": 1,
+      "word": "information",
+      "meaning": "資訊",
+      "pos": "n."
+    },
+    {
+      "id": 2,
+      "word": "log off",
+      "meaning": "登出",
+      "pos": "v./phr."
+    },
+    {
+      "id": 3,
+      "word": "customization",
+      "meaning": "客製化",
+      "pos": "n."
+    },
+    {
+      "id": 4,
+      "word": "distributed",
+      "meaning": "分散式",
+      "pos": "adj."
+    },
+    {
+      "id": 5,
+      "word": "visualization",
+      "meaning": "視覺化",
+      "pos": "n."
+    },
+    {
+      "id": 6,
+      "word": "back up data",
+      "meaning": "備份資料",
+      "pos": "v./phr."
+    },
+    {
+      "id": 7,
+      "word": "Windows",
+      "meaning": "微軟公司開發的作業系統",
+      "pos": "n."
+    },
+    {
+      "id": 8,
+      "word": "outsourcing",
+      "meaning": "外包",
+      "pos": "n."
+    },
+    {
+      "id": 9,
+      "word": "ES",
+      "meaning": "專家系統",
+      "pos": "n."
+    },
+    {
+      "id": 10,
+      "word": "geographic information system",
+      "meaning": "地理資訊系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 11,
+      "word": "method",
+      "meaning": "方法",
+      "pos": "n."
+    },
+    {
+      "id": 12,
+      "word": "distributed processing",
+      "meaning": "分散式處理",
+      "pos": "n./phr."
+    },
+    {
+      "id": 13,
+      "word": "desktop computer",
+      "meaning": "桌上電腦",
+      "pos": "n./phr."
+    },
+    {
+      "id": 14,
+      "word": "SRAM",
+      "meaning": "靜態隨機存取記憶體（英文簡稱）(全文:Static Random Access Memory)",
+      "pos": "n."
+    },
+    {
+      "id": 15,
+      "word": "telnet",
+      "meaning": "遠端登入",
+      "pos": "n."
+    },
+    {
+      "id": 16,
+      "word": "printer",
+      "meaning": "印表機",
+      "pos": "n."
+    },
+    {
+      "id": 17,
+      "word": "MAN",
+      "meaning": "都會網路（英文簡稱）",
+      "pos": "n."
+    },
+    {
+      "id": 18,
+      "word": "cyber",
+      "meaning": "網路的",
+      "pos": "adj."
+    },
+    {
+      "id": 19,
+      "word": "Line",
+      "meaning": "在線（通訊服務）",
+      "pos": "n."
+    },
+    {
+      "id": 20,
+      "word": "Nokia",
+      "meaning": "諾基亞",
+      "pos": "n."
+    },
+    {
+      "id": 21,
+      "word": "DSS",
+      "meaning": "決策支援系統",
+      "pos": "n."
+    },
+    {
+      "id": 22,
+      "word": "data",
+      "meaning": "資料",
+      "pos": "n."
+    },
+    {
+      "id": 23,
+      "word": "TCP/IP",
+      "meaning": "傳輸控制協定/網路協定 (全文:Transmission Control Protocol / Internet Protocol)",
+      "pos": "n."
+    },
+    {
+      "id": 24,
+      "word": "nanosecond",
+      "meaning": "奈秒",
+      "pos": "n."
+    },
+    {
+      "id": 25,
+      "word": "replication",
+      "meaning": "複製；同步複寫",
+      "pos": "n."
+    },
+    {
+      "id": 26,
+      "word": "digital signal",
+      "meaning": "數位信號",
+      "pos": "n./phr."
+    },
+    {
+      "id": 27,
+      "word": "domestic exporter",
+      "meaning": "(國內的）出口商",
+      "pos": "n./phr."
+    },
+    {
+      "id": 28,
+      "word": "vector",
+      "meaning": "向量",
+      "pos": "n."
+    },
+    {
+      "id": 29,
+      "word": "menu",
+      "meaning": "功能表",
+      "pos": "n."
+    },
+    {
+      "id": 30,
+      "word": "key word",
+      "meaning": "關鍵字",
+      "pos": "n./phr."
+    },
+    {
+      "id": 31,
+      "word": "hub",
+      "meaning": "集線器",
+      "pos": "n."
+    },
+    {
+      "id": 32,
+      "word": "conversion",
+      "meaning": "轉換",
+      "pos": "n."
+    },
+    {
+      "id": 33,
+      "word": "switch",
+      "meaning": "交換器",
+      "pos": "n."
+    },
+    {
+      "id": 34,
+      "word": "OSI",
+      "meaning": "開放式系統互聯（英文簡稱）(全文:Open Systems Interconnection)",
+      "pos": "n."
+    },
+    {
+      "id": 35,
+      "word": "autocomplete",
+      "meaning": "自動完成",
+      "pos": "n."
+    },
+    {
+      "id": 36,
+      "word": "computer-aided design",
+      "meaning": "電腦輔助設計",
+      "pos": "n./phr."
+    },
+    {
+      "id": 37,
+      "word": "logical partition",
+      "meaning": "邏輯分割區",
+      "pos": "n./phr."
+    },
+    {
+      "id": 38,
+      "word": "OSI model",
+      "meaning": "開放式系統互聯模式",
+      "pos": "n./phr."
+    },
+    {
+      "id": 39,
+      "word": "critical thinking",
+      "meaning": "批判性思考",
+      "pos": "n./phr."
+    },
+    {
+      "id": 40,
+      "word": "NIC",
+      "meaning": "網路卡",
+      "pos": "n."
+    },
+    {
+      "id": 41,
+      "word": "random access memory",
+      "meaning": "隨機存取記憶體",
+      "pos": "n./phr."
+    },
+    {
+      "id": 42,
+      "word": "algorithm",
+      "meaning": "演算法",
+      "pos": "n."
+    },
+    {
+      "id": 43,
+      "word": "decryption",
+      "meaning": "解密",
+      "pos": "n."
+    },
+    {
+      "id": 44,
+      "word": "GUI",
+      "meaning": "圖形化使用介面",
+      "pos": "n."
+    },
+    {
+      "id": 45,
+      "word": "adware",
+      "meaning": "廣告軟體",
+      "pos": "n."
+    },
+    {
+      "id": 46,
+      "word": "data integration",
+      "meaning": "資料整合",
+      "pos": "n./phr."
+    },
+    {
+      "id": 47,
+      "word": "SET",
+      "meaning": "安全電子交易（英文簡稱）(全文:Secure Electronic Transaction)",
+      "pos": "n."
+    },
+    {
+      "id": 48,
+      "word": "IS",
+      "meaning": "資訊系統",
+      "pos": "n."
+    },
+    {
+      "id": 49,
+      "word": "dashboard",
+      "meaning": "儀錶板",
+      "pos": "n."
+    },
+    {
+      "id": 50,
+      "word": "laser printer",
+      "meaning": "雷射印表機",
+      "pos": "n./phr."
+    },
+    {
+      "id": 51,
+      "word": "network terminal",
+      "meaning": "網路終端機",
+      "pos": "n./phr."
+    },
+    {
+      "id": 52,
+      "word": "OA",
+      "meaning": "辦公室自動化（英文簡稱）(全文:Office Automation)",
+      "pos": "n."
+    },
+    {
+      "id": 53,
+      "word": "DBA",
+      "meaning": "資料庫管理員",
+      "pos": "n."
+    },
+    {
+      "id": 54,
+      "word": "IP",
+      "meaning": "網際網路協定",
+      "pos": "n."
+    },
+    {
+      "id": 55,
+      "word": "co-location",
+      "meaning": "主機代管",
+      "pos": "n./phr."
+    },
+    {
+      "id": 56,
+      "word": "analog",
+      "meaning": "類比",
+      "pos": "adj./n."
+    },
+    {
+      "id": 57,
+      "word": "HTML",
+      "meaning": "超文字標記語言",
+      "pos": "n."
+    },
+    {
+      "id": 58,
+      "word": "CRM",
+      "meaning": "顧客關係管理",
+      "pos": "n."
+    },
+    {
+      "id": 59,
+      "word": "instant messaging",
+      "meaning": "即時通訊",
+      "pos": "n./phr."
+    },
+    {
+      "id": 60,
+      "word": "light emitting diode",
+      "meaning": "發光二極體",
+      "pos": "n./phr."
+    },
+    {
+      "id": 61,
+      "word": "bandwidth",
+      "meaning": "頻寬",
+      "pos": "n."
+    },
+    {
+      "id": 62,
+      "word": "user name",
+      "meaning": "用戶名稱",
+      "pos": "n./phr."
+    },
+    {
+      "id": 63,
+      "word": "project",
+      "meaning": "專案",
+      "pos": "n./v."
+    },
+    {
+      "id": 64,
+      "word": "pages per minute",
+      "meaning": "每分鐘列印的頁數",
+      "pos": "n./phr."
+    },
+    {
+      "id": 65,
+      "word": "property",
+      "meaning": "財產",
+      "pos": "n."
+    },
+    {
+      "id": 66,
+      "word": "sizing handles",
+      "meaning": "尺寸（大小）控點",
+      "pos": "n./phr."
+    },
+    {
+      "id": 67,
+      "word": "multiplexer",
+      "meaning": "多工器",
+      "pos": "n."
+    },
+    {
+      "id": 68,
+      "word": "OU",
+      "meaning": "輸出單元（英文簡稱）(全文:Output Unit)",
+      "pos": "n."
+    },
+    {
+      "id": 69,
+      "word": "medium",
+      "meaning": "媒體",
+      "pos": "adj./n."
+    },
+    {
+      "id": 70,
+      "word": "e-book",
+      "meaning": "電子書",
+      "pos": "n."
+    },
+    {
+      "id": 71,
+      "word": "data flow diagram",
+      "meaning": "資料流程圖",
+      "pos": "n./phr."
+    },
+    {
+      "id": 72,
+      "word": "line interactive",
+      "meaning": "在線互動式",
+      "pos": "adj./phr."
+    },
+    {
+      "id": 73,
+      "word": "input device",
+      "meaning": "輸入設備",
+      "pos": "n./phr."
+    },
+    {
+      "id": 74,
+      "word": "communication",
+      "meaning": "通訊",
+      "pos": "n."
+    },
+    {
+      "id": 75,
+      "word": "cache memory",
+      "meaning": "快取記憶體",
+      "pos": "n./phr."
+    },
+    {
+      "id": 76,
+      "word": "FTP",
+      "meaning": "檔案傳輸協定",
+      "pos": "n."
+    },
+    {
+      "id": 77,
+      "word": "relational database",
+      "meaning": "關聯式資料庫",
+      "pos": "n./phr."
+    },
+    {
+      "id": 78,
+      "word": "ASUS",
+      "meaning": "華碩",
+      "pos": "n."
+    },
+    {
+      "id": 79,
+      "word": "clone computer",
+      "meaning": "克隆電腦",
+      "pos": "n./phr."
+    },
+    {
+      "id": 80,
+      "word": "NAT",
+      "meaning": "網路位址轉換（英文簡稱）(全文:Network Address Translation)",
+      "pos": "n."
+    },
+    {
+      "id": 81,
+      "word": "normalization",
+      "meaning": "正規化",
+      "pos": "n."
+    },
+    {
+      "id": 82,
+      "word": "microsecond",
+      "meaning": "微秒",
+      "pos": "n."
+    },
+    {
+      "id": 83,
+      "word": "quick response code",
+      "meaning": "快速反應碼",
+      "pos": "n./phr."
+    },
+    {
+      "id": 84,
+      "word": "ASP",
+      "meaning": "應用服務供應商",
+      "pos": "n."
+    },
+    {
+      "id": 85,
+      "word": "executive",
+      "meaning": "行政主管",
+      "pos": "n."
+    },
+    {
+      "id": 86,
+      "word": "duplication",
+      "meaning": "複製",
+      "pos": "n."
+    },
+    {
+      "id": 87,
+      "word": "read-only memory",
+      "meaning": "唯讀記憶體",
+      "pos": "n./phr."
+    },
+    {
+      "id": 88,
+      "word": "data-driven",
+      "meaning": "資料導向",
+      "pos": "n./phr."
+    },
+    {
+      "id": 89,
+      "word": "authority",
+      "meaning": "權威",
+      "pos": "n."
+    },
+    {
+      "id": 90,
+      "word": "digital video disc",
+      "meaning": "數位影音光碟（DVD)",
+      "pos": "n./phr."
+    },
+    {
+      "id": 91,
+      "word": "content management",
+      "meaning": "內容管理",
+      "pos": "n./phr."
+    },
+    {
+      "id": 92,
+      "word": "open standard",
+      "meaning": "開放式標準",
+      "pos": "adj./phr."
+    },
+    {
+      "id": 93,
+      "word": "operating system",
+      "meaning": "作業系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 94,
+      "word": "YouTube",
+      "meaning": "一種手機與電腦皆可連線的專門放影片的軟體",
+      "pos": "n."
+    },
+    {
+      "id": 95,
+      "word": "Bluetooth",
+      "meaning": "藍牙",
+      "pos": "n."
+    },
+    {
+      "id": 96,
+      "word": "debug",
+      "meaning": "除錯；偵錯",
+      "pos": "v./n."
+    },
+    {
+      "id": 97,
+      "word": "data center",
+      "meaning": "資訊中心",
+      "pos": "n./phr."
+    },
+    {
+      "id": 98,
+      "word": "operation",
+      "meaning": "營運",
+      "pos": "n."
+    },
+    {
+      "id": 99,
+      "word": "mouse",
+      "meaning": "滑鼠",
+      "pos": "n."
+    },
+    {
+      "id": 100,
+      "word": "node",
+      "meaning": "節點",
+      "pos": "n."
+    },
+    {
+      "id": 101,
+      "word": "drill down",
+      "meaning": "向下探究",
+      "pos": "v./phr."
+    },
+    {
+      "id": 102,
+      "word": "executable code",
+      "meaning": "可執行碼",
+      "pos": "n./phr."
+    },
+    {
+      "id": 103,
+      "word": "central processing unit",
+      "meaning": "中央處理單元",
+      "pos": "n./phr."
+    },
+    {
+      "id": 104,
+      "word": "content",
+      "meaning": "內容",
+      "pos": "n."
+    },
+    {
+      "id": 105,
+      "word": "flowchart",
+      "meaning": "流程圖",
+      "pos": "n."
+    },
+    {
+      "id": 106,
+      "word": "EPS",
+      "meaning": "電子付費服務",
+      "pos": "n."
+    },
+    {
+      "id": 107,
+      "word": "ROM",
+      "meaning": "唯讀記憶體（英文簡稱）(全文:Read-Only Memory)",
+      "pos": "n."
+    },
+    {
+      "id": 108,
+      "word": "record",
+      "meaning": "紀錄",
+      "pos": "n./v."
+    },
+    {
+      "id": 109,
+      "word": "spreadsheet software",
+      "meaning": "試算表軟體",
+      "pos": "n./phr."
+    },
+    {
+      "id": 110,
+      "word": "network address translation",
+      "meaning": "網路位址轉換",
+      "pos": "n./phr."
+    },
+    {
+      "id": 111,
+      "word": "motherboard",
+      "meaning": "主機板",
+      "pos": "n."
+    },
+    {
+      "id": 112,
+      "word": "ICT",
+      "meaning": "資訊與網路通訊科技",
+      "pos": "n."
+    },
+    {
+      "id": 113,
+      "word": "IM",
+      "meaning": "即時通訊",
+      "pos": "n."
+    },
+    {
+      "id": 114,
+      "word": "AI",
+      "meaning": "人工智慧",
+      "pos": "n."
+    },
+    {
+      "id": 115,
+      "word": "microphone",
+      "meaning": "麥克風",
+      "pos": "n."
+    },
+    {
+      "id": 116,
+      "word": "DNS",
+      "meaning": "網域名稱系統",
+      "pos": "n."
+    },
+    {
+      "id": 117,
+      "word": "administrator",
+      "meaning": "管理員",
+      "pos": "n."
+    },
+    {
+      "id": 118,
+      "word": "data definition",
+      "meaning": "資料定義",
+      "pos": "n./phr."
+    },
+    {
+      "id": 119,
+      "word": "personal computer",
+      "meaning": "個人電腦",
+      "pos": "n./phr."
+    },
+    {
+      "id": 120,
+      "word": "online transaction",
+      "meaning": "線上交易",
+      "pos": "n./phr."
+    },
+    {
+      "id": 121,
+      "word": "hyperlink",
+      "meaning": "超連結",
+      "pos": "n."
+    },
+    {
+      "id": 122,
+      "word": "gigahertz",
+      "meaning": "十億赫茲",
+      "pos": "n."
+    },
+    {
+      "id": 123,
+      "word": "diagram",
+      "meaning": "圖表",
+      "pos": "n."
+    },
+    {
+      "id": 124,
+      "word": "ERP",
+      "meaning": "企業資源規劃",
+      "pos": "n."
+    },
+    {
+      "id": 125,
+      "word": "detection system",
+      "meaning": "偵測系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 126,
+      "word": "gateway",
+      "meaning": "閘道器",
+      "pos": "n."
+    },
+    {
+      "id": 127,
+      "word": "core",
+      "meaning": "核心",
+      "pos": "n."
+    },
+    {
+      "id": 128,
+      "word": "true",
+      "meaning": "真；正確",
+      "pos": "adj."
+    },
+    {
+      "id": 129,
+      "word": "Intel",
+      "meaning": "英特爾（公司名）",
+      "pos": "n."
+    },
+    {
+      "id": 130,
+      "word": "telecommunication media",
+      "meaning": "電信通訊媒介",
+      "pos": "n./phr."
+    },
+    {
+      "id": 131,
+      "word": "OLTP",
+      "meaning": "線上交易處理（英文簡稱）(全文:Online Transaction Processing)",
+      "pos": "n."
+    },
+    {
+      "id": 132,
+      "word": "link",
+      "meaning": "連結",
+      "pos": "n./v."
+    },
+    {
+      "id": 133,
+      "word": "disruptive",
+      "meaning": "破壞性的",
+      "pos": "adj."
+    },
+    {
+      "id": 134,
+      "word": "kilohertz",
+      "meaning": "千赫茲",
+      "pos": "n."
+    },
+    {
+      "id": 135,
+      "word": "worm",
+      "meaning": "蠕蟲",
+      "pos": "n."
+    },
+    {
+      "id": 136,
+      "word": "firewall",
+      "meaning": "防火牆",
+      "pos": "n."
+    },
+    {
+      "id": 137,
+      "word": "SCSI",
+      "meaning": "小型電腦系統介面（英文簡稱）(全文:Small Computer System Interface)",
+      "pos": "n."
+    },
+    {
+      "id": 138,
+      "word": "laptop",
+      "meaning": "膝上型電腦",
+      "pos": "n."
+    },
+    {
+      "id": 139,
+      "word": "HDMI",
+      "meaning": "高清晰度多媒體介面",
+      "pos": "n."
+    },
+    {
+      "id": 140,
+      "word": "electronic signature",
+      "meaning": "電子簽章",
+      "pos": "n./phr."
+    },
+    {
+      "id": 141,
+      "word": "wireless",
+      "meaning": "無線",
+      "pos": "adj./n."
+    },
+    {
+      "id": 142,
+      "word": "disaster",
+      "meaning": "災難",
+      "pos": "n."
+    },
+    {
+      "id": 143,
+      "word": "DDoS",
+      "meaning": "分裂式阻斷服務",
+      "pos": "n."
+    },
+    {
+      "id": 144,
+      "word": "browser",
+      "meaning": "瀏覽器",
+      "pos": "n."
+    },
+    {
+      "id": 145,
+      "word": "function",
+      "meaning": "函數",
+      "pos": "n."
+    },
+    {
+      "id": 146,
+      "word": "direct",
+      "meaning": "直接的",
+      "pos": "adj."
+    },
+    {
+      "id": 147,
+      "word": "private key",
+      "meaning": "私密金鑰",
+      "pos": "n./phr."
+    },
+    {
+      "id": 148,
+      "word": "certificate",
+      "meaning": "憑證",
+      "pos": "n."
+    },
+    {
+      "id": 149,
+      "word": "digital content",
+      "meaning": "數位內容",
+      "pos": "n./phr."
+    },
+    {
+      "id": 150,
+      "word": "option button",
+      "meaning": "選項按鈕",
+      "pos": "n./phr."
+    },
+    {
+      "id": 151,
+      "word": "intangible",
+      "meaning": "無形的",
+      "pos": "adj."
+    },
+    {
+      "id": 152,
+      "word": "field",
+      "meaning": "欄位或區域",
+      "pos": "n."
+    },
+    {
+      "id": 153,
+      "word": "software",
+      "meaning": "軟體",
+      "pos": "n."
+    },
+    {
+      "id": 154,
+      "word": "technology",
+      "meaning": "科技",
+      "pos": "n."
+    },
+    {
+      "id": 155,
+      "word": "RFID",
+      "meaning": "無線（電）辨識（英文簡稱）(全文:Radio Frequency Identification)",
+      "pos": "n."
+    },
+    {
+      "id": 156,
+      "word": "requirement",
+      "meaning": "需求",
+      "pos": "n."
+    },
+    {
+      "id": 157,
+      "word": "PC",
+      "meaning": "個人電腦",
+      "pos": "n."
+    },
+    {
+      "id": 158,
+      "word": "upload",
+      "meaning": "上傳",
+      "pos": "n./v."
+    },
+    {
+      "id": 159,
+      "word": "IEEE",
+      "meaning": "國際電機電子工程協會",
+      "pos": "n."
+    },
+    {
+      "id": 160,
+      "word": "ring",
+      "meaning": "環狀",
+      "pos": "n."
+    },
+    {
+      "id": 161,
+      "word": "chief information officer",
+      "meaning": "資訊長",
+      "pos": "n./phr."
+    },
+    {
+      "id": 162,
+      "word": "GHz",
+      "meaning": "十億赫茲",
+      "pos": "n."
+    },
+    {
+      "id": 163,
+      "word": "hypertext markup language",
+      "meaning": "超文字標記語言",
+      "pos": "n./phr."
+    },
+    {
+      "id": 164,
+      "word": "pseudo code",
+      "meaning": "虛擬碼",
+      "pos": "n./phr."
+    },
+    {
+      "id": 165,
+      "word": "N-tier client-server architecture",
+      "meaning": "多層次主從式架構",
+      "pos": "n./phr."
+    },
+    {
+      "id": 166,
+      "word": "VOD",
+      "meaning": "隨選視訊系統（英文簡稱）(全文:Video On Demand)",
+      "pos": "n."
+    },
+    {
+      "id": 167,
+      "word": "file type",
+      "meaning": "檔案類型",
+      "pos": "n./phr."
+    },
+    {
+      "id": 168,
+      "word": "manipulation",
+      "meaning": "處理",
+      "pos": "n."
+    },
+    {
+      "id": 169,
+      "word": "computer crime",
+      "meaning": "電腦犯罪",
+      "pos": "n./phr."
+    },
+    {
+      "id": 170,
+      "word": "broadcast",
+      "meaning": "廣播",
+      "pos": "n./v."
+    },
+    {
+      "id": 171,
+      "word": "open system",
+      "meaning": "開放式系統",
+      "pos": "adj./phr."
+    },
+    {
+      "id": 172,
+      "word": "B2G",
+      "meaning": "企業對政府之間的相互交易",
+      "pos": "n."
+    },
+    {
+      "id": 173,
+      "word": "patch",
+      "meaning": "(軟體）修補",
+      "pos": "n./v."
+    },
+    {
+      "id": 174,
+      "word": "memory",
+      "meaning": "記憶體",
+      "pos": "n."
+    },
+    {
+      "id": 175,
+      "word": "VoIP",
+      "meaning": "透過IP做語音傳送（英文簡稱）(全文:Voice over Internet Protocol)",
+      "pos": "n."
+    },
+    {
+      "id": 176,
+      "word": "quick sort",
+      "meaning": "快速排序法",
+      "pos": "n./phr."
+    },
+    {
+      "id": 177,
+      "word": "process",
+      "meaning": "過程；處理",
+      "pos": "n./v."
+    },
+    {
+      "id": 178,
+      "word": "label",
+      "meaning": "標籤",
+      "pos": "n./v."
+    },
+    {
+      "id": 179,
+      "word": "malicious program",
+      "meaning": "惡意程式",
+      "pos": "n./phr."
+    },
+    {
+      "id": 180,
+      "word": "PCI",
+      "meaning": "周邊元件互聯（擴充槽）（英文簡稱）(全文:Peripheral Component Interconnect)",
+      "pos": "n."
+    },
+    {
+      "id": 181,
+      "word": "autosum",
+      "meaning": "自動加總",
+      "pos": "n."
+    },
+    {
+      "id": 182,
+      "word": "hacker",
+      "meaning": "駭客",
+      "pos": "n."
+    },
+    {
+      "id": 183,
+      "word": "cache",
+      "meaning": "快取",
+      "pos": "n."
+    },
+    {
+      "id": 184,
+      "word": "relationship",
+      "meaning": "關係",
+      "pos": "n."
+    },
+    {
+      "id": 185,
+      "word": "open source",
+      "meaning": "開放原始（碼）",
+      "pos": "adj./phr."
+    },
+    {
+      "id": 186,
+      "word": "secure electronic transactions",
+      "meaning": "安全電子交易",
+      "pos": "n./phr."
+    },
+    {
+      "id": 187,
+      "word": "SDRAM",
+      "meaning": "同步動態隨機存取記憶體（英文簡稱）(全文:Synchronous Dynamic Random Access Memory)",
+      "pos": "n."
+    },
+    {
+      "id": 188,
+      "word": "computer-assisted instruction",
+      "meaning": "電腦輔助教學",
+      "pos": "n./phr."
+    },
+    {
+      "id": 189,
+      "word": "e-mail",
+      "meaning": "電子郵件",
+      "pos": "n."
+    },
+    {
+      "id": 190,
+      "word": "Apple",
+      "meaning": "蘋果",
+      "pos": "n."
+    },
+    {
+      "id": 191,
+      "word": "DOS",
+      "meaning": "磁片作業系統",
+      "pos": "n."
+    },
+    {
+      "id": 192,
+      "word": "jumper",
+      "meaning": "跳線",
+      "pos": "n."
+    },
+    {
+      "id": 193,
+      "word": "intelligence",
+      "meaning": "智慧",
+      "pos": "n."
+    },
+    {
+      "id": 194,
+      "word": "revenue model",
+      "meaning": "獲利模式",
+      "pos": "n./phr."
+    },
+    {
+      "id": 195,
+      "word": "object",
+      "meaning": "物件",
+      "pos": "n."
+    },
+    {
+      "id": 196,
+      "word": "compile",
+      "meaning": "編譯",
+      "pos": "v."
+    },
+    {
+      "id": 197,
+      "word": "due",
+      "meaning": "應有的",
+      "pos": "adj."
+    },
+    {
+      "id": 198,
+      "word": "upstream",
+      "meaning": "上游的",
+      "pos": "n."
+    },
+    {
+      "id": 199,
+      "word": "recovery",
+      "meaning": "恢復",
+      "pos": "n."
+    },
+    {
+      "id": 200,
+      "word": "data structure",
+      "meaning": "資料結構",
+      "pos": "n./phr."
+    },
+    {
+      "id": 201,
+      "word": "data redundancy",
+      "meaning": "資料重複",
+      "pos": "n./phr."
+    },
+    {
+      "id": 202,
+      "word": "date",
+      "meaning": "日期",
+      "pos": "n."
+    },
+    {
+      "id": 203,
+      "word": "bulletin board system",
+      "meaning": "電子佈告欄系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 204,
+      "word": "plan",
+      "meaning": "計畫",
+      "pos": "n./v."
+    },
+    {
+      "id": 205,
+      "word": "KB",
+      "meaning": "千位元組",
+      "pos": "n."
+    },
+    {
+      "id": 206,
+      "word": "modem",
+      "meaning": "數據機",
+      "pos": "n."
+    },
+    {
+      "id": 207,
+      "word": "deep packet",
+      "meaning": "深層封包",
+      "pos": "n./phr."
+    },
+    {
+      "id": 208,
+      "word": "information processing",
+      "meaning": "資訊處理",
+      "pos": "n./phr."
+    },
+    {
+      "id": 209,
+      "word": "parameter",
+      "meaning": "參數",
+      "pos": "n."
+    },
+    {
+      "id": 210,
+      "word": "internetwork processor",
+      "meaning": "跨網處理器",
+      "pos": "n./phr."
+    },
+    {
+      "id": 211,
+      "word": "PPM",
+      "meaning": "每分鐘列印的頁數（英文簡稱）(全文:Pages Per Minute)",
+      "pos": "n."
+    },
+    {
+      "id": 212,
+      "word": "risk",
+      "meaning": "風險",
+      "pos": "n./v."
+    },
+    {
+      "id": 213,
+      "word": "infrastructure as a service",
+      "meaning": "基礎建設即服務",
+      "pos": "n./phr."
+    },
+    {
+      "id": 214,
+      "word": "HDD",
+      "meaning": "硬式磁碟機",
+      "pos": "n."
+    },
+    {
+      "id": 215,
+      "word": "agent",
+      "meaning": "代理商",
+      "pos": "n."
+    },
+    {
+      "id": 216,
+      "word": "parallel transmission",
+      "meaning": "並列傳輸",
+      "pos": "n./phr."
+    },
+    {
+      "id": 217,
+      "word": "millennium",
+      "meaning": "千禧年",
+      "pos": "n."
+    },
+    {
+      "id": 218,
+      "word": "data management software",
+      "meaning": "資料管理軟體找出或發現資料間的關係或事實",
+      "pos": "n./phr."
+    },
+    {
+      "id": 219,
+      "word": "enterprise information portal",
+      "meaning": "企業資訊入口網站",
+      "pos": "n./phr."
+    },
+    {
+      "id": 220,
+      "word": "microprocessor",
+      "meaning": "微處理器",
+      "pos": "n."
+    },
+    {
+      "id": 221,
+      "word": "ISBN",
+      "meaning": "國際標準書號",
+      "pos": "n."
+    },
+    {
+      "id": 222,
+      "word": "autoformat",
+      "meaning": "自動套用格式",
+      "pos": "n."
+    },
+    {
+      "id": 223,
+      "word": "DFD",
+      "meaning": "資料流程圖",
+      "pos": "n."
+    },
+    {
+      "id": 224,
+      "word": "router",
+      "meaning": "路由器",
+      "pos": "n."
+    },
+    {
+      "id": 225,
+      "word": "data transfer rate",
+      "meaning": "資料傳輸率",
+      "pos": "n./phr."
+    },
+    {
+      "id": 226,
+      "word": "on-demand",
+      "meaning": "隨需",
+      "pos": "adj./phr."
+    },
+    {
+      "id": 227,
+      "word": "smart card",
+      "meaning": "智慧卡",
+      "pos": "n."
+    },
+    {
+      "id": 228,
+      "word": "semiconductor memory",
+      "meaning": "半導體記憶體",
+      "pos": "n./phr."
+    },
+    {
+      "id": 229,
+      "word": "antivirus software",
+      "meaning": "防毒軟體",
+      "pos": "n./phr."
+    },
+    {
+      "id": 230,
+      "word": "notebook",
+      "meaning": "筆電",
+      "pos": "n."
+    },
+    {
+      "id": 231,
+      "word": "analysis",
+      "meaning": "分析",
+      "pos": "n."
+    },
+    {
+      "id": 232,
+      "word": "base",
+      "meaning": "基底",
+      "pos": "n."
+    },
+    {
+      "id": 233,
+      "word": "OLE",
+      "meaning": "物件連結與崁入（英文簡稱）(全文:Object Linking and Embedding)",
+      "pos": "n."
+    },
+    {
+      "id": 234,
+      "word": "cracker",
+      "meaning": "怪客；破壞者",
+      "pos": "n."
+    },
+    {
+      "id": 235,
+      "word": "baseband transmission",
+      "meaning": "基頻傳輸",
+      "pos": "n./phr."
+    },
+    {
+      "id": 236,
+      "word": "act",
+      "meaning": "法案",
+      "pos": "n."
+    },
+    {
+      "id": 237,
+      "word": "megabyte",
+      "meaning": "百萬位元組",
+      "pos": "n."
+    },
+    {
+      "id": 238,
+      "word": "wiki",
+      "meaning": "維基（百科全書）",
+      "pos": "n."
+    },
+    {
+      "id": 239,
+      "word": "senior",
+      "meaning": "高階的",
+      "pos": "adj."
+    },
+    {
+      "id": 240,
+      "word": "phishing",
+      "meaning": "網路釣魚",
+      "pos": "n."
+    },
+    {
+      "id": 241,
+      "word": "portable computer",
+      "meaning": "筆電",
+      "pos": "n./phr."
+    },
+    {
+      "id": 242,
+      "word": "GIS",
+      "meaning": "地理資訊系統",
+      "pos": "n."
+    },
+    {
+      "id": 243,
+      "word": "Acer",
+      "meaning": "宏碁",
+      "pos": "n."
+    },
+    {
+      "id": 244,
+      "word": "broadband transmission",
+      "meaning": "寬頻傳輸",
+      "pos": "n./phr."
+    },
+    {
+      "id": 245,
+      "word": "child domain",
+      "meaning": "子網域",
+      "pos": "n./phr."
+    },
+    {
+      "id": 246,
+      "word": "batch processing",
+      "meaning": "批次處理",
+      "pos": "n./phr."
+    },
+    {
+      "id": 247,
+      "word": "IC",
+      "meaning": "積體電路",
+      "pos": "n."
+    },
+    {
+      "id": 248,
+      "word": "digital certificate",
+      "meaning": "數位憑證(認證)",
+      "pos": "n."
+    },
+    {
+      "id": 249,
+      "word": "download information",
+      "meaning": "下載資料",
+      "pos": "n./phr."
+    },
+    {
+      "id": 250,
+      "word": "implementation process",
+      "meaning": "建置流程",
+      "pos": "n./phr."
+    },
+    {
+      "id": 251,
+      "word": "DPI",
+      "meaning": "每英吋的點數",
+      "pos": "n."
+    },
+    {
+      "id": 252,
+      "word": "liquid crystal display",
+      "meaning": "液晶顯示器",
+      "pos": "n./phr."
+    },
+    {
+      "id": 253,
+      "word": "click",
+      "meaning": "按下的聲音",
+      "pos": "n./v."
+    },
+    {
+      "id": 254,
+      "word": "THz",
+      "meaning": "兆赫茲（英文簡稱）(全文:Terahertz)",
+      "pos": "n."
+    },
+    {
+      "id": 255,
+      "word": "weblog",
+      "meaning": "網誌",
+      "pos": "n."
+    },
+    {
+      "id": 256,
+      "word": "LED",
+      "meaning": "發光二極體",
+      "pos": "n."
+    },
+    {
+      "id": 257,
+      "word": "DRAM",
+      "meaning": "動態隨機存取記憶體",
+      "pos": "n."
+    },
+    {
+      "id": 258,
+      "word": "internal modem",
+      "meaning": "內置式數據機",
+      "pos": "n./phr."
+    },
+    {
+      "id": 259,
+      "word": "solid state",
+      "meaning": "固態",
+      "pos": "n."
+    },
+    {
+      "id": 260,
+      "word": "SDXC",
+      "meaning": "安全數位延伸高容量卡（英文簡稱）(全文:Secure Digital eXtended Capacity)",
+      "pos": "n."
+    },
+    {
+      "id": 261,
+      "word": "computer vision",
+      "meaning": "電腦視力",
+      "pos": "n./phr."
+    },
+    {
+      "id": 262,
+      "word": "control",
+      "meaning": "控制",
+      "pos": "n./v."
+    },
+    {
+      "id": 263,
+      "word": "SDLC",
+      "meaning": "系統開發生命週期（英文簡稱）(全文:System Development Life Cycle)",
+      "pos": "n."
+    },
+    {
+      "id": 264,
+      "word": "referential integrity",
+      "meaning": "參照完整性",
+      "pos": "n./phr."
+    },
+    {
+      "id": 265,
+      "word": "infrastructure",
+      "meaning": "基礎建設",
+      "pos": "n."
+    },
+    {
+      "id": 266,
+      "word": "portal",
+      "meaning": "入口網站",
+      "pos": "n."
+    },
+    {
+      "id": 267,
+      "word": "digital asset",
+      "meaning": "數位資產",
+      "pos": "n./phr."
+    },
+    {
+      "id": 268,
+      "word": "chat",
+      "meaning": "聊天",
+      "pos": "n."
+    },
+    {
+      "id": 269,
+      "word": "access time",
+      "meaning": "存取時間",
+      "pos": "n./phr."
+    },
+    {
+      "id": 270,
+      "word": "electronic commerce",
+      "meaning": "電子商務",
+      "pos": "n./phr."
+    },
+    {
+      "id": 271,
+      "word": "process control system",
+      "meaning": "流程控制系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 272,
+      "word": "peripheral",
+      "meaning": "周邊設備",
+      "pos": "n."
+    },
+    {
+      "id": 273,
+      "word": "MU",
+      "meaning": "記憶單元",
+      "pos": "n."
+    },
+    {
+      "id": 274,
+      "word": "CAI",
+      "meaning": "電腦輔助教學",
+      "pos": "n."
+    },
+    {
+      "id": 275,
+      "word": "integrated circuit card",
+      "meaning": "IC卡",
+      "pos": "n./phr."
+    },
+    {
+      "id": 276,
+      "word": "gigabyte",
+      "meaning": "十億位元組",
+      "pos": "n."
+    },
+    {
+      "id": 277,
+      "word": "wizard",
+      "meaning": "精靈",
+      "pos": "n."
+    },
+    {
+      "id": 278,
+      "word": "private",
+      "meaning": "私有的",
+      "pos": "adj."
+    },
+    {
+      "id": 279,
+      "word": "IaaS",
+      "meaning": "基礎建設即服務",
+      "pos": "n."
+    },
+    {
+      "id": 280,
+      "word": "database management system",
+      "meaning": "資料庫管理系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 281,
+      "word": "home page",
+      "meaning": "首頁",
+      "pos": "n./phr."
+    },
+    {
+      "id": 282,
+      "word": "back color",
+      "meaning": "背景顏色",
+      "pos": "n./phr."
+    },
+    {
+      "id": 283,
+      "word": "protocol",
+      "meaning": "協定",
+      "pos": "n."
+    },
+    {
+      "id": 284,
+      "word": "disk cache",
+      "meaning": "磁碟快取（記憶體）",
+      "pos": "n./phr."
+    },
+    {
+      "id": 285,
+      "word": "OCR",
+      "meaning": "光學字元辨識軟體（英文簡稱）(全文:Optical Character Recognition)",
+      "pos": "n."
+    },
+    {
+      "id": 286,
+      "word": "control unit",
+      "meaning": "控制單元",
+      "pos": "n./phr."
+    },
+    {
+      "id": 287,
+      "word": "Microsoft",
+      "meaning": "微軟",
+      "pos": "n."
+    },
+    {
+      "id": 288,
+      "word": "shareware",
+      "meaning": "共享軟體",
+      "pos": "n."
+    },
+    {
+      "id": 289,
+      "word": "freeware",
+      "meaning": "免費軟體",
+      "pos": "n."
+    },
+    {
+      "id": 290,
+      "word": "ALU",
+      "meaning": "算術邏輯單元",
+      "pos": "n."
+    },
+    {
+      "id": 291,
+      "word": "e-government",
+      "meaning": "電子化政府",
+      "pos": "n."
+    },
+    {
+      "id": 292,
+      "word": "network",
+      "meaning": "網路",
+      "pos": "n."
+    },
+    {
+      "id": 293,
+      "word": "e-learning",
+      "meaning": "數位學習",
+      "pos": "n."
+    },
+    {
+      "id": 294,
+      "word": "Internet protocol",
+      "meaning": "網際網路協定",
+      "pos": "n./phr."
+    },
+    {
+      "id": 295,
+      "word": "business intelligence",
+      "meaning": "商業智慧",
+      "pos": "n./phr."
+    },
+    {
+      "id": 296,
+      "word": "webcam",
+      "meaning": "網路攝像機",
+      "pos": "n."
+    },
+    {
+      "id": 297,
+      "word": "marketing",
+      "meaning": "行銷",
+      "pos": "n."
+    },
+    {
+      "id": 298,
+      "word": "bit",
+      "meaning": "位元",
+      "pos": "n."
+    },
+    {
+      "id": 299,
+      "word": "electronic payment system",
+      "meaning": "電子付款系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 300,
+      "word": "hypertext transfer protocol",
+      "meaning": "超文字傳輸協定",
+      "pos": "n./phr."
+    },
+    {
+      "id": 301,
+      "word": "primary partition",
+      "meaning": "主要分割區",
+      "pos": "n./phr."
+    },
+    {
+      "id": 302,
+      "word": "P2P",
+      "meaning": "點對點對點式（英文簡稱）",
+      "pos": "n."
+    },
+    {
+      "id": 303,
+      "word": "double click",
+      "meaning": "按兩下",
+      "pos": "v./phr."
+    },
+    {
+      "id": 304,
+      "word": "machine",
+      "meaning": "機器",
+      "pos": "n."
+    },
+    {
+      "id": 305,
+      "word": "optimization",
+      "meaning": "最佳化",
+      "pos": "n."
+    },
+    {
+      "id": 306,
+      "word": "strategy",
+      "meaning": "策略",
+      "pos": "n."
+    },
+    {
+      "id": 307,
+      "word": "information requirement",
+      "meaning": "資訊需求",
+      "pos": "n./phr."
+    },
+    {
+      "id": 308,
+      "word": "backbone",
+      "meaning": "骨幹網路",
+      "pos": "n."
+    },
+    {
+      "id": 309,
+      "word": "cloud computing",
+      "meaning": "雲端運算",
+      "pos": "n./phr."
+    },
+    {
+      "id": 310,
+      "word": "refresh rate",
+      "meaning": "更新率",
+      "pos": "n."
+    },
+    {
+      "id": 311,
+      "word": "audio",
+      "meaning": "音訊",
+      "pos": "adj./n."
+    },
+    {
+      "id": 312,
+      "word": "programming",
+      "meaning": "程式（設計）",
+      "pos": "n."
+    },
+    {
+      "id": 313,
+      "word": "timer",
+      "meaning": "計時器",
+      "pos": "n."
+    },
+    {
+      "id": 314,
+      "word": "character",
+      "meaning": "字元",
+      "pos": "n."
+    },
+    {
+      "id": 315,
+      "word": "technical feasibility",
+      "meaning": "技術可行性",
+      "pos": "n./phr."
+    },
+    {
+      "id": 316,
+      "word": "domain name system",
+      "meaning": "網域名稱系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 317,
+      "word": "domain name",
+      "meaning": "網域名稱",
+      "pos": "n./phr."
+    },
+    {
+      "id": 318,
+      "word": "network server",
+      "meaning": "網路伺服器",
+      "pos": "n./phr."
+    },
+    {
+      "id": 319,
+      "word": "payment",
+      "meaning": "付費",
+      "pos": "n."
+    },
+    {
+      "id": 320,
+      "word": "graphics",
+      "meaning": "圖形",
+      "pos": "n."
+    },
+    {
+      "id": 321,
+      "word": "fiber",
+      "meaning": "光纖",
+      "pos": "n."
+    },
+    {
+      "id": 322,
+      "word": "online transaction processing",
+      "meaning": "線上交易處理",
+      "pos": "n./phr."
+    },
+    {
+      "id": 323,
+      "word": "digital camera",
+      "meaning": "數位相機",
+      "pos": "n./phr."
+    },
+    {
+      "id": 324,
+      "word": "secondary storage",
+      "meaning": "次級儲存體",
+      "pos": "n./phr."
+    },
+    {
+      "id": 325,
+      "word": "enterprise",
+      "meaning": "企業",
+      "pos": "n."
+    },
+    {
+      "id": 326,
+      "word": "antivirus",
+      "meaning": "防毒",
+      "pos": "n."
+    },
+    {
+      "id": 327,
+      "word": "NII",
+      "meaning": "國家資訊基礎建設",
+      "pos": "n."
+    },
+    {
+      "id": 328,
+      "word": "software resource",
+      "meaning": "軟體資源",
+      "pos": "n./phr."
+    },
+    {
+      "id": 329,
+      "word": "cell",
+      "meaning": "儲存格",
+      "pos": "n."
+    },
+    {
+      "id": 330,
+      "word": "array",
+      "meaning": "陣列",
+      "pos": "n."
+    },
+    {
+      "id": 331,
+      "word": "public key",
+      "meaning": "公開金鑰",
+      "pos": "n./phr."
+    },
+    {
+      "id": 332,
+      "word": "downtime",
+      "meaning": "停機時間",
+      "pos": "n."
+    },
+    {
+      "id": 333,
+      "word": "TCP",
+      "meaning": "傳輸控制協定（英文簡稱）(全文:Transmission Control Protocol)",
+      "pos": "n."
+    },
+    {
+      "id": 334,
+      "word": "routing",
+      "meaning": "規劃路徑（網路）",
+      "pos": "n."
+    },
+    {
+      "id": 335,
+      "word": "knowledge worker",
+      "meaning": "知識工作者",
+      "pos": "n./phr."
+    },
+    {
+      "id": 336,
+      "word": "transistor",
+      "meaning": "電晶體",
+      "pos": "n."
+    },
+    {
+      "id": 337,
+      "word": "benefit",
+      "meaning": "效益",
+      "pos": "n./v."
+    },
+    {
+      "id": 338,
+      "word": "people resource",
+      "meaning": "人力資源",
+      "pos": "n./phr."
+    },
+    {
+      "id": 339,
+      "word": "storage",
+      "meaning": "儲存",
+      "pos": "n."
+    },
+    {
+      "id": 340,
+      "word": "nano",
+      "meaning": "奈米",
+      "pos": "n."
+    },
+    {
+      "id": 341,
+      "word": "kilobyte",
+      "meaning": "千位元組",
+      "pos": "n."
+    },
+    {
+      "id": 342,
+      "word": "recharge battery",
+      "meaning": "可充電式電池",
+      "pos": "v./phr."
+    },
+    {
+      "id": 343,
+      "word": "DSL",
+      "meaning": "數位用戶線路",
+      "pos": "n."
+    },
+    {
+      "id": 344,
+      "word": "integrated package",
+      "meaning": "整合式套件",
+      "pos": "n./phr."
+    },
+    {
+      "id": 345,
+      "word": "unicode",
+      "meaning": "萬國碼",
+      "pos": "n."
+    },
+    {
+      "id": 346,
+      "word": "office automation",
+      "meaning": "辦公室自動化",
+      "pos": "n./phr."
+    },
+    {
+      "id": 347,
+      "word": "terabyte",
+      "meaning": "兆位元組（TG)",
+      "pos": "n."
+    },
+    {
+      "id": 348,
+      "word": "secure digital",
+      "meaning": "安全數位（卡）（SD)",
+      "pos": "n./phr."
+    },
+    {
+      "id": 349,
+      "word": "inform",
+      "meaning": "通知",
+      "pos": "v."
+    },
+    {
+      "id": 350,
+      "word": "database administrator",
+      "meaning": "資料庫管理員",
+      "pos": "n./phr."
+    },
+    {
+      "id": 351,
+      "word": "model",
+      "meaning": "模型",
+      "pos": "n."
+    },
+    {
+      "id": 352,
+      "word": "data mining",
+      "meaning": "資料探勘",
+      "pos": "n./phr."
+    },
+    {
+      "id": 353,
+      "word": "primary key",
+      "meaning": "主鍵",
+      "pos": "n./phr."
+    },
+    {
+      "id": 354,
+      "word": "desktop",
+      "meaning": "桌面",
+      "pos": "n."
+    },
+    {
+      "id": 355,
+      "word": "buffer",
+      "meaning": "緩衝器",
+      "pos": "n./v."
+    },
+    {
+      "id": 356,
+      "word": "hypertext",
+      "meaning": "超文件",
+      "pos": "n."
+    },
+    {
+      "id": 357,
+      "word": "SaaS",
+      "meaning": "軟體即服務（英文簡稱）(全文:Software as a Service)",
+      "pos": "n."
+    },
+    {
+      "id": 358,
+      "word": "metadata",
+      "meaning": "定義的資料",
+      "pos": "n."
+    },
+    {
+      "id": 359,
+      "word": "telecommunication network",
+      "meaning": "電信通訊網路",
+      "pos": "n./phr."
+    },
+    {
+      "id": 360,
+      "word": "microwave",
+      "meaning": "微波",
+      "pos": "n."
+    },
+    {
+      "id": 361,
+      "word": "DBMS",
+      "meaning": "資料庫管理系統",
+      "pos": "n."
+    },
+    {
+      "id": 362,
+      "word": "forensics",
+      "meaning": "鑑識；辯論術",
+      "pos": "n."
+    },
+    {
+      "id": 363,
+      "word": "QR code",
+      "meaning": "快速反應碼（英文簡稱）(全文: quick response code)",
+      "pos": "n./phr."
+    },
+    {
+      "id": 364,
+      "word": "log on",
+      "meaning": "登入",
+      "pos": "v./phr."
+    },
+    {
+      "id": 365,
+      "word": "power supply",
+      "meaning": "電源供應器",
+      "pos": "n./phr."
+    },
+    {
+      "id": 366,
+      "word": "terminal",
+      "meaning": "終端機",
+      "pos": "n."
+    },
+    {
+      "id": 367,
+      "word": "RAID",
+      "meaning": "獨立磁碟冗餘陣列（縮寫）(全文:Redundant Array of Independent Disks)",
+      "pos": "n."
+    },
+    {
+      "id": 368,
+      "word": "standby mode",
+      "meaning": "待命模式",
+      "pos": "n./phr."
+    },
+    {
+      "id": 369,
+      "word": "computer forensics",
+      "meaning": "電腦鑑識",
+      "pos": "n./phr."
+    },
+    {
+      "id": 370,
+      "word": "variable",
+      "meaning": "變數",
+      "pos": "n."
+    },
+    {
+      "id": 371,
+      "word": "data conversion",
+      "meaning": "資料轉換",
+      "pos": "n./phr."
+    },
+    {
+      "id": 372,
+      "word": "LIFO",
+      "meaning": "後進先出",
+      "pos": "n."
+    },
+    {
+      "id": 373,
+      "word": "KHz",
+      "meaning": "千赫茲",
+      "pos": "n."
+    },
+    {
+      "id": 374,
+      "word": "entity relationship",
+      "meaning": "實體關係",
+      "pos": "n./phr."
+    },
+    {
+      "id": 375,
+      "word": "culture",
+      "meaning": "文化",
+      "pos": "n."
+    },
+    {
+      "id": 376,
+      "word": "e-business",
+      "meaning": "電子化企業",
+      "pos": "n."
+    },
+    {
+      "id": 377,
+      "word": "CD-R",
+      "meaning": "可錄式光碟",
+      "pos": "n."
+    },
+    {
+      "id": 378,
+      "word": "non-repudiation",
+      "meaning": "不可否認性",
+      "pos": "n."
+    },
+    {
+      "id": 379,
+      "word": "SATA",
+      "meaning": "串列先進科技附加排線（英文簡稱）(全文:Serial Advanced Technology Attachment)",
+      "pos": "n."
+    },
+    {
+      "id": 380,
+      "word": "system",
+      "meaning": "系統",
+      "pos": "n."
+    },
+    {
+      "id": 381,
+      "word": "star",
+      "meaning": "星狀",
+      "pos": "n."
+    },
+    {
+      "id": 382,
+      "word": "confidentiality",
+      "meaning": "機密性",
+      "pos": "n."
+    },
+    {
+      "id": 383,
+      "word": "hard disk",
+      "meaning": "硬碟",
+      "pos": "n./phr."
+    },
+    {
+      "id": 384,
+      "word": "DoS",
+      "meaning": "阻斷服務",
+      "pos": "n."
+    },
+    {
+      "id": 385,
+      "word": "file",
+      "meaning": "檔案",
+      "pos": "n."
+    },
+    {
+      "id": 386,
+      "word": "disaster recovery",
+      "meaning": "災難復原",
+      "pos": "n./phr."
+    },
+    {
+      "id": 387,
+      "word": "installation",
+      "meaning": "安裝",
+      "pos": "n."
+    },
+    {
+      "id": 388,
+      "word": "bridge",
+      "meaning": "橋接器",
+      "pos": "n."
+    },
+    {
+      "id": 389,
+      "word": "URL",
+      "meaning": "一致性資源定位器（英文簡稱）(全文:Uniform Resource Locator)",
+      "pos": "n."
+    },
+    {
+      "id": 390,
+      "word": "power-on self test",
+      "meaning": "開機自我測試",
+      "pos": "n./phr."
+    },
+    {
+      "id": 391,
+      "word": "business model",
+      "meaning": "商業模式",
+      "pos": "n./phr."
+    },
+    {
+      "id": 392,
+      "word": "executive information system",
+      "meaning": "高階主管資訊系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 393,
+      "word": "program",
+      "meaning": "程式",
+      "pos": "n./v."
+    },
+    {
+      "id": 394,
+      "word": "monitor",
+      "meaning": "顯示器",
+      "pos": "n./v."
+    },
+    {
+      "id": 395,
+      "word": "online analytical processing",
+      "meaning": "線上分析處理",
+      "pos": "n./phr."
+    },
+    {
+      "id": 396,
+      "word": "cost",
+      "meaning": "成本",
+      "pos": "n./v."
+    },
+    {
+      "id": 397,
+      "word": "iOS",
+      "meaning": "iPhone手機的作業系統",
+      "pos": "n."
+    },
+    {
+      "id": 398,
+      "word": "PPTP",
+      "meaning": "點對點通道協定(全文:Point-to-Point Tunneling Protocol)",
+      "pos": "n."
+    },
+    {
+      "id": 399,
+      "word": "midrange system",
+      "meaning": "中型系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 400,
+      "word": "server",
+      "meaning": "伺服器",
+      "pos": "n."
+    },
+    {
+      "id": 401,
+      "word": "queue",
+      "meaning": "佇列",
+      "pos": "n."
+    },
+    {
+      "id": 402,
+      "word": "password",
+      "meaning": "密碼",
+      "pos": "n."
+    },
+    {
+      "id": 403,
+      "word": "OLAP",
+      "meaning": "線上分析處理",
+      "pos": "n."
+    },
+    {
+      "id": 404,
+      "word": "smartphone",
+      "meaning": "智慧型手機",
+      "pos": "n."
+    },
+    {
+      "id": 405,
+      "word": "local area network",
+      "meaning": "區域網路",
+      "pos": "n./phr."
+    },
+    {
+      "id": 406,
+      "word": "battery",
+      "meaning": "電池",
+      "pos": "n."
+    },
+    {
+      "id": 407,
+      "word": "Samsung",
+      "meaning": "三星",
+      "pos": "n."
+    },
+    {
+      "id": 408,
+      "word": "distance instruction",
+      "meaning": "遠距教學",
+      "pos": "n./phr."
+    },
+    {
+      "id": 409,
+      "word": "development",
+      "meaning": "開發",
+      "pos": "n."
+    },
+    {
+      "id": 410,
+      "word": "catalog",
+      "meaning": "型錄",
+      "pos": "n."
+    },
+    {
+      "id": 411,
+      "word": "POP",
+      "meaning": "處理郵件通訊協定（英文簡稱）",
+      "pos": "n."
+    },
+    {
+      "id": 412,
+      "word": "knowledge engineer",
+      "meaning": "知識工程師",
+      "pos": "n./phr."
+    },
+    {
+      "id": 413,
+      "word": "Internet",
+      "meaning": "網際網路",
+      "pos": "n."
+    },
+    {
+      "id": 414,
+      "word": "message box",
+      "meaning": "訊息視窗",
+      "pos": "n./phr."
+    },
+    {
+      "id": 415,
+      "word": "font",
+      "meaning": "字型",
+      "pos": "n."
+    },
+    {
+      "id": 416,
+      "word": "pad",
+      "meaning": "平板",
+      "pos": "n."
+    },
+    {
+      "id": 417,
+      "word": "Hertz",
+      "meaning": "赫茲",
+      "pos": "n."
+    },
+    {
+      "id": 418,
+      "word": "data manipulation",
+      "meaning": "資料操縱",
+      "pos": "n./phr."
+    },
+    {
+      "id": 419,
+      "word": "downstream data",
+      "meaning": "下流（游）的資料",
+      "pos": "n./phr."
+    },
+    {
+      "id": 420,
+      "word": "do it yourself",
+      "meaning": "自己做",
+      "pos": "v./phr."
+    },
+    {
+      "id": 421,
+      "word": "broker",
+      "meaning": "仲介商",
+      "pos": "n./v."
+    },
+    {
+      "id": 422,
+      "word": "broadband",
+      "meaning": "寬頻",
+      "pos": "n."
+    },
+    {
+      "id": 423,
+      "word": "access point",
+      "meaning": "無線基地台",
+      "pos": "n./phr."
+    },
+    {
+      "id": 424,
+      "word": "SCM",
+      "meaning": "供應鏈管理（縮寫）(全文:Supply Chain Management)",
+      "pos": "n."
+    },
+    {
+      "id": 425,
+      "word": "exchange",
+      "meaning": "交易",
+      "pos": "n./v."
+    },
+    {
+      "id": 426,
+      "word": "GPS",
+      "meaning": "全球定位系統",
+      "pos": "n."
+    },
+    {
+      "id": 427,
+      "word": "serial transmission",
+      "meaning": "串列傳輸",
+      "pos": "n./phr."
+    },
+    {
+      "id": 428,
+      "word": "BBS",
+      "meaning": "電子佈告欄系統",
+      "pos": "n."
+    },
+    {
+      "id": 429,
+      "word": "hide",
+      "meaning": "隱藏",
+      "pos": "v."
+    },
+    {
+      "id": 430,
+      "word": "secure digital high capacity",
+      "meaning": "安全數位高容量（卡）",
+      "pos": "n./phr."
+    },
+    {
+      "id": 431,
+      "word": "literacy",
+      "meaning": "素養",
+      "pos": "n."
+    },
+    {
+      "id": 432,
+      "word": "projector",
+      "meaning": "投影機",
+      "pos": "n."
+    },
+    {
+      "id": 433,
+      "word": "global positioning system",
+      "meaning": "全球定位系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 434,
+      "word": "programming language",
+      "meaning": "程式語言",
+      "pos": "n./phr."
+    },
+    {
+      "id": 435,
+      "word": "integrated circuit",
+      "meaning": "積體電路",
+      "pos": "n./phr."
+    },
+    {
+      "id": 436,
+      "word": "frame",
+      "meaning": "框架",
+      "pos": "n."
+    },
+    {
+      "id": 437,
+      "word": "accounting information system",
+      "meaning": "會計資訊系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 438,
+      "word": "USB",
+      "meaning": "萬用序列匯流排（英文簡稱）(全文:Universal Serial Bus)",
+      "pos": "n."
+    },
+    {
+      "id": 439,
+      "word": "output unit",
+      "meaning": "輸出單元",
+      "pos": "n./phr."
+    },
+    {
+      "id": 440,
+      "word": "linker",
+      "meaning": "連結程式",
+      "pos": "n."
+    },
+    {
+      "id": 441,
+      "word": "Internet bank",
+      "meaning": "網路銀行",
+      "pos": "n./phr."
+    },
+    {
+      "id": 442,
+      "word": "warehouse",
+      "meaning": "倉儲",
+      "pos": "n."
+    },
+    {
+      "id": 443,
+      "word": "FIFO",
+      "meaning": "先進先出",
+      "pos": "n."
+    },
+    {
+      "id": 444,
+      "word": "icon",
+      "meaning": "圖示",
+      "pos": "n."
+    },
+    {
+      "id": 445,
+      "word": "BIOS",
+      "meaning": "基本輸入輸出系統",
+      "pos": "n."
+    },
+    {
+      "id": 446,
+      "word": "biometrics",
+      "meaning": "生物測定學",
+      "pos": "n."
+    },
+    {
+      "id": 447,
+      "word": "cell phone",
+      "meaning": "行動電話",
+      "pos": "n./phr."
+    },
+    {
+      "id": 448,
+      "word": "auction",
+      "meaning": "拍賣",
+      "pos": "n."
+    },
+    {
+      "id": 449,
+      "word": "downstream",
+      "meaning": "下游的",
+      "pos": "adj."
+    },
+    {
+      "id": 450,
+      "word": "SD",
+      "meaning": "安全數位（卡）（英文簡稱）(全文:Secure Digital)",
+      "pos": "n."
+    },
+    {
+      "id": 451,
+      "word": "domain",
+      "meaning": "網域",
+      "pos": "n."
+    },
+    {
+      "id": 452,
+      "word": "Linux",
+      "meaning": "一種免費；多用戶；多工的作業系統",
+      "pos": "n."
+    },
+    {
+      "id": 453,
+      "word": "audit",
+      "meaning": "審核",
+      "pos": "n./v."
+    },
+    {
+      "id": 454,
+      "word": "information system",
+      "meaning": "資訊系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 455,
+      "word": "EFT",
+      "meaning": "電子金融轉帳",
+      "pos": "n."
+    },
+    {
+      "id": 456,
+      "word": "upgrade",
+      "meaning": "升級",
+      "pos": "n./v."
+    },
+    {
+      "id": 457,
+      "word": "spam",
+      "meaning": "垃圾郵件",
+      "pos": "n."
+    },
+    {
+      "id": 458,
+      "word": "client-server LAN",
+      "meaning": "主從式區域網路",
+      "pos": "n./phr."
+    },
+    {
+      "id": 459,
+      "word": "sector",
+      "meaning": "磁區",
+      "pos": "n."
+    },
+    {
+      "id": 460,
+      "word": "value chain model",
+      "meaning": "價值鏈模型",
+      "pos": "n./phr."
+    },
+    {
+      "id": 461,
+      "word": "virus",
+      "meaning": "病毒",
+      "pos": "n."
+    },
+    {
+      "id": 462,
+      "word": "distributed processing system",
+      "meaning": "分散式處理系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 463,
+      "word": "presentation",
+      "meaning": "簡報",
+      "pos": "n."
+    },
+    {
+      "id": 464,
+      "word": "e-commerce",
+      "meaning": "電子商務",
+      "pos": "n."
+    },
+    {
+      "id": 465,
+      "word": "procedure",
+      "meaning": "程序",
+      "pos": "n."
+    },
+    {
+      "id": 466,
+      "word": "decision support system",
+      "meaning": "決策支援系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 467,
+      "word": "impact",
+      "meaning": "影響",
+      "pos": "n./v."
+    },
+    {
+      "id": 468,
+      "word": "internal code",
+      "meaning": "內碼",
+      "pos": "n./phr."
+    },
+    {
+      "id": 469,
+      "word": "data worker",
+      "meaning": "資料工作者",
+      "pos": "n./phr."
+    },
+    {
+      "id": 470,
+      "word": "electronic government",
+      "meaning": "電子化政府",
+      "pos": "n./phr."
+    },
+    {
+      "id": 471,
+      "word": "virtual",
+      "meaning": "虛擬的",
+      "pos": "adj."
+    },
+    {
+      "id": 472,
+      "word": "WWW",
+      "meaning": "全球資訊網（的英文簡稱）(全文:World Wide Web)",
+      "pos": "n."
+    },
+    {
+      "id": 473,
+      "word": "pharming",
+      "meaning": "網址嫁接；網域欺騙技術",
+      "pos": "n."
+    },
+    {
+      "id": 474,
+      "word": "business process and operation",
+      "meaning": "企業流程與營運",
+      "pos": "n./phr."
+    },
+    {
+      "id": 475,
+      "word": "computer monitoring",
+      "meaning": "電腦監控",
+      "pos": "n./phr."
+    },
+    {
+      "id": 476,
+      "word": "conference call",
+      "meaning": "電話會議",
+      "pos": "n./phr."
+    },
+    {
+      "id": 477,
+      "word": "doze mode",
+      "meaning": "休眠模式",
+      "pos": "n./phr."
+    },
+    {
+      "id": 478,
+      "word": "pixel",
+      "meaning": "像素",
+      "pos": "n."
+    },
+    {
+      "id": 479,
+      "word": "demand",
+      "meaning": "需求",
+      "pos": "n./v."
+    },
+    {
+      "id": 480,
+      "word": "management information systems",
+      "meaning": "資訊管理系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 481,
+      "word": "offshoring",
+      "meaning": "境外",
+      "pos": "n."
+    },
+    {
+      "id": 482,
+      "word": "sniffer",
+      "meaning": "網路監聽",
+      "pos": "n."
+    },
+    {
+      "id": 483,
+      "word": "multicore",
+      "meaning": "多核心的",
+      "pos": "adj."
+    },
+    {
+      "id": 484,
+      "word": "millisecond",
+      "meaning": "毫秒",
+      "pos": "n."
+    },
+    {
+      "id": 485,
+      "word": "DIY",
+      "meaning": "自己做",
+      "pos": "n."
+    },
+    {
+      "id": 486,
+      "word": "transparency",
+      "meaning": "透明度",
+      "pos": "n."
+    },
+    {
+      "id": 487,
+      "word": "SDHC",
+      "meaning": "安全數位高容量（卡）（英文簡稱）(全文:Secure Digital High Capacity)",
+      "pos": "n."
+    },
+    {
+      "id": 488,
+      "word": "all rights reserved",
+      "meaning": "版權所有",
+      "pos": "phr."
+    },
+    {
+      "id": 489,
+      "word": "RPM",
+      "meaning": "每分鐘旋轉圈數（英文簡稱）(全文:Revolutions Per Minute)",
+      "pos": "n."
+    },
+    {
+      "id": 490,
+      "word": "EC",
+      "meaning": "電子商務",
+      "pos": "n."
+    },
+    {
+      "id": 491,
+      "word": "information technology",
+      "meaning": "資訊科技",
+      "pos": "n./phr."
+    },
+    {
+      "id": 492,
+      "word": "offline",
+      "meaning": "離線",
+      "pos": "n."
+    },
+    {
+      "id": 493,
+      "word": "PSTN",
+      "meaning": "公眾電話網路（英文簡稱）(全文:Public Switched Telephone Network)",
+      "pos": "n."
+    },
+    {
+      "id": 494,
+      "word": "LAN",
+      "meaning": "區域網路",
+      "pos": "n."
+    },
+    {
+      "id": 495,
+      "word": "display",
+      "meaning": "顯示器",
+      "pos": "n./v."
+    },
+    {
+      "id": 496,
+      "word": "megahertz",
+      "meaning": "百萬赫茲",
+      "pos": "n."
+    },
+    {
+      "id": 497,
+      "word": "loader",
+      "meaning": "載入程式",
+      "pos": "n."
+    },
+    {
+      "id": 498,
+      "word": "digital divide",
+      "meaning": "數位區隔",
+      "pos": "n./phr."
+    },
+    {
+      "id": 499,
+      "word": "cycle",
+      "meaning": "週期；循環",
+      "pos": "n./v."
+    },
+    {
+      "id": 500,
+      "word": "compatible",
+      "meaning": "相容的",
+      "pos": "adj."
+    },
+    {
+      "id": 501,
+      "word": "ADSL",
+      "meaning": "非對稱數位用戶迴路",
+      "pos": "n."
+    },
+    {
+      "id": 502,
+      "word": "input",
+      "meaning": "輸入",
+      "pos": "n."
+    },
+    {
+      "id": 503,
+      "word": "computing",
+      "meaning": "運算",
+      "pos": "n."
+    },
+    {
+      "id": 504,
+      "word": "integrity",
+      "meaning": "完整性",
+      "pos": "n."
+    },
+    {
+      "id": 505,
+      "word": "main memory",
+      "meaning": "主記憶體",
+      "pos": "n./phr."
+    },
+    {
+      "id": 506,
+      "word": "swapping",
+      "meaning": "交換",
+      "pos": "n."
+    },
+    {
+      "id": 507,
+      "word": "feedback",
+      "meaning": "回饋",
+      "pos": "n."
+    },
+    {
+      "id": 508,
+      "word": "Macintosh",
+      "meaning": "麥金塔",
+      "pos": "n."
+    },
+    {
+      "id": 509,
+      "word": "marketplace",
+      "meaning": "市集",
+      "pos": "n."
+    },
+    {
+      "id": 510,
+      "word": "text",
+      "meaning": "文字",
+      "pos": "n."
+    },
+    {
+      "id": 511,
+      "word": "architecture",
+      "meaning": "架構",
+      "pos": "n."
+    },
+    {
+      "id": 512,
+      "word": "sort",
+      "meaning": "排序",
+      "pos": "n./v."
+    },
+    {
+      "id": 513,
+      "word": "show",
+      "meaning": "顯示",
+      "pos": "n./v."
+    },
+    {
+      "id": 514,
+      "word": "distribute",
+      "meaning": "分散",
+      "pos": "v."
+    },
+    {
+      "id": 515,
+      "word": "ISO",
+      "meaning": "國際標準組織",
+      "pos": "n."
+    },
+    {
+      "id": 516,
+      "word": "image",
+      "meaning": "影像",
+      "pos": "n."
+    },
+    {
+      "id": 517,
+      "word": "copyright",
+      "meaning": "版權",
+      "pos": "n."
+    },
+    {
+      "id": 518,
+      "word": "slide",
+      "meaning": "投影片",
+      "pos": "n."
+    },
+    {
+      "id": 519,
+      "word": "GB",
+      "meaning": "十億位元組",
+      "pos": "n."
+    },
+    {
+      "id": 520,
+      "word": "task",
+      "meaning": "工作",
+      "pos": "n."
+    },
+    {
+      "id": 521,
+      "word": "data flow",
+      "meaning": "資料流",
+      "pos": "n./phr."
+    },
+    {
+      "id": 522,
+      "word": "field name",
+      "meaning": "欄位名稱",
+      "pos": "n./phr."
+    },
+    {
+      "id": 523,
+      "word": "network operating system",
+      "meaning": "網路作業系統",
+      "pos": "n./phr."
+    },
+    {
+      "id": 524,
+      "word": "CA",
+      "meaning": "認證機構",
+      "pos": "n."
+    },
+    {
+      "id": 525,
+      "word": "macro",
+      "meaning": "巨集",
+      "pos": "n."
+    },
+    {
+      "id": 526,
+      "word": "EIS",
+      "meaning": "高階主管資訊系統",
+      "pos": "n."
+    },
+    {
+      "id": 527,
+      "word": "PDA",
+      "meaning": "個人數位助理（英文簡稱）(全文:Personal Digital Assistant)",
+      "pos": "n."
+    },
+    {
+      "id": 528,
+      "word": "MHz",
+      "meaning": "百萬赫茲（英文簡稱）",
+      "pos": "n."
+    },
+    {
+      "id": 529,
+      "word": "ASCII",
+      "meaning": "美國資訊交換標準碼",
+      "pos": "n."
+    },
+    {
+      "id": 530,
+      "word": "modulation",
+      "meaning": "調變",
+      "pos": "n."
+    },
+    {
+      "id": 531,
+      "word": "RAM",
+      "meaning": "隨機存取記憶體（英文簡稱）(全文:Random Access Memory)",
+      "pos": "n."
+    },
+    {
+      "id": 532,
+      "word": "search engine",
+      "meaning": "搜尋引擎",
+      "pos": "n./phr."
+    },
+    {
+      "id": 533,
+      "word": "asset",
+      "meaning": "資產",
+      "pos": "n."
+    },
+    {
+      "id": 534,
+      "word": "Facebook",
+      "meaning": "臉書",
+      "pos": "n."
+    },
+    {
+      "id": 535,
+      "word": "information appliance",
+      "meaning": "資訊家電",
+      "pos": "n./phr."
+    },
+    {
+      "id": 536,
+      "word": "blog",
+      "meaning": "部落格",
+      "pos": "n."
+    },
+    {
+      "id": 537,
+      "word": "wireless LAN",
+      "meaning": "無線區域網路（LAN)",
+      "pos": "n./phr."
+    },
+    {
+      "id": 538,
+      "word": "wireless technology",
+      "meaning": "無線科技",
+      "pos": "n./phr."
+    },
+    {
+      "id": 539,
+      "word": "bug",
+      "meaning": "瑕疵",
+      "pos": "n."
+    },
+    {
+      "id": 540,
+      "word": "datagram",
+      "meaning": "資料包；數據包",
+      "pos": "n."
+    },
+    {
+      "id": 541,
+      "word": "Android",
+      "meaning": "安卓",
+      "pos": "n."
+    },
+    {
+      "id": 542,
+      "word": "dynamic",
+      "meaning": "動態的",
+      "pos": "adj."
+    },
+    {
+      "id": 543,
+      "word": "end users",
+      "meaning": "終端使用者",
+      "pos": "n./phr."
+    },
+    {
+      "id": 544,
+      "word": "encryption",
+      "meaning": "加密",
+      "pos": "n."
+    },
+    {
+      "id": 545,
+      "word": "radio frequency",
+      "meaning": "無線電射頻（RF)",
+      "pos": "n./phr."
+    },
+    {
+      "id": 546,
+      "word": "memory unit",
+      "meaning": "記憶單元",
+      "pos": "n./phr."
+    },
+    {
+      "id": 547,
+      "word": "call",
+      "meaning": "呼叫",
+      "pos": "n./v."
+    },
+    {
+      "id": 548,
+      "word": "optical disc",
+      "meaning": "光碟",
+      "pos": "n./phr."
+    },
+    {
+      "id": 549,
+      "word": "coaxial cable",
+      "meaning": "同軸電纜",
+      "pos": "n./phr."
+    },
+    {
+      "id": 550,
+      "word": "language",
+      "meaning": "語言",
+      "pos": "n."
+    },
+    {
+      "id": 551,
+      "word": "POS",
+      "meaning": "銷售時點（英文簡稱）(全文:Point of Sale)",
+      "pos": "n."
+    },
+    {
+      "id": 552,
+      "word": "database server",
+      "meaning": "資料庫伺服器",
+      "pos": "n./phr."
+    },
+    {
+      "id": 553,
+      "word": "table",
+      "meaning": "表格",
+      "pos": "n."
+    },
+    {
+      "id": 554,
+      "word": "business",
+      "meaning": "企業或商務",
+      "pos": "n."
+    },
+    {
+      "id": 555,
+      "word": "six sigma",
+      "meaning": "六個標準差",
+      "pos": "n./phr."
+    },
+    {
+      "id": 556,
+      "word": "ANSI",
+      "meaning": "美國國家標準協會",
+      "pos": "n."
+    },
+    {
+      "id": 557,
+      "word": "CPU",
+      "meaning": "中央處理單元",
+      "pos": "n."
+    },
+    {
+      "id": 558,
+      "word": "computer-aided manufacturing",
+      "meaning": "電腦輔助製造",
+      "pos": "n./phr."
+    },
+    {
+      "id": 559,
+      "word": "database",
+      "meaning": "資料庫",
+      "pos": "n."
+    },
+    {
+      "id": 560,
+      "word": "WAN",
+      "meaning": "廣域網路（英文簡稱）(全文:Wide Area Network)",
+      "pos": "n."
+    },
+    {
+      "id": 561,
+      "word": "telecommunication software",
+      "meaning": "電信通訊軟體",
+      "pos": "n./phr."
+    },
+    {
+      "id": 562,
+      "word": "client",
+      "meaning": "用戶端",
+      "pos": "n."
+    },
+    {
+      "id": 563,
+      "word": "MB",
+      "meaning": "百萬位元組（縮寫）",
+      "pos": "n."
+    },
+    {
+      "id": 564,
+      "word": "constant",
+      "meaning": "常數",
+      "pos": "adj./n."
+    },
+    {
+      "id": 565,
+      "word": "SQL",
+      "meaning": "結構化查詢語言（縮寫）(全文:Structured Query Language)",
+      "pos": "n."
+    },
+    {
+      "id": 566,
+      "word": "portability",
+      "meaning": "可攜型",
+      "pos": "n."
+    },
+    {
+      "id": 567,
+      "word": "pivot table",
+      "meaning": "樞紐分析表",
+      "pos": "n./phr."
+    },
+    {
+      "id": 568,
+      "word": "scanner",
+      "meaning": "掃描器",
+      "pos": "n."
+    },
+    {
+      "id": 569,
+      "word": "network interface card",
+      "meaning": "網路介面卡（NIC)",
+      "pos": "n./phr."
+    },
+    {
+      "id": 570,
+      "word": "LCD",
+      "meaning": "液晶顯示器",
+      "pos": "n."
+    },
+    {
+      "id": 571,
+      "word": "production",
+      "meaning": "生產",
+      "pos": "n."
+    },
+    {
+      "id": 572,
+      "word": "XML",
+      "meaning": "延伸性標示語言 (全文:eXtensible Markup Language)",
+      "pos": "n."
+    },
+    {
+      "id": 573,
+      "word": "personal information",
+      "meaning": "個人資訊",
+      "pos": "n./phr."
+    },
+    {
+      "id": 574,
+      "word": "Skype",
+      "meaning": "通訊軟體",
+      "pos": "n."
+    },
+    {
+      "id": 575,
+      "word": "satellite",
+      "meaning": "通訊衛星",
+      "pos": "n."
+    },
+    {
+      "id": 576,
+      "word": "module",
+      "meaning": "模組",
+      "pos": "n."
+    },
+    {
+      "id": 577,
+      "word": "mobile wallet",
+      "meaning": "手機錢包",
+      "pos": "n./phr."
+    },
+    {
+      "id": 578,
+      "word": "input unit",
+      "meaning": "輸入單位",
+      "pos": "n./phr."
+    },
+    {
+      "id": 579,
+      "word": "WEP",
+      "meaning": "有線等效加密（協定）（的英文簡稱）(全文:Wired Equivalent Privacy)",
+      "pos": "n."
+    },
+    {
+      "id": 580,
+      "word": "keyboard",
+      "meaning": "鍵盤",
+      "pos": "n."
+    },
+    {
+      "id": 581,
+      "word": "TB",
+      "meaning": "兆位元組 (全文:Terabyte)",
+      "pos": "n."
+    },
+    {
+      "id": 582,
+      "word": "window",
+      "meaning": "視窗",
+      "pos": "n."
+    },
+    {
+      "id": 583,
+      "word": "life cycle",
+      "meaning": "生命週期",
+      "pos": "n./phr."
+    },
+    {
+      "id": 584,
+      "word": "data processing",
+      "meaning": "資料處理",
+      "pos": "n./phr."
+    },
+    {
+      "id": 585,
+      "word": "CTO",
+      "meaning": "科技長",
+      "pos": "n."
+    },
+    {
+      "id": 586,
+      "word": "design",
+      "meaning": "設計",
+      "pos": "n./v."
+    },
+    {
+      "id": 587,
+      "word": "Metcalfe's law",
+      "meaning": "梅特卡夫定律",
+      "pos": "n./phr."
+    },
+    {
+      "id": 588,
+      "word": "Ethernet",
+      "meaning": "乙太網路",
+      "pos": "n."
+    },
+    {
+      "id": 589,
+      "word": "point-to-point protocol",
+      "meaning": "點對點協定",
+      "pos": "n./phr."
+    },
+    {
+      "id": 590,
+      "word": "download",
+      "meaning": "下載",
+      "pos": "n./v."
+    },
+    {
+      "id": 591,
+      "word": "infomediary",
+      "meaning": "資訊中介",
+      "pos": "n."
+    },
+    {
+      "id": 592,
+      "word": "utility",
+      "meaning": "工具程式或公用程式",
+      "pos": "n."
+    },
+    {
+      "id": 593,
+      "word": "patent",
+      "meaning": "專利",
+      "pos": "n."
+    },
+    {
+      "id": 594,
+      "word": "host",
+      "meaning": "主機",
+      "pos": "n."
+    },
+    {
+      "id": 595,
+      "word": "statement",
+      "meaning": "敘述",
+      "pos": "n."
+    },
+    {
+      "id": 596,
+      "word": "bitmap",
+      "meaning": "點陣圖",
+      "pos": "n."
+    },
+    {
+      "id": 597,
+      "word": "processor",
+      "meaning": "處理器",
+      "pos": "n."
+    },
+    {
+      "id": 598,
+      "word": "documentation",
+      "meaning": "使用說明",
+      "pos": "n."
+    },
+    {
+      "id": 599,
+      "word": "mobile network",
+      "meaning": "行動網路",
+      "pos": "n./phr."
+    },
+    {
+      "id": 600,
+      "word": "textbox",
+      "meaning": "文字方塊",
+      "pos": "n."
+    },
+    {
+      "id": 601,
+      "word": "PnP",
+      "meaning": "隨插即用（英文簡稱）(全文:Plug and Play)",
+      "pos": "n."
+    },
+    {
+      "id": 602,
+      "word": "DB",
+      "meaning": "資料庫",
+      "pos": "n."
+    },
+    {
+      "id": 603,
+      "word": "FAT",
+      "meaning": "檔案配置表",
+      "pos": "n."
+    },
+    {
+      "id": 604,
+      "word": "data management",
+      "meaning": "資料管理",
+      "pos": "n./phr."
+    },
+    {
+      "id": 605,
+      "word": "management",
+      "meaning": "管理",
+      "pos": "n."
+    },
+    {
+      "id": 606,
+      "word": "information and communication technology",
+      "meaning": "資訊與網路通訊科技",
+      "pos": "n./phr."
+    },
+    {
+      "id": 607,
+      "word": "digital",
+      "meaning": "數位",
+      "pos": "adj./n."
+    },
+    {
+      "id": 608,
+      "word": "data warehouse",
+      "meaning": "資料倉儲",
+      "pos": "n./phr."
+    },
+    {
+      "id": 609,
+      "word": "serial port",
+      "meaning": "序列埠",
+      "pos": "n./phr."
+    },
+    {
+      "id": 610,
+      "word": "electronic business",
+      "meaning": "電子化企業",
+      "pos": "n./phr."
+    },
+    {
+      "id": 611,
+      "word": "formatted disk",
+      "meaning": "已格式化的磁碟",
+      "pos": "n./phr."
+    },
+    {
+      "id": 612,
+      "word": "output",
+      "meaning": "輸出",
+      "pos": "n."
+    },
+    {
+      "id": 613,
+      "word": "insertion sort",
+      "meaning": "插入排序法",
+      "pos": "n./phr."
+    },
+    {
+      "id": 614,
+      "word": "object-oriented language",
+      "meaning": "物件導向語言",
+      "pos": "n./phr."
+    },
+    {
+      "id": 615,
+      "word": "engineering",
+      "meaning": "工程",
+      "pos": "n."
+    },
+    {
+      "id": 616,
+      "word": "resolution",
+      "meaning": "解析度",
+      "pos": "n."
+    },
+    {
+      "id": 617,
+      "word": "power cord",
+      "meaning": "電源線",
+      "pos": "n./phr."
+    },
+    {
+      "id": 618,
+      "word": "secure digital extended capacity",
+      "meaning": "安全數位延伸高容量（卡）",
+      "pos": "n./phr."
+    },
+    {
+      "id": 619,
+      "word": "file processing",
+      "meaning": "檔案處理",
+      "pos": "n./phr."
+    },
+    {
+      "id": 620,
+      "word": "disruptive technology",
+      "meaning": "破壞性科技",
+      "pos": "n./phr."
+    },
+    {
+      "id": 621,
+      "word": "structure",
+      "meaning": "結構化",
+      "pos": "n."
+    },
+    {
+      "id": 622,
+      "word": "community",
+      "meaning": "社群",
+      "pos": "n."
+    },
+    {
+      "id": 623,
+      "word": "data bus",
+      "meaning": "資料匯流排",
+      "pos": "n./phr."
+    },
+    {
+      "id": 624,
+      "word": "bps",
+      "meaning": "每秒的位元數",
+      "pos": "n."
+    },
+    {
+      "id": 625,
+      "word": "electronic payment services",
+      "meaning": "電子付費服務",
+      "pos": "n./phr."
+    },
+    {
+      "id": 626,
+      "word": "mobile communication",
+      "meaning": "行動通訊",
+      "pos": "n./phr."
+    },
+    {
+      "id": 627,
+      "word": "customer relationship management",
+      "meaning": "顧客關係管理",
+      "pos": "n./phr."
+    },
+    {
+      "id": 628,
+      "word": "byte",
+      "meaning": "位元組",
+      "pos": "n."
+    },
+    {
+      "id": 629,
+      "word": "false",
+      "meaning": "假",
+      "pos": "adj."
+    },
+    {
+      "id": 630,
+      "word": "hypermedia",
+      "meaning": "超媒體",
+      "pos": "n."
+    },
+    {
+      "id": 631,
+      "word": "C2C",
+      "meaning": "個人對個人之間的相互交易",
+      "pos": "n."
+    },
+    {
+      "id": 632,
+      "word": "Lenovo",
+      "meaning": "聯想（電腦品牌）",
+      "pos": "n."
+    },
+    {
+      "id": 633,
+      "word": "CIO",
+      "meaning": "資訊長",
+      "pos": "n."
+    },
+    {
+      "id": 634,
+      "word": "systems specification",
+      "meaning": "系統規格",
+      "pos": "n./phr."
+    },
+    {
+      "id": 635,
+      "word": "word processing",
+      "meaning": "文字處理",
+      "pos": "n./phr."
+    },
+    {
+      "id": 636,
+      "word": "flash ROM",
+      "meaning": "快閃記憶體",
+      "pos": "n./phr."
+    },
+    {
+      "id": 637,
+      "word": "certificate authority",
+      "meaning": "憑證授權",
+      "pos": "n./phr."
+    },
+    {
+      "id": 638,
+      "word": "post office protocol",
+      "meaning": "郵局（收信）協定",
+      "pos": "n./phr."
+    },
+    {
+      "id": 639,
+      "word": "data dictionary",
+      "meaning": "資料字典",
+      "pos": "n./phr."
+    },
+    {
+      "id": 640,
+      "word": "computer software",
+      "meaning": "電腦軟體",
+      "pos": "n./phr."
+    },
+    {
+      "id": 641,
+      "word": "POST",
+      "meaning": "開機自我測試（英文簡稱）(全文:Power-On Self Test)",
+      "pos": "n."
+    },
+    {
+      "id": 642,
+      "word": "DVD",
+      "meaning": "數位多功能影音光碟",
+      "pos": "n."
+    },
+    {
+      "id": 643,
+      "word": "intellectual property",
+      "meaning": "智慧財產",
+      "pos": "n./phr."
+    },
+    {
+      "id": 644,
+      "word": "specification",
+      "meaning": "規格（範）",
+      "pos": "n."
+    },
+    {
+      "id": 645,
+      "word": "relational model",
+      "meaning": "關聯式模型",
+      "pos": "n./phr."
+    }
+  ]
+}
