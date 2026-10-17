@@ -12,6 +12,7 @@ const question={question:'測試填空 [__1__]',correct_answer:'kernel',type:'fi
    create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;
    grant usage on schema public,auth to anon,authenticated,service_role;grant execute on function auth.uid() to anon,authenticated;`);
   await db.exec(fs.readFileSync(path.join(__dirname,'../backend/schema.sql'),'utf8'));
+  await db.exec(fs.readFileSync(path.join(__dirname,'../backend/migrations/20261017-password-reset.sql'),'utf8'));
   for(const [name,id] of Object.entries(users))await db.query('insert into auth.users values($1,$2,now())',[id,name+'@example.com']);
   await db.query("insert into public.collaboration_members(user_id,email,display_name,role) values($1,'admin@example.com','管理員','admin')",[users.admin]);
   async function role(name){await db.exec('reset role');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[name==='anon'?'':users[name]]);await db.exec('set role '+(name==='anon'?'anon':'authenticated'));}
@@ -80,6 +81,23 @@ const question={question:'測試填空 [__1__]',correct_answer:'kernel',type:'fi
   await role('admin');await assert.rejects(()=>save(null,null,true,{...question,type:'unknown'}),/INVALID_CONTENT/);
   await assert.rejects(()=>db.query('select * from public.save_question_submission(null,\'os\',\'u99\',$1,true,null)',[question]),/foreign key/);
   pass('Server validates content type, destination, required text and option consistency');
+  await role('anon');await denied('select public.request_collaborator_password_reset($1)',[users.alice],/permission denied/);
+  await role('bob');await denied('select public.request_collaborator_password_reset($1)',[users.alice],/ADMIN_REQUIRED/);
+  await role('admin');await denied('select public.request_collaborator_password_reset($1)',[users.admin],/INVALID_MEMBER/);
+  pass('Only an active admin can authorize a reset, and admin accounts cannot be targeted');
+  const started=(await db.query('select public.request_collaborator_password_reset($1) as data',[users.alice])).rows[0].data;
+  assert.equal(started.user_id,users.alice);
+  await denied('select public.complete_collaborator_password_reset($1,true)',[started.request_id],/permission denied/);
+  await db.exec('reset role;set role service_role');
+  await db.query('select public.complete_collaborator_password_reset($1,true)',[started.request_id]);
+  await db.query('select public.complete_collaborator_password_reset($1,true)',[started.request_id]);
+  await role('admin');
+  const resetEvents=(await db.query("select * from public.collaboration_audit where action='password_reset'")).rows;
+  assert.equal(resetEvents.length,1);assert.equal(resetEvents[0].actor_id,users.admin);
+  assert.equal(resetEvents[0].after_data.password,undefined);
+  assert.equal((await db.query('select active from public.collaboration_members where user_id=$1',[users.alice])).rows[0].active,false);
+  assert.equal((await db.query('select * from public.question_submissions where id=$1',[a.id])).rows[0].content.correct_answer,'reviewed answer');
+  pass('Reset audit finalization is server-only and idempotent; disabled state and question history stay unchanged');
   console.log(JSON.stringify({passed}));
  }finally{await db.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

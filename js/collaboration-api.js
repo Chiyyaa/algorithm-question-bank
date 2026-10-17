@@ -26,7 +26,9 @@ function safeError(data) {
         RETURN_NOTE_REQUIRED:'請填寫退回原因。', NOT_PENDING:'這筆題目已不在待審狀態，請重新整理。',
         NOT_PUBLISHED:'這筆題目尚未發布。', INVALID_CONTENT:'題目格式不完整或超過長度限制。',
         ACCOUNT_NOT_FOUND:'找不到已建立的帳號。', MEMBER_EXISTS:'這個帳號已經有協作權限。',
-        INVALID_MEMBER:'帳號資料不正確；管理員帳號不能在這裡停用。'
+        INVALID_MEMBER:'帳號資料不正確，或這不是協作者帳號。',
+        PASSWORD_RESET_NOT_READY:'密碼重設尚未啟用，請先更新伺服器設定。',
+        PASSWORD_RESET_FAILED:'密碼重設未確認成功，請稍後重新產生一次；帳號與題目仍保留。'
     };
     for(const [code,message] of Object.entries(messages)) if(text.includes(code)) return message;
     if(/invalid login credentials/i.test(text)) return 'Email 或密碼不正確。';
@@ -54,7 +56,7 @@ export async function api(path,{method='GET',body,authenticated=true,headers={}}
     const response=await fetch(config.url+path,{
         method,headers:{apikey:config.publishableKey,'Content-Type':'application/json',
             ...(authenticated?{Authorization:'Bearer '+session.access_token}:{}),...headers},
-        ...(body!==undefined?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(15000)
+        ...(body!==undefined?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(path.startsWith('/functions/v1/')?60000:15000)
     });
     if(response.status===401&&authenticated&&retry){await refresh();return api(path,{method,body,authenticated,headers},false);}
     const data=response.status===204?null:await response.json().catch(()=>null);

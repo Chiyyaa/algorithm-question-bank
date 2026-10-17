@@ -1,11 +1,11 @@
 import { escapeHtml } from './utils.js';
 import { parseDraft } from './custom-questions.js?v=20261017';
 import { SUBJECTS, getUnit } from './units.js?v=20261009-os';
-import * as service from './collaboration-api.js?v=20261017';
+import * as service from './collaboration-api.js?v=20261017-reset1';
 
 const $=id=>document.getElementById(id);
 const labels={draft:'草稿',pending:'待審核',returned:'已退回',published:'已發布'};
-const actions={save_draft:'儲存草稿',submit:'送出審核',approve:'核准發布',return:'退回修改',withdraw:'撤回發布',restore:'恢復發布',grant_member:'新增協作者',disable_member:'停用帳號',activate_member:'啟用帳號'};
+const actions={save_draft:'儲存草稿',submit:'送出審核',approve:'核准發布',return:'退回修改',withdraw:'撤回發布',restore:'恢復發布',grant_member:'新增協作者',disable_member:'停用帳號',activate_member:'啟用帳號',password_reset_requested:'開始重設密碼',password_reset:'重設協作者密碼',password_reset_failed:'密碼重設未完成'};
 let member=null,tab='mine',rows=[],members=[],editing=null,reviewing=null,busy=false,hasMore=false;
 function notice(text,error=false){
     const el=$('collabMessage');el.textContent=text;el.hidden=!text;el.className='collab-message'+(error?' error':'');
@@ -19,7 +19,12 @@ async function run(task){
     try{await task();}catch(error){notice(error.message||'無法連線，請稍後再試。',true);}
     finally{busy=false;document.querySelectorAll('[data-busy-disabled]').forEach(e=>{e.disabled=false;delete e.dataset.busyDisabled;});}
 }
-function clearCredentials(){$('initialPassword').value='';$('createdCredentials').hidden=true;}
+function clearCredentials(){$('initialPassword').value='';$('credentialEmail').textContent='';$('createdCredentials').hidden=true;}
+function showCredentials(result){
+    $('initialPassword').value=result.temporaryPassword;$('credentialEmail').textContent='帳號：'+result.email;
+    $('credentialsHint').textContent=result.warning?'新密碼已產生。完成紀錄暫未寫入，已保留開始紀錄；請先複製並交給本人。':'請先複製，再私下交給本人；登入後請變更密碼。';
+    $('createdCredentials').hidden=false;
+}
 function signedOut(){member=null;rows=[];members=[];editing=null;reviewing=null;clearCredentials();$('submissionDraft').value='';$('reviewDraft').value='';$('loginPassword').value='';$('newPassword').value='';$('confirmPassword').value='';$('accountBar').hidden=true;$('collabWorkspace').hidden=true;$('loginCard').hidden=false;document.querySelectorAll('dialog[open]').forEach(d=>d.close());}
 function populateUnits(){
     const subject=SUBJECTS.find(s=>s.id===$('submissionSubject').value);
@@ -61,7 +66,7 @@ async function loadRows(append=false){
 async function loadMembers(){
     members=await service.listMembers();
     $('memberList').innerHTML=members.map(m=>`<article class="submission-card"><div class="section-heading"><div><strong>${escapeHtml(m.display_name)}</strong><p class="meta">${escapeHtml(m.email)}</p></div><span class="status-pill">${m.role==='admin'?'管理員':m.active?'使用中':'已停用'}</span></div>
-        ${m.role==='contributor'?`<button type="button" data-member="${m.user_id}" data-active="${!m.active}">${m.active?'停用帳號':'重新啟用'}</button>`:''}</article>`).join('');
+        ${m.role==='contributor'?`<div class="form-actions"><button type="button" data-reset-password="${m.user_id}">重設密碼</button><button type="button" data-member="${m.user_id}" data-active="${!m.active}">${m.active?'停用帳號':'重新啟用'}</button></div>`:''}</article>`).join('');
 }
 async function loadAudit(){
     const audit=await service.listAudit();
@@ -129,10 +134,28 @@ $('approveSubmission').addEventListener('click',()=>run(()=>review('approve')));
 $('returnSubmission').addEventListener('click',()=>run(()=>review('return')));
 $('memberForm').addEventListener('submit',e=>{e.preventDefault();run(async()=>{
     clearCredentials();const result=await service.manageAccount({action:'create',email:$('memberEmail').value.trim(),name:$('memberName').value.trim()});
-    $('initialPassword').value=result.temporaryPassword;$('createdCredentials').hidden=false;$('memberForm').reset();await refresh();notice('協作者帳號已建立。');
+    showCredentials(result);$('memberForm').reset();await refresh();notice('協作者帳號已建立。');
 });});
 $('dismissCredentials').addEventListener('click',clearCredentials);
-$('memberList').addEventListener('click',e=>{const b=e.target.closest('[data-member]');if(b)run(async()=>{await service.rpc('set_question_collaborator_active',{p_user_id:b.dataset.member,p_active:b.dataset.active==='true'});await refresh();notice(b.dataset.active==='true'?'帳號已啟用。':'帳號已停用，後端會拒絕後續協作操作。');});});
+$('copyCredentials').addEventListener('click',async()=>{
+    let manualCopy=false;
+    await run(async()=>{
+    if(!$('initialPassword').value)return;
+    const text=$('credentialEmail').textContent+'\n密碼：'+$('initialPassword').value;
+    try{await navigator.clipboard.writeText(text);notice('帳號與密碼已複製，請私下交給本人。');}
+    catch{manualCopy=true;notice('瀏覽器未允許自動複製，請手動複製上方帳號與密碼。',true);}
+    });
+    if(manualCopy){$('initialPassword').focus();$('initialPassword').select();}
+});
+$('memberList').addEventListener('click',e=>{
+    const reset=e.target.closest('[data-reset-password]');
+    if(reset){
+        const target=members.find(m=>m.user_id===reset.dataset.resetPassword);if(!target||busy)return;
+        if(!confirm('要為 '+target.display_name+'（'+target.email+'）重設密碼嗎？舊密碼將無法再用，帳號與題目會保留。'))return;
+        run(async()=>{clearCredentials();const result=await service.manageAccount({action:'reset_password',userId:target.user_id});showCredentials(result);$('createdCredentials').scrollIntoView({block:'center',behavior:'smooth'});notice(result.warning?'新密碼已產生，請先複製；操作紀錄待確認。':'密碼已重設，請複製新密碼交給本人。');});return;
+    }
+    const b=e.target.closest('[data-member]');if(b)run(async()=>{await service.rpc('set_question_collaborator_active',{p_user_id:b.dataset.member,p_active:b.dataset.active==='true'});await refresh();notice(b.dataset.active==='true'?'帳號已啟用。':'帳號已停用，後端會拒絕後續協作操作。');});
+});
 $('passwordOpen').addEventListener('click',()=>{$('passwordForm').reset();$('passwordDialog').querySelectorAll('.dialog-message').forEach(e=>e.remove());$('passwordDialog').showModal();});
 $('cancelPassword').addEventListener('click',()=>$('passwordDialog').close());
 $('passwordForm').addEventListener('submit',e=>{e.preventDefault();run(async()=>{

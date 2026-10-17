@@ -3,6 +3,7 @@ const {PGlite}=require('@electric-sql/pglite');
 const {chromium}=require('playwright');
 const root=path.resolve(__dirname,'..'),out=path.join(__dirname,'artifacts'); fs.mkdirSync(out,{recursive:true});
 const identities={admin:'20000000-0000-0000-0000-000000000001',alice:'20000000-0000-0000-0000-000000000002'};
+const passwords={admin:'Correct-password-123!',alice:'Correct-password-123!'};let resetCalls=0;
 const db=new PGlite();let browser,server,passed=0,gate=Promise.resolve();const errors=[];
 const pass=s=>{passed++;console.log('PASS '+s);};
 const serverUrl='https://collab-test.supabase.co';
@@ -13,7 +14,7 @@ async function routeApi(route){
  if(url.pathname==='/auth/v1/token'){
   const b=request.postDataJSON();let who;
   if(url.searchParams.get('grant_type')==='refresh_token')who=b.refresh_token.split('-')[0];
-  else if(b.password==='Correct-password-123!')who=b.email.split('@')[0];
+  else {const candidate=b.email?.split('@')[0];if(b.password===passwords[candidate])who=candidate;}
   if(!identities[who])return json({message:'Invalid login credentials'},400);
   return json({access_token:who+'-token',refresh_token:who+'-refresh',user:{id:identities[who],email:who+'@example.com'}});
  }
@@ -23,7 +24,14 @@ async function routeApi(route){
   await db.exec('reset role');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[name?identities[name]:'']);await db.exec('set role '+(name?'authenticated':'anon'));
   if(url.pathname==='/functions/v1/manage-collaborators'){
    if(!name||(await db.query('select public.collaboration_is_admin() as allowed')).rows[0].allowed!==true)return json({message:'ADMIN_REQUIRED'},403);
-   const body=request.postDataJSON();const id='20000000-0000-0000-0000-000000000003';
+   const body=request.postDataJSON();
+   if(body.action==='reset_password'){
+    const target=(await db.query('select public.request_collaborator_password_reset($1) as data',[body.userId])).rows[0].data;
+    const who=Object.keys(identities).find(k=>identities[k]===target.user_id);passwords[who]='TEST-ONLY-RESET-aA9-NEW-PASSWORD';resetCalls++;
+    await db.exec('reset role;set role service_role');await db.query('select public.complete_collaborator_password_reset($1,true)',[target.request_id]);
+    return json({email:target.email,temporaryPassword:passwords[who]});
+   }
+   const id='20000000-0000-0000-0000-000000000003';
    await db.exec('reset role');await db.query('insert into auth.users values($1,$2,now())',[id,body.email]);await db.exec('set role authenticated');
    await db.query('select * from public.grant_question_collaborator($1,$2)',[body.email,body.name]);
    return json({email:body.email,temporaryPassword:'TEST-ONLY-aA9-INITIAL-PASSWORD'});
@@ -61,6 +69,7 @@ async function routeApi(route){
    create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;
    grant usage on schema auth,public to anon,authenticated,service_role;grant execute on function auth.uid() to anon,authenticated;`);
   await db.exec(fs.readFileSync(path.join(root,'backend/schema.sql'),'utf8'));
+  await db.exec(fs.readFileSync(path.join(root,'backend/migrations/20261017-password-reset.sql'),'utf8'));
   for(const [name,id] of Object.entries(identities)){
    await db.query('insert into auth.users values($1,$2,now())',[id,name+'@example.com']);
    await db.query('insert into public.collaboration_members(user_id,email,display_name,role) values($1,$2,$3,$4)',[id,name+'@example.com',name==='admin'?'題庫管理員':'小雨',name==='admin'?'admin':'contributor']);
@@ -114,6 +123,16 @@ async function routeApi(route){
   await admin.locator('[data-tab="members"]').click();await admin.locator('[data-member]').click();await admin.getByText('帳號已啟用。',{exact:true}).waitFor();
   await admin.locator('#memberName').fill('新協作者');await admin.locator('#memberEmail').fill('new@example.com');await admin.locator('#memberForm button').click();await admin.locator('#createdCredentials').waitFor({state:'visible'});
   assert.equal(await admin.locator('#initialPassword').inputValue(),'TEST-ONLY-aA9-INITIAL-PASSWORD');await admin.locator('#dismissCredentials').click();assert.equal(await admin.locator('#initialPassword').inputValue(),'');pass('Admin creates a contributor and dismisses the once-visible initial password');
+  const resetButton=admin.locator('[data-reset-password="'+identities.alice+'"]');
+  await admin.waitForFunction(()=>!document.querySelector('#refreshCollab').disabled);await admin.screenshot({path:path.join(out,'collaboration-password-reset-preview.png')});
+  admin.once('dialog',d=>d.dismiss());await resetButton.click();assert.equal(resetCalls,0);
+  admin.once('dialog',d=>d.accept());await resetButton.click();await admin.getByText('密碼已重設，請複製新密碼交給本人。',{exact:true}).waitFor();assert.equal(resetCalls,1);
+  assert.equal(await admin.locator('#initialPassword').inputValue(),'TEST-ONLY-RESET-aA9-NEW-PASSWORD');assert.equal(await admin.locator('#credentialEmail').innerText(),'帳號：alice@example.com');
+  await admin.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>{window.testClipboard=text;}}}));await admin.locator('#copyCredentials').click();await admin.getByText('帳號與密碼已複製，請私下交給本人。',{exact:true}).waitFor();assert.match(await admin.evaluate(()=>window.testClipboard),/alice@example.com\n密碼：TEST-ONLY-RESET/);
+  await admin.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw Error('denied');}}}));await admin.locator('#copyCredentials').click();await admin.getByText('瀏覽器未允許自動複製，請手動複製上方帳號與密碼。',{exact:true}).waitFor();await admin.waitForFunction(()=>document.activeElement.id==='initialPassword');
+  await admin.locator('#dismissCredentials').click();assert.equal(await admin.locator('#initialPassword').inputValue(),'');assert.equal(await admin.locator('#credentialEmail').innerText(),'');assert.ok(!(await admin.evaluate(()=>JSON.stringify(sessionStorage))).includes('TEST-ONLY-RESET'));pass('Reset confirmation, targeted credential display, copying and manual-copy fallback work without persisting passwords');
+  const recoveredContext=await context(),recovered=await recoveredContext.newPage();await recovered.goto(base+'collaborate.html');await recovered.locator('#loginEmail').fill('alice@example.com');await recovered.locator('#loginPassword').fill('Correct-password-123!');await recovered.locator('#loginForm button').click();await recovered.getByText('Email 或密碼不正確。',{exact:true}).waitFor();
+  await recovered.locator('#loginPassword').fill(passwords.alice);await recovered.locator('#loginForm button').click();await recovered.locator('#collabWorkspace').waitFor({state:'visible'});assert.match(await recovered.locator('#accountName').innerText(),/小雨/);pass('After recovery the old password fails and the new password logs into the same collaborator identity');
   await alice.locator('#refreshCollab').click();await alice.locator('#submissionDraft').fill('題目：<img src=x onerror=alert(1)>\n\n正確答案：<script>alert(1)</script>');await alice.locator('#saveSubmission').click();await alice.getByText('草稿已儲存。',{exact:true}).waitFor();assert.equal(await alice.locator('.submission-card img').count(),0);await alice.locator('[data-view]').first().click();assert.equal(await alice.locator('#reviewDialog script').count(),0);await alice.locator('#closeReview').click();pass('Pasted HTML remains text and never becomes executable markup');
   await alice.setViewportSize({width:390,height:844});assert.equal(await alice.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   await alice.setViewportSize({width:1280,height:900});
