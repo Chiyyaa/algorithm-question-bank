@@ -1,5 +1,5 @@
-import { escapeHtml, getTypeLabel } from "./utils.js";
-import { SUBJECTS, getUnit } from "./units.js?v=20261009-os";
+import { escapeHtml, getTypeLabel } from "./utils.js?v=20261017-formats1";
+import { SUBJECTS, getUnit } from "./units.js?v=20261017-formats1";
 
 const LEGACY_STORAGE_KEY = "algorithm_question_bank_user_questions_v1";
 function storageKey(subjectId, unitId) {
@@ -12,7 +12,7 @@ export function loadUserQuestions(subjectId, unitId) {
         return Array.isArray(parsed) ? parsed : [];
     } catch { return []; }
 }
-export function parseDraft(text) {
+export function parseDraft(text, { format = 'auto', retainAnswer = false } = {}) {
     const normalized = text.replace(/\r\n?/g, "\n")
         .replace(/\*\*(題目|你的答案|正確答案|選項|得分)[：:]\*\*/g, "$1：");
     const headings = [...normalized.matchAll(/^\s*(題目|你的答案|正確答案|選項|得分)[：:]\s*/gm)];
@@ -32,8 +32,16 @@ export function parseDraft(text) {
     }).join("\n").trim();
     if (sections.選項) options.push(...sections.選項.split("\n").filter(Boolean));
     if (!question) throw new Error("請補上題目內容。");
+    if (format === 'no_options' && options.length) throw new Error('內容包含選項，請切換「含選項新增」，或移除選項後再送出。');
+    if (format === 'with_options' && !options.length) throw new Error('請補上選項，或切換「無選項新增」。');
     return { question, options, correct_answer: sections.正確答案,
-        type: /\[__\d+__\]/.test(question) ? "fill_blank" : options.length ? "choice" : "choice_options_missing" };
+        type: /\[__\d+__\]/.test(question) ? "fill_blank" : options.length ? "choice" : format === 'no_options' ? 'short_answer' : "choice_options_missing",
+        ...(retainAnswer && sections.你的答案 ? {user_answer: sections.你的答案} : {}) };
+}
+
+export function mistakenAnswer(q) {
+    const comparable = value => String(value || '').replace(/\s+/g, '');
+    return q.user_answer && comparable(q.user_answer) !== comparable(q.correct_answer) ? q.user_answer : '';
 }
 export function initCustomQuestions({ questions, answersVisible, getCurrentUnit, onChange }) {
     let destination = null;

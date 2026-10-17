@@ -27,6 +27,7 @@ function safeError(data) {
         NOT_PUBLISHED:'這筆題目尚未發布。', INVALID_CONTENT:'題目格式不完整或超過長度限制。',
         ACCOUNT_NOT_FOUND:'找不到已建立的帳號。', MEMBER_EXISTS:'這個帳號已經有協作權限。',
         INVALID_MEMBER:'帳號資料不正確，或這不是協作者帳號。',
+        INVALID_UNIT:'請選擇有效科目，單元編號需為 2～999。', UNIT_LIMIT:'新增單元過於頻繁，請稍後再試。',
         PASSWORD_RESET_NOT_READY:'密碼重設尚未啟用，請先更新伺服器設定。',
         PASSWORD_RESET_FAILED:'密碼重設未確認成功，請稍後重新產生一次；帳號與題目仍保留。'
     };
@@ -88,6 +89,7 @@ export async function listSubmissions({status,author,offset=0}={}){
     return api('/rest/v1/question_submissions?'+params);
 }
 export async function listMembers(){return api('/rest/v1/collaboration_members?select=*&order=created_at.asc');}
+export async function listCollaborationUnits(){return api('/rest/v1/collaboration_units?select=subject_id,unit_id&order=subject_id,unit_id');}
 export async function listAudit(){return api('/rest/v1/collaboration_audit?select=*&order=id.desc&limit=100');}
 export async function changePassword(password){return api('/auth/v1/user',{method:'PUT',body:{password}});}
 export async function manageAccount(body){return api('/functions/v1/manage-collaborators',{method:'POST',body});}

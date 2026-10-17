@@ -34,8 +34,11 @@
     <div class="section-heading"><h2 id="editorHeading">新增題目</h2><button id="newSubmission" type="button">開新草稿</button></div>
     <form id="submissionForm">
      <div class="destination-fields"><div><label for="submissionSubject">科目</label><select id="submissionSubject"></select></div><div><label for="submissionUnit">單元</label><select id="submissionUnit"></select></div></div>
+     <button id="openUnitDialog" type="button">＋ 新增單元</button>
+     <label for="submissionFormat">新增格式</label><select id="submissionFormat"><option value="no_options">無選項新增</option><option value="with_options">含選項新增</option></select>
      <label for="submissionDraft">題目與答案</label>
-     <textarea id="submissionDraft" rows="12" required maxlength="30000" placeholder="題目：請輸入題目&#10;&#10;A. 選項一&#10;B. 選項二&#10;&#10;正確答案：&#10;選項一"></textarea>
+     <textarea id="submissionDraft" rows="12" required maxlength="40000" placeholder="題目：請輸入題目&#10;&#10;你的答案：&#10;請貼上作答內容&#10;&#10;正確答案：&#10;請貼上正確答案&#10;&#10;得分：1 / 1"></textarea>
+     <p class="help-text">整段貼上即可，得分會自動忽略；不同的作答答案會保留為錯答備註。</p>
      <div class="form-actions"><button id="saveSubmission" type="button">儲存草稿</button><button id="submitForReview" class="primary-btn" type="submit">送出審核</button></div>
      <p class="help-text">草稿只有你與管理員可見；送審後需待審核或退回，才能繼續修改。</p>
     </form>
@@ -55,10 +58,12 @@
  </section>
 </main>
 <dialog id="reviewDialog"><div class="section-heading"><h2 id="reviewHeading">審核題目</h2><button id="closeReview" type="button" aria-label="關閉審核視窗">✕</button></div>
- <p id="reviewContext" class="subtitle"></p><label for="reviewDraft">題目與答案</label><textarea id="reviewDraft" rows="12" maxlength="30000"></textarea>
+ <p id="reviewContext" class="subtitle"></p><label for="reviewDraft">題目與答案</label><textarea id="reviewDraft" rows="12" maxlength="40000"></textarea>
+ <p class="help-text">「你的答案」若與正確答案不同，會公開為錯答備註；可修改或移除此段。</p>
  <label for="reviewNote">審核備註／退回原因</label><textarea id="reviewNote" rows="3" maxlength="2000"></textarea>
  <div class="form-actions"><button id="returnSubmission" type="button">退回修改</button><button id="approveSubmission" class="primary-btn" type="button">核准並發布</button></div>
 </dialog>
+<dialog id="unitDialog"><h2>新增單元</h2><form id="unitForm"><p id="unitSubjectLabel"></p><label for="newUnitNumber">單元編號</label><input id="newUnitNumber" type="number" min="2" max="999" step="1" required placeholder="例如：7"><p class="help-text">第一題經管理員核准後，這個單元才會公開；相同編號會共用。</p><div class="form-actions"><button id="cancelUnit" type="button">取消</button><button class="primary-btn" type="submit">建立並選用</button></div></form></dialog>
 <dialog id="passwordDialog"><h2>變更密碼</h2><form id="passwordForm"><label for="newPassword">新密碼（至少 12 個字元）</label><input id="newPassword" type="password" autocomplete="new-password" minlength="12" required><label for="confirmPassword">再次輸入新密碼</label><input id="confirmPassword" type="password" autocomplete="new-password" minlength="12" required><div class="form-actions"><button id="cancelPassword" type="button">取消</button><button type="submit" class="primary-btn">更新密碼</button></div></form></dialog>
-<script type="module" src="./js/collaboration.js?v=20261017-reset1"></script>
+<script type="module" src="./js/collaboration.js?v=20261017-formats1"></script>
 </body></html>

@@ -31,6 +31,7 @@ export function searchableText(q) {
         q.question,
         ...(q.options || []),
         q.correct_answer,
+        q.user_answer,
         ...(q.answer_variants || []),
         ...(q.keywords || []),
         ...(q.sources || [])
@@ -38,11 +39,13 @@ export function searchableText(q) {
 }
 
 export function getTypeLabel(type) {
+    if (type === "short_answer") return "問答題／無選項";
     if (type === "disputed") return "爭議題型";
     if (type === "fill_blank") return "填空題";
     if (type === "choice") return "選擇題";
     if (type === "choice_options_missing") return "選擇題／選項未記錄";
     return type || "未分類";
 }
+
 
 

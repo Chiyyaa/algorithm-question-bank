@@ -18,6 +18,17 @@ export const SUBJECTS = [
 
 export function getUnit(subjectId, unitId) {
     const subject = SUBJECTS.find(item => item.id === subjectId && item.available);
-    return subject?.units.find(item => item.id === unitId && item.dataUrl);
+    return subject?.units.find(item => item.id === unitId && (item.dataUrl || item.sharedOnly));
+}
+
+// Only pass published counts on the public page; collaborators may pass their private registry.
+export function mergeCollaborationUnits(rows) {
+    for (const row of rows) {
+        const subject = SUBJECTS.find(s => s.id === row.subject_id);
+        if (!subject || !/^u(?:[2-9]|[1-9][0-9]{1,2})$/.test(row.unit_id)) continue;
+        if (!subject.units.some(u => u.id === row.unit_id))
+            subject.units.push({id:row.unit_id,name:row.unit_id.toUpperCase(),questionCount:0,dataUrl:null,sharedOnly:true});
+        subject.units.sort((a,b) => Number(a.id.slice(1))-Number(b.id.slice(1)));
+    }
 }
 

@@ -41,21 +41,22 @@ async function routeApi(route){
    const map={
     save_question_submission:['p_id','p_subject','p_unit','p_content','p_submit','p_revision'],
     review_question_submission:['p_id','p_revision','p_action','p_content','p_note'],
-    set_question_collaborator_active:['p_user_id','p_active'],published_question_counts:[],collaboration_is_admin:[]
+    set_question_collaborator_active:['p_user_id','p_active'],create_collaboration_unit:['p_subject','p_unit'],published_question_counts:[],collaboration_is_admin:[]
    };
    if(!map[fn])return json({message:'Unknown RPC'},404);
    const values=map[fn].map(k=>b[k]);const sql='select * from public.'+fn+'('+values.map((_,i)=>'$'+(i+1)).join(',')+')';
    return json((await db.query(sql,values)).rows);
   }
   const table=url.pathname.split('/').pop();
-  if(!['collaboration_members','question_submissions','collaboration_audit','published_questions'].includes(table))return json({message:'Not found'},404);
-  let sql='select * from public.'+table;const filters=[],args=[];
+  if(!['collaboration_members','question_submissions','collaboration_audit','published_questions','collaboration_units'].includes(table))return json({message:'Not found'},404);
+  let sql='select '+(table==='collaboration_units'?'subject_id,unit_id':'*')+' from public.'+table;const filters=[],args=[];
   for(const column of ['user_id','author_id','subject_id','unit_id','status','visible']){
    const value=url.searchParams.get(column);if(value?.startsWith('eq.')){args.push(value.slice(3));filters.push(column+'=$'+args.length);}
   }
   if(filters.length)sql+=' where '+filters.join(' and ');
   sql+=' order by '+(table==='collaboration_audit'?'id desc':table==='question_submissions'?'updated_at desc,id desc':'created_at');
   if(table==='published_questions')sql=sql.replace('order by created_at','order by id');
+  if(table==='collaboration_units')sql=sql.replace('order by created_at','order by subject_id,unit_id');
   const limit=Number(url.searchParams.get('limit')||500),offset=Number(url.searchParams.get('offset')||0);
   sql+=' limit '+limit+' offset '+offset;
   const result=(await db.query(sql,args)).rows;
@@ -70,6 +71,7 @@ async function routeApi(route){
    grant usage on schema auth,public to anon,authenticated,service_role;grant execute on function auth.uid() to anon,authenticated;`);
   await db.exec(fs.readFileSync(path.join(root,'backend/schema.sql'),'utf8'));
   await db.exec(fs.readFileSync(path.join(root,'backend/migrations/20261017-password-reset.sql'),'utf8'));
+  await db.exec(fs.readFileSync(path.join(root,'backend/migrations/20261017-collaboration-formats-units.sql'),'utf8'));
   for(const [name,id] of Object.entries(identities)){
    await db.query('insert into auth.users values($1,$2,now())',[id,name+'@example.com']);
    await db.query('insert into public.collaboration_members(user_id,email,display_name,role) values($1,$2,$3,$4)',[id,name+'@example.com',name==='admin'?'題庫管理員':'小雨',name==='admin'?'admin':'contributor']);
@@ -136,6 +138,31 @@ async function routeApi(route){
   await alice.locator('#refreshCollab').click();await alice.locator('#submissionDraft').fill('題目：<img src=x onerror=alert(1)>\n\n正確答案：<script>alert(1)</script>');await alice.locator('#saveSubmission').click();await alice.getByText('草稿已儲存。',{exact:true}).waitFor();assert.equal(await alice.locator('.submission-card img').count(),0);await alice.locator('[data-view]').first().click();assert.equal(await alice.locator('#reviewDialog script').count(),0);await alice.locator('#closeReview').click();pass('Pasted HTML remains text and never becomes executable markup');
   await alice.setViewportSize({width:390,height:844});assert.equal(await alice.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   await alice.setViewportSize({width:1280,height:900});
+  assert.equal(await alice.locator('#submissionFormat').inputValue(),'no_options');
+  alice.once('dialog',d=>d.accept());await alice.locator('#newSubmission').click();
+  await alice.locator('#openUnitDialog').click();await alice.locator('#newUnitNumber').fill('7');await alice.locator('#unitForm button[type=submit]').click();await alice.getByText('已選用 U7，可開始新增題目。',{exact:true}).waitFor();
+  assert.equal(await alice.locator('#submissionUnit').inputValue(),'u7');
+  await pub.reload();await pub.locator('#osSubjectBtn').click();await pub.locator('[data-panel="units"]').click();assert.equal(await pub.locator('[data-unit="u7"]').count(),0);
+  const pasted='題目：I/O綁定型程序的特徵是什麼？\n\n你的答案：\n花費大部分時間進行CPU運算\n\n正確答案：\n花費大部分時間進行I/O操作\n\n得分：0 / 1';
+  await alice.locator('#submissionDraft').fill(pasted);await alice.locator('#submitForReview').click();await alice.getByText('已送出審核，核准後才會公開。',{exact:true}).waitFor();
+  await admin.locator('[data-tab="pending"]').click();await admin.locator('.submission-card').filter({hasText:'I/O綁定型程序'}).locator('[data-view]').click();
+  assert.match(await admin.locator('#reviewDraft').inputValue(),/你的答案：\n花費大部分時間進行CPU運算/);assert.ok(!(await admin.locator('#reviewDraft').inputValue()).includes('得分'));
+  await admin.screenshot({path:path.join(out,'collaboration-no-options-review.png')});await admin.locator('#approveSubmission').click();await admin.getByText('題目已核准並發布。',{exact:true}).waitFor();
+  await pub.reload();await pub.locator('#osSubjectBtn').click();await pub.locator('[data-panel="units"]').click();await pub.locator('[data-unit="u7"]').click();await pub.waitForFunction(()=>document.querySelector('#bankFooter').textContent.includes('U7｜內建 0 題｜共用 1 題'));
+  await pub.locator('[data-filter="shared"]').click();assert.equal(await pub.locator('#questionList article').count(),1);assert.match(await pub.locator('#questionList').innerText(),/友列協助題/);await pub.locator('.answer-btn').click();
+  assert.match(await pub.locator('.answer.show').innerText(),/曾有作答錯誤：花費大部分時間進行CPU運算/);assert.ok(!(await pub.locator('#questionList').innerText()).includes('原始訓練紀錄'));assert.ok(!(await pub.locator('#questionList').innerText()).includes('小雨'));await pub.screenshot({path:path.join(out,'collaboration-helped-question.png')});
+  pass('Default no-option paste ignores score, preserves wrong answer through admin review, opens an approved new unit and appears in the helper filter anonymously');
+  const parsing=await alice.evaluate(async()=>{
+   const {parseDraft,mistakenAnswer}=await import('./js/custom-questions.js?v=20261017-formats1');
+   const same=parseDraft('題目：測試\n你的答案：\nI/O  操作\n正確答案：\nI/O\n操作\n得分：1 / 1',{format:'no_options',retainAnswer:true});
+   const absent=parseDraft('題目：測試\n正確答案：解答',{format:'no_options',retainAnswer:true});
+   const choice=parseDraft('題目：測試\nA. 甲\nB. 乙\n你的答案：甲\n正確答案：乙\n得分：0 / 1',{format:'with_options',retainAnswer:true});
+   let rejected=false;try{parseDraft('題目：測試\nA. 甲\n正確答案：甲',{format:'no_options'});}catch{rejected=true;}
+   return {same,absent,choice,note:mistakenAnswer(same),missingNote:mistakenAnswer(absent),rejected};
+  });
+  assert.equal(parsing.same.user_answer,'I/O  操作');assert.equal(parsing.note,'');assert.equal(parsing.missingNote,'');assert.equal(parsing.choice.type,'choice');assert.equal(parsing.choice.options.length,2);assert.equal(parsing.choice.user_answer,'甲');assert.equal(parsing.rejected,true);assert.equal(parsing.same.score,undefined);
+  await alice.locator('#submissionFormat').selectOption('with_options');await alice.locator('#submissionDraft').fill('題目：選項格式保留測試\nA. 甲\nB. 乙\n你的答案：甲\n正確答案：乙\n得分：0 / 1');await alice.locator('#saveSubmission').click();await alice.getByText('草稿已儲存。',{exact:true}).waitFor();await alice.locator('.submission-card').filter({hasText:'選項格式保留測試'}).locator('[data-edit]').click();assert.equal(await alice.locator('#submissionFormat').inputValue(),'with_options');assert.match(await alice.locator('#submissionDraft').inputValue(),/你的答案：\n甲/);
+  pass('Matching or absent answers add no wrong-answer note; choice mode and draft editing retain options and submitted answer; mismatched format never discards options');
   await alice.locator('#logoutBtn').click();await alice.locator('#loginCard').waitFor({state:'visible'});assert.equal(await alice.evaluate(()=>sessionStorage.getItem('question_bank_collaboration_session_v1')),null);pass('Mobile layout fits, logout clears session and private form contents');
   const offline=await browser.newContext();await offline.route('**/collaboration-config.js*',route=>route.fulfill({contentType:'text/javascript',body:'export const collaborationConfig={enabled:false,url:"",publishableKey:""};'}));const off=await offline.newPage();await off.goto(base+'collaborate.html');await off.getByText('協作服務準備中',{exact:true}).waitFor();assert.equal(await off.locator('#loginCard').isVisible(),false);pass('Unconfigured production connection keeps collaboration safely disabled');
   await admin.locator('[data-tab="mine"]').click();await admin.locator('#submissionEditor').waitFor({state:'visible'});await admin.waitForFunction(()=>!document.querySelector('#refreshCollab').disabled);await admin.screenshot({path:path.join(out,'collaboration-admin-preview.png')});

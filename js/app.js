@@ -1,9 +1,9 @@
-import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js";
-import { loadUserQuestions, initCustomQuestions } from "./custom-questions.js?v=20261017";
+import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
+import { loadUserQuestions, initCustomQuestions, mistakenAnswer } from "./custom-questions.js?v=20261017-formats1";
 import { initNavigation } from "./navigation.js";
-import { SUBJECTS, getUnit } from "./units.js?v=20261009-os";
+import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261017-formats1";
 import { initMusic } from "./music.js";
-import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017";
+import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017-formats1";
 
 initHomeTheme();
 const { close: closeMusic } = initMusic();
@@ -102,7 +102,7 @@ const summary = document.getElementById("summary");
 function getFilteredQuestions() {
     const term = normalize(searchInput.value);
     return QUESTIONS.filter(q => {
-        const typeMatch = currentFilter === "all" || q.type === currentFilter ||
+        const typeMatch = currentFilter === "all" || (currentFilter === 'shared' && q.shared_question) || q.type === currentFilter ||
             (currentFilter === "choice" && q.type === "choice_options_missing");
         const textMatch = !term || searchableText(q).includes(term);
         return typeMatch && textMatch;
@@ -155,6 +155,7 @@ function render() {
                 <div class="badges">
                     <span class="badge">${escapeHtml(getTypeLabel(q.type))}</span>
                     ${q.user_created ? `<span class="badge user-badge">自行新增</span>` : ""}
+                    ${q.shared_question ? '<span class="badge user-badge">友列協助題</span>' : ''}
                 </div>
             </div>
 
@@ -174,6 +175,7 @@ function render() {
                 <div class="answer-label">${q.type === "disputed" ? "題庫原標準答案（含爭議項）：" : "正確答案："}</div>
                 <div class="answer-content">${highlight(q.correct_answer || "未記錄", term)}</div>
                 ${q.answer_note ? `<div class="answer-note">${escapeHtml(q.answer_note)}</div>` : ""}
+                ${mistakenAnswer(q) ? `<div class="answer-note">曾有作答錯誤：${escapeHtml(mistakenAnswer(q))}</div>` : ''}
             </div>
 
             <div class="meta">
@@ -246,17 +248,18 @@ function renderUnitChoices() {
     if (!currentSubject) return;
     document.getElementById("unitGrid").innerHTML = currentSubject.units.map(unit => {
         const active = unit.id === currentUnit?.id;
-        const available = !!unit.dataUrl;
+        const available = !!unit.dataUrl || !!unit.sharedOnly;
         return `<button class="unit-card ${active ? "active" : ""}" data-unit="${escapeHtml(unit.id)}"
             type="button" ${available ? "" : "disabled"} ${active ? 'aria-current="true"' : ""}>
             <span class="unit-card-top"><span class="unit-card-name">${escapeHtml(unit.name)}</span>
             <span class="unit-card-status">${active ? "目前單元" : available ? "可練習" : "尚未開放"}</span></span>
-            <span class="unit-card-count">${unit.questionCount ? `<strong>${unit.questionCount + (sharedCounts.get(currentSubject.id + ':' + unit.id) || 0)}</strong> 題` : "準備中"}</span>
+            <span class="unit-card-count">${available ? `<strong>${unit.questionCount + (sharedCounts.get(currentSubject.id + ':' + unit.id) || 0)}</strong> 題` : "準備中"}</span>
             <span class="unit-card-action">${active ? "繼續練習" : available ? "進入題庫" : "敬請期待"}<span aria-hidden="true">${available ? "↗" : "—"}</span></span>
         </button>`;
     }).join("");
 }
 if (collaborationEnabled()) publishedCounts().then(rows => {
+    mergeCollaborationUnits(rows.filter(row => Number(row.question_count)>0));
     rows.forEach(row => sharedCounts.set(row.subject_id + ':' + row.unit_id, Number(row.question_count)));
     renderUnitChoices();
 }).catch(() => { /* Built-in counts remain available if the shared service is offline. */ });
@@ -367,10 +370,13 @@ async function loadQuestionBank() {
     summary.textContent = "題庫載入中……";
     list.innerHTML = '<div class="empty" role="status">題庫載入中……</div>';
     try {
-        const response = await fetch(new URL(unit.dataUrl, import.meta.url), { cache: "no-cache" });
-        if (!response.ok) throw new Error("HTTP " + response.status);
-        const builtInQuestions = await response.json();
-        if (!Array.isArray(builtInQuestions) || !builtInQuestions.length ||
+        let builtInQuestions = [];
+        if (unit.dataUrl) {
+            const response = await fetch(new URL(unit.dataUrl, import.meta.url), { cache: "no-cache" });
+            if (!response.ok) throw new Error("HTTP " + response.status);
+            builtInQuestions = await response.json();
+        }
+        if (!Array.isArray(builtInQuestions) || (unit.dataUrl && !builtInQuestions.length) ||
             builtInQuestions.some(q => !q || !Number.isFinite(q.id) ||
                 typeof q.question !== "string" || typeof q.correct_answer !== "string") ||
             new Set(builtInQuestions.map(q => q.id)).size !== builtInQuestions.length) {

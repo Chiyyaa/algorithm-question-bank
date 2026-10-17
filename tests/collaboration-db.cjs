@@ -13,6 +13,7 @@ const question={question:'測試填空 [__1__]',correct_answer:'kernel',type:'fi
    grant usage on schema public,auth to anon,authenticated,service_role;grant execute on function auth.uid() to anon,authenticated;`);
   await db.exec(fs.readFileSync(path.join(__dirname,'../backend/schema.sql'),'utf8'));
   await db.exec(fs.readFileSync(path.join(__dirname,'../backend/migrations/20261017-password-reset.sql'),'utf8'));
+  await db.exec(fs.readFileSync(path.join(__dirname,'../backend/migrations/20261017-collaboration-formats-units.sql'),'utf8'));
   for(const [name,id] of Object.entries(users))await db.query('insert into auth.users values($1,$2,now())',[id,name+'@example.com']);
   await db.query("insert into public.collaboration_members(user_id,email,display_name,role) values($1,'admin@example.com','管理員','admin')",[users.admin]);
   async function role(name){await db.exec('reset role');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[name==='anon'?'':users[name]]);await db.exec('set role '+(name==='anon'?'anon':'authenticated'));}
@@ -98,6 +99,32 @@ const question={question:'測試填空 [__1__]',correct_answer:'kernel',type:'fi
   assert.equal((await db.query('select active from public.collaboration_members where user_id=$1',[users.alice])).rows[0].active,false);
   assert.equal((await db.query('select * from public.question_submissions where id=$1',[a.id])).rows[0].content.correct_answer,'reviewed answer');
   pass('Reset audit finalization is server-only and idempotent; disabled state and question history stay unchanged');
+  await role('anon');await denied(`select public.create_collaboration_unit('os','u7')`,[],/permission denied/);
+  await role('outsider');await denied(`select public.create_collaboration_unit('os','u7')`,[],/MEMBERSHIP_REQUIRED/);
+  await role('alice');await denied(`select public.create_collaboration_unit('os','u7')`,[],/MEMBERSHIP_REQUIRED/);
+  await role('bob');
+  for(const [subject,unit] of [['other','u7'],['os','u1'],['os','u07'],['os','u1000']])await denied('select public.create_collaboration_unit($1,$2)',[subject,unit],/INVALID_UNIT/);
+  await denied(`insert into public.collaboration_units(subject_id,unit_id) values('os','u7')`,[],/permission denied/);
+  await db.query(`select public.create_collaboration_unit('os','u7')`);await db.query(`select public.create_collaboration_unit('os','u7')`);
+  await role('anon');assert.equal((await db.query(`select subject_id,unit_id from public.collaboration_units where unit_id='u7'`)).rows.length,0);
+  await denied('select created_by from public.collaboration_units',[],/permission denied/);
+  pass('Unit creation validates and deduplicates destinations; pending units and creator identity stay private; only active approved members can create');
+  await role('bob');
+  const qa={question:'I/O-bound 特徵？',options:[],type:'short_answer',correct_answer:'大部分時間進行I/O',user_answer:'大部分時間進行CPU運算'};
+  for(const bad of [{...qa,user_answer:3},{...qa,user_answer:'x'.repeat(10001)},{...qa,options:['unexpected']},{...qa,score:'1 / 1'}])await assert.rejects(()=>save(null,null,true,bad),/INVALID_CONTENT/);
+  let extra=(await db.query(`select * from public.save_question_submission(null,'os','u7',$1,true,null)`,[qa])).rows[0];
+  await role('admin');extra=await review(extra.id,extra.revision,'approve',qa);
+  await role('anon');assert.equal((await db.query(`select subject_id,unit_id from public.collaboration_units where unit_id='u7'`)).rows.length,1);
+  assert.equal((await db.query(`select content from public.published_questions where unit_id='u7'`)).rows[0].content.user_answer,qa.user_answer);
+  await role('admin');extra=await review(extra.id,extra.revision,'withdraw');
+  await role('anon');assert.equal((await db.query(`select subject_id,unit_id from public.collaboration_units where unit_id='u7'`)).rows.length,0);
+  await role('admin');extra=await review(extra.id,extra.revision,'restore');
+  pass('No-option content preserves submitted answers; first approval opens a unit; withdrawing its last visible question hides the unit');
+  await role('bob');for(let n=8;n<=16;n++)await db.query('select public.create_collaboration_unit($1,$2)',['os','u'+n]);
+  await denied(`select public.create_collaboration_unit('os','u17')`,[],/UNIT_LIMIT/);
+  await db.query(`select public.create_collaboration_unit('os','u7')`);
+  await role('admin');assert.equal((await db.query("select count(*)::int as n from public.collaboration_audit where action='create_unit' and after_data->>'unit_id'='u7'")).rows[0].n,1);
+  pass('Unit creation is audited once and limited per hour; existing units remain reusable');
   console.log(JSON.stringify({passed}));
  }finally{await db.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
