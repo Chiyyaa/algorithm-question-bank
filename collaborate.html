@@ -5,7 +5,7 @@
  <meta name="referrer" content="strict-origin-when-cross-origin">
  <title>題庫協作</title>
  <link rel="stylesheet" href="./css/style.css?v=20261009-os">
- <link rel="stylesheet" href="./css/collaboration.css?v=20261017">
+ <link rel="stylesheet" href="./css/collaboration.css?v=20261017-batch1">
 </head>
 <body class="collaboration-page">
 <main class="collab-container">
@@ -35,10 +35,19 @@
     <form id="submissionForm">
      <div class="destination-fields"><div><label for="submissionSubject">科目</label><select id="submissionSubject"></select></div><div><label for="submissionUnit">單元</label><select id="submissionUnit"></select></div></div>
      <button id="openUnitDialog" type="button">＋ 新增單元</button>
-     <label for="submissionFormat">新增格式</label><select id="submissionFormat"><option value="no_options">無選項新增</option><option value="with_options">含選項新增</option></select>
-     <label for="submissionDraft">題目與答案</label>
+     <label for="submissionFormat">新增格式</label><select id="submissionFormat"><option value="no_options">無選項新增</option><option value="with_options">含選項新增</option><option value="auto">自動辨識（可混合題型）</option></select>
+     <label for="submissionDraft">題目與答案（可貼上多題）</label>
      <textarea id="submissionDraft" rows="12" required maxlength="40000" placeholder="題目：請輸入題目&#10;&#10;你的答案：&#10;請貼上作答內容&#10;&#10;正確答案：&#10;請貼上正確答案&#10;&#10;得分：1 / 1"></textarea>
-     <p class="help-text">整段貼上即可，得分會自動忽略；不同的作答答案會保留為錯答備註。</p>
+     <p class="help-text">每題以「題目：」開頭，並包含「正確答案：」。多題貼上後請先預覽；得分會忽略，不同的作答答案會保留為錯答備註。每批最多 30 題，沿用每帳號每小時最多新增 30 題的限制。</p>
+     <button id="previewSubmissions" class="batch-preview-button" type="button">解析並逐題預覽</button>
+     <section id="batchPreview" class="batch-preview" aria-label="批次題目預覽" hidden>
+      <div class="section-heading"><h3>批次題目預覽</h3><button id="closeBatchPreview" type="button">關閉預覽</button></div>
+      <p id="batchDestination" class="help-text"></p><p id="batchSummary" role="status" aria-live="polite"></p>
+      <p class="help-text">只處理勾選的題目；格式錯誤需先修正或取消勾選。已成功的題目不會重送。</p>
+      <p id="batchProgress" role="status" aria-live="polite"></p>
+      <button id="batchReconcile" type="button" hidden>查核送出狀態</button>
+      <div id="batchItems"></div>
+     </section>
      <div class="form-actions"><button id="saveSubmission" type="button">儲存草稿</button><button id="submitForReview" class="primary-btn" type="submit">送出審核</button></div>
      <p class="help-text">草稿只有你與管理員可見；送審後需待審核或退回，才能繼續修改。</p>
     </form>
@@ -65,5 +74,5 @@
 </dialog>
 <dialog id="unitDialog"><h2>新增單元</h2><form id="unitForm"><p id="unitSubjectLabel"></p><label for="newUnitNumber">單元編號</label><input id="newUnitNumber" type="number" min="2" max="999" step="1" required placeholder="例如：7"><p class="help-text">第一題經管理員核准後，這個單元才會公開；相同編號會共用。</p><div class="form-actions"><button id="cancelUnit" type="button">取消</button><button class="primary-btn" type="submit">建立並選用</button></div></form></dialog>
 <dialog id="passwordDialog"><h2>變更密碼</h2><form id="passwordForm"><label for="newPassword">新密碼（至少 12 個字元）</label><input id="newPassword" type="password" autocomplete="new-password" minlength="12" required><label for="confirmPassword">再次輸入新密碼</label><input id="confirmPassword" type="password" autocomplete="new-password" minlength="12" required><div class="form-actions"><button id="cancelPassword" type="button">取消</button><button type="submit" class="primary-btn">更新密碼</button></div></form></dialog>
-<script type="module" src="./js/collaboration.js?v=20261017-formats1"></script>
+<script type="module" src="./js/collaboration.js?v=20261017-batch1"></script>
 </body></html>

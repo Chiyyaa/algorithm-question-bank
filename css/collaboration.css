@@ -44,3 +44,23 @@ dialog .form-actions { margin-top:20px; }
 .collaboration-entry { color:var(--muted); text-decoration:none; font-size:14px; }
 @media(max-width:850px) { .collab-grid { grid-template-columns:1fr; }.collab-header { align-items:start; flex-direction:column; } }
 @media(max-width:500px) { .collab-container { padding:20px 16px 48px; }.collaboration-page .form-card,dialog { padding:20px; }.collab-tabs { gap:7px; }.collab-tabs button { padding:9px 11px; }#refreshCollab { margin-left:0; }.form-actions { flex-wrap:wrap; } }
+
+.batch-preview-button { margin-top:8px;border-color:#c9b4dd;background:#f4edf9;color:#684185; }
+.batch-preview { margin-top:22px;border-top:1px solid #e7dfee;padding-top:20px; }
+.batch-preview h3 { margin:0;color:#493456;font-size:18px; }
+#batchSummary,#batchProgress { font-size:13px;color:#6c527f;overflow-wrap:anywhere; }
+#batchItems { display:grid;gap:14px;max-height:680px;overflow:auto;padding:4px 3px 10px;overscroll-behavior:contain; }
+.batch-item { border:1px solid #e2d8eb;border-radius:14px;padding:17px;background:#fdfbff;min-width:0; }
+.batch-item .section-heading { align-items:center;gap:10px; }
+.collaboration-page .batch-check { display:flex;gap:9px;align-items:center;margin:0;font-size:14px; }
+.collaboration-page .batch-check input { width:17px;height:17px;accent-color:#7950a0; }
+.batch-question,.batch-options,.batch-answer { white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;margin:10px 0; }
+.batch-answer { display:grid;gap:4px;padding:10px 13px;background:#f0f6ec;border-radius:9px;color:#3c6543; }
+.batch-error,.batch-warning { font-size:13px;padding:10px 12px;border-radius:9px;white-space:pre-wrap;overflow-wrap:anywhere; }
+.batch-error { background:#ffedf0;color:#a12d42; }.batch-warning { background:#fff4de;color:#84601f; }
+.batch-entry-message { white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;color:#8b6241; }
+.batch-entry-message:empty { display:none; }
+.batch-edit { font-size:13px;color:#6b517e;border-top:1px solid #e8e0ee;padding-top:10px;margin-top:12px; }
+.batch-edit summary { cursor:pointer; }.batch-edit textarea { font-size:13px; }
+#submissionDraft[readonly] { background:#f5f2f8;color:#6c5d79; }
+@media(max-width:500px){.batch-item{padding:13px;}#batchItems{max-height:600px;}.batch-item .status-pill{font-size:10px;padding:3px 7px;}.batch-preview>.section-heading{flex-wrap:wrap;}}

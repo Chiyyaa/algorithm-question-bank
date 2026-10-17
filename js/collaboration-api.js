@@ -61,7 +61,7 @@ export async function api(path,{method='GET',body,authenticated=true,headers={}}
     });
     if(response.status===401&&authenticated&&retry){await refresh();return api(path,{method,body,authenticated,headers},false);}
     const data=response.status===204?null:await response.json().catch(()=>null);
-    if(!response.ok)throw new Error(safeError(data));
+    if(!response.ok){const error=new Error(safeError(data));error.definitive=response.status>=400&&response.status<500&&response.status!==408;error.httpStatus=response.status;throw error;}
     return data;
 }
 export async function login(email,password) {

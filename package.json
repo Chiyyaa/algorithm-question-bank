@@ -10,7 +10,8 @@
     "test:db": "node tests/collaboration-db.cjs",
     "test:edge": "node tests/collaboration-edge.cjs",
     "test:collaboration": "node tests/collaboration-all.cjs",
-    "test:english": "node tests/english.cjs"
+    "test:english": "node tests/english.cjs",
+    "test:batch": "node --experimental-vm-modules tests/collaboration-batch.cjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.5.10",
