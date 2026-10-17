@@ -64,3 +64,16 @@ dialog .form-actions { margin-top:20px; }
 .batch-edit summary { cursor:pointer; }.batch-edit textarea { font-size:13px; }
 #submissionDraft[readonly] { background:#f5f2f8;color:#6c5d79; }
 @media(max-width:500px){.batch-item{padding:13px;}#batchItems{max-height:600px;}.batch-item .status-pill{font-size:10px;padding:3px 7px;}.batch-preview>.section-heading{flex-wrap:wrap;}}
+
+.bulk-review-toolbar { background:#f4edf9;border:1px solid #ded0e8;border-radius:14px;padding:16px;margin:12px 0 20px; }
+.bulk-review-toolbar p { margin:0 0 12px;font-size:14px;color:#684185; }
+.bulk-review-toolbar .form-actions { flex-wrap:wrap; }
+.collaboration-page .review-check { display:flex;align-items:center;gap:7px;margin:0;font-size:14px; }
+.collaboration-page .review-check input { width:18px;height:18px;accent-color:#7950a0; }
+.submission-card>.section-heading { flex-wrap:wrap;gap:10px; }
+#bulkReviewDialog { width:min(820px,calc(100vw - 32px));max-height:90vh;overflow:auto; }
+#bulkReviewItems { display:grid;gap:12px;max-height:46vh;overflow:auto;overscroll-behavior:contain;padding:3px;margin:14px 0; }
+.bulk-review-item { padding:16px;border:1px solid #e2d8eb;border-radius:12px;background:#fdfbff;min-width:0; }
+.bulk-review-item h3 { margin:0;font-size:16px; }
+#bulkReviewProgress { color:#684185;font-size:14px; }
+@media(max-width:500px){#bulkReviewDialog{padding:16px;}.bulk-review-toolbar .form-actions button{width:100%;}#bulkReviewDialog>.form-actions{flex-wrap:wrap;}.bulk-review-item{padding:12px;}}

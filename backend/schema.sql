@@ -90,7 +90,7 @@ begin
  if not found then raise exception 'MEMBERSHIP_REQUIRED' using errcode='42501'; end if;
  if p_submit is null or not public.collaboration_valid_content(p_content) then raise exception 'INVALID_CONTENT' using errcode='22023'; end if;
  if p_id is null then
-  if (select count(*) from public.question_submissions where author_id=auth.uid() and created_at>now()-interval '1 hour')>=30 then raise exception 'SUBMISSION_LIMIT' using errcode='22023'; end if;
+  if (select count(*) from public.question_submissions where author_id=auth.uid() and created_at>now()-interval '1 hour')>=300 then raise exception 'SUBMISSION_LIMIT' using errcode='22023'; end if;
   insert into public.question_submissions(author_id,subject_id,unit_id,content,status)
    values(auth.uid(),p_subject,p_unit,p_content,case when p_submit then 'pending' else 'draft' end) returning * into result;
  else

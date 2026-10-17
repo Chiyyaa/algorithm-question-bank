@@ -1,5 +1,6 @@
+import { createBulkReview } from './collaboration-review.js?v=20261017-review1';
 import { escapeHtml } from './utils.js?v=20261017-formats1';
-import { parseSubmission, questionCount, createBatchEditor } from './collaboration-batch.js?v=20261017-batch1';
+import { parseSubmission, questionCount, createBatchEditor } from './collaboration-batch.js?v=20261017-batch2';
 import { SUBJECTS, getUnit, mergeCollaborationUnits } from './units.js?v=20261017-formats1';
 import * as service from './collaboration-api.js?v=20261017-batch1';
 
@@ -17,7 +18,7 @@ async function run(task){
     if(busy)return;
     busy=true;document.querySelectorAll('button,input,textarea,select').forEach(e=>{if(!e.disabled){e.disabled=true;e.dataset.busyDisabled='true';}});
     try{await task();}catch(error){notice(error.message||'無法連線，請稍後再試。',true);}
-    finally{busy=false;document.querySelectorAll('[data-busy-disabled]').forEach(e=>{e.disabled=false;delete e.dataset.busyDisabled;});batchEditor.syncControls();}
+    finally{busy=false;document.querySelectorAll('[data-busy-disabled]').forEach(e=>{e.disabled=false;delete e.dataset.busyDisabled;});batchEditor.syncControls();bulkReview.syncControls();}
 }
 function clearCredentials(){$('initialPassword').value='';$('credentialEmail').textContent='';$('createdCredentials').hidden=true;}
 function showCredentials(result){
@@ -25,7 +26,7 @@ function showCredentials(result){
     $('credentialsHint').textContent=result.warning?'新密碼已產生。完成紀錄暫未寫入，已保留開始紀錄；請先複製並交給本人。':'請先複製，再私下交給本人；登入後請變更密碼。';
     $('createdCredentials').hidden=false;
 }
-function signedOut(){member=null;rows=[];members=[];editing=null;batchEditor.clear({force:true});reviewing=null;clearCredentials();$('submissionDraft').value='';$('reviewDraft').value='';$('loginPassword').value='';$('newPassword').value='';$('confirmPassword').value='';$('accountBar').hidden=true;$('collabWorkspace').hidden=true;$('loginCard').hidden=false;document.querySelectorAll('dialog[open]').forEach(d=>d.close());}
+function signedOut(){member=null;bulkReview.clear();rows=[];members=[];editing=null;batchEditor.clear({force:true});reviewing=null;clearCredentials();$('submissionDraft').value='';$('reviewDraft').value='';$('loginPassword').value='';$('newPassword').value='';$('confirmPassword').value='';$('accountBar').hidden=true;$('collabWorkspace').hidden=true;$('loginCard').hidden=false;document.querySelectorAll('dialog[open]').forEach(d=>d.close());}
 function populateUnits(){
     const subject=SUBJECTS.find(s=>s.id===$('submissionSubject').value);
     const selected=$('submissionUnit').value;
@@ -34,6 +35,7 @@ function populateUnits(){
 }
 function asDraft(q){return '題目：'+q.question+(q.options?.length?'\n\n選項：\n'+q.options.join('\n'):'')+(q.user_answer?'\n\n你的答案：\n'+q.user_answer:'')+'\n\n正確答案：\n'+q.correct_answer;}
 function contentFrom(text,format='auto'){return parseSubmission(text,format);}
+const bulkReview=createBulkReview({service,getMember:()=>member,getRows:()=>rows,getTab:()=>tab,notify:notice,refresh,run,isBusy:()=>busy});
 const batchEditor=createBatchEditor({service,getMember:()=>member,getEditing:()=>editing,notify:notice,refresh,run,isBusy:()=>busy});
 function subjectLabel(q){return (SUBJECTS.find(s=>s.id===q.subject_id)?.name||q.subject_id)+'｜'+q.unit_id.toUpperCase();}
 function authorName(id){return members.find(m=>m.user_id===id)?.display_name||(id===member?.user_id?member.display_name:'協作者');}
@@ -49,7 +51,7 @@ function renderRows(){
     $('submissionCount').textContent=`已載入 ${rows.length} 題`;
     $('moreSubmissions').hidden=!hasMore;
     $('submissionList').innerHTML=rows.length?rows.map(q=>`<article class="submission-card">
-        <div class="section-heading"><span class="status-pill status-${escapeHtml(q.status)}">${escapeHtml(q.status==='published'&&!publishedVisible(q)?'已撤回':labels[q.status])}</span><span class="meta">${escapeHtml(subjectLabel(q))}</span></div>
+        <div class="section-heading">${member.role==='admin'&&tab==='pending'&&q.status==='pending'?`<label class="review-check"><input type="checkbox" data-review-select="${escapeHtml(q.id)}"${bulkReview.isSelected(q.id)?' checked':''}>選取</label>`:''}<span class="status-pill status-${escapeHtml(q.status)}">${escapeHtml(q.status==='published'&&!publishedVisible(q)?'已撤回':labels[q.status])}</span><span class="meta">${escapeHtml(subjectLabel(q))}</span></div>
         <p class="question">${escapeHtml(q.content.question)}</p>
         <p class="meta">${escapeHtml(authorName(q.author_id))} · ${escapeHtml(time(q.updated_at))}</p>
         ${q.review_note?`<p class="review-note">${escapeHtml(q.review_note)}</p>`:''}
@@ -58,6 +60,7 @@ function renderRows(){
         <button data-view="${q.id}" type="button">${member.role==='admin'&&q.status==='pending'?'審核':'查看內容'}</button>
         ${member.role==='admin'&&q.status==='published'?`<button data-publication="${q.id}" data-action="${publishedVisible(q)?'withdraw':'restore'}" type="button">${publishedVisible(q)?'撤回發布':'恢復發布'}</button>`:''}
         </div></article>`).join(''):'<div class="empty">目前沒有題目。</div>';
+    bulkReview.sync();
 }
 async function loadRows(append=false){
     const next=await service.listSubmissions({...(tab==='mine'?{author:member.user_id}:{status:tab}),offset:append?rows.length:0});

@@ -1,7 +1,9 @@
 import { parseDraft } from './custom-questions.js?v=20261017-formats1';
 import { escapeHtml } from './utils.js?v=20261017-formats1';
 
-export const BATCH_LIMIT = 30;
+export const BATCH_LIMIT = 100;
+export const MAX_BATCH_TEXT = 6000000;
+export const MAX_SUBMISSION_TEXT = 60000;
 
 export function normalizeBatchText(text) {
     return String(text).replace(/\r\n?/g, '\n')
@@ -14,6 +16,7 @@ export function questionCount(text) {
 }
 
 export function parseSubmission(text, format = 'auto') {
+    if (String(text).length > MAX_SUBMISSION_TEXT) throw new Error('單題原始內容超過 60000 字元，請整理後再提交。');
     const q = parseDraft(text, { format, retainAnswer:true });
     if (q.question.length > 10000 || q.correct_answer.length > 10000 || (q.user_answer || '').length > 10000 || q.options.length > 12 || q.options.some(o => o.length > 2000)) {
         throw new Error('題目、答案或選項過長，請分開整理後再提交。');
@@ -22,11 +25,12 @@ export function parseSubmission(text, format = 'auto') {
 }
 
 export function parseBatch(text, format = 'no_options') {
+    if (String(text).length > MAX_BATCH_TEXT) throw new Error('整批內容超過 6000000 字元，請分批貼上。原始文字尚未送出。');
     const normalized = normalizeBatchText(text).trim();
     const headings = [...normalized.matchAll(/^[ \t]*題目[：:]/gm)];
     if (!headings.length) throw new Error('每題請以「題目：」開頭，並包含「正確答案：」。');
     if (normalized.slice(0, headings[0].index).trim()) throw new Error('第一題前有未歸屬的文字，請移除或移入第一題後再預覽。');
-    if (headings.length > BATCH_LIMIT) throw new Error(`一次最多預覽 ${BATCH_LIMIT} 題，目前有 ${headings.length} 題，請分批貼上。每個帳號每小時最多新增 30 題。`);
+    if (headings.length > BATCH_LIMIT) throw new Error(`一次最多預覽 ${BATCH_LIMIT} 題，目前有 ${headings.length} 題，請分批貼上。每個帳號每小時最多新增 300 題。`);
     return headings.map((heading, i) => {
         const text = normalized.slice(heading.index, headings[i + 1]?.index ?? normalized.length)
             .trim().replace(/\n[ \t]*[-=─━]{3,}[ \t]*$/, '').trim();
@@ -76,7 +80,7 @@ export function createBatchEditor({ service, getMember, getEditing, notify, refr
         duplicates();
         $('batchPreview').hidden = false;
         $('batchDestination').textContent = batch.destinationLabel;
-        $('batchItems').innerHTML = batch.entries.map((entry, i) => `<article class="batch-item" data-batch-index="${i}"><div class="section-heading"><label class="batch-check"><input type="checkbox" data-batch-select="${i}"${entry.selected ? ' checked' : ''}${locked(entry) || isBusy() ? ' disabled' : ''}>第 ${i + 1} 題</label><span class="status-pill" data-batch-status="${i}">${entry.error ? '格式需修正' : labels[entry.status]}</span></div><div data-batch-body="${i}">${body(entry)}</div><p class="batch-entry-message" data-batch-message="${i}" role="status">${escapeHtml(entry.message)}</p><details class="batch-edit"><summary>修改第 ${i + 1} 題</summary><label for="batchFormat-${i}">第 ${i + 1} 題格式</label><select id="batchFormat-${i}" data-batch-format="${i}"${locked(entry) || isBusy() ? ' disabled' : ''}><option value="no_options"${entry.format === 'no_options' ? ' selected' : ''}>無選項</option><option value="with_options"${entry.format === 'with_options' ? ' selected' : ''}>含選項</option><option value="auto"${entry.format === 'auto' ? ' selected' : ''}>自動辨識</option></select><label for="batchText-${i}">第 ${i + 1} 題內容</label><textarea id="batchText-${i}" data-batch-text="${i}" rows="7" maxlength="40000"${locked(entry) ? ' readonly' : ''}${isBusy() ? ' disabled' : ''}>${escapeHtml(entry.text)}</textarea></details></article>`).join('');
+        $('batchItems').innerHTML = batch.entries.map((entry, i) => `<article class="batch-item" data-batch-index="${i}"><div class="section-heading"><label class="batch-check"><input type="checkbox" data-batch-select="${i}"${entry.selected ? ' checked' : ''}${locked(entry) || isBusy() ? ' disabled' : ''}>第 ${i + 1} 題</label><span class="status-pill" data-batch-status="${i}">${entry.error ? '格式需修正' : labels[entry.status]}</span></div><div data-batch-body="${i}">${body(entry)}</div><p class="batch-entry-message" data-batch-message="${i}" role="status">${escapeHtml(entry.message)}</p><details class="batch-edit"><summary>修改第 ${i + 1} 題</summary><label for="batchFormat-${i}">第 ${i + 1} 題格式</label><select id="batchFormat-${i}" data-batch-format="${i}"${locked(entry) || isBusy() ? ' disabled' : ''}><option value="no_options"${entry.format === 'no_options' ? ' selected' : ''}>無選項</option><option value="with_options"${entry.format === 'with_options' ? ' selected' : ''}>含選項</option><option value="auto"${entry.format === 'auto' ? ' selected' : ''}>自動辨識</option></select><label for="batchText-${i}">第 ${i + 1} 題內容</label><textarea id="batchText-${i}" data-batch-text="${i}" rows="7"${locked(entry) ? ' readonly' : ''}${isBusy() ? ' disabled' : ''}>${escapeHtml(entry.text)}</textarea></details></article>`).join('');
         summary();
     }
     function syncControls() {
@@ -143,7 +147,7 @@ export function createBatchEditor({ service, getMember, getEditing, notify, refr
             }
             render();
         }
-        $('batchProgress').textContent = `本次成功 ${success} 題${failure ? '，已暫停；其餘題目保留在預覽中。' : '。管理員仍會逐題審核。'}`;
+        $('batchProgress').textContent = `本次成功 ${success} 題${failure ? '，已暫停；其餘題目保留在預覽中。' : '。等待管理員審核。'}`;
         try { await refresh(); } catch { notify('送出狀態已保留，但列表暫時無法更新，請稍後重新整理。', true); }
         notify(failure ? `本次成功 ${success} 題後暫停，請查看各題狀態。` : `本次已${submit ? '送出審核' : '儲存草稿'} ${success} 題。`, !!failure);
     }

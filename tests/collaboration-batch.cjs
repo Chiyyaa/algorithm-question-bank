@@ -3,7 +3,7 @@ const {PGlite}=require('@electric-sql/pglite');
 const {chromium}=require('playwright');
 const root=path.resolve(__dirname,'..');
 const vm=require('node:vm');
-let fault=null;const saveCalls=[];
+let fault=null,reviewFault=null;const saveCalls=[],reviewCalls=[];
 const identities={admin:'20000000-0000-0000-0000-000000000001',alice:'20000000-0000-0000-0000-000000000002'};
 const passwords={admin:'Correct-password-123!',alice:'Correct-password-123!'};let resetCalls=0;
 const db=new PGlite();let browser,server,passed=0,gate=Promise.resolve();const errors=[];
@@ -48,6 +48,7 @@ async function routeApi(route){
    if(!map[fn])return json({message:'Unknown RPC'},404);
    let injected=null;
    if(fn==='save_question_submission'){saveCalls.push(b);if(fault&&saveCalls.length===fault.at){injected=fault.kind;fault=null;if(injected==='reject')return json({message:'SUBMISSION_LIMIT'},400);if(injected==='abort')return route.abort('failed');}}
+   if(fn==='review_question_submission'){reviewCalls.push(b);if(reviewFault&&reviewCalls.length===reviewFault.at){injected=reviewFault.kind;reviewFault=null;if(injected==='reject')return json({message:'REVISION_CONFLICT'},400);}}
    const values=map[fn].map(k=>b[k]);const sql='select * from public.'+fn+'('+values.map((_,i)=>'$'+(i+1)).join(',')+')';
    const result=(await db.query(sql,values)).rows;
    if(injected==='lost')return route.abort('failed');
@@ -59,6 +60,7 @@ async function routeApi(route){
   for(const column of ['user_id','author_id','subject_id','unit_id','status','visible']){
    const value=url.searchParams.get(column);if(value?.startsWith('eq.')){args.push(value.slice(3));filters.push(column+'=$'+args.length);}
   }
+  const ids=url.searchParams.get('id');if(ids?.startsWith('in.(')){args.push(ids.slice(4,-1).split(','));filters.push('id=any($'+args.length+'::uuid[])');}
   if(filters.length)sql+=' where '+filters.join(' and ');
   sql+=' order by '+(table==='collaboration_audit'?'id desc':table==='question_submissions'?'updated_at desc,id desc':'created_at');
   if(table==='published_questions')sql=sql.replace('order by created_at','order by id');
@@ -184,6 +186,63 @@ async function batchFlows(context, base) {
     pass('Mobile preview fits, reviewed contents stay text, and no real accounts or production data were used');
     await ac.close();await mc.close();
 }
+async function bulkReviewFlows(context,base){
+ const c=await context(),p=await c.newPage();p.setDefaultTimeout(15000);
+ const idle=()=>p.waitForFunction(()=>!document.querySelector('#refreshCollab').disabled);
+ const clickConfirm=async id=>{p.once('dialog',d=>d.accept());await p.locator(id).click();await idle();};
+ const inspect=async()=>{await gate;await db.exec('reset role');return(await db.query('select * from public.question_submissions')).rows;};
+ await gate;await db.exec('reset role');
+ for(let i=0;i<103;i++)await db.query("insert into public.question_submissions(author_id,subject_id,unit_id,content,status) values($1,'os','u6',$2,'pending')",[identities.alice,{question:i===0?'<img src=x onerror=alert(1)>':'批審測試'+i,options:[],correct_answer:'answer'+i,type:'short_answer'}]);
+ await p.goto(base+'collaborate.html');await p.locator('#loginEmail').fill('admin@example.com');await p.locator('#loginPassword').fill(passwords.admin);await p.locator('#loginForm button').click();await p.locator('#collabWorkspace').waitFor();await idle();
+ assert.equal(await p.locator('[data-review-select]').count(),100);
+ await p.locator('#selectPendingAll').click();assert.match(await p.locator('#bulkReviewCount').innerText(),/已選 100 題/);
+ await p.locator('#moreSubmissions').click();await idle();
+ await p.locator('[data-review-select]').nth(100).click();assert.equal(await p.locator('[data-review-select]:checked').count(),100);assert.match(await p.locator('#collabMessage').innerText(),/最多選取 100/);
+ await p.locator('#clearPendingSelection').click();assert.equal(await p.locator('[data-review-select]:checked').count(),0);
+ for(let i=0;i<3;i++)await p.locator('[data-review-select]').nth(i).check();
+ const selected=await p.locator('[data-review-select]:checked').evaluateAll(es=>es.map(e=>e.dataset.reviewSelect));
+ await p.locator('#previewBulkReview').click();assert.equal(await p.locator('.bulk-review-item').count(),3);
+ assert.equal(await p.locator('#bulkReviewItems img,#bulkReviewItems script').count(),0);
+ await p.locator('#confirmBulkReturn').click();await idle();assert.match(await p.locator('#bulkReviewDialog').innerText(),/退回請填寫/);
+ const start=reviewCalls.length;reviewFault={at:start+2,kind:'reject'};
+ await clickConfirm('#confirmBulkApprove');assert.equal(reviewCalls.length,start+2);
+ let data=await inspect();assert.equal(data.filter(r=>selected.includes(r.id)&&r.status==='published').length,1);
+ await clickConfirm('#confirmBulkApprove');assert.equal(reviewCalls.length,start+4);
+ data=await inspect();assert.equal(data.filter(r=>selected.includes(r.id)&&r.status==='published').length,3);
+ assert.equal(reviewCalls.slice(start).filter(r=>r.p_id===selected[0]).length,1);
+ await p.locator('#closeBulkReview').click();
+ pass('Admin selection caps at 100 across loaded pages; preview escapes HTML; partial rejection retries only unfinished reviews');
+ for(let i=0;i<2;i++)await p.locator('[data-review-select]').nth(i).check();
+ const returnedIds=await p.locator('[data-review-select]:checked').evaluateAll(es=>es.map(e=>e.dataset.reviewSelect));
+ await p.locator('#previewBulkReview').click();await p.locator('#bulkReviewNote').fill('共同原因：請補充解釋');
+ const beforeLost=reviewCalls.length;reviewFault={at:beforeLost+1,kind:'lost'};
+ await clickConfirm('#confirmBulkReturn');assert.match(await p.locator('#bulkReviewItems').innerText(),/結果待查核/);
+ assert.equal(await p.locator('#confirmBulkReturn').isDisabled(),true);
+ await p.locator('#closeBulkReview').click();assert.equal(await p.locator('#bulkReviewDialog').isVisible(),true);
+ await p.locator('#reconcileBulkReview').click();await idle();await clickConfirm('#confirmBulkReturn');
+ data=await inspect();assert.ok(data.filter(r=>returnedIds.includes(r.id)).every(r=>r.status==='returned'&&r.review_note==='共同原因：請補充解釋'));
+ assert.equal(reviewCalls.length,beforeLost+2);await p.locator('#closeBulkReview').click();
+ pass('Bulk return requires a shared reason; lost responses are reconciled before retry without duplicate reviews');
+ await p.locator('#moreSubmissions').click();await idle();await p.locator('#selectPendingAll').click();await p.locator('#previewBulkReview').click();
+ assert.equal(await p.locator('.bulk-review-item').count(),100);assert.equal(await p.locator('#bulkReviewItems img,#bulkReviewItems script').count(),0);
+ assert.match(await p.locator('#bulkReviewItems').innerText(),/<img src=x onerror=alert\(1\)>/);
+ const beforeHundred=reviewCalls.length;await clickConfirm('#confirmBulkApprove');assert.equal(reviewCalls.length,beforeHundred+100);
+ assert.match(await p.locator('#bulkReviewProgress').innerText(),/已完成 100 題/);await p.locator('#closeBulkReview').click();
+ pass('A full 100-question batch is approved through the UI and escaped hostile content remains plain text');
+ await p.locator('[data-review-select]').first().check();const staleId=await p.locator('[data-review-select]:checked').getAttribute('data-review-select');
+ await p.locator('#previewBulkReview').click();await gate;await db.exec('reset role');await db.query('update public.question_submissions set revision=revision+1 where id=$1',[staleId]);
+ await clickConfirm('#confirmBulkApprove');data=await inspect();assert.equal(data.find(r=>r.id===staleId).status,'pending');
+ assert.match(await p.locator('#bulkReviewItems').innerText(),/變更|重新整理|失敗/);await p.locator('#closeBulkReview').click();
+ await p.locator('[data-tab="mine"]').click();await idle();assert.equal(await p.locator('#bulkReviewToolbar').isVisible(),false);
+ await p.locator('[data-tab="pending"]').click();await idle();await p.setViewportSize({width:390,height:844});
+ assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+ await p.locator('[data-review-select]').first().check();await p.locator('#previewBulkReview').click();assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+ if(process.env.REVIEW_SCREENSHOT_PATH)await p.screenshot({path:process.env.REVIEW_SCREENSHOT_PATH});
+ await p.locator('#closeBulkReview').click();await p.locator('#logoutBtn').click();await p.locator('#loginCard').waitFor();
+ await p.locator('#loginEmail').fill('alice@example.com');await p.locator('#loginPassword').fill(passwords.alice);await p.locator('#loginForm button').click();await p.locator('#collabWorkspace').waitFor();await idle();assert.equal(await p.locator('[data-review-select]').count(),0);assert.equal(await p.locator('#bulkReviewToolbar').isVisible(),false);
+ assert.deepEqual(errors,[]);pass('Stale versions cannot overwrite newer submissions; mobile fits and contributors have no bulk review controls');await c.close();
+}
+
 (async()=>{
  try{
 
@@ -200,7 +259,8 @@ async function batchFlows(context, base) {
   assert.ok(parseBatch('題目：缺答案\n\n題目：完整\n正確答案：有')[0].error);
   assert.equal(parseBatch('題目：甲\n正確答案：乙\n-----\n題目：丙\n正確答案：丁')[0].content.correct_answer,'乙');
   assert.throws(()=>parseBatch('未歸屬文字\n題目：測試\n正確答案：答案'),/未歸屬/);
-  assert.throws(()=>parseBatch(Array.from({length:31},(_,i)=>'題目：'+i+'\n正確答案：x').join('\n')),/最多/);
+  assert.throws(()=>parseBatch(Array.from({length:101},(_,i)=>'題目：'+i+'\n正確答案：x').join('\n')),/最多/);
+  assert.equal(parseBatch(Array.from({length:100},(_,i)=>'題目：'+i+'\n正確答案：x').join('\n')).length,100);
   assert.throws(()=>parseSubmission('題目：'+ 'x'.repeat(10001)+'\n正確答案：y'),/過長/);
   assert.equal(contentKey(parsed[0].content),contentKey(JSON.parse(JSON.stringify(parsed[0].content))));
   const legacy=moduleFor(path.join(root,'js/custom-questions.js'));assert.throws(()=>legacy.namespace.parseDraft(sample),/請貼上一題/);
@@ -231,6 +291,7 @@ async function batchFlows(context, base) {
    await c.route(serverUrl+'/**',route=>{const job=gate.then(()=>routeApi(route));gate=job.catch(()=>{});return job;});
    c.on('page',p=>p.on('pageerror',e=>errors.push(e.message)));return c;}
   await batchFlows(context,base);
+  await bulkReviewFlows(context,base);
   console.log(JSON.stringify({passed,errors,saveRequests:saveCalls.length}));
  }finally{if(browser)await browser.close();if(server)await new Promise(r=>server.close(r));await db.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

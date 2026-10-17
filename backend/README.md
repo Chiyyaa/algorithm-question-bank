@@ -13,7 +13,7 @@
 ## 2. 建立資料表
 
 確認這是尚未建立協作資料表的新專案，在 SQL Editor 執行 `schema.sql` 一次。
-接著依序執行 `migrations/20261017-password-reset.sql` 與 `migrations/20261017-collaboration-formats-units.sql`。既有專案只執行尚未套用的 migration，不要重跑 schema.sql。
+接著依序執行 `migrations/20261017-password-reset.sql`、`migrations/20261017-collaboration-formats-units.sql` 與 `migrations/20261017-collaboration-limits.sql`。既有專案只執行尚未套用的 migration，不要重跑 schema.sql。
 它會建立 members、submissions、published、audit 及單元清單，預設拒絕所有直接寫入，只開放有身分檢查的 RPC。
 每張表明確啟用 RLS。匿名讀者只能讀取已核准、未撤回的公開題目與單元。
 先不要把全部舊 JSON 匯入：既有題庫維持原本來源，新核准的題目額外載入，避免重複。
@@ -90,3 +90,11 @@ Edge Function 測試涵蓋驗證 JWT、管理員資格、伺服器金鑰隔離�
 - https://supabase.com/docs/guides/database/postgres/row-level-security
 - https://supabase.com/docs/guides/functions/auth
 - https://supabase.com/docs/guides/auth/auth-smtp
+
+
+## 協作題數上限
+
+前端每批最多 100 題；後端每帳號每一小時滾動累計最多新增 300 題，包含新建草稿。修改既有草稿不新增題數。既有專案只套用 migrations/20261017-collaboration-limits.sql，不重跑 schema.sql。更新會讀取目前的函式定義，確認唯一的 30 題上限與一小時條件後只改成 300；遇到不符預期的版本就中止交易。重複套用已為 300 的設定不會更動其他規則。
+
+
+管理員的「待審核」清單可勾選多題，或全選已載入的題目（每次最多 100 題）。按「預覽並批次審核」確認各題後，可批次核准發布或填寫共同原因後批次退回。原有單題編輯審核仍可使用。每題沿用後端管理員權限與版本檢查；中途失敗保留成功結果，重試只處理未成功題目。連線中斷時先查核結果。

@@ -5,7 +5,7 @@
  <meta name="referrer" content="strict-origin-when-cross-origin">
  <title>題庫協作</title>
  <link rel="stylesheet" href="./css/style.css?v=20261009-os">
- <link rel="stylesheet" href="./css/collaboration.css?v=20261017-batch1">
+ <link rel="stylesheet" href="./css/collaboration.css?v=20261017-review1">
 </head>
 <body class="collaboration-page">
 <main class="collab-container">
@@ -37,8 +37,8 @@
      <button id="openUnitDialog" type="button">＋ 新增單元</button>
      <label for="submissionFormat">新增格式</label><select id="submissionFormat"><option value="no_options">無選項新增</option><option value="with_options">含選項新增</option><option value="auto">自動辨識（可混合題型）</option></select>
      <label for="submissionDraft">題目與答案（可貼上多題）</label>
-     <textarea id="submissionDraft" rows="12" required maxlength="40000" placeholder="題目：請輸入題目&#10;&#10;你的答案：&#10;請貼上作答內容&#10;&#10;正確答案：&#10;請貼上正確答案&#10;&#10;得分：1 / 1"></textarea>
-     <p class="help-text">每題以「題目：」開頭，並包含「正確答案：」。多題貼上後請先預覽；得分會忽略，不同的作答答案會保留為錯答備註。每批最多 30 題，沿用每帳號每小時最多新增 30 題的限制。</p>
+     <textarea id="submissionDraft" rows="12" required placeholder="題目：請輸入題目&#10;&#10;你的答案：&#10;請貼上作答內容&#10;&#10;正確答案：&#10;請貼上正確答案&#10;&#10;得分：1 / 1"></textarea>
+     <p class="help-text">每題以「題目：」開頭，並包含「正確答案：」。多題貼上後請先預覽；得分會忽略，不同的作答答案會保留為錯答備註。每批最多 100 題，每帳號每小時最多新增 300 題。</p>
      <button id="previewSubmissions" class="batch-preview-button" type="button">解析並逐題預覽</button>
      <section id="batchPreview" class="batch-preview" aria-label="批次題目預覽" hidden>
       <div class="section-heading"><h3>批次題目預覽</h3><button id="closeBatchPreview" type="button">關閉預覽</button></div>
@@ -52,7 +52,7 @@
      <p class="help-text">草稿只有你與管理員可見；送審後需待審核或退回，才能繼續修改。</p>
     </form>
    </section>
-   <section><div class="section-heading"><h2 id="listHeading">我的題目</h2><span id="submissionCount"></span></div><div id="submissionList"></div><button id="moreSubmissions" type="button" hidden>載入更多</button></section>
+   <section><div class="section-heading"><h2 id="listHeading">我的題目</h2><span id="submissionCount"></span></div><div id="bulkReviewToolbar" class="bulk-review-toolbar" hidden><p id="bulkReviewCount" role="status" aria-live="polite"></p><div class="form-actions"><button id="selectPendingAll" type="button">全選已載入題目（最多 100 題）</button><button id="clearPendingSelection" type="button">取消全選</button><button id="previewBulkReview" class="primary-btn" type="button">預覽並批次審核</button></div></div><div id="submissionList"></div><button id="moreSubmissions" type="button" hidden>載入更多</button></section>
   </div>
   <section id="membersView" hidden>
    <div class="form-card"><h2>新增協作者</h2><form id="memberForm" class="member-form">
@@ -66,13 +66,14 @@
   <section id="auditView" hidden><h2>操作紀錄</h2><p class="help-text">最近 100 筆紀錄；資料庫保留完整歷程。</p><div id="auditList"></div></section>
  </section>
 </main>
+<dialog id="bulkReviewDialog" aria-labelledby="bulkReviewHeading"><div class="section-heading"><h2 id="bulkReviewHeading">批次審核</h2><button id="closeBulkReview" type="button" aria-label="關閉批次審核">✕</button></div><p class="help-text">請確認下方每題內容。核准後將公開；需要修改內容時，請關閉後使用該題的「審核」。</p><p id="bulkReviewProgress" role="status" aria-live="polite"></p><div id="bulkReviewItems"></div><label for="bulkReviewNote">共同審核備註／退回原因（退回必填）</label><textarea id="bulkReviewNote" rows="3" maxlength="2000"></textarea><div class="form-actions"><button id="reconcileBulkReview" type="button" hidden>查核審核結果</button><button id="confirmBulkReturn" type="button">批次退回修改</button><button id="confirmBulkApprove" class="primary-btn" type="button">批次核准發布</button></div></dialog>
 <dialog id="reviewDialog"><div class="section-heading"><h2 id="reviewHeading">審核題目</h2><button id="closeReview" type="button" aria-label="關閉審核視窗">✕</button></div>
- <p id="reviewContext" class="subtitle"></p><label for="reviewDraft">題目與答案</label><textarea id="reviewDraft" rows="12" maxlength="40000"></textarea>
+ <p id="reviewContext" class="subtitle"></p><label for="reviewDraft">題目與答案</label><textarea id="reviewDraft" rows="12" maxlength="60000"></textarea>
  <p class="help-text">「你的答案」若與正確答案不同，會公開為錯答備註；可修改或移除此段。</p>
  <label for="reviewNote">審核備註／退回原因</label><textarea id="reviewNote" rows="3" maxlength="2000"></textarea>
  <div class="form-actions"><button id="returnSubmission" type="button">退回修改</button><button id="approveSubmission" class="primary-btn" type="button">核准並發布</button></div>
 </dialog>
 <dialog id="unitDialog"><h2>新增單元</h2><form id="unitForm"><p id="unitSubjectLabel"></p><label for="newUnitNumber">單元編號</label><input id="newUnitNumber" type="number" min="2" max="999" step="1" required placeholder="例如：7"><p class="help-text">第一題經管理員核准後，這個單元才會公開；相同編號會共用。</p><div class="form-actions"><button id="cancelUnit" type="button">取消</button><button class="primary-btn" type="submit">建立並選用</button></div></form></dialog>
 <dialog id="passwordDialog"><h2>變更密碼</h2><form id="passwordForm"><label for="newPassword">新密碼（至少 12 個字元）</label><input id="newPassword" type="password" autocomplete="new-password" minlength="12" required><label for="confirmPassword">再次輸入新密碼</label><input id="confirmPassword" type="password" autocomplete="new-password" minlength="12" required><div class="form-actions"><button id="cancelPassword" type="button">取消</button><button type="submit" class="primary-btn">更新密碼</button></div></form></dialog>
-<script type="module" src="./js/collaboration.js?v=20261017-batch1"></script>
+<script type="module" src="./js/collaboration.js?v=20261017-batch2"></script>
 </body></html>
