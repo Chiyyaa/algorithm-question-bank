@@ -1,3 +1,4 @@
+import { curatePublishedQuestions } from './question-curation.js?v=20261020-u5';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { loadUserQuestions, initCustomQuestions, mistakenAnswer } from "./custom-questions.js?v=20261017-formats1";
 import { initNavigation } from "./navigation.js";
@@ -385,7 +386,7 @@ async function loadQuestionBank() {
         }
         if (version !== requestVersion) return;
         let sharedQuestions = [], sharedFailed = false;
-        try { sharedQuestions = await loadPublishedQuestions(subject.id, unit.id); }
+        try { sharedQuestions = await curatePublishedQuestions(await loadPublishedQuestions(subject.id, unit.id), subject.id, unit.id); }
         catch { sharedFailed = true; }
         if (version !== requestVersion) return;
         QUESTIONS.push(...builtInQuestions, ...sharedQuestions, ...loadUserQuestions(subject.id, unit.id));
@@ -415,5 +416,3 @@ async function loadQuestionBank() {
         if (version === requestVersion) loading = false;
     }
 }
-
-
