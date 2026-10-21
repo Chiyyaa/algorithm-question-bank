@@ -1,0 +1,509 @@
+[
+  {
+    "id": 1,
+    "title": "",
+    "type": "choice",
+    "question": "關於決策樹，下列敘述何者正確？",
+    "options": [
+      "A. 樹的高度與比較次數無關",
+      "B. 每個內部節點是一個比較",
+      "C. 每個分支代表一個比較結果",
+      "D. 樹的葉節點數量至少為 n!"
+    ],
+    "options_status": "complete",
+    "correct_answer": "每個內部節點是一個比較\n每個分支代表一個比較結果\n樹的葉節點數量至少為 n!",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 1 題",
+      "第二次試煉_題目與選項_不含答案.txt 第 15 題"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "",
+    "type": "fill_blank",
+    "question": "給定課本版本的 COUNTING_SORT 演算法。\nCOUNTING_SORT(A, B, k)\n1  for i <- 1 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 2 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n題目：A 陣列的內容為 2, 5, 3, 0, 2, 3, 0, 5, 1, 2, 1, 3, 2, 0, 4。\n填空：\n(1) 執行完後 B 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）\n(2) C 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "B：0,0,0,1,1,2,2,2,2,3,3,3,4,5,5\nC：0,3,5,9,12,13",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 2 題"
+    ],
+    "answer_note": "答案依來源「正確答案」保留。原偽碼從 C[1] 初始化，但輸入包含 0；應將 C[0] 也初始化為 0。來源將 B 尚未填入的位置顯示為 0。"
+  },
+  {
+    "id": 3,
+    "title": "",
+    "type": "choice",
+    "question": "桶排序（Bucket Sort）假設輸入資料分布為？",
+    "options": [
+      "A. 常態分佈",
+      "B. 均勻分佈",
+      "C. 完全有序",
+      "D. 指數分佈"
+    ],
+    "options_status": "complete",
+    "correct_answer": "均勻分佈",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 3 題",
+      "第二次試煉_題目與選項_不含答案.txt 第 13 題"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "",
+    "type": "choice",
+    "question": "下列何者不是線性時間排序演算法？",
+    "options": [
+      "A. 桶排序",
+      "B. 計數排序",
+      "C. 快速排序",
+      "D. 基數排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "快速排序",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 4 題",
+      "第二次試煉_題目與選項_不含答案.txt 第 4 題"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "",
+    "type": "disputed",
+    "question": "給定課本版本的 COUNTING_SORT 演算法。\nCOUNTING_SORT(A, B, k)\n1  for i <- 1 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 2 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n題目：A 陣列的內容為 2, 5, 3, 0, 2, 3, 0, 5, 1, 2, 1, 3, 2, 0, 4。\n填空：\n(1) 做到第 9 行 j = 12 時 B 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）\n(2) C 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "B：0,0,0,0,0,0,0,0,2,0,0,0,4,0,0\nC：2,5,8,12,12,15",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 5 題"
+    ],
+    "answer_note": "答案依來源「正確答案」保留。原偽碼從 C[1] 初始化，但輸入包含 0；應將 C[0] 也初始化為 0。來源將 B 尚未填入的位置顯示為 0。 此題來源標準答案與依第 9 行迴圈開始時的手算結果不符；先保留原答案供核對，未自行改寫。"
+  },
+  {
+    "id": 6,
+    "title": "",
+    "type": "choice",
+    "question": "桶排序(Bucket Sort)處理過程包含？",
+    "options": [
+      "A. 合併桶",
+      "B. 分配至各桶",
+      "C. 隨機洗牌",
+      "D. 分別對桶排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "分配至各桶\n分別對桶排序\n合併桶",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 6 題",
+      "第二次試煉_題目與選項_不含答案.txt 第 1 題（依答題詳情補回）"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "",
+    "type": "fill_blank",
+    "question": "計數排序的時間複雜度為 _____\n格式要求：（請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 (big-theta, theta, big-omega, omega, O, o,)）",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "big-theta(n+k)",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 7 題",
+      "第二次試煉_題目與選項_不含答案.txt 第 19 題"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "",
+    "type": "choice",
+    "question": "關於線性時間排序，下列何者正確？",
+    "options": [
+      "A. 空間換取時間",
+      "B. 比比較排序永遠快",
+      "C. 需要額外假設",
+      "D. 不適用於任意物件"
+    ],
+    "options_status": "complete",
+    "correct_answer": "不適用於任意物件\n需要額外假設\n空間換取時間",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 8 題"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "",
+    "type": "choice",
+    "question": "計數排序(Counting Sort)中，陣列 C 的作用是？",
+    "options": [
+      "A. 儲存原始資料",
+      "B. 作為桶",
+      "C. 儲存指標",
+      "D. 儲存每個值的出現次數或累積計數"
+    ],
+    "options_status": "complete",
+    "correct_answer": "儲存每個值的出現次數或累積計數",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 9 題",
+      "第二次試煉_題目與選項_不含答案.txt 第 14 題"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "",
+    "type": "choice",
+    "question": "基數排序(Radix Sort)可以使用哪種穩定排序作為子程序？",
+    "options": [
+      "A. Insertion Sort",
+      "B. Quick Sort",
+      "C. Merge Sort",
+      "D. Counting Sort"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Counting Sort\nInsertion Sort\nMerge Sort",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 10 題"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "",
+    "type": "choice",
+    "question": "決策樹模型證明了？",
+    "options": [
+      "A. 桶排序的正確性",
+      "B. 比較排序的極限",
+      "C. 堆積排序的正確性",
+      "D. 線性排序的極限"
+    ],
+    "options_status": "complete",
+    "correct_answer": "比較排序的極限",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 11 題"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "",
+    "type": "choice",
+    "question": "桶排序(Bucket Sort)的效能取決於？",
+    "options": [
+      "A. 輸入元素的絕對值",
+      "B. 桶的數量",
+      "C. 輸入資料分布",
+      "D. 桶內部的排序演算法"
+    ],
+    "options_status": "complete",
+    "correct_answer": "輸入資料分佈\n桶的數量\n桶內部的排序演算法",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 12 題"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "",
+    "type": "fill_blank",
+    "question": "給定課本版本的 RADIX_SORT 演算法。\nRADIX_SORT(A, d)\n1 for i <- 1 to d\n2   do use a stable sort to sort array A on digit i\n題目：A 陣列的內容為 4329, 4057, 6507, 2839, 6436, 7720, 8355。\n填空：當 i = 3 時 A 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "4057,4329,8355,6436,6507,7720,2839",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 13 題",
+      "第二次試煉_題目與選項_不含答案.txt 第 5 題"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "",
+    "type": "disputed",
+    "question": "給定課本版本的 COUNTING_SORT 演算法。\nCOUNTING_SORT(A, B, k)\n1  for i <- 1 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 2 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n題目：A 陣列的內容為 2, 5, 3, 0, 2, 3, 0, 3。\n填空：\n(1) 做到第 9 行的 j = 2 時 B 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）\n(2) C 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "B：0,0,2,3,3,3,3,0\nC：0,2,3,4,7,7",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 14 題",
+      "第二次試煉_題目與選項_不含答案.txt 第 3 題"
+    ],
+    "answer_note": "答案依來源「正確答案」保留。原偽碼從 C[1] 初始化，但輸入包含 0；應將 C[0] 也初始化為 0。來源將 B 尚未填入的位置顯示為 0。 此題來源標準答案與依第 9 行迴圈開始時的手算結果不符；先保留原答案供核對，未自行改寫。"
+  },
+  {
+    "id": 15,
+    "title": "",
+    "type": "fill_blank",
+    "question": "給定課本版本的 BUCKET_SORT 演算法。\nBUCKET_SORT(A)\n1  n <- length[A]\n2  for i <- 1 to n\n3    do insert A[i] into list B[floor(n * A[i])]\n4  for i <- 0 to n-1\n5    do sort list B[i] with insertion sort\n6  concatenate B[0], B[1], ..., B[n-1] together in order\n題目：A 陣列的內容為 0.78, 0.17, 0.39, 0.26, 0.72, 0.94, 0.21, 0.12, 0.23, 0.68。\n填空：第 2 行做到 i = 7 時 B 陣列的內容為何？即求 B[1]B[2]B[7] 的內容為何（格式範例：0.2,0.5,0.3,0.1,0.2,0.3,0.5,0.3）",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "B[1]：0.17\nB[2]：0.26,0.21\nB[7]：0.78,0.72",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 15 題"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "",
+    "type": "choice",
+    "question": "基數排序(Radix Sort)要求子排序演算法必須是？",
+    "options": [
+      "A. 穩定排序",
+      "B. 原地排序",
+      "C. 快速排序",
+      "D. 比較排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "穩定排序",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 16 題"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "",
+    "type": "choice",
+    "question": "下列哪些特徵是基數排序與計數排序(Radix Sort and Counting Sort)共有的？",
+    "options": [
+      "A. 皆使用桶作為中間結構",
+      "B. 皆可達成線性時間",
+      "C. 皆非比較排序",
+      "D. 皆需穩定排序子程序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "皆非比較排序\n皆可達成線性時間",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 17 題",
+      "第二次試煉_題目與選項_不含答案.txt 第 20 題"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "",
+    "type": "choice",
+    "question": "桶排序中(Bucket Sort)，每個桶內部的排序通常使用？",
+    "options": [
+      "A. 基數排序",
+      "B. 快速排序",
+      "C. 計數排序",
+      "D. 插入排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "插入排序",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 18 題",
+      "第二次試煉_題目與選項_不含答案.txt 第 11 題"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "",
+    "type": "choice",
+    "question": "決策樹模型（Decision Tree Model）主要用於分析哪類演算法？",
+    "options": [
+      "A. 比較排序",
+      "B. 圖論演算法",
+      "C. 動態規劃",
+      "D. 線性排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "比較排序",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 19 題",
+      "第二次試煉_題目與選項_不含答案.txt 第 8 題"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "",
+    "type": "choice",
+    "question": "桶排序(Bucket Sort)中，若資料均勻分布，預期時間複雜度為？",
+    "options": [
+      "A. Θ(n^2)",
+      "B. Θ(log n)",
+      "C. Θ(n)",
+      "D. Θ(n log n)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Θ(n)",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 20 題"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "",
+    "type": "fill_blank",
+    "question": "給定課本版本的 RADIX_SORT 演算法。\nRADIX_SORT(A, d)\n1 for i <- 1 to d\n2   do use a stable sort to sort array A on digit i\n題目：A 陣列的內容為 329, 457, 657, 839, 436, 720, 355。\n填空：當 i = 2 時 A 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "720,329,436,839,355,457,657",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "演算法Unit4_21題_完整題目與選項.txt 第 21 題",
+      "第二次試煉_題目與選項_不含答案.txt 第 9 題"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "",
+    "type": "choice",
+    "question": "在比較排序中，決策樹的葉節點個數等於？",
+    "options": [
+      "A. log n",
+      "B. n!",
+      "C. n²",
+      "D. n"
+    ],
+    "options_status": "complete",
+    "correct_answer": "n!",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "第二次試煉_題目與選項_不含答案.txt 第 2 題"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "",
+    "type": "choice",
+    "question": "基數排序（Radix Sort）的優點有？",
+    "options": [
+      "A. 可擴展性強",
+      "B. 靈活處理多維資料",
+      "C. 時間複雜度隨輸入長度線性增加",
+      "D. 穩定"
+    ],
+    "options_status": "complete",
+    "correct_answer": "靈活處理多維資料\n穩定\n可擴展性強\n時間複雜度隨輸入長度線性增加",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "第二次試煉_題目與選項_不含答案.txt 第 6 題"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "",
+    "type": "fill_blank",
+    "question": "給定課本版本的 COUNTING_SORT 演算法。\nCOUNTING_SORT(A, B, k)\n1  for i <- 1 to k\n2    do c[i] <- 0\n3  for j <- 1 to length[A]\n4    do c[A[j]] <- c[A[j]] + 1\n5  > c[i] now contains the number of elements equal to i\n6  for i <- 2 to k\n7    do c[i] <- c[i] + c[i-1]\n8  > c[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[c[A[j]]] <- A[j]\n11      c[A[j]] <- c[A[j]] - 1\nA 陣列的內容為 2,5,3,0,2,3,0,5,1,2,1,3,2,0,4。\n做到第 9 行前，B 陣列的內容為何？\n填空 (1)：________________\n格式：2,5,3,0,2,3,0,3\nC 陣列的內容為何？\n填空 (2)：________________\n格式：2,5,3,0,2,3,0,3",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "B：0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\nC：3,5,9,12,13,15",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "第二次試煉_題目與選項_不含答案.txt 第 7 題"
+    ],
+    "answer_note": "答案依來源「正確答案」保留。原偽碼從 C[1] 初始化，但輸入包含 0；應將 C[0] 也初始化為 0。來源將 B 尚未填入的位置顯示為 0。"
+  },
+  {
+    "id": 25,
+    "title": "",
+    "type": "fill_blank",
+    "question": "給定課本版本的 BUCKET_SORT 演算法。\nBUCKET_SORT(A)\n1  n <- length[A]\n2  for i <- 1 to n\n3    do insert A[i] into list B[⌊nA[i]⌋]\n4  for i <- 0 to n-1\n5    do sort list B[i] with insertion sort\n6  concatenate B[0], B[1], ..., B[n-1] together in order\nA 陣列的內容為 0.78,0.17,0.39,0.26,0.72,0.94,0.21,0.12,0.23,0.68。\n第 4 行做到 i = 5，B 陣列的內容如何？B[1]、B[2]、B[6] 的內容為何？\n填空 B[1]：________________\n填空 B[2]：________________\n填空 B[6]：________________\n格式：0.2,0.5,0.3,0.1,0.2,0.3,0.5,0.3",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "B[1]：0.12,0.17\nB[2]：0.21,0.23,0.26\nB[6]：0.68",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "第二次試煉_題目與選項_不含答案.txt 第 10 題"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "",
+    "type": "disputed",
+    "question": "給定課本版本的 COUNTING_SORT 演算法。\nCOUNTING_SORT(A, B, k)\n1  for i <- 1 to k\n2    do c[i] <- 0\n3  for j <- 1 to length[A]\n4    do c[A[j]] <- c[A[j]] + 1\n5  > c[i] now contains the number of elements equal to i\n6  for i <- 2 to k\n7    do c[i] <- c[i] + c[i-1]\n8  > c[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[c[A[j]]] <- A[j]\n11      c[A[j]] <- c[A[j]] - 1\nA 陣列的內容為 2,5,3,0,2,3,0,5,1,2,1,3,2,0,4。\n做到第 9 行 j = 4，B 陣列的內容為何？\n填空 (1)：________________\n格式：2,5,3,0,2,3,0,3\nC 陣列的內容為何？\n填空 (2)：________________\n格式：2,5,3,0,2,3,0,3",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "B：0,0,0,1,1,0,2,2,2,0,3,3,4,0,5\nC：1,3,6,10,12,14",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "第二次試煉_題目與選項_不含答案.txt 第 12 題"
+    ],
+    "answer_note": "答案依來源「正確答案」保留。原偽碼從 C[1] 初始化，但輸入包含 0；應將 C[0] 也初始化為 0。來源將 B 尚未填入的位置顯示為 0。 此題來源標準答案與依第 9 行迴圈開始時的手算結果不符；先保留原答案供核對，未自行改寫。"
+  },
+  {
+    "id": 27,
+    "title": "",
+    "type": "choice",
+    "question": "下列關於排序演算法複雜度的敘述，正確的有？",
+    "options": [
+      "A. 比較排序下界 Ω(n log n)",
+      "B. 桶排序平均情況為 Θ(n)",
+      "C. 計數排序可以做到 Θ(n+k)",
+      "D. 所有排序都能做到 O(n)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "比較排序下界 Ω(n log n)\n計數排序可以做到 Θ(n+k)\n桶排序平均情況為 Θ(n)",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "第二次試煉_題目與選項_不含答案.txt 第 16 題"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "",
+    "type": "choice",
+    "question": "桶排序（Bucket Sort）適合處理？",
+    "options": [
+      "A. 區間範圍明確數據",
+      "B. 完全雜亂無序數據",
+      "C. 均勻分佈數據",
+      "D. 需要線性效能數據"
+    ],
+    "options_status": "complete",
+    "correct_answer": "均勻分佈數據\n區間範圍明確數據\n需要線性效能數據",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "第二次試煉_題目與選項_不含答案.txt 第 17 題"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "",
+    "type": "choice",
+    "question": "基數排序（Radix Sort）通常用於排序什麼類型的資料？",
+    "options": [
+      "A. 指標",
+      "B. 單一整數",
+      "C. 多位數鍵值",
+      "D. 無序節點"
+    ],
+    "options_status": "complete",
+    "correct_answer": "多位數鍵值",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "第二次試煉_題目與選項_不含答案.txt 第 18 題"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "",
+    "type": "choice",
+    "question": "當 k = O(n) 時，計數排序（Counting Sort）的時間複雜度為？",
+    "options": [
+      "A. Θ(n)",
+      "B. Θ(log n)",
+      "C. Θ(n log n)",
+      "D. Θ(n²)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Θ(n)",
+    "answer_basis": "provided_quiz_correct_answer",
+    "sources": [
+      "第二次試煉_題目與選項_不含答案.txt 第 21 題"
+    ]
+  }
+]
