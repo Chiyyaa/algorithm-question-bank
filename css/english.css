@@ -90,3 +90,11 @@ details.word-group[open]>summary::after { content:'−'; }
 .review-status.unanswered { background:#edf0e7;color:#66725b; }
 .all-correct-note { text-align:center;padding:20px;border-radius:12px;background:#edf6e8;color:#45663b; }
 @media(max-width:600px) { .result-rating-image { max-height:330px; }.quiz-quit-row { margin-top:0; }.result-card .quiz-actions { flex-wrap:wrap; }.result-card #resultHeading { font-size:22px; } }
+
+.english-announcement { width:min(480px,calc(100vw - 32px));max-height:85vh;overflow:auto;border:1px solid #d5e3dc;border-radius:24px;padding:30px;color:#183e36;background:#fffdf7;box-shadow:0 24px 80px #183e3633; }
+.english-announcement::backdrop { background:#142e2980;backdrop-filter:blur(4px); }
+.english-announcement h2 { font-size:24px;line-height:1.55;margin:12px 0; }
+.english-announcement #englishAnnouncementDetails { font-size:19px;color:#46715c; }
+.english-announcement .primary-btn { margin-top:16px; }
+@media(max-width:500px){.english-announcement{padding:24px;}.english-announcement h2{font-size:21px;}}
+

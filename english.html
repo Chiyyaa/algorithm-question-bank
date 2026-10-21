@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#183e36">
 <title>英文｜學習題庫</title>
 <link rel="stylesheet" href="./css/style.css?v=20261007-os">
-<link rel="stylesheet" href="./css/english.css?v=20261017-english2">
+<link rel="stylesheet" href="./css/english.css?v=20261022-biweekly">
 </head>
 <body data-subject="english">
 <button id="englishMenuBtn" class="mobile-menu-btn" type="button" aria-label="收合選單" aria-controls="englishSidebar" aria-expanded="true">☰</button>
@@ -16,26 +16,26 @@
     <nav class="sidebar-nav" aria-label="英文學習選單">
         <button class="nav-btn active" data-view="vocabulary" type="button" aria-current="page"><span aria-hidden="true">▤</span> 單字表</button>
         <button class="nav-btn" data-view="quiz" type="button"><span aria-hidden="true">✎</span> 當週測驗</button>
-        <button class="nav-btn" type="button" disabled><span aria-hidden="true">◷</span> 總測驗 <span class="soon-label">尚未開放</span></button>
+        <button class="nav-btn" data-view="total" type="button"><span aria-hidden="true">◷</span> 總測驗</button>
     </nav>
     <a class="nav-btn return-home" href="./">↩ 切換科目</a>
-    <div class="sidebar-note">每週 50 個單字<br>每週五 16:00 更新<br><span class="timezone-label">台北時間 · UTC+8</span></div>
+    <div class="sidebar-note">每兩週 50 個單字<br>隔週五 16:00 更新<br><span class="timezone-label">台北時間 · UTC+8</span></div>
 </aside>
 <div id="englishShell" class="main-shell">
 <div class="container english-container">
     <header class="english-header">
-        <div class="english-eyebrow"><span class="eyebrow-line"></span>ENGLISH · 每週練習</div>
-        <div class="header-title-row"><div><h1 id="englishHeading" tabindex="-1">單字表</h1><p class="subtitle">把每週的累積，變成自己的單字。</p></div><span class="header-monogram" aria-hidden="true">Aa<span>✧</span></span></div>
+        <div class="english-eyebrow"><span class="eyebrow-line"></span>ENGLISH · 雙週練習</div>
+        <div class="header-title-row"><div><h1 id="englishHeading" tabindex="-1">單字表</h1><p class="subtitle">把每次的累積，變成自己的單字。</p></div><span class="header-monogram" aria-hidden="true">Aa<span>✧</span></span></div>
     </header>
-    <section class="week-banner" aria-label="本週學習範圍">
-        <div><span class="week-tag">本週單字</span><h2 id="weekHeading">正在確認週次……</h2><p id="weekRange"></p></div>
+    <section class="week-banner" aria-label="本期學習範圍">
+        <div><span class="week-tag">本期單字</span><h2 id="weekHeading">正在確認期次……</h2><p id="weekRange"></p></div>
         <div class="week-timing"><p id="nextWeekTime"></p><p id="clockStatus" role="status">正在校正台北時間……</p><button id="syncClockBtn" class="text-button" type="button">重新校時</button></div>
     </section>
     <p id="loadStatus" class="notice" role="status">單字載入中……</p>
     <button id="retryLoadBtn" type="button" hidden>重新載入單字</button>
     <main>
     <section id="vocabularyView" aria-labelledby="vocabularyTitle" hidden>
-        <div class="section-title-row"><div><h2 id="vocabularyTitle">這週，從這裡開始</h2><p class="section-caption">當週單字置頂，其他週次也能隨時複習。</p></div><button id="goQuizBtn" class="primary-btn" type="button">當週測驗 <span aria-hidden="true">→</span></button></div>
+        <div class="section-title-row"><div><h2 id="vocabularyTitle">這期，從這裡開始</h2><p class="section-caption">本期單字置頂，其他期次也能隨時複習。</p></div><button id="goQuizBtn" class="primary-btn" type="button">當週測驗 <span aria-hidden="true">→</span></button></div>
         <div class="word-search"><label class="sr-only" for="wordSearch">搜尋單字、中文或編號</label><input id="wordSearch" type="search" placeholder="搜尋單字、中文或編號……" autocomplete="off"><span id="wordSummary" role="status"></span></div>
         <div id="wordGroups"></div>
     </section>
@@ -50,6 +50,14 @@
     <noscript><p class="notice">請啟用 JavaScript，才能使用單字表與測驗。</p></noscript>
 </div>
 </div>
-<script type="module" src="./js/english.js?v=20261017-english2"></script>
+<dialog id="englishAnnouncement" class="english-announcement" aria-labelledby="englishAnnouncementTitle" aria-describedby="englishAnnouncementDetails">
+    <p class="prompt-label">英文學習公告</p>
+    <h2 id="englishAnnouncementTitle">單字考試為2週一次 請注意 ! !</h2>
+    <p id="englishAnnouncementDetails">總測驗已開啟 歡迎挑戰</p>
+    <p class="section-caption">每兩週推進 50 個單字；總測驗從全部單字隨機抽出 30 題。</p>
+    <button id="dismissEnglishAnnouncement" class="primary-btn" type="button">我知道了</button>
+</dialog>
+<script type="module" src="./js/english.js?v=20261022-biweekly"></script>
 </body>
 </html>
+

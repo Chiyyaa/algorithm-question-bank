@@ -1,4 +1,4 @@
-import { weekInfo, wordsForWeek, quizPrompt, normalizeAnswer, createQuiz, submitAnswer, advanceQuiz, serverTime, QUIZ_AUDIO, resultRating, quizSummary, finishQuiz } from './english-core.js?v=20261017-english2';
+import { weekInfo, wordsForWeek, quizPrompt, normalizeAnswer, createQuiz, createTotalQuiz, submitAnswer, advanceQuiz, serverTime, QUIZ_AUDIO, resultRating, quizSummary, finishQuiz } from './english-core.js?v=20261022-biweekly';
 
 const $ = id => document.getElementById(id);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -6,7 +6,10 @@ const speakerIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4
 const dataUrl = new URL('../data/english-vocabulary.json', import.meta.url);
 const taipei = new Intl.DateTimeFormat('zh-TW', { timeZone:'Asia/Taipei', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', hourCycle:'h23' });
 let data, currentWeek, quiz = null;
-let view = location.hash === '#quiz' ? 'quiz' : 'vocabulary';
+const quizSessions = { quiz:null, total:null };
+const isQuizView = () => view === 'quiz' || view === 'total';
+const quizLabel = value => value.mode === 'total' ? '總測驗' : `第 ${value.week} 期 · 單字測驗`;
+let view = location.hash === '#total' ? 'total' : location.hash === '#quiz' ? 'quiz' : 'vocabulary';
 let clockBase = Date.now(), clockStart = performance.now(), clockSource = 'device', syncing = false;
 let activeSpeech = null, speechToken = 0, speechTimer, autoSpeechTimer;
 const hasSpeech = !!window.speechSynthesis && typeof window.SpeechSynthesisUtterance === 'function';
@@ -108,9 +111,9 @@ function speak(word, item = null, automatic = false) {
 
 function scheduleQuestionAudio(item) {
     clearTimeout(autoSpeechTimer);
-    if (!hasSpeech || !item || item.answered || item.autoAttempted || view !== 'quiz' || document.hidden || quiz?.complete) return;
+    if (!hasSpeech || !item || item.answered || item.autoAttempted || !isQuizView() || document.hidden || quiz?.complete) return;
     autoSpeechTimer = setTimeout(() => {
-        if (view !== 'quiz' || document.hidden || quiz?.complete || quiz?.items[quiz.index] !== item || item.answered || item.autoAttempted) return;
+        if (!isQuizView() || document.hidden || quiz?.complete || quiz?.items[quiz.index] !== item || item.answered || item.autoAttempted) return;
         item.autoAttempted = true;
         speak(item.word, item, true);
         updateSpeechButtons();
@@ -150,7 +153,7 @@ async function syncClock() {
 }
 $('syncClockBtn').addEventListener('click', syncClock);
 window.addEventListener('online', syncClock);
-document.addEventListener('visibilitychange', () => { if (document.hidden) { stopSpeech(); } else { updateWeek(); syncClock(); if (view === 'quiz' && quiz && !quiz.complete) scheduleQuestionAudio(quiz.items[quiz.index]); } });
+document.addEventListener('visibilitychange', () => { if (document.hidden) { stopSpeech(); } else { updateWeek(); syncClock(); if (isQuizView() && quiz && !quiz.complete) scheduleQuestionAudio(quiz.items[quiz.index]); } });
 setInterval(syncClock, 5 * 60 * 1000);
 setInterval(() => { if (!document.hidden) updateWeek(); }, 1000);
 
@@ -160,13 +163,13 @@ function updateWeek() {
     const info = weekInfo(now(), data.schedule, data.words.length);
     const changed = !currentWeek || currentWeek.week !== info.week;
     currentWeek = info;
-    $('weekHeading').textContent = `第 ${info.week} 週`;
+    $('weekHeading').textContent = `第 ${info.week} 期`;
     $('weekRange').textContent = `第 ${info.start}–${info.end} 號 · ${wordsForWeek(data.words, info).length} 個單字`;
-    $('nextWeekTime').textContent = info.nextAt ? `${taipei.format(info.nextAt)} 切換${info.rawWeek < 1 ? '第 1 週' : '下一週'}` : info.finished ? '目前單字已排完，保留最後一週複習' : '目前單字表的最後一週';
-    if (changed) { renderWords(); if (view === 'quiz') renderQuiz(); }
-    const oldSession = quiz && !quiz.complete && quiz.week !== info.week;
+    $('nextWeekTime').textContent = info.nextAt ? `${taipei.format(info.nextAt)} 切換${info.rawWeek < 1 ? '第 1 期' : '下一期'}` : info.finished ? '目前單字已排完，保留最後一期複習' : '目前單字表的最後一期';
+    if (changed) { renderWords(); if (isQuizView()) renderQuiz(); }
+    const oldSession = view === 'quiz' && quiz && !quiz.complete && quiz.week !== info.week;
     $('quizWeekNotice').hidden = !oldSession;
-    if (oldSession) $('quizWeekNotice').textContent = `已切換第 ${info.week} 週。本次測驗仍完成原第 ${quiz.week} 週的題目；下次測驗將使用新的一週。`;
+    if (oldSession) $('quizWeekNotice').textContent = `已切換第 ${info.week} 期。本次測驗仍完成原第 ${quiz.week} 期的題目；下次測驗將使用新的一期。`;
 }
 
 function table(words) {
@@ -184,48 +187,72 @@ function renderWords() {
         const end = Math.min(week * data.schedule.wordsPerWeek, data.words.length);
         const words = filtered.filter(w => w.id >= start && w.id <= end);
         if (!words.length) return '';
-        const heading = `<h3>第 ${week} 週</h3><span class="group-range">${start}–${end} 號</span>`;
-        if (week === currentWeek.week) return `<section class="word-group current-week" data-week="${week}"><div class="group-heading">${heading}<span class="current-badge">本週置頂</span></div>${table(words)}</section>`;
-        const label = previousHeading ? '' : '<h3 class="other-weeks-heading">其他週次</h3>';
+        const heading = `<h3>第 ${week} 期</h3><span class="group-range">${start}–${end} 號</span>`;
+        if (week === currentWeek.week) return `<section class="word-group current-week" data-week="${week}"><div class="group-heading">${heading}<span class="current-badge">本期置頂</span></div>${table(words)}</section>`;
+        const label = previousHeading ? '' : '<h3 class="other-weeks-heading">其他期次</h3>';
         previousHeading = true;
         return `${label}<details class="word-group" data-week="${week}"${search ? ' open' : ''}><summary class="group-heading">${heading}</summary>${table(words)}</details>`;
     }).join('') || '<p class="notice">找不到符合的單字，請換個關鍵字。</p>';
-    $('wordSummary').textContent = search ? `找到 ${filtered.length} 筆` : `共 ${data.words.length} 筆 · ${totalWeeks} 週`;
+    $('wordSummary').textContent = search ? `找到 ${filtered.length} 筆` : `共 ${data.words.length} 筆 · ${totalWeeks} 期`;
     updateSpeechButtons();
 }
 $('wordSearch').addEventListener('input', renderWords);
 
 function showView(name, push = true) {
-    if (!['vocabulary','quiz'].includes(name)) return;
-    stopSpeech(); view = name;
-    if (push && location.hash !== (name === 'quiz' ? '#quiz' : '')) history.pushState({englishView:name}, '', name === 'quiz' ? '#quiz' : location.pathname + location.search);
+    if (!['vocabulary','quiz','total'].includes(name)) return;
+    stopSpeech();
+    if (isQuizView()) quizSessions[view] = quiz;
+    view = name;
+    quiz = isQuizView() ? quizSessions[view] : null;
+    const hash = isQuizView() ? '#' + name : '';
+    if (push && location.hash !== hash) history.pushState({englishView:name}, '', hash || location.pathname + location.search);
     $('vocabularyView').hidden = !data || view !== 'vocabulary';
-    $('quizView').hidden = !data || view !== 'quiz';
-    $('englishHeading').textContent = view === 'quiz' ? '當週測驗' : '單字表';
+    $('quizView').hidden = !data || !isQuizView();
+    $('englishHeading').textContent = view === 'total' ? '總測驗' : view === 'quiz' ? '當週測驗' : '單字表';
+    $('quizTitle').textContent = view === 'total' ? '全單字總測驗' : '當週單字測驗';
     document.querySelectorAll('[data-view]').forEach(button => {
         const active = button.dataset.view === view;
         button.classList.toggle('active', active);
         if (active) button.setAttribute('aria-current','page'); else button.removeAttribute('aria-current');
     });
-    if (view === 'quiz' && data) renderQuiz();
+    if (isQuizView() && data) renderQuiz();
+    updateWeek();
     if (mobile.matches) setMenu(false);
     if (push) { window.scrollTo({top:0,behavior:'instant'}); $('englishHeading').focus({preventScroll:true}); }
 }
 document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => showView(button.dataset.view)));
 $('goQuizBtn').addEventListener('click', () => showView('quiz'));
-window.addEventListener('popstate', () => showView(location.hash === '#quiz' ? 'quiz' : 'vocabulary', false));
+window.addEventListener('popstate', () => showView(location.hash === '#total' ? 'total' : location.hash === '#quiz' ? 'quiz' : 'vocabulary', false));
+
+function startCurrentQuiz() {
+    quiz = view === 'total' ? createTotalQuiz(data.words) : createQuiz(data.words, currentWeek, data.schedule.quizSize);
+    quizSessions[view] = quiz;
+}
+
+const ANNOUNCEMENT_KEY = 'english_biweekly_total_20261022_seen';
+$('dismissEnglishAnnouncement').addEventListener('click', () => $('englishAnnouncement').close());
+$('englishAnnouncement').addEventListener('close', () => {
+    try { localStorage.setItem(ANNOUNCEMENT_KEY, 'seen'); } catch { /* Dismiss for this page when storage is unavailable. */ }
+    $('englishHeading').focus({preventScroll:true});
+});
+function showAnnouncement() {
+    let seen = false;
+    try { seen = localStorage.getItem(ANNOUNCEMENT_KEY) === 'seen'; } catch { /* Still show this announcement. */ }
+    if (!seen && !$('englishAnnouncement').open) $('englishAnnouncement').showModal();
+}
 
 function renderQuiz(focus = false) {
     clearTimeout(autoSpeechTimer);
     if (!data || !currentWeek) return;
     const content = $('quizContent');
     if (!quiz) {
-        const available = wordsForWeek(data.words, currentWeek).length;
-        const count = Math.min(data.schedule.quizSize, available);
-        content.innerHTML = `<div class="quiz-intro"><div class="quiz-emblem" aria-hidden="true">Aa</div><h3>來試試這週記住了多少</h3><p>第 ${currentWeek.week} 週 · ${currentWeek.start}–${currentWeek.end} 號</p><div class="quiz-facts"><span>隨機 ${count} 題</span><span>中文 → 英文</span><span>立即看答案</span></div><p>看中文與詞性，輸入英文單字或片語。</p><p>每題出現 1 秒後自動發音，另可手動重播 2 次。</p><button id="startQuizBtn" class="primary-btn" type="button" style="margin-top:22px"${count ? '' : ' disabled'}>開始本週測驗 →</button></div>`;
+        const total = view === 'total';
+        const available = total ? data.words.length : wordsForWeek(data.words, currentWeek).length;
+        const count = Math.min(total ? 30 : data.schedule.quizSize, available);
+        content.innerHTML = `<div class="quiz-intro"><div class="quiz-emblem" aria-hidden="true">Aa</div><h3>${total ? '挑戰全部單字' : '來試試這期記住了多少'}</h3><p>${total ? `全部 ${data.words.length} 個單字 · 隨機 30 題` : `第 ${currentWeek.week} 期 · ${currentWeek.start}–${currentWeek.end} 號`}</p><div class="quiz-facts"><span>隨機 ${count} 題</span><span>中文 → 英文</span><span>立即看答案</span></div><p>看中文與詞性，輸入英文單字或片語。</p><p>每題出現 1 秒後自動發音，另可手動重播 2 次。</p><button id="startQuizBtn" class="primary-btn" type="button" style="margin-top:22px"${count ? '' : ' disabled'}>${total ? '開始總測驗' : '開始本期測驗'} →</button></div>`;
         $('startQuizBtn').addEventListener('click', () => {
             updateWeek();
-            quiz = createQuiz(data.words, currentWeek, data.schedule.quizSize);
+            startCurrentQuiz();
             renderQuiz(true);
         });
         return;
@@ -234,8 +261,8 @@ function renderQuiz(focus = false) {
     const item = quiz.items[quiz.index];
     if (item.answered) item.autoAttempted = true;
     const answered = quiz.items.filter(i => i.answered).length;
-    content.innerHTML = `<article class="quiz-card" data-question-id="${item.word.id}"><div class="quiz-quit-row"><button id="giveUpQuizBtn" class="give-up-button" type="button">我想放棄</button></div><div class="quiz-progress-row"><span>第 ${quiz.week} 週 · 單字測驗</span><span>第 ${quiz.index + 1} / ${quiz.items.length} 題</span></div><div class="quiz-progress" role="progressbar" aria-label="已作答題數" aria-valuemin="0" aria-valuemax="${quiz.items.length}" aria-valuenow="${answered}"><span style="width:${answered / quiz.items.length * 100}%"></span></div><div class="prompt-top"><div><p class="prompt-label">請寫出對應的英文</p><p class="quiz-meaning">${escape(quizPrompt(item.word.meaning))}</p><span class="quiz-pos">${escape(item.word.pos)}</span></div><div class="quiz-audio"><button class="speak-button" type="button" data-speak="quiz" aria-label="播放這題的英文發音">${speakerIcon}</button><small id="playCount"></small></div></div><p id="quizAudioNotice" class="audio-notice" role="status" hidden></p><form id="spellingForm"><div class="answer-field"><label for="spellingAnswer">英文作答</label><input id="spellingAnswer" name="answer" type="text" lang="en" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="輸入英文單字或片語" value="${escape(item.input)}"${item.answered ? ' disabled' : ''} aria-describedby="answerHint answerError"><p id="answerHint" class="answer-hint">不分大小寫；單字間請保留空格，連字號及其他符號須正確。</p><p id="answerError" class="answer-error" role="alert" hidden>請先輸入英文答案。</p></div>${item.answered ? `<div id="answerFeedback" class="feedback ${item.correct ? 'correct' : 'incorrect'}" role="status"><h3>${item.correct ? '✓ 答對了' : '再記一次，下一題加油'}</h3><p>正確答案：<span class="correct-word" lang="en">${escape(item.word.word)}</span></p>${item.correct ? '' : `<p>你的答案：${escape(item.input)}</p>`}<p>${escape(item.word.meaning)} · ${escape(item.word.pos)}</p></div><div class="quiz-actions"><button id="nextQuestionBtn" class="primary-btn" type="button">${quiz.index === quiz.items.length - 1 ? '查看測驗結果' : '下一題 →'}</button></div>` : '<div class="quiz-actions"><button class="primary-btn" type="submit">送出答案</button></div>'}</form></article>`;
-    $('giveUpQuizBtn').addEventListener('click', () => {
+    content.innerHTML = `<article class="quiz-card" data-question-id="${item.word.id}">${quiz.mode === 'total' ? '' : '<div class="quiz-quit-row"><button id="giveUpQuizBtn" class="give-up-button" type="button">我想放棄</button></div>'}<div class="quiz-progress-row"><span>${quizLabel(quiz)}</span><span>第 ${quiz.index + 1} / ${quiz.items.length} 題</span></div><div class="quiz-progress" role="progressbar" aria-label="已作答題數" aria-valuemin="0" aria-valuemax="${quiz.items.length}" aria-valuenow="${answered}"><span style="width:${answered / quiz.items.length * 100}%"></span></div><div class="prompt-top"><div><p class="prompt-label">請寫出對應的英文</p><p class="quiz-meaning">${escape(quizPrompt(item.word.meaning))}</p><span class="quiz-pos">${escape(item.word.pos)}</span></div><div class="quiz-audio"><button class="speak-button" type="button" data-speak="quiz" aria-label="播放這題的英文發音">${speakerIcon}</button><small id="playCount"></small></div></div><p id="quizAudioNotice" class="audio-notice" role="status" hidden></p><form id="spellingForm"><div class="answer-field"><label for="spellingAnswer">英文作答</label><input id="spellingAnswer" name="answer" type="text" lang="en" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="輸入英文單字或片語" value="${escape(item.input)}"${item.answered ? ' disabled' : ''} aria-describedby="answerHint answerError"><p id="answerHint" class="answer-hint">不分大小寫；單字間請保留空格，連字號及其他符號須正確。</p><p id="answerError" class="answer-error" role="alert" hidden>請先輸入英文答案。</p></div>${item.answered ? `<div id="answerFeedback" class="feedback ${item.correct ? 'correct' : 'incorrect'}" role="status"><h3>${item.correct ? '✓ 答對了' : '再記一次，下一題加油'}</h3><p>正確答案：<span class="correct-word" lang="en">${escape(item.word.word)}</span></p>${item.correct ? '' : `<p>你的答案：${escape(item.input)}</p>`}<p>${escape(item.word.meaning)} · ${escape(item.word.pos)}</p></div><div class="quiz-actions"><button id="nextQuestionBtn" class="primary-btn" type="button">${quiz.index === quiz.items.length - 1 ? '查看測驗結果' : '下一題 →'}</button></div>` : '<div class="quiz-actions"><button class="primary-btn" type="submit">送出答案</button></div>'}</form></article>`;
+    $('giveUpQuizBtn')?.addEventListener('click', () => {
         stopSpeech();
         if (finishQuiz(quiz)) { renderResults(); updateWeek(); $('resultHeading').focus({preventScroll:true}); window.scrollTo({top:0,behavior:'instant'}); }
     });
@@ -258,11 +285,11 @@ function renderQuiz(focus = false) {
 function renderResults() {
     stopSpeech();
     const summary = quizSummary(quiz);
-    const rating = resultRating(summary.correct);
+    const rating = quiz.mode === 'total' ? {key:'total', text:'總測驗完成'} : resultRating(summary.correct);
     const review = quiz.items.filter(item => !item.answered || !item.correct);
-    $('quizContent').innerHTML = `<section class="result-card" data-rating="${rating.key}"><header><p class="prompt-label">第 ${quiz.week} 週 · ${quiz.gaveUp ? '提前結算' : '測驗完成'}</p><h3 id="resultHeading" tabindex="-1">${escape(rating.text)}</h3><img class="result-rating-image" src="${escape(rating.image)}" alt="${escape(rating.text)}"><p class="result-score">${summary.score}<small> / 100</small></p><p class="result-caption">答對 ${summary.correct} / ${quiz.items.length} 題 · 答錯 ${summary.incorrect.length} 題 · 未作答 ${summary.unanswered.length} 題</p></header>${review.length ? `<h3>錯誤與未作答的單字</h3>${review.map(item => `<div class="review-item" data-review-status="${item.answered ? 'incorrect' : 'unanswered'}"><span class="review-status ${item.answered ? 'incorrect' : 'unanswered'}">${item.answered ? '答錯' : '未作答'}</span><p>${escape(item.word.meaning)} <span class="word-pos">${escape(item.word.pos)}</span></p><p class="review-answer" lang="en">${escape(item.word.word)}</p>${item.answered ? `<p class="review-input">你的答案：${escape(item.input)}</p>` : item.input ? `<p class="review-input">尚未送出：${escape(item.input)}</p>` : ''}</div>`).join('')}` : '<p class="all-correct-note">20 題全對，這次沒有錯誤或未作答的單字！</p>'}<div class="quiz-actions"><button id="returnWordsBtn" type="button">回到單字表</button><button id="restartQuizBtn" class="primary-btn" type="button">再測驗一次</button></div></section>`;
+    $('quizContent').innerHTML = `<section class="result-card" data-rating="${rating.key}"><header><p class="prompt-label">${quiz.mode === 'total' ? '總測驗' : `第 ${quiz.week} 期`} · ${quiz.gaveUp ? '提前結算' : '測驗完成'}</p><h3 id="resultHeading" tabindex="-1">${escape(rating.text)}</h3>${rating.image ? `<img class="result-rating-image" src="${escape(rating.image)}" alt="${escape(rating.text)}">` : ''}<p class="result-score">${summary.score}<small> / 100</small></p><p class="result-caption">答對 ${summary.correct} / ${quiz.items.length} 題 · 答錯 ${summary.incorrect.length} 題 · 未作答 ${summary.unanswered.length} 題</p></header>${review.length ? `<h3>錯誤與未作答的單字</h3>${review.map(item => `<div class="review-item" data-review-status="${item.answered ? 'incorrect' : 'unanswered'}"><span class="review-status ${item.answered ? 'incorrect' : 'unanswered'}">${item.answered ? '答錯' : '未作答'}</span><p>${escape(item.word.meaning)} <span class="word-pos">${escape(item.word.pos)}</span></p><p class="review-answer" lang="en">${escape(item.word.word)}</p>${item.answered ? `<p class="review-input">你的答案：${escape(item.input)}</p>` : item.input ? `<p class="review-input">尚未送出：${escape(item.input)}</p>` : ''}</div>`).join('')}` : `<p class="all-correct-note">${quiz.items.length} 題全對，這次沒有錯誤或未作答的單字！</p>`}<div class="quiz-actions"><button id="returnWordsBtn" type="button">回到單字表</button><button id="restartQuizBtn" class="primary-btn" type="button">再測驗一次</button></div></section>`;
     $('returnWordsBtn').addEventListener('click', () => { quiz = null; showView('vocabulary'); });
-    $('restartQuizBtn').addEventListener('click', () => { stopSpeech(); updateWeek(); quiz = createQuiz(data.words, currentWeek, data.schedule.quizSize); renderQuiz(true); updateWeek(); });
+    $('restartQuizBtn').addEventListener('click', () => { stopSpeech(); updateWeek(); startCurrentQuiz(); renderQuiz(true); updateWeek(); });
 }
 
 async function loadWords() {
@@ -277,7 +304,7 @@ async function loadWords() {
         $('loadStatus').hidden = true;
         $('vocabularyFooter').textContent = `${data.title} · 共 ${data.words.length} 筆`;
         if (!hasSpeech) $('speechStatus').textContent = '此瀏覽器未提供語音朗讀；仍可閱讀單字表及作答。可換用支援語音的瀏覽器播放發音。';
-        updateWeek(); showView(view, false);
+        updateWeek(); showView(view, false); showAnnouncement();
     } catch {
         $('loadStatus').textContent = '單字表暫時無法載入，請確認連線後重試。';
         $('retryLoadBtn').hidden = false;
@@ -285,3 +312,4 @@ async function loadWords() {
 }
 $('retryLoadBtn').addEventListener('click', loadWords);
 loadWords();
+

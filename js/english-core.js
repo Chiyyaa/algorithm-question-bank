@@ -3,15 +3,20 @@ export const QUIZ_AUDIO = Object.freeze({ autoDelayMs:1000, manualReplays:2 });
 export const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 
 export function weekInfo(now, schedule, wordCount) {
-    const anchor = Date.parse(schedule.weekOneStartsAt);
-    const rawWeek = Math.floor((now - anchor) / WEEK_MS) + 1;
+    const originalAnchor = Date.parse(schedule.weekOneStartsAt);
+    const transition = Date.parse(schedule.biweeklyStartsAt);
+    const biweekly = Number.isFinite(transition) && now >= transition;
+    const anchor = biweekly ? transition : originalAnchor;
+    const firstWeek = biweekly ? schedule.biweeklyStartWeek : 1;
+    const interval = WEEK_MS * (biweekly ? schedule.weeksPerPeriod : 1);
+    const rawWeek = Math.floor((now - anchor) / interval) + firstWeek;
     const lastWeek = Math.max(1, Math.ceil(wordCount / schedule.wordsPerWeek));
     const week = Math.min(lastWeek, Math.max(1, rawWeek));
     const start = (week - 1) * schedule.wordsPerWeek + 1;
     return {
         week, rawWeek, start, end: Math.min(week * schedule.wordsPerWeek, wordCount),
-        startsAt: anchor + (week - 1) * WEEK_MS,
-        nextAt: rawWeek < 1 ? anchor : rawWeek < lastWeek ? anchor + week * WEEK_MS : null,
+        startsAt: anchor + (week - firstWeek) * interval,
+        nextAt: rawWeek < 1 ? originalAnchor : rawWeek < lastWeek ? anchor + (week - firstWeek + 1) * interval : null,
         finished: rawWeek > lastWeek
     };
 }
@@ -96,3 +101,8 @@ export function finishQuiz(quiz) {
     quiz.gaveUp = true;
     return true;
 }
+
+export function createTotalQuiz(words, random = Math.random) {
+    return { ...createQuiz(words, {week:null, start:1, end:words.length}, 30, random), mode:'total' };
+}
+

@@ -18,7 +18,8 @@ const server = http.createServer((req,res)=>{
         res.end(req.method==='HEAD'?undefined:body);
     });
 });
-function fakeSpeech() {
+function fakeSpeech(options) {
+    if (!options?.showAnnouncement) localStorage.setItem('english_biweekly_total_20261022_seen','seen');
     window.__spoken = []; window.__speechTimes = []; window.__speechMode='ok';
     Object.defineProperty(window,'SpeechSynthesisUtterance',{configurable:true,value:class {constructor(text){this.text=text;}}});
     Object.defineProperty(window,'speechSynthesis',{configurable:true,value:{
@@ -93,6 +94,53 @@ async function checkResultScreens(browser, url, data) {
     await p.locator('#giveUpQuizBtn').click();await blocked.close();
     console.log('PASS 0/7/8/18/19/20 ratings, original images, early settlement, unsubmitted drafts, wrong/unanswered review, pending autoplay cancellation and blocked autoplay recovery');
 }
+
+async function checkTotalQuiz(browser,url,data) {
+    const previousClock=serverClock;serverClock=Date.parse('2026-10-22T12:00:00+08:00');
+    const ctx=await browser.newContext({viewport:{width:1280,height:900},timezoneId:'Pacific/Honolulu'});
+    await ctx.addInitScript(fakeSpeech,{showAnnouncement:true});
+    await ctx.addInitScript(()=>{let seed=1729;Math.random=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};});
+    const page=await ctx.newPage();page.setDefaultTimeout(15000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+    try {
+        await page.goto(url+'english.html');
+        await page.locator('#englishAnnouncement[open]').waitFor();
+        assert.match(await page.locator('#englishAnnouncement').innerText(),/單字考試為2週一次 請注意 ! !/);
+        assert.match(await page.locator('#englishAnnouncement').innerText(),/總測驗已開啟 歡迎挑戰/);
+        await page.locator('#dismissEnglishAnnouncement').click();await page.reload();await page.locator('.current-week').waitFor();
+        assert.equal(await page.locator('#englishAnnouncement').evaluate(e=>e.open),false);
+        assert.match(await page.locator('#nextWeekTime').innerText(),/10\/30/);
+        await page.locator('[data-view="quiz"]').click();await page.locator('#startQuizBtn').click();
+        const weeklyId=await page.locator('.quiz-card').getAttribute('data-question-id');await page.locator('#spellingAnswer').fill('saved weekly draft');
+        await page.locator('[data-view="total"]').click();assert.equal(await page.locator('#englishHeading').innerText(),'總測驗');
+        assert.match(await page.locator('.quiz-intro').innerText(),/645.*30/);
+        await page.locator('#startQuizBtn').click();const totalId=await page.locator('.quiz-card').getAttribute('data-question-id');
+        assert.equal(await page.locator('#giveUpQuizBtn').count(),0);assert.match(await page.locator('.quiz-progress-row').innerText(),/第 1 \/ 30 題/);
+        await page.locator('[data-view="quiz"]').click();assert.equal(await page.locator('.quiz-card').getAttribute('data-question-id'),weeklyId);
+        assert.equal(await page.locator('#spellingAnswer').inputValue(),'saved weekly draft');assert.equal(await page.locator('#giveUpQuizBtn').count(),1);
+        await page.locator('[data-view="total"]').click();assert.equal(await page.locator('.quiz-card').getAttribute('data-question-id'),totalId);
+        await page.waitForFunction(()=>window.__spoken.includes(document.querySelector('.quiz-card')?.dataset.questionId)||window.__spoken.length>0);
+        const before=await page.evaluate(()=>window.__spoken.length);await page.locator('[data-speak="quiz"]').click();await page.locator('[data-speak="quiz"]').click();
+        assert.equal(await page.locator('[data-speak="quiz"]').isDisabled(),true);assert.equal(await page.evaluate(()=>window.__spoken.length),before+2);
+        const ids=[];
+        for(let i=0;i<30;i++){
+            const id=Number(await page.locator('.quiz-card').getAttribute('data-question-id'));ids.push(id);
+            assert.equal(await page.locator('#giveUpQuizBtn').count(),0);assert.ok(id>=1&&id<=645);
+            await page.locator('#spellingAnswer').fill(i===0?'wrong spelling':data.words[id-1].word);
+            await page.locator('#spellingForm button[type="submit"]').click();assert.equal(await page.locator('.correct-word').innerText(),data.words[id-1].word);
+            if(i===10){serverClock=Date.parse('2026-10-30T16:00:00+08:00');await page.locator('#syncClockBtn').click();await page.waitForFunction(()=>document.querySelector('#weekHeading').textContent==='第 4 期');assert.equal(await page.locator('#quizWeekNotice').isVisible(),false);}
+            await page.locator('#nextQuestionBtn').click();
+        }
+        assert.equal(new Set(ids).size,30);assert.ok(ids.some(id=>id<101||id>150));
+        assert.equal(await page.locator('#resultHeading').innerText(),'總測驗完成');assert.match(await page.locator('.result-score').innerText(),/97/);
+        assert.match(await page.locator('.result-caption').innerText(),/答對 29 \/ 30 題/);assert.equal(await page.locator('.result-rating-image').count(),0);assert.equal(await page.locator('.review-item').count(),1);
+        await page.locator('[data-view="quiz"]').click();assert.equal(await page.locator('.quiz-card').getAttribute('data-question-id'),weeklyId);assert.equal(await page.locator('#spellingAnswer').inputValue(),'saved weekly draft');assert.match(await page.locator('#quizWeekNotice').innerText(),/原第 3 期/);
+        await page.locator('[data-view="total"]').click();assert.equal(await page.locator('#resultHeading').innerText(),'總測驗完成');
+        await page.locator('#restartQuizBtn').click();assert.match(await page.locator('.quiz-progress-row').innerText(),/第 1 \/ 30 題/);assert.equal(await page.locator('#giveUpQuizBtn').count(),0);
+        assert.deepEqual(errors,[]);
+        console.log('PASS announcement once after dismissal, full-bank 30-question total quiz, independent weekly draft, two replay limit, no give-up or rating image, 29/30 grading, rollover and restart');
+    } finally {serverClock=previousClock;await ctx.close();}
+}
+
 (async()=>{
     const core = await import('data:text/javascript;base64,'+Buffer.from(fs.readFileSync(path.join(root,'js/english-core.js'),'utf8')).toString('base64'));
     assert.equal(data.words.length,645);
@@ -101,10 +149,18 @@ async function checkResultScreens(browser, url, data) {
     assert.equal(data.words[100].word,'drill down');assert.equal(data.words[149].word,'option button');
     assert.equal(core.weekInfo(Date.parse('2026-10-16T15:59:59.999+08:00'),data.schedule,645).week,2);
     assert.equal(core.weekInfo(Date.parse('2026-10-16T16:00:00+08:00'),data.schedule,645).week,3);
-    assert.equal(core.weekInfo(Date.parse('2026-10-23T07:59:59.999Z'),data.schedule,645).end,150);
-    assert.equal(core.weekInfo(Date.parse('2026-10-23T08:00:00Z'),data.schedule,645).start,151);
-    assert.equal(core.weekInfo(Date.parse('2027-01-01T08:00:00Z'),data.schedule,645).finished,true);
-    assert.equal(core.weekInfo(Date.parse('2027-01-01T08:00:00Z'),data.schedule,645).end,645);
+    assert.equal(core.weekInfo(Date.parse('2026-10-30T07:59:59.999Z'),data.schedule,645).end,150);
+    assert.equal(core.weekInfo(Date.parse('2026-10-30T08:00:00Z'),data.schedule,645).start,151);
+    assert.equal(core.weekInfo(Date.parse('2027-03-19T08:00:00Z'),data.schedule,645).finished,true);
+    assert.equal(core.weekInfo(Date.parse('2027-03-19T08:00:00Z'),data.schedule,645).end,645);
+    for (const [at,expectedStart] of [
+        ['2026-10-22T12:00:00+08:00',101],['2026-10-23T16:00:00+08:00',101],
+        ['2026-10-30T15:59:59.999+08:00',101],['2026-10-30T16:00:00+08:00',151],
+        ['2026-11-06T16:00:00+08:00',151],['2026-11-13T15:59:59.999+08:00',151],
+        ['2026-11-13T16:00:00+08:00',201],['2026-11-27T16:00:00+08:00',251]]) {
+        const info=core.weekInfo(Date.parse(at),data.schedule,645);assert.equal(info.start,expectedStart);
+        assert.equal(core.wordsForWeek(data.words,info).length,50);
+    }
     assert.equal(core.serverTime('Fri, 23 Oct 2026 08:00:00 GMT','2',200),Date.parse('2026-10-23T08:00:02.100Z'));
     assert.throws(()=>core.serverTime(null,null));
     assert.equal(core.isCorrect('  CENTRAL   PROCESSING UNIT  ','central processing unit'),true);
@@ -112,7 +168,7 @@ async function checkResultScreens(browser, url, data) {
     assert.equal(core.isCorrect('readonly memory','read-only memory'),false);
     assert.ok(data.words.every(w=>!/[a-z]/i.test(core.quizPrompt(w.meaning))&&core.quizPrompt(w.meaning).length));
     for(let week=1;week<=13;week++){
-        const info=core.weekInfo(Date.parse(data.schedule.weekOneStartsAt)+(week-1)*core.WEEK_MS,data.schedule,645);
+        const info=core.weekInfo(week<3 ? Date.parse(data.schedule.weekOneStartsAt)+(week-1)*core.WEEK_MS : Date.parse(data.schedule.biweeklyStartsAt)+(week-3)*2*core.WEEK_MS,data.schedule,645);
         const quiz=core.createQuiz(data.words,info,20);
         assert.equal(quiz.items.length,20);assert.equal(new Set(quiz.items.map(i=>i.word.id)).size,20);
         assert.ok(quiz.items.every(i=>i.word.id>=info.start&&i.word.id<=info.end));
@@ -121,6 +177,9 @@ async function checkResultScreens(browser, url, data) {
         assert.equal(quiz.complete,true);assert.equal(quiz.items.filter(i=>i.correct).length,20);
     }
 
+    const totalQuiz=core.createTotalQuiz(data.words,()=>0.37);
+    assert.equal(totalQuiz.mode,'total');assert.equal(totalQuiz.items.length,30);assert.equal(new Set(totalQuiz.items.map(i=>i.word.id)).size,30);
+    assert.ok(totalQuiz.items.every(i=>i.word.id>=1&&i.word.id<=645));
     for (const [count,key] of [[0,'low'],[7,'low'],[8,'good'],[18,'good'],[19,'almost'],[20,'perfect']]) assert.equal(core.resultRating(count).key,key);
     const early=core.createQuiz(data.words,core.weekInfo(serverClock,data.schedule,645),20);
     core.submitAnswer(early,early.items[0].word.word);core.advanceQuiz(early);
@@ -151,7 +210,7 @@ async function checkResultScreens(browser, url, data) {
         assert.equal(await page.locator('.current-week tbody tr').first().getAttribute('data-word-id'),'101');
         assert.equal(await page.locator('.current-week tbody tr').last().getAttribute('data-word-id'),'150');
         assert.match(await page.locator('#clockStatus').innerText(),/已由網站校時/);
-        assert.equal(await page.locator('.sidebar-nav button').count(),3);assert.equal(await page.locator('.sidebar-nav button:disabled').count(),1);
+        assert.equal(await page.locator('.sidebar-nav button').count(),3);assert.equal(await page.locator('.sidebar-nav button:disabled').count(),0);
         const screenshotDir=undefined; // This revision emits only the two explicitly requested preview files.
         if(screenshotDir){fs.mkdirSync(screenshotDir,{recursive:true});await page.screenshot({path:path.join(screenshotDir,'english-vocabulary-desktop.png')});}
         await page.locator('#wordSearch').fill('ROM');assert.ok(await page.locator('#wordGroups').innerText().then(t=>t.includes('Read-Only Memory')));
@@ -179,8 +238,8 @@ async function checkResultScreens(browser, url, data) {
                 await page.evaluate(()=>window.__speechMode='error');await page.locator('[data-speak="quiz"]').click();
                 await page.waitForFunction(()=>document.querySelector('#speechStatus').textContent.includes('未扣除'));
                 assert.match(await page.locator('#playCount').innerText(),/2/);await page.evaluate(()=>window.__speechMode='ok');
-                serverClock=Date.parse('2026-10-23T16:00:00+08:00');await page.locator('#syncClockBtn').click();
-                await page.waitForFunction(()=>document.querySelector('#weekHeading').textContent==='第 4 週',null,{timeout:15000});
+                serverClock=Date.parse('2026-10-30T16:00:00+08:00');await page.locator('#syncClockBtn').click();
+                await page.waitForFunction(()=>document.querySelector('#weekHeading').textContent==='第 4 期',null,{timeout:15000});
                 assert.equal(await page.locator('#quizWeekNotice').isVisible(),true);
                 assert.equal(Number(await page.locator('.quiz-card').getAttribute('data-question-id')),id);
             }
@@ -206,8 +265,9 @@ async function checkResultScreens(browser, url, data) {
         console.log('PASS home link, corrected Taipei time, 50 pinned words, 20 unique questions, one delayed autoplay plus two manual replays, failed speech refund, feedback, 95-point result, active rollover, mobile drawer and history');
         await context.close();
         await checkResultScreens(browser,url,data);
+        await checkTotalQuiz(browser,url,data);
         const unsupported=await browser.newContext();
-        await unsupported.addInitScript(()=>Object.defineProperty(window,'SpeechSynthesisUtterance',{value:undefined,configurable:true}));
+        await unsupported.addInitScript(()=>{localStorage.setItem('english_biweekly_total_20261022_seen','seen');Object.defineProperty(window,'SpeechSynthesisUtterance',{value:undefined,configurable:true});});
         const p=await unsupported.newPage();await p.goto(url+'english.html');await p.locator('.current-week').waitFor();
         assert.match(await p.locator('#speechStatus').innerText(),/未提供語音/);assert.equal(await p.locator('[data-speak]').first().isDisabled(),true);
         await p.locator('#goQuizBtn').click();await p.locator('#startQuizBtn').click();assert.equal(await p.locator('#spellingAnswer').isEnabled(),true);
@@ -220,3 +280,4 @@ async function checkResultScreens(browser, url, data) {
         await failure.close();
     } finally {if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 })().catch(error=>{console.error(error);server.close();process.exitCode=1;});
+
