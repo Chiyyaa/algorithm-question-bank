@@ -262,8 +262,15 @@ function renderUnitChoices() {
 }
 if (collaborationEnabled()) publishedCounts().then(rows => {
     mergeCollaborationUnits(rows.filter(row => Number(row.question_count)>0));
-    rows.forEach(row => sharedCounts.set(row.subject_id + ':' + row.unit_id, Number(row.question_count)));
+    rows.forEach(row => sharedCounts.set(row.subject_id + ':' + row.unit_id,
+        row.subject_id === 'os' && row.unit_id === 'u6' ? 0 : Number(row.question_count)));
     renderUnitChoices();
+    if (rows.some(row => row.subject_id === 'os' && row.unit_id === 'u6')) {
+        loadPublishedQuestions('os', 'u6')
+            .then(questions => curatePublishedQuestions(questions, 'os', 'u6'))
+            .then(questions => { sharedCounts.set('os:u6', questions.length); renderUnitChoices(); })
+            .catch(() => { /* Keep the built-in count if the shared service is unavailable. */ });
+    }
 }).catch(() => { /* Built-in counts remain available if the shared service is offline. */ });
 
 function selectUnit(unitId) {

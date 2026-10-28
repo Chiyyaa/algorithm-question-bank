@@ -18,13 +18,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第1題；第十一次試煉(1) 第5題；第四次試煉 第15題；七次精簡題庫 第001-1題\n原檔對照翻譯：What type of scheduler is the CPU scheduler?",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 1,
     "source_response_type": "單選",
     "source_answer_label": "C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      1,
+      240
+    ]
   },
   {
     "id": 2,
@@ -53,7 +58,10 @@
     "previous_site_ids": [
       137
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      2
+    ]
   },
   {
     "id": 3,
@@ -75,7 +83,8 @@
     "answer_note": "來源：OS_U6_題庫_含答案 第3題；第十次試煉(1) 第9題；第五次試煉 第27題；七次精簡題庫 第002-1題",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 3,
     "source_response_type": "單選",
@@ -84,7 +93,13 @@
     "previous_site_ids": [
       144
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      3
+    ],
+    "integration_shared_ids": [
+      1000000111
+    ]
   },
   {
     "id": 4,
@@ -105,13 +120,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第4題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 4,
     "source_response_type": "多選",
     "source_answer_label": "C、D",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      4,
+      193
+    ]
   },
   {
     "id": 5,
@@ -141,7 +161,10 @@
     "previous_site_ids": [
       97
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      5
+    ]
   },
   {
     "id": 6,
@@ -162,13 +185,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第6題\n原檔對照翻譯：當一個程序從「執行中」狀態切換到「等待中」狀態時，排程決策屬於哪種類型？",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 6,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      6,
+      227
+    ]
   },
   {
     "id": 7,
@@ -184,13 +212,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第7題\n答案用語注意：原題庫指定 wakeup；一般敘述應為 invoked（被呼叫）。",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 7,
     "source_response_type": "填空／簡答",
     "source_answer_label": "wakeup",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      7,
+      252
+    ]
   },
   {
     "id": 8,
@@ -211,13 +244,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第8題；第八次試煉(1) 第3題；第五次試煉 第19題；七次精簡題庫 第009-2題\n原檔對照翻譯：Which of the following is a task of the Dispatcher?",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 8,
     "source_response_type": "單選",
     "source_answer_label": "D",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      8,
+      259
+    ]
   },
   {
     "id": 9,
@@ -248,7 +286,10 @@
     "previous_site_ids": [
       66
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      9
+    ]
   },
   {
     "id": 10,
@@ -276,7 +317,10 @@
     "previous_site_ids": [
       170
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      10
+    ]
   },
   {
     "id": 11,
@@ -297,13 +341,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第11題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 11,
     "source_response_type": "單選",
     "source_answer_label": "B",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      11,
+      215
+    ]
   },
   {
     "id": 12,
@@ -332,7 +381,10 @@
     "previous_site_ids": [
       64
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      12
+    ]
   },
   {
     "id": 13,
@@ -363,7 +415,10 @@
     "previous_site_ids": [
       33
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      13
+    ]
   },
   {
     "id": 14,
@@ -392,7 +447,10 @@
     "previous_site_ids": [
       106
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      14
+    ]
   },
   {
     "id": 15,
@@ -413,13 +471,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第15題\n原檔對照翻譯：In Little's Formula (n = λ x W), what does n represent?",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 15,
     "source_response_type": "單選",
     "source_answer_label": "C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      15,
+      255
+    ]
   },
   {
     "id": 16,
@@ -448,7 +511,10 @@
     "previous_site_ids": [
       49
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      16
+    ]
   },
   {
     "id": 17,
@@ -465,7 +531,8 @@
     "answer_note": "來源：OS_U6_題庫_含答案 第17題；第十一次試煉(1) 第9題；七次精簡題庫 第014-2題\n原檔對照翻譯：________ is the number of processes that complete their execution per time unit, used to measure the efficiency of a scheduling algorithm.",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 17,
     "source_response_type": "填空／簡答",
@@ -476,7 +543,13 @@
     "previous_site_ids": [
       121
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      17
+    ],
+    "integration_shared_ids": [
+      1000000103
+    ]
   },
   {
     "id": 18,
@@ -497,13 +570,22 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第18題；第九次試煉(1) 第10題；第十次試煉(1) 第4題\n原檔對照翻譯：衡量排程演算法的吞吐量（Throughput）是指什麼？",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 18,
     "source_response_type": "單選",
     "source_answer_label": "C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      18,
+      279
+    ],
+    "integration_shared_ids": [
+      1000000120
+    ]
   },
   {
     "id": 19,
@@ -531,7 +613,10 @@
     "previous_site_ids": [
       195
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      19
+    ]
   },
   {
     "id": 20,
@@ -560,7 +645,10 @@
     "previous_site_ids": [
       187
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      20
+    ]
   },
   {
     "id": 21,
@@ -576,43 +664,23 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第21題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 21,
     "source_response_type": "填空／簡答",
     "source_answer_label": "response",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
-  },
-  {
-    "id": 22,
-    "title": "",
-    "type": "fill_blank",
-    "question": "________ 時間是從提交請求到產生第一個回應所需的時間，而不是完整的輸出。（請用小寫英文回答 字母間留一個空白）",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "response",
-    "answer_variants": [
-      "response"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      21,
+      22,
+      133
     ],
-    "answer_basis": "provided_source_answer",
-    "answer_note": "來源：OS_U6_題庫_含答案 第22題；七次精簡題庫 第016-1題",
-    "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 22,
-    "source_response_type": "填空／簡答",
-    "source_answer_label": "response",
-    "source_incorrect_responses": [
-      "response time",
-      "asdf",
-      "sdfg"
-    ],
-    "previous_site_ids": [
-      8
-    ],
-    "bank_section": "primary"
+    "integration_shared_ids": [
+      1000000116
+    ]
   },
   {
     "id": 23,
@@ -628,13 +696,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第23題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 23,
     "source_response_type": "填空／簡答",
     "source_answer_label": "turnaround/waiting/response",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      23,
+      281
+    ]
   },
   {
     "id": 24,
@@ -665,7 +738,10 @@
     "previous_site_ids": [
       186
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      24
+    ]
   },
   {
     "id": 25,
@@ -687,7 +763,8 @@
     "answer_note": "來源：OS_U6_題庫_含答案 第25題；第七次試煉 第3題\n原檔對照翻譯：下列哪些是排程演算法的優化目標？",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 25,
     "source_response_type": "多選",
@@ -696,7 +773,13 @@
     "previous_site_ids": [
       212
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      25
+    ],
+    "integration_shared_ids": [
+      1000000100
+    ]
   },
   {
     "id": 26,
@@ -727,7 +810,10 @@
     "previous_site_ids": [
       203
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      26
+    ]
   },
   {
     "id": 27,
@@ -759,7 +845,10 @@
     "previous_site_ids": [
       12
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      27
+    ]
   },
   {
     "id": 28,
@@ -780,13 +869,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第28題\n原檔對照翻譯：哪一個排程演算法會導致「護航效應」(convoy effect) ？",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 28,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      28,
+      234
+    ]
   },
   {
     "id": 29,
@@ -817,7 +911,10 @@
     "previous_site_ids": [
       148
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      29
+    ]
   },
   {
     "id": 30,
@@ -845,7 +942,10 @@
     "previous_site_ids": [
       84
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      30
+    ]
   },
   {
     "id": 31,
@@ -873,7 +973,10 @@
     "previous_site_ids": [
       125
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      31
+    ]
   },
   {
     "id": 32,
@@ -902,7 +1005,10 @@
     "previous_site_ids": [
       197
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      32
+    ]
   },
   {
     "id": 33,
@@ -923,13 +1029,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第33題\n原檔對照翻譯：哪一個排程演算法被認為是最佳的，因為它能提供給定程序集的最小平均等待時間？",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 33,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      33,
+      247
+    ]
   },
   {
     "id": 34,
@@ -960,7 +1071,10 @@
     "previous_site_ids": [
       167
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      34
+    ]
   },
   {
     "id": 35,
@@ -989,7 +1103,10 @@
     "previous_site_ids": [
       155
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      35
+    ]
   },
   {
     "id": 36,
@@ -1006,7 +1123,8 @@
     "answer_note": "來源：OS_U6_題庫_含答案 第36題；第九次試煉(1) 第27題；第十一次試煉(1) 第4題",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 36,
     "source_response_type": "填空／簡答",
@@ -1017,7 +1135,13 @@
     "previous_site_ids": [
       222
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      36
+    ],
+    "integration_shared_ids": [
+      1000000108
+    ]
   },
   {
     "id": 37,
@@ -1039,7 +1163,10 @@
     "source_response_type": "填空／簡答",
     "source_answer_label": "Shortest Remaining Time First",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      37
+    ]
   },
   {
     "id": 38,
@@ -1070,7 +1197,10 @@
     "previous_site_ids": [
       100
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      38
+    ]
   },
   {
     "id": 39,
@@ -1099,7 +1229,10 @@
     "previous_site_ids": [
       120
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      39
+    ]
   },
   {
     "id": 40,
@@ -1121,7 +1254,8 @@
     "answer_note": "來源：OS_U6_題庫_含答案 第40題；七次精簡題庫 第023-1題\n★ 考前注意：此多選題依實際試煉評分採三項答案（包括「詢問使用者」）；此為題庫指定，勿直接改按教科書猜測。",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 40,
     "source_response_type": "多選",
@@ -1130,7 +1264,13 @@
     "previous_site_ids": [
       135
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      40
+    ],
+    "integration_shared_ids": [
+      1000000112
+    ]
   },
   {
     "id": 41,
@@ -1151,13 +1291,22 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第41題；第六次試煉 第28題；七次精簡題庫 第024-1題\n原檔對照翻譯：In the Round Robin (RR) scheduling algorithm, what is the unit of a small amount of CPU time given to each process?",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 41,
     "source_response_type": "單選",
     "source_answer_label": "C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      41,
+      250
+    ],
+    "integration_shared_ids": [
+      1000000113
+    ]
   },
   {
     "id": 42,
@@ -1185,7 +1334,10 @@
     "previous_site_ids": [
       201
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      42
+    ]
   },
   {
     "id": 43,
@@ -1206,13 +1358,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第43題；第十一次試煉(1) 第6題；第四次試煉 第2題；七次精簡題庫 第025-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 43,
     "source_response_type": "單選",
     "source_answer_label": "B",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      43,
+      282
+    ]
   },
   {
     "id": 44,
@@ -1241,7 +1398,10 @@
     "previous_site_ids": [
       17
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      44
+    ]
   },
   {
     "id": 45,
@@ -1272,7 +1432,10 @@
     "previous_site_ids": [
       24
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      45
+    ]
   },
   {
     "id": 46,
@@ -1303,11 +1466,14 @@
     "previous_site_ids": [
       47
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      46
+    ]
   },
   {
     "id": 47,
-    "title": "需附圖：有圖題.png",
+    "title": "附圖：有圖題.png",
     "type": "fill_blank",
     "question": "RR 排程：P1 的 CPU burst 為 20、P2 為 3、P3 為 7，時間片 TQ = 4。請依序填出 A～H 八個執行區段的程序；H 之後的區段不需作答。",
     "options": [],
@@ -1317,7 +1483,7 @@
       "P1->P2->P3->P1->P3->P1->P1->P1"
     ],
     "answer_basis": "provided_source_answer",
-    "answer_note": "來源：OS_U6_題庫_含答案 第47題\n原檔對照翻譯：Round Robin (RR): burst times P1 = 20, P2 = 3, P3 = 7; time quantum = 4. What is the execution order for blocks A–H? Ignore blocks after H. Answer format: P0->P2->P4 (no spaces).\n【需附圖】上傳題庫時請附「有圖題.png」。第047題與第163題為同一張圖的中英文版本，依要求分開計題。\n圖片核對：P1=20、P2=3、P3=7，TQ=4；區塊 A～H，下方時間邊界 I～Q。原文字轉錄漏列 Q，已依圖片補正。\n作答格式：P1->P2->P3->P1->P3->P1->P1->P1（不加空格）。",
+    "answer_note": "來源：OS_U6_題庫_含答案 第47題\n原檔對照翻譯：Round Robin (RR): burst times P1 = 20, P2 = 3, P3 = 7; time quantum = 4. What is the execution order for blocks A–H? Ignore blocks after H. Answer format: P0->P2->P4 (no spaces).\n【附圖已提供】已連結題庫內的 RR 排程圖。第047題與第163題為同一張圖的中英文版本，依要求分開計題。\n圖片核對：P1=20、P2=3、P3=7，TQ=4；區塊 A～H，下方時間邊界 I～Q。原文字轉錄漏列 Q，已依圖片補正。\n作答格式：P1->P2->P3->P1->P3->P1->P1->P1（不加空格）。",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt"
     ],
@@ -1329,7 +1495,10 @@
     "required_image": "有圖題.png",
     "image_status": "provided",
     "image": "../images/os-u6-rr.png",
-    "image_alt": "RR 排程圖：P1 burst 20、P2 burst 3、P3 burst 7，時間片 4；執行區段 A–H，時間邊界 I–Q。"
+    "image_alt": "RR 排程圖：P1 burst 20、P2 burst 3、P3 burst 7，時間片 4；執行區段 A–H，時間邊界 I–Q。",
+    "integration_source_ids": [
+      47
+    ]
   },
   {
     "id": 48,
@@ -1360,7 +1529,10 @@
     "previous_site_ids": [
       28
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      48
+    ]
   },
   {
     "id": 49,
@@ -1381,13 +1553,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第49題；第十次試煉(1) 第10題；第五次試煉 第22題；七次精簡題庫 第031-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 49,
     "source_response_type": "單選",
     "source_answer_label": "C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      49,
+      230
+    ]
   },
   {
     "id": 50,
@@ -1416,7 +1593,10 @@
     "previous_site_ids": [
       109
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      50
+    ]
   },
   {
     "id": 51,
@@ -1447,7 +1627,10 @@
     "previous_site_ids": [
       173
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      51
+    ]
   },
   {
     "id": 52,
@@ -1478,7 +1661,13 @@
     "previous_site_ids": [
       105
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      52
+    ],
+    "integration_disputed_source_ids": [
+      52
+    ]
   },
   {
     "id": 53,
@@ -1500,7 +1689,8 @@
     "answer_note": "來源：OS_U6_題庫_含答案 第53題；第十一次試煉(1) 第3題；第七次試煉 第22題\n原檔對照翻譯：What are the characteristics of Multilevel Queue scheduling?",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 53,
     "source_response_type": "多選",
@@ -1509,7 +1699,13 @@
     "previous_site_ids": [
       96
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      53
+    ],
+    "integration_shared_ids": [
+      1000000094
+    ]
   },
   {
     "id": 54,
@@ -1539,7 +1735,10 @@
     "previous_site_ids": [
       70
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      54
+    ]
   },
   {
     "id": 55,
@@ -1560,13 +1759,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第55題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 55,
     "source_response_type": "單選",
     "source_answer_label": "C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      55,
+      241
+    ]
   },
   {
     "id": 56,
@@ -1597,7 +1801,10 @@
     "previous_site_ids": [
       15
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      56
+    ]
   },
   {
     "id": 57,
@@ -1627,7 +1834,10 @@
     "previous_site_ids": [
       92
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      57
+    ]
   },
   {
     "id": 58,
@@ -1655,7 +1865,10 @@
     "previous_site_ids": [
       163
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      58
+    ]
   },
   {
     "id": 59,
@@ -1686,7 +1899,10 @@
     "previous_site_ids": [
       176
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      59
+    ]
   },
   {
     "id": 60,
@@ -1707,13 +1923,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第60題；第十一次試煉(1) 第1題；七次精簡題庫 第036-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 60,
     "source_response_type": "單選",
     "source_answer_label": "B",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      60,
+      235
+    ]
   },
   {
     "id": 61,
@@ -1742,7 +1963,10 @@
     "previous_site_ids": [
       146
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      61
+    ]
   },
   {
     "id": 62,
@@ -1763,13 +1987,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第62題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 62,
     "source_response_type": "單選",
     "source_answer_label": "C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      62,
+      277
+    ]
   },
   {
     "id": 63,
@@ -1798,7 +2027,10 @@
     "previous_site_ids": [
       91
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      63
+    ]
   },
   {
     "id": 64,
@@ -1829,7 +2061,10 @@
     "previous_site_ids": [
       119
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      64
+    ]
   },
   {
     "id": 65,
@@ -1846,7 +2081,8 @@
     "answer_note": "來源：OS_U6_題庫_含答案 第65題；第六次試煉 第7題；七次精簡題庫 第039-1題",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 65,
     "source_response_type": "填空／簡答",
@@ -1857,7 +2093,13 @@
     "previous_site_ids": [
       178
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      65
+    ],
+    "integration_shared_ids": [
+      1000000105
+    ]
   },
   {
     "id": 66,
@@ -1888,7 +2130,13 @@
     "previous_site_ids": [
       50
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      66
+    ],
+    "integration_disputed_source_ids": [
+      66
+    ]
   },
   {
     "id": 67,
@@ -1919,7 +2167,10 @@
     "previous_site_ids": [
       88
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      67
+    ]
   },
   {
     "id": 68,
@@ -1948,7 +2199,10 @@
     "previous_site_ids": [
       188
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      68
+    ]
   },
   {
     "id": 69,
@@ -1970,7 +2224,8 @@
     "answer_note": "來源：OS_U6_題庫_含答案 第69題；第六次試煉 第17題；七次精簡題庫 第048-1題",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 69,
     "source_response_type": "多選",
@@ -1979,7 +2234,13 @@
     "previous_site_ids": [
       174
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      69
+    ],
+    "integration_shared_ids": [
+      1000000118
+    ]
   },
   {
     "id": 70,
@@ -1996,7 +2257,8 @@
     "answer_note": "來源：OS_U6_題庫_含答案 第70題",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 70,
     "source_response_type": "填空／簡答",
@@ -2008,7 +2270,13 @@
     "previous_site_ids": [
       18
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      70
+    ],
+    "integration_shared_ids": [
+      1000000122
+    ]
   },
   {
     "id": 71,
@@ -2024,13 +2292,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第71題\n原檔對照翻譯：硬即時系統服務完成與什麼有關？",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 71,
     "source_response_type": "填空／簡答",
     "source_answer_label": "deadline",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      71,
+      271
+    ]
   },
   {
     "id": 72,
@@ -2061,7 +2334,13 @@
     "previous_site_ids": [
       128
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      72
+    ],
+    "integration_disputed_source_ids": [
+      72
+    ]
   },
   {
     "id": 73,
@@ -2092,7 +2371,10 @@
     "previous_site_ids": [
       75
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      73
+    ]
   },
   {
     "id": 74,
@@ -2123,7 +2405,10 @@
     "previous_site_ids": [
       166
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      74
+    ]
   },
   {
     "id": 75,
@@ -2144,13 +2429,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第75題\n原檔對照翻譯：The time from the arrival of an interrupt to the start of the routine that services the interrupt is called?",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 75,
     "source_response_type": "單選",
     "source_answer_label": "C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      75,
+      223
+    ]
   },
   {
     "id": 76,
@@ -2171,13 +2461,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第76題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 76,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      76,
+      275
+    ]
   },
   {
     "id": 77,
@@ -2208,7 +2503,10 @@
     "previous_site_ids": [
       103
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      77
+    ]
   },
   {
     "id": 78,
@@ -2236,7 +2534,10 @@
     "previous_site_ids": [
       228
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      78
+    ]
   },
   {
     "id": 79,
@@ -2264,7 +2565,10 @@
     "previous_site_ids": [
       177
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      79
+    ]
   },
   {
     "id": 80,
@@ -2295,7 +2599,10 @@
     "previous_site_ids": [
       60
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      80
+    ]
   },
   {
     "id": 81,
@@ -2316,13 +2623,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第81題；第九次試煉(1) 第11題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 81,
     "source_response_type": "單選",
     "source_answer_label": "D",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      81,
+      257
+    ]
   },
   {
     "id": 82,
@@ -2350,7 +2662,10 @@
     "previous_site_ids": [
       110
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      82
+    ]
   },
   {
     "id": 83,
@@ -2379,7 +2694,10 @@
     "previous_site_ids": [
       99
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      83
+    ]
   },
   {
     "id": 84,
@@ -2400,13 +2718,22 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第84題\n原檔對照翻譯：What are the characteristics of the Completely Fair Scheduler (CFS)?",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 84,
     "source_response_type": "多選",
     "source_answer_label": "A、B、C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      84,
+      127
+    ],
+    "integration_shared_ids": [
+      1000000099
+    ]
   },
   {
     "id": 85,
@@ -2437,7 +2764,10 @@
     "previous_site_ids": [
       215
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      85
+    ]
   },
   {
     "id": 86,
@@ -2468,7 +2798,10 @@
     "previous_site_ids": [
       43
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      86
+    ]
   },
   {
     "id": 87,
@@ -2499,7 +2832,10 @@
     "previous_site_ids": [
       93
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      87
+    ]
   },
   {
     "id": 88,
@@ -2516,7 +2852,8 @@
     "answer_note": "來源：OS_U6_題庫_含答案 第88題；第九次試煉(1) 第5題；第七次試煉 第16題\n原檔對照翻譯：The Windows scheduler uses ________ priority levels.",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 88,
     "source_response_type": "填空／簡答",
@@ -2529,7 +2866,13 @@
     "previous_site_ids": [
       81
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      88
+    ],
+    "integration_shared_ids": [
+      1000000110
+    ]
   },
   {
     "id": 89,
@@ -2560,7 +2903,10 @@
     "previous_site_ids": [
       55
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      89
+    ]
   },
   {
     "id": 90,
@@ -2588,7 +2934,10 @@
     "previous_site_ids": [
       31
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      90
+    ]
   },
   {
     "id": 91,
@@ -2610,7 +2959,8 @@
     "answer_note": "來源：OS_U6_題庫_含答案 第91題",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 91,
     "source_response_type": "多選",
@@ -2619,7 +2969,13 @@
     "previous_site_ids": [
       142
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      91
+    ],
+    "integration_shared_ids": [
+      1000000109
+    ]
   },
   {
     "id": 92,
@@ -2650,7 +3006,10 @@
     "previous_site_ids": [
       2
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      92
+    ]
   },
   {
     "id": 93,
@@ -2671,13 +3030,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第93題；第八次試煉(1) 第24題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 93,
     "source_response_type": "單選",
     "source_answer_label": "B",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      93,
+      225
+    ]
   },
   {
     "id": 94,
@@ -2705,7 +3069,10 @@
     "previous_site_ids": [
       164
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      94
+    ]
   },
   {
     "id": 95,
@@ -2726,13 +3093,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第95題\n原檔對照翻譯：在Windows排程中，哪個功能允許應用程式獨立於核心來創建和管理執行緒？",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 95,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      95,
+      233
+    ]
   },
   {
     "id": 96,
@@ -2761,7 +3133,10 @@
     "previous_site_ids": [
       6
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      96
+    ]
   },
   {
     "id": 97,
@@ -2792,7 +3167,10 @@
     "previous_site_ids": [
       25
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      97
+    ]
   },
   {
     "id": 98,
@@ -2823,7 +3201,13 @@
     "previous_site_ids": [
       45
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      98
+    ],
+    "integration_disputed_source_ids": [
+      98
+    ]
   },
   {
     "id": 99,
@@ -2854,7 +3238,10 @@
     "previous_site_ids": [
       32
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      99
+    ]
   },
   {
     "id": 100,
@@ -2885,7 +3272,10 @@
     "previous_site_ids": [
       202
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      100
+    ]
   },
   {
     "id": 101,
@@ -2906,13 +3296,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第101題；第九次試煉(1) 第9題\n原檔對照翻譯：In the Windows system, what happens to a thread's priority when its quantum expires?",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 101,
     "source_response_type": "單選",
     "source_answer_label": "B",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      101,
+      224
+    ]
   },
   {
     "id": 102,
@@ -2943,7 +3338,10 @@
     "previous_site_ids": [
       5
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      102
+    ]
   },
   {
     "id": 103,
@@ -2973,7 +3371,10 @@
     "previous_site_ids": [
       114
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      103
+    ]
   },
   {
     "id": 104,
@@ -3003,7 +3404,10 @@
     "previous_site_ids": [
       62
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      104
+    ]
   },
   {
     "id": 105,
@@ -3034,7 +3438,10 @@
     "previous_site_ids": [
       143
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      105
+    ]
   },
   {
     "id": 106,
@@ -3055,13 +3462,21 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第106題；第十一次試煉(1) 第16題；第四次試煉 第25題；第六次試煉 第23題；七次精簡題庫 第068-1題\n備註：非正確選項依 U6 題庫補齊。\n爭議說明：上述選項含來源補寫或沿用版本，不能當成該次試煉原畫面的完整逐字紀錄；日後建題庫請核對原始畫面。",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 106,
     "source_response_type": "單選",
     "source_answer_label": "D",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      106,
+      232
+    ],
+    "integration_disputed_source_ids": [
+      106
+    ]
   },
   {
     "id": 107,
@@ -3083,7 +3498,10 @@
     "source_response_type": "填空／簡答",
     "source_answer_label": "simulations",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      107
+    ]
   },
   {
     "id": 108,
@@ -3114,7 +3532,10 @@
     "previous_site_ids": [
       44
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      108
+    ]
   },
   {
     "id": 109,
@@ -3145,7 +3566,10 @@
     "previous_site_ids": [
       162
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      109
+    ]
   },
   {
     "id": 110,
@@ -3176,7 +3600,10 @@
     "previous_site_ids": [
       219
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      110
+    ]
   },
   {
     "id": 111,
@@ -3207,7 +3634,13 @@
     "previous_site_ids": [
       34
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      111
+    ],
+    "integration_disputed_source_ids": [
+      111
+    ]
   },
   {
     "id": 112,
@@ -3238,7 +3671,10 @@
     "previous_site_ids": [
       78
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      112
+    ]
   },
   {
     "id": 113,
@@ -3259,13 +3695,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：OS_U6_題庫_含答案 第113題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 113,
     "source_response_type": "多選",
     "source_answer_label": "A、B、D",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      113,
+      183
+    ]
   },
   {
     "id": 114,
@@ -3296,7 +3737,13 @@
     "previous_site_ids": [
       54
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      114
+    ],
+    "integration_disputed_source_ids": [
+      114
+    ]
   },
   {
     "id": 115,
@@ -3327,7 +3774,10 @@
     "previous_site_ids": [
       26
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      115
+    ]
   },
   {
     "id": 116,
@@ -3358,7 +3808,10 @@
     "previous_site_ids": [
       72
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      116
+    ]
   },
   {
     "id": 117,
@@ -3379,13 +3832,26 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第九次試煉(1) 第13題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 117,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      117,
+      154,
+      272
+    ],
+    "integration_shared_ids": [
+      1000000097
+    ],
+    "integration_disputed_source_ids": [
+      154
+    ]
   },
   {
     "id": 118,
@@ -3406,13 +3872,21 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第九次試煉(1) 第14題；第十一次試煉(1) 第26題；第七次試煉 第18題\n備註：A/B/D 選項參照 U6 題庫補齊。\n爭議說明：上述選項含來源補寫或沿用版本，不能當成該次試煉原畫面的完整逐字紀錄；日後建題庫請核對原始畫面。",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 118,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      118,
+      256
+    ],
+    "integration_disputed_source_ids": [
+      118
+    ]
   },
   {
     "id": 119,
@@ -3434,7 +3908,8 @@
     "answer_note": "來源：第九次試煉(1) 第15題；第八次試煉(1) 第27題；第十一次試煉(1) 第19題；第十次試煉(1) 第26題；第五次試煉 第8題；七次精簡題庫 第049-1題",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 119,
     "source_response_type": "多選",
@@ -3443,7 +3918,13 @@
     "previous_site_ids": [
       116
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      119
+    ],
+    "integration_shared_ids": [
+      1000000095
+    ]
   },
   {
     "id": 120,
@@ -3474,7 +3955,10 @@
     "previous_site_ids": [
       68
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      120
+    ]
   },
   {
     "id": 121,
@@ -3502,7 +3986,10 @@
     "previous_site_ids": [
       118
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      121
+    ]
   },
   {
     "id": 122,
@@ -3523,13 +4010,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第九次試煉(1) 第19題；七次精簡題庫 第061-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 122,
     "source_response_type": "單選",
     "source_answer_label": "D",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      122,
+      218
+    ]
   },
   {
     "id": 123,
@@ -3560,7 +4052,13 @@
     "previous_site_ids": [
       102
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      123
+    ],
+    "integration_disputed_source_ids": [
+      123
+    ]
   },
   {
     "id": 124,
@@ -3591,7 +4089,10 @@
     "previous_site_ids": [
       59
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      124
+    ]
   },
   {
     "id": 125,
@@ -3619,7 +4120,10 @@
     "previous_site_ids": [
       205
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      125
+    ]
   },
   {
     "id": 126,
@@ -3640,44 +4144,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第九次試煉(1) 第24題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 126,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
-  },
-  {
-    "id": 127,
-    "title": "",
-    "type": "choice",
-    "question": "完全公平排程器（CFS）有哪些特性？",
-    "options": [
-      "基於固定的時間片分配",
-      "優先權基於nice值",
-      "選擇虛擬運行時間最短的任務運行",
-      "維護一個每任務的虛擬運行時間 (vruntime)"
-    ],
-    "options_status": "provided_source_options",
-    "correct_answer": "優先權基於nice值\n選擇虛擬運行時間最短的任務運行\n維護一個每任務的虛擬運行時間 (vruntime)",
-    "answer_variants": [
-      "優先權基於nice值\n選擇虛擬運行時間最短的任務運行\n維護一個每任務的虛擬運行時間 (vruntime)"
-    ],
-    "answer_basis": "provided_source_answer",
-    "answer_note": "來源：第九次試煉(1) 第25題；第六次試煉 第30題；七次精簡題庫 第050-1題",
-    "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 127,
-    "source_response_type": "多選",
-    "source_answer_label": "B、C、D",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      175
-    ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      126,
+      229
+    ]
   },
   {
     "id": 128,
@@ -3708,7 +4186,10 @@
     "previous_site_ids": [
       218
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      128
+    ]
   },
   {
     "id": 129,
@@ -3739,7 +4220,10 @@
     "previous_site_ids": [
       13
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      129
+    ]
   },
   {
     "id": 130,
@@ -3768,7 +4252,10 @@
     "previous_site_ids": [
       51
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      130
+    ]
   },
   {
     "id": 131,
@@ -3799,7 +4286,10 @@
     "previous_site_ids": [
       196
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      131
+    ]
   },
   {
     "id": 132,
@@ -3828,36 +4318,10 @@
     "previous_site_ids": [
       7
     ],
-    "bank_section": "primary"
-  },
-  {
-    "id": 133,
-    "title": "",
-    "type": "fill_blank",
-    "question": "響應時間是從提交請求到第一次 ________ 產生的時間。（請用小寫英文回答）",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "response",
-    "answer_variants": [
-      "response"
-    ],
-    "answer_basis": "provided_source_answer",
-    "answer_note": "來源：第八次試煉(1) 第5題",
-    "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 133,
-    "source_response_type": "填空／簡答",
-    "source_answer_label": "response",
-    "source_incorrect_responses": [
-      "sadf",
-      "awds"
-    ],
-    "previous_site_ids": [
-      38
-    ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      132
+    ]
   },
   {
     "id": 134,
@@ -3885,7 +4349,10 @@
     "previous_site_ids": [
       198
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      134
+    ]
   },
   {
     "id": 135,
@@ -3906,13 +4373,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第八次試煉(1) 第10題；第四次試煉 第22題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 135,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      135,
+      216
+    ]
   },
   {
     "id": 136,
@@ -3940,7 +4412,10 @@
     "previous_site_ids": [
       204
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      136
+    ]
   },
   {
     "id": 137,
@@ -3961,13 +4436,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第八次試煉(1) 第13題；第五次試煉 第30題；七次精簡題庫 第041-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 137,
     "source_response_type": "單選",
     "source_answer_label": "D",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      137,
+      226
+    ]
   },
   {
     "id": 138,
@@ -3988,13 +4468,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第八次試煉(1) 第16題；第六次試煉 第26題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 138,
     "source_response_type": "單選",
     "source_answer_label": "D",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      138,
+      273
+    ]
   },
   {
     "id": 139,
@@ -4015,13 +4500,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第八次試煉(1) 第19題；第六次試煉 第20題；七次精簡題庫 第067-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 139,
     "source_response_type": "多選",
     "source_answer_label": "A、B、C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      139,
+      284
+    ]
   },
   {
     "id": 140,
@@ -4042,13 +4532,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第八次試煉(1) 第20題；第十次試煉(1) 第6題；第四次試煉 第23題；第七次試煉 第24題；七次精簡題庫 第064-1題\n註：題目稱「六個類別」，但僅提供四項；依題庫評分四項皆選。\n註：題目稱六個類別，提供的四個選項皆為正確項目。\n註：題幹提到「六個類別」，但本題僅列出四個選項；依題庫四項皆正確。\n★ 考前注意：題幹說六類，但試煉僅提供 4 個選項；依原題庫四個選項全選，並非宣稱 Solaris 只有四類。",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 140,
     "source_response_type": "多選",
     "source_answer_label": "A、B、C、D",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      140,
+      267
+    ]
   },
   {
     "id": 141,
@@ -4064,13 +4559,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第八次試煉(1) 第21題；第六次試煉 第13題；第七次試煉 第8題；七次精簡題庫 第002-3題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 141,
     "source_response_type": "填空／簡答",
     "source_answer_label": "I/O",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      141,
+      172
+    ]
   },
   {
     "id": 142,
@@ -4101,7 +4601,10 @@
     "previous_site_ids": [
       126
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      142
+    ]
   },
   {
     "id": 143,
@@ -4132,7 +4635,10 @@
     "previous_site_ids": [
       229
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      143
+    ]
   },
   {
     "id": 144,
@@ -4162,7 +4668,10 @@
     "previous_site_ids": [
       161
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      144
+    ]
   },
   {
     "id": 145,
@@ -4193,7 +4702,10 @@
     "previous_site_ids": [
       61
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      145
+    ]
   },
   {
     "id": 146,
@@ -4220,7 +4732,10 @@
     "source_response_type": "多選",
     "source_answer_label": "A、B、C、D",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      146
+    ]
   },
   {
     "id": 147,
@@ -4250,36 +4765,11 @@
     "previous_site_ids": [
       52
     ],
-    "bank_section": "primary"
-  },
-  {
-    "id": 148,
-    "title": "",
-    "type": "fill_blank",
-    "question": "硬即時系統(hard realtime syste,)的排程必須保證在 ____________ 時間內完成任務。（請用小寫英文回答）",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "deadline",
-    "answer_variants": [
-      "deadline"
-    ],
-    "answer_basis": "provided_source_answer",
-    "answer_note": "來源：第十一次試煉(1) 第8題；七次精簡題庫 第042-2題",
-    "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 148,
-    "source_response_type": "填空／簡答",
-    "source_answer_label": "deadline",
-    "source_incorrect_responses": [
-      "daw",
-      "dadsad"
-    ],
-    "previous_site_ids": [
-      11
-    ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      147,
+      148
+    ]
   },
   {
     "id": 149,
@@ -4295,13 +4785,22 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第十一次試煉(1) 第10題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 149,
     "source_response_type": "填空／簡答",
     "source_answer_label": "time quantum",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      149,
+      286
+    ],
+    "integration_shared_ids": [
+      1000000101
+    ]
   },
   {
     "id": 150,
@@ -4330,7 +4829,10 @@
     "previous_site_ids": [
       41
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      150
+    ]
   },
   {
     "id": 151,
@@ -4359,7 +4861,10 @@
     "previous_site_ids": [
       80
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      151
+    ]
   },
   {
     "id": 152,
@@ -4390,7 +4895,13 @@
     "previous_site_ids": [
       221
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      152
+    ],
+    "integration_disputed_source_ids": [
+      152
+    ]
   },
   {
     "id": 153,
@@ -4421,34 +4932,10 @@
     "previous_site_ids": [
       191
     ],
-    "bank_section": "primary"
-  },
-  {
-    "id": 154,
-    "title": "來源爭議：選項缺漏／補寫",
-    "type": "choice",
-    "question": "In Multilevel Queue scheduling, which of the following statements is correct?",
-    "options": [
-      "Processes can move between queues",
-      "All queues use the same scheduling algorithm",
-      "The background queue always has higher priority than the foreground queue",
-      "The foreground queue typically uses Round Robin scheduling"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "The foreground queue typically uses Round Robin scheduling",
-    "answer_variants": [
-      "The foreground queue typically uses Round Robin scheduling"
-    ],
-    "answer_basis": "provided_source_answer",
-    "answer_note": "來源：第十一次試煉(1) 第25題\n備註：A/B/C 依 U6 題庫中文題改寫為英文，非經確認的本次原始選項。\n爭議說明：上述選項含來源補寫或沿用版本，不能當成該次試煉原畫面的完整逐字紀錄；日後建題庫請核對原始畫面。",
-    "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
-    ],
-    "source_question_number": 154,
-    "source_response_type": "單選",
-    "source_answer_label": "D",
-    "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      153
+    ]
   },
   {
     "id": 155,
@@ -4476,7 +4963,10 @@
     "previous_site_ids": [
       200
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      155
+    ]
   },
   {
     "id": 156,
@@ -4504,7 +4994,10 @@
     "previous_site_ids": [
       225
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      156
+    ]
   },
   {
     "id": 157,
@@ -4521,7 +5014,8 @@
     "answer_note": "來源：第十一次試煉(1) 第29題",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 157,
     "source_response_type": "填空／簡答",
@@ -4533,7 +5027,13 @@
     "previous_site_ids": [
       63
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      157
+    ],
+    "integration_shared_ids": [
+      1000000104
+    ]
   },
   {
     "id": 158,
@@ -4561,7 +5061,10 @@
     "previous_site_ids": [
       207
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      158
+    ]
   },
   {
     "id": 159,
@@ -4582,13 +5085,22 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第十次試煉(1) 第3題；第五次試煉 第12題；第六次試煉 第1題；七次精簡題庫 第037-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 159,
     "source_response_type": "單選",
     "source_answer_label": "C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      159,
+      228
+    ],
+    "integration_shared_ids": [
+      1000000098
+    ]
   },
   {
     "id": 160,
@@ -4619,7 +5131,10 @@
     "previous_site_ids": [
       21
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      160
+    ]
   },
   {
     "id": 161,
@@ -4636,7 +5151,8 @@
     "answer_note": "來源：第十次試煉(1) 第14題；第四次試煉 第30題；第七次試煉 第5題",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 161,
     "source_response_type": "填空／簡答",
@@ -4647,7 +5163,13 @@
     "previous_site_ids": [
       95
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      161
+    ],
+    "integration_shared_ids": [
+      1000000121
+    ]
   },
   {
     "id": 162,
@@ -4676,11 +5198,14 @@
     "previous_site_ids": [
       131
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      162
+    ]
   },
   {
     "id": 163,
-    "title": "需附圖：有圖題.png",
+    "title": "附圖：有圖題.png",
     "type": "fill_blank",
     "question": "Process Burst Time P1 20 P2 3 P3 7 Use Round Robin (RR) to schedule the above process. The following is the process of scheduling time from left to right (A to H represent the processed block H. There may be a schedule after the block, which is ignored because it is not in the question to be asked. Do not show)\n圖中執行區塊：A、B、C、D、E、F、G、H\n圖中時間邊界：I、J、K、L、M、N、O、P、Q\nIf TQ = 4, what is the order of A~H? Answer format: P0->P2->P4->P6->P5->P6 Format errors do not count\n________",
     "options": [],
@@ -4690,9 +5215,10 @@
       "P1->P2->P3->P1->P3->P1->P1->P1"
     ],
     "answer_basis": "provided_source_answer",
-    "answer_note": "來源：第十次試煉(1) 第17題；第六次試煉 第2題；七次精簡題庫 第028-1題\n★ 考前注意：題目要求只列 A～H 八個區段，不包含 H 之後的執行；箭頭間不可加空格。\n【需附圖】上傳題庫時請附「有圖題.png」。第047題與第163題為同一張圖的中英文版本，依要求分開計題。\n圖片核對：P1=20、P2=3、P3=7，TQ=4；區塊 A～H，下方時間邊界 I～Q。原文字轉錄漏列 Q，已依圖片補正。\n作答格式：P1->P2->P3->P1->P3->P1->P1->P1（不加空格）。",
+    "answer_note": "來源：第十次試煉(1) 第17題；第六次試煉 第2題；七次精簡題庫 第028-1題\n★ 考前注意：題目要求只列 A～H 八個區段，不包含 H 之後的執行；箭頭間不可加空格。\n【附圖已提供】已連結題庫內的 RR 排程圖。第047題與第163題為同一張圖的中英文版本，依要求分開計題。\n圖片核對：P1=20、P2=3、P3=7，TQ=4；區塊 A～H，下方時間邊界 I～Q。原文字轉錄漏列 Q，已依圖片補正。\n作答格式：P1->P2->P3->P1->P3->P1->P1->P1（不加空格）。",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 163,
     "source_response_type": "填空／簡答",
@@ -4702,7 +5228,11 @@
     "required_image": "有圖題.png",
     "image_status": "provided",
     "image": "../images/os-u6-rr.png",
-    "image_alt": "RR 排程圖：P1 burst 20、P2 burst 3、P3 burst 7，時間片 4；執行區段 A–H，時間邊界 I–Q。"
+    "image_alt": "RR 排程圖：P1 burst 20、P2 burst 3、P3 burst 7，時間片 4；執行區段 A–H，時間邊界 I–Q。",
+    "integration_source_ids": [
+      163,
+      251
+    ]
   },
   {
     "id": 164,
@@ -4733,7 +5263,10 @@
     "previous_site_ids": [
       189
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      164
+    ]
   },
   {
     "id": 165,
@@ -4764,7 +5297,10 @@
     "previous_site_ids": [
       227
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      165
+    ]
   },
   {
     "id": 166,
@@ -4785,13 +5321,22 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第十次試煉(1) 第28題；第六次試煉 第22題；七次精簡題庫 第020-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 166,
     "source_response_type": "單選",
     "source_answer_label": "B",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      166,
+      220
+    ],
+    "integration_shared_ids": [
+      1000000117
+    ]
   },
   {
     "id": 167,
@@ -4819,7 +5364,10 @@
     "previous_site_ids": [
       171
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      167
+    ]
   },
   {
     "id": 168,
@@ -4848,7 +5396,10 @@
     "previous_site_ids": [
       193
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      168
+    ]
   },
   {
     "id": 169,
@@ -4869,13 +5420,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第四次試煉 第3題；第五次試煉 第15題；第七次試煉 第9題；七次精簡題庫 第005-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 169,
     "source_response_type": "單選",
     "source_answer_label": "D",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      169,
+      231
+    ]
   },
   {
     "id": 170,
@@ -4906,7 +5462,10 @@
     "previous_site_ids": [
       35
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      170
+    ]
   },
   {
     "id": 171,
@@ -4937,36 +5496,10 @@
     "previous_site_ids": [
       132
     ],
-    "bank_section": "primary"
-  },
-  {
-    "id": 172,
-    "title": "",
-    "type": "fill_blank",
-    "question": "CPU-I/O 連發週期是程序執行中，CPU連發後接著 ____________ 連發的循環。（請用英文大寫字母）",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "I/O",
-    "answer_variants": [
-      "I/O"
-    ],
-    "answer_basis": "provided_source_answer",
-    "answer_note": "來源：第四次試煉 第9題",
-    "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 172,
-    "source_response_type": "填空／簡答",
-    "source_answer_label": "I/O",
-    "source_incorrect_responses": [
-      "asdf",
-      "asd"
-    ],
-    "previous_site_ids": [
-      185
-    ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      171
+    ]
   },
   {
     "id": 173,
@@ -4995,7 +5528,10 @@
     "previous_site_ids": [
       194
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      173
+    ]
   },
   {
     "id": 174,
@@ -5026,7 +5562,10 @@
     "previous_site_ids": [
       134
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      174
+    ]
   },
   {
     "id": 175,
@@ -5055,7 +5594,10 @@
     "previous_site_ids": [
       20
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      175
+    ]
   },
   {
     "id": 176,
@@ -5086,7 +5628,11 @@
     "previous_site_ids": [
       89
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      176,
+      198
+    ]
   },
   {
     "id": 177,
@@ -5108,7 +5654,8 @@
     "answer_note": "來源：第四次試煉 第17題；七次精簡題庫 第045-1題",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 177,
     "source_response_type": "單選",
@@ -5117,7 +5664,13 @@
     "previous_site_ids": [
       23
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      177
+    ],
+    "integration_shared_ids": [
+      1000000096
+    ]
   },
   {
     "id": 178,
@@ -5133,13 +5686,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第四次試煉 第20題；七次精簡題庫 第017-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 178,
     "source_response_type": "填空／簡答",
     "source_answer_label": "average arrival rate",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      178,
+      248
+    ]
   },
   {
     "id": 179,
@@ -5168,7 +5726,10 @@
     "previous_site_ids": [
       14
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      179
+    ]
   },
   {
     "id": 180,
@@ -5199,7 +5760,10 @@
     "previous_site_ids": [
       152
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      180
+    ]
   },
   {
     "id": 181,
@@ -5225,7 +5789,10 @@
     "previous_site_ids": [
       216
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      181
+    ]
   },
   {
     "id": 182,
@@ -5256,38 +5823,10 @@
     "previous_site_ids": [
       112
     ],
-    "bank_section": "primary"
-  },
-  {
-    "id": 183,
-    "title": "",
-    "type": "choice",
-    "question": "虛擬化（Virtualization）環境中的排程有什麼潛在問題？",
-    "options": [
-      "可能抵消客戶端良好排程演算法的努力",
-      "虛擬機器無法執行 CPU 密集型任務",
-      "可能影響客戶端（guests）中的時鐘",
-      "可能導致不良的響應時間"
-    ],
-    "options_status": "provided_source_options",
-    "correct_answer": "可能抵消客戶端良好排程演算法的努力\n可能影響客戶端（guests）中的時鐘\n可能導致不良的響應時間",
-    "answer_variants": [
-      "可能抵消客戶端良好排程演算法的努力\n可能影響客戶端（guests）中的時鐘\n可能導致不良的響應時間"
-    ],
-    "answer_basis": "provided_source_answer",
-    "answer_note": "來源：第五次試煉 第10題",
-    "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 183,
-    "source_response_type": "多選",
-    "source_answer_label": "A、C、D",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      83
-    ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      182
+    ]
   },
   {
     "id": 184,
@@ -5308,13 +5847,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第五次試煉 第16題；第七次試煉 第1題；七次精簡題庫 第058-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 184,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      184,
+      280
+    ]
   },
   {
     "id": 185,
@@ -5342,7 +5886,10 @@
     "previous_site_ids": [
       57
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      185
+    ]
   },
   {
     "id": 186,
@@ -5371,7 +5918,10 @@
     "previous_site_ids": [
       46
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      186
+    ]
   },
   {
     "id": 187,
@@ -5399,7 +5949,10 @@
     "previous_site_ids": [
       77
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      187
+    ]
   },
   {
     "id": 188,
@@ -5420,13 +5973,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第六次試煉 第4題；第七次試煉 第14題；七次精簡題庫 第062-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 188,
     "source_response_type": "單選",
     "source_answer_label": "C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      188,
+      246
+    ]
   },
   {
     "id": 189,
@@ -5455,7 +6013,10 @@
     "previous_site_ids": [
       65
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      189
+    ]
   },
   {
     "id": 190,
@@ -5486,7 +6047,10 @@
     "previous_site_ids": [
       127
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      190
+    ]
   },
   {
     "id": 191,
@@ -5515,7 +6079,10 @@
     "previous_site_ids": [
       145
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      191
+    ]
   },
   {
     "id": 192,
@@ -5536,44 +6103,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：第七次試煉 第2題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 192,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
-  },
-  {
-    "id": 193,
-    "title": "",
-    "type": "choice",
-    "question": "下列哪些排程決策屬於非搶佔式？",
-    "options": [
-      "程序從執行中狀態切換到等待中狀態",
-      "行程終止",
-      "程序從執行中狀態切換到就緒狀態",
-      "程序從等待中狀態切換到就緒狀態"
-    ],
-    "options_status": "provided_source_options",
-    "correct_answer": "程序從執行中狀態切換到等待中狀態\n行程終止",
-    "answer_variants": [
-      "程序從執行中狀態切換到等待中狀態\n行程終止"
-    ],
-    "answer_basis": "provided_source_answer",
-    "answer_note": "來源：第七次試煉 第4題；七次精簡題庫 第003-1題",
-    "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 193,
-    "source_response_type": "多選",
-    "source_answer_label": "A、B",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      74
-    ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      192,
+      221
+    ]
   },
   {
     "id": 194,
@@ -5604,7 +6145,10 @@
     "previous_site_ids": [
       151
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      194
+    ]
   },
   {
     "id": 195,
@@ -5632,7 +6176,10 @@
     "previous_site_ids": [
       168
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      195
+    ]
   },
   {
     "id": 196,
@@ -5654,7 +6201,10 @@
     "source_response_type": "填空／簡答",
     "source_answer_label": "multiprogramming",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      196
+    ]
   },
   {
     "id": 197,
@@ -5685,34 +6235,10 @@
     "previous_site_ids": [
       122
     ],
-    "bank_section": "primary"
-  },
-  {
-    "id": 198,
-    "title": "",
-    "type": "choice",
-    "question": "即時CPU排程面臨哪些挑戰？",
-    "options": [
-      "硬即時系統的任務必須在截止時間內完成",
-      "中斷延遲會影響性能",
-      "軟體即時系統沒有排程保證",
-      "配置(Dispatch)延遲會影響效能"
-    ],
-    "options_status": "provided_source_options",
-    "correct_answer": "硬即時系統的任務必須在截止時間內完成\n中斷延遲會影響性能\n軟體即時系統沒有排程保證\n配置(Dispatch)延遲會影響效能",
-    "answer_variants": [
-      "硬即時系統的任務必須在截止時間內完成\n中斷延遲會影響性能\n軟體即時系統沒有排程保證\n配置(Dispatch)延遲會影響效能"
-    ],
-    "answer_basis": "provided_source_answer",
-    "answer_note": "來源：第七次試煉 第30題",
-    "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
-    ],
-    "source_question_number": 198,
-    "source_response_type": "多選",
-    "source_answer_label": "A、B、C、D",
-    "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      197
+    ]
   },
   {
     "id": 199,
@@ -5733,13 +6259,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：七次精簡題庫 第010-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 199,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      199,
+      274
+    ]
   },
   {
     "id": 200,
@@ -5756,7 +6287,8 @@
     "answer_note": "來源：七次精簡題庫 第010-2題",
     "sources": [
       "作業系統U6_214題_完整題庫與答案.txt",
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 200,
     "source_response_type": "填空／簡答",
@@ -5767,7 +6299,13 @@
     "previous_site_ids": [
       56
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      200
+    ],
+    "integration_shared_ids": [
+      1000000102
+    ]
   },
   {
     "id": 201,
@@ -5796,7 +6334,10 @@
     "previous_site_ids": [
       133
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      201
+    ]
   },
   {
     "id": 202,
@@ -5827,7 +6368,10 @@
     "previous_site_ids": [
       76
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      202
+    ]
   },
   {
     "id": 203,
@@ -5858,7 +6402,10 @@
     "previous_site_ids": [
       208
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      203
+    ]
   },
   {
     "id": 204,
@@ -5866,7 +6413,7 @@
     "type": "choice",
     "question": "當時間片（TQ）相對於上下文切換時間非常小時，迴圈排程（RR）的缺點是什麼？",
     "options": [
-      "迴轉時間會變得分非常長",
+      "迴轉時間會變得非常長",
       "系統開銷會很高",
       "CPU利用率會降低",
       "響應時間會變差"
@@ -5879,13 +6426,22 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：七次精簡題庫 第026-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 204,
     "source_response_type": "多選",
     "source_answer_label": "B、C",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      204,
+      242
+    ],
+    "integration_shared_ids": [
+      1000000107
+    ]
   },
   {
     "id": 205,
@@ -5916,7 +6472,10 @@
     "previous_site_ids": [
       117
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      205
+    ]
   },
   {
     "id": 206,
@@ -5944,7 +6503,10 @@
     "previous_site_ids": [
       39
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      206
+    ]
   },
   {
     "id": 207,
@@ -5972,7 +6534,10 @@
     "previous_site_ids": [
       141
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      207
+    ]
   },
   {
     "id": 208,
@@ -6003,7 +6568,10 @@
     "previous_site_ids": [
       29
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      208
+    ]
   },
   {
     "id": 209,
@@ -6024,13 +6592,18 @@
     "answer_basis": "provided_source_answer",
     "answer_note": "來源：七次精簡題庫 第044-1題",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 209,
     "source_response_type": "單選",
     "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      209,
+      239
+    ]
   },
   {
     "id": 210,
@@ -6060,7 +6633,10 @@
     "previous_site_ids": [
       115
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      210
+    ]
   },
   {
     "id": 211,
@@ -6091,7 +6667,10 @@
     "previous_site_ids": [
       10
     ],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      211
+    ]
   },
   {
     "id": 212,
@@ -6113,7 +6692,10 @@
     "source_response_type": "填空／簡答",
     "source_answer_label": "shortest-job-first",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      212
+    ]
   },
   {
     "id": 213,
@@ -6121,26 +6703,34 @@
     "type": "choice",
     "question": "In priority scheduling, what problem can cause low-priority processes to never execute?",
     "options": [
-      "死鎖 (Deadlock)",
-      "護航效應",
-      "飢餓 (Starvation)",
-      "活鎖"
+      "Starvation",
+      "Deadlock",
+      "Convoy effect",
+      "Livelock"
     ],
     "options_status": "known_options_only",
-    "correct_answer": "飢餓 (Starvation)",
+    "correct_answer": "Starvation",
     "answer_variants": [
-      "飢餓 (Starvation)"
+      "Starvation"
     ],
     "answer_basis": "provided_source_answer",
-    "answer_note": "來源：七次精簡題庫 第031-1題\n異語題幹來自精簡題庫；選項沿用該題組所列版本。\n爭議說明：上述選項含來源補寫或沿用版本，不能當成該次試煉原畫面的完整逐字紀錄；日後建題庫請核對原始畫面。",
+    "answer_note": "來源：七次精簡題庫 第031-1題\n異語題幹來自精簡題庫；選項沿用該題組所列版本。\n爭議說明：上述選項含來源補寫或沿用版本，不能當成該次試煉原畫面的完整逐字紀錄；日後建題庫請核對原始畫面。\n整合：顯示選項採網站原有第243題的完整英文版本；原213題選項與答案字母保存在integration_variants。",
     "sources": [
-      "作業系統U6_214題_完整題庫與答案.txt"
+      "作業系統U6_214題_完整題庫與答案.txt",
+      "作業系統U6.txt"
     ],
     "source_question_number": 213,
     "source_response_type": "單選",
-    "source_answer_label": "C",
+    "source_answer_label": "A",
     "source_incorrect_responses": [],
-    "bank_section": "primary"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      213,
+      243
+    ],
+    "integration_disputed_source_ids": [
+      213
+    ]
   },
   {
     "id": 214,
@@ -6171,61 +6761,10 @@
     "previous_site_ids": [
       40
     ],
-    "bank_section": "primary"
-  },
-  {
-    "id": 215,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "分派延遲（Dispatch latency）指的是什麼？",
-    "options": [
-      "將一個程序停止並啟動另一個程序所需的時間",
-      "中斷處理所需的時間",
-      "排程器做出決策所需的時間"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "將一個程序停止並啟動另一個程序所需的時間",
-    "answer_variants": [
-      "將一個程序停止並啟動另一個程序所需的時間"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 1,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      1
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：1。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 216,
-    "title": "網站原有差異版本",
-    "type": "choice_options_missing",
-    "question": "In a multiprocessor system, which approach involves only one processor accessing the system data structures?",
-    "options": [
-      "Asymmetric multiprocessing"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "Asymmetric multiprocessing",
-    "answer_variants": [
-      "Asymmetric multiprocessing"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 3,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      3
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：3。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "bank_section": "primary",
+    "integration_source_ids": [
+      214
+    ]
   },
   {
     "id": 217,
@@ -6251,33 +6790,10 @@
       4
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：4。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 218,
-    "title": "網站原有差異版本",
-    "type": "choice_options_missing",
-    "question": "在Windows排程中，哪個功能允許應用程式獨立於核心來創建和管理執行緒？",
-    "options": [
-      "使用者模式排程（UMS）"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "使用者模式排程（UMS）",
-    "answer_variants": [
-      "使用者模式排程（UMS）"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 9,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      9
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：9。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：4。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      217
+    ]
   },
   {
     "id": 219,
@@ -6305,62 +6821,10 @@
       16
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：16。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 220,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "哪一個排程演算法會導致「護航效應」（convoy effect）？",
-    "options": [
-      "先到先服務（FCFS）",
-      "輪轉 (RR)"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "先到先服務（FCFS）",
-    "answer_variants": [
-      "先到先服務（FCFS）"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 19,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      19
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：19。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 221,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "In the Round Robin (RR) scheduling algorithm, what is the unit of a small amount of CPU time given to each process?",
-    "options": [
-      "Time quantum",
-      "Time block",
-      "Time period"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "Time quantum",
-    "answer_variants": [
-      "Time quantum"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 22,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      22
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：22。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：16。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      219
+    ]
   },
   {
     "id": 222,
@@ -6387,362 +6851,10 @@
       27
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：27。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 223,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "從中斷到達的時間到服務該中斷的函式(ISR)開始執行的時間，這段時間被稱為？",
-    "options": [
-      "中斷延遲",
-      "分派延遲"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "中斷延遲",
-    "answer_variants": [
-      "中斷延遲"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 30,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      30
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：30。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 224,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "在Windows系統中，當一個執行緒的時限（quantum）用完後，它的優先權會如何？",
-    "options": [
-      "降低",
-      "提升"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "降低",
-    "answer_variants": [
-      "降低"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 36,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      36
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：36。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 225,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "在Windows排程中，哪個優先權類別的程序不能被提升優先權？",
-    "options": [
-      "REALTIME_PRIORITY_CLASS",
-      "HIGH_PRIORITY_CLASS"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "REALTIME_PRIORITY_CLASS",
-    "answer_variants": [
-      "REALTIME_PRIORITY_CLASS"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 37,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      37
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：37。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 226,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "In multicore processors, what technique takes advantage of memory stall to make progress on another thread?",
-    "options": [
-      "Multithreaded multicore system",
-      "Load balancing"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "Multithreaded multicore system",
-    "answer_variants": [
-      "Multithreaded multicore system"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 42,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      42
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：42。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 227,
-    "title": "網站原有差異版本",
-    "type": "choice_options_missing",
-    "question": "When a process switches from a 'running' to a 'waiting' state, what type of scheduling decision is it?",
-    "options": [
-      "Nonpreemptive"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "Nonpreemptive",
-    "answer_variants": [
-      "Nonpreemptive"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 48,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      48
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：48。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 228,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "在對稱多處理（SMP）系統中，每個處理器都自我排程，這是哪種排程方法？",
-    "options": [
-      "都不是",
-      "推動式遷移（Push migration）",
-      "拉取式遷移（Pull migration）"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "都不是",
-    "answer_variants": [
-      "都不是"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 53,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      53
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：53。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 229,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "Which of the following is a task of the Dispatcher?",
-    "options": [
-      "Giving control of the CPU to the process selected by the scheduler",
-      "Transitioning a process from a waiting to a ready state",
-      "Sending an interrupt to a process"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "Giving control of the CPU to the process selected by the scheduler",
-    "answer_variants": [
-      "Giving control of the CPU to the process selected by the scheduler"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 58,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      58
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：58。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 230,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "在優先權排程中，什麼問題可能導致低優先權程序永遠無法執行？",
-    "options": [
-      "飢餓（Starvation）",
-      "護航效應",
-      "活鎖"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "飢餓（Starvation）",
-    "answer_variants": [
-      "飢餓（Starvation）"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 67,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      67
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：67。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 231,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "當一個程序從「執行中」狀態切換到「等待中」狀態時，排程決策屬於哪種類型？",
-    "options": [
-      "非搶佔式",
-      "搶佔式",
-      "中斷式"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "非搶佔式",
-    "answer_variants": [
-      "非搶佔式"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 69,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      69
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：69。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 232,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "在排程演算法評估中，什麼方法使用預先確定的工作負載來評估每個演算法的性能？",
-    "options": [
-      "確定性建模",
-      "實作"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "確定性建模",
-    "answer_variants": [
-      "確定性建模"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 71,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      71
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：71。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 233,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "In Windows scheduling, what feature allows applications to create and manage threads independently of the kernel?",
-    "options": [
-      "User-mode scheduling (UMS)",
-      "Completely Fair Scheduler",
-      "Multilevel queue"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "User-mode scheduling (UMS)",
-    "answer_variants": [
-      "User-mode scheduling (UMS)"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 73,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      73
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：73。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 234,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "Which scheduling algorithm can lead to the 'convoy effect'?",
-    "options": [
-      "First-Come, First-Served (FCFS)",
-      "Priority scheduling"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "First-Come, First-Served (FCFS)",
-    "answer_variants": [
-      "First-Come, First-Served (FCFS)"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 79,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      79
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：79。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 235,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "在多處理器系統中，哪種方法僅有一個處理器負責存取系統資料結構？",
-    "options": [
-      "非對稱多處理",
-      "對稱多處理（SMP）"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "非對稱多處理",
-    "answer_variants": [
-      "非對稱多處理"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 82,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      82
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：82。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：27。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      222
+    ]
   },
   {
     "id": 236,
@@ -6757,7 +6869,8 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 85,
     "source_response_type": "填空",
@@ -6768,7 +6881,13 @@
       85
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：85。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：85。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      236
+    ],
+    "integration_shared_ids": [
+      1000000114
+    ]
   },
   {
     "id": 237,
@@ -6788,7 +6907,8 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 86,
     "source_response_type": "複選",
@@ -6797,7 +6917,13 @@
       86
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：86。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：86。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      237
+    ],
+    "integration_shared_ids": [
+      1000000093
+    ]
   },
   {
     "id": 238,
@@ -6825,147 +6951,10 @@
       87
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：87。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 239,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "The time from the arrival of an interrupt to the start of the routine that services the interrupt is called?",
-    "options": [
-      "Interrupt latency",
-      "Dispatch latency"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "Interrupt latency",
-    "answer_variants": [
-      "Interrupt latency"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 90,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      90
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：90。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 240,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "CPU排程器是哪一種類型的排程器？",
-    "options": [
-      "短程排程器",
-      "長程排程器",
-      "中程排程器"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "短程排程器",
-    "answer_variants": [
-      "短程排程器"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 94,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      94
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：94。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 241,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "在多層級佇列（Multilevel Queue）排程中，下列哪一項敘述是正確的？",
-    "options": [
-      "前景佇列通常使用迴圈排程",
-      "所有佇列都使用相同的排程演算法"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "前景佇列通常使用迴圈排程",
-    "answer_variants": [
-      "前景佇列通常使用迴圈排程"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 98,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      98
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：98。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 242,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "當時間片（TQ）相對於上下文切換時間非常小時，迴圈排程（RR）的缺點是什麼？",
-    "options": [
-      "CPU利用率會降低",
-      "系統開銷會很高",
-      "響應時間會變差",
-      "迴轉時間會變得非常長"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "CPU利用率會降低\n系統開銷會很高",
-    "answer_variants": [
-      "CPU利用率會降低\n系統開銷會很高"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 101,
-    "source_response_type": "複選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      101
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：101。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 243,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "In priority scheduling, what problem can cause low-priority processes to never execute?",
-    "options": [
-      "Starvation",
-      "Deadlock",
-      "Convoy effect",
-      "Livelock"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "Starvation",
-    "answer_variants": [
-      "Starvation"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 104,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      104
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：104。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：87。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      238
+    ]
   },
   {
     "id": 244,
@@ -6993,12 +6982,15 @@
       107
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：107。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：107。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      244
+    ]
   },
   {
     "id": 245,
     "title": "網站原有差異版本",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "What are the characteristics of Windows scheduling?",
     "options": [
       "It uses priority-based preemptive scheduling",
@@ -7013,7 +7005,8 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 108,
     "source_response_type": "複選",
@@ -7022,88 +7015,13 @@
       108
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：108。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 246,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "In the Solaris operating system, what is the default scheduling class?",
-    "options": [
-      "Time Sharing",
-      "Interactive",
-      "System"
+    "answer_note": "網站原題號：108。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      245
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "Time Sharing",
-    "answer_variants": [
-      "Time Sharing"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 111,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      111
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：111。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 247,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "Which scheduling algorithm is considered optimal because it provides the minimum average waiting time for a given set of processes?",
-    "options": [
-      "Shortest-Job-First (SJF)",
-      "First-Come, First-Served (FCFS)"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "Shortest-Job-First (SJF)",
-    "answer_variants": [
-      "Shortest-Job-First (SJF)"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 113,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      113
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：113。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 248,
-    "title": "網站原有差異版本",
-    "type": "fill_blank",
-    "question": "[__1__] is the λ in Little's Formula (n = λ x W), representing the average arrival rate into the queue.(Please answer in lowercase English, leaving a space between each word)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "average arrival rate",
-    "answer_variants": [
-      "average arrival rate"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 123,
-    "source_response_type": "填空",
-    "source_incorrect_responses": [
-      "asdf"
-    ],
-    "previous_site_ids": [
-      123
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：123。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "integration_shared_ids": [
+      1000000119
+    ]
   },
   {
     "id": 249,
@@ -7130,91 +7048,10 @@
       124
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：124。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 250,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "迴圈排程（RR）演算法中，每個程序獲得一小段CPU時間的單位稱為？",
-    "options": [
-      "時間片（Time quantum）",
-      "時間區塊"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "時間片（Time quantum）",
-    "answer_variants": [
-      "時間片（Time quantum）"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 129,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      129
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：129。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 251,
-    "title": "網站原有差異版本",
-    "type": "fill_blank",
-    "question": "Process Burst Time P1 20 P2 3 P3 7 Use Round Robin (RR) to schedule the above process. The following is the process of scheduling time from left to right (A to H represent the processed block H. There may be a schedule after the block, which is ignored because it is not in the question to be asked. Do not show) 上傳的圖片 If TQ = 4, what is the order of A~H? Answer format: P0->P2->P4->P6->P5->P6 Format errors do not count[__1__]",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "P1->P2->P3->P1->P3->P1->P1->P1",
-    "answer_variants": [
-      "P1->P2->P3->P1->P3->P1->P1->P1"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 130,
-    "source_response_type": "填空",
-    "source_incorrect_responses": [
-      "adwde",
-      "asdf",
-      "sdfg"
-    ],
-    "previous_site_ids": [
-      130
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：130。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
-    "image": "../images/os-u6-rr.png",
-    "image_alt": "RR 排程圖：P1 burst 20、P2 burst 3、P3 burst 7，時間片 4；執行區段 A–H，時間邊界 I–Q。",
-    "image_status": "provided"
-  },
-  {
-    "id": 252,
-    "title": "網站原有差異版本",
-    "type": "fill_blank",
-    "question": "When a process switches from the running to the waiting state, the CPU scheduler is [__1__].(Please answer in lowercase English)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "wakeup",
-    "answer_variants": [
-      "wakeup"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 136,
-    "source_response_type": "填空",
-    "source_incorrect_responses": [
-      "dawd"
-    ],
-    "previous_site_ids": [
-      136
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：136。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：124。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      249
+    ]
   },
   {
     "id": 253,
@@ -7243,7 +7080,10 @@
       138
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：138。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：138。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      253
+    ]
   },
   {
     "id": 254,
@@ -7271,88 +7111,10 @@
       139
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：139。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 255,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "什麼是 Little's Formula (n = λ x W) 中的 n？",
-    "options": [
-      "平均佇列長度",
-      "平均服務時間(Average service time)"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "平均佇列長度",
-    "answer_variants": [
-      "平均佇列長度"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 140,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      140
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：140。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 256,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "在POSIX即時排程中，SCHED_FIFO的特點是什麼？",
-    "options": [
-      "沒有時間分片",
-      "提供時間分片"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "沒有時間分片",
-    "answer_variants": [
-      "沒有時間分片"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 147,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      147
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：147。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 257,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "In POSIX real-time scheduling, which scheduling policy is similar to SCHED_FIFO but includes time-slicing for threads of equal priority?",
-    "options": [
-      "SCHED_RR",
-      "SCHED_BATCH"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "SCHED_RR",
-    "answer_variants": [
-      "SCHED_RR"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 149,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      149
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：149。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：139。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      254
+    ]
   },
   {
     "id": 258,
@@ -7367,7 +7129,8 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 150,
     "source_response_type": "填空",
@@ -7378,35 +7141,13 @@
       150
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：150。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 259,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "下列哪一項是分派器（Dispatcher）的工作？",
-    "options": [
-      "將CPU控制權交給排程器選擇的程序",
-      "將程序從就緒佇列中移除",
-      "將中斷發送給程序"
+    "answer_note": "網站原題號：150。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      258
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "將CPU控制權交給排程器選擇的程序",
-    "answer_variants": [
-      "將CPU控制權交給排程器選擇的程序"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 153,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      153
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：153。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "integration_shared_ids": [
+      1000000115
+    ]
   },
   {
     "id": 260,
@@ -7432,7 +7173,10 @@
       154
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：154。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：154。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      260
+    ]
   },
   {
     "id": 261,
@@ -7459,7 +7203,10 @@
       156
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：156。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：156。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      261
+    ]
   },
   {
     "id": 262,
@@ -7488,7 +7235,10 @@
       157
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：157。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：157。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      262
+    ]
   },
   {
     "id": 263,
@@ -7517,7 +7267,10 @@
       158
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：158。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：158。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      263
+    ]
   },
   {
     "id": 264,
@@ -7543,7 +7296,10 @@
       159
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：159。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：159。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      264
+    ]
   },
   {
     "id": 265,
@@ -7572,7 +7328,10 @@
       160
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：160。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：160。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      265
+    ]
   },
   {
     "id": 266,
@@ -7601,36 +7360,10 @@
       165
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：165。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 267,
-    "title": "網站原有差異版本",
-    "type": "choice_options_missing",
-    "question": "Solaris作業系統的排程有哪六個類別？",
-    "options": [
-      "時程共享（Time sharing）",
-      "互動式（Interactive）",
-      "即時（Real time）",
-      "系統(System)"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "時程共享（Time sharing）\n互動式（Interactive）\n即時（Real time）\n系統(System)",
-    "answer_variants": [
-      "時程共享（Time sharing）\n互動式（Interactive）\n即時（Real time）\n系統(System)"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 169,
-    "source_response_type": "複選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      169
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：169。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：165。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      266
+    ]
   },
   {
     "id": 268,
@@ -7656,7 +7389,10 @@
       172
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：172。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：172。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      268
+    ]
   },
   {
     "id": 269,
@@ -7685,7 +7421,10 @@
       179
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：179。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：179。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      269
+    ]
   },
   {
     "id": 270,
@@ -7713,140 +7452,10 @@
       180
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：180。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 271,
-    "title": "網站原有差異版本",
-    "type": "fill_blank",
-    "question": "Hard real-time systems require a task to be serviced by its [__1__].(Please answer in lowercase English)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "deadline",
-    "answer_variants": [
-      "deadline"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 181,
-    "source_response_type": "填空",
-    "source_incorrect_responses": [
-      "asdf"
-    ],
-    "previous_site_ids": [
-      181
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：181。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 272,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "In Multilevel Queue scheduling, which of the following statements is correct?",
-    "options": [
-      "The foreground queue typically uses Round Robin scheduling",
-      "All queues use the same scheduling algorithm"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "The foreground queue typically uses Round Robin scheduling",
-    "answer_variants": [
-      "The foreground queue typically uses Round Robin scheduling"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 182,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      182
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：182。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 273,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "Shortest-remaining-time-first (SRTF) is the preemptive version of which scheduling algorithm?",
-    "options": [
-      "Shortest-Job-First (SJF)",
-      "First-Come, First-Served (FCFS)"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "Shortest-Job-First (SJF)",
-    "answer_variants": [
-      "Shortest-Job-First (SJF)"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 183,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      183
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：183。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 274,
-    "title": "網站原有差異版本",
-    "type": "choice_options_missing",
-    "question": "What is Dispatch latency?",
-    "options": [
-      "The time it takes to stop one process and start another running"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "The time it takes to stop one process and start another running",
-    "answer_variants": [
-      "The time it takes to stop one process and start another running"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 184,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      184
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：184。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 275,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "What is a characteristic of SCHED_FIFO in POSIX real-time scheduling?",
-    "options": [
-      "There is no time-slicing",
-      "It provides priority boosting"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "There is no time-slicing",
-    "answer_variants": [
-      "There is no time-slicing"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 190,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      190
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：190。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：180。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      270
+    ]
   },
   {
     "id": 276,
@@ -7875,34 +7484,10 @@
       192
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：192。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 277,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "In a symmetric multiprocessing (SMP) system where each processor is self-scheduling, what is this scheduling method?",
-    "options": [
-      "None of answer",
-      "Push migration"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "None of answer",
-    "answer_variants": [
-      "None of answer"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 199,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      199
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：199。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：192。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      276
+    ]
   },
   {
     "id": 278,
@@ -7931,115 +7516,10 @@
       206
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：206。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 279,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "What is throughput as a measure of a scheduling algorithm?",
-    "options": [
-      "The number of processes that complete their execution per time unit",
-      "The time a process has been waiting in the ready queue"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "The number of processes that complete their execution per time unit",
-    "answer_variants": [
-      "The number of processes that complete their execution per time unit"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 209,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      209
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：209。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 280,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "In the Windows system, what happens to a thread's priority when its quantum expires?",
-    "options": [
-      "It is lowered",
-      "It is boosted"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "It is lowered",
-    "answer_variants": [
-      "It is lowered"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 210,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      210
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：210。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 281,
-    "title": "網站原有差異版本",
-    "type": "fill_blank",
-    "question": "Criteria for CPU scheduling include CPU utilization, throughput, [__1__] time, [__2__] time, and [__3__] time.(Please answer in lowercase English)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "turnaround/waiting/response",
-    "answer_variants": [
-      "turnaround/waiting/response"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 211,
-    "source_response_type": "填空",
-    "source_incorrect_responses": [
-      "1 / 2 / 3",
-      "asdf / asdf / adsf"
-    ],
-    "previous_site_ids": [
-      211
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：211。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 282,
-    "title": "網站原有差異版本",
-    "type": "choice",
-    "question": "當迴圈排程（RR）中的時間片（q）非常大時，該演算法的行為會趨近於哪種排程？",
-    "options": [
-      "先到先服務（FCFS）",
-      "多級隊列(Multilevel queue)"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "先到先服務（FCFS）",
-    "answer_variants": [
-      "先到先服務（FCFS）"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 213,
-    "source_response_type": "單選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      213
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：213。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：206。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      278
+    ]
   },
   {
     "id": 283,
@@ -8066,35 +7546,10 @@
       214
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：214。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 284,
-    "title": "網站原有差異版本",
-    "type": "choice_options_missing",
-    "question": "What averages are typically computed using queueing models?",
-    "options": [
-      "Average throughput",
-      "Average utilization",
-      "Average waiting time"
-    ],
-    "options_status": "known_options_only",
-    "correct_answer": "Average throughput\nAverage utilization\nAverage waiting time",
-    "answer_variants": [
-      "Average throughput\nAverage utilization\nAverage waiting time"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 217,
-    "source_response_type": "複選",
-    "source_incorrect_responses": [],
-    "previous_site_ids": [
-      217
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：217。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：214。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      283
+    ]
   },
   {
     "id": 285,
@@ -8120,33 +7575,10 @@
       220
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：220。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
-  },
-  {
-    "id": 286,
-    "title": "網站原有差異版本",
-    "type": "fill_blank",
-    "question": "迴圈排程（RR）演算法中，每個程序獲得一小段CPU時間的單位稱為[__1__]。(請用小寫英文回答 字母間留一個空白)",
-    "options": [],
-    "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "time quantum",
-    "answer_variants": [
-      "time quantum"
-    ],
-    "answer_basis": "provided_source_answer",
-    "sources": [
-      "作業系統U6.txt"
-    ],
-    "source_question_number": 223,
-    "source_response_type": "填空",
-    "source_incorrect_responses": [
-      "adwd"
-    ],
-    "previous_site_ids": [
-      223
-    ],
-    "bank_section": "existing_different",
-    "answer_note": "網站原題號：223。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：220。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      285
+    ]
   },
   {
     "id": 287,
@@ -8164,7 +7596,8 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U6.txt"
+      "作業系統U6.txt",
+      "協作題庫（管理員已審核）"
     ],
     "source_question_number": 224,
     "source_response_type": "單選",
@@ -8173,7 +7606,13 @@
       224
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：224。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：224。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      287
+    ],
+    "integration_shared_ids": [
+      1000000106
+    ]
   },
   {
     "id": 288,
@@ -8199,6 +7638,9 @@
       226
     ],
     "bank_section": "existing_different",
-    "answer_note": "網站原題號：226。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。"
+    "answer_note": "網站原題號：226。與本次提供檔案的題幹、選項或作答格式不同，保留於題庫末尾。",
+    "integration_source_ids": [
+      288
+    ]
   }
 ]

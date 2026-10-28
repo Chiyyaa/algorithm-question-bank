@@ -836,3 +836,13 @@ body[data-subject="os"] .destination-toggle:focus-visible { outline-color: #af82
 .home-collaboration a { color:#506987; font-size:14px; text-underline-offset:4px; }
 .subject-home[data-theme="night"] .home-collaboration a { color:#c5d5ed; }
 a.nav-btn { display:block; text-decoration:none; }
+
+/* Yellow outer border for the Operating Systems U6 unit card. */
+body[data-subject="os"] .unit-card[data-unit="u6"] {
+    outline: 3px solid #facc15;
+    outline-offset: 3px;
+}
+body[data-subject="os"] .unit-card[data-unit="u6"]:focus-visible {
+    outline: 3px solid #d4a600;
+    outline-offset: 5px;
+}

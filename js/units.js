@@ -13,7 +13,7 @@ export const SUBJECTS = [
         { id: "u3", name: "U3", questionCount: 277, dataUrl: "../data/os-u3.json" },
         { id: "u4", name: "U4", questionCount: 143, dataUrl: "../data/os-u4.json" },
         { id: "u5", name: "U5", questionCount: 125, dataUrl: "../data/os-u5.json" },
-        { id: "u6", name: "U6", questionCount: 288, dataUrl: "../data/os-u6.json" }
+        { id: "u6", name: "U6", questionCount: 233, dataUrl: "../data/os-u6.json" }
     ] }
 ];
 
