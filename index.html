@@ -7,11 +7,12 @@
 <link rel="stylesheet" href="./css/style.css?v=20261007-os">
 <link rel="stylesheet" href="./css/english-home.css?v=20261017-english1">
 <link rel="stylesheet" href="./css/practice.css?v=20261029-practice">
+<link rel="stylesheet" href="./css/muji.css?v=20261029-muji2">
 </head>
-<body class="home-mode">
+<body class="home-mode muji-theme">
 <section id="subjectHome" class="subject-home" aria-labelledby="subjectHeading">
-    <button id="homeThemeBtn" class="home-theme-toggle" type="button" aria-label="切換夜間星空模式" aria-pressed="false">
-        <span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">夜間星空</span>
+    <button id="homeThemeBtn" class="home-theme-toggle" type="button" aria-label="切換夜間模式" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true"></span><span class="theme-label">夜間模式</span>
     </button>
     <div class="home-art" aria-hidden="true">
         <span class="corner-glow corner-glow-top"></span><span class="corner-glow corner-glow-bottom"></span>
@@ -79,21 +80,21 @@
 <button hidden id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="展開選單">☰</button>
 <button id="sidebarBackdrop" class="sidebar-backdrop" type="button" aria-label="關閉選單" tabindex="-1" hidden></button>
 <aside hidden id="sidebar" class="sidebar collapsed" inert>
-    <a class="sidebar-brand" href="https://canva.link/evygbbmrt3v2umy" target="_blank" rel="noopener noreferrer">📚 演算法題庫</a>
+    <a class="sidebar-brand" href="https://canva.link/evygbbmrt3v2umy" target="_blank" rel="noopener noreferrer">演算法題庫</a>
     <nav class="sidebar-nav">
-        <button class="nav-btn active" data-panel="bank" type="button">🔎 題庫搜尋</button>
-        <button class="nav-btn" data-panel="units" type="button">📖 選擇單元</button>
-        <button id="practiceNavBtn" class="nav-btn" data-panel="practice" type="button" hidden>✍ 測驗練習</button>
+        <button class="nav-btn active" data-panel="bank" type="button">題庫搜尋</button>
+        <button class="nav-btn" data-panel="units" type="button">選擇單元</button>
+        <button id="practiceNavBtn" class="nav-btn" data-panel="practice" type="button" hidden>測驗練習</button>
     </nav>
-    <button id="switchSubjectBtn" class="nav-btn" type="button">↩ 切換科目</button>
-    <a class="nav-btn" href="./collaborate.html">✎ 題庫協作／審核</a>
+    <button id="switchSubjectBtn" class="nav-btn" type="button">切換科目</button>
+    <a class="nav-btn" href="./collaborate.html">題庫協作／審核</a>
     <div class="sidebar-note">共用題目請登入題庫協作提交，經管理員審核後公開。</div>
 </aside>
 <div id="studyShell" class="main-shell" hidden>
 <div class="container">
 <section id="panel-bank" class="panel active">
     <header>
-        <p id="currentUnitLabel" class="unit-context">演算法｜U3</p>
+        <p id="currentUnitLabel" class="unit-context">演算法｜U6</p>
         <h1 id="bankHeading" tabindex="-1">演算法題庫搜尋系統</h1>
         <p class="subtitle">輸入關鍵字，即時搜尋題目、選項與答案。</p>
     </header>
@@ -101,7 +102,7 @@
     <section class="toolbar">
         <div class="search-row">
             <input id="searchInput" type="search"
-                   placeholder="搜尋：Merge Sort、插入排序、omega、lg*、費氏數列……"
+                   placeholder="搜尋題目與關鍵字" aria-label="搜尋題目與關鍵字"
                    autocomplete="off">
             <button id="clearBtn" type="button">清除搜尋</button>
         </div>
@@ -159,7 +160,7 @@
 </div>
 <button id="backToTopBtn" class="back-to-top" type="button" aria-label="回到頁面頂端" hidden>↑ 回到頂端</button>
 
-<script type="module" src="./js/app.js?v=20261029-practice"></script>
+<script type="module" src="./js/app.js?v=20261029-muji2"></script>
 </body>
 </html>
 

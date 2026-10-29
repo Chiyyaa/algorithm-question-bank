@@ -3,70 +3,14 @@ import { curatePublishedQuestions } from './question-curation.js?v=20261029-u7ba
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
 import { initNavigation } from "./navigation.js";
-import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261029-u7bank";
+import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261029-muji2";
 import { initMusic } from "./music.js";
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017-formats1";
+import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';
 
-initHomeTheme();
+initAppearance();
 const { close: closeMusic } = initMusic();
-
-function initHomeTheme() {
-    const home = document.getElementById("subjectHome");
-    const button = document.getElementById("homeThemeBtn");
-    const systemTheme = matchMedia("(prefers-color-scheme: dark)");
-    const storageKey = "question_bank_home_theme_v1";
-    let preference = null;
-    try {
-        const saved = localStorage.getItem(storageKey);
-        if (saved === "night" || saved === "day") preference = saved;
-    } catch { /* Theme remains usable when storage is unavailable. */ }
-    function apply() {
-        const night = preference ? preference === "night" : systemTheme.matches;
-        home.dataset.theme = night ? "night" : "day";
-        button.setAttribute("aria-pressed", String(night));
-        button.setAttribute("aria-label", night ? "切換日間模式" : "切換夜間星空模式");
-        button.title = night ? "切換日間模式" : "切換夜間星空模式";
-        button.querySelector(".theme-icon").textContent = night ? "☀" : "☾";
-        button.querySelector(".theme-label").textContent = night ? "日間模式" : "夜間星空";
-    }
-    button.addEventListener("click", () => {
-        preference = home.dataset.theme === "night" ? "day" : "night";
-        try { localStorage.setItem(storageKey, preference); } catch { /* Session-only fallback. */ }
-        apply();
-    });
-    systemTheme.addEventListener("change", () => { if (!preference) apply(); });
-    apply();
-}
-const clearHomeSparkles = initHomeSparkles();
-
-function initHomeSparkles() {
-    const home = document.getElementById("subjectHome");
-    const layer = document.getElementById("homeSparkles");
-    const enabled = matchMedia("(hover: hover) and (pointer: fine)");
-    const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-    let lastSparkle = 0;
-    const clear = () => layer.replaceChildren();
-    home.addEventListener("pointermove", event => {
-        if (home.hidden || event.pointerType !== "mouse" || !enabled.matches || reduced.matches) return;
-        const now = performance.now();
-        if (now - lastSparkle < 45) return;
-        lastSparkle = now;
-        if (layer.childElementCount >= 18) layer.firstElementChild.remove();
-        const sparkle = document.createElement("span");
-        sparkle.className = "pointer-sparkle";
-        sparkle.textContent = "✦";
-        sparkle.style.left = event.clientX + "px";
-        sparkle.style.top = event.clientY + "px";
-        sparkle.style.fontSize = (8 + Math.random() * 7) + "px";
-        layer.append(sparkle);
-        sparkle.addEventListener("animationend", () => sparkle.remove(), { once: true });
-        setTimeout(() => sparkle.remove(), 1000);
-    });
-    home.addEventListener("pointerleave", clear);
-    enabled.addEventListener("change", clear);
-    reduced.addEventListener("change", clear);
-    return clear;
-}
+const clearHomeMotion = initHomeMotion();
 
 const QUESTIONS = [];
 const sharedCounts = new Map();
@@ -352,11 +296,11 @@ function enterSubject(subjectId, unitId, pushHistory = true) {
     document.getElementById("bankHeading").textContent = currentSubject.name + "題庫搜尋系統";
     document.getElementById("unitSubjectDescription").textContent = currentSubject.name + " · 選擇今天的練習單元";
     const brand = document.querySelector(".sidebar-brand");
-    brand.textContent = "📚 " + currentSubject.name + "題庫";
+    brand.textContent = currentSubject.name + "題庫";
     if (currentSubject.id === "algorithm") brand.setAttribute("href", "https://canva.link/evygbbmrt3v2umy");
     else brand.removeAttribute("href");
     closeMusic(false);
-    clearHomeSparkles();
+    clearHomeMotion();
     document.body.classList.remove("home-mode");
     document.getElementById("subjectHome").hidden = true;
     document.getElementById("studyShell").hidden = false;
