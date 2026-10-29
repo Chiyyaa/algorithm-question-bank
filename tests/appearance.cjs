@@ -143,6 +143,12 @@ const server = http.createServer(async (req, res) => {
         await page.locator('#practiceUnit').selectOption('u7');
         await page.waitForFunction(() => !document.getElementById('practiceStart').disabled);
         await page.locator('#practiceStart').click();
+        await page.locator('#verificationHeading').waitFor();
+        const checks = JSON.parse(fs.readFileSync(path.join(root, 'data/practice-verification.json'), 'utf8'));
+        const checkId = await page.locator('[data-verification-question-id]').getAttribute('data-verification-question-id');
+        const check = checks.find(q => q.id === checkId);
+        await page.locator('[data-verification-choice="' + check.options.indexOf(check.correct_answer) + '"]').check();
+        await page.locator('#verificationSubmit').click();
         await page.locator('.practice-card').waitFor();
         assert.equal(await page.locator('#practiceUnit').isDisabled(), true);
         await page.locator('#studyThemeBtn').click();

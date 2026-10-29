@@ -1,0 +1,30 @@
+[
+  {
+    "id": "verification-1",
+    "type": "single",
+    "question": "aespa有幾位成員?",
+    "options": ["2", "3", "4", "5"],
+    "correct_answer": "4"
+  },
+  {
+    "id": "verification-2",
+    "type": "single",
+    "question": "aespa的隊長是哪一位?",
+    "options": ["Karina", "Giselle", "Winter", "Ningning"],
+    "correct_answer": "Karina"
+  },
+  {
+    "id": "verification-3",
+    "type": "single",
+    "question": "請問<BLUE>是下列哪位solo的?",
+    "options": ["Karina", "Giselle", "Winter", "Ningning"],
+    "correct_answer": "Winter"
+  },
+  {
+    "id": "verification-4",
+    "type": "single",
+    "question": "請問aespa的韓國出道日期是哪天?",
+    "options": ["2020/11/17", "2020/10/10", "2020/1/1", "2020/12/25"],
+    "correct_answer": "2020/11/17"
+  }
+]

@@ -1,4 +1,4 @@
-import { initPractice } from './practice.js?v=20261029-practice';
+import { initPractice } from './practice.js?v=20261029-verification1';
 import { curatePublishedQuestions } from './question-curation.js?v=20261029-u7bank';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
@@ -25,6 +25,10 @@ const { updateBackToTop, setSidebarOpen } = initNavigation({
 });
 const practice = initPractice({
     getContext: () => ({subjectId: currentSubject?.id, unitId: currentUnit?.id}),
+    onVerificationFailed() {
+        history.replaceState({ ...history.state, questionBank: { view: 'home' } }, '');
+        leaveSubject(true);
+    },
     async loadQuestions(subjectId, unitId) {
         if (subjectId !== 'algorithm' || !['u6','u7'].includes(unitId)) throw new Error('目前僅開放演算法 U6、U7。');
         const unit = getUnit(subjectId, unitId);

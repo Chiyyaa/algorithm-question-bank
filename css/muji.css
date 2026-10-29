@@ -146,7 +146,7 @@ body.muji-theme #subjectHome .home-theme-toggle {
     background: var(--bg); color: var(--muted); border: 1px solid var(--border);
     border-radius: 999px; box-shadow: none; backdrop-filter: none; min-height: 44px;
 }
-body.muji-theme .study-theme-toggle { position: fixed; z-index: 85; top: max(16px, env(safe-area-inset-top)); right: max(24px, env(safe-area-inset-right)); }
+body.muji-theme .study-theme-toggle { position: absolute; z-index: 85; top: max(16px, env(safe-area-inset-top)); right: max(24px, env(safe-area-inset-right)); }
 body.muji-theme .theme-label { font-weight: 500; }
 body.muji-theme .unit-card {
     background: var(--card); border: 1px solid var(--border); color: var(--text);
