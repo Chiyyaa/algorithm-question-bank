@@ -6,6 +6,7 @@
 <title>學習題庫</title>
 <link rel="stylesheet" href="./css/style.css?v=20261007-os">
 <link rel="stylesheet" href="./css/english-home.css?v=20261017-english1">
+<link rel="stylesheet" href="./css/practice.css?v=20261029-practice">
 </head>
 <body class="home-mode">
 <section id="subjectHome" class="subject-home" aria-labelledby="subjectHeading">
@@ -82,6 +83,7 @@
     <nav class="sidebar-nav">
         <button class="nav-btn active" data-panel="bank" type="button">🔎 題庫搜尋</button>
         <button class="nav-btn" data-panel="units" type="button">📖 選擇單元</button>
+        <button id="practiceNavBtn" class="nav-btn" data-panel="practice" type="button" hidden>✍ 測驗練習</button>
     </nav>
     <button id="switchSubjectBtn" class="nav-btn" type="button">↩ 切換科目</button>
     <a class="nav-btn" href="./collaborate.html">✎ 題庫協作／審核</a>
@@ -141,12 +143,23 @@
         <div id="unitGrid" class="unit-grid"></div>
     </section>
 
+    <section id="panel-practice" class="panel" aria-labelledby="practiceHeading">
+        <header><h1 id="practiceHeading" tabindex="-1">測驗練習</h1><p class="subtitle">先從演算法 U6、U7 開始，每題作答後立即核對答案。</p></header>
+        <form id="practiceSettings" class="practice-settings">
+            <div class="practice-setting"><label for="practiceUnit">測驗單元</label><select id="practiceUnit"><option value="u6">演算法 U6</option><option value="u7">演算法 U7</option></select></div>
+            <fieldset class="practice-count"><legend>練習題數</legend><label><input type="radio" name="practiceCount" value="10">10 題</label><label><input type="radio" name="practiceCount" value="20" checked>20 題</label></fieldset>
+            <div class="practice-actions"><button id="practiceStart" class="primary-btn" type="submit" disabled>開始練習</button><button id="practiceReset" type="button" hidden>重新設定</button><button id="practiceRetry" type="button" hidden>重新載入題庫</button></div>
+            <p id="practicePoolStatus" class="practice-help" role="status" aria-live="polite">目前開放演算法 U6、U7。</p>
+            <p class="practice-help">爭議與缺少選項的題目暫不出題。重新整理或切換科目後，本次進度會重設。</p>
+        </form>
+        <div id="practiceContent"></div>
+    </section>
 
 </div>
 </div>
 <button id="backToTopBtn" class="back-to-top" type="button" aria-label="回到頁面頂端" hidden>↑ 回到頂端</button>
 
-<script type="module" src="./js/app.js?v=20261029-no-private"></script>
+<script type="module" src="./js/app.js?v=20261029-practice"></script>
 </body>
 </html>
 

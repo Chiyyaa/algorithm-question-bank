@@ -1,3 +1,4 @@
+import { initPractice } from './practice.js?v=20261029-practice';
 import { curatePublishedQuestions } from './question-curation.js?v=20261029-u7bank';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
@@ -77,6 +78,19 @@ let ready = false;
 const { updateBackToTop, setSidebarOpen } = initNavigation({
     onSelectUnit: selectUnit,
     onLeaveSubject: leaveSubject
+});
+const practice = initPractice({
+    getContext: () => ({subjectId: currentSubject?.id, unitId: currentUnit?.id}),
+    async loadQuestions(subjectId, unitId) {
+        if (subjectId !== 'algorithm' || !['u6','u7'].includes(unitId)) throw new Error('目前僅開放演算法 U6、U7。');
+        const unit = getUnit(subjectId, unitId);
+        const response = await fetch(new URL(unit.dataUrl, import.meta.url), {cache:'no-cache'});
+        if (!response.ok) throw new Error('題庫無法載入，請稍後重試。');
+        const builtIn = await response.json();
+        if (!Array.isArray(builtIn) || !builtIn.length) throw new Error('題庫格式不正確。');
+        const shared = await curatePublishedQuestions(await loadPublishedQuestions(subjectId, unitId), subjectId, unitId);
+        return [...builtIn, ...shared];
+    }
 });
 const PAGE_SIZE = 25;
 let currentPage = 1;
@@ -306,6 +320,7 @@ function leaveSubject(fromHistory = false) {
     ready = false;
     currentSubject = null;
     currentUnit = null;
+    practice.setSubject(null);
     QUESTIONS.length = 0;
     answersVisible.clear();
     answersHidden.clear();
@@ -330,6 +345,7 @@ window.addEventListener("popstate", event => {
 function enterSubject(subjectId, unitId, pushHistory = true) {
     currentSubject = SUBJECTS.find(subject => subject.id === subjectId && subject.available);
     if (!currentSubject) return;
+    practice.setSubject(currentSubject.id);
     const selected = getUnit(currentSubject.id, unitId) || getUnit(currentSubject.id, currentSubject.defaultUnit);
     if (pushHistory) history.pushState({ ...history.state, questionBank: { view: "bank", subjectId: currentSubject.id, unitId: selected.id } }, "");
     document.body.dataset.subject = currentSubject.id;
