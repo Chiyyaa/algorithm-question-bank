@@ -1,8 +1,8 @@
-import { curatePublishedQuestions } from './question-curation.js?v=20261020-u5';
+import { curatePublishedQuestions } from './question-curation.js?v=20261029-algu6';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { loadUserQuestions, initCustomQuestions, mistakenAnswer } from "./custom-questions.js?v=20261017-formats1";
 import { initNavigation } from "./navigation.js";
-import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261017-formats1";
+import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261029-algu6";
 import { initMusic } from "./music.js";
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017-formats1";
 
@@ -263,12 +263,13 @@ function renderUnitChoices() {
 if (collaborationEnabled()) publishedCounts().then(rows => {
     mergeCollaborationUnits(rows.filter(row => Number(row.question_count)>0));
     rows.forEach(row => sharedCounts.set(row.subject_id + ':' + row.unit_id,
-        row.subject_id === 'os' && row.unit_id === 'u6' ? 0 : Number(row.question_count)));
+        ['os','algorithm'].includes(row.subject_id) && row.unit_id === 'u6' ? 0 : Number(row.question_count)));
     renderUnitChoices();
-    if (rows.some(row => row.subject_id === 'os' && row.unit_id === 'u6')) {
-        loadPublishedQuestions('os', 'u6')
-            .then(questions => curatePublishedQuestions(questions, 'os', 'u6'))
-            .then(questions => { sharedCounts.set('os:u6', questions.length); renderUnitChoices(); })
+    for (const subject of ['os','algorithm']) {
+        if (!rows.some(row => row.subject_id === subject && row.unit_id === 'u6')) continue;
+        loadPublishedQuestions(subject, 'u6')
+            .then(questions => curatePublishedQuestions(questions, subject, 'u6'))
+            .then(questions => { sharedCounts.set(subject+':u6', questions.length); renderUnitChoices(); })
             .catch(() => { /* Keep the built-in count if the shared service is unavailable. */ });
     }
 }).catch(() => { /* Built-in counts remain available if the shared service is offline. */ });
@@ -423,3 +424,4 @@ async function loadQuestionBank() {
         if (version === requestVersion) loading = false;
     }
 }
+

@@ -5,38 +5,48 @@
     "type": "choice",
     "question": "關於決策樹，下列敘述何者正確？",
     "options": [
-      "A. 樹的高度與比較次數無關",
+      "A. 每個分支代表一個比較結果",
       "B. 每個內部節點是一個比較",
-      "C. 每個分支代表一個比較結果",
-      "D. 樹的葉節點數量至少為 n!"
+      "C. 樹的葉節點數量至少為 n!",
+      "D. 樹的高度與比較次數無關"
     ],
     "options_status": "complete",
-    "correct_answer": "每個內部節點是一個比較\n每個分支代表一個比較結果\n樹的葉節點數量至少為 n!",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "每個分支代表一個比較結果\n每個內部節點是一個比較\n樹的葉節點數量至少為 n!",
+    "answer_note": "在比較排序的決策樹中，內部節點代表一次比較，分支代表比較結果。n 個互異元素共有 n! 種可能的排列，必須有至少 n! 個葉節點；樹的高度則反映最壞情況需要的比較次數。",
+    "reference_id": "L6-023",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 1 題",
-      "第二次試煉_題目與選項_不含答案.txt 第 15 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-023"
+    ],
+    "previous_site_ids": [
+      1
     ]
   },
   {
     "id": 2,
     "title": "",
     "type": "fill_blank",
-    "question": "給定課本版本的 COUNTING_SORT 演算法。\nCOUNTING_SORT(A, B, k)\n1  for i <- 1 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 2 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n題目：A 陣列的內容為 2, 5, 3, 0, 2, 3, 0, 5, 1, 2, 1, 3, 2, 0, 4。\n填空：\n(1) 執行完後 B 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）\n(2) C 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）",
+    "question": "給定 COUNTING_SORT 演算法（計數陣列支援鍵值 0 的版本）。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 0 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 1 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n\nA 與 B 的索引從 1 開始，C 的索引從 0 開始，k=5。\nA陣列的內容為 2,5,3,0,2,3,0,5,1,2,1,3,2,0,4\n全部執行完成後，求：\nB陣列的內容為何[__1__]\nC陣列 C[0..5] 的內容為何[__2__]\n每格依索引順序填入所有數值，以逗號分隔。",
     "options": [],
     "options_status": "not_applicable",
-    "correct_answer": "B：0,0,0,1,1,2,2,2,2,3,3,3,4,5,5\nC：0,3,5,9,12,13",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "（1）0,0,0,1,1,2,2,2,2,3,3,3,4,5,5\n（2）0,3,5,9,12,13",
+    "answer_note": "原始程式漏列鍵值 0 的初始化與累積範圍，此處已補正，行號與輸入資料維持原題。B 中尚未寫入的位置依題庫填答約定記為 0；這不代表程式會自動將 B 初始化為 0。\n\n輸入有 15 個元素，鍵值 0～5 的出現次數為 3,2,4,3,1,2；累積後 C=3,5,9,12,13,15。從 j=15 遞減至 1 完成穩定回填後，B 為遞增序列；最終 C[x] 等於小於 x 的輸入元素個數。此時 B=0,0,0,1,1,2,2,2,2,3,3,3,4,5,5，C=0,3,5,9,12,13。",
+    "reference_id": "L6-042",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 2 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-042"
     ],
-    "answer_note": "答案依來源「正確答案」保留。原偽碼從 C[1] 初始化，但輸入包含 0；應將 C[0] 也初始化為 0。來源將 B 尚未填入的位置顯示為 0。"
+    "previous_site_ids": [
+      2
+    ]
   },
   {
     "id": 3,
     "title": "",
     "type": "choice",
-    "question": "桶排序（Bucket Sort）假設輸入資料分布為？",
+    "question": "桶排序（Bucket Sort）假設輸入資料分佈為？",
     "options": [
       "A. 常態分佈",
       "B. 均勻分佈",
@@ -45,10 +55,15 @@
     ],
     "options_status": "complete",
     "correct_answer": "均勻分佈",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "課本 Bucket Sort 的平均線性時間分析，假設輸入值大致均勻分布在區間內；若集中某桶，桶內插入排序可能退化。",
+    "reference_id": "L6-043",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 3 題",
-      "第二次試煉_題目與選項_不含答案.txt 第 13 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-043"
+    ],
+    "previous_site_ids": [
+      3
     ]
   },
   {
@@ -64,25 +79,35 @@
     ],
     "options_status": "complete",
     "correct_answer": "快速排序",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "快速排序屬於比較排序，平均 O(n log n)，最壞 O(n²)；其他三種 Counting、Radix、Bucket 可以在特定假設下取得線性時間。",
+    "reference_id": "L6-044",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 4 題",
-      "第二次試煉_題目與選項_不含答案.txt 第 4 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-044"
+    ],
+    "previous_site_ids": [
+      4
     ]
   },
   {
     "id": 5,
     "title": "",
-    "type": "disputed",
-    "question": "給定課本版本的 COUNTING_SORT 演算法。\nCOUNTING_SORT(A, B, k)\n1  for i <- 1 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 2 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n題目：A 陣列的內容為 2, 5, 3, 0, 2, 3, 0, 5, 1, 2, 1, 3, 2, 0, 4。\n填空：\n(1) 做到第 9 行 j = 12 時 B 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）\n(2) C 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）",
+    "type": "fill_blank",
+    "question": "給定 COUNTING_SORT 演算法（計數陣列支援鍵值 0 的版本）。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 0 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 1 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n\nA 與 B 的索引從 1 開始，C 的索引從 0 開始，k=5。\nA陣列的內容為 2,5,3,0,2,3,0,5,1,2,1,3,2,0,4\n第 9 行 j=12 該輪開始時（尚未執行該輪第 10、11 行），求：\nB陣列的內容為何[__1__]\nC陣列 C[0..5] 的內容為何[__2__]\n每格依索引順序填入所有數值，以逗號分隔。",
     "options": [],
     "options_status": "not_applicable",
-    "correct_answer": "B：0,0,0,0,0,0,0,0,2,0,0,0,4,0,0\nC：2,5,8,12,12,15",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "（1）0,0,0,0,0,0,0,0,2,0,0,0,4,0,0\n（2）2,5,8,12,12,15",
+    "answer_note": "原始程式漏列鍵值 0 的初始化與累積範圍，此處已補正，行號與輸入資料維持原題。B 中尚未寫入的位置依題庫填答約定記為 0；這不代表程式會自動將 B 初始化為 0。\n\n輸入有 15 個元素，鍵值 0～5 的出現次數為 3,2,4,3,1,2；累積後 C=3,5,9,12,13,15。已處理 j=15 到 j=13，尚未處理 A[12]=3。此時 B=0,0,0,0,0,0,0,0,2,0,0,0,4,0,0，C=2,5,8,12,12,15。",
+    "reference_id": "L6-022",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 5 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-022"
     ],
-    "answer_note": "答案依來源「正確答案」保留。原偽碼從 C[1] 初始化，但輸入包含 0；應將 C[0] 也初始化為 0。來源將 B 尚未填入的位置顯示為 0。 此題來源標準答案與依第 9 行迴圈開始時的手算結果不符；先保留原答案供核對，未自行改寫。"
+    "previous_site_ids": [
+      5
+    ]
   },
   {
     "id": 6,
@@ -96,25 +121,35 @@
       "D. 分別對桶排序"
     ],
     "options_status": "complete",
-    "correct_answer": "分配至各桶\n分別對桶排序\n合併桶",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "合併桶\n分配至各桶\n分別對桶排序",
+    "answer_note": "課本 Bucket Sort 的順序是：將元素按照 ⌊nA[i]⌋ 分配至桶、用插入排序整理各桶，最後按桶號順序合併。隨機洗牌並不是標準步驟。",
+    "reference_id": "L6-045",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 6 題",
-      "第二次試煉_題目與選項_不含答案.txt 第 1 題（依答題詳情補回）"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-045"
+    ],
+    "previous_site_ids": [
+      6
     ]
   },
   {
     "id": 7,
     "title": "",
     "type": "fill_blank",
-    "question": "計數排序的時間複雜度為 _____\n格式要求：（請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 (big-theta, theta, big-omega, omega, O, o,)）",
+    "question": "計數排序的時間複雜度為 [__1__] (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
     "options": [],
     "options_status": "not_applicable",
     "correct_answer": "big-theta(n+k)",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "掃描 n 個輸入元素需 O(n)，建立／累加大小約 k 的計數陣列需 O(k)，最後寫入輸出再需 O(n)。總時間就是 Θ(n+k)，題目要求輸入 big-theta(n+k)。",
+    "reference_id": "L6-008",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 7 題",
-      "第二次試煉_題目與選項_不含答案.txt 第 19 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-008"
+    ],
+    "previous_site_ids": [
+      7
     ]
   },
   {
@@ -123,16 +158,22 @@
     "type": "choice",
     "question": "關於線性時間排序，下列何者正確？",
     "options": [
-      "A. 空間換取時間",
-      "B. 比比較排序永遠快",
-      "C. 需要額外假設",
-      "D. 不適用於任意物件"
+      "A. 不適用於任意物件",
+      "B. 需要額外假設",
+      "C. 空間換取時間",
+      "D. 比比較排序永遠快"
     ],
     "options_status": "complete",
     "correct_answer": "不適用於任意物件\n需要額外假設\n空間換取時間",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "Counting、Radix、Bucket Sort 可以避開比較排序的下界，是因為利用鍵值範圍、位數或分布等額外假設，且通常以額外陣列或桶換取時間。因此不能保證任意物件與分布都適用。",
+    "reference_id": "L6-032",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 8 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-032"
+    ],
+    "previous_site_ids": [
+      8
     ]
   },
   {
@@ -141,17 +182,22 @@
     "type": "choice",
     "question": "計數排序(Counting Sort)中，陣列 C 的作用是？",
     "options": [
-      "A. 儲存原始資料",
-      "B. 作為桶",
-      "C. 儲存指標",
-      "D. 儲存每個值的出現次數或累積計數"
+      "A. 儲存指標",
+      "B. 儲存每個鍵的出現次數或累積計數",
+      "C. 儲存原始資料",
+      "D. 作為樞紐"
     ],
     "options_status": "complete",
-    "correct_answer": "儲存每個值的出現次數或累積計數",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "儲存每個鍵的出現次數或累積計數",
+    "answer_note": "一開始 C[x] 計算數字 x 出現幾次；接著做累積加總後，C[x] 表示小於等於 x 的元素數量。將資料放入 B 陣列時，就可以用 C[x] 判斷寫入位置。",
+    "reference_id": "L6-014",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 9 題",
-      "第二次試煉_題目與選項_不含答案.txt 第 14 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-014"
+    ],
+    "previous_site_ids": [
+      9
     ]
   },
   {
@@ -160,16 +206,22 @@
     "type": "choice",
     "question": "基數排序(Radix Sort)可以使用哪種穩定排序作為子程序？",
     "options": [
-      "A. Insertion Sort",
-      "B. Quick Sort",
-      "C. Merge Sort",
-      "D. Counting Sort"
+      "A. Merge Sort",
+      "B. Counting Sort",
+      "C. Insertion Sort",
+      "D. Quick Sort"
     ],
     "options_status": "complete",
-    "correct_answer": "Counting Sort\nInsertion Sort\nMerge Sort",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "Merge Sort\nCounting Sort\nInsertion Sort",
+    "answer_note": "課本的 Radix Sort 要求每一輪都使用「穩定排序」：相同位數的元素，其原本相對先後不能變。Merge Sort（正確處理相等鍵值時）、Counting Sort 與 Insertion Sort 都可穩定；一般 Quick Sort 不保證穩定。",
+    "reference_id": "L6-010",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 10 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-010"
+    ],
+    "previous_site_ids": [
+      10
     ]
   },
   {
@@ -180,14 +232,20 @@
     "options": [
       "A. 桶排序的正確性",
       "B. 比較排序的極限",
-      "C. 堆積排序的正確性",
-      "D. 線性排序的極限"
+      "C. 線性排序的極限",
+      "D. 堆積排序的正確性"
     ],
     "options_status": "complete",
     "correct_answer": "比較排序的極限",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "決策樹是一種描述「每次比較如何分支」的模型，分析比較式排序需要區分多少種排列，推導最壞情況至少 Ω(n log n) 次比較。",
+    "reference_id": "L6-033",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 11 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-033"
+    ],
+    "previous_site_ids": [
+      11
     ]
   },
   {
@@ -202,52 +260,73 @@
       "D. 桶內部的排序演算法"
     ],
     "options_status": "complete",
-    "correct_answer": "輸入資料分佈\n桶的數量\n桶內部的排序演算法",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "桶的數量\n輸入資料分布\n桶內部的排序演算法",
+    "answer_note": "Bucket Sort 的效率取決於資料是否均勻分布、分成幾個桶，以及桶內採用哪種排序方法。即使元素數值很大，也不一定比較慢，關鍵在分配。",
+    "reference_id": "L6-046",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 12 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-046"
+    ],
+    "previous_site_ids": [
+      12
     ]
   },
   {
     "id": 13,
     "title": "",
     "type": "fill_blank",
-    "question": "給定課本版本的 RADIX_SORT 演算法。\nRADIX_SORT(A, d)\n1 for i <- 1 to d\n2   do use a stable sort to sort array A on digit i\n題目：A 陣列的內容為 4329, 4057, 6507, 2839, 6436, 7720, 8355。\n填空：當 i = 3 時 A 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）",
+    "question": "給定課本版本的RADIX_SORT 演算法。\n\nRADIX_SORT(A, d)\n1 for i <- 1 to d\n2   do use a stable sort to sort array A on digit i\n\nA陣列的內容為 4329,4057,6507,2839,6436,7720,8355 \n當 i = 3 時\nA陣列的內容為何[__1__]  （依序填入所有數值，以逗號分隔）",
     "options": [],
     "options_status": "not_applicable",
     "correct_answer": "4057,4329,8355,6436,6507,7720,2839",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "課本的 LSD Radix Sort 從個位數（i=1）開始，再依序處理十位數（i=2）、百位數（i=3）。每輪使用穩定排序，因此完成第三輪後，按最低三位數排序為 4057,4329,8355,6436,6507,7720,2839。輸入是四位數，第三輪尚未處理千位數，並不是整個排序的最後一輪。",
+    "reference_id": "L6-001",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 13 題",
-      "第二次試煉_題目與選項_不含答案.txt 第 5 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-001"
+    ],
+    "previous_site_ids": [
+      13
     ]
   },
   {
     "id": 14,
     "title": "",
     "type": "disputed",
-    "question": "給定課本版本的 COUNTING_SORT 演算法。\nCOUNTING_SORT(A, B, k)\n1  for i <- 1 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 2 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n題目：A 陣列的內容為 2, 5, 3, 0, 2, 3, 0, 3。\n填空：\n(1) 做到第 9 行的 j = 2 時 B 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）\n(2) C 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）",
+    "question": "給定 COUNTING_SORT 演算法（計數陣列支援鍵值 0 的版本）。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 0 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 1 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n\nA 與 B 的索引從 1 開始，C 的索引從 0 開始，k=5。\nA陣列的內容為 2,5,3,0,2,3,0,3\n第 9 行 j=2 該輪開始時（尚未執行該輪第 10、11 行），求：\nB陣列的內容為何[__1__]\nC陣列 C[0..5] 的內容為何[__2__]\n每格依索引順序填入所有數值，以逗號分隔。",
     "options": [],
     "options_status": "not_applicable",
-    "correct_answer": "B：0,0,2,3,3,3,3,0\nC：0,2,3,4,7,7",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "（1）0,0,2,3,3,3,3,0\n（2）0,2,3,4,7,7",
+    "answer_note": "來源答案與逐步執行結果不一致。保留來源答案供對照；依所列程式、j=2 該輪開始前推算，B=0,0,0,2,3,3,3,0，C=0,2,3,4,7,8。\n\n依原題庫答案：B=0,0,2,3,3,3,3,0；C=0,2,3,4,7,7。",
+    "reference_id": "L6-047",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 14 題",
-      "第二次試煉_題目與選項_不含答案.txt 第 3 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-047"
     ],
-    "answer_note": "答案依來源「正確答案」保留。原偽碼從 C[1] 初始化，但輸入包含 0；應將 C[0] 也初始化為 0。來源將 B 尚未填入的位置顯示為 0。 此題來源標準答案與依第 9 行迴圈開始時的手算結果不符；先保留原答案供核對，未自行改寫。"
+    "previous_site_ids": [
+      14
+    ]
   },
   {
     "id": 15,
     "title": "",
     "type": "fill_blank",
-    "question": "給定課本版本的 BUCKET_SORT 演算法。\nBUCKET_SORT(A)\n1  n <- length[A]\n2  for i <- 1 to n\n3    do insert A[i] into list B[floor(n * A[i])]\n4  for i <- 0 to n-1\n5    do sort list B[i] with insertion sort\n6  concatenate B[0], B[1], ..., B[n-1] together in order\n題目：A 陣列的內容為 0.78, 0.17, 0.39, 0.26, 0.72, 0.94, 0.21, 0.12, 0.23, 0.68。\n填空：第 2 行做到 i = 7 時 B 陣列的內容為何？即求 B[1]B[2]B[7] 的內容為何（格式範例：0.2,0.5,0.3,0.1,0.2,0.3,0.5,0.3）",
+    "question": "給定課本版本的BUCKET_SORT 演算法。\n\nBUCKET_SORT(A)\n1  n <- length[A]\n2  for i <- 1 to n\n3    do insert A[i] into\n         list B[⌊nA[i]⌋]\n4  for i <- 0 to n-1\n5    do sort list B[i] with insertion sort\n6  concatenate B[0], B[1], ..., B[n-1] together in order\n\n各桶初始為空，元素依輸入順序附加至桶尾。\nA陣列的內容為 0.78,0.17,0.39,0.26,0.72,0.94,0.21,0.12,0.23,0.68\n第2行做到 i=7，求下列桶的內容：\nB[1]：[__1__]\nB[2]：[__2__]\nB[7]：[__3__]\n每格內多個數值以逗號分隔。",
     "options": [],
     "options_status": "not_applicable",
-    "correct_answer": "B[1]：0.17\nB[2]：0.26,0.21\nB[7]：0.78,0.72",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "（1）0.17\n（2）0.26,0.21\n（3）0.78,0.72",
+    "answer_note": "第 2 行的檢查點依題庫約定，表示已插入第 i 筆資料，尚未進行桶內排序。各桶依輸入順序附加元素；空格依題目列出的桶號填寫。\n\n前七個輸入值為 0.78,0.17,0.39,0.26,0.72,0.94,0.21。依 ⌊10A[i]⌋ 分桶，B[1]=0.17，B[2]=0.26,0.21，B[7]=0.78,0.72。第 2 行的 i=7 檢查點依本題約定，表示已插入第 7 筆資料，但尚未開始桶內排序。",
+    "reference_id": "L6-005",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 15 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-005"
+    ],
+    "previous_site_ids": [
+      15
     ]
   },
   {
@@ -263,9 +342,15 @@
     ],
     "options_status": "complete",
     "correct_answer": "穩定排序",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "課本的 LSD Radix Sort 依序處理個位、十位、百位等。每一輪必須穩定，才能在高位相同時保留先前已排序的低位相對次序。",
+    "reference_id": "L6-048",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 16 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-048"
+    ],
+    "previous_site_ids": [
+      16
     ]
   },
   {
@@ -280,11 +365,16 @@
       "D. 皆需穩定排序子程序"
     ],
     "options_status": "complete",
-    "correct_answer": "皆非比較排序\n皆可達成線性時間",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "皆可達成線性時間\n皆非比較排序",
+    "answer_note": "B、C 正確。計數排序與基數排序都利用鍵值結構，並非只靠鍵值兩兩比較來決定次序。計數排序在 k=O(n) 時為 Θ(n)；基數排序還需位數／輪數與每輪鍵值範圍等條件受控。D 不對：基數排序會呼叫穩定子排序，計數排序本身則不必再呼叫另一個穩定排序子程序。",
+    "reference_id": "L6-049",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 17 題",
-      "第二次試煉_題目與選項_不含答案.txt 第 20 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-049"
+    ],
+    "previous_site_ids": [
+      17
     ]
   },
   {
@@ -295,15 +385,20 @@
     "options": [
       "A. 基數排序",
       "B. 快速排序",
-      "C. 計數排序",
-      "D. 插入排序"
+      "C. 插入排序",
+      "D. 計數排序"
     ],
     "options_status": "complete",
     "correct_answer": "插入排序",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "課本 BUCKET_SORT 第 5 行明確寫出「sort list B[i] with insertion sort」，代表每個桶內使用插入排序。分布大致均勻時，每個桶的元素數量通常很少，用插入排序成本低。",
+    "reference_id": "L6-013",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 18 題",
-      "第二次試煉_題目與選項_不含答案.txt 第 11 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-013"
+    ],
+    "previous_site_ids": [
+      18
     ]
   },
   {
@@ -319,42 +414,58 @@
     ],
     "options_status": "complete",
     "correct_answer": "比較排序",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "決策樹模型把比較排序的流程表示成樹狀的比較與分支；由至少 n! 個葉節點可導出 Ω(n log n) 的比較次數下界。",
+    "reference_id": "L6-038",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 19 題",
-      "第二次試煉_題目與選項_不含答案.txt 第 8 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-038"
+    ],
+    "previous_site_ids": [
+      19
     ]
   },
   {
     "id": 20,
     "title": "",
     "type": "choice",
-    "question": "桶排序(Bucket Sort)中，若資料均勻分布，預期時間複雜度為？",
+    "question": "桶排序(Bucket Sort)中，若資料均勻分佈，預期時間複雜度為？",
     "options": [
-      "A. Θ(n^2)",
+      "A. Θ(n)",
       "B. Θ(log n)",
-      "C. Θ(n)",
-      "D. Θ(n log n)"
+      "C. Θ(n log n)",
+      "D. Θ(n^2)"
     ],
     "options_status": "complete",
     "correct_answer": "Θ(n)",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "假設 n 個值近似均勻分散到 n 個桶，每桶平均只有少量元素，所有桶的插入排序期望總成本是 Θ(n)，加上分配與合併工作也是 Θ(n)。",
+    "reference_id": "L6-041",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 20 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-041"
+    ],
+    "previous_site_ids": [
+      20
     ]
   },
   {
     "id": 21,
     "title": "",
     "type": "fill_blank",
-    "question": "給定課本版本的 RADIX_SORT 演算法。\nRADIX_SORT(A, d)\n1 for i <- 1 to d\n2   do use a stable sort to sort array A on digit i\n題目：A 陣列的內容為 329, 457, 657, 839, 436, 720, 355。\n填空：當 i = 2 時 A 陣列的內容為何（格式範例：2,5,3,0,2,3,0,3）",
+    "question": "給定課本版本的RADIX_SORT 演算法。\n\nRADIX_SORT(A, d)\n1 for i <- 1 to d\n2   do use a stable sort to sort array A on digit i\n\nA陣列的內容為 329,457,657,839,436,720,355 \n當 i = 2 時\nA陣列的內容為何[__1__]  （依序填入所有數值，以逗號分隔）",
     "options": [],
     "options_status": "not_applicable",
     "correct_answer": "720,329,436,839,355,457,657",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "先按個位數做穩定排序，再按十位數排序。720 與 329 的十位數同為 2，必須保留上一輪 720 在 329 前的次序。第二輪的結果為 720,329,436,839,355,457,657；此時尚未排序百位數。",
+    "reference_id": "L6-002",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "演算法Unit4_21題_完整題目與選項.txt 第 21 題",
-      "第二次試煉_題目與選項_不含答案.txt 第 9 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-002"
+    ],
+    "previous_site_ids": [
+      21
     ]
   },
   {
@@ -370,69 +481,97 @@
     ],
     "options_status": "complete",
     "correct_answer": "n!",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "題目使用「等於」，單選依課本答案選 n!；一般決策樹更精確的說法是至少 n! 個葉節點。若保留多餘或不可達分支，不能直接斷言葉節點總數恰好等於 n!。\n\n比較排序的決策樹必須區分 n 個互異元素的 n! 種排列。題目選項只有 n! 符合課本概念；更精確說法是至少需要 n! 個葉節點。",
+    "reference_id": "L6-057",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "第二次試煉_題目與選項_不含答案.txt 第 2 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-057"
+    ],
+    "previous_site_ids": [
+      22
     ]
   },
   {
     "id": 23,
     "title": "",
     "type": "choice",
-    "question": "基數排序（Radix Sort）的優點有？",
+    "question": "基數排序(Radix Sort)的優點有？",
     "options": [
       "A. 可擴展性強",
       "B. 靈活處理多維資料",
-      "C. 時間複雜度隨輸入長度線性增加",
-      "D. 穩定"
+      "C. 穩定",
+      "D. 時間複雜度隨輸入長度線性增加"
     ],
     "options_status": "complete",
-    "correct_answer": "靈活處理多維資料\n穩定\n可擴展性強\n時間複雜度隨輸入長度線性增加",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "可擴展性強\n靈活處理多維資料\n穩定\n時間複雜度隨輸入長度線性增加",
+    "answer_note": "依提供題庫答案選 A、B、C、D。基數排序可將鍵值拆為位數或多個欄位，按低優先序欄位到高優先序欄位依序做穩定排序，因此能處理多欄位鍵值。C 的穩定性以每輪子排序穩定為前提；D 的線性成長需位數與每輪基數等參數固定或受控，並非任意長度鍵值都保證 Θ(n)。",
+    "reference_id": "L6-050",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "第二次試煉_題目與選項_不含答案.txt 第 6 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-050"
+    ],
+    "previous_site_ids": [
+      23
     ]
   },
   {
     "id": 24,
     "title": "",
     "type": "fill_blank",
-    "question": "給定課本版本的 COUNTING_SORT 演算法。\nCOUNTING_SORT(A, B, k)\n1  for i <- 1 to k\n2    do c[i] <- 0\n3  for j <- 1 to length[A]\n4    do c[A[j]] <- c[A[j]] + 1\n5  > c[i] now contains the number of elements equal to i\n6  for i <- 2 to k\n7    do c[i] <- c[i] + c[i-1]\n8  > c[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[c[A[j]]] <- A[j]\n11      c[A[j]] <- c[A[j]] - 1\nA 陣列的內容為 2,5,3,0,2,3,0,5,1,2,1,3,2,0,4。\n做到第 9 行前，B 陣列的內容為何？\n填空 (1)：________________\n格式：2,5,3,0,2,3,0,3\nC 陣列的內容為何？\n填空 (2)：________________\n格式：2,5,3,0,2,3,0,3",
+    "question": "給定 COUNTING_SORT 演算法（計數陣列支援鍵值 0 的版本）。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 0 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 1 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n\nA 與 B 的索引從 1 開始，C 的索引從 0 開始，k=5。\nA陣列的內容為 2,5,3,0,2,3,0,5,1,2,1,3,2,0,4\n第 9 行迴圈開始前（尚未進行任何回填），求：\nB陣列的內容為何[__1__]\nC陣列 C[0..5] 的內容為何[__2__]\n每格依索引順序填入所有數值，以逗號分隔。",
     "options": [],
     "options_status": "not_applicable",
-    "correct_answer": "B：0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\nC：3,5,9,12,13,15",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "（1）0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\n（2）3,5,9,12,13,15",
+    "answer_note": "原始程式漏列鍵值 0 的初始化與累積範圍，此處已補正，行號與輸入資料維持原題。B 中尚未寫入的位置依題庫填答約定記為 0；這不代表程式會自動將 B 初始化為 0。\n\n輸入有 15 個元素，鍵值 0～5 的出現次數為 3,2,4,3,1,2；累積後 C=3,5,9,12,13,15。尚未開始回填，所以 B 的所有位置依題庫填答約定以 0 表示。此時 B=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0，C=3,5,9,12,13,15。",
+    "reference_id": "L6-021",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "第二次試煉_題目與選項_不含答案.txt 第 7 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-021"
     ],
-    "answer_note": "答案依來源「正確答案」保留。原偽碼從 C[1] 初始化，但輸入包含 0；應將 C[0] 也初始化為 0。來源將 B 尚未填入的位置顯示為 0。"
+    "previous_site_ids": [
+      24
+    ]
   },
   {
     "id": 25,
     "title": "",
     "type": "fill_blank",
-    "question": "給定課本版本的 BUCKET_SORT 演算法。\nBUCKET_SORT(A)\n1  n <- length[A]\n2  for i <- 1 to n\n3    do insert A[i] into list B[⌊nA[i]⌋]\n4  for i <- 0 to n-1\n5    do sort list B[i] with insertion sort\n6  concatenate B[0], B[1], ..., B[n-1] together in order\nA 陣列的內容為 0.78,0.17,0.39,0.26,0.72,0.94,0.21,0.12,0.23,0.68。\n第 4 行做到 i = 5，B 陣列的內容如何？B[1]、B[2]、B[6] 的內容為何？\n填空 B[1]：________________\n填空 B[2]：________________\n填空 B[6]：________________\n格式：0.2,0.5,0.3,0.1,0.2,0.3,0.5,0.3",
+    "question": "給定課本版本的BUCKET_SORT 演算法。\n\nBUCKET_SORT(A)\n1  n <- length[A]\n2  for i <- 1 to n\n3    do insert A[i] into\n         list B[⌊nA[i]⌋]\n4  for i <- 0 to n-1\n5    do sort list B[i] with insertion sort\n6  concatenate B[0], B[1], ..., B[n-1] together in order\n\n各桶初始為空，元素依輸入順序附加至桶尾。\nA陣列的內容為 0.78,0.17,0.39,0.26,0.72,0.94,0.21,0.12,0.23,0.68\n第4行做到 i=5，求下列桶的內容：\nB[1]：[__1__]\nB[2]：[__2__]\nB[6]：[__3__]\n每格內多個數值以逗號分隔。",
     "options": [],
     "options_status": "not_applicable",
-    "correct_answer": "B[1]：0.12,0.17\nB[2]：0.21,0.23,0.26\nB[6]：0.68",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "（1）0.12,0.17\n（2）0.21,0.23,0.26\n（3）0.68",
+    "answer_note": "第 4 行 i=5 表示準備開始該輪，尚未排序 B[5]。各桶依輸入順序附加元素；空格依題目列出的桶號填寫。\n\n所有 10 筆資料已完成分桶。第 4 行 i=5 代表已排序 B[0]～B[4]，尚未處理 B[5]。因此 B[1]=0.12,0.17，B[2]=0.21,0.23,0.26；B[6] 尚未輪到，但只有一個元素 0.68，所以答案不受排序影響。",
+    "reference_id": "L6-058",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "第二次試煉_題目與選項_不含答案.txt 第 10 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-058"
+    ],
+    "previous_site_ids": [
+      25
     ]
   },
   {
     "id": 26,
     "title": "",
-    "type": "disputed",
-    "question": "給定課本版本的 COUNTING_SORT 演算法。\nCOUNTING_SORT(A, B, k)\n1  for i <- 1 to k\n2    do c[i] <- 0\n3  for j <- 1 to length[A]\n4    do c[A[j]] <- c[A[j]] + 1\n5  > c[i] now contains the number of elements equal to i\n6  for i <- 2 to k\n7    do c[i] <- c[i] + c[i-1]\n8  > c[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[c[A[j]]] <- A[j]\n11      c[A[j]] <- c[A[j]] - 1\nA 陣列的內容為 2,5,3,0,2,3,0,5,1,2,1,3,2,0,4。\n做到第 9 行 j = 4，B 陣列的內容為何？\n填空 (1)：________________\n格式：2,5,3,0,2,3,0,3\nC 陣列的內容為何？\n填空 (2)：________________\n格式：2,5,3,0,2,3,0,3",
+    "type": "fill_blank",
+    "question": "給定 COUNTING_SORT 演算法（計數陣列支援鍵值 0 的版本）。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 0 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 1 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n\nA 與 B 的索引從 1 開始，C 的索引從 0 開始，k=5。\nA陣列的內容為 2,5,3,0,2,3,0,5,1,2,1,3,2,0,4\n第 9 行 j=4 該輪開始時（尚未執行該輪第 10、11 行），求：\nB陣列的內容為何[__1__]\nC陣列 C[0..5] 的內容為何[__2__]\n每格依索引順序填入所有數值，以逗號分隔。",
     "options": [],
     "options_status": "not_applicable",
-    "correct_answer": "B：0,0,0,1,1,0,2,2,2,0,3,3,4,0,5\nC：1,3,6,10,12,14",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "（1）0,0,0,1,1,0,2,2,2,0,3,3,4,0,5\n（2）1,3,6,10,12,14",
+    "answer_note": "原始程式漏列鍵值 0 的初始化與累積範圍，此處已補正，行號與輸入資料維持原題。B 中尚未寫入的位置依題庫填答約定記為 0；這不代表程式會自動將 B 初始化為 0。\n\n輸入有 15 個元素，鍵值 0～5 的出現次數為 3,2,4,3,1,2；累積後 C=3,5,9,12,13,15。已處理 j=15 到 j=5，尚未處理 A[4]=0。此時 B=0,0,0,1,1,0,2,2,2,0,3,3,4,0,5，C=1,3,6,10,12,14。",
+    "reference_id": "L6-052",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "第二次試煉_題目與選項_不含答案.txt 第 12 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-052"
     ],
-    "answer_note": "答案依來源「正確答案」保留。原偽碼從 C[1] 初始化，但輸入包含 0；應將 C[0] 也初始化為 0。來源將 B 尚未填入的位置顯示為 0。 此題來源標準答案與依第 9 行迴圈開始時的手算結果不符；先保留原答案供核對，未自行改寫。"
+    "previous_site_ids": [
+      26
+    ]
   },
   {
     "id": 27,
@@ -440,34 +579,46 @@
     "type": "choice",
     "question": "下列關於排序演算法複雜度的敘述，正確的有？",
     "options": [
-      "A. 比較排序下界 Ω(n log n)",
-      "B. 桶排序平均情況為 Θ(n)",
-      "C. 計數排序可以做到 Θ(n+k)",
-      "D. 所有排序都能做到 O(n)"
+      "A. 計數排序可以做到 Θ(n+k)",
+      "B. 比較排序下界 Ω(n log n)",
+      "C. 所有排序都能做到 O(n)",
+      "D. 桶排序平均情況為 Θ(n)"
     ],
     "options_status": "complete",
-    "correct_answer": "比較排序下界 Ω(n log n)\n計數排序可以做到 Θ(n+k)\n桶排序平均情況為 Θ(n)",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "計數排序可以做到 Θ(n+k)\n比較排序下界 Ω(n log n)\n桶排序平均情況為 Θ(n)",
+    "answer_note": "計數排序的時間複雜度為 Θ(n+k)，其中 k 是值域大小。對 n 個互異元素進行比較排序，最壞情況的比較次數下界為 Ω(n log n)。桶排序在資料獨立且均勻分布、桶數與 n 同階等標準假設下，期望時間為 Θ(n)；缺少這些條件時不能保證線性效能。因此 A、B、D 正確，C「所有排序都能做到 O(n)」不成立。",
+    "reference_id": "L6-029",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "第二次試煉_題目與選項_不含答案.txt 第 16 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-029"
+    ],
+    "previous_site_ids": [
+      27
     ]
   },
   {
     "id": 28,
     "title": "",
     "type": "choice",
-    "question": "桶排序（Bucket Sort）適合處理？",
+    "question": "桶排序(Bucket Sort)適合處理？",
     "options": [
-      "A. 區間範圍明確數據",
-      "B. 完全雜亂無序數據",
-      "C. 均勻分佈數據",
-      "D. 需要線性效能數據"
+      "A. 需要線性效能數據",
+      "B. 均勻分佈數據",
+      "C. 完全雜亂無序數據",
+      "D. 區間範圍明確數據"
     ],
     "options_status": "complete",
-    "correct_answer": "均勻分佈數據\n區間範圍明確數據\n需要線性效能數據",
-    "answer_basis": "provided_quiz_correct_answer",
+    "correct_answer": "需要線性效能數據\n均勻分佈數據\n區間範圍明確數據",
+    "answer_note": "此題官方答案是 A、B、D：在資料大致均勻分布、值域區間容易劃分時，桶排序能取得理想的期望線性效能，因而適合有線性效率需求的情境。注意「需要線性效能」本身不是保證 O(n) 的充分條件，仍需分布假設。",
+    "reference_id": "L6-018",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "第二次試煉_題目與選項_不含答案.txt 第 17 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-018"
+    ],
+    "previous_site_ids": [
+      28
     ]
   },
   {
@@ -476,34 +627,889 @@
     "type": "choice",
     "question": "基數排序（Radix Sort）通常用於排序什麼類型的資料？",
     "options": [
-      "A. 指標",
-      "B. 單一整數",
-      "C. 多位數鍵值",
-      "D. 無序節點"
+      "A. 單一整數",
+      "B. 指標",
+      "C. 無序節點",
+      "D. 多位數鍵值"
     ],
     "options_status": "complete",
     "correct_answer": "多位數鍵值",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "Radix Sort 適合鍵值能分成多個位數／字元區段的資料，例如多位整數、固定長度編碼等。它不是只比較整個鍵值，而是逐個位數穩定排序。",
+    "reference_id": "L6-007",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "第二次試煉_題目與選項_不含答案.txt 第 18 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-007"
+    ],
+    "previous_site_ids": [
+      29
     ]
   },
   {
     "id": 30,
     "title": "",
     "type": "choice",
-    "question": "當 k = O(n) 時，計數排序（Counting Sort）的時間複雜度為？",
+    "question": "當 k = O(n) 時，計數排序(Counting Sort)的時間複雜度為？",
     "options": [
-      "A. Θ(n)",
-      "B. Θ(log n)",
-      "C. Θ(n log n)",
-      "D. Θ(n²)"
+      "A. Θ(n^2)",
+      "B. Θ(n log n)",
+      "C. Θ(n)",
+      "D. Θ(log n)"
     ],
     "options_status": "complete",
     "correct_answer": "Θ(n)",
-    "answer_basis": "provided_quiz_correct_answer",
+    "answer_note": "Counting Sort 的時間成本為 Θ(n+k)，分別來自走訪輸入資料和處理鍵值範圍。當 k=O(n)，便得到 Θ(n+k)=Θ(n)。",
+    "reference_id": "L6-054",
+    "answer_basis": "reference_question_bank",
     "sources": [
-      "第二次試煉_題目與選項_不含答案.txt 第 21 題"
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-054"
+    ],
+    "previous_site_ids": [
+      30
+    ]
+  },
+  {
+    "id": 31,
+    "title": "",
+    "type": "choice",
+    "question": "基數排序(Radix Sort)中，變數 r 的含義通常為？",
+    "options": [
+      "A. 維位數",
+      "B. 處理的位數區段長度",
+      "C. 比較次數",
+      "D. 桶的數量"
+    ],
+    "options_status": "complete",
+    "correct_answer": "處理的位數區段長度",
+    "answer_note": "把 b-bit 數字每次切成 r-bit 的區段排序，所以 r 代表每輪處理的位元數／區段長度。若每輪處理 r bits，可能需要的桶（鍵值）範圍為 2^r。",
+    "reference_id": "L6-020",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-020"
+    ],
+    "previous_site_ids": [
+      1000000163
+    ]
+  },
+  {
+    "id": 32,
+    "title": "",
+    "type": "choice",
+    "question": "基數排序(Radix Sort)是從哪一位開始排序？",
+    "options": [
+      "A. 隨機位",
+      "B. 最高有效位 (MSD)",
+      "C. 最低有效位 (LSD)",
+      "D. 中間位"
+    ],
+    "options_status": "complete",
+    "correct_answer": "最低有效位 (LSD)",
+    "answer_note": "題目的課本版本屬於 LSD Radix Sort：先排序最低有效位（例如個位數），再排序十位數、百位數，並在每一輪維持穩定性。其他 Radix Sort 變體可以採 MSD，但本題所指版本從 LSD 開始。",
+    "reference_id": "L6-025",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-025"
+    ],
+    "previous_site_ids": [
+      1000000169
+    ]
+  },
+  {
+    "id": 33,
+    "title": "",
+    "type": "choice",
+    "question": "基數排序(Radix Sort)在處理 b-bit 數字時，時間複雜度為？",
+    "options": [
+      "A. O(n)",
+      "B. O(n log n)",
+      "C. Θ((b/r)(n + 2^r))",
+      "D. O(n²)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Θ((b/r)(n + 2^r))",
+    "answer_note": "每輪以穩定計數排序處理 r 個位元，鍵值範圍為 2^r，每輪時間 Θ(n+2^r)。共需 ⌈b/r⌉ 輪，所以一般形式為 Θ(⌈b/r⌉(n+2^r))；在課本 1≤r≤b 的設定下，與選項 C 的 Θ((b/r)(n+2^r)) 同階。",
+    "reference_id": "L6-059",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-059"
+    ],
+    "previous_site_ids": [
+      1000000165
+    ]
+  },
+  {
+    "id": 34,
+    "title": "",
+    "type": "choice",
+    "question": "基數排序(Radix Sort)處理 b-bit 數字時，r 的選擇會影響？",
+    "options": [
+      "A. 透視深度",
+      "B. 資料穩定性",
+      "C. 執行時間",
+      "D. 空間消耗"
+    ],
+    "options_status": "complete",
+    "correct_answer": "執行時間\n空間消耗",
+    "answer_note": "每輪處理 r 個位元，需要大約 ⌈b/r⌉ 輪。r 越大，輪數可能越少，但每輪計數排序需要處理的鍵值範圍 2^r 會變大，所以執行時間與額外空間都會受影響。穩定性是每一輪所用子排序方法的要求，不是 r 本身決定。",
+    "reference_id": "L6-004",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-004"
+    ],
+    "previous_site_ids": [
+      1000000164
+    ]
+  },
+  {
+    "id": 35,
+    "title": "",
+    "type": "fill_blank",
+    "question": "基數排序從 [__1__] 有效位開始排序 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "least",
+    "answer_note": "課本版本從最小有效位開始（Least Significant Digit）。這道題空格後面已經印好「有效位」，因此只填 least，不能填整句 least significant digit。",
+    "reference_id": "L6-036",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-036"
+    ],
+    "previous_site_ids": [
+      1000000170
+    ]
+  },
+  {
+    "id": 36,
+    "title": "",
+    "type": "choice",
+    "question": "桶排序(Bucket Sort)中，如果桶內的資料傾斜嚴重（Unbalanced），會導致？",
+    "options": [
+      "A. 效能下降至 O(n^2)",
+      "B. 排序結果錯誤",
+      "C. 時間複雜度依然為 O(n)",
+      "D. 無法進行合併"
+    ],
+    "options_status": "complete",
+    "correct_answer": "效能下降至 O(n^2)",
+    "answer_note": "Bucket Sort 的線性期望時間仰賴值大致平均分散到各桶；若分布嚴重傾斜，可能讓大量元素集中於同一桶。桶內使用 Insertion Sort 時，最壞情況需要 O(n²)。",
+    "reference_id": "L6-051",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-051"
+    ],
+    "previous_site_ids": [
+      1000000151
+    ]
+  },
+  {
+    "id": 37,
+    "title": "",
+    "type": "fill_blank",
+    "question": "桶排序中，若桶內元素過多，複雜度會退化為 [__1__] (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "O(n^2)",
+    "answer_note": "Bucket Sort 每個桶通常使用 Insertion Sort。若大量元素集中同一桶，該桶的插入排序最壞需 O(n²) 時間；官方填答形式為 O(n^2)。",
+    "reference_id": "L6-027",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-027"
+    ],
+    "previous_site_ids": [
+      1000000151
+    ]
+  },
+  {
+    "id": 38,
+    "title": "",
+    "type": "fill_blank",
+    "question": "給定課本版本的BUCKET_SORT 演算法。\n\nBUCKET_SORT(A)\n1  n <- length[A]\n2  for i <- 1 to n\n3    do insert A[i] into\n         list B[⌊nA[i]⌋]\n4  for i <- 0 to n-1\n5    do sort list B[i] with insertion sort\n6  concatenate B[0], B[1], ..., B[n-1] together in order\n\n各桶初始為空，元素依輸入順序附加至桶尾。\nA陣列的內容為 0.78,0.17,0.39,0.26,0.72,0.94,0.21,0.12,0.23,0.68\n第2行做到 i=5，求下列桶的內容：\nB[1]：[__1__]\nB[2]：[__2__]\nB[7]：[__3__]\n每格內多個數值以逗號分隔。",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "（1）0.17\n（2）0.26\n（3）0.78,0.72",
+    "answer_note": "第 2 行的檢查點依題庫約定，表示已插入第 i 筆資料，尚未進行桶內排序。各桶依輸入順序附加元素；空格依題目列出的桶號填寫。\n\n共有 10 個元素，所以放入的桶號為 ⌊10×A[i]⌋。處理前五個數：0.78→B[7]、0.17→B[1]、0.39→B[3]、0.26→B[2]、0.72→B[7]。還沒有進行第 5 行的桶內排序，B[7] 保持先加入的 0.78 在前。",
+    "reference_id": "L6-003",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-003"
+    ],
+    "previous_site_ids": [
+      1000000146
+    ]
+  },
+  {
+    "id": 39,
+    "title": "",
+    "type": "fill_blank",
+    "question": "給定課本版本的BUCKET_SORT 演算法。\n\nBUCKET_SORT(A)\n1  n <- length[A]\n2  for i <- 1 to n\n3    do insert A[i] into\n         list B[⌊nA[i]⌋]\n4  for i <- 0 to n-1\n5    do sort list B[i] with insertion sort\n6  concatenate B[0], B[1], ..., B[n-1] together in order\n\n各桶初始為空，元素依輸入順序附加至桶尾。\nA陣列的內容為 0.78,0.17,0.39,0.26,0.72,0.94,0.21,0.12,0.23,0.68\n第4行做到 i=7，求下列桶的內容：\nB[1]：[__1__]\nB[2]：[__2__]\nB[7]：[__3__]\n每格內多個數值以逗號分隔。",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "（1）0.12,0.17\n（2）0.21,0.23,0.26\n（3）0.78,0.72",
+    "answer_note": "第 4 行 i=7 表示準備開始該輪，尚未排序 B[7]。各桶依輸入順序附加元素；空格依題目列出的桶號填寫。\n\n先把全部 10 筆資料放入桶，再由 B[0] 起逐桶排序。第 4 行 i=7 代表準備處理 B[7]，尚未執行該桶的第 5 行：B[1] 與 B[2] 已排序為 0.12,0.17 和 0.21,0.23,0.26；B[7] 仍是入桶順序 0.78,0.72。",
+    "reference_id": "L6-035",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-035"
+    ],
+    "previous_site_ids": [
+      1000000149
+    ]
+  },
+  {
+    "id": 40,
+    "title": "",
+    "type": "choice",
+    "question": "決策樹的高度下界為？",
+    "options": [
+      "A. Ω(n^2)",
+      "B. Ω(n log n)",
+      "C. Ω(n)",
+      "D. Ω(log n)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Ω(n log n)",
+    "answer_note": "本題比較的是 n 個互異元素的比較排序決策樹，選擇最緊的漸近下界。Ω(n) 與 Ω(log n) 雖然也是較弱的下界，題庫單選答案採 Ω(n log n)。\n\n對 n 個互異元素，任何比較排序必須區分至少 n! 種排列。高度 h 的二元決策樹最多有 2^h 個葉節點，所以 2^h ≥ n!，得 h ≥ log₂(n!) = Ω(n log n)。",
+    "reference_id": "L6-012",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-012"
+    ],
+    "previous_site_ids": [
+      1000000134
+    ]
+  },
+  {
+    "id": 41,
+    "title": "",
+    "type": "choice",
+    "question": "任何基於比較的排序(comparison-based sorting)演算法，其最差時間複雜度下界為？",
+    "options": [
+      "A. Ω(n^2)",
+      "B. O(log n)",
+      "C. Ω(n log n)",
+      "D. O(n)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Ω(n log n)",
+    "answer_note": "任何基於比較的排序都受到決策樹下界 Ω(n log n) 的限制。這是最壞情況比較次數的下界，並不是說所有演算法的最佳情況都這麼慢。",
+    "reference_id": "L6-039",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-039"
+    ],
+    "previous_site_ids": [
+      1000000131
+    ]
+  },
+  {
+    "id": 42,
+    "title": "",
+    "type": "choice",
+    "question": "決策樹中的每一個葉節點代表？",
+    "options": [
+      "A. 一個桶",
+      "B. 一種可能的排序排列",
+      "C. 一個輸入元素",
+      "D. 一個比較操作"
+    ],
+    "options_status": "complete",
+    "correct_answer": "一種可能的排序排列",
+    "answer_note": "內部節點代表一次比較，分支代表比較結果。走到某個葉節點時，演算法已確定輸入元素之間的大小次序，對應原始元素編號的一種排序排列；不是指把同一組數值排序後會得到多種不同的遞增數列。n 個互異元素可能有 n! 種輸入次序，因此至少需要 n! 個可達葉節點。",
+    "reference_id": "L6-053",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-053"
+    ],
+    "previous_site_ids": [
+      1000000138
+    ]
+  },
+  {
+    "id": 43,
+    "title": "",
+    "type": "disputed",
+    "question": "下列哪種排序演算法是「穩定」的（Stable）？",
+    "options": [
+      "A. 計數排序",
+      "B. 桶排序（若使用穩定排序作為子程序）",
+      "C. 快速排序",
+      "D. 堆積排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "計數排序",
+    "answer_note": "單選來源答案為計數排序，但桶排序在保序分桶與穩定桶內排序的條件下也可穩定，選項存在歧義。\n\n本題依提供的單選答案選 A。B 在分桶時也維持同鍵值元素相對順序的條件下同樣可以穩定，因此選項有歧義。\n\n提供的測驗答案為單選 A。標準計數排序依輸入由後往前回填，可維持同鍵值元素的相對順序。桶排序若分桶時保序、桶內採穩定排序，也可以穩定；快速排序與堆積排序的標準版本通常不穩定。",
+    "reference_id": "L6-061",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-061"
+    ],
+    "previous_site_ids": [
+      1000000123
+    ]
+  },
+  {
+    "id": 44,
+    "title": "",
+    "type": "choice",
+    "question": "線性時間排序演算法的共通限制包括？",
+    "options": [
+      "A. 不使用比較模型",
+      "B. 空間消耗可能較大",
+      "C. 無法處理負數",
+      "D. 通常有特定的輸入假設"
+    ],
+    "options_status": "complete",
+    "correct_answer": "不使用比較模型\n空間消耗可能較大\n通常有特定的輸入假設",
+    "answer_note": "A、B、D 正確。這些排序利用值域、位數或資料分布等額外資訊，突破「僅以元素兩兩比較決定次序」模型的 Ω(n log n) 下界，通常也需要額外陣列或桶。A 並不表示程式中完全沒有比較：桶內仍可使用插入排序。負數也能透過位移或適當編碼處理，因此 C 不是共通限制。",
+    "reference_id": "L6-006",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-006"
+    ],
+    "previous_site_ids": [
+      1000000125
+    ]
+  },
+  {
+    "id": 45,
+    "title": "",
+    "type": "choice",
+    "question": "線性時間排序演算法包含？",
+    "options": [
+      "A. Bucket Sort",
+      "B. Heapsort",
+      "C. Radix Sort",
+      "D. Counting Sort"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Bucket Sort\nRadix Sort\nCounting Sort",
+    "answer_note": "Counting Sort 可達 Θ(n+k)、Radix Sort 在位數與每輪成本受控時可接近線性、Bucket Sort 在適當分布假設下期望為線性。Heapsort 是 O(n log n) 的比較排序。",
+    "reference_id": "L6-011",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-011"
+    ],
+    "previous_site_ids": [
+      1000000127
+    ]
+  },
+  {
+    "id": 46,
+    "title": "",
+    "type": "choice",
+    "question": "決策樹模型可以用來證明下列哪些演算法的最優性？",
+    "options": [
+      "A. Heap Sort",
+      "B. Counting Sort",
+      "C. Insertion Sort",
+      "D. Merge Sort"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Heap Sort\nMerge Sort",
+    "answer_note": "決策樹證明比較排序最壞情況下界 Ω(n log n)；Heap Sort 和 Merge Sort 的最壞情況時間為 Θ(n log n)，因此在比較排序模型中達到漸近最優。",
+    "reference_id": "L6-056",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-056"
+    ],
+    "previous_site_ids": [
+      1000000132
+    ]
+  },
+  {
+    "id": 47,
+    "title": "",
+    "type": "fill_blank",
+    "question": "決策樹模型證明了任何比較排序在最壞情況下至少需要 [__1__] 比較次數 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "big-omega(nlogn)",
+    "answer_note": "有 n 個互異元素就有 n! 種可能排列；決策樹的葉節點至少 n! 個，因此高度至少 log₂(n!)，等價於 Ω(n log n)。本題系統要求精確輸入 big-omega(nlogn)。",
+    "reference_id": "L6-034",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-034"
+    ],
+    "previous_site_ids": [
+      1000000133
+    ]
+  },
+  {
+    "id": 48,
+    "title": "",
+    "type": "fill_blank",
+    "question": "比較排序的時間複雜度下界為 [__1__] (請用英文回答，請用log，不可用lg，上標用^)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "big-omega(nlogn)",
+    "answer_note": "此處指一般比較排序的最壞情況下界。\n\n對 n 個互異元素進行比較排序，決策樹至少要區分 n! 種排列，最壞情況比較次數至少為 log₂(n!)=Ω(n log n)。依本題要求，填入 big-omega(nlogn)。",
+    "reference_id": "L6-060",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-060"
+    ],
+    "previous_site_ids": [
+      1000000130
+    ]
+  },
+  {
+    "id": 49,
+    "title": "",
+    "type": "fill_blank",
+    "question": "決策樹的葉節點數量至少為 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "n!",
+    "answer_note": "對 n 個彼此不同的元素，可能排列總共有 n! 種；比較排序的決策樹必須能區分這些情況，所以葉節點至少 n! 個。官方填答 n!。",
+    "reference_id": "L6-055",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-055"
+    ],
+    "previous_site_ids": [
+      1000000137
+    ]
+  },
+  {
+    "id": 50,
+    "title": "",
+    "type": "choice",
+    "question": "計數排序中的 C[i] 儲存的是？",
+    "options": [
+      "A. 指向元素 i 的指標",
+      "B. 元素 i 的位置",
+      "C. 元素 i 的具體值",
+      "D. 小於或等於 i 的元素總數"
+    ],
+    "options_status": "complete",
+    "correct_answer": "小於或等於 i 的元素總數",
+    "answer_note": "本題指累積計數完成、尚未開始回填輸出陣列的階段；統計階段 C[i] 僅記錄等於 i 的次數，回填時則會遞減。\n\n指累積計數完成且尚未回填的階段；統計階段僅記錄等於 i 的次數，回填時會遞減。",
+    "reference_id": "L6-062",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-062"
+    ],
+    "previous_site_ids": [
+      1000000194
+    ]
+  },
+  {
+    "id": 51,
+    "title": "",
+    "type": "choice",
+    "question": "計數排序(Counting Sort)的空間複雜度主要取決於？",
+    "options": [
+      "A. 透視深度",
+      "B. 參數 k (數值範圍)",
+      "C. 樹的高度",
+      "D. 輸入長度 n"
+    ],
+    "options_status": "complete",
+    "correct_answer": "參數 k (數值範圍)",
+    "answer_note": "本題單選答案 B 強調計數陣列 C 的大小由值域參數 k 決定，所需空間為 Θ(k)。若計入存放排序結果的 B 陣列，整體輔助空間為 Θ(n+k)，輸入長度 n 也會影響空間；題目的「主要取決於」應依計數陣列的範圍解讀。",
+    "reference_id": "L6-017",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-017"
+    ],
+    "previous_site_ids": [
+      1000000195
+    ]
+  },
+  {
+    "id": 52,
+    "title": "",
+    "type": "choice",
+    "question": "如果所有輸入元素皆為 1 到 k，計數排序(Counting Sort)的時間複雜度為？",
+    "options": [
+      "A. Θ(n + k)",
+      "B. Θ(k log k)",
+      "C. Θ(n log n)",
+      "D. Θ(n^2)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Θ(n + k)",
+    "answer_note": "Counting Sort 若鍵值是 1 到 k 的整數，可在 Θ(n+k) 時間完成。先統計各數值次數 O(n)，再處理計數範圍 O(k)，最後回填 O(n)。",
+    "reference_id": "L6-026",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-026"
+    ],
+    "previous_site_ids": [
+      1000000197
+    ]
+  },
+  {
+    "id": 53,
+    "title": "",
+    "type": "choice",
+    "question": "計數排序（Counting Sort）要求輸入元素必須是？",
+    "options": [
+      "A. 字串",
+      "B. 結構體",
+      "C. 整數",
+      "D. 實數"
+    ],
+    "options_status": "complete",
+    "correct_answer": "整數",
+    "answer_note": "課本基本 Counting Sort 需要用鍵值作為陣列 C 的索引，通常要求元素是落在已知有限範圍內的整數；一般實數或任意字串需轉換後才能使用。",
+    "reference_id": "L6-040",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-040"
+    ],
+    "previous_site_ids": [
+      1000000191
+    ]
+  },
+  {
+    "id": 54,
+    "title": "",
+    "type": "choice",
+    "question": "下列選項中，哪些是計數排序使用的輔助陣列？（不含輸入陣列）",
+    "options": [
+      "A. 陣列 B（存放排序後結果）",
+      "B. 陣列 C（記錄鍵值次數與累積位置）",
+      "C. 輸入陣列 A",
+      "D. 陣列 D（此演算法未使用）"
+    ],
+    "options_status": "complete",
+    "correct_answer": "陣列 B（存放排序後結果）\n陣列 C（記錄鍵值次數與累積位置）",
+    "answer_note": "正確的是畫面中的選項 A 與 B，分別代表演算法中的陣列 B（存放排序結果）及陣列 C（記錄各鍵值次數，並計算累積位置）。注意：答案裡的「選項 A、B」是選擇代號；「陣列 A、B、C」是演算法變數名稱。輸入陣列 A 不屬於輔助陣列。",
+    "reference_id": "L6-009",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-009"
+    ],
+    "previous_site_ids": [
+      1000000192
+    ]
+  },
+  {
+    "id": 55,
+    "title": "",
+    "type": "choice",
+    "question": "哪些情況下不適合使用計數排序(Counting Sort)？",
+    "options": [
+      "A. 鍵值為浮點數",
+      "B. 鍵值範圍 k 極大",
+      "C. 資料僅為整數",
+      "D. 記憶體非常有限"
+    ],
+    "options_status": "complete",
+    "correct_answer": "鍵值為浮點數\n鍵值範圍 k 極大\n記憶體非常有限",
+    "answer_note": "Counting Sort 通常直接以有界整數鍵值作索引，因此一般浮點鍵不能直接套用。k 太大會讓 C 陣列浪費記憶體；記憶體有限也不適合。只有整數鍵值本身不是缺點。",
+    "reference_id": "L6-031",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-031"
+    ],
+    "previous_site_ids": [
+      1000000190
+    ]
+  },
+  {
+    "id": 56,
+    "title": "",
+    "type": "choice",
+    "question": "計數排序(Counting Sort)的特性包含？",
+    "options": [
+      "A. 線性時間複雜度",
+      "B. 適用於負數",
+      "C. 需要 O(k) 額外空間",
+      "D. 穩定"
+    ],
+    "options_status": "complete",
+    "correct_answer": "線性時間複雜度\n需要 O(k) 額外空間\n穩定",
+    "answer_note": "線性時間、空間及負數限制均依課本基本版本與解析中的條件判讀。\n\n依提供的答案選 A、C、D。A 的線性時間以 k=O(n) 為前提；C 的 O(k) 指計數陣列，若計入輸出陣列，輔助空間為 Θ(n+k)；D 採標準穩定回填方式。基本版本不能直接使用負數作為陣列索引，但以最小值位移後可處理負數。",
+    "reference_id": "L6-064",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-064"
+    ],
+    "previous_site_ids": [
+      1000000124
+    ]
+  },
+  {
+    "id": 57,
+    "title": "",
+    "type": "fill_blank",
+    "question": "給定 COUNTING_SORT 演算法（計數陣列支援鍵值 0 的版本）。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 0 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 1 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n\nA 與 B 的索引從 1 開始，C 的索引從 0 開始，k=5。\nA陣列的內容為 2,5,3,0,2,3,0,3\n第 9 行迴圈開始前（尚未進行任何回填），求：\nB陣列的內容為何[__1__]\nC陣列 C[0..5] 的內容為何[__2__]\n每格依索引順序填入所有數值，以逗號分隔。",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "（1）0,0,0,0,0,0,0,0\n（2）2,2,4,7,7,8",
+    "answer_note": "原始程式漏列鍵值 0 的初始化與累積範圍，此處已補正，行號與輸入資料維持原題。B 中尚未寫入的位置依題庫填答約定記為 0；這不代表程式會自動將 B 初始化為 0。\n\n輸入有 8 個元素，鍵值 0～5 的出現次數為 2,0,2,3,0,1；累積後 C=2,2,4,7,7,8。尚未開始回填，所以 B 的所有位置依題庫填答約定以 0 表示。此時 B=0,0,0,0,0,0,0,0，C=2,2,4,7,7,8。",
+    "reference_id": "L6-028",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-028"
+    ],
+    "previous_site_ids": [
+      1000000185,
+      1000000184
+    ]
+  },
+  {
+    "id": 58,
+    "title": "",
+    "type": "fill_blank",
+    "question": "給定 COUNTING_SORT 演算法（計數陣列支援鍵值 0 的版本）。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 0 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 1 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n\nA 與 B 的索引從 1 開始，C 的索引從 0 開始，k=5。\nA陣列的內容為 2,5,3,0,2,3,0,3\n第 9 行 j=4 該輪開始時（尚未執行該輪第 10、11 行），求：\nB陣列的內容為何[__1__]\nC陣列 C[0..5] 的內容為何[__2__]\n每格依索引順序填入所有數值，以逗號分隔。",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "（1）0,0,0,2,0,3,3,0\n（2）1,2,3,5,7,8",
+    "answer_note": "原始程式漏列鍵值 0 的初始化與累積範圍，此處已補正，行號與輸入資料維持原題。B 中尚未寫入的位置依題庫填答約定記為 0；這不代表程式會自動將 B 初始化為 0。\n\n輸入有 8 個元素，鍵值 0～5 的出現次數為 2,0,2,3,0,1；累積後 C=2,2,4,7,7,8。已處理 j=8 到 j=5，尚未處理 A[4]=0。此時 B=0,0,0,2,0,3,3,0，C=1,2,3,5,7,8。",
+    "reference_id": "L6-063",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-063"
+    ],
+    "previous_site_ids": [
+      1000000183,
+      1000000182
+    ]
+  },
+  {
+    "id": 59,
+    "title": "",
+    "type": "fill_blank",
+    "question": "給定 COUNTING_SORT 演算法（計數陣列支援鍵值 0 的版本）。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 0 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 1 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n\nA 與 B 的索引從 1 開始，C 的索引從 0 開始，k=5。\nA陣列的內容為 2,5,3,0,1,2,1,3,2,0,4\n第 9 行 j=4 該輪開始時（尚未執行該輪第 10、11 行），求：\nB陣列的內容為何[__1__]\nC陣列 C[0..5] 的內容為何[__2__]\n每格依索引順序填入所有數值，以逗號分隔。",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "（1）0,0,1,1,0,2,2,0,3,4,0\n（2）1,2,5,8,9,11",
+    "answer_note": "原始程式漏列鍵值 0 的初始化與累積範圍，此處已補正，行號與輸入資料維持原題。B 中尚未寫入的位置依題庫填答約定記為 0；這不代表程式會自動將 B 初始化為 0。\n\n此 11 個元素、j=4 的版本為演算法推算，提供檔案未附同版官方結果。\n\n輸入有 11 個元素，鍵值 0～5 的出現次數為 2,2,3,2,1,1；累積後 C=2,4,7,9,10,11。已處理 j=11 到 j=5，尚未處理 A[4]=0。此時 B=0,0,1,1,0,2,2,0,3,4,0，C=1,2,5,8,9,11。",
+    "reference_id": "L6-065",
+    "answer_basis": "reference_algorithm_derivation",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-065"
+    ],
+    "previous_site_ids": []
+  },
+  {
+    "id": 60,
+    "title": "",
+    "type": "fill_blank",
+    "question": "給定 COUNTING_SORT 演算法（計數陣列支援鍵值 0 的版本）。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 0 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 1 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n\nA 與 B 的索引從 1 開始，C 的索引從 0 開始，k=5。\nA陣列的內容為 2,5,3,0,1,2,1,3,2,0,4\n全部執行完成後，求：\nB陣列的內容為何[__1__]\nC陣列 C[0..5] 的內容為何[__2__]\n每格依索引順序填入所有數值，以逗號分隔。",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "（1）0,0,1,1,2,2,2,3,3,4,5\n（2）0,2,4,7,9,10",
+    "answer_note": "原始程式漏列鍵值 0 的初始化與累積範圍，此處已補正，行號與輸入資料維持原題。B 中尚未寫入的位置依題庫填答約定記為 0；這不代表程式會自動將 B 初始化為 0。\n\n輸入有 11 個元素，鍵值 0～5 的出現次數為 2,2,3,2,1,1；累積後 C=2,4,7,9,10,11。從 j=11 遞減至 1 完成穩定回填後，B 為遞增序列；最終 C[x] 等於小於 x 的輸入元素個數。此時 B=0,0,1,1,2,2,2,3,3,4,5，C=0,2,4,7,9,10。",
+    "reference_id": "L6-066",
+    "answer_basis": "reference_question_bank",
+    "sources": [
+      "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
+      "L6-066"
+    ],
+    "previous_site_ids": [
+      1000000179,
+      1000000178
+    ]
+  },
+  {
+    "id": 1000000135,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "決策樹的高度代表什麼？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "最差情況的比較次數",
+    "answer_note": "保留原網站獨有的補充題。參考網站未提供本題選項，未自行補造選項。",
+    "sources": [
+      "原網站已審核協助題 #1000000135"
+    ],
+    "previous_site_ids": [
+      1000000135
+    ]
+  },
+  {
+    "id": 1000000136,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "在比較排序的決策樹模型中，葉節點數量為何至少是 n!？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "因為 n 個互異元素有 n! 種可能的排列，每種排列都必須能被正確區分。",
+    "answer_note": "保留原網站獨有的補充題。參考網站未提供本題選項，未自行補造選項。",
+    "sources": [
+      "原網站已審核協助題 #1000000136"
+    ],
+    "previous_site_ids": [
+      1000000136
+    ]
+  },
+  {
+    "id": 1000000139,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "在決策樹中，每個分支代表什麼？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "比較結果",
+    "answer_note": "保留原網站獨有的補充題。參考網站未提供本題選項，未自行補造選項。",
+    "sources": [
+      "原網站已審核協助題 #1000000139"
+    ],
+    "previous_site_ids": [
+      1000000139
+    ]
+  },
+  {
+    "id": 1000000140,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "在比較排序的決策樹模型中，每個內部節點代表什麼？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "一次元素比較",
+    "answer_note": "保留原網站獨有的補充題。參考網站未提供本題選項，未自行補造選項。",
+    "sources": [
+      "原網站已審核協助題 #1000000140"
+    ],
+    "previous_site_ids": [
+      1000000140
+    ]
+  },
+  {
+    "id": 1000000143,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "桶排序使用 B[⌊nA[i]⌋] 分配元素時，若 n = 10 且 A[i] = 0.78，該元素會被放入哪個桶？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "B[7]，因為 ⌊10 × 0.78⌋ = 7。",
+    "answer_note": "保留原網站獨有的補充題。參考網站未提供本題選項，未自行補造選項。",
+    "sources": [
+      "原網站已審核協助題 #1000000143"
+    ],
+    "previous_site_ids": [
+      1000000143
+    ]
+  },
+  {
+    "id": 1000000150,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "桶排序中，如果資料均勻分佈，為什麼可以達到線性時間？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "元素平均分散在各桶中，每桶的排序成本較低，分配及合併也只需線性時間。",
+    "answer_note": "保留原網站獨有的補充題。參考網站未提供本題選項，未自行補造選項。",
+    "sources": [
+      "原網站已審核協助題 #1000000150"
+    ],
+    "previous_site_ids": [
+      1000000150
+    ]
+  },
+  {
+    "id": 1000000158,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "基數排序每一輪排序後，為什麼必須使用穩定排序？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "保留前一輪已排序位數的相對順序，確保整體排序正確。",
+    "answer_note": "保留原網站獨有的補充題。參考網站未提供本題選項，未自行補造選項。",
+    "sources": [
+      "原網站已審核協助題 #1000000158"
+    ],
+    "previous_site_ids": [
+      1000000158
+    ]
+  },
+  {
+    "id": 1000000171,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "計數排序中，為什麼第 9 至 11 行要從後往前掃描 A？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "為了維持排序的穩定性。",
+    "answer_note": "保留原網站獨有的補充題。參考網站未提供本題選項，未自行補造選項。",
+    "sources": [
+      "原網站已審核協助題 #1000000171"
+    ],
+    "previous_site_ids": [
+      1000000171
+    ]
+  },
+  {
+    "id": 1000000186,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "給定課本版本的 COUNTING_SORT(A, B, k)，A = 2,5,3,0,2,3,0,3。執行完排序後，B 陣列的內容為何？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "0,0,2,2,3,3,3,5",
+    "answer_note": "保留原網站獨有的補充題。參考網站未提供本題選項，未自行補造選項。",
+    "sources": [
+      "原網站已審核協助題 #1000000186"
+    ],
+    "previous_site_ids": [
+      1000000186
+    ]
+  },
+  {
+    "id": 1000000187,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "計數排序的 B 陣列主要用來做什麼？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "存放排序後的結果",
+    "answer_note": "保留原網站獨有的補充題。參考網站未提供本題選項，未自行補造選項。",
+    "sources": [
+      "原網站已審核協助題 #1000000187"
+    ],
+    "previous_site_ids": [
+      1000000187
+    ]
+  },
+  {
+    "id": 1000000188,
+    "title": "",
+    "type": "choice_options_missing",
+    "question": "計數排序可以達到線性時間的主要原因是什麼？",
+    "options": [],
+    "options_status": "not_recorded",
+    "correct_answer": "利用鍵值範圍進行計數，不需要逐對比較元素。",
+    "answer_note": "保留原網站獨有的補充題。參考網站未提供本題選項，未自行補造選項。",
+    "sources": [
+      "原網站已審核協助題 #1000000188"
+    ],
+    "previous_site_ids": [
+      1000000188
     ]
   }
 ]
+

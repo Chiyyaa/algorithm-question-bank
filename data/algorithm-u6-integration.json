@@ -1,0 +1,769 @@
+{
+  "subject_id": "algorithm",
+  "unit_id": "u6",
+  "builtInCount": 71,
+  "records": [
+    {
+      "id": 1000000123,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "下列哪一種排序演算法是穩定排序？",
+      "correct_answer": "計數排序（Counting Sort）",
+      "canonical_ids": [
+        43
+      ]
+    },
+    {
+      "id": 1000000124,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "下列哪些特徵是計數排序（Counting Sort）的特性？",
+      "correct_answer": "- 穩定排序\n- 需要額外空間\n- 在適當條件下具有線性時間複雜度",
+      "canonical_ids": [
+        56
+      ]
+    },
+    {
+      "id": 1000000125,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "線性時間排序演算法的共通限制包括哪些？",
+      "correct_answer": "- 通常具有特定的輸入假設\n- 不使用一般比較排序模型\n- 空間消耗可能較大",
+      "canonical_ids": [
+        44
+      ]
+    },
+    {
+      "id": 1000000126,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "關於線性時間排序，下列哪些敘述正確？",
+      "correct_answer": "- 通常需要特定的輸入假設\n- 不適用於所有任意物件\n- 可利用額外空間換取時間",
+      "canonical_ids": [
+        8
+      ]
+    },
+    {
+      "id": 1000000127,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "線性時間排序演算法包含哪些？",
+      "correct_answer": "- Counting Sort\n- Radix Sort\n- Bucket Sort",
+      "canonical_ids": [
+        45
+      ]
+    },
+    {
+      "id": 1000000128,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "下列哪一種不是線性時間排序演算法？",
+      "correct_answer": "快速排序（Quick Sort）",
+      "canonical_ids": [
+        4
+      ]
+    },
+    {
+      "id": 1000000129,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "下列關於排序演算法複雜度的敘述，哪些正確？",
+      "correct_answer": "- 比較排序下界為 Ω(n log n)\n- 計數排序可以達到 Θ(n+k)\n- 桶排序平均情況可達到 Θ(n)",
+      "canonical_ids": [
+        27
+      ]
+    },
+    {
+      "id": 1000000130,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "比較排序的時間複雜度下界為何？（依指定格式回答）",
+      "correct_answer": "big-omega(nlogn)",
+      "canonical_ids": [
+        48
+      ]
+    },
+    {
+      "id": 1000000131,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "任何基於比較的排序演算法，其最差時間複雜度下界為何？",
+      "correct_answer": "Ω(n log n)",
+      "canonical_ids": [
+        41
+      ]
+    },
+    {
+      "id": 1000000132,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "決策樹模型可以用來證明哪些排序演算法的最優性？",
+      "correct_answer": "- Merge Sort\n- Heap Sort",
+      "canonical_ids": [
+        46
+      ]
+    },
+    {
+      "id": 1000000133,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "決策樹模型證明了任何比較排序在最壞情況下至少需要多少比較次數？（請用小寫英文回答）",
+      "correct_answer": "big-omega(nlogn)",
+      "canonical_ids": [
+        47
+      ]
+    },
+    {
+      "id": 1000000134,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "決策樹的高度下界為何？",
+      "correct_answer": "Ω(n log n)",
+      "canonical_ids": [
+        40
+      ]
+    },
+    {
+      "id": 1000000135,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "決策樹的高度代表什麼？",
+      "correct_answer": "最差情況的比較次數",
+      "canonical_ids": [
+        1000000135
+      ]
+    },
+    {
+      "id": 1000000136,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "在比較排序的決策樹模型中，葉節點數量為何至少是 n!？",
+      "correct_answer": "因為 n 個互異元素有 n! 種可能的排列，每種排列都必須能被正確區分。",
+      "canonical_ids": [
+        1000000136
+      ]
+    },
+    {
+      "id": 1000000137,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "對 n 個互異元素進行比較排序時，決策樹至少需要多少個葉節點？",
+      "correct_answer": "n!",
+      "canonical_ids": [
+        49
+      ]
+    },
+    {
+      "id": 1000000138,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "決策樹中的每個葉節點代表什麼？",
+      "correct_answer": "一種可能的排序排列",
+      "canonical_ids": [
+        42
+      ]
+    },
+    {
+      "id": 1000000139,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "在決策樹中，每個分支代表什麼？",
+      "correct_answer": "比較結果",
+      "canonical_ids": [
+        1000000139
+      ]
+    },
+    {
+      "id": 1000000140,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "在比較排序的決策樹模型中，每個內部節點代表什麼？",
+      "correct_answer": "一次元素比較",
+      "canonical_ids": [
+        1000000140
+      ]
+    },
+    {
+      "id": 1000000141,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "決策樹模型證明了什麼？",
+      "correct_answer": "比較排序的效能下界",
+      "canonical_ids": [
+        11
+      ]
+    },
+    {
+      "id": 1000000142,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "決策樹模型主要用於分析哪一類排序演算法？",
+      "correct_answer": "比較排序（Comparison Sort）",
+      "canonical_ids": [
+        19
+      ]
+    },
+    {
+      "id": 1000000143,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "桶排序使用 B[⌊nA[i]⌋] 分配元素時，若 n = 10 且 A[i] = 0.78，該元素會被放入哪個桶？",
+      "correct_answer": "B[7]，因為 ⌊10 × 0.78⌋ = 7。",
+      "canonical_ids": [
+        1000000143
+      ]
+    },
+    {
+      "id": 1000000144,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定相同的 A 陣列，做到第 4 行時，B[1]、B[2]、B[7] 的內容為何？（依原題答案所列的各桶內容作答）",
+      "correct_answer": "- B[1]: 0.12\n- B[2]: 0.17,0.21\n- B[7]: 0.23",
+      "canonical_ids": [
+        39
+      ]
+    },
+    {
+      "id": 1000000145,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定相同的 A 陣列，做到第 4 行的 i = 5 時，B[1]、B[2]、B[6] 的內容為何？",
+      "correct_answer": "- B[1]: 0.12\n- B[2]: 0.17,0.21\n- B[6]: 0.68",
+      "canonical_ids": [
+        25
+      ]
+    },
+    {
+      "id": 1000000146,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定相同的 A 陣列，做到第 2 行的 i = 5 時，B[1]、B[2] 的內容為何？",
+      "correct_answer": "- B[1]: 0.17,0.26,0.78\n- B[2]: 0.72",
+      "canonical_ids": [
+        38
+      ]
+    },
+    {
+      "id": 1000000147,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定相同的 A 陣列，做到第 4 行的 i = 7 時，B[1]、B[2]、B[7] 的內容為何？（題目依原始索引格式作答）",
+      "correct_answer": "- B[1]: 0.12\n- B[2]: 0.17,0.21\n- B[7]: 0.72",
+      "canonical_ids": [
+        39
+      ]
+    },
+    {
+      "id": 1000000148,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "承上題，做到第 2 行的 i = 7 時，B[1]、B[2]、B[7] 的內容為何？",
+      "correct_answer": "- B[1]: 0.17,0.26,0.78\n- B[2]: 0.21\n- B[7]: 0.72",
+      "canonical_ids": [
+        15
+      ]
+    },
+    {
+      "id": 1000000149,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定課本版本的 BUCKET_SORT(A)，A = 0.78,0.17,0.39,0.26,0.72,0.94,0.21,0.12,0.23,0.68。做到第 4 行的 i = 7 時，B[1]、B[2]、B[7] 的內容為何？",
+      "correct_answer": "- B[1]: 0.12\n- B[2]: 0.17,0.21\n- B[7]: 0.72",
+      "canonical_ids": [
+        39
+      ]
+    },
+    {
+      "id": 1000000150,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "桶排序中，如果資料均勻分佈，為什麼可以達到線性時間？",
+      "correct_answer": "元素平均分散在各桶中，每桶的排序成本較低，分配及合併也只需線性時間。",
+      "canonical_ids": [
+        1000000150
+      ]
+    },
+    {
+      "id": 1000000151,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "如果桶內資料過多或分佈嚴重不均，桶排序的時間複雜度可能退化為何？",
+      "correct_answer": "O(n^2)",
+      "canonical_ids": [
+        36,
+        37
+      ]
+    },
+    {
+      "id": 1000000152,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "桶排序適合處理哪類資料？",
+      "correct_answer": "- 均勻分佈數據\n- 數值區間明確的資料\n- 希望在適當分佈下達到線性時間的資料",
+      "canonical_ids": [
+        28
+      ]
+    },
+    {
+      "id": 1000000153,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "桶排序的效能取決於哪些因素？",
+      "correct_answer": "- 輸入資料分佈\n- 桶的數量\n- 桶內部使用的排序演算法",
+      "canonical_ids": [
+        12
+      ]
+    },
+    {
+      "id": 1000000154,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "桶排序的處理過程包含哪些步驟？",
+      "correct_answer": "- 分配元素至各桶\n- 分別對各桶排序\n- 按照桶的順序合併結果",
+      "canonical_ids": [
+        6
+      ]
+    },
+    {
+      "id": 1000000155,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "桶排序中，每個桶內部通常使用哪種排序演算法？",
+      "correct_answer": "插入排序（Insertion Sort）",
+      "canonical_ids": [
+        18
+      ]
+    },
+    {
+      "id": 1000000156,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "當資料均勻分佈時，桶排序的預期時間複雜度為何？",
+      "correct_answer": "Θ(n)",
+      "canonical_ids": [
+        20
+      ]
+    },
+    {
+      "id": 1000000157,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "桶排序假設輸入資料服從何種分佈？",
+      "correct_answer": "均勻分佈",
+      "canonical_ids": [
+        3
+      ]
+    },
+    {
+      "id": 1000000158,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "基數排序每一輪排序後，為什麼必須使用穩定排序？",
+      "correct_answer": "保留前一輪已排序位數的相對順序，確保整體排序正確。",
+      "canonical_ids": [
+        1000000158
+      ]
+    },
+    {
+      "id": 1000000159,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定課本版本的 RADIX_SORT(A, d)，A = 4329,4057,6507,2839,6436,7720,8355。當 i = 3 時，A 陣列的內容為何？",
+      "correct_answer": "4057,4329,8355,6436,6507,7720,2839",
+      "canonical_ids": [
+        13
+      ]
+    },
+    {
+      "id": 1000000160,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定課本版本的 RADIX_SORT(A, d)，A = 329,457,657,839,436,720,355。當 i = 2 時，A 陣列的內容為何？",
+      "correct_answer": "720,329,436,839,355,457,657",
+      "canonical_ids": [
+        21
+      ]
+    },
+    {
+      "id": 1000000161,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "下列哪些特徵是基數排序與計數排序共有的？",
+      "correct_answer": "- 皆非比較排序\n- 皆可在適當條件下達成線性時間",
+      "canonical_ids": [
+        17
+      ]
+    },
+    {
+      "id": 1000000162,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "基數排序具有哪些優點？",
+      "correct_answer": "- 穩定\n- 可擴展性強\n- 時間複雜度隨輸入位數及元素數量增加\n- 可依序處理多位數鍵值",
+      "canonical_ids": [
+        23
+      ]
+    },
+    {
+      "id": 1000000163,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "基數排序中，變數 r 的含義通常是什麼？",
+      "correct_answer": "每一輪處理的位元區段長度",
+      "canonical_ids": [
+        31
+      ]
+    },
+    {
+      "id": 1000000164,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "基數排序處理 b-bit 數字時，r 的選擇會影響什麼？",
+      "correct_answer": "- 執行時間\n- 空間消耗",
+      "canonical_ids": [
+        34
+      ]
+    },
+    {
+      "id": 1000000165,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "基數排序處理 b-bit 數字時，時間複雜度為何？",
+      "correct_answer": "Θ((b/r)(n + 2^r))",
+      "canonical_ids": [
+        33
+      ]
+    },
+    {
+      "id": 1000000166,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "基數排序通常用於排序哪一類資料？",
+      "correct_answer": "多位數鍵值",
+      "canonical_ids": [
+        29
+      ]
+    },
+    {
+      "id": 1000000167,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "基數排序可以使用哪些穩定排序作為子程序？",
+      "correct_answer": "- Counting Sort\n- Insertion Sort\n- Merge Sort",
+      "canonical_ids": [
+        10
+      ]
+    },
+    {
+      "id": 1000000168,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "基數排序要求子排序演算法必須具備什麼性質？",
+      "correct_answer": "穩定排序（Stable Sort）",
+      "canonical_ids": [
+        16
+      ]
+    },
+    {
+      "id": 1000000169,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "基數排序從哪一位開始排序？",
+      "correct_answer": "最低有效位（LSD）",
+      "canonical_ids": [
+        32
+      ]
+    },
+    {
+      "id": 1000000170,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "基數排序從哪一個有效位開始排序？（請用小寫英文回答）",
+      "correct_answer": "least",
+      "canonical_ids": [
+        35
+      ]
+    },
+    {
+      "id": 1000000171,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "計數排序中，為什麼第 9 至 11 行要從後往前掃描 A？",
+      "correct_answer": "為了維持排序的穩定性。",
+      "canonical_ids": [
+        1000000171
+      ]
+    },
+    {
+      "id": 1000000172,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "承上題，做到第 9 行的 j = 4 時，C 陣列（鍵值 0 至 5）的內容為何？",
+      "correct_answer": "3,6,10,12,14,15",
+      "canonical_ids": [
+        26
+      ]
+    },
+    {
+      "id": 1000000173,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定 A = 2,5,3,0,2,3,0,5,1,2,1,3,2,0,4。做到第 9 行的 j = 4 時，B 陣列的內容為何？",
+      "correct_answer": "0,0,0,1,1,0,2,2,2,0,3,3,4,0,5",
+      "canonical_ids": [
+        26
+      ]
+    },
+    {
+      "id": 1000000174,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "承上題，做到第 9 行的 j = 12 時，C 陣列（鍵值 0 至 5）的內容為何？",
+      "correct_answer": "3,5,8,12,12,15",
+      "canonical_ids": [
+        5
+      ]
+    },
+    {
+      "id": 1000000175,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定 A = 2,5,3,0,2,3,0,5,1,2,1,3,2,0,4。做到第 9 行的 j = 12 時，B 陣列的內容為何？",
+      "correct_answer": "0,0,0,0,0,0,0,0,2,0,0,0,4,0,0",
+      "canonical_ids": [
+        5
+      ]
+    },
+    {
+      "id": 1000000176,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "承上題，執行完排序後，C 陣列（鍵值 0 至 5）的內容為何？",
+      "correct_answer": "3,5,9,12,13,15",
+      "canonical_ids": [
+        2
+      ]
+    },
+    {
+      "id": 1000000177,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定 A = 2,5,3,0,2,3,0,5,1,2,1,3,2,0,4。執行完 COUNTING_SORT 後，B 陣列的內容為何？",
+      "correct_answer": "0,0,0,1,1,2,2,2,2,3,3,3,4,5,5",
+      "canonical_ids": [
+        2
+      ]
+    },
+    {
+      "id": 1000000178,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "承上題，執行完排序後，C 陣列（鍵值 0 至 5）的內容為何？",
+      "correct_answer": "2,4,7,9,10,11",
+      "canonical_ids": [
+        60
+      ]
+    },
+    {
+      "id": 1000000179,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定 A = 2,5,3,0,1,2,1,3,2,0,4。執行完 COUNTING_SORT 後，B 陣列的內容為何？",
+      "correct_answer": "0,0,1,1,2,2,2,3,3,4,5",
+      "canonical_ids": [
+        60
+      ]
+    },
+    {
+      "id": 1000000180,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "承上題，做到第 9 行的 j = 2 時，C 陣列（鍵值 0 至 5）的內容為何？",
+      "correct_answer": "2,2,2,3,4,7",
+      "canonical_ids": [
+        14
+      ]
+    },
+    {
+      "id": 1000000181,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定 A = 2,5,3,0,2,3,0,3，做到第 9 行的 j = 2 時，B 陣列的內容為何？",
+      "correct_answer": "0,0,2,0,0,3,3,0",
+      "canonical_ids": [
+        14
+      ]
+    },
+    {
+      "id": 1000000182,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "承上題，做到第 9 行的 j = 4 時，C 陣列（鍵值 0 至 5）的內容為何？",
+      "correct_answer": "2,2,2,4,5,7",
+      "canonical_ids": [
+        58
+      ]
+    },
+    {
+      "id": 1000000183,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定 A = 2,5,3,0,2,3,0,3，做到第 9 行的 j = 4 時，B 陣列的內容為何？",
+      "correct_answer": "0,0,2,0,0,3,3,0",
+      "canonical_ids": [
+        58
+      ]
+    },
+    {
+      "id": 1000000184,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "承上題，做到第 9 行前，C 陣列的內容為何？（依照鍵值 0 至 5 排列）",
+      "correct_answer": "2,2,2,5,5,8",
+      "canonical_ids": [
+        57
+      ]
+    },
+    {
+      "id": 1000000185,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定課本版本的 COUNTING_SORT(A, B, k)，A = 2,5,3,0,2,3,0,3。做到第 9 行前，B 陣列的內容為何？",
+      "correct_answer": "0,0,0,0,0,0,0,0",
+      "canonical_ids": [
+        57
+      ]
+    },
+    {
+      "id": 1000000186,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "給定課本版本的 COUNTING_SORT(A, B, k)，A = 2,5,3,0,2,3,0,3。執行完排序後，B 陣列的內容為何？",
+      "correct_answer": "0,0,2,2,3,3,3,5",
+      "canonical_ids": [
+        1000000186
+      ]
+    },
+    {
+      "id": 1000000187,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "計數排序的 B 陣列主要用來做什麼？",
+      "correct_answer": "存放排序後的結果",
+      "canonical_ids": [
+        1000000187
+      ]
+    },
+    {
+      "id": 1000000188,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "計數排序可以達到線性時間的主要原因是什麼？",
+      "correct_answer": "利用鍵值範圍進行計數，不需要逐對比較元素。",
+      "canonical_ids": [
+        1000000188
+      ]
+    },
+    {
+      "id": 1000000189,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "計數排序具有哪些特性？",
+      "correct_answer": "- 穩定排序\n- 需要 O(k) 額外空間（僅指計數陣列；完整實作另需輸出陣列）\n- 在適當的鍵值範圍下具有線性時間複雜度",
+      "canonical_ids": [
+        56
+      ]
+    },
+    {
+      "id": 1000000190,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "下列哪些情況不適合使用計數排序？",
+      "correct_answer": "- 鍵值為浮點數\n- 記憶體非常有限\n- 鍵值範圍 k 極大",
+      "canonical_ids": [
+        55
+      ]
+    },
+    {
+      "id": 1000000191,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "計數排序要求輸入元素必須是什麼類型？",
+      "correct_answer": "整數",
+      "canonical_ids": [
+        53
+      ]
+    },
+    {
+      "id": 1000000192,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "計數排序需要哪幾個輔助陣列？",
+      "correct_answer": "- C（用於計數與累積計數）\n- B（用於存放排序結果）",
+      "canonical_ids": [
+        54
+      ]
+    },
+    {
+      "id": 1000000193,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "計數排序中，陣列 C 的作用是什麼？",
+      "correct_answer": "儲存每個值的出現次數或累積計數",
+      "canonical_ids": [
+        9
+      ]
+    },
+    {
+      "id": 1000000194,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "計數排序中的 C[i] 儲存的是什麼？",
+      "correct_answer": "小於或等於 i 的元素總數（完成累積計數後）",
+      "canonical_ids": [
+        50
+      ]
+    },
+    {
+      "id": 1000000195,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "計數排序的空間複雜度主要取決於什麼？",
+      "correct_answer": "參數 k（數值範圍）",
+      "canonical_ids": [
+        51
+      ]
+    },
+    {
+      "id": 1000000196,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "當 k = O(n) 時，計數排序的時間複雜度為何？",
+      "correct_answer": "Θ(n)",
+      "canonical_ids": [
+        30
+      ]
+    },
+    {
+      "id": 1000000197,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "如果輸入元素皆介於 1 到 k，計數排序的時間複雜度為何？",
+      "correct_answer": "Θ(n+k)",
+      "canonical_ids": [
+        52
+      ]
+    },
+    {
+      "id": 1000000198,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "計數排序（Counting Sort）的時間複雜度為何？",
+      "correct_answer": "big-theta(n+k)",
+      "canonical_ids": [
+        7
+      ]
+    }
+  ]
+}
+

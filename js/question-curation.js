@@ -39,7 +39,24 @@ function omitIntegratedU6Shared(questions) {
 }
 
 let u5Curation;
+let algorithmU6Integration;
+export function omitIntegratedAlgorithmU6Shared(questions, integration) {
+    const records = new Map(integration.records.map(record => [record.id, record]));
+    return questions.filter(question => {
+        const record = records.get(question.id);
+        return !record || !question.shared_question || question.question !== record.question ||
+            question.type !== record.type || question.correct_answer !== record.correct_answer ||
+            JSON.stringify(question.options || []) !== JSON.stringify(record.options || []);
+    });
+}
 export async function curatePublishedQuestions(questions, subject, unit) {
+    if (subject === 'algorithm' && unit === 'u6') {
+        try {
+            if (!algorithmU6Integration) algorithmU6Integration = fetch(new URL('../data/algorithm-u6-integration.json?v=20261029', import.meta.url))
+                .then(response => { if (!response.ok) throw new Error('U6 integration unavailable'); return response.json(); });
+            return omitIntegratedAlgorithmU6Shared(questions, await algorithmU6Integration);
+        } catch { algorithmU6Integration = null; return questions; }
+    }
     if (subject === 'os' && unit === 'u6') return omitIntegratedU6Shared(questions);
     if (subject !== 'algorithm' || unit !== 'u5') return questions;
     try {
@@ -51,3 +68,4 @@ export async function curatePublishedQuestions(questions, subject, unit) {
         return questions;
     }
 }
+
