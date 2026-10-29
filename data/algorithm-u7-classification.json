@@ -1,0 +1,584 @@
+{
+  "subject_id": "algorithm",
+  "unit_id": "u7",
+  "builtInCount": 60,
+  "reason": "排除誤放的作業系統題，並合併已收入文字檔題庫的演算法協助題。",
+  "reviewed_algorithm_ids": [
+    1000000199,
+    1000000200,
+    1000000201,
+    1000000202,
+    1000000203,
+    1000000204,
+    1000000205,
+    1000000206,
+    1000000207,
+    1000000208,
+    1000000209,
+    1000000210,
+    1000000211,
+    1000000212,
+    1000000213,
+    1000000214,
+    1000000215,
+    1000000216,
+    1000000217,
+    1000000218,
+    1000000219
+  ],
+  "records": [
+    {
+      "id": 1000000063,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "關於 Linux 核心中的同步，以下哪些陳述是正確的？",
+      "user_answer": "Linux 核心是搶佔式的\nLinux 核心使用信號量\nfutexes 是一種混合的同步機制",
+      "correct_answer": "Linux 核心是搶佔式的\nLinux 核心使用信號量\nfutexes 是一種混合的同步機制",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000064,
+      "type": "fill_blank",
+      "options": [],
+      "question": "In the solution to the Readers-Writers Problem, the read_count variable is used to track how many [__1__] are currently reading.(Please answer in lowercase English)",
+      "user_answer": "readers",
+      "correct_answer": "readers",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000065,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "下列哪種情況不會導致競爭條件（race condition）？",
+      "user_answer": "多個程序同時執行無關的程式碼",
+      "correct_answer": "多個程序同時執行無關的程式碼",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000066,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "哪些陳述是關於「競爭條件」（race condition）的？",
+      "user_answer": "多個行程或執行緒同時存取共享資料\n結果取決於執行緒執行的特定順序\n它可能導致資料不一致",
+      "correct_answer": "多個行程或執行緒同時存取共享資料\n結果取決於執行緒執行的特定順序\n它可能導致資料不一致",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000067,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "下列哪種同步工具屬於一種忙碌等待（busy waiting）的鎖定機制？",
+      "user_answer": "Mutex Lock",
+      "correct_answer": "Mutex Lock",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000068,
+      "type": "fill_blank",
+      "options": [],
+      "question": "Starvation refers to a process being indefinitely [__1__].(Please answer in lowercase English)",
+      "user_answer": "blocked",
+      "correct_answer": "blocking",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000069,
+      "type": "fill_blank",
+      "options": [],
+      "question": "wait(S) 操作的定義是 while (S <= 0) ; S--; ，這是什麼類型的等待？ [__1__](請用小寫英文回答 字母間留一個空白)",
+      "user_answer": "busywaiting",
+      "correct_answer": "busy wait",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000070,
+      "type": "fill_blank",
+      "options": [],
+      "question": "在無忙碌等待的信號量實施中，block() 操作會將調用它的程序放入一個適當的[__1__]佇列。(請用小寫英文回答)",
+      "user_answer": "waiting",
+      "correct_answer": "waiting",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000071,
+      "type": "fill_blank",
+      "options": [],
+      "question": "信號量是一種同步工具，它提供了比互斥鎖更[__1__]的方式來同步程序的活動。(請用小寫英文回答)",
+      "user_answer": "sophisticated",
+      "correct_answer": "sophisticated",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000072,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "當一個程序從等待佇列中被喚醒時，它會被放入哪一個佇列？",
+      "user_answer": "就緒佇列",
+      "correct_answer": "就緒佇列",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000073,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "Which two synchronization tools typically lead to busy waiting?",
+      "user_answer": "Mutex Lock\nSpinlock",
+      "correct_answer": "Mutex Lock\nSpinlock",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000074,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "在 Windows 作業系統中，哪種同步機制使用了一個整數的計數器？",
+      "user_answer": "Semaphore",
+      "correct_answer": "Semaphore",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000075,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "關於 test_and_set() 指令，以下哪些陳述是正確的？",
+      "user_answer": "它會原子地執行\n它會返回參數的原始值\n它會將參數的新值設定為TRUE",
+      "correct_answer": "它會原子地執行\n它會返回參數的原始值\n它會將參數的新值設定為TRUE",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000076,
+      "type": "fill_blank",
+      "options": [],
+      "question": "[__1__]信號量的值可以是一個不受限制的整數。(請用小寫英文回答)",
+      "user_answer": "counting",
+      "correct_answer": "counting",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000077,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "解決臨界區問題的三個要求是什麼？",
+      "user_answer": "互斥\n進度\nBounded Waiting",
+      "correct_answer": "互斥\n進度\nBounded Waiting",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000078,
+      "type": "fill_blank",
+      "options": [],
+      "question": "Peterson's Solution 是一種針對兩個程序解決臨界區問題的[__1__]解決方案。(請用小寫英文回答)",
+      "user_answer": "software",
+      "correct_answer": "software",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000079,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "Which of the following are synchronization mechanisms of the Windows kernel?",
+      "user_answer": "Mutexes\nSemaphores\nSpinlocks\nEvents",
+      "correct_answer": "Mutexes\nSemaphores\nSpinlocks\nEvents",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000080,
+      "type": "fill_blank",
+      "options": [],
+      "question": "A monitor solution to the dining philosophers problem, while deadlock-free, may lead to [__1__].(Please answer in lowercase English)",
+      "user_answer": "starvation",
+      "correct_answer": "starvation",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000081,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "哲學家進餐問題（Dining-Philosophers Problem）是用來測試什麼的經典同步問題？",
+      "user_answer": "資源分配演算法",
+      "correct_answer": "新的同步方案",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000082,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "Which type of programming language's variables are immutable, helping to avoid data races?",
+      "user_answer": "Functional Programming Languages",
+      "correct_answer": "Functional Programming Languages",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000083,
+      "type": "fill_blank",
+      "options": [],
+      "question": "The critical section is a [__1__] of code in a process that changes common variables, updates tables, or writes to a file.(Please answer in lowercase English)",
+      "user_answer": "segment",
+      "correct_answer": "section",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000084,
+      "type": "fill_blank",
+      "options": [],
+      "question": "If process Pi is executing in its [__1__], then no other processes can be executing in their [__2__].(Please answer in lowercase English, leaving a space between each word)",
+      "user_answer": "critical section / critical section",
+      "correct_answer": "critical section/critical section",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000085,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "In the solution to the Readers-Writers Problem, what is the purpose of the read_count variable?",
+      "user_answer": "To track the number of readers",
+      "correct_answer": "To track the number of readers",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000086,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "Regarding Monitors, which of the following statements are correct?",
+      "user_answer": "It is a high-level abstraction\nOnly one process can be active within the monitor at a time\nInternal variables are only accessible by code within the monitor",
+      "correct_answer": "It is a high-level abstraction\nOnly one process can be active within the monitor at a time\nInternal variables are only accessible by code within the monitor",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000087,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "在 Peterson's Solution 中，兩個共享變數分別是什麼？",
+      "user_answer": "turn 和 flag",
+      "correct_answer": "turn 和 flag",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000088,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "wait(empty) and wait(mutex) are both used in which process of the Bounded-Buffer Problem?",
+      "user_answer": "Producer",
+      "correct_answer": "Producer",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000089,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "臨界區問題的「進度」要求指的是什麼？",
+      "user_answer": "請求進入臨界區的程序不能被無限期推遲",
+      "correct_answer": "請求進入臨界區的程序不能被無限期推遲",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000090,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "Regarding a Semaphore, which of the following statements are correct?",
+      "user_answer": "It is an integer variable\nIts operations are atomic\nIt can solve various synchronization problems",
+      "correct_answer": "It is an integer variable\nIts operations are atomic\nIt can solve various synchronization problems",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000091,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "關於功能性程式設計語言，以下哪些陳述是正確的？",
+      "user_answer": "它們不維護狀態\n變數是不可變的\n它們可以避免資料競爭\nErlang 和 Scala 是此類語言的例子",
+      "correct_answer": "它們不維護狀態\n變數是不可變的\n它們可以避免資料競爭\nErlang 和 Scala 是此類語言的例子",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000092,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "一個記憶體事務（memory transaction）是一個對記憶體的讀寫操作序列，這些操作會被以什麼方式執行？",
+      "user_answer": "原子地",
+      "correct_answer": "原子地",
+      "classification": "misclassified_os",
+      "canonical_ids": []
+    },
+    {
+      "id": 1000000199,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "關於確定性選擇演算法（Select），正確的敘述有？",
+      "user_answer": "時間複雜度為 O(n)\n使用中位數的中位數作為 pivot\n克服了最壞情況 O(n²)",
+      "correct_answer": "時間複雜度為 O(n)\n使用中位數的中位數作為 pivot\n克服了最壞情況 O(n²)",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        48
+      ]
+    },
+    {
+      "id": 1000000200,
+      "type": "fill_blank",
+      "options": [],
+      "question": "中位數選擇法（Median Order / Quickselect）\n假設我們有以下 18 個未排序的整數：\n42, 17, 89, 8, 55, 23, 71, 94, 12, 63, 31, 76, 5, 50, 82, 29, 66, 37\n當他進行第一輪分割後\n選中的基準值 (Pivot) 為何 [__1__]\n比基準值 (Pivot) 大的有幾個 [__2__]",
+      "user_answer": "63 / 6",
+      "correct_answer": "63/6",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        35
+      ]
+    },
+    {
+      "id": 1000000201,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "在尋找第二小元素（Second smallest）時，最壞情況下需要的比較次數為？",
+      "user_answer": "n + ⌈log n⌉ - 2",
+      "correct_answer": "n + ⌈log n⌉ - 2",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        28
+      ]
+    },
+    {
+      "id": 1000000202,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "Randomized-Select 的優勢在於？",
+      "user_answer": "平均執行時間為 O(n)\n不需要額外儲存空間\n實現簡便",
+      "correct_answer": "平均執行時間為 O(n)\n不需要額外儲存空間\n實現簡便",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        23
+      ]
+    },
+    {
+      "id": 1000000203,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "Randomized-Select 演算法中，pivot 的選擇方式是？",
+      "user_answer": "隨機選擇",
+      "correct_answer": "隨機選擇",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        4
+      ]
+    },
+    {
+      "id": 1000000204,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "**********順序統計量問題通常屬於哪類演算法應用？",
+      "user_answer": "選擇問題",
+      "correct_answer": "選擇問題",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        53
+      ]
+    },
+    {
+      "id": 1000000205,
+      "type": "fill_blank",
+      "options": [],
+      "question": "同時找出陣列中的最大值（Maximum）與最小值（Minimum）\n以下的做法 會經過幾次比較[__1__]\n先尋找最小值 再 尋找最大值",
+      "user_answer": "2n-2",
+      "correct_answer": "2n-2",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        55
+      ]
+    },
+    {
+      "id": 1000000206,
+      "type": "fill_blank",
+      "options": [],
+      "question": "尋找第二小元素在最壞情況下需要 [__1__] 次比較 (請用小寫英文回答)",
+      "user_answer": "n+logn-2",
+      "correct_answer": "n+logn-2",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        49
+      ]
+    },
+    {
+      "id": 1000000207,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "Select 演算法的優點？",
+      "user_answer": "保證線性時間複雜度\n對輸入數據不敏感\n比 Randomized-Select 更穩定",
+      "correct_answer": "保證線性時間複雜度\n對輸入數據不敏感\n比 Randomized-Select 更穩定",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        19
+      ]
+    },
+    {
+      "id": 1000000208,
+      "type": "fill_blank",
+      "options": [],
+      "question": "Randomized-Select 演算法在 [__1__] 情況下表現最快 (請用小寫英文回答)",
+      "user_answer": "average",
+      "correct_answer": "average",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        57
+      ]
+    },
+    {
+      "id": 1000000209,
+      "type": "fill_blank",
+      "options": [],
+      "question": "根據課本的例子，考慮以下的 Median of Medians 的遞迴關係式\n\nT(n) = O(1), if  n < 140\nT(n) = T(⌈n/5⌉) + [__1__] + [__2__] , if  n >= 140",
+      "user_answer": "T(7n/10+6) / O(n)",
+      "correct_answer": "T(7n/10+6)/O(n)",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        26
+      ]
+    },
+    {
+      "id": 1000000210,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "Randomized-Select 在最壞情況下的時間複雜度為？",
+      "user_answer": "O(n²)",
+      "correct_answer": "O(n²)",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        17
+      ]
+    },
+    {
+      "id": 1000000211,
+      "type": "fill_blank",
+      "options": [],
+      "question": "中位數是第 [__1__] 個順序統計量 (請用小寫英文回答)",
+      "user_answer": "n/2",
+      "correct_answer": "n/2",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        18
+      ]
+    },
+    {
+      "id": 1000000212,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "尋找集合中最小值（Minimum）的基本演算法時間複雜度為？",
+      "user_answer": "O(n)",
+      "correct_answer": "O(n)",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        20
+      ]
+    },
+    {
+      "id": 1000000213,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "順序統計量演算法常見複雜度？",
+      "user_answer": "O(n)\nO(n log n)\nO(n²)",
+      "correct_answer": "O(n)\nO(n log n)\nO(n²)",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        22
+      ]
+    },
+    {
+      "id": 1000000214,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "尋找最小值與最大值的優化方法包含？",
+      "user_answer": "配對比較法\n直接掃描",
+      "correct_answer": "配對比較法\n直接掃描",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        43
+      ]
+    },
+    {
+      "id": 1000000215,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "Randomized-Select 的平均時間複雜度為？",
+      "user_answer": "O(n)",
+      "correct_answer": "O(n)",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        60
+      ]
+    },
+    {
+      "id": 1000000216,
+      "type": "fill_blank",
+      "options": [],
+      "question": "請完成以下的虛擬碼\n\nRANDOMIZED_SELECT(A, p, r, i)\n1 if p = r\n2     then return A[p]\n3 q <- RANDOMIZED_PARTITION(A, p, r)\n4 k <- q - p + 1\n5 if i = k     > the pivot value is the answer\n6     then return A[q]\n7 elseif i < k\n8     then return RANDOMIZED_SELECT(A, p, [__1__], i)\n9 else return RANDOMIZED_SELECT(A, [__2__], r, [__3__])",
+      "user_answer": "q-1 / q+1 / i-k",
+      "correct_answer": "q-1/q+1/i-k",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        3
+      ]
+    },
+    {
+      "id": 1000000217,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "比較次數分析中，同時尋找最大值與最小值的好處？",
+      "user_answer": "減少總比較次數\n提升效率",
+      "correct_answer": "減少總比較次數\n提升效率",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        21
+      ]
+    },
+    {
+      "id": 1000000218,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "要在一個有 n 個元素的集合中同時找到最小值與最大值，最有效率的比較次數大約為？",
+      "user_answer": "1.5n",
+      "correct_answer": "1.5n",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        44
+      ]
+    },
+    {
+      "id": 1000000219,
+      "type": "choice_options_missing",
+      "options": [],
+      "question": "Select 演算法中的 Partition 操作？",
+      "user_answer": "與 Quicksort 中的類似\n回傳 pivot 的索引\n重新排列元素",
+      "correct_answer": "與 Quicksort 中的類似\n回傳 pivot 的索引\n重新排列元素",
+      "classification": "integrated_algorithm",
+      "canonical_ids": [
+        34
+      ]
+    }
+  ]
+}
+

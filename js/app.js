@@ -1,8 +1,8 @@
-import { curatePublishedQuestions } from './question-curation.js?v=20261029-algu6';
+import { curatePublishedQuestions } from './question-curation.js?v=20261029-u7bank';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { loadUserQuestions, initCustomQuestions, mistakenAnswer } from "./custom-questions.js?v=20261017-formats1";
 import { initNavigation } from "./navigation.js";
-import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261029-algu6";
+import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261029-u7bank";
 import { initMusic } from "./music.js";
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017-formats1";
 
@@ -262,15 +262,16 @@ function renderUnitChoices() {
 }
 if (collaborationEnabled()) publishedCounts().then(rows => {
     mergeCollaborationUnits(rows.filter(row => Number(row.question_count)>0));
-    rows.forEach(row => sharedCounts.set(row.subject_id + ':' + row.unit_id,
-        ['os','algorithm'].includes(row.subject_id) && row.unit_id === 'u6' ? 0 : Number(row.question_count)));
+    const curated = row => (['os','algorithm'].includes(row.subject_id) && row.unit_id === 'u6') ||
+        (row.subject_id === 'algorithm' && row.unit_id === 'u7');
+    rows.forEach(row => sharedCounts.set(row.subject_id + ':' + row.unit_id, curated(row) ? 0 : Number(row.question_count)));
     renderUnitChoices();
-    for (const subject of ['os','algorithm']) {
-        if (!rows.some(row => row.subject_id === subject && row.unit_id === 'u6')) continue;
-        loadPublishedQuestions(subject, 'u6')
-            .then(questions => curatePublishedQuestions(questions, subject, 'u6'))
-            .then(questions => { sharedCounts.set(subject+':u6', questions.length); renderUnitChoices(); })
-            .catch(() => { /* Keep the built-in count if the shared service is unavailable. */ });
+    for (const row of rows.filter(curated)) {
+        const subject=row.subject_id, unit=row.unit_id;
+        loadPublishedQuestions(subject, unit)
+            .then(questions => curatePublishedQuestions(questions, subject, unit))
+            .then(questions => { sharedCounts.set(subject+':'+unit, questions.length); renderUnitChoices(); })
+            .catch(() => { /* Keep the classified count unavailable until a successful retry. */ });
     }
 }).catch(() => { /* Built-in counts remain available if the shared service is offline. */ });
 

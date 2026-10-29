@@ -40,6 +40,7 @@ function omitIntegratedU6Shared(questions) {
 
 let u5Curation;
 let algorithmU6Integration;
+let algorithmU7Classification;
 export function omitIntegratedAlgorithmU6Shared(questions, integration) {
     const records = new Map(integration.records.map(record => [record.id, record]));
     return questions.filter(question => {
@@ -49,7 +50,18 @@ export function omitIntegratedAlgorithmU6Shared(questions, integration) {
             JSON.stringify(question.options || []) !== JSON.stringify(record.options || []);
     });
 }
+export function omitProcessedAlgorithmU7(questions, classification) {
+    if (classification.subject_id !== 'algorithm' || classification.unit_id !== 'u7') return questions;
+    return omitIntegratedAlgorithmU6Shared(questions, classification);
+}
 export async function curatePublishedQuestions(questions, subject, unit) {
+    if (subject === 'algorithm' && unit === 'u7') {
+        try {
+            if (!algorithmU7Classification) algorithmU7Classification = fetch(new URL('../data/algorithm-u7-classification.json?v=20261029-u7bank', import.meta.url))
+                .then(response => { if (!response.ok) throw new Error('U7 classification unavailable'); return response.json(); });
+            return omitProcessedAlgorithmU7(questions, await algorithmU7Classification);
+        } catch { algorithmU7Classification = null; throw new Error('U7 分類資料暫時無法載入，請稍後重試。'); }
+    }
     if (subject === 'algorithm' && unit === 'u6') {
         try {
             if (!algorithmU6Integration) algorithmU6Integration = fetch(new URL('../data/algorithm-u6-integration.json?v=20261029', import.meta.url))

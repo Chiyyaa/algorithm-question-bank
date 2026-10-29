@@ -1,0 +1,1268 @@
+[
+  {
+    "id": 1,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "哪些是選擇問題的輸入條件？",
+    "options": [
+      "A. 元素個數 n >= 1",
+      "B. 集合元素各不相同",
+      "C. 需指定 i",
+      "D. 需為已排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "元素個數 n >= 1\n集合元素各不相同\n需指定 i",
+    "answer_note": "依課本採互異元素的選擇問題版本；選擇演算法可另行擴充處理重複值，互異不是所有實作的通用限制。",
+    "source_id": "ALG7-EXPORT-001",
+    "source_inferred_id": true,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-001"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "下列何者是順序統計量相關的操作？",
+    "options": [
+      "A. Maximum",
+      "B. Median",
+      "C. Minimum",
+      "D. Sorting"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Maximum\nMedian\nMinimum",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-002",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-002"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 3,
+    "title": "",
+    "type": "fill_blank",
+    "source_type": "填空題",
+    "question": "請完成以下的虛擬碼\n演算法步驟\nRANDOMIZED_SELECT(A, p, r, i)\n1  if p = r\n2   then return A[p]\n3   q <- RANDOMIZED_PARTITION(A, p, r)\n4   k <- q - p + 1\n5   if i = k > the pivot value is the answer\n6   then return A[q]\n7   elseif i < k\n8   then return RANDOMIZED_SELECT(A, p, [__1__], i)\n9   else return RANDOMIZED_SELECT(A, [__2__], r, [__3__])",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "（1）q-1\n（2）q+1\n（3）i-k",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-003",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-003"
+    ],
+    "previous_shared_ids": [
+      1000000216
+    ]
+  },
+  {
+    "id": 4,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "Randomized-Select 演算法中，pivot 的選擇方式是？",
+    "options": [
+      "A. 隨機選擇",
+      "B. 總是選擇最後一個",
+      "C. 總是選擇中間",
+      "D. 總是選擇第一個"
+    ],
+    "options_status": "complete",
+    "correct_answer": "隨機選擇",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-004",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-004"
+    ],
+    "previous_shared_ids": [
+      1000000203
+    ]
+  },
+  {
+    "id": 5,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "選擇問題（Selection Problem）的輸入為何？",
+    "options": [
+      "A. 一組包含 n 個數字的集合與數字 i",
+      "B. 一個已排序陣列",
+      "C. 僅一組 n 個數字",
+      "D. 僅數字 i"
+    ],
+    "options_status": "complete",
+    "correct_answer": "一組包含 n 個數字的集合與數字 i",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-005",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-005"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 6,
+    "title": "",
+    "type": "disputed",
+    "source_type": "填空題",
+    "question": "中位數選擇法（Median Order / Quickselect） 假設我們有以下 18 個未排序的整數： 42, 17, 89, 8, 55, 23, 71, 94, 12, 59, 31, 76, 5, 50, 82, 29, 66, 37 當他進行第一輪分割後 選中的基準值 (Pivot) 為何 [__1__] 我們要找的目標 是在比基準值 (Pivot) 大的組裡的 第幾小的數 [__2__]",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "（1）59\n（2）2",
+    "answer_note": "來源未指定目標順序統計量與第一輪 pivot 的選取規則，無法僅由題幹唯一推得 59 與 2。保留來源答案；與含 63 或要求數量不同的版本分開。",
+    "source_id": "ALG7-EXPORT-006",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-006"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 7,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "以下哪些屬於順序統計量應用？",
+    "options": [
+      "A. 統計學中的四分位數計算",
+      "B. 排程系統中的優先級處理",
+      "C. 資料集的中位數分析",
+      "D. 陣列元素的穩定排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "統計學中的四分位數計算\n排程系統中的優先級處理\n資料集的中位數分析",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-007",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-007"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 8,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "在中位數計算中，何謂「中位數的中位數」？",
+    "options": [
+      "A. 確保分割效果",
+      "B. 一種 pivot 選擇策略",
+      "C. 用於確定性 Select",
+      "D. 一種排序方法"
+    ],
+    "options_status": "complete",
+    "correct_answer": "確保分割效果\n一種 pivot 選擇策略\n用於確定性 Select",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-008",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-008"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 9,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "順序統計量演算法中，處理 n 個元素時，n 通常假設為？",
+    "options": [
+      "A. 大於 0 的正整數",
+      "B. 負數",
+      "C. 無限大",
+      "D. 複數"
+    ],
+    "options_status": "complete",
+    "correct_answer": "大於 0 的正整數",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-009",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-009"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 10,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "Randomized-Select 若 pivot 每次都能將陣列平分，則複雜度為？",
+    "options": [
+      "A. O(n)",
+      "B. O(n²)",
+      "C. O(n log n)",
+      "D. O(log n)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "O(n)",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-010",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-010"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 11,
+    "title": "",
+    "type": "fill_blank",
+    "source_type": "填空題",
+    "question": "同時找出陣列中的最大值（Maximum）與最小值（Minimum） 完成以下的做法使它經過(3 n/2 )次比較 得到結果\n演算法步驟\nGET_MIN_MAX(A)\n1  n <- A.length\n2   if n = 0\n3   then return (NIL, NIL)\n4  \n5   // 步驟 1：初始化 min 與 max\n6   if n % 2 != 0 // 陣列長度為奇數\n7   then min <- A[1]\n8   max <- A[1]\n9   start_idx <- 2\n10   else // 陣列長度為偶數\n11   if A[1] < A[2]\n12   then min <- A[1]\n13   max <- A[2]\n14   else min <- A[2]\n15   max <- A[1]\n16   start_idx <- 3\n17  \n18   // 步驟 2：兩兩分組進行比較\n19   for i <- [__1__] to n - 1 step 2\n20   do if A[i] < [__2__]\n21   then if A[i] < min\n22   then min <- A[i]\n23   if A[i + 1] > max\n24   then max <- A[i + 1]\n25   else if A[i + 1] < min\n26   then min <- A[i + 1]\n27   if A[i] > max\n28   then max <- A[i]\n29  \n30   return (min, max)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "（1）start_idx\n（2）A[i+1]",
+    "answer_note": "來源標題的 3n/2 為約略比較次數。此配對程式偶數 n 的精確次數為 3n/2-2，奇數 n 為 3(n-1)/2；兩個程式填空仍依來源保留。",
+    "source_id": "ALG7-EXPORT-011",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-011"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 12,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "尋找中位數是一種？",
+    "options": [
+      "A. 選擇問題",
+      "B. 插值問題",
+      "C. 雜湊問題",
+      "D. 圖形掃描"
+    ],
+    "options_status": "complete",
+    "correct_answer": "選擇問題",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-012",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-012"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 13,
+    "title": "",
+    "type": "disputed",
+    "source_type": "填空題",
+    "question": "同時尋找最大與最小值時，配對比較法總共需要 [__1__] 次比較 (請用小寫英文與分數型態回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "3n/2",
+    "answer_note": "來源答案採約略 3n/2；若題目要求精確次數，偶數 n 應為 3n/2-2，奇數 n 為 3(n-1)/2。",
+    "source_id": "ALG7-EXPORT-013",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-013"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 14,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "關於 Select 演算法，下列正確的是？",
+    "options": [
+      "A. 使用 Partition 函數",
+      "B. 遞迴地求解",
+      "C. 確保 pivot 選擇品質",
+      "D. 直接回傳陣列"
+    ],
+    "options_status": "complete",
+    "correct_answer": "使用 Partition 函數\n遞迴地求解\n確保 pivot 選擇品質",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-014",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-014"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 15,
+    "title": "",
+    "type": "fill_blank",
+    "source_type": "填空題",
+    "question": "Randomized-Select 的時間複雜度在最壞情況為 O([__1__]) (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "n^2",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-015",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-015"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 16,
+    "title": "",
+    "type": "disputed",
+    "source_type": "填空題",
+    "question": "為了保證線性時間， median order 裡面的Select 演算法將元素分成 [__1__] 組 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "five",
+    "answer_note": "標準 Median-of-Medians 是每組 5 個元素，組數約為 ceil(n/5)，不是固定分成 5 組。來源原文與答案 five 均保留，請留意措辭。參考：https://xlinux.nist.gov/dads/HTML/select.html",
+    "source_id": "ALG7-EXPORT-016",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-016"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 17,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "Randomized-Select 在最壞情況下的時間複雜度為？",
+    "options": [
+      "A. O(n²)",
+      "B. O(n log n)",
+      "C. O(n)",
+      "D. O(log n)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "O(n²)",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-017",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-017"
+    ],
+    "previous_shared_ids": [
+      1000000210
+    ]
+  },
+  {
+    "id": 18,
+    "title": "",
+    "type": "disputed",
+    "source_type": "填空題",
+    "question": "中位數是第 [__1__] 個順序統計量 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "n/2",
+    "answer_note": "n 為偶數並取下中位數時，可寫第 n/2 個；n 為奇數時為第 (n+1)/2 個。來源未明定 n 的奇偶，答案 n/2 須連同條件理解。",
+    "source_id": "ALG7-EXPORT-018",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-018"
+    ],
+    "previous_shared_ids": [
+      1000000211
+    ]
+  },
+  {
+    "id": 19,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "Select 演算法的優點？",
+    "options": [
+      "A. 保證線性時間複雜度",
+      "B. 對輸入數據不敏感",
+      "C. 比 Randomized-Select 更穩定",
+      "D. 完全不需要 Partition"
+    ],
+    "options_status": "complete",
+    "correct_answer": "保證線性時間複雜度\n對輸入數據不敏感\n比 Randomized-Select 更穩定",
+    "answer_note": "此處「較穩定」指最壞時間有線性保證，不代表它是保持相同鍵值相對順序的穩定排序。",
+    "source_id": "ALG7-EXPORT-019",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-019"
+    ],
+    "previous_shared_ids": [
+      1000000207
+    ]
+  },
+  {
+    "id": 20,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "尋找集合中最小值（Minimum）的基本演算法時間複雜度為？",
+    "options": [
+      "A. O(n)",
+      "B. O(1)",
+      "C. O(n log n)",
+      "D. O(log n)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "O(n)",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-020",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-020"
+    ],
+    "previous_shared_ids": [
+      1000000212
+    ]
+  },
+  {
+    "id": 21,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "比較次數分析中，同時尋找最大值與最小值的好處？",
+    "options": [
+      "A. 提升效率",
+      "B. 減少總比較次數",
+      "C. 簡化程式邏輯",
+      "D. 減少記憶體使用"
+    ],
+    "options_status": "complete",
+    "correct_answer": "提升效率\n減少總比較次數",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-021",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-021"
+    ],
+    "previous_shared_ids": [
+      1000000217
+    ]
+  },
+  {
+    "id": 22,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "順序統計量演算法常見複雜度？",
+    "options": [
+      "A. O(n)",
+      "B. O(n log n)",
+      "C. O(n²)",
+      "D. O(1)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "O(n)\nO(n log n)\nO(n²)",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-022",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-022"
+    ],
+    "previous_shared_ids": [
+      1000000213
+    ]
+  },
+  {
+    "id": 23,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "Randomized-Select 的優勢在於？",
+    "options": [
+      "A. 平均執行時間為 O(n)",
+      "B. 不需要額外儲存空間",
+      "C. 實現簡便",
+      "D. 在最壞情況下非常快速"
+    ],
+    "options_status": "complete",
+    "correct_answer": "平均執行時間為 O(n)\n不需要額外儲存空間\n實現簡便",
+    "answer_note": "不需要額外儲存空間通常指原地 partition 不另建輸出陣列；遞迴實作仍使用呼叫堆疊，不能一概視為總額外空間 O(1)。",
+    "source_id": "ALG7-EXPORT-023",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-023"
+    ],
+    "previous_shared_ids": [
+      1000000202
+    ]
+  },
+  {
+    "id": 24,
+    "title": "",
+    "type": "disputed",
+    "source_type": "多選",
+    "question": "Randomized-Select 中，Randomized-Partition 的意義？",
+    "options": [
+      "A. 加速 Partition 的執行",
+      "B. 隨機選擇 pivot 以避免最壞情況",
+      "C. 確保 pivot 永遠在中間",
+      "D. 強制陣列排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "加速 Partition 的執行\n隨機選擇 pivot 以避免最壞情況",
+    "answer_note": "隨機化選 pivot 不會改變單次 Partition 的線性階數，也不能保證避免最壞情況；它改善的是選擇過程的期望表現。來源將「加速 Partition」列為正確，應保留爭議提醒。",
+    "source_id": "ALG7-EXPORT-024",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-024"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 25,
+    "title": "",
+    "type": "disputed",
+    "source_type": "單選",
+    "question": "下列何者是中位數（Median）的定義？",
+    "options": [
+      "A. 第 n/2 個順序統計量",
+      "B. 最小值",
+      "C. 總和",
+      "D. 最大值"
+    ],
+    "options_status": "complete",
+    "correct_answer": "第 n/2 個順序統計量",
+    "answer_note": "來源採下中位數且 n 為偶數的寫法；奇數 n 的中位數排名為 (n+1)/2。偶數情況也有上中位數或取兩者平均的定義，請依題目約定。",
+    "source_id": "ALG7-EXPORT-025",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-025"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 26,
+    "title": "",
+    "type": "fill_blank",
+    "source_type": "填空題",
+    "question": "根據課本的例子，考慮以下的 Median of Medians 的遞迴關係式 T(n) = O(1), if n < 140 T(n) = T(⌈n/5⌉) + [__1__] + [__2__] , if n >= 140",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "（1）T(7n/10+6)\n（2）O(n)",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-026",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-026"
+    ],
+    "previous_shared_ids": [
+      1000000209
+    ]
+  },
+  {
+    "id": 27,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "為什麼最小/最大值演算法比較有效率？",
+    "options": [
+      "A. 利用配對比較特性",
+      "B. 不需進行完整排序",
+      "C. 降低比較總數",
+      "D. 直接記憶陣列值"
+    ],
+    "options_status": "complete",
+    "correct_answer": "利用配對比較特性\n不需進行完整排序\n降低比較總數",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-027",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-027"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 28,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "在尋找第二小元素（Second smallest）時，最壞情況下需要的比較次數為？",
+    "options": [
+      "A. n + ⌈log n⌉ - 2",
+      "B. n",
+      "C. log n",
+      "D. 2n"
+    ],
+    "options_status": "complete",
+    "correct_answer": "n + ⌈log n⌉ - 2",
+    "answer_note": "log 以 2 為底，採比較競賽法的最壞比較次數界。",
+    "source_id": "ALG7-EXPORT-028",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-028"
+    ],
+    "previous_shared_ids": [
+      1000000201
+    ]
+  },
+  {
+    "id": 29,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "在中位數問題中，對於 n 為偶數的處理？",
+    "options": [
+      "A. 選取第 n/2+1 個元素",
+      "B. 可定義為兩個中位數的平均",
+      "C. 選取第 n/2 個元素",
+      "D. 不定義"
+    ],
+    "options_status": "complete",
+    "correct_answer": "選取第 n/2+1 個元素\n可定義為兩個中位數的平均\n選取第 n/2 個元素",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-029",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-029"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 30,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "若 n=1，集合的第 1 個順序統計量即為？",
+    "options": [
+      "A. 唯一的元素",
+      "B. 不確定",
+      "C. 無窮大",
+      "D. 為 0"
+    ],
+    "options_status": "complete",
+    "correct_answer": "唯一的元素",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-030",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-030",
+      "演算法U7題庫.txt UF366E7F8DA2D4E07B74E2065D6E8BD94"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 31,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "Randomized-Select 中的 Partition 操作目的是？",
+    "options": [
+      "A. 將元素劃分為兩部分",
+      "B. 計算總和",
+      "C. 尋找最大值",
+      "D. 排序陣列"
+    ],
+    "options_status": "complete",
+    "correct_answer": "將元素劃分為兩部分",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-031",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-031"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 32,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "一個集合的第 i 個順序統計量（ith order statistic）是指該集合中第幾個小的元素？",
+    "options": [
+      "A. 第 i 小的元素",
+      "B. 中位數",
+      "C. 平均數",
+      "D. 第 i 大的元素"
+    ],
+    "options_status": "complete",
+    "correct_answer": "第 i 小的元素",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-032",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-032"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 33,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "若以兩兩比較的方式，尋找最小值需要進行幾次比較？",
+    "options": [
+      "A. n-1",
+      "B. n",
+      "C. n/2",
+      "D. 1"
+    ],
+    "options_status": "complete",
+    "correct_answer": "n-1",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-033",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-033"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 34,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "Select 演算法中的 Partition 操作？",
+    "options": [
+      "A. 與 Quicksort 中的類似",
+      "B. 回傳 pivot 的索引",
+      "C. 重新排列元素",
+      "D. 改變陣列大小"
+    ],
+    "options_status": "complete",
+    "correct_answer": "與 Quicksort 中的類似\n回傳 pivot 的索引\n重新排列元素",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-034",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-034"
+    ],
+    "previous_shared_ids": [
+      1000000219
+    ]
+  },
+  {
+    "id": 35,
+    "title": "",
+    "type": "disputed",
+    "source_type": "填空題",
+    "question": "中位數選擇法（Median Order / Quickselect） 假設我們有以下 18 個未排序的整數： 42, 17, 89, 8, 55, 23, 71, 94, 12, 63, 31, 76, 5, 50, 82, 29, 66, 37 當他進行第一輪分割後 選中的基準值 (Pivot) 為何 [__1__] 比基準值 (Pivot) 大的有幾個 [__2__]",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "（1）63\n（2）6",
+    "answer_note": "輸入含 63，較 63 大的數確實有 6 個；但來源未說明為何第一輪一定選 63。保留來源 pivot 答案，與輸入含 59 的版本分開。",
+    "source_id": "ALG7-EXPORT-035",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-035"
+    ],
+    "previous_shared_ids": [
+      1000000200
+    ]
+  },
+  {
+    "id": 36,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "Randomized-Select 與 Quicksort 的共同點為？",
+    "options": [
+      "A. 皆使用 Partition",
+      "B. 皆依賴 pivot",
+      "C. 皆使用分治法",
+      "D. 皆為穩定排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "皆使用 Partition\n皆依賴 pivot\n皆使用分治法",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-036",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-036"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 37,
+    "title": "",
+    "type": "fill_blank",
+    "source_type": "填空題",
+    "question": "在 partition 操作中，pivot 最終歸位於 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "q",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-037",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-037"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 38,
+    "title": "",
+    "type": "fill_blank",
+    "source_type": "填空題",
+    "question": "尋找 n 個元素中的最小值需要 [__1__] 次比較 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "n-1",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-038",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-038"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 39,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "Randomized-Select 演算法是基於哪種排序演算法的變形？",
+    "options": [
+      "A. Quicksort",
+      "B. Heapsort",
+      "C. Insertion Sort",
+      "D. Merge Sort"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Quicksort",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-039",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-039"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 40,
+    "title": "",
+    "type": "fill_blank",
+    "source_type": "填空題",
+    "question": "Randomized-Select 的平均時間複雜度為 [__1__] (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "O(n)",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-040",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-040"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 41,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "尋找第二小元素的步驟？",
+    "options": [
+      "A. 維護一個候選集合",
+      "B. 先找到最小值",
+      "C. 比較可能為次小的元素",
+      "D. 直接對陣列排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "維護一個候選集合\n先找到最小值\n比較可能為次小的元素",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-041",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-041"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 42,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "Select 演算法（Deterministic-Select）的時間複雜度為？",
+    "options": [
+      "A. O(n)",
+      "B. O(n²)",
+      "C. O(n log n)",
+      "D. O(log n)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "O(n)",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-042",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-042",
+      "演算法U7題庫.txt U5CBBD9526E0148ACA1673555B9EBB039"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 43,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "尋找最小值與最大值的優化方法包含？",
+    "options": [
+      "A. 直接掃描",
+      "B. 配對比較法",
+      "C. 使用堆積",
+      "D. 先排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "直接掃描\n配對比較法",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-043",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-043"
+    ],
+    "previous_shared_ids": [
+      1000000214
+    ]
+  },
+  {
+    "id": 44,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "要在一個有 n 個元素的集合中同時找到最小值與最大值，最有效率的比較次數大約為？",
+    "options": [
+      "A. 1.5n",
+      "B. n log n",
+      "C. 2n",
+      "D. n"
+    ],
+    "options_status": "complete",
+    "correct_answer": "1.5n",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-044",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-044"
+    ],
+    "previous_shared_ids": [
+      1000000218
+    ]
+  },
+  {
+    "id": 45,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "順序統計量中的 i 是指？",
+    "options": [
+      "A. 查詢的排名順序",
+      "B. 比較次數",
+      "C. pivot 的索引",
+      "D. 陣列的大小"
+    ],
+    "options_status": "complete",
+    "correct_answer": "查詢的排名順序",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-045",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-045"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 46,
+    "title": "",
+    "type": "fill_blank",
+    "source_type": "填空題",
+    "question": "順序統計量問題中，我們假設元素是 [__1__] 的 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "distinct",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-046",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-046"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 47,
+    "title": "",
+    "type": "fill_blank",
+    "source_type": "填空題",
+    "question": "順序統計量(order statistic)演算法中，[__1__] 的作用與 Quicksort 相同 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "partition",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-047",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-047"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 48,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "關於確定性選擇演算法（Select），正確的敘述有？",
+    "options": [
+      "A. 使用中位數的中位數作為 pivot",
+      "B. 時間複雜度為 O(n)",
+      "C. 克服了最壞情況 O(n²)",
+      "D. 比隨機選擇快"
+    ],
+    "options_status": "complete",
+    "correct_answer": "使用中位數的中位數作為 pivot\n時間複雜度為 O(n)\n克服了最壞情況 O(n²)",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-048",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-048"
+    ],
+    "previous_shared_ids": [
+      1000000199
+    ]
+  },
+  {
+    "id": 49,
+    "title": "",
+    "type": "disputed",
+    "source_type": "填空題",
+    "question": "尋找第二小元素在最壞情況下需要 [__1__] 次比較 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "n+logn-2",
+    "answer_note": "來源 n+logn-2 未加進位符號；一般 n 的競賽法最壞比較次數界寫成 n+ceil(log2 n)-2，n 為 2 的冪時可直接寫 n+log2 n-2。",
+    "source_id": "ALG7-EXPORT-049",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-049"
+    ],
+    "previous_shared_ids": [
+      1000000206
+    ]
+  },
+  {
+    "id": 50,
+    "title": "",
+    "type": "fill_blank",
+    "source_type": "填空題",
+    "question": "假定有 n 個數 (以下的 A B C D .... 都是數值) 考慮以下的 Median of Medians 問題 若根據課本的的演算法 各組已排序 且找到中位數也以排序 若以下的 M 為中間值 請問 比M大的 節點數 會大於多少 (不用 CEILING 與 FLOOR) [__1__] A ... B C D ... E F ... G H I ... J K ... L_M_N ... O P ... Q R S ... T U ... V W X",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "3n/10 -6",
+    "answer_note": "來源原圖在文字檔中已攤平成一行字母，保留其文字及答案；若需依節點位置讀圖，仍需原圖。3n/10-6 是標準五元分組分析中的保證下界。",
+    "source_id": "ALG7-EXPORT-050",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-050"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 51,
+    "title": "",
+    "type": "fill_blank",
+    "source_type": "填空題",
+    "question": "Randomized-Select 演算法依賴 [__1__] 函數來進行分割 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "partition",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-051",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-051"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 52,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "在 Partition 之後，pivot 元素位於？",
+    "options": [
+      "A. 其正確的順序位置",
+      "B. 隨機位置",
+      "C. 陣列結尾",
+      "D. 陣列開頭"
+    ],
+    "options_status": "complete",
+    "correct_answer": "其正確的順序位置",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-052",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-052"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 53,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "順序統計量問題通常屬於哪類演算法應用？",
+    "options": [
+      "A. 選擇問題",
+      "B. 排序問題",
+      "C. 圖論",
+      "D. 字串處理"
+    ],
+    "options_status": "complete",
+    "correct_answer": "選擇問題",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-053",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-053",
+      "演算法U7題庫.txt U874E276906EE47CCA2E0D04D10BE1925"
+    ],
+    "previous_shared_ids": [
+      1000000204
+    ]
+  },
+  {
+    "id": 54,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "Partition 操作中，哪些索引會變動？",
+    "options": [
+      "A. i",
+      "B. j",
+      "C. pivot",
+      "D. 陣列長度"
+    ],
+    "options_status": "complete",
+    "correct_answer": "i\nj",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-054",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-054"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 55,
+    "title": "",
+    "type": "fill_blank",
+    "source_type": "填空題",
+    "question": "同時找出陣列中的最大值（Maximum）與最小值（Minimum） 以下的做法 會經過幾次比較[__1__] 先尋找最小值 再 尋找最大值",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "2n-2",
+    "answer_note": "分別掃描最小值與最大值，各需 n-1 次元素比較，合計 2n-2；與配對法版本不同。",
+    "source_id": "ALG7-EXPORT-055",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-055"
+    ],
+    "previous_shared_ids": [
+      1000000205
+    ]
+  },
+  {
+    "id": 56,
+    "title": "",
+    "type": "choice",
+    "source_type": "多選",
+    "question": "順序統計量與排序的關係？",
+    "options": [
+      "A. 排序時間複雜度為 O(n log n)",
+      "B. 順序統計量可透過排序間接得到",
+      "C. 排序後的陣列可直接取得順序統計量",
+      "D. 兩者無任何關係"
+    ],
+    "options_status": "complete",
+    "correct_answer": "排序時間複雜度為 O(n log n)\n順序統計量可透過排序間接得到\n排序後的陣列可直接取得順序統計量",
+    "answer_note": "O(n log n) 指一般有效率的比較排序，不是每種排序演算法在所有情況下的複雜度。",
+    "source_id": "ALG7-EXPORT-056",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-056"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 57,
+    "title": "",
+    "type": "disputed",
+    "source_type": "填空題",
+    "question": "Randomized-Select 演算法在 [__1__] 情況下表現最快 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "average",
+    "answer_note": "來源答案為 average，但「表現最快」通常應區分最佳情況與平均／期望情況。Randomized-Select 的期望時間為 Θ(n)，不宜把 average 一律視為最快情況。",
+    "source_id": "ALG7-EXPORT-057",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-057"
+    ],
+    "previous_shared_ids": [
+      1000000208
+    ]
+  },
+  {
+    "id": 58,
+    "title": "",
+    "type": "disputed",
+    "source_type": "多選",
+    "question": "Randomized-Select 最壞情況的發生條件？",
+    "options": [
+      "A. pivot 總選擇到最大值或最小值",
+      "B. 陣列已幾乎排序完成",
+      "C. 陣列元素全部相同",
+      "D. pivot 總選擇到中位數"
+    ],
+    "options_status": "complete",
+    "correct_answer": "pivot 總選擇到最大值或最小值\n陣列已幾乎排序完成",
+    "answer_note": "隨機化選 pivot 時，輸入接近排序完成本身不保證最壞情況。最壞情況取決於不斷出現極不平衡的分割；保留來源答案並加註此差異。",
+    "source_id": "ALG7-EXPORT-058",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-058"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 59,
+    "title": "",
+    "type": "disputed",
+    "source_type": "填空題",
+    "question": "中位數選擇法（Median Order / Quickselect） 假設我們有以下 18 個未排序的整數： 42, 17, 89, 8, 55, 23, 71, 94, 12, 63, 31, 76, 5, 50, 82, 29, 66, 37 當他進行第一輪分割後 要找的目標在比選中的基準值 (Pivot) 大的組別裡面的第幾個 [__1__] 比基準值 (Pivot) 小的有幾個 [__2__]",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "（1）5\n（2）11",
+    "answer_note": "題目未給定目標排名 i，無法唯一決定在較大組中的排名 5；若採來源 pivot=63，較小者確為 11 個。保留來源答案，不與問「較大者數量」的版本合併。",
+    "source_id": "ALG7-EXPORT-059",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-059"
+    ],
+    "previous_shared_ids": []
+  },
+  {
+    "id": 60,
+    "title": "",
+    "type": "choice",
+    "source_type": "單選",
+    "question": "Randomized-Select 的平均時間複雜度為？",
+    "options": [
+      "A. O(n)",
+      "B. O(n log n)",
+      "C. O(n²)",
+      "D. O(log n)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "O(n)",
+    "answer_note": "",
+    "source_id": "ALG7-EXPORT-060",
+    "source_inferred_id": false,
+    "sources": [
+      "演算法U7題庫.txt ALG7-EXPORT-060"
+    ],
+    "previous_shared_ids": [
+      1000000215
+    ]
+  }
+]
+
