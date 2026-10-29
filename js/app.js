@@ -1,4 +1,4 @@
-import { initPractice } from './practice.js?v=20261029-verification1';
+import { initPractice } from './practice.js?v=20261029-focus1';
 import { curatePublishedQuestions } from './question-curation.js?v=20261029-u7bank';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";

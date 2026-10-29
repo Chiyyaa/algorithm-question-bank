@@ -178,6 +178,41 @@ body.muji-theme #panel-practice .practice-score { color: var(--link); font-weigh
 body.muji-theme #panel-practice .practice-progress { accent-color: var(--primary); }
 body.muji-theme #panel-practice .practice-progress::-webkit-progress-bar { background: var(--border); border-radius: 4px; }
 body.muji-theme #panel-practice .practice-progress::-webkit-progress-value { background: var(--primary); border-radius: 4px; }
+/* Keep the active question in view, with settings and introductory content folded away. */
+body.muji-theme:has(#panel-practice.active.is-answering) .main-shell > .container { padding-top: 76px; padding-bottom: 24px; }
+body.muji-theme #panel-practice .practice-session-controls { display: flex; justify-content: flex-end; margin: 0 0 8px; }
+body.muji-theme #panel-practice.is-answering .practice-card { margin: 0; padding: 22px 24px; }
+body.muji-theme #panel-practice.is-answering .practice-question-header { font-size: 13px; line-height: 1.5; }
+body.muji-theme #panel-practice.is-answering .practice-progress { display: block; height: 6px; margin: 10px 0 6px; }
+body.muji-theme #panel-practice.is-answering .practice-question-heading h2,
+body.muji-theme #panel-practice.is-answering #verificationHeading { font-size: 21px; line-height: 1.5; margin: 8px 0 12px; }
+body.muji-theme #panel-practice.is-answering .practice-stem { margin: 8px 0 14px; line-height: 1.65; font-size: 16px; }
+body.muji-theme #panel-practice.is-answering .practice-choices { margin: 0 0 12px; }
+body.muji-theme #panel-practice.is-answering .practice-choices legend { margin-bottom: 8px; font-size: 13px; line-height: 1.5; }
+body.muji-theme #panel-practice.is-answering .practice-option { padding: 10px 12px; margin: 0 0 8px; min-height: 44px; line-height: 1.55; font-size: 15px; }
+body.muji-theme #panel-practice.is-answering .practice-actions { margin-top: 12px; }
+body.muji-theme #panel-practice.is-answering .practice-blanks { gap: 10px; margin: 0 0 12px; }
+body.muji-theme #panel-practice.is-answering .practice-blanks label { margin-bottom: 5px; font-size: 14px; }
+body.muji-theme #panel-practice.is-answering .practice-blanks input { padding: 10px 12px; min-height: 44px; }
+body.muji-theme #panel-practice.is-answering .practice-help { font-size: 13px; line-height: 1.5; }
+body.muji-theme #panel-practice.is-answering .practice-feedback { margin: 14px 0; padding: 16px; }
+body.muji-theme #panel-practice.is-answering :is(#practiceAnswerForm, #verificationForm) { min-width: 0; }
+@media (min-width: 1000px) {
+    body.muji-theme #panel-practice.is-answering .practice-card:not(.practice-verification) {
+        display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); column-gap: 28px; align-items: start;
+    }
+    body.muji-theme #panel-practice.is-answering :is(.practice-question-header, .practice-progress, .practice-question-heading) { grid-column: 1 / -1; }
+    body.muji-theme #panel-practice.is-answering .practice-card:not(.practice-verification) > .practice-stem { grid-column: 1; grid-row: 4; }
+    body.muji-theme #panel-practice.is-answering #practiceAnswerForm { grid-column: 2; grid-row: 4; }
+    body.muji-theme #panel-practice.is-answering .practice-verification .practice-choices { display: grid; grid-template-columns: 1fr 1fr; column-gap: 14px; }
+}
+@media (max-width: 700px) {
+    body.muji-theme #panel-practice.is-answering .practice-card { padding: 16px; }
+    body.muji-theme #panel-practice.is-answering .practice-stem { font-size: 15px; margin: 6px 0 12px; }
+    body.muji-theme #panel-practice.is-answering .practice-option { padding: 9px 10px; margin-bottom: 6px; }
+    body.muji-theme #panel-practice.is-answering .practice-question-heading h2,
+    body.muji-theme #panel-practice.is-answering #verificationHeading { font-size: 19px; margin: 6px 0 10px; }
+}
 /* Homepage: retain the three original links, illustrations, and music controls. */
 body.muji-theme #subjectHome { background: var(--bg); color: var(--text); }
 body.muji-theme #subjectHome::before,

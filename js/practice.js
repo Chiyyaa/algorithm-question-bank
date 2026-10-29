@@ -32,6 +32,10 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
     }
     function sync() {
         const running=!!verification||!!session&&!session.complete;
+        $('panel-practice').classList.toggle('is-answering',running);
+        $('panel-practice').querySelector(':scope > header').hidden=running;
+        $('practiceSettings').hidden=running;
+        $('practiceSessionControls').hidden=!running;
         $('practiceUnit').disabled=running;
         document.querySelectorAll('[name="practiceCount"]').forEach(input=>input.disabled=running);
         $('practiceStart').hidden=running;
@@ -145,13 +149,15 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
     function render(){sync();if(verification)showVerification();else if(session)showQuestion();else placeholder();}
     function reset(ask=true) {
         if(ask&&(verification||session&&!session.complete)&&!confirm('要重新選擇單元與題數嗎？本次練習進度將重新開始。'))return;
-        session=null;verification=null;render();
+        session=null;verification=null;render();window.scrollTo({top:0,behavior:'instant'});$('practiceHeading').focus({preventScroll:true});
     }
     function open() {
         if(subject!=='algorithm')return;
         if(!opened){const current=getContext()?.unitId;if(PRACTICE_UNITS.includes(current))$('practiceUnit').value=current;opened=true;}
         render();if(!session&&(!pool||poolUnit!==$('practiceUnit').value)&&!loading)load();
-        $('practiceHeading').focus({preventScroll:true});
+        const heading=verification?$('verificationHeading'):session&&!session.complete?$('practiceQuestionHeading'):$('practiceHeading');
+        heading.focus({preventScroll:true});
+        if(verification||session&&!session.complete)window.scrollTo({top:0,behavior:'instant'});
     }
     $('practiceNavBtn').addEventListener('click',open);
     $('practiceSettings').addEventListener('submit',event=>{
