@@ -1,6 +1,6 @@
 import { curatePublishedQuestions } from './question-curation.js?v=20261029-u7bank';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
-import { loadUserQuestions, initCustomQuestions, mistakenAnswer } from "./custom-questions.js?v=20261017-formats1";
+import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
 import { initNavigation } from "./navigation.js";
 import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261029-u7bank";
 import { initMusic } from "./music.js";
@@ -74,7 +74,6 @@ let currentUnit = null;
 let requestVersion = 0;
 let loading = false;
 let ready = false;
-let customQuestions;
 const { updateBackToTop, setSidebarOpen } = initNavigation({
     onSelectUnit: selectUnit,
     onLeaveSubject: leaveSubject
@@ -121,10 +120,8 @@ function render() {
         `第 ${pageCount ? currentPage : 0} / ${pageCount} 頁`;
     document.getElementById("prevPageBtn").disabled = currentPage <= 1;
     document.getElementById("nextPageBtn").disabled = currentPage >= pageCount;
-
-    const userCount = QUESTIONS.filter(q => q.user_created).length;
     summary.textContent =
-        `目前顯示 ${pageItems.length} / ${filtered.length} 題｜自行新增 ${userCount} 題`;
+        `目前顯示 ${pageItems.length} / ${filtered.length} 題`;
 
     if (!filtered.length) {
         list.innerHTML = `<div class="empty">找不到符合條件的題目，試試其他關鍵字。</div>`;
@@ -155,7 +152,6 @@ function render() {
                 <div class="number">#${q.id}</div>
                 <div class="badges">
                     <span class="badge">${escapeHtml(getTypeLabel(q.type))}</span>
-                    ${q.user_created ? `<span class="badge user-badge">自行新增</span>` : ""}
                     ${q.shared_question ? '<span class="badge user-badge">友列協助題</span>' : ''}
                 </div>
             </div>
@@ -291,8 +287,6 @@ function selectUnit(unitId) {
     currentPage = 1;
     document.querySelectorAll(".filter-btn").forEach(button =>
         button.classList.toggle("active", button.dataset.filter === "all"));
-    customQuestions.resetForm();
-    customQuestions.refresh();
     const label = currentSubject.name + "｜" + unit.name;
     document.getElementById("currentUnitLabel").textContent = label;
     document.getElementById("bankFooter").textContent = "";
@@ -315,8 +309,6 @@ function leaveSubject(fromHistory = false) {
     QUESTIONS.length = 0;
     answersVisible.clear();
     answersHidden.clear();
-    customQuestions.resetForm();
-    customQuestions.refresh();
     document.getElementById("studyShell").hidden = true;
     document.getElementById("sidebar").hidden = true;
     document.getElementById("mobileMenuBtn").hidden = true;
@@ -329,12 +321,6 @@ function leaveSubject(fromHistory = false) {
     document.getElementById("subjectHeading").focus({ preventScroll: true });
 }
 
-customQuestions = initCustomQuestions({
-    questions: QUESTIONS, answersVisible,
-    getCurrentUnit: () => currentUnit
-        ? { subjectId: currentSubject.id, unitId: currentUnit.id } : null,
-    onChange: render
-});
 history.replaceState({ ...history.state, questionBank: { view: "home" } }, "");
 window.addEventListener("popstate", event => {
     if (event.state?.questionBank?.view === "bank") enterSubject(event.state.questionBank.subjectId || "algorithm", event.state.questionBank.unitId, false);
@@ -375,7 +361,7 @@ async function loadQuestionBank() {
     const subject = currentSubject;
     loading = true;
     const controls = document.querySelectorAll(
-        ".toolbar button, #searchInput, #prevPageBtn, #nextPageBtn, #panel-add input, #panel-add textarea, #panel-add select, #addUnitLabel, #saveQuestionBtn, #resetFormBtn"
+        ".toolbar button, #searchInput, #prevPageBtn, #nextPageBtn"
     );
     controls.forEach(control => { control.disabled = true; });
     summary.textContent = "題庫載入中……";
@@ -398,15 +384,14 @@ async function loadQuestionBank() {
         try { sharedQuestions = await curatePublishedQuestions(await loadPublishedQuestions(subject.id, unit.id), subject.id, unit.id); }
         catch { sharedFailed = true; }
         if (version !== requestVersion) return;
-        QUESTIONS.push(...builtInQuestions, ...sharedQuestions, ...loadUserQuestions(subject.id, unit.id));
+        QUESTIONS.push(...builtInQuestions, ...sharedQuestions);
         if (!sharedFailed && collaborationEnabled()) { sharedCounts.set(subject.id + ':' + unit.id, sharedQuestions.length); renderUnitChoices(); }
-        customQuestions.refresh();
         document.getElementById("bankFooter").textContent =
             subject.name + "｜" + unit.name + "｜內建 " + builtInQuestions.length + " 題" +
             (collaborationEnabled() ? "｜共用 " + sharedQuestions.length + " 題" : "");
         if (sharedFailed) {
             const warning = document.createElement("p"); warning.className = "missing"; warning.setAttribute("role", "status");
-            warning.append("共用題庫暫時無法載入，目前僅顯示內建與私人題目。 ");
+            warning.append("共用題庫暫時無法載入，目前僅顯示內建題目。 ");
             const retry = document.createElement("button"); retry.type = "button"; retry.textContent = "重試共用題庫";
             retry.addEventListener("click", () => { if (loading) return; ready = false; QUESTIONS.length = 0; loadQuestionBank(); });
             warning.append(retry); document.getElementById("bankFooter").append(warning);

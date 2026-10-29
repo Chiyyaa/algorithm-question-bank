@@ -12,10 +12,12 @@
     "test:collaboration": "node tests/collaboration-all.cjs",
     "test:english": "node tests/english.cjs",
     "test:batch": "node --experimental-vm-modules tests/collaboration-batch.cjs",
-    "test:limits": "node tests/collaboration-limits.cjs"
+    "test:limits": "node tests/collaboration-limits.cjs",
+    "test:no-private": "node --experimental-vm-modules tests/no-private.cjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.5.10",
     "playwright": "1.62.1"
   }
 }
+
