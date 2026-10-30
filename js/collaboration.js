@@ -1,6 +1,8 @@
-import { createBulkReview } from './collaboration-review.js?v=20261017-review1';
+import { createContributionBank, classifyContribution, comparisonMarkup } from './collaboration-import.js?v=20261030-collab-html1';
+import { initCollaborationTheme } from './collaboration-theme.js?v=20261030-collab-html1';
+import { createBulkReview } from './collaboration-review.js?v=20261030-collab-html1';
 import { escapeHtml } from './utils.js?v=20261017-formats1';
-import { parseSubmission, questionCount, createBatchEditor } from './collaboration-batch.js?v=20261017-batch2';
+import { parseSubmission, questionCount, createBatchEditor } from './collaboration-batch.js?v=20261030-collab-html1';
 import { SUBJECTS, getUnit, mergeCollaborationUnits } from './units.js?v=20261017-formats1';
 import * as service from './collaboration-api.js?v=20261017-batch1';
 
@@ -35,8 +37,16 @@ function populateUnits(){
 }
 function asDraft(q){return '題目：'+q.question+(q.options?.length?'\n\n選項：\n'+q.options.join('\n'):'')+(q.user_answer?'\n\n你的答案：\n'+q.user_answer:'')+'\n\n正確答案：\n'+q.correct_answer;}
 function contentFrom(text,format='auto'){return parseSubmission(text,format);}
-const bulkReview=createBulkReview({service,getMember:()=>member,getRows:()=>rows,getTab:()=>tab,notify:notice,refresh,run,isBusy:()=>busy});
-const batchEditor=createBatchEditor({service,getMember:()=>member,getEditing:()=>editing,notify:notice,refresh,run,isBusy:()=>busy});
+const loadContributionBank=createContributionBank(service);
+initCollaborationTheme();
+const comparisonCache=new WeakMap();
+async function showContributionComparison(host,q){
+    const panel=document.createElement('div');panel.className='review-comparison';panel.textContent='正在比對目前題庫……';host.insertBefore(panel,host.querySelector('label[for=reviewDraft]'));
+    try{const bank=await loadContributionBank(q.subject_id);let memo=comparisonCache.get(bank);if(!memo){memo=new Map();comparisonCache.set(bank,memo);}const key=JSON.stringify(q.content);if(!memo.has(key))memo.set(key,comparisonMarkup(classifyContribution(q.content,bank),{review:true}));if(panel.isConnected)panel.innerHTML=memo.get(key);}
+    catch{if(panel.isConnected)panel.textContent='目前無法比對題庫，請重新整理後再審核。';}
+}
+const bulkReview=createBulkReview({compare:showContributionComparison,service,getMember:()=>member,getRows:()=>rows,getTab:()=>tab,notify:notice,refresh,run,isBusy:()=>busy});
+const batchEditor=createBatchEditor({loadBank:loadContributionBank,service,getMember:()=>member,getEditing:()=>editing,notify:notice,refresh,run,isBusy:()=>busy});
 function subjectLabel(q){return (SUBJECTS.find(s=>s.id===q.subject_id)?.name||q.subject_id)+'｜'+q.unit_id.toUpperCase();}
 function authorName(id){return members.find(m=>m.user_id===id)?.display_name||(id===member?.user_id?member.display_name:'協作者');}
 function time(value){return new Date(value).toLocaleString('zh-TW');}
@@ -105,6 +115,8 @@ function openReview(q){
     $('reviewDialog').querySelectorAll('.dialog-message').forEach(e=>e.remove());
     $('reviewHeading').textContent=canReview?'審核題目':'題目內容';
     $('reviewContext').textContent=subjectLabel(q)+' · '+authorName(q.author_id)+' · '+labels[q.status];
+    $('reviewDialog').querySelectorAll('.review-comparison').forEach(e=>e.remove());
+    showContributionComparison($('reviewDialog'),q);
     $('reviewDraft').value=asDraft(q.content);$('reviewDraft').readOnly=!canReview;
     $('reviewNote').value=q.review_note||'';$('reviewNote').readOnly=!canReview;
     $('approveSubmission').hidden=!canReview;$('returnSubmission').hidden=!canReview;

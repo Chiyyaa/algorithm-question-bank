@@ -5,12 +5,12 @@
  <meta name="referrer" content="strict-origin-when-cross-origin">
  <title>題庫協作</title>
  <link rel="stylesheet" href="./css/style.css?v=20261009-os">
- <link rel="stylesheet" href="./css/collaboration.css?v=20261017-review1">
+ <link rel="stylesheet" href="./css/collaboration.css?v=20261030-collab-html1">
 </head>
-<body class="collaboration-page">
+<body class="collaboration-page" data-subject="algorithm">
 <main class="collab-container">
- <a class="back-link" href="./index.html">← 回到題庫</a>
- <header class="collab-header"><div><p class="eyebrow">一起整理，安心練習</p><h1>題庫協作</h1><p class="subtitle">提交題目，由管理員審核後發布。</p></div>
+ <div class="collab-topbar"><a class="back-link" href="./index.html">← 回到題庫</a><button id="collabTheme" type="button">夜間模式</button></div>
+ <header class="collab-header"><div><p class="eyebrow">一起整理，安心練習</p><h1>題庫協作</h1><p class="subtitle">匯入題目與答案，比對缺漏，由管理員審核後發布。</p></div>
  <div id="accountBar" hidden><span id="accountName"></span><button id="passwordOpen" type="button">變更密碼</button><button id="logoutBtn" type="button">登出</button></div></header>
  <p id="collabMessage" role="status" aria-live="polite" hidden></p>
  <section id="notConfigured" class="form-card" hidden><h2>協作服務準備中</h2><p>目前仍可正常使用公開題庫，協作登入將在服務啟用後開放。</p></section>
@@ -35,11 +35,14 @@
     <form id="submissionForm">
      <div class="destination-fields"><div><label for="submissionSubject">科目</label><select id="submissionSubject"></select></div><div><label for="submissionUnit">單元</label><select id="submissionUnit"></select></div></div>
      <button id="openUnitDialog" type="button">＋ 新增單元</button>
+     <section class="html-import" aria-labelledby="htmlImportHeading"><h3 id="htmlImportHeading">匯入題目與答案 HTML</h3><p class="help-text">選擇同一次測驗的兩份檔案。系統會核對題幹與選項，排除已收錄的相同題目。</p><div class="html-file-grid"><div><label for="contributionQuestionFile">題目頁 .html</label><input id="contributionQuestionFile" type="file" accept=".html,.htm"></div><div><label for="contributionAnswerFile">答案頁 .html</label><input id="contributionAnswerFile" type="file" accept=".html,.htm"></div></div><p class="help-text">每份上限 2 MB，每批最多 100 題。只擷取題目與正確答案，不上傳整份網頁。</p><button id="importContribution" class="primary-btn" type="button">解析並比對題庫</button><p id="importStatus" role="status" aria-live="polite"></p></section>
+     <details id="manualContribution"><summary>手動補充或修改題目</summary>
      <label for="submissionFormat">新增格式</label><select id="submissionFormat"><option value="no_options">無選項新增</option><option value="with_options">含選項新增</option><option value="auto">自動辨識（可混合題型）</option></select>
      <label for="submissionDraft">題目與答案（可貼上多題）</label>
-     <textarea id="submissionDraft" rows="12" required placeholder="題目：請輸入題目&#10;&#10;你的答案：&#10;請貼上作答內容&#10;&#10;正確答案：&#10;請貼上正確答案&#10;&#10;得分：1 / 1"></textarea>
+     <textarea id="submissionDraft" rows="12" placeholder="題目：請輸入題目&#10;&#10;你的答案：&#10;請貼上作答內容&#10;&#10;正確答案：&#10;請貼上正確答案&#10;&#10;得分：1 / 1"></textarea>
      <p class="help-text">每題以「題目：」開頭，並包含「正確答案：」。多題貼上後請先預覽；得分會忽略，不同的作答答案會保留為錯答備註。每批最多 100 題，每帳號每小時最多新增 300 題。</p>
      <button id="previewSubmissions" class="batch-preview-button" type="button">解析並逐題預覽</button>
+     </details>
      <section id="batchPreview" class="batch-preview" aria-label="批次題目預覽" hidden>
       <div class="section-heading"><h3>批次題目預覽</h3><button id="closeBatchPreview" type="button">關閉預覽</button></div>
       <p id="batchDestination" class="help-text"></p><p id="batchSummary" role="status" aria-live="polite"></p>
@@ -49,7 +52,7 @@
       <div id="batchItems"></div>
      </section>
      <div class="form-actions"><button id="saveSubmission" type="button">儲存草稿</button><button id="submitForReview" class="primary-btn" type="submit">送出審核</button></div>
-     <p class="help-text">草稿只有你與管理員可見；送審後需待審核或退回，才能繼續修改。</p>
+     <p class="help-text">草稿只有你與管理員可見；送審不會直接公開。補齊提案核准後新增完整版本，舊題保留待管理員整併。</p>
     </form>
    </section>
    <section><div class="section-heading"><h2 id="listHeading">我的題目</h2><span id="submissionCount"></span></div><div id="bulkReviewToolbar" class="bulk-review-toolbar" hidden><p id="bulkReviewCount" role="status" aria-live="polite"></p><div class="form-actions"><button id="selectPendingAll" type="button">全選已載入題目（最多 100 題）</button><button id="clearPendingSelection" type="button">取消全選</button><button id="previewBulkReview" class="primary-btn" type="button">預覽並批次審核</button></div></div><div id="submissionList"></div><button id="moreSubmissions" type="button" hidden>載入更多</button></section>
@@ -75,5 +78,5 @@
 </dialog>
 <dialog id="unitDialog"><h2>新增單元</h2><form id="unitForm"><p id="unitSubjectLabel"></p><label for="newUnitNumber">單元編號</label><input id="newUnitNumber" type="number" min="2" max="999" step="1" required placeholder="例如：7"><p class="help-text">第一題經管理員核准後，這個單元才會公開；相同編號會共用。</p><div class="form-actions"><button id="cancelUnit" type="button">取消</button><button class="primary-btn" type="submit">建立並選用</button></div></form></dialog>
 <dialog id="passwordDialog"><h2>變更密碼</h2><form id="passwordForm"><label for="newPassword">新密碼（至少 12 個字元）</label><input id="newPassword" type="password" autocomplete="new-password" minlength="12" required><label for="confirmPassword">再次輸入新密碼</label><input id="confirmPassword" type="password" autocomplete="new-password" minlength="12" required><div class="form-actions"><button id="cancelPassword" type="button">取消</button><button type="submit" class="primary-btn">更新密碼</button></div></form></dialog>
-<script type="module" src="./js/collaboration.js?v=20261017-batch2"></script>
+<script type="module" src="./js/collaboration.js?v=20261030-collab-html1"></script>
 </body></html>

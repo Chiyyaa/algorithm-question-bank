@@ -79,7 +79,7 @@ async function batchFlows(context, base) {
     async function login(page,name) {
         await page.goto(base+'collaborate.html');await page.locator('#loginEmail').fill(name+'@example.com');
         await page.locator('#loginPassword').fill('Correct-password-123!');await page.locator('#loginForm button').click();
-        await page.locator('#collabWorkspace').waitFor();await idle(page);
+        await page.locator('#collabWorkspace').waitFor();await idle(page);await page.locator('#manualContribution').evaluate(e=>e.open=true);
     }
     async function inspect() {await gate;await db.exec('reset role');return (await db.query('select * from public.question_submissions order by created_at,id')).rows;}
     async function closePreview() {await alice.locator('#closeBatchPreview').click();await alice.locator('#batchPreview').waitFor({state:'hidden'});}

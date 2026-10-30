@@ -1,3 +1,4 @@
+import { importContributionFiles, classifyEntries, comparisonMarkup } from './collaboration-import.js?v=20261030-collab-html1';
 import { parseDraft } from './custom-questions.js?v=20261017-formats1';
 import { escapeHtml } from './utils.js?v=20261017-formats1';
 
@@ -46,12 +47,13 @@ export function contentKey(content) {
         type:content.type, user_answer:content.user_answer || '' });
 }
 
-export function createBatchEditor({ service, getMember, getEditing, notify, refresh, run, isBusy }) {
+export function createBatchEditor({ loadBank, service, getMember, getEditing, notify, refresh, run, isBusy }) {
     const $ = id => document.getElementById(id);
     let batch = null;
     const labels = {ready:'待處理', draft:'草稿已儲存', pending:'已送出審核', published:'已發布', error:'送出失敗', uncertain:'結果待查核'};
-    const locked = entry => ['pending','published','uncertain'].includes(entry.status);
+    const locked = entry => ['pending','published','uncertain'].includes(entry.status) || entry.comparison?.kind==='duplicate';
     function duplicates() {
+        if(batch.imported)classifyEntries(batch.entries,batch.bank);
         const seen = new Map();
         for (const [i, entry] of batch.entries.entries()) {
             const key = contentKey(entry.content);
@@ -60,18 +62,19 @@ export function createBatchEditor({ service, getMember, getEditing, notify, refr
         }
     }
     function body(entry) {
-        if (entry.error) return `<p class="batch-error" role="alert">${escapeHtml(entry.error)}</p><pre class="batch-question">${escapeHtml(entry.text)}</pre>`;
+        const comparison=entry.comparison ? comparisonMarkup(entry.comparison) : '';
+        if (entry.error) return `${comparison}<p class="batch-error" role="alert">${escapeHtml(entry.error)}</p><pre class="batch-question">${escapeHtml(entry.text)}</pre>`;
         const q = entry.content;
-        return `<div class="batch-question">${escapeHtml(q.question)}</div>${q.options.length ? `<div class="batch-options">${q.options.map(o => `<div>${escapeHtml(o)}</div>`).join('')}</div>` : ''}<div class="batch-answer"><strong>正確答案：</strong><span>${escapeHtml(q.correct_answer)}</span></div>${q.user_answer ? `<p class="help-text">你的答案：${escapeHtml(q.user_answer)}</p>` : ''}${entry.warning ? `<p class="batch-warning">${escapeHtml(entry.warning)}</p>` : ''}`;
+        return `${comparison}<div class="batch-question">${escapeHtml(q.question)}</div>${q.options.length ? `<div class="batch-options">${q.options.map(o => `<div>${escapeHtml(o)}</div>`).join('')}</div>` : ''}<div class="batch-answer"><strong>正確答案：</strong><span>${escapeHtml(q.correct_answer)}</span></div>${q.user_answer ? `<p class="help-text">你的答案：${escapeHtml(q.user_answer)}</p>` : ''}${entry.warning ? `<p class="batch-warning">${escapeHtml(entry.warning)}</p>` : ''}`;
     }
     function summary() {
         if (!batch) return;
         const selected = batch.entries.filter(e => e.selected);
-        const invalid = selected.filter(e => e.error).length;
+        const invalid = (batch.imported ? batch.entries : selected).filter(e => e.error).length;
         const pending = batch.entries.filter(e => ['pending','published'].includes(e.status)).length;
         const drafts = batch.entries.filter(e => e.status === 'draft').length;
         const uncertain = batch.entries.filter(e => e.status === 'uncertain').length;
-        $('batchSummary').textContent = `共 ${batch.entries.length} 題 · 已勾選 ${selected.length} 題 · 格式錯誤 ${invalid} 題 · 已送審 ${pending} 題 · 草稿 ${drafts} 題`;
+        $('batchSummary').textContent = `共 ${batch.entries.length} 題 · 已勾選 ${selected.length} 題 · 格式錯誤 ${invalid} 題 · 已送審 ${pending} 題 · 草稿 ${drafts} 題${batch.imported ? ` · 重複排除 ${batch.entries.filter(e=>e.comparison?.kind==='duplicate').length} 題` : ''}`;
         $('batchReconcile').hidden = !uncertain;
         syncControls();
     }
@@ -81,11 +84,16 @@ export function createBatchEditor({ service, getMember, getEditing, notify, refr
         $('batchPreview').hidden = false;
         $('batchDestination').textContent = batch.destinationLabel;
         $('batchItems').innerHTML = batch.entries.map((entry, i) => `<article class="batch-item" data-batch-index="${i}"><div class="section-heading"><label class="batch-check"><input type="checkbox" data-batch-select="${i}"${entry.selected ? ' checked' : ''}${locked(entry) || isBusy() ? ' disabled' : ''}>第 ${i + 1} 題</label><span class="status-pill" data-batch-status="${i}">${entry.error ? '格式需修正' : labels[entry.status]}</span></div><div data-batch-body="${i}">${body(entry)}</div><p class="batch-entry-message" data-batch-message="${i}" role="status">${escapeHtml(entry.message)}</p><details class="batch-edit"><summary>修改第 ${i + 1} 題</summary><label for="batchFormat-${i}">第 ${i + 1} 題格式</label><select id="batchFormat-${i}" data-batch-format="${i}"${locked(entry) || isBusy() ? ' disabled' : ''}><option value="no_options"${entry.format === 'no_options' ? ' selected' : ''}>無選項</option><option value="with_options"${entry.format === 'with_options' ? ' selected' : ''}>含選項</option><option value="auto"${entry.format === 'auto' ? ' selected' : ''}>自動辨識</option></select><label for="batchText-${i}">第 ${i + 1} 題內容</label><textarea id="batchText-${i}" data-batch-text="${i}" rows="7"${locked(entry) ? ' readonly' : ''}${isBusy() ? ' disabled' : ''}>${escapeHtml(entry.text)}</textarea></details></article>`).join('');
+        if(batch.imported){
+            const excluded=[...$('batchItems').querySelectorAll('.batch-item')].filter(host=>batch.entries[Number(host.dataset.batchIndex)].comparison?.kind==='duplicate');
+            if(excluded.length){const details=document.createElement('details');details.className='excluded-contributions';const title=document.createElement('summary');title.textContent='已排除 '+excluded.length+' 題重複題目（展開查看）';details.append(title,...excluded);$('batchItems').append(details);}
+        }
         summary();
     }
     function syncControls() {
         const active = !!batch, busy = isBusy();
         $('submissionDraft').readOnly = active;
+        for(const id of ['contributionQuestionFile','contributionAnswerFile','importContribution']) $(id).disabled=active||busy||!!getEditing();
         for (const id of ['submissionSubject','submissionUnit','submissionFormat','openUnitDialog']) $(id).disabled = active || busy;
         $('previewSubmissions').disabled = active || busy || !!getEditing();
         $('saveSubmission').textContent = active ? '批次儲存草稿' : '儲存草稿';
@@ -110,6 +118,21 @@ export function createBatchEditor({ service, getMember, getEditing, notify, refr
         render();
         notify(`已拆成 ${entries.length} 題，請逐題預覽後再批次送審。`);
     }
+    async function importHTML(){
+        if(batch||getEditing())throw new Error('請先結束目前預覽或開新草稿，再匯入檔案。');
+        $('importStatus').textContent='正在解析檔案並載入題庫……';
+        try{
+            const result=await importContributionFiles($('contributionQuestionFile').files[0],$('contributionAnswerFile').files[0]);
+            const subject=$('submissionSubject').value,unit=$('submissionUnit').value;
+            const bank=await loadBank(subject,{fresh:true});
+            classifyEntries(result.entries,bank);
+            batch={entries:result.entries,subject,unit,bank,imported:true,author:getMember().user_id,baseline:null,destinationLabel:$('submissionSubject').selectedOptions[0].textContent+'｜'+unit.toUpperCase()};
+            $('batchProgress').textContent='已排除確認重複的題目。請檢查留下的新增／補齊提案，再送出審核。';
+            $('manualContribution').open=false;
+            $('importStatus').textContent=result.warning||'比對完成；尚未送出任何題目。';render();
+        }catch(e){$('importStatus').textContent='未完成匯入，沒有送出任何題目。';throw e;}
+    }
+    $('importContribution').addEventListener('click',()=>run(importHTML));
     function clear({ preserve = false, force = false } = {}) {
         if (batch && !force && batch.entries.some(e => e.status === 'uncertain')) {
             notify('還有送出結果待查核的題目，請先查核，避免重複送出。', true); return false;
@@ -117,8 +140,8 @@ export function createBatchEditor({ service, getMember, getEditing, notify, refr
         if (batch && !force && batch.entries.some(e => e.row && !['pending','published'].includes(e.status) && contentKey(e.content) !== contentKey(e.row.content))) {
             notify('已儲存草稿的修改尚未儲存，請先批次儲存草稿，再關閉預覽。', true); return false;
         }
-        if (batch && preserve) $('submissionDraft').value = batch.entries.filter(e => !e.row).map(e => e.text).join('\n\n');
-        batch = null; $('batchPreview').hidden = true; $('batchItems').replaceChildren();
+        if (batch && preserve) $('submissionDraft').value = batch.entries.filter(e => !e.row && e.comparison?.kind!=='duplicate').map(e => e.text).join('\n\n');
+        batch = null; $('contributionQuestionFile').value='';$('contributionAnswerFile').value='';$('importStatus').textContent=''; $('batchPreview').hidden = true; $('batchItems').replaceChildren();
         $('batchProgress').textContent = ''; syncControls(); return true;
     }
     async function recent() {
@@ -127,7 +150,12 @@ export function createBatchEditor({ service, getMember, getEditing, notify, refr
     }
     async function send(submit) {
         if (!batch) return;
-        const entries = batch.entries.filter(e => e.selected && !['pending','published'].includes(e.status) && (submit || e.status !== 'draft'));
+        if(batch.imported){
+            $('batchProgress').textContent='正在重新確認目前題庫，避免重複送審……';
+            const bank=await loadBank(batch.subject,{fresh:true});
+            batch.bank=bank;classifyEntries(batch.entries,bank);render();
+        }
+        const entries = batch.entries.filter(e => e.comparison?.kind!=='duplicate' && e.selected && !['pending','published'].includes(e.status) && (submit || e.status !== 'draft'));
         if (batch.entries.some(e => e.status === 'uncertain')) throw new Error('有送出結果待查核的題目，請先按「查核送出狀態」。');
         if (!entries.length) throw new Error('沒有需要處理的勾選題目。已成功的題目不會重送。');
         if (entries.some(e => e.error || !e.content)) throw new Error('勾選的題目仍有格式錯誤，請先修正或取消勾選。');
@@ -148,6 +176,7 @@ export function createBatchEditor({ service, getMember, getEditing, notify, refr
             render();
         }
         $('batchProgress').textContent = `本次成功 ${success} 題${failure ? '，已暫停；其餘題目保留在預覽中。' : '。等待管理員審核。'}`;
+        if(batch.imported)$('importStatus').textContent=submit ? `已送審 ${batch.entries.filter(e=>['pending','published'].includes(e.status)).length} 題，核准後才會公開。` : '草稿已保留，尚未送審。';
         try { await refresh(); } catch { notify('送出狀態已保留，但列表暫時無法更新，請稍後重新整理。', true); }
         notify(failure ? `本次成功 ${success} 題後暫停，請查看各題狀態。` : `本次已${submit ? '送出審核' : '儲存草稿'} ${success} 題。`, !!failure);
     }

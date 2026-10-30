@@ -2,7 +2,7 @@ import { escapeHtml } from './utils.js?v=20261017-formats1';
 
 export const REVIEW_LIMIT = 100;
 
-export function createBulkReview({service,getMember,getRows,getTab,notify,refresh,run,isBusy}) {
+export function createBulkReview({compare,service,getMember,getRows,getTab,notify,refresh,run,isBusy}) {
     const $=id=>document.getElementById(id);
     const selected=new Map();
     let entries=null, action=null, note='';
@@ -41,6 +41,7 @@ export function createBulkReview({service,getMember,getRows,getTab,notify,refres
             const q=entry.row,c=q.content;
             return `<article class="bulk-review-item" data-bulk-review-id="${escapeHtml(q.id)}"><div class="section-heading"><h3>第 ${i+1} 題</h3><span class="status-pill">${labels[entry.state]}</span></div><p class="help-text">${escapeHtml(q.subject_id==='os'?'作業系統':'演算法')}｜${escapeHtml(q.unit_id.toUpperCase())}</p><p class="batch-question">${escapeHtml(c.question)}</p>${c.options?.length?`<div class="batch-options">${c.options.map(o=>`<div>${escapeHtml(o)}</div>`).join('')}</div>`:''}<div class="batch-answer"><strong>正確答案：</strong><span>${escapeHtml(c.correct_answer)}</span></div>${c.user_answer?`<p class="help-text">你的答案：${escapeHtml(c.user_answer)}</p>`:''}${entry.message?`<p class="batch-entry-message" role="status">${escapeHtml(entry.message)}</p>`:''}</article>`;
         }).join('');
+        if(compare)document.querySelectorAll('[data-bulk-review-id]').forEach(host=>{const entry=entries.find(e=>e.row.id===host.dataset.bulkReviewId);if(entry)compare(host,entry.row);});
         syncControls();
     }
     function open(){
