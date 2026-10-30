@@ -39,6 +39,20 @@ function formQuestion(stem,options,{id=1,number=1,type='radio'}={}){return '<div
   const base='http://127.0.0.1:'+server.address().port+'/algorithm-question-bank/';
   const {chromium}=require('playwright');browser=await chromium.launch({headless:true,channel:'msedge'});const p=await browser.newPage({viewport:{width:1280,height:900},reducedMotion:'reduce'}),errors=[];p.setDefaultTimeout(20000);p.on('pageerror',e=>errors.push(e.message));
   const nav=async name=>{if(await p.locator('#mobileMenuBtn').getAttribute('aria-expanded')!=='true')await p.locator('#mobileMenuBtn').click();await p.locator('[data-panel="'+name+'"]').click();};
+  const openCandidate=async(link,id,pageNumber=null)=>{
+   await link.scrollIntoViewIfNeeded();
+   const original={url:p.url(),scroll:await p.evaluate(()=>scrollY),results:await p.locator('#batchResultList').innerHTML()};
+   assert.equal(await link.getAttribute('target'),'_blank');assert.match(await link.getAttribute('rel'),/noopener/);
+   const [tab]=await Promise.all([p.context().waitForEvent('page'),link.click()]);
+   tab.on('pageerror',e=>errors.push(e.message));await tab.setViewportSize(p.viewportSize());
+   await tab.locator('.batch-target').waitFor();assert.equal(await tab.locator('.batch-target').getAttribute('data-id'),String(id));
+   assert.equal(await tab.locator('.batch-target .answer').isVisible(),true);assert.equal(await tab.evaluate(()=>window.opener),null);
+   if(pageNumber)assert.match(await tab.locator('#pageInfo').innerText(),new RegExp('第 '+pageNumber));
+   if(p.viewportSize().width<=850)await tab.waitForFunction(()=>document.getElementById('sidebar').inert);
+   assert.equal(p.url(),original.url);assert.equal(await p.locator('#panel-batch').isVisible(),true);
+   assert.equal(await p.locator('#batchResultList').innerHTML(),original.results);assert.equal(await p.evaluate(()=>scrollY),original.scroll);
+   await tab.close();
+  };
   await p.goto(base);assert.equal(await p.locator('#batchNavBtn').isHidden(),true);await p.locator('#algorithmSubjectBtn').click();
   assert.deepEqual(await p.locator('#sidebar .sidebar-nav [data-panel]').evaluateAll(es=>es.map(e=>e.dataset.panel)),['bank','units','batch','practice']);
   await nav('batch');assert.equal(await p.locator('#batchHeading').innerText(),'演算法批次查題');
@@ -54,8 +68,8 @@ function formQuestion(stem,options,{id=1,number=1,type='radio'}={}){return '<div
   await p.locator('#batchScope').selectOption('u6');await p.locator('#batchCompare').click();await p.locator('#batchResults').waitFor();
   assert.equal(await p.locator('#batchResultList > li').count(),2);assert.equal(await p.locator('[data-batch-number="1"]').getAttribute('data-status'),'matched');
   assert.equal(await p.locator('[data-batch-number="2"]').getAttribute('data-status'),'unmatched');assert.ok((await p.locator('[data-batch-number="1"] .batch-answer').innerText()).includes(source.correct_answer));
-  await p.locator('[data-batch-number="1"] .batch-question-link').click();await p.locator('.batch-target').waitFor();assert.equal(await p.locator('.batch-target').getAttribute('data-id'),'22');
-  assert.equal(await p.locator('.batch-target .answer').isVisible(),true);await nav('batch');assert.equal(await p.locator('#batchResultList > li').count(),2);
+  await openCandidate(p.locator('[data-batch-number="1"] .batch-question-link'),22);
+  assert.equal(await p.locator('#batchResultList > li').count(),2);
   await p.goto(base+'?subject=algorithm&unit=u6&question=60');await p.locator('.batch-target').waitFor();assert.equal(await p.locator('.batch-target').getAttribute('data-id'),'60');assert.match(await p.locator('#pageInfo').innerText(),/第 3/);
   await p.reload();await p.locator('.batch-target').waitFor();assert.equal(await p.locator('.batch-target').getAttribute('data-id'),'60');
   const parsedTests=await p.evaluate(async ({form})=>{
@@ -97,15 +111,16 @@ function formQuestion(stem,options,{id=1,number=1,type='radio'}={}){return '<div
     }
    }
    if(process.env.BATCH_SCREENSHOTS){fs.mkdirSync(process.env.BATCH_SCREENSHOTS,{recursive:true});await p.screenshot({path:path.join(process.env.BATCH_SCREENSHOTS,'desktop.png')});}
-   await p.locator('[data-batch-number="1"] a[data-question-id="31"]').click();await p.locator('.batch-target').waitFor();assert.equal(await p.locator('.batch-target').getAttribute('data-id'),'31');assert.match(await p.locator('#pageInfo').innerText(),/第 2/);
+   await openCandidate(p.locator('[data-batch-number="1"] a[data-question-id="31"]'),31,2);
    await nav('batch');await p.setViewportSize({width:390,height:844});await p.waitForFunction(()=>document.getElementById('sidebar').inert);assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-   await p.locator('[data-batch-number="1"] a[data-question-id="31"]').click();await p.locator('.batch-target').waitFor();assert.equal(await p.locator('#sidebar').evaluate(e=>e.inert),true);assert.equal(await p.locator('.batch-target').getAttribute('data-id'),'31');
+   await openCandidate(p.locator('[data-batch-number="1"] a[data-question-id="31"]'),31,2);
   }
   await p.goto(base);await p.locator('#osSubjectBtn').click();await nav('batch');assert.equal(await p.locator('#batchHeading').innerText(),'作業系統批次查題');assert.equal(await p.locator('#batchResultList > li').count(),0);
   const os=JSON.parse(fs.readFileSync(path.join(root,'data/os-u3.json'),'utf8')).find(q=>q.type==='fill_blank'&&q.question.includes('[__1__]'));
   const osHTML='<div class="question-block"><p class="question-text">妖獸 1. '+htmlEscape(os.question).replace('[__1__]','<input type="text" name="answers[77][]">')+'</p></div>';
   await p.locator('#batchFile').setInputFiles({name:'OS.html',mimeType:'text/html',buffer:Buffer.from(osHTML)});await p.locator('#batchPreviewSummary').filter({hasText:'已辨識 1 題'}).waitFor();await p.locator('#batchScope').selectOption('u3');await p.locator('#batchCompare').click();await p.locator('#batchResults').waitFor();
   assert.equal(await p.locator('[data-batch-number="1"]').getAttribute('data-status'),'matched');
+  await openCandidate(p.locator('[data-batch-number="1"] .batch-question-link').first(),os.id);
   // A failed unit must be disclosed instead of being silently presented as complete coverage.
   await p.route('**/data/os-u4.json',route=>route.fulfill({status:503,body:'Unavailable'}));
   await p.locator('#batchScope').selectOption('all');await p.locator('#batchCompare').click();await p.locator('#batchResults').waitFor();
@@ -117,6 +132,6 @@ function formQuestion(stem,options,{id=1,number=1,type='radio'}={}){return '<div
   await p.unroute('**/data/os-u3.json');await p.locator('#batchCompare').click();await p.locator('#batchResults').waitFor();
   await p.locator('#homeThemeBtn').evaluate(button=>button.click());assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   await p.goto(base+'english.html');assert.equal(await p.locator('#batchNavBtn,#panel-batch').count(),0);assert.deepEqual(errors,[]);
-  console.log('PASS ordered import, retained source IDs, inert HTML, preview, matching, candidate navigation across pages, reloadable links, partial/invalid files, both subjects and mobile; English unchanged');
+  console.log('PASS ordered import, retained source IDs, inert HTML, preview, matching, new-tab candidates with original results/scroll preserved, page targeting, reloadable links, partial/invalid files, both subjects and mobile; English unchanged');
  }finally{if(browser)await browser.close();if(server)await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

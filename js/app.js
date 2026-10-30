@@ -7,7 +7,7 @@ import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=2026102
 import { initMusic } from "./music.js";
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017-formats1";
 import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';
-import { initBatch } from './batch.js?v=20261030-batch1';
+import { initBatch } from './batch.js?v=20261030-batch-tabs1';
 import { batchQuestionHref } from './batch-core.js?v=20261030-batch1';
 
 initAppearance();
@@ -60,8 +60,7 @@ const batch = initBatch({
             const shared = await curatePublishedQuestions(await loadPublishedQuestions(subjectId, unitId), subjectId, unitId);
             return {questions:[...builtIn,...shared],warning:''};
         } catch { return {questions:builtIn,warning:'共用題庫暫時無法載入，目前僅比對內建題目。'}; }
-    },
-    onOpenQuestion(target) { enterSubject(target.subject, target.unit, true, target.id); }
+    }
 });
 let currentPage = 1;
 let currentFilter = "all";
