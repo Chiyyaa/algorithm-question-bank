@@ -1,12 +1,13 @@
+import { mergeQuestionVersions } from './question-versions.js?v=20261030-replace1';
 import { createQuestionLinkController } from './question-links.js?v=20261030-batch-v2';
 import { initPractice } from './practice.js?v=20261029-focus1';
-import { curatePublishedQuestions } from './question-curation.js?v=20261029-u7bank';
+import { curatePublishedQuestions } from './question-curation.js?v=20261030-replace1';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
 import { initNavigation } from "./navigation.js";
 import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261030-os34";
 import { initMusic } from "./music.js";
-import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017-formats1";
+import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261030-replace1";
 import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';
 import { initBatch } from './batch.js?v=20261030-batch-v2';
 import { batchQuestionHref } from './batch-core.js?v=20261030-complete-u5';
@@ -41,7 +42,7 @@ const practice = initPractice({
         const builtIn = await response.json();
         if (!Array.isArray(builtIn) || !builtIn.length) throw new Error('題庫格式不正確。');
         const shared = await curatePublishedQuestions(await loadPublishedQuestions(subjectId, unitId), subjectId, unitId);
-        return [...builtIn, ...shared];
+        return mergeQuestionVersions(builtIn,shared);
     }
 });
 const PAGE_SIZE = 25;
@@ -60,7 +61,7 @@ const batch = initBatch({
         }
         try {
             const shared = await curatePublishedQuestions(await loadPublishedQuestions(subjectId, unitId), subjectId, unitId);
-            return {questions:[...builtIn,...shared],warning:''};
+            return {questions:mergeQuestionVersions(builtIn,shared),warning:''};
         } catch { return {questions:builtIn,warning:'共用題庫暫時無法載入，目前僅比對內建題目。'}; }
     }
 });
@@ -272,7 +273,7 @@ const publishedUnitsReady = collaborationEnabled() ? publishedCounts().then(rows
         const subject=row.subject_id, unit=row.unit_id;
         loadPublishedQuestions(subject, unit)
             .then(questions => curatePublishedQuestions(questions, subject, unit))
-            .then(questions => { sharedCounts.set(subject+':'+unit, questions.length); renderUnitChoices(); })
+            .then(questions => { sharedCounts.set(subject+':'+unit, new Set(questions.filter(q=>q.shared_question).map(q=>q.id)).size); renderUnitChoices(); })
             .catch(() => { /* Keep the classified count unavailable until a successful retry. */ });
     }
 }).catch(() => { /* Built-in counts remain available if the shared service is offline. */ }) : Promise.resolve();
@@ -429,9 +430,10 @@ async function loadQuestionBank() {
             const targetCard=list.querySelector('.batch-target');
             const targetId=targetCard?.dataset.id, targetFocused=focused===targetCard;
             const targetMargin=targetCard?.style.scrollMarginTop;
-            QUESTIONS.length=0;QUESTIONS.push(...builtInQuestions,...sharedQuestions);
-            if(!failed&&sharedEnabled){sharedCounts.set(subject.id+':'+unit.id,sharedQuestions.length);renderUnitChoices();}
-            footer(sharedQuestions.length,false,failed);
+            let merged;try{merged=mergeQuestionVersions(builtInQuestions,sharedQuestions);}catch{merged=builtInQuestions;failed=true;sharedQuestions=[];}
+            QUESTIONS.length=0;QUESTIONS.push(...merged);
+            if(!failed&&sharedEnabled){sharedCounts.set(subject.id+':'+unit.id,new Set(sharedQuestions.filter(q=>q.shared_question).map(q=>q.id)).size);renderUnitChoices();}
+            footer(new Set(sharedQuestions.filter(q=>q.shared_question).map(q=>q.id)).size,false,failed);
             ready=true;controls.forEach(control=>{control.disabled=false;});render();
             const restored=targetId?list.querySelector('[data-id="'+targetId+'"]'):null;
             if(restored){restored.classList.add('batch-target');restored.tabIndex=-1;restored.style.scrollMarginTop=targetMargin;if(targetFocused)restored.focus({preventScroll:true});}

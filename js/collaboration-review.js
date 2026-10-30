@@ -2,7 +2,7 @@ import { escapeHtml } from './utils.js?v=20261017-formats1';
 
 export const REVIEW_LIMIT = 100;
 
-export function createBulkReview({compare,service,getMember,getRows,getTab,notify,refresh,run,isBusy}) {
+export function createBulkReview({decisions,compare,service,getMember,getRows,getTab,notify,refresh,run,isBusy}) {
     const $=id=>document.getElementById(id);
     const selected=new Map();
     let entries=null, action=null, note='';
@@ -16,6 +16,7 @@ export function createBulkReview({compare,service,getMember,getRows,getTab,notif
         $('clearPendingSelection').disabled=busy||!selected.size;
         $('previewBulkReview').disabled=busy||!selected.size;
         document.querySelectorAll('[data-review-select]').forEach(input=>{input.checked=selected.has(input.dataset.reviewSelect);input.disabled=busy;});
+        document.querySelectorAll('[data-bulk-review-id]').forEach(host=>{const entry=entries?.find(e=>e.row.id===host.dataset.bulkReviewId);host.querySelectorAll('.review-decision input,.review-decision select').forEach(e=>e.disabled=busy||!entry||!['ready','failed'].includes(entry.state));});
         const remaining=entries?.some(e=>['ready','failed'].includes(e.state));
         const unknown=entries?.some(e=>e.state==='uncertain');
         $('confirmBulkApprove').disabled=busy||!remaining||unknown||(action&&action!=='approve');
@@ -41,13 +42,13 @@ export function createBulkReview({compare,service,getMember,getRows,getTab,notif
             const q=entry.row,c=q.content;
             return `<article class="bulk-review-item" data-bulk-review-id="${escapeHtml(q.id)}"><div class="section-heading"><h3>第 ${i+1} 題</h3><span class="status-pill">${labels[entry.state]}</span></div><p class="help-text">${escapeHtml(q.subject_id==='os'?'作業系統':'演算法')}｜${escapeHtml(q.unit_id.toUpperCase())}</p><p class="batch-question">${escapeHtml(c.question)}</p>${c.options?.length?`<div class="batch-options">${c.options.map(o=>`<div>${escapeHtml(o)}</div>`).join('')}</div>`:''}<div class="batch-answer"><strong>正確答案：</strong><span>${escapeHtml(c.correct_answer)}</span></div>${c.user_answer?`<p class="help-text">你的答案：${escapeHtml(c.user_answer)}</p>`:''}${entry.message?`<p class="batch-entry-message" role="status">${escapeHtml(entry.message)}</p>`:''}</article>`;
         }).join('');
-        if(compare)document.querySelectorAll('[data-bulk-review-id]').forEach(host=>{const entry=entries.find(e=>e.row.id===host.dataset.bulkReviewId);if(entry)compare(host,entry.row);});
+        document.querySelectorAll('[data-bulk-review-id]').forEach(host=>{const entry=entries.find(e=>e.row.id===host.dataset.bulkReviewId);if(!entry)return;if(decisions)decisions.mount(host,entry.row,entry.choice,{locked:!['ready','failed'].includes(entry.state)}).then(syncControls);else if(compare)compare(host,entry.row);});
         syncControls();
     }
     function open(){
         if(!enabled()||!selected.size)return;
         $('bulkReviewDialog').querySelectorAll('.dialog-message').forEach(e=>e.remove());
-        entries=[...selected.values()].map(q=>({row:JSON.parse(JSON.stringify(q)),state:'ready',message:''}));
+        entries=[...selected.values()].map(q=>({row:JSON.parse(JSON.stringify(q)),state:'ready',message:'',choice:{}}));
         action=null;note='';$('bulkReviewNote').value='';render();$('bulkReviewDialog').showModal();
     }
     function close(){
@@ -57,7 +58,7 @@ export function createBulkReview({compare,service,getMember,getRows,getTab,notif
     }
     async function lookup(ids){
         if(ids.some(id=>!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)))throw new Error('題目識別資料不完整，請重新整理。');
-        const params=new URLSearchParams({select:'*',id:'in.('+ids.join(',')+')',limit:String(REVIEW_LIMIT)});
+        const params=new URLSearchParams({select:'*,question_replacement_publications(target_id,unit_id)',id:'in.('+ids.join(',')+')',limit:String(REVIEW_LIMIT)});
         return service.api('/rest/v1/question_submissions?'+params);
     }
     async function reconcile(){
@@ -69,7 +70,7 @@ export function createBulkReview({compare,service,getMember,getRows,getTab,notif
             const q=fresh.find(q=>q.id===entry.row.id);
             if(!q){entry.message='尚無法查核此題，請稍後再試。';continue;}
             const desired=action==='approve'?'published':'returned';
-            if(q.status===desired&&q.revision>entry.row.revision){entry.state=action;entry.message='已查核審核結果。';selected.delete(q.id);}
+            if(q.status===desired&&q.revision>entry.row.revision){const link=Array.isArray(q.question_replacement_publications)?q.question_replacement_publications[0]:q.question_replacement_publications;const matches=action!=='approve'||(entry.choice?.mode==='replace'?link?.target_id===entry.choice.target?.id&&link?.unit_id===entry.choice.target?.unit:!link);if(!matches){entry.state='changed';entry.message='這題的發布方式已由其他操作變更，請重新核對。';selected.delete(q.id);continue;}entry.state=action;entry.message='已查核審核結果。';selected.delete(q.id);}
             else if(q.status==='pending'&&q.revision===entry.row.revision){entry.state='ready';entry.message='目前仍為相同版本的待審核題，可重試。';}
             else{entry.state='changed';entry.message='此題已由其他操作更新，請關閉後重新整理、選取及確認內容。';selected.delete(q.id);}
         }
@@ -84,13 +85,14 @@ export function createBulkReview({compare,service,getMember,getRows,getTab,notif
         const nextNote=action?note:$('bulkReviewNote').value.trim();
         if(nextAction==='return'&&!nextNote)throw new Error('批次退回請填寫共同退回原因。');
         if(nextNote.length>2000)throw new Error('審核備註最多 2000 字元。');
-        if(!confirm(nextAction==='approve'?`確定核准發布選取的 ${targets.length} 題？核准後會出現在公開題庫。`:`確定將選取的 ${targets.length} 題退回修改？將使用相同退回原因。`))return;
+        if(nextAction==='approve'&&decisions)for(const entry of targets)await decisions.prepare(entry.row,entry.choice);
+        if(!confirm(nextAction==='approve'?`確定依每題選擇執行 ${targets.length} 題的新增／取代？修改紀錄會保留。`:`確定將選取的 ${targets.length} 題退回修改？將使用相同退回原因。`))return;
         action=nextAction;note=nextNote;
         let completed=0;
         for(const [index,entry] of targets.entries()){
             $('bulkReviewProgress').textContent=`正在處理第 ${index+1} / ${targets.length} 題……`;
             try{
-                const result=await service.rpc('review_question_submission',{p_id:entry.row.id,p_revision:entry.row.revision,p_action:action,p_content:null,p_note:note});
+                const result=action==='approve'&&decisions ? await decisions.publish(entry.row,entry.row.content,note,entry.choice) : await service.rpc('review_question_submission',{p_id:entry.row.id,p_revision:entry.row.revision,p_action:action,p_content:null,p_note:note});
                 if(result?.id!==entry.row.id||result.status!==(action==='approve'?'published':'returned'))throw new Error('回應不完整，請先查核審核結果。');
                 entry.state=action;entry.message='';selected.delete(entry.row.id);completed++;
             }catch(error){entry.state=error.definitive===true?'failed':'uncertain';entry.message=error.message;render();break;}

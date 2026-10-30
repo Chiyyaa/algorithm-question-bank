@@ -1,4 +1,4 @@
-import { importContributionFiles, classifyEntries, comparisonMarkup } from './collaboration-import.js?v=20261030-collab-html1';
+import { importContributionFiles, classifyEntries, comparisonMarkup } from './collaboration-import.js?v=20261030-replace1';
 import { parseDraft } from './custom-questions.js?v=20261017-formats1';
 import { escapeHtml } from './utils.js?v=20261017-formats1';
 

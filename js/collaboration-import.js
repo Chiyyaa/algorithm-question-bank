@@ -1,3 +1,6 @@
+import { curatePublishedQuestions } from './question-curation.js?v=20261030-replace1';
+import { loadQuestionReplacements } from './collaboration-api.js?v=20261030-replace1';
+import { mergeQuestionVersions } from './question-versions.js?v=20261030-replace1';
 import { decodeBatchFile, parseBatchHTML, MAX_BATCH_BYTES } from './batch-import.js?v=20261030-collab-html1';
 import { stripBatchOption } from './batch-core.js?v=20261030-collab-html1';
 import { SUBJECTS } from './units.js?v=20261017-formats1';
@@ -106,7 +109,7 @@ export function classifyEntries(entries,bank) {
 }
 export function comparisonMarkup(result,{review=false}={}) {
     const links=result.references.map(q=>`<a href="./?subject=${encodeURIComponent(q.subject)}&unit=${encodeURIComponent(q.unit)}&question=${encodeURIComponent(q.id)}" target="_blank" rel="noopener noreferrer">${escapeHtml(q.unit.toUpperCase())} 第 ${escapeHtml(q.id)} 題：${escapeHtml(q.question.slice(0,100))}</a>`).join('');
-    return `<div class="contribution-comparison" data-kind="${result.kind}"><strong>${escapeHtml(review&&result.kind==='duplicate'?'題庫已收錄相同內容，請核對是否仍需發布':result.label)}</strong>${links}${result.kind==='supplement'?'<p>核准後新增完整版本；舊題保留，由管理員後續整併。</p>':''}</div>`;
+    return `<div class="contribution-comparison" data-kind="${result.kind}"><strong>${escapeHtml(review&&result.kind==='duplicate'?'題庫已收錄相同內容，請核對是否仍需發布':result.label)}</strong>${links}${result.kind==='supplement'?'<p>管理員可對照原題，選擇取代指定舊題或新增一題。</p>':''}</div>`;
 }
 export async function readContributionFile(file) {
     if (!file || !/\.html?$/i.test(file.name)) throw new Error('請選擇 .html 或 .htm 檔案。');
@@ -134,7 +137,7 @@ export function createContributionBank(service) {
                     const rows=await service.api('/rest/v1/published_questions?'+params,{authenticated:false});
                     if(!Array.isArray(rows))throw new Error('共用題庫載入失敗。');
                     shared.push(...rows.map(r=>({...r.content,id:r.id})));
-                    if(rows.length<500) return [...local,...shared].map(q=>({...q,subject,unit:unit.id}));
+                    if(rows.length<500) return mergeQuestionVersions(local,await curatePublishedQuestions([...shared,...await loadQuestionReplacements(subject,unit.id)],subject,unit.id)).map(q=>({...q,subject,unit:unit.id}));
                 }
                 throw new Error('共用題庫超過比對上限。');
             }));

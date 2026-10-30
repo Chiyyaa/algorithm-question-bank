@@ -25,6 +25,8 @@ function safeError(data) {
         REVISION_CONFLICT:'這筆資料已被更新，請重新整理後再操作。', SUBMISSION_LIMIT:'提交過於頻繁，請稍後再試。',
         RETURN_NOTE_REQUIRED:'請填寫退回原因。', NOT_PENDING:'這筆題目已不在待審狀態，請重新整理。',
         NOT_PUBLISHED:'這筆題目尚未發布。', INVALID_CONTENT:'題目格式不完整或超過長度限制。',
+        REPLACEMENT_SOURCE_IN_USE:'這題已有取代版本，請從最新取代紀錄執行撤回或恢復。',
+        REPLACEMENT_TARGET_MISSING:'找不到指定原題，或原題已撤回，請重新選擇。', REPLACEMENT_TARGET_CHANGED:'原題已被更新，請重新開啟審核並比較最新版本。', REPLACEMENT_BASE_CHANGED:'內建原題已更新，請同步題庫版本後重新審核。', REPLACEMENT_SUPERSEDED:'這次發布已被後續版本取代，請操作目前版本。',
         ACCOUNT_NOT_FOUND:'找不到已建立的帳號。', MEMBER_EXISTS:'這個帳號已經有協作權限。',
         INVALID_MEMBER:'帳號資料不正確，或這不是協作者帳號。',
         INVALID_UNIT:'請選擇有效科目，單元編號需為 2～999。', UNIT_LIMIT:'新增單元過於頻繁，請稍後再試。',
@@ -84,7 +86,7 @@ export const rpc = async (name,body) => {
 };
 export async function publishedCounts(){return collaborationEnabled()?api('/rest/v1/rpc/published_question_counts',{method:'POST',body:{},authenticated:false}):[];}
 export async function listSubmissions({status,author,offset=0}={}){
-    const params=new URLSearchParams({select:'*,published_questions(visible)',order:'updated_at.desc,id.desc',limit:'100',offset:String(offset)});
+    const params=new URLSearchParams({select:'*,published_questions(visible),question_replacements(visible,target_id,revision),question_replacement_publications(is_current,target_id,unit_id)',order:'updated_at.desc,id.desc',limit:'100',offset:String(offset)});
     if(status)params.set('status','eq.'+status);if(author)params.set('author_id','eq.'+author);
     return api('/rest/v1/question_submissions?'+params);
 }
@@ -93,6 +95,12 @@ export async function listCollaborationUnits(){return api('/rest/v1/collaboratio
 export async function listAudit(){return api('/rest/v1/collaboration_audit?select=*&order=id.desc&limit=100');}
 export async function changePassword(password){return api('/auth/v1/user',{method:'PUT',body:{password}});}
 export async function manageAccount(body){return api('/functions/v1/manage-collaborators',{method:'POST',body});}
+export async function loadQuestionReplacements(subject,unit) {
+    if(!collaborationEnabled())return [];
+    const params=new URLSearchParams({select:'target_id,target_kind,content,base_content,revision',subject_id:'eq.'+subject,unit_id:'eq.'+unit,visible:'eq.true',order:'target_id.asc',limit:'500'}),all=[];
+    for(let offset=0;offset<50000;offset+=500){params.set('offset',String(offset));const rows=await api('/rest/v1/question_replacements?'+params,{authenticated:false});if(!Array.isArray(rows))throw new Error('取代版本載入失敗。');all.push(...rows.map(r=>({...r.content,id:Number(r.target_id),replacement_question:true,replacement_base:r.base_content,replacement_revision:r.revision,shared_question:r.target_kind==='shared'})));if(rows.length<500)return all;}
+    throw new Error('取代版本超過載入上限。');
+}
 export async function loadPublishedQuestions(subject,unit) {
     if(!collaborationEnabled())return [];
     const params=new URLSearchParams({select:'id,content,subject_id,unit_id',subject_id:'eq.'+subject,unit_id:'eq.'+unit,visible:'eq.true',order:'id.asc'});
@@ -102,7 +110,7 @@ export async function loadPublishedQuestions(subject,unit) {
         if(!Array.isArray(rows))throw new Error('共用題庫格式不正確。');
         result.push(...rows.map(q=>({...q.content,id:Number(q.id),title:'',shared_question:true,
             options_status:'known_options_only',sources:['協作題庫（管理員已審核）']})));
-        if(rows.length<500)return result;
+        if(rows.length<500)return [...result,...await loadQuestionReplacements(subject,unit)];
     }
     throw new Error('共用題庫超過目前載入上限，請聯絡管理員。');
 }

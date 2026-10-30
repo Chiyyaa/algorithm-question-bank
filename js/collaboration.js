@@ -1,15 +1,16 @@
-import { createContributionBank, classifyContribution, comparisonMarkup } from './collaboration-import.js?v=20261030-collab-html1';
-import { initCollaborationTheme } from './collaboration-theme.js?v=20261030-collab-html1';
-import { createBulkReview } from './collaboration-review.js?v=20261030-collab-html1';
+import { createReviewDecisions } from './review-decision.js?v=20261030-replace1';
+import { createContributionBank, classifyContribution, comparisonMarkup } from './collaboration-import.js?v=20261030-replace1';
+import { initCollaborationTheme } from './collaboration-theme.js?v=20261030-replace1';
+import { createBulkReview } from './collaboration-review.js?v=20261030-replace1';
 import { escapeHtml } from './utils.js?v=20261017-formats1';
-import { parseSubmission, questionCount, createBatchEditor } from './collaboration-batch.js?v=20261030-collab-html1';
+import { parseSubmission, questionCount, createBatchEditor } from './collaboration-batch.js?v=20261030-replace1';
 import { SUBJECTS, getUnit, mergeCollaborationUnits } from './units.js?v=20261017-formats1';
-import * as service from './collaboration-api.js?v=20261017-batch1';
+import * as service from './collaboration-api.js?v=20261030-replace1';
 
 const $=id=>document.getElementById(id);
 const labels={draft:'草稿',pending:'待審核',returned:'已退回',published:'已發布'};
-const actions={save_draft:'儲存草稿',submit:'送出審核',approve:'核准發布',return:'退回修改',withdraw:'撤回發布',restore:'恢復發布',grant_member:'新增協作者',disable_member:'停用帳號',activate_member:'啟用帳號',password_reset_requested:'開始重設密碼',password_reset:'重設協作者密碼',password_reset_failed:'密碼重設未完成',create_unit:'新增單元'};
-let member=null,tab='mine',rows=[],members=[],editing=null,reviewing=null,busy=false,hasMore=false;
+const actions={save_draft:'儲存草稿',submit:'送出審核',approve:'新增一題',replace:'取代指定舊題',return:'退回修改',withdraw:'撤回發布',restore:'恢復發布',grant_member:'新增協作者',disable_member:'停用帳號',activate_member:'啟用帳號',password_reset_requested:'開始重設密碼',password_reset:'重設協作者密碼',password_reset_failed:'密碼重設未完成',create_unit:'新增單元'};
+let member=null,tab='mine',rows=[],members=[],editing=null,reviewing=null,reviewChoice={},busy=false,hasMore=false;
 function notice(text,error=false){
     const el=$('collabMessage');el.textContent=text;el.hidden=!text;el.className='collab-message'+(error?' error':'');
     document.querySelectorAll('dialog[open] .dialog-message').forEach(e=>e.remove());
@@ -45,7 +46,8 @@ async function showContributionComparison(host,q){
     try{const bank=await loadContributionBank(q.subject_id);let memo=comparisonCache.get(bank);if(!memo){memo=new Map();comparisonCache.set(bank,memo);}const key=JSON.stringify(q.content);if(!memo.has(key))memo.set(key,comparisonMarkup(classifyContribution(q.content,bank),{review:true}));if(panel.isConnected)panel.innerHTML=memo.get(key);}
     catch{if(panel.isConnected)panel.textContent='目前無法比對題庫，請重新整理後再審核。';}
 }
-const bulkReview=createBulkReview({compare:showContributionComparison,service,getMember:()=>member,getRows:()=>rows,getTab:()=>tab,notify:notice,refresh,run,isBusy:()=>busy});
+const decisions=createReviewDecisions({service,loadBank:loadContributionBank});
+const bulkReview=createBulkReview({decisions,compare:showContributionComparison,service,getMember:()=>member,getRows:()=>rows,getTab:()=>tab,notify:notice,refresh,run,isBusy:()=>busy});
 const batchEditor=createBatchEditor({loadBank:loadContributionBank,service,getMember:()=>member,getEditing:()=>editing,notify:notice,refresh,run,isBusy:()=>busy});
 function subjectLabel(q){return (SUBJECTS.find(s=>s.id===q.subject_id)?.name||q.subject_id)+'｜'+q.unit_id.toUpperCase();}
 function authorName(id){return members.find(m=>m.user_id===id)?.display_name||(id===member?.user_id?member.display_name:'協作者');}
@@ -54,21 +56,22 @@ function updateFormat(){
     $('submissionDraft').placeholder=$('submissionFormat').value==='no_options'?'題目：請輸入題目\n\n你的答案：\n請貼上作答內容\n\n正確答案：\n請貼上正確答案\n\n得分：1 / 1':'題目：請輸入題目\n\nA. 選項一\nB. 選項二\n\n你的答案：\n選項一\n\n正確答案：\n選項二';
 }
 function resetEditor(){editing=null;batchEditor.clear({force:true});$('editorHeading').textContent='新增題目';$('submissionDraft').value='';$('submissionFormat').value='no_options';updateFormat();}
-function publishedVisible(q){const p=q.published_questions;return Array.isArray(p)?p[0]?.visible!==false:p?.visible!==false;}
+function replacementLink(q){return Array.isArray(q.question_replacement_publications)?q.question_replacement_publications[0]:q.question_replacement_publications;}
+function publishedVisible(q){const r=q.question_replacements;const v=Array.isArray(r)?r[0]:r;if(v)return v.visible!==false;const p=q.published_questions;return Array.isArray(p)?p[0]?.visible!==false:p?.visible!==false;}
 function renderRows(){
     const mine=tab==='mine';$('questionsView').classList.toggle('review-only',!mine);
     $('listHeading').textContent=mine?'我的題目':tab==='pending'?'待審核':'已發布';
     $('submissionCount').textContent=`已載入 ${rows.length} 題`;
     $('moreSubmissions').hidden=!hasMore;
     $('submissionList').innerHTML=rows.length?rows.map(q=>`<article class="submission-card">
-        <div class="section-heading">${member.role==='admin'&&tab==='pending'&&q.status==='pending'?`<label class="review-check"><input type="checkbox" data-review-select="${escapeHtml(q.id)}"${bulkReview.isSelected(q.id)?' checked':''}>選取</label>`:''}<span class="status-pill status-${escapeHtml(q.status)}">${escapeHtml(q.status==='published'&&!publishedVisible(q)?'已撤回':labels[q.status])}</span><span class="meta">${escapeHtml(subjectLabel(q))}</span></div>
+        <div class="section-heading">${member.role==='admin'&&tab==='pending'&&q.status==='pending'?`<label class="review-check"><input type="checkbox" data-review-select="${escapeHtml(q.id)}"${bulkReview.isSelected(q.id)?' checked':''}>選取</label>`:''}<span class="status-pill status-${escapeHtml(q.status)}">${escapeHtml(replacementLink(q)?.is_current===false?'已由後續版本取代':q.status==='published'&&!publishedVisible(q)?'已撤回':q.status==='published'&&replacementLink(q)?'已發布（取代舊題）':labels[q.status])}</span><span class="meta">${escapeHtml(subjectLabel(q))}</span></div>
         <p class="question">${escapeHtml(q.content.question)}</p>
         <p class="meta">${escapeHtml(authorName(q.author_id))} · ${escapeHtml(time(q.updated_at))}</p>
         ${q.review_note?`<p class="review-note">${escapeHtml(q.review_note)}</p>`:''}
         <div class="form-actions">
         ${mine&&['draft','returned'].includes(q.status)?`<button data-edit="${q.id}" type="button">編輯</button>`:''}
         <button data-view="${q.id}" type="button">${member.role==='admin'&&q.status==='pending'?'審核':'查看內容'}</button>
-        ${member.role==='admin'&&q.status==='published'?`<button data-publication="${q.id}" data-action="${publishedVisible(q)?'withdraw':'restore'}" type="button">${publishedVisible(q)?'撤回發布':'恢復發布'}</button>`:''}
+        ${member.role==='admin'&&q.status==='published'&&replacementLink(q)?.is_current!==false?`<button data-publication="${q.id}" data-action="${publishedVisible(q)?'withdraw':'restore'}" type="button">${publishedVisible(q)?'撤回發布':'恢復發布'}</button>`:''}
         </div></article>`).join(''):'<div class="empty">目前沒有題目。</div>';
     bulkReview.sync();
 }
@@ -111,12 +114,13 @@ async function save(submit){
     await refresh();notice(submit?'已送出審核，核准後才會公開。':'草稿已儲存。');
 }
 function openReview(q){
-    reviewing=q;const canReview=member.role==='admin'&&q.status==='pending';
+    reviewing=q;reviewChoice={};const canReview=member.role==='admin'&&q.status==='pending';
     $('reviewDialog').querySelectorAll('.dialog-message').forEach(e=>e.remove());
     $('reviewHeading').textContent=canReview?'審核題目':'題目內容';
     $('reviewContext').textContent=subjectLabel(q)+' · '+authorName(q.author_id)+' · '+labels[q.status];
     $('reviewDialog').querySelectorAll('.review-comparison').forEach(e=>e.remove());
-    showContributionComparison($('reviewDialog'),q);
+    $('reviewDialog').querySelectorAll('.review-decision').forEach(e=>e.remove());
+    if(canReview)decisions.mount($('reviewDialog'),q,reviewChoice).then(()=>{try{decisions.updateNew($('reviewDialog'),contentFrom($('reviewDraft').value));}catch{}});else showContributionComparison($('reviewDialog'),q);
     $('reviewDraft').value=asDraft(q.content);$('reviewDraft').readOnly=!canReview;
     $('reviewNote').value=q.review_note||'';$('reviewNote').readOnly=!canReview;
     $('approveSubmission').hidden=!canReview;$('returnSubmission').hidden=!canReview;
@@ -126,7 +130,8 @@ async function review(action){
     if(!reviewing) return;
     const note=$('reviewNote').value.trim();if(action==='return'&&!note)throw new Error('請填寫退回原因。');
     const format=reviewing.content.type==='short_answer'?'no_options':'auto';
-    await service.rpc('review_question_submission',{p_id:reviewing.id,p_revision:reviewing.revision,p_action:action,p_content:action==='approve'?contentFrom($('reviewDraft').value,format):null,p_note:note});
+    if(action==='approve'){await decisions.prepare(reviewing,reviewChoice);if(reviewChoice.mode==='replace'&&!confirm('確定以新題目取代 '+reviewChoice.target.unit.toUpperCase()+' 第 '+reviewChoice.target.id+' 題？舊題連結將顯示新內容，修改紀錄會保留。'))return;await decisions.publish(reviewing,contentFrom($('reviewDraft').value,format),note,reviewChoice);}
+    else await service.rpc('review_question_submission',{p_id:reviewing.id,p_revision:reviewing.revision,p_action:action,p_content:null,p_note:note});
     $('reviewDialog').close();reviewing=null;await refresh();notice(action==='approve'?'題目已核准並發布。':'題目已退回，協作者可修改後再送審。');
 }
 
@@ -159,6 +164,7 @@ $('submissionList').addEventListener('click',e=>{
     else if(button.dataset.view)openReview(q);
     else if(button.dataset.publication)run(async()=>{await service.rpc('review_question_submission',{p_id:q.id,p_revision:q.revision,p_action:button.dataset.action,p_content:null,p_note:''});await refresh();notice(button.dataset.action==='withdraw'?'題目已撤回，可隨時恢復。':'題目已恢復發布。');});
 });
+$('reviewDraft').addEventListener('input',()=>{try{decisions.updateNew($('reviewDialog'),contentFrom($('reviewDraft').value));}catch{}});
 $('closeReview').addEventListener('click',()=>$('reviewDialog').close());
 $('approveSubmission').addEventListener('click',()=>run(()=>review('approve')));
 $('returnSubmission').addEventListener('click',()=>run(()=>review('return')));

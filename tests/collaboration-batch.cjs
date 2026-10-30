@@ -12,6 +12,7 @@ const serverUrl='https://collab-test.supabase.co';
 async function routeApi(route){
  const request=route.request(),url=new URL(request.url()),token=(request.headers().authorization||'').replace('Bearer ',''),name=token.startsWith('admin-')?'admin':token.startsWith('alice-')?'alice':null;
  const json=(data,status=200)=>route.fulfill({status,headers:{'Content-Type':'application/json','Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'*'},body:JSON.stringify(data)});
+ if(url.pathname==='/rest/v1/question_replacements')return json([]);
  if(request.method()==='OPTIONS')return route.fulfill({status:204,headers:{'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'*','Access-Control-Allow-Methods':'GET,POST,PUT,OPTIONS'}});
  if(url.pathname==='/auth/v1/token'){
   const b=request.postDataJSON();let who;

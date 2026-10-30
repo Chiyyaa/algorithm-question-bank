@@ -54,7 +54,7 @@ export function omitProcessedAlgorithmU7(questions, classification) {
     if (classification.subject_id !== 'algorithm' || classification.unit_id !== 'u7') return questions;
     return omitIntegratedAlgorithmU6Shared(questions, classification);
 }
-export async function curatePublishedQuestions(questions, subject, unit) {
+async function curateOriginalPublishedQuestions(questions, subject, unit) {
     if (subject === 'algorithm' && unit === 'u7') {
         try {
             if (!algorithmU7Classification) algorithmU7Classification = fetch(new URL('../data/algorithm-u7-classification.json?v=20261029-u7bank', import.meta.url))
@@ -81,3 +81,5 @@ export async function curatePublishedQuestions(questions, subject, unit) {
     }
 }
 
+
+export async function curatePublishedQuestions(questions,subject,unit){const overlays=questions.filter(q=>q.replacement_question);const originals=questions.filter(q=>!q.replacement_question);const curated=await curateOriginalPublishedQuestions(originals,subject,unit);const ids=new Set(curated.map(q=>q.id));for(const overlay of overlays){const source=originals.find(q=>q.id===overlay.id);if(source&&!ids.has(source.id)){curated.push(source);ids.add(source.id);}}return [...curated,...overlays];}

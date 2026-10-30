@@ -10,6 +10,7 @@ const serverUrl='https://collab-test.supabase.co';
 async function routeApi(route){
  const request=route.request(),url=new URL(request.url()),token=(request.headers().authorization||'').replace('Bearer ',''),name=token.startsWith('admin-')?'admin':token.startsWith('alice-')?'alice':null;
  const json=(data,status=200)=>route.fulfill({status,headers:{'Content-Type':'application/json','Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'*'},body:JSON.stringify(data)});
+ if(url.pathname==='/rest/v1/question_replacements')return json([]);
  if(request.method()==='OPTIONS')return route.fulfill({status:204,headers:{'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'*','Access-Control-Allow-Methods':'GET,POST,PUT,OPTIONS'}});
  if(url.pathname==='/auth/v1/token'){
   const b=request.postDataJSON();let who;
@@ -110,7 +111,7 @@ async function routeApi(route){
   await admin.locator('#reviewNote').fill('請補充解析後重新送審');await admin.locator('#returnSubmission').click();await admin.getByText('題目已退回，協作者可修改後再送審。',{exact:true}).waitFor();
   await alice.locator('#refreshCollab').click();await alice.getByText('請補充解析後重新送審',{exact:true}).waitFor();await alice.locator('[data-edit]').click();
   await alice.locator('#submissionDraft').fill(draft+'（修正版）');await alice.locator('#submitForReview').click();await alice.getByText('已送出審核，核准後才會公開。',{exact:true}).waitFor();pass('Admin return requires reason; author can edit and resubmit');
-  await admin.locator('#refreshCollab').click();await admin.locator('[data-view]').click();await admin.locator('#reviewDraft').fill('題目：協作整合測試 [__1__]\n\n正確答案：\n管理員核對答案');await admin.waitForFunction(()=>!document.querySelector('#refreshCollab').disabled);await admin.screenshot({path:path.join(out,'collaboration-review-preview.png')});await admin.locator('#approveSubmission').click();await admin.getByText('題目已核准並發布。',{exact:true}).waitFor();
+  await admin.locator('#refreshCollab').click();await admin.locator('[data-view]').click();await admin.locator('#reviewDraft').fill('題目：協作整合測試 [__1__]\n\n正確答案：\n管理員核對答案');await admin.waitForFunction(()=>!document.querySelector('#refreshCollab').disabled);await admin.screenshot({path:path.join(out,'collaboration-review-preview.png')});await admin.locator('.review-mode input[value="add"]').check();await admin.locator('#approveSubmission').click();await admin.getByText('題目已核准並發布。',{exact:true}).waitFor();
   await pub.reload();await pub.locator('#osSubjectBtn').click();await pub.waitForFunction(()=>document.querySelector('#bankFooter').textContent.includes('共用 0 題'));
   await pub.locator('[data-panel="units"]').click();assert.match(await pub.locator('[data-unit="u6"]').innerText(),/234/);await pub.locator('[data-unit="u6"]').click();await pub.waitForFunction(()=>document.querySelector('#bankFooter').textContent.includes('共用 1 題'));
   await pub.locator('#searchInput').fill('協作整合測試');assert.equal(await pub.locator('#questionList article').count(),1);await pub.locator('.answer-btn').click();assert.match(await pub.locator('.answer.show').innerText(),/管理員核對答案/);pass('Admin-edited approval publishes the reviewed snapshot and updates public unit counts');
@@ -121,7 +122,7 @@ async function routeApi(route){
   await admin.locator('[data-publication]').click();await admin.getByText('題目已恢復發布。',{exact:true}).waitFor();pass('Withdrawal removes public access and restoration works without deleting history');
   await admin.locator('[data-tab="members"]').click();await admin.locator('[data-member]').waitFor();await admin.locator('[data-member]').click();await admin.getByText('帳號已停用，後端會拒絕後續協作操作。',{exact:true}).waitFor();
   await alice.locator('#submissionDraft').fill(draft);await alice.locator('#submitForReview').click();await alice.getByText('帳號沒有協作權限，或已被停用。',{exact:true}).waitFor();assert.equal(await alice.locator('#submissionDraft').inputValue(),draft);pass('Disabling an already logged-in collaborator blocks writes and preserves their unsaved text');
-  await admin.locator('[data-tab="audit"]').click();await admin.getByText('核准發布',{exact:true}).waitFor();await admin.screenshot({path:path.join(out,'collaboration-audit-preview.png')});
+  await admin.locator('[data-tab="audit"]').click();await admin.locator('#auditList').getByText('新增一題',{exact:true}).waitFor();await admin.screenshot({path:path.join(out,'collaboration-audit-preview.png')});
   await admin.locator('[data-tab="members"]').click();await admin.locator('[data-member]').click();await admin.getByText('帳號已啟用。',{exact:true}).waitFor();
   await admin.locator('#memberName').fill('新協作者');await admin.locator('#memberEmail').fill('new@example.com');await admin.locator('#memberForm button').click();await admin.locator('#createdCredentials').waitFor({state:'visible'});
   assert.equal(await admin.locator('#initialPassword').inputValue(),'TEST-ONLY-aA9-INITIAL-PASSWORD');await admin.locator('#dismissCredentials').click();assert.equal(await admin.locator('#initialPassword').inputValue(),'');pass('Admin creates a contributor and dismisses the once-visible initial password');
@@ -147,7 +148,7 @@ async function routeApi(route){
   await alice.locator('#submissionDraft').fill(pasted);await alice.locator('#submitForReview').click();await alice.getByText('已送出審核，核准後才會公開。',{exact:true}).waitFor();
   await admin.locator('[data-tab="pending"]').click();await admin.locator('.submission-card').filter({hasText:'I/O綁定型程序'}).locator('[data-view]').click();
   assert.match(await admin.locator('#reviewDraft').inputValue(),/你的答案：\n花費大部分時間進行CPU運算/);assert.ok(!(await admin.locator('#reviewDraft').inputValue()).includes('得分'));
-  await admin.screenshot({path:path.join(out,'collaboration-no-options-review.png')});await admin.locator('#approveSubmission').click();await admin.getByText('題目已核准並發布。',{exact:true}).waitFor();
+  await admin.screenshot({path:path.join(out,'collaboration-no-options-review.png')});await admin.locator('.review-mode input[value="add"]').check();await admin.locator('#approveSubmission').click();await admin.getByText('題目已核准並發布。',{exact:true}).waitFor();
   await pub.reload();await pub.locator('#osSubjectBtn').click();await pub.locator('[data-panel="units"]').click();await pub.locator('[data-unit="u7"]').click();await pub.waitForFunction(()=>document.querySelector('#bankFooter').textContent.includes('U7｜內建 0 題｜共用 1 題'));
   await pub.locator('[data-filter="shared"]').click();assert.equal(await pub.locator('#questionList article').count(),1);assert.match(await pub.locator('#questionList').innerText(),/友列協助題/);await pub.locator('.answer-btn').click();
   assert.match(await pub.locator('.answer.show').innerText(),/曾有作答錯誤：花費大部分時間進行CPU運算/);assert.ok(!(await pub.locator('#questionList').innerText()).includes('原始訓練紀錄'));assert.ok(!(await pub.locator('#questionList').innerText()).includes('小雨'));await pub.screenshot({path:path.join(out,'collaboration-helped-question.png')});

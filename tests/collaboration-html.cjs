@@ -12,7 +12,8 @@ const member={user_id:'20000000-0000-0000-0000-000000000002',display_name:'å”ä½
  let failBank=false;
  await context.route('https://*.supabase.co/**',async route=>{
    const url=new URL(route.request().url()),p=url.pathname;let data=[];
-   if(p==='/auth/v1/user')data={id:member.user_id};
+   if(p==='/rest/v1/question_replacements')data=[];
+   else if(p==='/auth/v1/user')data={id:member.user_id};
    else if(p==='/rest/v1/collaboration_members')data=[member];
    else if(p==='/rest/v1/question_submissions')data=saved;
    else if(p==='/rest/v1/published_questions'){if(failBank)return route.fulfill({status:503,contentType:'application/json',body:'{}'});data=url.searchParams.get('unit_id')==='eq.u5'?shared:[];}
