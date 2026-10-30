@@ -1,5 +1,5 @@
 import {parseBatchHTML,decodeBatchFile,MAX_BATCH_BYTES} from './batch-import.js?v=20261030-batch1';
-import {createBatchIndex,compareBatchQuestions,batchQuestionHref} from './batch-core.js?v=20261030-batch1';
+import {createBatchIndex,compareBatchQuestions,batchQuestionHref} from './batch-core.js?v=20261030-candidates2';
 import {escapeHtml as esc} from './utils.js?v=20261017-formats1';
 
 export function initBatch({getUnits,loadUnit}){

@@ -7,8 +7,8 @@ import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=2026102
 import { initMusic } from "./music.js";
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017-formats1";
 import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';
-import { initBatch } from './batch.js?v=20261030-batch-tabs1';
-import { batchQuestionHref } from './batch-core.js?v=20261030-batch1';
+import { initBatch } from './batch.js?v=20261030-candidates2';
+import { batchQuestionHref } from './batch-core.js?v=20261030-candidates2';
 
 initAppearance();
 const { close: closeMusic } = initMusic();
@@ -182,12 +182,14 @@ function toggleAnswer(id) {
 }
 
 function resetPagination() {
+    pendingQuestionTarget = null;
     currentPage = 1;
     render();
 }
 searchInput.addEventListener("input", resetPagination);
 
 function changePage(offset) {
+    pendingQuestionTarget = null;
     currentPage += offset;
     render();
     document.querySelector(".toolbar").scrollIntoView({ block: "start" });
@@ -203,6 +205,7 @@ document.getElementById("clearBtn").addEventListener("click", () => {
 
 document.querySelectorAll(".filter-btn").forEach(btn => {
     btn.addEventListener("click", () => {
+        pendingQuestionTarget = null;
         document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         currentFilter = btn.dataset.filter;
@@ -258,6 +261,7 @@ function selectUnit(unitId) {
     const unit = getUnit(currentSubject?.id, unitId);
     if (!unit) return;
     if (unit === currentUnit && ready) return;
+    if (pendingQuestionTarget && (pendingQuestionTarget.subject !== currentSubject.id || pendingQuestionTarget.unit !== unit.id)) pendingQuestionTarget = null;
     currentUnit = unit;
     ready = false;
     loading = false;
@@ -352,6 +356,14 @@ async function loadQuestionBank() {
     const version = requestVersion;
     const unit = currentUnit;
     const subject = currentSubject;
+    const active = () => version === requestVersion;
+    const sharedEnabled = collaborationEnabled();
+    const requestShared = () => (sharedEnabled
+        ? Promise.resolve().then(() => loadPublishedQuestions(subject.id, unit.id))
+            .then(rows => rows.length ? curatePublishedQuestions(rows, subject.id, unit.id) : rows)
+        : Promise.resolve([])).then(questions => ({questions, failed:false}), () => ({questions:[], failed:true}));
+    // Start independent requests together; shared-service latency must not block built-in questions.
+    const sharedRequest = requestShared();
     loading = true;
     const controls = document.querySelectorAll(
         ".toolbar button, #searchInput, #prevPageBtn, #nextPageBtn"
@@ -373,26 +385,48 @@ async function loadQuestionBank() {
             throw new Error("Invalid question data");
         }
         if (version !== requestVersion) return;
-        let sharedQuestions = [], sharedFailed = false;
-        try { sharedQuestions = await curatePublishedQuestions(await loadPublishedQuestions(subject.id, unit.id), subject.id, unit.id); }
-        catch { sharedFailed = true; }
-        if (version !== requestVersion) return;
-        QUESTIONS.push(...builtInQuestions, ...sharedQuestions);
-        if (!sharedFailed && collaborationEnabled()) { sharedCounts.set(subject.id + ':' + unit.id, sharedQuestions.length); renderUnitChoices(); }
-        document.getElementById("bankFooter").textContent =
-            subject.name + "｜" + unit.name + "｜內建 " + builtInQuestions.length + " 題" +
-            (collaborationEnabled() ? "｜共用 " + sharedQuestions.length + " 題" : "");
-        if (sharedFailed) {
-            const warning = document.createElement("p"); warning.className = "missing"; warning.setAttribute("role", "status");
-            warning.append("共用題庫暫時無法載入，目前僅顯示內建題目。 ");
-            const retry = document.createElement("button"); retry.type = "button"; retry.textContent = "重試共用題庫";
-            retry.addEventListener("click", () => { if (loading) return; ready = false; QUESTIONS.length = 0; loadQuestionBank(); });
-            warning.append(retry); document.getElementById("bankFooter").append(warning);
+        function footer(sharedCount, pending=false, failed=false) {
+            const target = document.getElementById('bankFooter');
+            target.textContent = subject.name+'｜'+unit.name+'｜內建 '+builtInQuestions.length+' 題'+
+                (sharedEnabled ? pending ? '｜共用題目載入中……' : '｜共用 '+sharedCount+' 題' : '');
+            if (failed) {
+                const warning=document.createElement('p');warning.className='missing';warning.setAttribute('role','status');
+                warning.append('共用題庫暫時無法載入，目前僅顯示內建題目。 ');
+                const retry=document.createElement('button');retry.type='button';retry.textContent='重試共用題庫';
+                retry.addEventListener('click',async()=>{
+                    if(loading||!active())return;
+                    loading=true;footer(0,true);
+                    try{const result=await requestShared();if(active())applyShared(result);}
+                    finally{if(active())loading=false;}
+                });
+                warning.append(retry);target.append(warning);
+            }
         }
-        ready = true;
-        controls.forEach(control => { control.disabled = false; });
-        render();
-        revealQuestionTarget();
+        function applyShared({questions:sharedQuestions,failed}) {
+            const scroll=window.scrollY;
+            const focused=document.activeElement;
+            const answerFocus=list.contains(focused)?focused.getAttribute('data-toggle-answer'):null;
+            const targetCard=list.querySelector('.batch-target');
+            const targetId=targetCard?.dataset.id, targetFocused=focused===targetCard;
+            const targetMargin=targetCard?.style.scrollMarginTop;
+            QUESTIONS.length=0;QUESTIONS.push(...builtInQuestions,...sharedQuestions);
+            if(!failed&&sharedEnabled){sharedCounts.set(subject.id+':'+unit.id,sharedQuestions.length);renderUnitChoices();}
+            footer(sharedQuestions.length,false,failed);
+            ready=true;controls.forEach(control=>{control.disabled=false;});render();
+            const restored=targetId?list.querySelector('[data-id="'+targetId+'"]'):null;
+            if(restored){restored.classList.add('batch-target');restored.tabIndex=-1;restored.style.scrollMarginTop=targetMargin;if(targetFocused)restored.focus({preventScroll:true});}
+            if(answerFocus)list.querySelector('[data-toggle-answer="'+answerFocus+'"]')?.focus({preventScroll:true});
+            window.scrollTo({top:scroll,behavior:'instant'});
+            revealQuestionTarget(true);
+        }
+        if (unit.dataUrl) {
+            QUESTIONS.push(...builtInQuestions);ready=true;
+            controls.forEach(control=>{control.disabled=false;});footer(0,sharedEnabled);
+            render();revealQuestionTarget(false);
+        }
+        const sharedResult=await sharedRequest;
+        if(!active())return;
+        applyShared(sharedResult);
     } catch (error) {
         if (version !== requestVersion) return;
         console.error("Question bank could not be loaded:", error);
@@ -405,11 +439,12 @@ async function loadQuestionBank() {
     }
 }
 
-function revealQuestionTarget() {
+function revealQuestionTarget(sharedComplete = false) {
     const target = pendingQuestionTarget;
     if (!target || target.subject !== currentSubject?.id || target.unit !== currentUnit?.id || !ready) return;
-    pendingQuestionTarget = null;
     const index = QUESTIONS.findIndex(q => q.id === target.id);
+    if (index < 0 && !sharedComplete) return;
+    pendingQuestionTarget = null;
     if (index < 0) {
         const notice = document.createElement('p');notice.className='missing';notice.setAttribute('role','status');
         notice.textContent='這個連結的題目目前沒有載入，可能已更新，或共用題庫暫時無法連線。';

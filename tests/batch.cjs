@@ -29,6 +29,14 @@ function formQuestion(stem,options,{id=1,number=1,type='radio'}={}){return '<div
   assert.equal(compare(fill,[fillEntry]).status,'matched');assert.equal(compare({...fill,blankCount:1},[fillEntry]).status,'review');
   assert.equal(compare(question,[{...entry,subject:'algorithm'}]).status,'unmatched');
   assert.equal(core.batchQuestionHref(entry),'./?subject=os&unit=u3&question=60');
+  const os5=JSON.parse(fs.readFileSync(path.join(root,'data/os-u5.json'),'utf8'));
+  const models=os5.filter(q=>[20,73].includes(q.id)).map(q=>({...q,subject:'os',unit:'u5'}));
+  const many=models.find(q=>q.id===73);
+  const manyInput={number:2,kind:'multiple',stem:'Many-to-One 模型有何特性？',options:many.options.map((text,i)=>({label:String.fromCharCode(65+i),text})),blankCount:0,issues:[]};
+  const modelResult=compare(manyInput,models);
+  assert.equal(modelResult.status,'review');assert.deepEqual(Array.from(modelResult.references,r=>r.id),[73]);
+  assert.equal(compare({...manyInput,stem:'Many-to-One 模型的特性有哪些？'},models.filter(q=>q.id===20)).status,'unmatched');
+  assert.ok(compare({...manyInput,stem:'Many-to-One 模型的特性有哪些？'},models).references.every(r=>r.id!==20));
   console.log('PASS exact content and option remapping, conflicts/disputes/images, mathematical distinctions, numbers, fill groups and subject isolation');
   server=http.createServer((req,res)=>{
    const route=new URL(req.url,'http://localhost').pathname.replace(/^\/algorithm-question-bank/,'');
@@ -61,6 +69,15 @@ function formQuestion(stem,options,{id=1,number=1,type='radio'}={}){return '<div
   const safeHTML=formQuestion(source.question,options,{id:9845,number:7})+formQuestion('這是完全陌生的題目 ZYX654',['甲','乙'],{id:12,number:3});
   const result=await p.evaluate(async html=>{const {parseBatchHTML}=await import('./js/batch-import.js?v=20261030-batch1');return parseBatchHTML(html);},safeHTML);
   assert.deepEqual(result.map(q=>q.number),[1,2]);assert.deepEqual(result.map(q=>q.sourceNumber),['7','3']);assert.deepEqual(result.map(q=>q.originalId),['9845','12']);
+  if(process.env.BATCH_THREAD_SAMPLE){
+   const threadHTML=fs.readFileSync(process.env.BATCH_THREAD_SAMPLE,'utf8');
+   const threadRows=await p.evaluate(async html=>(await import('./js/batch-import.js?v=20261030-batch1')).parseBatchHTML(html),threadHTML);
+   assert.equal(threadRows[1].stem,'Many-to-One 模型有何特性？');
+   const entries=os5.map(q=>({...q,subject:'os',unit:'u5'}));
+   const row=core.compareBatchQuestions([threadRows[1]],core.createBatchIndex(entries),{subject:'os',unit:'u5'})[0];
+   assert.equal(row.status,'review');assert.deepEqual(Array.from(row.references,r=>r.id),[73]);assert.equal(row.answers.length,0);
+   console.log('PASS actual 25-question thread file: question 2 references only U5 #73, never One-to-One #20');
+  }
   const attempted='<script>window.__batchInjected=true</script><img src="https://batch-test.invalid/pixel"><iframe src="https://batch-test.invalid/frame"></iframe>'+safeHTML;
   const resources=[];p.on('request',r=>{if(r.url().includes('batch-test.invalid'))resources.push(r.url());});
   await p.locator('#batchFile').setInputFiles({name:'安全測試.html',mimeType:'text/html',buffer:Buffer.from(attempted)});

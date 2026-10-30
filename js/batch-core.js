@@ -6,6 +6,8 @@ export function stripBatchOption(value){return String(value??'').replace(/^\s*(?
 const blankCount=text=>new Set([...String(text).matchAll(/\[(?:__|\*\*)(\d+)(?:__|\*\*)\]/g)].map(m=>m[1])).size;
 function grams(value){const result=new Set();for(let i=0;i<value.length-1;i++)result.add(value.slice(i,i+2));return result;}
 function similarity(a,b){if(a===b)return 1;if(!a.size||!b.size)return 0;let shared=0;for(const g of a)if(b.has(g))shared++;return 2*shared/(a.size+b.size||1);}
+function threadModels(text){return [...String(text).matchAll(/\b(many|one)\s*-?\s*to\s*-?\s*(many|one)\b/gi)].map(m=>m[1].toLowerCase()+'-to-'+m[2].toLowerCase()).sort();}
+function compatibleModels(a,b){const first=threadModels(a),second=threadModels(b);return !first.length||!second.length||JSON.stringify([...new Set(first)])===JSON.stringify([...new Set(second)]);}
 export function createBatchIndex(entries){
     return entries.filter(e=>e&&['algorithm','os'].includes(e.subject)&&/^u\d+$/.test(e.unit)&&Number.isSafeInteger(e.id)&&e.id>0&&typeof e.question==='string').map(e=>{
         const stem=normalizeBatchText(e.question),options=(e.options||[]).map(stripBatchOption).map(normalizeBatchText);
@@ -57,7 +59,7 @@ export function compareBatchQuestions(questions,index,{subject,unit='all'}={}){
             }
         }
         const inputGrams=grams(stem.toLowerCase());
-        const candidates=eligible.map(e=>({entry:e,score:e.normalizedStem===stem?1:similarity(inputGrams,e.grams)}))
+        const candidates=(same.length?same:eligible.filter(e=>compatibleModels(input.stem,e.question))).map(e=>({entry:e,score:e.normalizedStem===stem?1:similarity(inputGrams,e.grams)}))
             .filter(e=>e.score>=(stem.length<12?.8:.56)).sort((a,b)=>b.score-a.score||a.entry.unit.localeCompare(b.entry.unit)||a.entry.id-b.entry.id)
             .slice(0,3).map(e=>e.entry);
         let reason=input.issues.length?input.issues.join('；'):exact.length?'找到相同題目，但答案版本、題型或可核對格式仍有差異。':same.length?'題幹相同，但選項內容、數量或填空格數不同。':'找到相近題目，請核對數值、條件與選項。';
