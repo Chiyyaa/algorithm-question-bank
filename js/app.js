@@ -1,3 +1,4 @@
+import { createQuestionLinkController } from './question-links.js?v=20261030-batch-v2';
 import { initPractice } from './practice.js?v=20261029-focus1';
 import { curatePublishedQuestions } from './question-curation.js?v=20261029-u7bank';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
@@ -7,7 +8,7 @@ import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=2026103
 import { initMusic } from "./music.js";
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017-formats1";
 import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';
-import { initBatch } from './batch.js?v=20261030-complete-u5';
+import { initBatch } from './batch.js?v=20261030-batch-v2';
 import { batchQuestionHref } from './batch-core.js?v=20261030-complete-u5';
 
 initAppearance();
@@ -45,6 +46,7 @@ const practice = initPractice({
 });
 const PAGE_SIZE = 25;
 const batch = initBatch({
+    enrichRows: (rows,entries) => questionLinks.enrichBatch(rows,entries),
     getUnits: subject => SUBJECTS.find(s => s.id === subject)?.units.filter(u => u.dataUrl || u.sharedOnly) || [],
     async loadUnit(subjectId, unitId) {
         const unit = getUnit(subjectId, unitId);
@@ -81,18 +83,35 @@ function setAnswersShown(shown) {
 const searchInput = document.getElementById("searchInput");
 const list = document.getElementById("questionList");
 const summary = document.getElementById("summary");
+const questionLinks=createQuestionLinkController({onReady:refreshQuestionLinkView});
+list.addEventListener('click',event=>{if(event.target.closest('[data-retry-question-links]'))questionLinks.retry();});
+function refreshQuestionLinkView(){
+ if(!ready||currentSubject?.id!=='os'||!['u3','u4'].includes(currentUnit?.id))return;
+ const focused=document.activeElement,focusId=focused?.id,answerId=focused?.getAttribute('data-toggle-answer'),relationId=focused?.getAttribute('data-target-id');
+ const selection=focused===searchInput?[searchInput.selectionStart,searchInput.selectionEnd]:null,scroll=scrollY;
+ const anchor=focused?.closest?.('.question-card')||list.querySelector('.batch-target')||Array.from(list.querySelectorAll('.question-card')).find(card=>card.getBoundingClientRect().bottom>100),anchorId=anchor?.getAttribute('data-id'),anchorTop=anchor?.getBoundingClientRect().top;
+ const target=list.querySelector('.batch-target'),targetId=target?.getAttribute('data-id'),margin=target?.style.scrollMarginTop;
+ render();
+ if(targetId){const card=list.querySelector('[data-id="'+targetId+'"]');if(card){card.classList.add('batch-target');card.tabIndex=-1;card.style.scrollMarginTop=margin;}}
+ const restore=focusId?document.getElementById(focusId):answerId?list.querySelector('[data-toggle-answer="'+answerId+'"]'):relationId?list.querySelector('[data-target-id="'+relationId+'"]'):targetId?list.querySelector('[data-id="'+targetId+'"]'):null;
+ restore?.focus({preventScroll:true});if(selection)searchInput.setSelectionRange(...selection);
+ const nextAnchor=anchorId?list.querySelector('[data-id="'+anchorId+'"]'):null;
+ if(focused!==searchInput&&nextAnchor&&Number.isFinite(anchorTop))scrollBy(0,nextAnchor.getBoundingClientRect().top-anchorTop);else scrollTo(0,scroll);
+}
+
 
 function getFilteredQuestions() {
     const term = normalize(searchInput.value);
     return QUESTIONS.filter(q => {
         const typeMatch = currentFilter === "all" || (currentFilter === 'shared' && q.shared_question) || q.type === currentFilter ||
             (currentFilter === "choice" && q.type === "choice_options_missing");
-        const textMatch = !term || searchableText(q).includes(term);
+        const textMatch = !term || searchableText(q).includes(term) || questionLinks.searchMatches(q,term);
         return typeMatch && textMatch;
     });
 }
 
 function render() {
+    questionLinks.prepare({subject:currentSubject?.id,unit:currentUnit?.id,questions:QUESTIONS});
     const term = normalize(searchInput.value);
     const filtered = getFilteredQuestions();
 
@@ -159,6 +178,7 @@ function render() {
                 ${mistakenAnswer(q) ? `<div class="answer-note">曾有作答錯誤：${escapeHtml(mistakenAnswer(q))}</div>` : ''}
             </div>
 
+            ${questionLinks.htmlFor(q)}
             <div class="meta">
                 題型：${escapeHtml(getTypeLabel(q.type))}
             </div>

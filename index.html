@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="./css/practice.css?v=20261029-practice">
 <link rel="stylesheet" href="./css/muji.css?v=20261030-batch1">
 <link rel="stylesheet" href="./css/batch.css?v=20261030-batch1">
+<link rel="stylesheet" href="./css/question-links.css?v=20261030-batch-v2">
 </head>
 <body class="home-mode muji-theme">
 <section id="subjectHome" class="subject-home" aria-labelledby="subjectHeading">
@@ -147,13 +148,13 @@
     </section>
 
     <section id="panel-batch" class="panel" aria-labelledby="batchHeading">
-        <header><h1 id="batchHeading" tabindex="-1">批次查題</h1><p class="subtitle">匯入題目頁 HTML，依原本順序查看題庫可對應的答案。</p></header>
+        <header><h1 id="batchHeading" tabindex="-1">批次查題</h1><p class="subtitle"><span id="batchVersion" class="batch-version" aria-label="批次查題次版">次版</span> 匯入題目頁 HTML，依原本順序查看題庫可對應的答案。</p></header>
         <div class="batch-form">
             <div class="batch-controls">
                 <label class="batch-field">比對範圍<select id="batchScope"><option value="all">全部單元</option></select></label>
                 <label class="batch-field">題目頁 HTML<input id="batchFile" type="file" accept=".html,.htm" aria-describedby="batchImportHelp"></label>
             </div>
-            <p id="batchImportHelp" class="batch-muted">單檔最多 2 MB、100 題。檔案只在這台裝置讀取，不會上傳或自動修改題庫。初版僅匯入題目頁。</p>
+            <p id="batchImportHelp" class="batch-muted">單檔最多 2 MB、100 題。檔案只在這台裝置讀取，不會上傳或自動修改題庫。目前支援題目頁 HTML。</p>
             <div class="batch-actions"><button id="batchCompare" class="primary-btn" type="button" disabled>批次查答案</button><button id="batchClear" type="button">清除本次匯入</button></div>
             <p id="batchStatus" role="status" aria-live="polite"></p>
         </div>
@@ -178,7 +179,7 @@
 </div>
 <button id="backToTopBtn" class="back-to-top" type="button" aria-label="回到頁面頂端" hidden>↑ 回到頂端</button>
 
-<script type="module" src="./js/app.js?v=20261030-os34"></script>
+<script type="module" src="./js/app.js?v=20261030-batch-v2"></script>
 </body>
 </html>
 

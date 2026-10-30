@@ -2,7 +2,7 @@ import {parseBatchHTML,decodeBatchFile,MAX_BATCH_BYTES} from './batch-import.js?
 import {createBatchIndex,compareBatchQuestions,batchQuestionHref} from './batch-core.js?v=20261030-complete-u5';
 import {escapeHtml as esc} from './utils.js?v=20261017-formats1';
 
-export function initBatch({getUnits,loadUnit}){
+export function initBatch({getUnits,loadUnit,enrichRows=(rows)=>rows}){
     const $=id=>document.getElementById(id);
     let subject=null,questions=[],version=0,busy=false;
     const names={algorithm:'演算法',os:'作業系統'};
@@ -23,7 +23,7 @@ export function initBatch({getUnits,loadUnit}){
         const token=++version,file=$('batchFile').files[0];questions=[];busy=false;clearResults();$('batchPreview').hidden=true;$('batchPreviewList').replaceChildren();sync();
         if(!file){status('請選擇題目頁 HTML。');return;}
         try{
-            if(!/\.html?$/i.test(file.name))throw new Error('初版僅支援 .html 或 .htm 題目頁。');
+            if(!/\.html?$/i.test(file.name))throw new Error('目前僅支援 .html 或 .htm 題目頁。');
             if(file.size>MAX_BATCH_BYTES)throw new Error('檔案超過 2 MB，請改用較小的題目頁。');
             status('正在辨識題目……');
             const decoded=decodeBatchFile(await file.arrayBuffer());if(token!==version)return;
@@ -49,13 +49,14 @@ export function initBatch({getUnits,loadUnit}){
             }catch{if(token!==version)return;warnings.push(unit.name+' 暫時無法載入');}}}
             await Promise.all(Array.from({length:Math.min(3,units.length)},worker));if(token!==version)return;
             if(!loaded)throw new Error('題庫無法載入，請稍後再按「批次查答案」重試。');
-            const rows=compareBatchQuestions(questions,createBatchIndex(entries),{subject:activeSubject,unit:scope});
+            let rows=compareBatchQuestions(questions,createBatchIndex(entries),{subject:activeSubject,unit:scope});
+            rows=await enrichRows(rows,entries);if(token!==version)return;
             const labels={matched:'找到對應',review:'需要核對',unmatched:'尚未收錄'};
             $('batchResultSummary').textContent='共 '+rows.length+' 題：'+['matched','review','unmatched'].map(s=>labels[s]+' '+rows.filter(r=>r.status===s).length+' 題').join('・');
             $('batchResultList').innerHTML=rows.map(row=>'<li class="batch-result" data-batch-number="'+row.input.number+'" data-status="'+row.status+'"><div class="batch-result-heading"><h3>第 '+row.input.number+' 題</h3><span class="batch-state batch-state-'+row.status+'">'+labels[row.status]+'</span></div><div class="batch-stem">'+esc(row.input.stem)+'</div>'+
                 (row.answers.length?'<div class="batch-answer"><strong>正確答案</strong>'+row.answers.map(a=>'<p>'+esc(a)+'</p>').join('')+'</div>':'<p class="batch-reason">'+esc(row.reason)+'</p>')+
                 row.notes.map(note=>'<p class="batch-note">'+esc(note)+'</p>').join('')+
-                (row.references.length?'<div class="batch-candidates">'+row.references.map(ref=>'<a class="batch-question-link" href="'+esc(batchQuestionHref(ref))+'" target="_blank" rel="noopener noreferrer" data-subject="'+esc(ref.subject)+'" data-unit="'+esc(ref.unit)+'" data-question-id="'+ref.id+'">查看題庫：'+names[ref.subject]+' '+esc(ref.unit.toUpperCase())+' 第 '+ref.id+' 題 ↗<span class="sr-only">（開啟新分頁）</span></a>').join('')+'</div>':'')+details(row.input)+'</li>').join('');
+                (row.references.length?'<div class="batch-candidates">'+row.references.map(ref=>'<a class="batch-question-link" href="'+esc(batchQuestionHref(ref))+'" target="_blank" rel="noopener noreferrer" data-subject="'+esc(ref.subject)+'" data-unit="'+esc(ref.unit)+'" data-question-id="'+ref.id+'">查看題庫：'+names[ref.subject]+' '+esc(ref.unit.toUpperCase())+' 第 '+ref.id+' 題 ↗<span class="sr-only">（開啟新分頁）</span>'+(ref.relation_status?'<small>'+esc(ref.relation_status==='confirmed'?'已核對的完整版本':'可能對應的完整版本')+'</small><small>'+esc(ref.question.slice(0,160))+'</small><small>'+esc(ref.relation_reason||'請核對題意、條件與選項。')+'</small>':'')+'</a>').join('')+'</div>':'')+details(row.input)+'</li>').join('');
             $('batchCoverage').textContent=warnings.length?'部分題庫尚未完整載入，本次結果可能不完整。'+warnings.join('；'):'答案依本次匯入的選項順序對應；需要核對的題目不會直接套用答案。';
             $('batchResults').hidden=false;status(warnings.length?'比對完成，請留意題庫載入提醒。':'比對完成。');
             $('batchResultsHeading').focus({preventScroll:true});$('batchResults').scrollIntoView({block:'start',behavior:'instant'});

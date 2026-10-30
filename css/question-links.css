@@ -1,0 +1,15 @@
+body.muji-theme .question-relations{margin-top:20px;padding:16px 18px;background:var(--bg);border:1px solid var(--border);border-radius:6px}
+body.muji-theme .question-relations-confirmed{border-inline-start:3px solid var(--primary)}
+body.muji-theme .question-relations h3{margin:0 0 8px;font-size:15px;font-weight:550;color:var(--text)}
+body.muji-theme .question-relations p{margin:6px 0;font-size:13px;line-height:1.7;color:var(--muted)}
+body.muji-theme .question-relations ul{padding:0;margin:12px 0 0;list-style:none;display:grid;gap:14px}
+body.muji-theme .question-relation-link{display:block;padding:4px 0;min-height:44px;color:var(--link);font-size:14px;line-height:1.7;text-underline-offset:4px;overflow-wrap:anywhere;transition:color .3s ease}
+body.muji-theme .question-relation-link:focus-visible{outline:2px solid var(--primary);outline-offset:4px;border-radius:3px}
+body.muji-theme .question-relation-stem{display:block;margin-top:4px;color:var(--text);font-size:14px;white-space:pre-wrap}
+body.muji-theme .question-relation-reason{display:block;color:var(--muted);font-size:12px;line-height:1.7;margin-top:4px}
+body.muji-theme .question-relations .question-relation-caution{color:var(--warning-text)}
+body.muji-theme [data-retry-question-links]{margin:6px 0 0 8px;min-height:36px;font-size:13px}
+body.muji-theme .batch-question-link small{display:block;color:var(--muted);font-size:12px;line-height:1.6}
+@media(max-width:700px){body.muji-theme .question-relations{padding:14px;margin-top:16px}}
+
+body.muji-theme .batch-version{display:inline-block;padding:2px 8px;margin-right:6px;border:1px solid var(--border);border-radius:4px;color:var(--link);font-size:12px;line-height:1.7;vertical-align:middle}
