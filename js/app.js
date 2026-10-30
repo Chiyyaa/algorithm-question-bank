@@ -3,7 +3,7 @@ import { curatePublishedQuestions } from './question-curation.js?v=20261029-u7ba
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
 import { initNavigation } from "./navigation.js";
-import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261030-os-u5";
+import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261030-os34";
 import { initMusic } from "./music.js";
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017-formats1";
 import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';
@@ -442,7 +442,7 @@ async function loadQuestionBank() {
 function revealQuestionTarget(sharedComplete = false) {
     const target = pendingQuestionTarget;
     if (!target || target.subject !== currentSubject?.id || target.unit !== currentUnit?.id || !ready) return;
-    const index = QUESTIONS.findIndex(q => q.id === target.id);
+    const index = QUESTIONS.findIndex(q => q.id === target.id || (Array.isArray(q.legacy_question_ids) && q.legacy_question_ids.includes(target.id)));
     if (index < 0 && !sharedComplete) return;
     pendingQuestionTarget = null;
     if (index < 0) {
@@ -452,8 +452,8 @@ function revealQuestionTarget(sharedComplete = false) {
     }
     searchInput.value='';currentFilter='all';currentPage=Math.floor(index/PAGE_SIZE)+1;
     document.querySelectorAll('.filter-btn').forEach(button=>button.classList.toggle('active',button.dataset.filter==='all'));
-    answersHidden.delete(target.id);answersVisible.add(target.id);render();
-    const card=list.querySelector('[data-id="'+target.id+'"]');
+    const resolvedId=QUESTIONS[index].id;answersHidden.delete(resolvedId);answersVisible.add(resolvedId);render();
+    const card=list.querySelector('[data-id="'+resolvedId+'"]');
     if(card){card.classList.add('batch-target');card.tabIndex=-1;card.style.scrollMarginTop=(document.querySelector('.toolbar').offsetHeight+90)+'px';card.focus({preventScroll:true});card.scrollIntoView({block:'start',behavior:'instant'});}
     if(matchMedia('(max-width: 850px)').matches)setSidebarOpen(false);
 }

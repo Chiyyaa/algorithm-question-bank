@@ -11,8 +11,8 @@ export const SUBJECTS = [
         ]
     },
     { id: "os", name: "作業系統", available: true, defaultUnit: "u3", units: [
-        { id: "u3", name: "U3", questionCount: 277, dataUrl: "../data/os-u3.json" },
-        { id: "u4", name: "U4", questionCount: 143, dataUrl: "../data/os-u4.json" },
+        { id: "u3", name: "U3", questionCount: 291, dataUrl: "../data/os-u3.json" },
+        { id: "u4", name: "U4", questionCount: 147, dataUrl: "../data/os-u4.json" },
         { id: "u5", name: "U5", questionCount: 126, dataUrl: "../data/os-u5.json" },
         { id: "u6", name: "U6", questionCount: 233, dataUrl: "../data/os-u6.json" }
     ] }

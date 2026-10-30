@@ -30,7 +30,7 @@ const sharedId=1000009001;
    return {p,release,started,errors,fail:value=>{failed=value;},stats:()=>({released,requests,builtInRequests}),base};
   }
   const nav=async(p,name)=>{if(await p.locator('#mobileMenuBtn').getAttribute('aria-expanded')!=='true')await p.locator('#mobileMenuBtn').click();await p.locator('[data-panel="'+name+'"]').click();};
-  for(const [subject,unit,total] of [['algorithm','u6',71],['os','u3',277]]){
+  for(const [subject,unit,total] of [['algorithm','u6',71],['os','u3',291]]){
    const f=await fixture({subject,unit}),p=f.p;await p.goto(base);const start=performance.now();await p.locator('#'+subject+'SubjectBtn').click();
    await p.locator('.question-card').first().waitFor({timeout:3000});await f.started;
    assert.equal(f.stats().released,false);assert.equal(await p.locator('#searchInput').isEnabled(),true);assert.match(await p.locator('#summary').innerText(),new RegExp('/ '+total+' 題'));
@@ -72,7 +72,7 @@ const sharedId=1000009001;
   // Late completions cannot overwrite another subject after navigation.
   const stale=await fixture(),tp=stale.p;await tp.goto(base);await tp.locator('#algorithmSubjectBtn').click();await tp.locator('.question-card').first().waitFor();
   await tp.locator('#switchSubjectBtn').click();await tp.locator('#subjectHome').waitFor({state:'visible'});await tp.locator('#osSubjectBtn').click();await tp.locator('#bankFooter').filter({hasText:'作業系統｜U3'}).waitFor();
-  stale.release();await tp.waitForTimeout(100);assert.equal(await tp.locator('body').getAttribute('data-subject'),'os');assert.match(await tp.locator('#summary').innerText(),/\/ 277 題/);assert.equal(await tp.locator('[data-id="'+sharedId+'"]').count(),0);await tp.close();
+  stale.release();await tp.waitForTimeout(100);assert.equal(await tp.locator('body').getAttribute('data-subject'),'os');assert.match(await tp.locator('#summary').innerText(),/\/ 291 題/);assert.equal(await tp.locator('[data-id="'+sharedId+'"]').count(),0);await tp.close();
   console.log('PASS local-first display, parallel shared loading, search/page/answers/focus/scroll preservation, shared retry, deep links, shared-only units and stale-response isolation');
  }finally{for(const p of pages)if(!p.isClosed())await p.close();if(browser)await browser.close();if(server)await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

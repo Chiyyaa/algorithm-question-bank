@@ -2,19 +2,18 @@
   {
     "id": 1,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "一個程序（process）包含哪些多個部分？",
     "options": [
-      "程式計數器和暫存器(program counter and registers)",
       "堆疊（stack）",
-      "堆（heap）",
-      "程式碼（text section）"
+      "程式碼（text section）",
+      "程式計數器和暫存器（program counter and registers）",
+      "堆（heap）"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "程式計數器和暫存器(program counter and registers)\n堆疊（stack）\n堆（heap）\n程式碼（text section）",
+    "options_status": "complete",
+    "correct_answer": "堆疊（stack）\n程式碼（text section）\n程式計數器和暫存器（program counter and registers）\n堆（heap）",
     "answer_variants": [
-      "程式計數器和暫存器(program counter and registers)\n堆疊（stack）\n堆（heap）\n程式碼（text section）",
-      "程式碼（text section）\n程式計數器和暫存器(program counter and registers)\n堆疊（stack）\n堆（heap）"
+      "堆疊（stack）\n程式碼（text section）\n程式計數器和暫存器（program counter and registers）\n堆（heap）"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
@@ -22,12 +21,17 @@
       "第一次訓練.txt",
       "第四次訓練.txt",
       "第七次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 52
+    "latest_source_question_number": 52,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-1"
+    ]
   },
   {
     "id": 2,
@@ -35,15 +39,15 @@
     "type": "choice",
     "question": "什麼名詞指的是在單一程序中有一個以上的執行程序的分支？",
     "options": [
-      "執行緒(Thread）",
-      "多程式處理(multiprogramming)",
-      "上下文切換(context switch)",
-      "多工(multitasking)"
+      "多程式處理（multiprogramming）",
+      "執行緒（Thread）",
+      "上下文切換（context switch）",
+      "多工（multitasking）"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "執行緒(Thread）",
+    "options_status": "complete",
+    "correct_answer": "執行緒（Thread）",
     "answer_variants": [
-      "執行緒(Thread）"
+      "執行緒（Thread）"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
@@ -53,20 +57,25 @@
       "第五次訓練.txt",
       "help1.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 5,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 80
+    "latest_source_question_number": 80,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-2"
+    ]
   },
   {
     "id": 3,
     "title": "",
     "type": "fill_blank",
-    "question": "在遠端程序呼叫（RPC）中，[__1__]是伺服器上實際程序的客戶端代理。(請用小寫英文回答)",
+    "question": "在遠端程序呼叫（RPC）中，[__1__]是伺服器上實際程序的客戶端代理。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "stubs",
     "answer_variants": [
       "stubs"
@@ -78,12 +87,19 @@
       "第九次訓練.txt",
       "help1.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [],
     "source_response_type": "填空",
-    "latest_source_question_number": 69
+    "latest_source_question_number": 69,
+    "question_aliases": [
+      "在遠端程序呼叫（RPC）中，[__1__]是伺服器上實際程序的客戶端代理。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-85"
+    ]
   },
   {
     "id": 4,
@@ -91,12 +107,12 @@
     "type": "choice",
     "question": "在程序控制區塊（PCB）中，哪一項資訊記錄了下一個要執行的指令的位置？",
     "options": [
+      "I/O 狀態資訊",
       "程式計數器",
-      "CPU暫存器",
-      "I/O狀態資訊",
-      "程序狀態"
+      "程序狀態",
+      "CPU 暫存器"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "程式計數器",
     "answer_variants": [
       "程式計數器"
@@ -109,12 +125,17 @@
       "第六次訓練.txt",
       "第七次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 5,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 19
+    "latest_source_question_number": 19,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-9"
+    ]
   },
   {
     "id": 5,
@@ -127,7 +148,7 @@
       "the child process must also terminate when the parent process terminates",
       "the child process can inherit the parent's state"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "parent and child execute concurrently\nparent waits for the child process to terminate",
     "answer_variants": [
       "parent and child execute concurrently\nparent waits for the child process to terminate"
@@ -136,20 +157,25 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 134
+    "latest_source_question_number": 134,
+    "source_type": "多選題",
+    "reference_question_ids": [
+      "community-afcb95e7-391c-4c90-a3a1-1f4aa170454c-2"
+    ]
   },
   {
     "id": 6,
     "title": "",
     "type": "fill_blank",
-    "question": "在 Windows 的 IPC 系統中，通訊是透過進階的[__1__]設施進行的。(請用英文縮寫回答 且用大寫字母)",
+    "question": "在 Windows 的 IPC 系統中，通訊是透過進階的 [__1__] 設施進行的。(請用英文縮寫回答 且用大寫字母)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "LPC",
     "answer_variants": [
       "LPC"
@@ -160,14 +186,21 @@
       "第一次訓練.txt",
       "第七次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [
       "PCB"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 77
+    "latest_source_question_number": 77,
+    "question_aliases": [
+      "在 Windows 的 IPC 系統中，通訊是透過進階的[__1__]設施進行的。(請用英文縮寫回答 且用大寫字母)"
+    ],
+    "reference_question_ids": [
+      "process-89"
+    ]
   },
   {
     "id": 7,
@@ -202,12 +235,12 @@
     "type": "choice",
     "question": "在訊息傳遞模型中，阻塞式傳送（blocking send）意味著什麼？",
     "options": [
-      "傳送者被阻塞直到訊息被接收",
       "接收者在接收後立即繼續執行",
+      "傳送者在傳送後立即繼續執行",
       "接收者被阻塞直到訊息可用",
-      "傳送者在傳送後立即繼續執行"
+      "傳送者被阻塞直到訊息被接收"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "傳送者被阻塞直到訊息被接收",
     "answer_variants": [
       "傳送者被阻塞直到訊息被接收"
@@ -220,28 +253,33 @@
       "第四次訓練.txt",
       "第六次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 5,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 44
+    "latest_source_question_number": 44,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-67"
+    ]
   },
   {
     "id": 9,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列哪些是程序狀態？",
     "options": [
       "new",
-      "ready",
       "running",
+      "ready",
       "waiting"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "new\nready\nrunning\nwaiting",
+    "options_status": "complete",
+    "correct_answer": "new\nrunning\nready\nwaiting",
     "answer_variants": [
-      "new\nready\nrunning\nwaiting"
+      "new\nrunning\nready\nwaiting"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
@@ -249,20 +287,25 @@
       "第一次訓練.txt",
       "第七次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 103
+    "latest_source_question_number": 103,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-15"
+    ]
   },
   {
     "id": 10,
     "title": "",
     "type": "fill_blank",
-    "question": "程序的五種狀態是：新建立（new）、執行中（running）、等待中（waiting）、就緒（ready）和[__1__]。(請用小寫英文回答)",
+    "question": "程序的五種狀態是：新建立（new）、執行中（running）、等待中（waiting）、就緒（ready）和[__1__]。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "terminated",
     "answer_variants": [
       "terminated"
@@ -276,14 +319,21 @@
       "第六次訓練.txt",
       "第七次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 6,
     "source_incorrect_responses": [
       "terminal"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 15
+    "latest_source_question_number": 15,
+    "question_aliases": [
+      "程序的五種狀態是：新建立（new）、執行中（running）、等待中（waiting）、就緒（ready）和[__1__]。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-16"
+    ]
   },
   {
     "id": 11,
@@ -297,9 +347,9 @@
       "efficiency"
     ],
     "options_status": "known_options_only",
-    "correct_answer": "information sharing\ncomputation speedup\nmodularity",
+    "correct_answer": "information sharing\nmodularity\ncomputation speedup",
     "answer_variants": [
-      "information sharing\ncomputation speedup\nmodularity"
+      "information sharing\nmodularity\ncomputation speedup"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
@@ -307,20 +357,25 @@
       "第一次訓練.txt",
       "第五次訓練.txt",
       "第六次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 112
+    "latest_source_question_number": 112,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-52"
+    ]
   },
   {
     "id": 12,
     "title": "",
     "type": "fill_blank",
-    "question": "iOS 行動系統提供一個單一的[__1__]程序，通過用戶介面進行控制。(請用小寫英文回答)",
+    "question": "iOS 行動系統提供一個單一的[__1__]程序，通過用戶介面進行控制。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "foreground",
     "answer_variants": [
       "foreground"
@@ -333,22 +388,30 @@
       "第四次訓練.txt",
       "第七次訓練.txt",
       "第八次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 5,
     "source_incorrect_responses": [
       "pipe"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 32
+    "latest_source_question_number": 32,
+    "question_aliases": [
+      "iOS 行動系統提供一個單一的[__1__]程序，通過用戶介面進行控制。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-91"
+    ],
+    "answer_note": "來源採早期教材模型；需依版本與裝置判斷。"
   },
   {
     "id": 13,
     "title": "",
     "type": "fill_blank",
-    "question": "[__1__]充當一個通道，允許兩個程序通訊。(請用小寫英文回答)",
+    "question": "[__1__]充當一個通道，允許兩個程序通訊。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "pipe",
     "answer_variants": [
       "pipe"
@@ -360,22 +423,32 @@
       "第二次訓練.txt",
       "第六次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [],
     "source_response_type": "填空",
-    "latest_source_question_number": 7
+    "latest_source_question_number": 7,
+    "question_aliases": [
+      "[__1__]充當一個通道，允許兩個程序通訊。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-73"
+    ]
   },
   {
     "id": 14,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "In an operating system, what does a program become after it is loaded into memory?",
     "options": [
-      "a process"
+      "a data block",
+      "a thread",
+      "a process",
+      "a file"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "a process",
     "answer_variants": [
       "a process"
@@ -384,12 +457,18 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 23
+    "latest_source_question_number": 23,
+    "source_type": "單選題",
+    "reference_question_ids": [
+      "process-3"
+    ],
+    "answer_note": "原選項 B「行程」與 C「程序」都可翻譯為 process，容易形成兩個正解；此處改用「執行緒」作為錯誤選項。原選項保留在版本紀錄中。"
   },
   {
     "id": 15,
@@ -398,11 +477,11 @@
     "question": "以下哪些是作業系統中的佇列？",
     "options": [
       "作業佇列",
+      "交換佇列",
       "就緒佇列",
-      "設備佇列",
-      "交換佇列"
+      "設備佇列"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "作業佇列\n就緒佇列\n設備佇列",
     "answer_variants": [
       "作業佇列\n就緒佇列\n設備佇列"
@@ -416,20 +495,25 @@
       "第六次訓練.txt",
       "第八次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 6,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 16
+    "latest_source_question_number": 16,
+    "source_type": "多選題",
+    "reference_question_ids": [
+      "community-437af013-08d8-467d-a384-0478521bc21a-1"
+    ]
   },
   {
     "id": 16,
     "title": "",
     "type": "fill_blank",
-    "question": "For a message queue, no messages are queued on a link, \u000bSender must wait for receiver. This is called[__1__] (Please answer in lowercase English)",
+    "question": "For a message queue, when no messages are queued on a link and the sender must wait for the receiver, this is called [__1__].",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "rendezvous",
     "answer_variants": [
       "rendezvous"
@@ -439,12 +523,19 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
       "第八次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "填空",
-    "latest_source_question_number": 107
+    "latest_source_question_number": 107,
+    "question_aliases": [
+      "For a message queue, no messages are queued on a link,  Sender must wait for receiver. This is called[__1__] (Please answer in lowercase English)"
+    ],
+    "reference_question_ids": [
+      "process-71"
+    ]
   },
   {
     "id": 17,
@@ -458,21 +549,25 @@
       "convenience"
     ],
     "options_status": "known_options_only",
-    "correct_answer": "information sharing\ncomputation speedup\nmodularity\nconvenience",
+    "correct_answer": "convenience\nmodularity\ninformation sharing\ncomputation speedup",
     "answer_variants": [
-      "information sharing\ncomputation speedup\nmodularity\nconvenience"
+      "convenience\nmodularity\ninformation sharing\ncomputation speedup"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 5
+    "latest_source_question_number": 5,
+    "reference_question_ids": [
+      "process-51"
+    ]
   },
   {
     "id": 18,
@@ -480,15 +575,15 @@
     "type": "choice",
     "question": "如果一個子程序在父程序終止後仍然存在，這會導致什麼？",
     "options": [
-      "孤兒程序（orphan process）",
       "資源洩漏",
-      "殭屍程序（zombie process）",
+      "孤兒程序 (orphan process)",
+      "殭屍程序 (zombie process)",
       "無限循環"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "孤兒程序（orphan process）",
+    "options_status": "complete",
+    "correct_answer": "孤兒程序 (orphan process)",
     "answer_variants": [
-      "孤兒程序（orphan process）"
+      "孤兒程序 (orphan process)"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
@@ -496,20 +591,25 @@
       "第一次訓練.txt",
       "第三次訓練.txt",
       "第五次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 25
+    "latest_source_question_number": 25,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-48"
+    ]
   },
   {
     "id": 19,
     "title": "",
     "type": "fill_blank",
-    "question": "[__1__]問題是合作程序的一種範式，其中一個程序產生資訊，而另一個程序消耗該資訊。(請用小寫英文回答 單字間用 - 連接)",
+    "question": "[__1__] 問題是合作程序的一種範式，其中一個程序產生資訊，而另一個程序消耗該資訊。(請用小寫英文回答 單字間用 - 連接)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "producer-consumer",
     "answer_variants": [
       "producer-consumer"
@@ -521,20 +621,27 @@
       "第六次訓練.txt",
       "第七次訓練.txt",
       "第八次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [],
     "source_response_type": "填空",
-    "latest_source_question_number": 92
+    "latest_source_question_number": 92,
+    "question_aliases": [
+      "[__1__]問題是合作程序的一種範式，其中一個程序產生資訊，而另一個程序消耗該資訊。(請用小寫英文回答 單字間用 - 連接)"
+    ],
+    "reference_question_ids": [
+      "process-54"
+    ]
   },
   {
     "id": 20,
     "title": "",
     "type": "fill_blank",
-    "question": "普通管道(ordinary pipe)是[__1__]的，並且要求通訊程序之間有親子關係。(請用小寫英文回答)",
+    "question": "普通管道（ordinary pipe）是[__1__]的，並且要求通訊程序之間有親子關係。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "unidirectional",
     "answer_variants": [
       "unidirectional"
@@ -543,7 +650,8 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [
@@ -551,7 +659,14 @@
       "a"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 39
+    "latest_source_question_number": 39,
+    "question_aliases": [
+      "普通管道(ordinary pipe)是[__1__]的，並且要求通訊程序之間有親子關係。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-75"
+    ],
+    "answer_note": "教材的親子關係是典型建立方式；共享描述子才是通訊的必要條件。"
   },
   {
     "id": 21,
@@ -559,27 +674,33 @@
     "type": "choice",
     "question": "以下哪些是普通管道（Ordinary Pipes）的特性？",
     "options": [
-      "通訊是單向的",
       "需要親子關係",
-      "通訊是雙向的",
-      "不需要親子關係"
+      "不需要親子關係",
+      "通訊是單向的",
+      "通訊是雙向的"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "通訊是單向的\n需要親子關係",
+    "options_status": "complete",
+    "correct_answer": "需要親子關係\n通訊是單向的",
     "answer_variants": [
-      "通訊是單向的\n需要親子關係"
+      "需要親子關係\n通訊是單向的"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第一次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 67
+    "latest_source_question_number": 67,
+    "source_type": "多選題",
+    "reference_question_ids": [
+      "process-76"
+    ],
+    "answer_note": "教材的親子關係是典型建立方式；共享描述子才是通訊的必要條件。"
   },
   {
     "id": 22,
@@ -588,11 +709,11 @@
     "question": "訊息傳遞設施提供的兩種操作是什麼？",
     "options": [
       "發送訊息",
-      "接收訊息",
       "建立連結",
-      "終止連結"
+      "終止連結",
+      "接收訊息"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "發送訊息\n接收訊息",
     "answer_variants": [
       "發送訊息\n接收訊息"
@@ -603,12 +724,17 @@
       "第一次訓練.txt",
       "第四次訓練.txt",
       "第八次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 71
+    "latest_source_question_number": 71,
+    "source_type": "多選題",
+    "reference_question_ids": [
+      "process-60"
+    ]
   },
   {
     "id": 23,
@@ -616,12 +742,12 @@
     "type": "choice",
     "question": "哪種排程器負責選擇要進入就緒佇列的程序？",
     "options": [
-      "長期排程器",
-      "短期排程器",
       "中期排程器",
+      "短期排程器",
+      "長期排程器",
       "分派器"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "長期排程器",
     "answer_variants": [
       "長期排程器"
@@ -633,12 +759,17 @@
       "第四次訓練.txt",
       "第九次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 30
+    "latest_source_question_number": 30,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-22"
+    ]
   },
   {
     "id": 24,
@@ -647,9 +778,11 @@
     "question": "CPU綁定型程序（CPU-bound process）的特徵是什麼？",
     "options": [
       "花費大部分時間進行計算",
-      "花費大部分時間進行I/O操作"
+      "花費大部分時間進行I/O操作",
+      "很少進行I/O操作",
+      "只有一個CPU突發"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "花費大部分時間進行計算",
     "answer_variants": [
       "花費大部分時間進行計算"
@@ -660,12 +793,17 @@
       "第一次訓練.txt",
       "第六次訓練.txt",
       "第八次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 73
+    "latest_source_question_number": 73,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-28"
+    ]
   },
   {
     "id": 25,
@@ -700,9 +838,9 @@
     "id": 26,
     "title": "",
     "type": "fill_blank",
-    "question": "If a parent process does not call wait(), a terminated child process becomes a [__1__] process. (Please answer in lowercase English)",
+    "question": "If a parent process does not call wait(), a terminated child process becomes a [__1__] process.",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "zombie",
     "answer_variants": [
       "zombie"
@@ -714,22 +852,29 @@
       "第六次訓練.txt",
       "第九次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [
       "pipe"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 109
+    "latest_source_question_number": 109,
+    "question_aliases": [
+      "If a parent process does not call wait(), a terminated child process becomes a [__1__] process. (Please answer in lowercase English)"
+    ],
+    "reference_question_ids": [
+      "process-47"
+    ]
   },
   {
     "id": 27,
     "title": "",
     "type": "fill_blank",
-    "question": "在 UNIX 系統中，[__1__]系統呼叫在 fork() 之後使用，用來將程序的記憶體空間替換為一個新程式。(請用英文小寫回答)",
+    "question": "在 UNIX 系統中，[__1__]系統呼叫在 fork() 之後使用，用來將程序的記憶體空間替換為一個新程式。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "exec()",
     "answer_variants": [
       "exec()"
@@ -740,14 +885,22 @@
       "第二次訓練.txt",
       "第八次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [
       "exec"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 89
+    "latest_source_question_number": 89,
+    "question_aliases": [
+      "在 UNIX 系統中，[__1__]系統呼叫在 fork() 之後使用，用來將程序的記憶體空間替換為一個新程式。(請用英文小寫回答)"
+    ],
+    "reference_question_ids": [
+      "process-38",
+      "process-36"
+    ]
   },
   {
     "id": 28,
@@ -755,12 +908,12 @@
     "type": "choice",
     "question": "在直接通訊（direct communication）中，鏈結是自動建立的嗎？",
     "options": [
-      "是的，只要程序明確命名對方",
-      "僅在接收訊息後建立",
       "不，需要手動建立",
-      "僅在訊息傳送後建立"
+      "僅在訊息傳送後建立",
+      "僅在接收訊息後建立",
+      "是的，只要程序明確命名對方"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "是的，只要程序明確命名對方",
     "answer_variants": [
       "是的，只要程序明確命名對方"
@@ -774,12 +927,17 @@
       "第七次訓練.txt",
       "第八次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 6,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 58
+    "latest_source_question_number": 58,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-64"
+    ]
   },
   {
     "id": 29,
@@ -830,28 +988,33 @@
       "第二次訓練.txt",
       "第三次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 141
+    "latest_source_question_number": 141,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-33"
+    ]
   },
   {
     "id": 31,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪些是通訊連結的實作問題？",
     "options": [
       "如何建立連結",
-      "一個連結是否可以與多個程序相關聯",
       "通訊連結的容量如何",
-      "訊息的大小是固定的還是變動的"
+      "訊息的大小是固定的還是變動的",
+      "一個連結是否可以與多個程序相關聯"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "如何建立連結\n一個連結是否可以與多個程序相關聯\n通訊連結的容量如何\n訊息的大小是固定的還是變動的",
+    "options_status": "complete",
+    "correct_answer": "如何建立連結\n通訊連結的容量如何\n訊息的大小是固定的還是變動的\n一個連結是否可以與多個程序相關聯",
     "answer_variants": [
-      "如何建立連結\n一個連結是否可以與多個程序相關聯\n通訊連結的容量如何\n訊息的大小是固定的還是變動的"
+      "如何建立連結\n通訊連結的容量如何\n訊息的大小是固定的還是變動的\n一個連結是否可以與多個程序相關聯"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
@@ -861,25 +1024,30 @@
       "第七次訓練.txt",
       "第八次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 5,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 2
+    "latest_source_question_number": 2,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-62"
+    ]
   },
   {
     "id": 32,
     "title": "",
     "type": "choice",
-    "question": "哪一個UNIX系統呼叫會創建一個新的程序？",
+    "question": "哪一個 UNIX 系統呼叫會創建一個新的程序？",
     "options": [
-      "fork()",
-      "abort()",
       "wait()",
-      "exec()"
+      "exec()",
+      "fork()",
+      "abort()"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "fork()",
     "answer_variants": [
       "fork()"
@@ -892,12 +1060,20 @@
       "第八次訓練.txt",
       "第九次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 5,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 41
+    "latest_source_question_number": 41,
+    "question_aliases": [
+      "哪一個UNIX系統呼叫會創建一個新的程序？"
+    ],
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-35"
+    ]
   },
   {
     "id": 33,
@@ -905,7 +1081,7 @@
     "type": "fill_blank",
     "question": "When the CPU switches between processes, it must save the state of the old process and load the saved state of the new process, a procedure known as a [__1__]. (Please answer in lowercase English and leave a blank between words)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "context switch",
     "answer_variants": [
       "context switch"
@@ -914,12 +1090,16 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "填空",
-    "latest_source_question_number": 124
+    "latest_source_question_number": 124,
+    "reference_question_ids": [
+      "process-13"
+    ]
   },
   {
     "id": 34,
@@ -955,12 +1135,12 @@
     "type": "choice",
     "question": "以下哪些是程序的執行選項？",
     "options": [
-      "父子程序並行執行",
-      "父程序等待子程序終止",
       "子程序在父程序終止時也必須終止",
-      "子程序可以繼承父程序的狀態"
+      "父子程序並行執行",
+      "子程序可以繼承父程序的狀態",
+      "父程序等待子程序終止"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "父子程序並行執行\n父程序等待子程序終止",
     "answer_variants": [
       "父子程序並行執行\n父程序等待子程序終止"
@@ -971,12 +1151,17 @@
       "第二次訓練.txt",
       "第九次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 13
+    "latest_source_question_number": 13,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-43"
+    ]
   },
   {
     "id": 36,
@@ -984,12 +1169,12 @@
     "type": "choice",
     "question": "在作業系統中，一個「程序」（process）被定義為一個在執行中的什麼？",
     "options": [
-      "執行中的程式",
-      "程式碼的複製本",
       "記憶體區塊",
-      "磁碟上的靜態檔案"
+      "執行中的程式",
+      "磁碟上的靜態檔案",
+      "程式碼的複製本"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "執行中的程式",
     "answer_variants": [
       "執行中的程式"
@@ -1001,20 +1186,25 @@
       "第四次訓練.txt",
       "第七次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 54
+    "latest_source_question_number": 54,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-4"
+    ]
   },
   {
     "id": 37,
     "title": "",
     "type": "fill_blank",
-    "question": "在 Mach IPC 系統中，訊息傳遞系統呼叫包括 msg_send()、msg_receive() 和[__1__]。(請用小寫英文回答)",
+    "question": "在 Mach IPC 系統中，訊息傳遞系統呼叫包括 msg_send()、msg_receive() 和[__1__]。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "msg_rpc()",
     "answer_variants": [
       "msg_rpc()"
@@ -1025,14 +1215,21 @@
       "第二次訓練.txt",
       "第三次訓練.txt",
       "第四次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [
       "pipe"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 4
+    "latest_source_question_number": 4,
+    "question_aliases": [
+      "在 Mach IPC 系統中，訊息傳遞系統呼叫包括 msg_send()、msg_receive() 和[__1__]。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-88"
+    ]
   },
   {
     "id": 38,
@@ -1041,11 +1238,11 @@
     "question": "以下哪些是 iOS 行動系統中的多工處理限制？",
     "options": [
       "僅允許一個前景程序",
+      "背景程序沒有任何限制",
       "允許多個背景程序",
-      "允許多個前景程序",
-      "背景程序沒有任何限制"
+      "允許多個前景程序"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "僅允許一個前景程序\n允許多個背景程序",
     "answer_variants": [
       "僅允許一個前景程序\n允許多個背景程序"
@@ -1055,12 +1252,18 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 70
+    "latest_source_question_number": 70,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-92"
+    ],
+    "answer_note": "來源採早期教材模型；需依版本與裝置判斷。"
   },
   {
     "id": 39,
@@ -1068,12 +1271,12 @@
     "type": "choice",
     "question": "哪一種管道（Pipes），它允許沒有親屬關係的程序之間進行通信？",
     "options": [
-      "具名管道",
       "普通管道",
+      "具名管道",
       "匿名管道",
       "UNIX管道"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "具名管道",
     "answer_variants": [
       "具名管道"
@@ -1086,22 +1289,30 @@
       "第六次訓練.txt",
       "第七次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 5,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 93
+    "latest_source_question_number": 93,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-77"
+    ]
   },
   {
     "id": 40,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "In UNIX systems, which system call is used to replace a process's memory space and load a new program?",
     "options": [
-      "exec()"
+      "exec()",
+      "exit()",
+      "wait()",
+      "fork()"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "exec()",
     "answer_variants": [
       "exec()"
@@ -1111,12 +1322,17 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 117
+    "latest_source_question_number": 117,
+    "source_type": "單選題",
+    "reference_question_ids": [
+      "community-3edc10a9-7d14-4af1-b6bf-3a86179c58b3-3"
+    ]
   },
   {
     "id": 41,
@@ -1124,35 +1340,40 @@
     "type": "choice",
     "question": "一個佇列圖可以代表什麼？",
     "options": [
-      "佇列",
-      "資源",
+      "時間片",
       "流程",
-      "時間片"
+      "資源",
+      "佇列"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "佇列\n資源\n流程",
+    "options_status": "complete",
+    "correct_answer": "流程\n資源\n佇列",
     "answer_variants": [
-      "佇列\n資源\n流程"
+      "流程\n資源\n佇列"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 50
+    "latest_source_question_number": 50,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-21"
+    ]
   },
   {
     "id": 42,
     "title": "",
     "type": "fill_blank",
-    "question": "一個程序在記憶體中被組織成多個部分，其中[__1__]包含暫時性資料，如函式參數、回傳位址和區域變數。(請用英文縮寫回答 且用大寫字母)",
+    "question": "一個程序在記憶體中被組織成多個部分,其中 [__1__] 包含暫時性資料,如函式參數、回傳位址和區域變數。(請用英文縮寫回答 且用大寫字母)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "PCB",
     "answer_variants": [
       "PCB"
@@ -1161,7 +1382,8 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [
@@ -1169,7 +1391,13 @@
       "msg_rpc()"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 18
+    "latest_source_question_number": 18,
+    "question_aliases": [
+      "一個程序在記憶體中被組織成多個部分，其中[__1__]包含暫時性資料，如函式參數、回傳位址和區域變數。(請用英文縮寫回答 且用大寫字母)"
+    ],
+    "reference_question_ids": [
+      "process-8"
+    ]
   },
   {
     "id": 43,
@@ -1177,12 +1405,12 @@
     "type": "choice",
     "question": "共享記憶體（Shared memory）通訊模型的主要問題是什麼？",
     "options": [
-      "同步",
-      "訊息容量",
+      "訊息傳遞",
       "尋找伺服器",
-      "訊息傳遞"
+      "同步",
+      "訊息容量"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "同步",
     "answer_variants": [
       "同步"
@@ -1194,12 +1422,17 @@
       "第三次訓練.txt",
       "第七次訓練.txt",
       "第八次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 51
+    "latest_source_question_number": 51,
+    "source_type": "單選題",
+    "reference_question_ids": [
+      "process-56"
+    ]
   },
   {
     "id": 44,
@@ -1208,14 +1441,14 @@
     "question": "以下哪些是 Chrome 瀏覽器的多程序架構中不同類型的程序？",
     "options": [
       "瀏覽器程序",
-      "渲染程序",
+      "核心程序",
       "外掛程序",
-      "核心程序"
+      "渲染程序"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "瀏覽器程序\n渲染程序\n外掛程序",
+    "options_status": "complete",
+    "correct_answer": "瀏覽器程序\n外掛程序\n渲染程序",
     "answer_variants": [
-      "瀏覽器程序\n渲染程序\n外掛程序"
+      "瀏覽器程序\n外掛程序\n渲染程序"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
@@ -1224,12 +1457,18 @@
       "第五次訓練.txt",
       "第七次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 20
+    "latest_source_question_number": 20,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-93"
+    ],
+    "answer_note": "來源採早期教材模型；需依版本與裝置判斷。"
   },
   {
     "id": 45,
@@ -1254,9 +1493,9 @@
     "id": 46,
     "title": "",
     "type": "fill_blank",
-    "question": "如果一個子程序在父程序終止後仍然存在，且父程序未呼叫 wait()，這會導致該子程序成為一個 [__1__]程序。(請用小寫英文回答)",
+    "question": "如果一個子程序在父程序終止後仍然存在，且父程序未呼叫 wait()，這會導致該子程序成為一個 [__1__]程序。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "orphan",
     "answer_variants": [
       "orphan"
@@ -1266,12 +1505,19 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第二次訓練.txt",
       "第三次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "填空",
-    "latest_source_question_number": 1
+    "latest_source_question_number": 1,
+    "question_aliases": [
+      "如果一個子程序在父程序終止後仍然存在，且父程序未呼叫 wait()，這會導致該子程序成為一個 [__1__]程序。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-49"
+    ]
   },
   {
     "id": 47,
@@ -1303,9 +1549,9 @@
     "id": 48,
     "title": "",
     "type": "fill_blank",
-    "question": "在共享記憶體通訊中，主要的問題是為用戶程序提供一個機制，使其在存取共享記憶體時能夠[__1__]其動作。(請用小寫英文回答)",
+    "question": "在共享記憶體通訊中，主要的問題是為用戶程序提供一個機制，使其在存取共享記憶體時能夠[__1__]其動作。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "synchronize",
     "answer_variants": [
       "synchronize"
@@ -1316,12 +1562,19 @@
       "第三次訓練.txt",
       "第四次訓練.txt",
       "第五次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "填空",
-    "latest_source_question_number": 14
+    "latest_source_question_number": 14,
+    "question_aliases": [
+      "在共享記憶體通訊中，主要的問題是為用戶程序提供一個機制，使其在存取共享記憶體時能夠[__1__]其動作。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-57"
+    ]
   },
   {
     "id": 49,
@@ -1329,12 +1582,12 @@
     "type": "choice",
     "question": "哪一種排程器負責將程序從磁碟載入到主記憶體中，以控制多重程式化的程度？",
     "options": [
-      "長期排程器",
       "短期排程器",
+      "中期排程器",
       "分派器",
-      "中期排程器"
+      "長期排程器"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "長期排程器",
     "answer_variants": [
       "長期排程器"
@@ -1345,20 +1598,25 @@
       "第三次訓練.txt",
       "第六次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 26
+    "latest_source_question_number": 26,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-23"
+    ]
   },
   {
     "id": 50,
     "title": "",
     "type": "fill_blank",
-    "question": "一個花費大部分時間進行計算的程序被稱為[__1__]程序。(請用小寫英文回答 單字間留一個空白)",
+    "question": "一個花費大部分時間進行計算的程序被稱為[__1__]程序。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "cpu bound",
     "answer_variants": [
       "cpu bound"
@@ -1370,41 +1628,54 @@
       "第五次訓練.txt",
       "第六次訓練.txt",
       "第八次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [
       "CPU bound"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 65
+    "latest_source_question_number": 65,
+    "question_aliases": [
+      "一個花費大部分時間進行計算的程序被稱為[__1__]程序。(請用小寫英文回答 單字間留一個空白)"
+    ],
+    "reference_question_ids": [
+      "process-30"
+    ]
   },
   {
     "id": 51,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Which of the following reasons might cause a parent process to terminate a child process?",
     "options": [
-      "the child process has exceeded allocated resources",
+      "the child process is in an infinite loop",
       "the task assigned to the child process is no longer needed",
+      "the child process has exceeded allocated resources",
       "the parent process is exiting, and the operating system does not allow the child process to continue"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "the child process has exceeded allocated resources\nthe task assigned to the child process is no longer needed\nthe parent process is exiting, and the operating system does not allow the child process to continue",
+    "options_status": "complete",
+    "correct_answer": "the task assigned to the child process is no longer needed\nthe child process has exceeded allocated resources\nthe parent process is exiting, and the operating system does not allow the child process to continue",
     "answer_variants": [
-      "the child process has exceeded allocated resources\nthe task assigned to the child process is no longer needed\nthe parent process is exiting, and the operating system does not allow the child process to continue"
+      "the task assigned to the child process is no longer needed\nthe child process has exceeded allocated resources\nthe parent process is exiting, and the operating system does not allow the child process to continue"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第三次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 113
+    "latest_source_question_number": 113,
+    "source_type": "多選題",
+    "reference_question_ids": [
+      "process-45"
+    ]
   },
   {
     "id": 52,
@@ -1412,15 +1683,14 @@
     "type": "choice",
     "question": "父程序創建子程序時，可能的資源共享選項有哪些？",
     "options": [
+      "父子程序共享所有資源",
       "子程序共享父程序資源的子集",
       "父子程序不共享資源",
-      "父子程序共享所有資源",
       "父程序將所有資源轉移給子程序"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "子程序共享父程序資源的子集\n父子程序不共享資源\n父子程序共享所有資源",
+    "options_status": "complete",
+    "correct_answer": "父子程序共享所有資源\n子程序共享父程序資源的子集\n父子程序不共享資源",
     "answer_variants": [
-      "子程序共享父程序資源的子集\n父子程序不共享資源\n父子程序共享所有資源",
       "父子程序共享所有資源\n子程序共享父程序資源的子集\n父子程序不共享資源"
     ],
     "answer_basis": "provided_source_answer",
@@ -1430,20 +1700,25 @@
       "第六次訓練.txt",
       "第八次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 74
+    "latest_source_question_number": 74,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-44"
+    ]
   },
   {
     "id": 53,
     "title": "",
     "type": "fill_blank",
-    "question": "長期排程器控制[__1__]的程度，該名詞指的是在記憶體中同時存在的程序數量。(請用小寫英文回答)",
+    "question": "長期排程器控制[__1__]的程度，該名詞指的是在記憶體中同時存在的程序數量。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "multiprogramming",
     "answer_variants": [
       "multiprogramming"
@@ -1455,7 +1730,8 @@
       "第七次訓練.txt",
       "第九次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [
@@ -1463,7 +1739,13 @@
       "aa"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 116
+    "latest_source_question_number": 116,
+    "question_aliases": [
+      "長期排程器控制[__1__]的程度，該名詞指的是在記憶體中同時存在的程序數量。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-26"
+    ]
   },
   {
     "id": 54,
@@ -1471,31 +1753,36 @@
     "type": "choice",
     "question": "在間接通訊（indirect communication）中，以下哪些敘述是正確的？",
     "options": [
-      "信箱有唯一的 ID",
-      "一個連結可能與許多程序相關聯",
       "程序只有在共享信箱時才能通訊",
+      "一個連結可能與許多程序相關聯",
+      "信箱有唯一的 ID",
       "程序必須明確命名對方"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "信箱有唯一的 ID\n一個連結可能與許多程序相關聯\n程序只有在共享信箱時才能通訊",
+    "options_status": "complete",
+    "correct_answer": "程序只有在共享信箱時才能通訊\n一個連結可能與許多程序相關聯\n信箱有唯一的 ID",
     "answer_variants": [
-      "信箱有唯一的 ID\n一個連結可能與許多程序相關聯\n程序只有在共享信箱時才能通訊"
+      "程序只有在共享信箱時才能通訊\n一個連結可能與許多程序相關聯\n信箱有唯一的 ID"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第三次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 62
+    "latest_source_question_number": 62,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-66"
+    ]
   },
   {
     "id": 55,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列哪些項目與程序控制區塊（PCB）相關？",
     "options": [
       "程序狀態",
@@ -1503,7 +1790,7 @@
       "I/O狀態資訊",
       "程式計數器"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "程序狀態\nCPU暫存器\nI/O狀態資訊\n程式計數器",
     "answer_variants": [
       "程序狀態\nCPU暫存器\nI/O狀態資訊\n程式計數器"
@@ -1513,12 +1800,17 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第三次訓練.txt",
       "第四次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 29
+    "latest_source_question_number": 29,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-10"
+    ]
   },
   {
     "id": 56,
@@ -1526,12 +1818,12 @@
     "type": "choice",
     "question": "程序（Process）的哪一個部分包含用於動態記憶體分配的記憶體？",
     "options": [
-      "堆積",
       "文字區",
       "資料區",
-      "堆疊"
+      "堆疊",
+      "堆積"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "堆積",
     "answer_variants": [
       "堆積"
@@ -1541,12 +1833,17 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第三次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 38
+    "latest_source_question_number": 38,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-6"
+    ]
   },
   {
     "id": 57,
@@ -1605,9 +1902,9 @@
     "id": 59,
     "title": "",
     "type": "fill_blank",
-    "question": "CPU在程序之間切換時，必須儲存舊程序的狀態並載入新程序的儲存狀態，這被稱為[__1__]。(請用小寫英文回答 單字間留一個空白)",
+    "question": "CPU在程序之間切換時，必須儲存舊程序的狀態並載入新程序的儲存狀態，這被稱為[__1__]。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "context switch",
     "answer_variants": [
       "context switch"
@@ -1620,7 +1917,8 @@
       "第七次訓練.txt",
       "第八次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 5,
     "source_incorrect_responses": [
@@ -1628,15 +1926,21 @@
       "context seitch"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 81
+    "latest_source_question_number": 81,
+    "question_aliases": [
+      "CPU在程序之間切換時，必須儲存舊程序的狀態並載入新程序的儲存狀態，這被稱為[__1__]。(請用小寫英文回答 單字間留一個空白)"
+    ],
+    "reference_question_ids": [
+      "process-13"
+    ]
   },
   {
     "id": 60,
     "title": "",
     "type": "fill_blank",
-    "question": "一個[__1__]被定義為通訊的端點，由 IP 位址和連接埠的組合而成。(請用小寫英文回答)",
+    "question": "一個[__1__]被定義為通訊的端點，由 IP 位址和連接埠的組合而成。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "socket",
     "answer_variants": [
       "socket"
@@ -1647,12 +1951,19 @@
       "第三次訓練.txt",
       "help1.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "填空",
-    "latest_source_question_number": 3
+    "latest_source_question_number": 3,
+    "question_aliases": [
+      "一個[__1__]被定義為通訊的端點，由 IP 位址和連接埠的組合而成。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-82"
+    ]
   },
   {
     "id": 61,
@@ -1674,12 +1985,18 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第三次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 125
+    "latest_source_question_number": 125,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "friend-os-u4-061",
+      "process-69"
+    ]
   },
   {
     "id": 62,
@@ -1687,15 +2004,15 @@
     "type": "choice",
     "question": "以下哪些是在 IPC 中，共享記憶體和訊息傳遞模型的區別？",
     "options": [
-      "一個是記憶體區域共享，另一個是訊息交換",
+      "一個由用戶程序控制，另一個由作業系統控制",
       "共享記憶體主要關注同步化",
       "訊息傳遞主要關注通訊連結的建立",
-      "一個由用戶程序控制，另一個由作業系統控制"
+      "一個是記憶體區域共享，另一個是訊息交換"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "一個是記憶體區域共享，另一個是訊息交換\n共享記憶體主要關注同步化\n訊息傳遞主要關注通訊連結的建立",
+    "options_status": "complete",
+    "correct_answer": "共享記憶體主要關注同步化\n訊息傳遞主要關注通訊連結的建立\n一個是記憶體區域共享，另一個是訊息交換",
     "answer_variants": [
-      "一個是記憶體區域共享，另一個是訊息交換\n共享記憶體主要關注同步化\n訊息傳遞主要關注通訊連結的建立"
+      "共享記憶體主要關注同步化\n訊息傳遞主要關注通訊連結的建立\n一個是記憶體區域共享，另一個是訊息交換"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
@@ -1704,20 +2021,25 @@
       "第四次訓練.txt",
       "第六次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 60
+    "latest_source_question_number": 60,
+    "source_type": "多選題",
+    "reference_question_ids": [
+      "process-58"
+    ]
   },
   {
     "id": 63,
     "title": "",
     "type": "fill_blank",
-    "question": "A named pipe is more powerful than an ordinary pipe because its communication is [__1__] and it does not require a parent-child relationship.(Please answer in lowercase English)",
+    "question": "A named pipe is more powerful than an ordinary pipe because its communication is [__1__] and it does not require a parent-child relationship.",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "bidirectional",
     "answer_variants": [
       "bidirectional"
@@ -1728,14 +2050,21 @@
       "第四次訓練.txt",
       "第七次訓練.txt",
       "第八次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [
       "bidirectinal"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 142
+    "latest_source_question_number": 142,
+    "question_aliases": [
+      "A named pipe is more powerful than an ordinary pipe because its communication is [__1__] and it does not require a parent-child relationship.(Please answer in lowercase English)"
+    ],
+    "reference_question_ids": [
+      "process-80"
+    ]
   },
   {
     "id": 64,
@@ -1756,20 +2085,25 @@
       "第四次訓練.txt",
       "第八次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 135
+    "latest_source_question_number": 135,
+    "reference_question_ids": [
+      "process-7",
+      "process-6"
+    ]
   },
   {
     "id": 65,
     "title": "",
     "type": "fill_blank",
-    "question": "A [__1__] acts as a conduit that allows two processes to communicate.(Please answer in lowercase English)",
+    "question": "A [__1__] acts as a conduit that allows two processes to communicate.",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "pipe",
     "answer_variants": [
       "pipe"
@@ -1778,20 +2112,28 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第四次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "填空",
-    "latest_source_question_number": 96
+    "latest_source_question_number": 96,
+    "question_aliases": [
+      "A [__1__] acts as a conduit that allows two processes to communicate.(Please answer in lowercase English)"
+    ],
+    "reference_question_ids": [
+      "process-74",
+      "process-73"
+    ]
   },
   {
     "id": 66,
     "title": "",
     "type": "fill_blank",
-    "question": "A process that spends most of its time computing is called a [__1__] process. (Please answer in lowercase English and leave a blank between words)",
+    "question": "A process that spends most of its time computing is called a [__1__] process.",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "cpu bound",
     "answer_variants": [
       "cpu bound"
@@ -1801,22 +2143,30 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第四次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [
       "pipe"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 43
+    "latest_source_question_number": 43,
+    "question_aliases": [
+      "A process that spends most of its time computing is called a [__1__] process. (Please answer in lowercase English and leave a blank between words)"
+    ],
+    "reference_question_ids": [
+      "process-31",
+      "process-30"
+    ]
   },
   {
     "id": 67,
     "title": "",
     "type": "fill_blank",
-    "question": "連結上沒有訊息排隊。發送方必須等待接收方的這種無空間的緩衝方式叫做 [__1__]。(請用小寫英文回答)",
+    "question": "連結上沒有訊息排隊，發送方必須等待接收方的這種無緩衝方式叫做[__1__]。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "rendezvous",
     "answer_variants": [
       "rendezvous"
@@ -1827,7 +2177,8 @@
       "第四次訓練.txt",
       "第五次訓練.txt",
       "第七次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [
@@ -1836,7 +2187,13 @@
       "rendezbous"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 61
+    "latest_source_question_number": 61,
+    "question_aliases": [
+      "連結上沒有訊息排隊。發送方必須等待接收方的這種無空間的緩衝方式叫做 [__1__]。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-71"
+    ]
   },
   {
     "id": 68,
@@ -1844,12 +2201,12 @@
     "type": "choice",
     "question": "當一個程序完成其最後一個陳述後，它會呼叫哪個系統呼叫來請求作業系統刪除它？",
     "options": [
+      "exec()",
       "exit()",
       "fork()",
-      "exec()",
       "abort()"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "exit()",
     "answer_variants": [
       "exit()"
@@ -1859,12 +2216,17 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第四次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 45
+    "latest_source_question_number": 45,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-40"
+    ]
   },
   {
     "id": 69,
@@ -1889,12 +2251,18 @@
       "第六次訓練.txt",
       "第七次訓練.txt",
       "第八次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 31
+    "latest_source_question_number": 31,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "friend-os-u4-069",
+      "process-69"
+    ]
   },
   {
     "id": 70,
@@ -1903,14 +2271,13 @@
     "question": "以下哪些原因可能導致父程序終止子程序？",
     "options": [
       "子程序超出分配的資源",
-      "父程序正在退出，且作業系統不允許子程序繼續",
       "分配給子程序的任務不再需要",
+      "父程序正在退出，且作業系統不允許子程序繼續",
       "子程序陷入無限迴圈"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "子程序超出分配的資源\n父程序正在退出，且作業系統不允許子程序繼續\n分配給子程序的任務不再需要",
+    "options_status": "complete",
+    "correct_answer": "子程序超出分配的資源\n分配給子程序的任務不再需要\n父程序正在退出，且作業系統不允許子程序繼續",
     "answer_variants": [
-      "子程序超出分配的資源\n父程序正在退出，且作業系統不允許子程序繼續\n分配給子程序的任務不再需要",
       "子程序超出分配的資源\n分配給子程序的任務不再需要\n父程序正在退出，且作業系統不允許子程序繼續"
     ],
     "answer_basis": "provided_source_answer",
@@ -1919,12 +2286,17 @@
       "第四次訓練.txt",
       "第五次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 42
+    "latest_source_question_number": 42,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-46"
+    ]
   },
   {
     "id": 71,
@@ -1958,11 +2330,11 @@
     "question": "哪種排程器控制多重程式化的程度？",
     "options": [
       "長期排程器",
-      "CPU排程器",
+      "中期排程器",
       "短期排程器",
-      "中期排程器"
+      "CPU排程器"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "長期排程器",
     "answer_variants": [
       "長期排程器"
@@ -1975,12 +2347,17 @@
       "第九次訓練.txt",
       "help1.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 5,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 47
+    "latest_source_question_number": 47,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-25"
+    ]
   },
   {
     "id": 73,
@@ -2013,27 +2390,32 @@
     "type": "choice",
     "question": "I/O綁定型程序（I/O-bound process）的特徵是什麼？",
     "options": [
-      "花費大部分時間進行I/O操作",
-      "很少進行I/O操作",
-      "只有一個CPU突發",
+      "花費大部分時間進行 I/O 操作",
+      "只有一個 CPU 突發",
+      "很少進行 I/O 操作",
       "花費大部分時間進行計算"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "花費大部分時間進行I/O操作",
+    "options_status": "complete",
+    "correct_answer": "花費大部分時間進行 I/O 操作",
     "answer_variants": [
-      "花費大部分時間進行I/O操作"
+      "花費大部分時間進行 I/O 操作"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第五次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 53
+    "latest_source_question_number": 53,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-33"
+    ]
   },
   {
     "id": 75,
@@ -2042,11 +2424,11 @@
     "question": "花費大部分時間進行 I/O 操作的程序被稱為哪一種類型？",
     "options": [
       "I/O綁定型程序",
-      "CPU綁定型程序",
       "背景程序",
+      "CPU綁定型程序",
       "前景程序"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "I/O綁定型程序",
     "answer_variants": [
       "I/O綁定型程序"
@@ -2058,12 +2440,17 @@
       "第七次訓練.txt",
       "第九次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 68
+    "latest_source_question_number": 68,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-34"
+    ]
   },
   {
     "id": 76,
@@ -2071,12 +2458,12 @@
     "type": "choice",
     "question": "在程序狀態圖中，從「就緒」狀態轉換到「執行中」狀態是由誰完成的？",
     "options": [
-      "排程器分派",
-      "中斷",
       "I/O完成",
-      "事件等待"
+      "排程器分派",
+      "事件等待",
+      "中斷"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "排程器分派",
     "answer_variants": [
       "排程器分派"
@@ -2086,20 +2473,25 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第五次訓練.txt",
       "第八次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 64
+    "latest_source_question_number": 64,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-17"
+    ]
   },
   {
     "id": 77,
     "title": "",
     "type": "fill_blank",
-    "question": "The process control block (PCB) contains information associated with each process, also known as the [__1__].(Please answer in lowercase English and leave a blank between words)",
+    "question": "The process control block (PCB) contains information associated with each process, also known as the [__1__].",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "process control block",
     "answer_variants": [
       "process control block"
@@ -2108,20 +2500,28 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第五次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "填空",
-    "latest_source_question_number": 127
+    "latest_source_question_number": 127,
+    "question_aliases": [
+      "The process control block (PCB) contains information associated with each process, also known as the [__1__].(Please answer in lowercase English and leave a blank between words)"
+    ],
+    "reference_question_ids": [
+      "process-12",
+      "process-11"
+    ]
   },
   {
     "id": 78,
     "title": "",
     "type": "fill_blank",
-    "question": "A [__1__] is defined as an endpoint for communication, a combination of an IP address and a port.(Please answer in lowercase English)",
+    "question": "A [__1__] is defined as an endpoint for communication, a combination of an IP address and a port.",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "socket",
     "answer_variants": [
       "socket"
@@ -2130,14 +2530,22 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第五次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [
       "123"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 140
+    "latest_source_question_number": 140,
+    "question_aliases": [
+      "A [__1__] is defined as an endpoint for communication, a combination of an IP address and a port.(Please answer in lowercase English)"
+    ],
+    "reference_question_ids": [
+      "process-83",
+      "process-82"
+    ]
   },
   {
     "id": 79,
@@ -2172,9 +2580,9 @@
     "id": 80,
     "title": "",
     "type": "fill_blank",
-    "question": "具名管道(named pipe)比普通管道(ordinary pipe)更強大，因為其通訊是[__1__]的，且不需要親子關係。(請用小寫英文回答)",
+    "question": "具名管道 (named pipe) 比普通管道 (ordinary pipe) 更強大，因為其通訊是[__1__]的，且不需要親子關係。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "bidirectional",
     "answer_variants": [
       "bidirectional"
@@ -2184,14 +2592,21 @@
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第五次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [
       "pope"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 27
+    "latest_source_question_number": 27,
+    "question_aliases": [
+      "具名管道(named pipe)比普通管道(ordinary pipe)更強大，因為其通訊是[__1__]的，且不需要親子關係。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-80"
+    ]
   },
   {
     "id": 81,
@@ -2199,12 +2614,12 @@
     "type": "choice",
     "question": "哪兩種 IPC 系統是基於訊息傳遞的？",
     "options": [
-      "Mach",
-      "Windows 的 LPC",
       "Java 的 RMI",
-      "POSIX 共享記憶體"
+      "POSIX 共享記憶體",
+      "Mach",
+      "Windows 的 LPC"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "Mach\nWindows 的 LPC",
     "answer_variants": [
       "Mach\nWindows 的 LPC"
@@ -2217,12 +2632,17 @@
       "第八次訓練.txt",
       "help1.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 5,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 24
+    "latest_source_question_number": 24,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-55"
+    ]
   },
   {
     "id": 82,
@@ -2231,26 +2651,30 @@
     "question": "Which of the following are characteristics of Remote Procedure Calls (RPC)?",
     "options": [
       "uses stubs to locate the server and marshal parameters",
-      "uses External Data Representation (XDR) format for data handling",
       "abstracts procedure calls in a network system",
-      "requires a parent-child relationship"
+      "requires a parent-child relationship",
+      "uses External Data Representation (XDR) format for data handling"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "uses stubs to locate the server and marshal parameters\nuses External Data Representation (XDR) format for data handling\nabstracts procedure calls in a network system",
+    "options_status": "complete",
+    "correct_answer": "uses stubs to locate the server and marshal parameters\nabstracts procedure calls in a network system\nuses External Data Representation (XDR) format for data handling",
     "answer_variants": [
-      "uses stubs to locate the server and marshal parameters\nuses External Data Representation (XDR) format for data handling\nabstracts procedure calls in a network system",
-      "abstracts procedure calls in a network system\nuses stubs to locate the server and marshal parameters\nuses External Data Representation (XDR) format for data handling"
+      "uses stubs to locate the server and marshal parameters\nabstracts procedure calls in a network system\nuses External Data Representation (XDR) format for data handling"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第六次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 28
+    "latest_source_question_number": 28,
+    "source_type": "多選題",
+    "reference_question_ids": [
+      "community-afcb95e7-391c-4c90-a3a1-1f4aa170454c-1"
+    ]
   },
   {
     "id": 83,
@@ -2258,7 +2682,7 @@
     "type": "fill_blank",
     "question": "程序控制區塊（PCB）包含與每個程序相關的資訊，也被稱為[__1__]。(請用小寫英文回答 單字間留一個空白)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "process control block",
     "answer_variants": [
       "process control block"
@@ -2270,7 +2694,8 @@
       "第九次訓練.txt",
       "help1.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 4,
     "source_incorrect_responses": [
@@ -2278,7 +2703,10 @@
       "process control bloack"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 10
+    "latest_source_question_number": 10,
+    "reference_question_ids": [
+      "process-11"
+    ]
   },
   {
     "id": 84,
@@ -2302,20 +2730,26 @@
       "第六次訓練.txt",
       "第八次訓練.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 48
+    "latest_source_question_number": 48,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "friend-os-u4-084",
+      "process-18"
+    ]
   },
   {
     "id": 85,
     "title": "",
     "type": "fill_blank",
-    "question": "The medium-term scheduler can remove a process from memory and store it on a disk, then bring it back in, a process called [__1__]. (Please answer in lowercase English)",
+    "question": "The medium-term scheduler can remove a process from memory and store it on disk, then bring it back in, a process called [__1__].",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "swapping",
     "answer_variants": [
       "swapping"
@@ -2324,40 +2758,52 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第六次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "填空",
-    "latest_source_question_number": 133
+    "latest_source_question_number": 133,
+    "question_aliases": [
+      "The medium-term scheduler can remove a process from memory and store it on a disk, then bring it back in, a process called [__1__]. (Please answer in lowercase English)"
+    ],
+    "reference_question_ids": [
+      "process-27"
+    ]
   },
   {
     "id": 86,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "以下哪些是程序合作的理由？",
     "options": [
-      "資訊共享",
       "計算加速",
       "模組化",
-      "方便性"
+      "方便性",
+      "資訊共享"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "資訊共享\n計算加速\n模組化\n方便性",
+    "options_status": "complete",
+    "correct_answer": "計算加速\n模組化\n方便性\n資訊共享",
     "answer_variants": [
-      "資訊共享\n計算加速\n模組化\n方便性"
+      "計算加速\n模組化\n方便性\n資訊共享"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第六次訓練.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 86
+    "latest_source_question_number": 86,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-51"
+    ]
   },
   {
     "id": 87,
@@ -2365,7 +2811,7 @@
     "type": "fill_blank",
     "question": "In the Windows IPC system, communication is through an advanced [__1__] facility.(Please answer using English abbreviations and uppercase letters.)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "LPC",
     "answer_variants": [
       "LPC"
@@ -2374,25 +2820,32 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第六次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [
       "pipe"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 56
+    "latest_source_question_number": 56,
+    "reference_question_ids": [
+      "process-89"
+    ],
+    "question_aliases": []
   },
   {
     "id": 88,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Which of the following are characteristics of Named Pipes?",
     "options": [
       "communication is bidirectional",
-      "does not require a parent-child relationship"
+      "requires a parent-child relationship",
+      "does not require a parent-child relationship",
+      "communication is unidirectional"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "communication is bidirectional\ndoes not require a parent-child relationship",
     "answer_variants": [
       "communication is bidirectional\ndoes not require a parent-child relationship"
@@ -2401,12 +2854,17 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第七次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 91
+    "latest_source_question_number": 91,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-79"
+    ]
   },
   {
     "id": 89,
@@ -2428,12 +2886,18 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第七次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 99
+    "latest_source_question_number": 99,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-29",
+      "process-28"
+    ]
   },
   {
     "id": 90,
@@ -2446,21 +2910,26 @@
       "modularity"
     ],
     "options_status": "known_options_only",
-    "correct_answer": "information sharing\ncomputation speedup\nmodularity",
+    "correct_answer": "modularity\ninformation sharing\ncomputation speedup",
     "answer_variants": [
-      "information sharing\ncomputation speedup\nmodularity"
+      "modularity\ninformation sharing\ncomputation speedup"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第七次訓練.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 2,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 123
+    "latest_source_question_number": 123,
+    "reference_question_ids": [
+      "process-53",
+      "process-52"
+    ]
   },
   {
     "id": 91,
@@ -2493,16 +2962,15 @@
     "type": "choice",
     "question": "哪些是程序之間通訊的兩種模型？",
     "options": [
+      "管道",
       "訊息傳遞",
       "共享記憶體",
-      "管道",
       "信箱"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "訊息傳遞\n共享記憶體",
     "answer_variants": [
-      "訊息傳遞\n共享記憶體",
-      "共享記憶體\n訊息傳遞"
+      "訊息傳遞\n共享記憶體"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
@@ -2510,20 +2978,25 @@
       "第八次訓練.txt",
       "help1.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 3,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 46
+    "latest_source_question_number": 46,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-102"
+    ]
   },
   {
     "id": 93,
     "title": "",
     "type": "fill_blank",
-    "question": "如果父程序沒有呼叫 wait()，終止的子程序會成為一個[__1__]程序。(請用小寫英文回答)",
+    "question": "如果父程序沒有呼叫 wait()，終止的子程序會成為一個 [__1__] 程序。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "zombie",
     "answer_variants": [
       "zombie"
@@ -2532,14 +3005,21 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第八次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [
       "orphan"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 57
+    "latest_source_question_number": 57,
+    "question_aliases": [
+      "如果父程序沒有呼叫 wait()，終止的子程序會成為一個[__1__]程序。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-47"
+    ]
   },
   {
     "id": 94,
@@ -2548,26 +3028,30 @@
     "question": "請選出訊息傳遞的佇列有三種實作的方式",
     "options": [
       "Zero capacity",
-      "Unbounded capacity",
+      "Full capacity",
       "Bounded capacity",
-      "Full capacity"
+      "Unbounded capacity"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "Zero capacity\nUnbounded capacity\nBounded capacity",
+    "options_status": "complete",
+    "correct_answer": "Zero capacity\nBounded capacity\nUnbounded capacity",
     "answer_variants": [
-      "Zero capacity\nUnbounded capacity\nBounded capacity",
       "Zero capacity\nBounded capacity\nUnbounded capacity"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第八次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 37
+    "latest_source_question_number": 37,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-107"
+    ]
   },
   {
     "id": 95,
@@ -2602,12 +3086,12 @@
     "type": "choice",
     "question": "在作業系統中，一個程式被載入到記憶體中後會變成什麼？",
     "options": [
-      "一個程序",
       "一個資料區塊",
-      "一個檔案",
-      "一個行程"
+      "一個執行緒",
+      "一個程序",
+      "一個檔案"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "一個程序",
     "answer_variants": [
       "一個程序"
@@ -2616,12 +3100,18 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "第九次訓練.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 105
+    "latest_source_question_number": 105,
+    "source_type": "單選",
+    "answer_note": "原選項 B「行程」與 C「程序」都可翻譯為 process，容易形成兩個正解；此處改用「執行緒」作為錯誤選項。原選項保留在版本紀錄中。",
+    "reference_question_ids": [
+      "process-3"
+    ]
   },
   {
     "id": 97,
@@ -2629,7 +3119,7 @@
     "type": "fill_blank",
     "question": "[__1__]抽象化了網路系統中程序之間的程序呼叫。(請用英文小寫回答，單字間留一空白)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "remote procedure call",
     "answer_variants": [
       "remote procedure call"
@@ -2638,20 +3128,24 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "填空",
-    "latest_source_question_number": 132
+    "latest_source_question_number": 132,
+    "reference_question_ids": [
+      "process-84"
+    ]
   },
   {
     "id": 98,
     "title": "",
     "type": "fill_blank",
-    "question": "訊息傳遞中的同步化可以是[__1__]或 non-blocking synchronous。 (Please answer in\nlowercase English and leave a blank between words)",
+    "question": "訊息傳遞中的同步化可以是 [__1__] 或 non-blocking asynchronous。(Please answer in lowercase English and leave a blank between words)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "blocking synchronous",
     "answer_variants": [
       "blocking synchronous"
@@ -2660,14 +3154,22 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [
       "blocking"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 83
+    "latest_source_question_number": 83,
+    "question_aliases": [
+      "訊息傳遞中的同步化可以是[__1__]或 non-blocking synchronous。 (Please answer in\nlowercase English and leave a blank between words)"
+    ],
+    "reference_question_ids": [
+      "process-70"
+    ],
+    "answer_note": "原題勘誤：non-blocking 應搭配 asynchronous（非同步）。"
   },
   {
     "id": 99,
@@ -2711,20 +3213,26 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "help1.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 122
+    "latest_source_question_number": 122,
+    "source_type": "單選",
+    "reference_question_ids": [
+      "friend-os-u4-100",
+      "process-18"
+    ]
   },
   {
     "id": 101,
     "title": "",
     "type": "fill_blank",
-    "question": "In shared-memory communication, the main issue is to provide a\nmechanism for user processes to [__1__] their actions when accessing\nshared memory.(Please answer in lowercase English)",
+    "question": "In shared-memory communication, the main issue is to provide a mechanism for user processes to [__1__] their actions when accessing shared memory. (Please answer in lowercase English)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "synchronize",
     "answer_variants": [
       "synchronize"
@@ -2733,7 +3241,8 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [
@@ -2741,7 +3250,14 @@
       "pipe"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 102
+    "latest_source_question_number": 102,
+    "question_aliases": [
+      "In shared-memory communication, the main issue is to provide a\nmechanism for user processes to [__1__] their actions when accessing\nshared memory.(Please answer in lowercase English)"
+    ],
+    "reference_question_ids": [
+      "process-101",
+      "process-57"
+    ]
   },
   {
     "id": 102,
@@ -2750,11 +3266,11 @@
     "question": "以下哪些是作業系統提供給程序操作的機制？",
     "options": [
       "程序創建",
-      "程序終止",
       "訊息傳遞",
-      "I/O管理"
+      "I/O 管理",
+      "程序終止"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "程序創建\n程序終止",
     "answer_variants": [
       "程序創建\n程序終止"
@@ -2763,18 +3279,23 @@
     "sources": [
       "作業系統題庫pt.4_全部題目整理_2026-10-07.txt",
       "help2.txt",
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 84
+    "latest_source_question_number": 84,
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-96"
+    ]
   },
   {
     "id": 103,
     "title": "",
     "type": "fill_blank",
-    "question": "Synchronization in message passing can be [__1__] or non-blocking\nsynchronous. (Please answer in lowercase English and leave a blank\nbetween words)",
+    "question": "Synchronization in message passing can be [__1__] or non-blocking asynchronous. (Please answer in lowercase English and leave a blank\nbetween words)",
     "options": [],
     "options_status": "not_applicable_or_not_recorded",
     "correct_answer": "blocking synchronous",
@@ -2792,7 +3313,11 @@
       "pipe"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 63
+    "latest_source_question_number": 63,
+    "question_aliases": [
+      "Synchronization in message passing can be [__1__] or non-blocking\nsynchronous. (Please answer in lowercase English and leave a blank\nbetween words)"
+    ],
+    "answer_note": "原題勘誤：non-blocking 應搭配 asynchronous（非同步）。"
   },
   {
     "id": 104,
@@ -2819,7 +3344,10 @@
     "source_occurrences": 1,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 6
+    "latest_source_question_number": 6,
+    "question_aliases": [
+      "在程序執行與管理中，context switch 會帶來什麼？"
+    ]
   },
   {
     "id": 105,
@@ -2845,23 +3373,31 @@
   {
     "id": 106,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "In a process state diagram, what completes the transition from the \"ready\" state to the \"running\" state?",
     "options": [
+      "event wait",
+      "interrupt",
+      "I/O completion",
       "scheduler dispatch"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "scheduler dispatch",
     "answer_variants": [
       "scheduler dispatch"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 12,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "單選題",
+    "reference_question_ids": [
+      "community-3edc10a9-7d14-4af1-b6bf-3a86179c58b3-1"
+    ]
   },
   {
     "id": 107,
@@ -2869,21 +3405,28 @@
     "type": "choice",
     "question": "哪一個名詞通常與「程序」（process）互換使用？",
     "options": [
+      "行程（Thread）",
       "工作（Job）",
-      "檔案"
+      "檔案",
+      "記憶體區塊"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "工作（Job）",
     "answer_variants": [
       "工作（Job）"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 17,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-98"
+    ]
   },
   {
     "id": 108,
@@ -2919,38 +3462,51 @@
       "Java's RMI",
       "POSIX shared memory"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "Windows's LPC\nMach",
     "answer_variants": [
       "Windows's LPC\nMach"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 33,
     "source_response_type": "複選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "多選題",
+    "reference_question_ids": [
+      "community-3edc10a9-7d14-4af1-b6bf-3a86179c58b3-4"
+    ]
   },
   {
     "id": 110,
     "title": "",
     "type": "fill_blank",
-    "question": "The five states of a process are: new, running, waiting, ready, and [__1__].(Please answer in lowercase English)",
+    "question": "The five states of a process are: new, running, waiting, ready, and [__1__]. (Please answer in lowercase English)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "terminated",
     "answer_variants": [
       "terminated"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 34,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "pipe"
+    ],
+    "question_aliases": [
+      "The five states of a process are: new, running, waiting, ready, and [__1__].(Please answer in lowercase English)"
+    ],
+    "reference_question_ids": [
+      "process-99",
+      "process-16"
     ]
   },
   {
@@ -2959,23 +3515,28 @@
     "type": "choice",
     "question": "當一個程序正在等待某個事件發生時，它的狀態是什麼？",
     "options": [
-      "等待中",
-      "新建立",
+      "執行中",
       "就緒",
-      "執行中"
+      "新建立",
+      "等待中"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "等待中",
     "answer_variants": [
       "等待中"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 35,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-108"
+    ]
   },
   {
     "id": 112,
@@ -2983,40 +3544,52 @@
     "type": "fill_blank",
     "question": "A [__1__] abstracts the procedure calls between processes in a networked system. (Please answer in lowercase English and leave a blank between words)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "remote procedure call",
     "answer_variants": [
       "remote procedure call"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 40,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "pipe"
-    ]
+    ],
+    "reference_question_ids": [
+      "community-c7e19d49-a009-45f2-ac72-242b51b2b914-1"
+    ],
+    "question_aliases": []
   },
   {
     "id": 113,
     "title": "",
     "type": "fill_blank",
-    "question": "The [__1__] problem is a paradigm for cooperating processes, where one process produces information and another process consumes that information.(Please answer in lowercase English. Use - between words. No spaces.)",
+    "question": "The [__1__] problem is a paradigm for cooperating processes, where one process produces information and another process consumes it. (Please answer in lowercase English; use hyphens between words.)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "producer-consumer",
     "answer_variants": [
       "producer-consumer"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 55,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "pipe"
+    ],
+    "question_aliases": [
+      "The [__1__] problem is a paradigm for cooperating processes, where one process produces information and another process consumes that information.(Please answer in lowercase English. Use - between words. No spaces.)"
+    ],
+    "reference_question_ids": [
+      "process-54"
     ]
   },
   {
@@ -3058,11 +3631,17 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 66,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "單選",
+    "reference_question_ids": [
+      "friend-os-u4-115",
+      "process-48"
+    ]
   },
   {
     "id": 116,
@@ -3082,11 +3661,17 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 75,
     "source_response_type": "複選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "複選",
+    "reference_question_ids": [
+      "friend-os-u4-116",
+      "process-107"
+    ]
   },
   {
     "id": 117,
@@ -3137,18 +3722,23 @@
     "type": "fill_blank",
     "question": "In the UNIX system, the [__1__] system call is used after fork() to replace a process's memory space with a new program.(Please answer in lowercase English)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "exec()",
     "answer_variants": [
       "exec()"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 79,
     "source_response_type": "填空",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "reference_question_ids": [
+      "friend-os-u4-119",
+      "process-36"
+    ]
   },
   {
     "id": 120,
@@ -3162,60 +3752,81 @@
       "kernel process"
     ],
     "options_status": "known_options_only",
-    "correct_answer": "browser process\nrenderer process\nplug-in process",
+    "correct_answer": "browser process\nplug-in process\nrenderer process",
     "answer_variants": [
-      "browser process\nrenderer process\nplug-in process"
+      "browser process\nplug-in process\nrenderer process"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 82,
     "source_response_type": "複選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-110",
+      "process-93"
+    ],
+    "answer_note": "來源採早期教材模型；需依版本與裝置判斷。"
   },
   {
     "id": 121,
     "title": "",
     "type": "fill_blank",
-    "question": "中期排程器可以將一個程序從記憶體中移除並存儲到磁碟上，然後再將其帶回，這個過程稱為[__1__]。(請用小寫英文回答)",
+    "question": "中期排程器可以將一個程序從記憶體中移除並存到磁碟，再把它載回的過程稱為 [__1__]。",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "swapping",
     "answer_variants": [
       "swapping"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 85,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "pipe"
+    ],
+    "question_aliases": [
+      "中期排程器可以將一個程序從記憶體中移除並存儲到磁碟上，然後再將其帶回，這個過程稱為[__1__]。(請用小寫英文回答)"
+    ],
+    "reference_question_ids": [
+      "process-27"
     ]
   },
   {
     "id": 122,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "What are the two operations provided by the message passing facility?",
     "options": [
-      "send message",
-      "receive message"
+      "terminate link",
+      "receive message",
+      "create link",
+      "send message"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "send message\nreceive message",
+    "options_status": "complete",
+    "correct_answer": "receive message\nsend message",
     "answer_variants": [
-      "send message\nreceive message"
+      "receive message\nsend message"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 87,
     "source_response_type": "複選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "複選",
+    "reference_question_ids": [
+      "process-61"
+    ]
   },
   {
     "id": 123,
@@ -3223,42 +3834,54 @@
     "type": "fill_blank",
     "question": "A process is organized into several parts in memory, where the [__1__] contains temporary data such as function parameters, return addresses, and local variables. (Please answer using English abbreviations and uppercase letters.)",
     "options": [],
-    "options_status": "not_applicable_or_not_recorded",
+    "options_status": "not_applicable",
     "correct_answer": "PCB",
     "answer_variants": [
       "PCB"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 88,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "STACK"
-    ]
+    ],
+    "reference_question_ids": [
+      "community-e9945852-7bb0-4512-a4ed-d4bd8fa5e297-2"
+    ],
+    "question_aliases": []
   },
   {
     "id": 124,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Which of the following are multitasking limitations in the iOS mobile system?",
     "options": [
       "allows only one foreground process",
-      "allows multiple background processes"
+      "background processes have no restrictions",
+      "allows multiple background processes",
+      "allows multiple foreground processes"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "allows only one foreground process\nallows multiple background processes",
     "answer_variants": [
       "allows only one foreground process\nallows multiple background processes"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 90,
     "source_response_type": "複選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "多選題",
+    "reference_question_ids": [
+      "community-540e5f34-482c-4c48-b683-67f59fc316ae-2"
+    ]
   },
   {
     "id": 125,
@@ -3299,11 +3922,17 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 97,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-111",
+      "process-2"
+    ]
   },
   {
     "id": 127,
@@ -3375,23 +4004,28 @@
     "type": "choice",
     "question": "Which term is often used interchangeably with \"process\"?",
     "options": [
-      "job",
-      "thread",
+      "memory block",
       "file",
-      "memory block"
+      "job",
+      "thread"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "job",
     "answer_variants": [
       "job"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 108,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "單選題",
+    "reference_question_ids": [
+      "community-540e5f34-482c-4c48-b683-67f59fc316ae-4"
+    ]
   },
   {
     "id": 131,
@@ -3455,11 +4089,16 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 115,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-9"
+    ]
   },
   {
     "id": 134,
@@ -3467,23 +4106,28 @@
     "type": "choice",
     "question": "What are the two models of communication between processes?",
     "options": [
-      "shared memory",
+      "pipes",
       "message passing",
-      "mailbox",
-      "pipes"
+      "shared memory",
+      "mailbox"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "shared memory\nmessage passing",
+    "options_status": "complete",
+    "correct_answer": "message passing\nshared memory",
     "answer_variants": [
-      "shared memory\nmessage passing"
+      "message passing\nshared memory"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 118,
     "source_response_type": "複選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "多選題",
+    "reference_question_ids": [
+      "community-540e5f34-482c-4c48-b683-67f59fc316ae-5"
+    ]
   },
   {
     "id": 135,
@@ -3503,11 +4147,16 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 119,
     "source_response_type": "複選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "reference_question_ids": [
+      "friend-os-u4-135",
+      "process-15"
+    ]
   },
   {
     "id": 136,
@@ -3527,11 +4176,16 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 120,
     "source_response_type": "複選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "reference_question_ids": [
+      "friend-os-u4-136",
+      "process-1"
+    ]
   },
   {
     "id": 137,
@@ -3539,23 +4193,28 @@
     "type": "choice",
     "question": "What is the main issue with the shared memory communication model?",
     "options": [
-      "synchronization",
       "finding the server",
+      "synchronization",
       "message passing",
       "message capacity"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "synchronization",
     "answer_variants": [
       "synchronization"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 121,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "單選題",
+    "reference_question_ids": [
+      "community-c7e19d49-a009-45f2-ac72-242b51b2b914-2"
+    ]
   },
   {
     "id": 138,
@@ -3599,11 +4258,16 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 130,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-22"
+    ]
   },
   {
     "id": 140,
@@ -3648,23 +4312,31 @@
   {
     "id": 142,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Which IPC system is described as a \"message center\" where processes can send and receive messages?",
     "options": [
+      "shared memory",
+      "remote procedure call",
+      "pipes",
       "mailbox"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "mailbox",
     "answer_variants": [
       "mailbox"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U4.txt"
+      "作業系統U4.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 137,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "source_type": "單選",
+    "reference_question_ids": [
+      "process-103"
+    ]
   },
   {
     "id": 143,
@@ -3689,5 +4361,109 @@
     "source_question_number": 139,
     "source_response_type": "單選",
     "source_incorrect_responses": []
+  },
+  {
+    "id": 144,
+    "title": "",
+    "type": "choice",
+    "question": "下列哪些是 Cooperating Process 的優點？",
+    "options": [
+      "效率",
+      "資訊共享",
+      "模組化",
+      "計算加速"
+    ],
+    "options_status": "complete",
+    "correct_answer": "資訊共享\n模組化\n計算加速",
+    "answer_variants": [
+      "資訊共享\n模組化\n計算加速"
+    ],
+    "source_type": "多選",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "answer_basis": "provided_source_answer",
+    "reference_question_ids": [
+      "process-52",
+      "process-52"
+    ]
+  },
+  {
+    "id": 145,
+    "title": "",
+    "type": "choice",
+    "question": "Which of the following are distinctions between the shared memory and message passing models in IPC?",
+    "options": [
+      "one is controlled by the user program, the other by the operating system",
+      "one is memory region sharing, the other is message exchange",
+      "message passing mainly focuses on establishing a communication link",
+      "shared memory mainly focuses on synchronization"
+    ],
+    "options_status": "complete",
+    "correct_answer": "one is memory region sharing, the other is message exchange\nmessage passing mainly focuses on establishing a communication link\nshared memory mainly focuses on synchronization",
+    "answer_variants": [
+      "one is memory region sharing, the other is message exchange\nmessage passing mainly focuses on establishing a communication link\nshared memory mainly focuses on synchronization"
+    ],
+    "source_type": "多選",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "answer_basis": "provided_source_answer",
+    "reference_question_ids": [
+      "process-59",
+      "process-59"
+    ]
+  },
+  {
+    "id": 146,
+    "title": "",
+    "type": "choice",
+    "question": "哪些是訊息傳遞中的同步化類型？",
+    "options": [
+      "非阻塞（非同步）",
+      "阻塞（同步）",
+      "有界容量",
+      "無限容量"
+    ],
+    "options_status": "complete",
+    "correct_answer": "非阻塞（非同步）\n阻塞（同步）",
+    "answer_variants": [
+      "非阻塞（非同步）\n阻塞（同步）"
+    ],
+    "source_type": "多選",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "answer_basis": "provided_source_answer",
+    "reference_question_ids": [
+      "process-69",
+      "process-69"
+    ]
+  },
+  {
+    "id": 147,
+    "title": "",
+    "type": "choice",
+    "question": "In an operating system, a process is defined as what in execution?",
+    "options": [
+      "a memory block",
+      "an executing program",
+      "a static file on disk",
+      "a copy of the code"
+    ],
+    "options_status": "complete",
+    "correct_answer": "an executing program",
+    "answer_variants": [
+      "an executing program"
+    ],
+    "source_type": "單選",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "answer_basis": "provided_source_answer",
+    "reference_question_ids": [
+      "process-4",
+      "process-4"
+    ]
   }
 ]
