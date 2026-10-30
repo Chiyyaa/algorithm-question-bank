@@ -44,6 +44,7 @@
      </details>
      <section id="batchPreview" class="batch-preview" aria-label="批次題目預覽" hidden>
       <div class="section-heading"><h2 id="batchPreviewHeading" tabindex="-1">批次題目預覽</h2><div id="batchPreviewTools"><button id="closeBatchPreview" type="button">返回編輯</button></div></div>
+      <p id="batchFileIssue" class="batch-error" role="alert" hidden></p>
       <p id="batchDestination" class="help-text"></p><p id="batchSummary" role="status" aria-live="polite"></p>
       <p class="help-text">只處理勾選的題目；格式錯誤需先修正或取消勾選。已成功的題目不會重送。</p>
       <p id="batchProgress" role="status" aria-live="polite"></p>
@@ -76,5 +77,5 @@
 </dialog>
 <dialog id="unitDialog"><h2>新增單元</h2><form id="unitForm"><p id="unitSubjectLabel"></p><label for="newUnitNumber">單元編號</label><input id="newUnitNumber" type="number" min="2" max="999" step="1" required placeholder="例如：7"><p class="help-text">第一題經管理員核准後，這個單元才會公開；相同編號會共用。</p><div class="form-actions"><button id="cancelUnit" type="button">取消</button><button class="primary-btn" type="submit">建立並選用</button></div></form></dialog>
 <dialog id="passwordDialog"><h2>變更密碼</h2><form id="passwordForm"><label for="newPassword">新密碼（至少 12 個字元）</label><input id="newPassword" type="password" autocomplete="new-password" minlength="12" required><label for="confirmPassword">再次輸入新密碼</label><input id="confirmPassword" type="password" autocomplete="new-password" minlength="12" required><div class="form-actions"><button id="cancelPassword" type="button">取消</button><button type="submit" class="primary-btn">更新密碼</button></div></form></dialog>
-<script type="module" src="./js/collaboration.js?v=20261030-preview2"></script>
+<script type="module" src="./js/collaboration.js?v=20261030-pairing1"></script>
 </body></html>

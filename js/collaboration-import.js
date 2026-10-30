@@ -66,13 +66,51 @@ export function contentSignature(q) {
     return JSON.stringify([canonical(q.question),q.type,[...options].sort(),answers]);
 }
 export function pairHTML(questions, answers) {
-    const used = new Set();
-    return questions.map(input => {
-        const matches = answers.filter(a => canonical(a.stem) === canonical(input.stem));
+    const groups = new Map(), assigned = new Map(), used = new Set();
+    questions.forEach((q,i)=>{const key=canonical(q.stem);if(!groups.has(key))groups.set(key,{questions:[],answers:[]});groups.get(key).questions.push(i);});
+    answers.forEach((a,i)=>groups.get(canonical(a.stem))?.answers.push(i));
+    for(const group of groups.values()) {
+        if(group.questions.length===1 && group.answers.length===1){assigned.set(group.questions[0],group.answers[0]);continue;}
+        const edges=group.questions.map(qi=>{
+            const q=questions[qi];
+            return group.answers.flatMap(ai=>{
+                const a=answers[ai];if(!a.answer?.trim()||a.answer.includes('[未轉錄圖片]'))return [];
+                const c={question:q.stem,options:q.options.map(o=>`${o.label}. ${o.text}`),correct_answer:a.answer,type:'choice'};
+                if(q.kind!=='fill'&&validateContributionChoice(c,q.kind))return [];
+                // Fill answers remain positional and case-sensitive; choice answers are compared by option text.
+                const key=q.kind==='fill'?a.answer.replace(/\r\n?/g,'\n').trim():JSON.stringify(answerParts(c));
+                return [{answer:ai,key}];
+            });
+        });
+        function matching(bannedQuestion=-1,bannedKey=null,skipQuestion=-1){
+            const owners=new Map();
+            function visit(q,seen){
+                for(const edge of edges[q]){
+                    if((q===bannedQuestion&&edge.key===bannedKey)||seen.has(edge.answer))continue;
+                    seen.add(edge.answer);const owner=owners.get(edge.answer);
+                    if(owner===undefined||visit(owner,seen)){owners.set(edge.answer,q);return true;}
+                }
+                return false;
+            }
+            for(let q=0;q<edges.length;q++)if(q!==skipQuestion)visit(q,new Set());
+            return new Map([...owners].map(([a,q])=>[q,a]));
+        }
+        const baseline=matching();
+        group.questions.forEach((qi,i)=>{
+            if(!baseline.has(i))return;
+            if(baseline.size<group.questions.length&&matching(-1,null,i).size===baseline.size)return;
+            const ai=baseline.get(i),key=edges[i].find(e=>e.answer===ai).key;
+            // Accept only an always-matched answer meaning that every maximum one-to-one matching agrees on.
+            // Identical repeated answers are interchangeable, while conflicting answers stay unresolved.
+            if(new Set(edges[i].map(e=>e.key)).size===1||matching(i,key).size<baseline.size)assigned.set(qi,ai);
+        });
+    }
+    const entries=questions.map((input,index) => {
+        const answerIndex=assigned.get(index), match=answerIndex===undefined?null:answers[answerIndex];
         let error = input.issues.join('；'), answer = '';
-        if (matches.length !== 1 || !matches[0]?.answer || !matches[0]?.stem) error += (error ? '；' : '') + '未找到唯一對應的正確答案，請核對兩份檔案';
+        if (!match?.answer?.trim() || !match?.stem) error += (error ? '；' : '') + '未能唯一確認本題答案，請核對題幹、選項與答案';
         else {
-            used.add(matches[0]); answer = matches[0].answer;
+            used.add(answerIndex); answer = match.answer;
             if (answer.includes('[未轉錄圖片]')) error += (error ? '；' : '') + '答案含未轉錄圖片';
         }
         const content = {question:input.stem, options:input.options.map(o => `${o.label}. ${o.text}`), correct_answer:answer,
@@ -80,11 +118,10 @@ export function pairHTML(questions, answers) {
         if (!error && content.type === 'choice' && (!contentSignature(content) || (input.kind==='single' && answerParts(content).length!==1))) error = '正確答案無法完整對應本次選項，請人工核對';
         if (!error && (content.question.length>10000 || answer.length>10000 || content.options.length>12 || content.options.some(o=>o.length>2000))) error='題目、答案或選項超過送審上限';
         return {content,error,number:input.number,sourceKind:input.kind,selected:!error,status:'ready',row:null,message:'',text:asSubmissionText(content)};
-    }).map((entry,_,entries) => {
-        // Never silently ignore an answer from a different result page.
-        if (answers.some(a => !used.has(a))) { entry.error ||= '答案頁有未能配對的題目；請確認題目頁與答案頁屬於同一次測驗'; entry.selected=false; }
-        return entry;
     });
+    const extra=answers.filter((a,i)=>!used.has(i)&&(!groups.has(canonical(a.stem))||groups.get(canonical(a.stem)).answers.length>groups.get(canonical(a.stem)).questions.length));
+    entries.fileIssue=extra.length?`答案頁有 ${extra.length} 筆多出或不對應的答案（第 ${extra.map(a=>a.number).join('、')} 題）。已配對的答案仍會顯示；請確認兩份檔案，本批暫不送出。`:'';
+    return entries;
 }
 export const asSubmissionText = q => '題目：'+q.question+(q.options?.length?'\n\n選項：\n'+q.options.join('\n'):'')+'\n\n正確答案：\n'+q.correct_answer;
 function score(a,b) {
@@ -130,7 +167,8 @@ export async function readContributionFile(file) {
 }
 export async function importContributionFiles(questionFile,answerFile) {
     const [q,a]=await Promise.all([readContributionFile(questionFile),readContributionFile(answerFile)]);
-    return {entries:pairHTML(parseBatchHTML(q.text),parseAnswerHTML(a.text)),warning:[q.warning,a.warning].filter(Boolean).join('；')};
+    const entries=pairHTML(parseBatchHTML(q.text),parseAnswerHTML(a.text));
+    return {entries,fileIssue:entries.fileIssue,warning:[q.warning,a.warning].filter(Boolean).join('；')};
 }
 export function createContributionBank(service) {
     const cache=new Map(),expires=new Map();

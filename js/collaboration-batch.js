@@ -1,4 +1,4 @@
-import { importContributionFiles, classifyEntries, comparisonMarkup, inferContributionKind, validateContributionChoice } from './collaboration-import.js?v=20261030-preview2';
+import { importContributionFiles, classifyEntries, comparisonMarkup, inferContributionKind, validateContributionChoice } from './collaboration-import.js?v=20261030-pairing1';
 import { parseDraft } from './custom-questions.js?v=20261017-formats1';
 import { escapeHtml } from './utils.js?v=20261017-formats1';
 
@@ -64,9 +64,10 @@ export function createBatchEditor({ loadBank, service, getMember, getEditing, no
     }
     function body(entry) {
         const comparison=entry.comparison ? comparisonMarkup(entry.comparison) : '';
-        if (entry.error) return `${comparison}<p class="batch-error" role="alert">${escapeHtml(entry.error)}</p><pre class="batch-question">${escapeHtml(entry.text)}</pre>`;
+        const problem=entry.error ? `<p class="batch-error" role="alert">${escapeHtml(entry.error)}</p>` : '';
+        if (!entry.content) return `${comparison}${problem}<pre class="batch-question">${escapeHtml(entry.text)}</pre>`;
         const q = entry.content;
-        return `${comparison}<div class="batch-question">${escapeHtml(q.question)}</div>${q.options.length ? `<div class="batch-options">${q.options.map(o => `<div>${escapeHtml(o)}</div>`).join('')}</div>` : ''}<div class="batch-answer"><strong>正確答案：</strong><span>${escapeHtml(q.correct_answer)}</span></div>${q.user_answer ? `<p class="help-text">你的答案：${escapeHtml(q.user_answer)}</p>` : ''}${entry.warning ? `<p class="batch-warning">${escapeHtml(entry.warning)}</p>` : ''}`;
+        return `${comparison}${problem}<div class="batch-question">${escapeHtml(q.question)}</div>${q.options.length ? `<div class="batch-options">${q.options.map(o => `<div>${escapeHtml(o)}</div>`).join('')}</div>` : ''}${q.correct_answer?.trim() ? `<div class="batch-answer"><strong>${entry.error ? '答案頁標示的答案（待核對）：' : '正確答案：'}</strong><span>${escapeHtml(q.correct_answer)}</span></div>` : '<p class="help-text">正確答案尚未能確認，請核對本題。</p>'}${q.user_answer ? `<p class="help-text">你的答案：${escapeHtml(q.user_answer)}</p>` : ''}${entry.warning ? `<p class="batch-warning">${escapeHtml(entry.warning)}</p>` : ''}`;
     }
     function summary() {
         if (!batch) return;
@@ -87,6 +88,7 @@ export function createBatchEditor({ loadBank, service, getMember, getEditing, no
         duplicates();
         $('batchPreview').hidden = false;
         $('batchDestination').textContent = batch.destinationLabel;
+        $('batchFileIssue').textContent=batch.fileIssue||'';$('batchFileIssue').hidden=!batch.fileIssue;
         $('batchItems').innerHTML = batch.entries.map((entry, i) => `<article class="batch-item" data-batch-index="${i}"><div class="section-heading"><label class="batch-check"><input type="checkbox" data-batch-select="${i}"${entry.selected ? ' checked' : ''}${locked(entry) || isBusy() ? ' disabled' : ''}>第 ${i + 1} 題</label><span class="question-kind" data-batch-kind="${i}" data-question-kind="${inferContributionKind(entry.content,entry.sourceKind)}">${kindLabel(entry)}</span><span class="status-pill" data-batch-status="${i}">${entry.error ? '格式需修正' : labels[entry.status]}</span></div><div data-batch-body="${i}">${body(entry)}</div><p class="batch-entry-message" data-batch-message="${i}" role="status">${escapeHtml(entry.message)}</p><details class="batch-edit"><summary>修改第 ${i + 1} 題</summary><label for="batchText-${i}">第 ${i + 1} 題內容</label><textarea id="batchText-${i}" data-batch-text="${i}" rows="7"${locked(entry) ? ' readonly' : ''}${isBusy() ? ' disabled' : ''}>${escapeHtml(entry.text)}</textarea></details></article>`).join('');
         if(batch.imported){
             const excluded=[...$('batchItems').querySelectorAll('.batch-item')].filter(host=>batch.entries[Number(host.dataset.batchIndex)].comparison?.kind==='duplicate');
@@ -134,7 +136,7 @@ export function createBatchEditor({ loadBank, service, getMember, getEditing, no
             const subject=$('submissionSubject').value,unit=$('submissionUnit').value;
             const bank=await loadBank(subject,{fresh:true});
             classifyEntries(result.entries,bank);
-            batch={entries:result.entries,subject,unit,bank,imported:true,author:getMember().user_id,baseline:null,destinationLabel:$('submissionSubject').selectedOptions[0].textContent+'｜'+unit.toUpperCase()};
+            batch={entries:result.entries,fileIssue:result.fileIssue,subject,unit,bank,imported:true,author:getMember().user_id,baseline:null,destinationLabel:$('submissionSubject').selectedOptions[0].textContent+'｜'+unit.toUpperCase()};
             $('batchProgress').textContent='已排除確認重複的題目。請檢查留下的新增／補齊提案，再送出審核。';
             $('manualContribution').open=false;
             $('importStatus').textContent=result.warning||'比對完成；尚未送出任何題目。';openPreview();
@@ -159,6 +161,7 @@ export function createBatchEditor({ loadBank, service, getMember, getEditing, no
     }
     async function send(submit) {
         if (!batch) return;
+        if(batch.fileIssue)throw new Error(batch.fileIssue);
         if(batch.imported){
             $('batchProgress').textContent='正在重新確認目前題庫，避免重複送審……';
             const bank=await loadBank(batch.subject,{fresh:true});
