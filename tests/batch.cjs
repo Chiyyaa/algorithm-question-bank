@@ -34,7 +34,8 @@ function formQuestion(stem,options,{id=1,number=1,type='radio'}={}){return '<div
   const many=models.find(q=>q.id===73);
   const manyInput={number:2,kind:'multiple',stem:'Many-to-One 模型有何特性？',options:many.options.map((text,i)=>({label:String.fromCharCode(65+i),text})),blankCount:0,issues:[]};
   const modelResult=compare(manyInput,models);
-  assert.equal(modelResult.status,'review');assert.deepEqual(Array.from(modelResult.references,r=>r.id),[73]);
+  assert.equal(modelResult.status,'matched');assert.deepEqual(Array.from(modelResult.references,r=>r.id),[73]);assert.equal(modelResult.answers.length,3);
+  assert.equal(compare(manyInput,[{...many,options_status:'known_options_only'}]).status,'review');
   assert.equal(compare({...manyInput,stem:'Many-to-One 模型的特性有哪些？'},models.filter(q=>q.id===20)).status,'unmatched');
   assert.ok(compare({...manyInput,stem:'Many-to-One 模型的特性有哪些？'},models).references.every(r=>r.id!==20));
   console.log('PASS exact content and option remapping, conflicts/disputes/images, mathematical distinctions, numbers, fill groups and subject isolation');
@@ -75,7 +76,7 @@ function formQuestion(stem,options,{id=1,number=1,type='radio'}={}){return '<div
    assert.equal(threadRows[1].stem,'Many-to-One 模型有何特性？');
    const entries=os5.map(q=>({...q,subject:'os',unit:'u5'}));
    const row=core.compareBatchQuestions([threadRows[1]],core.createBatchIndex(entries),{subject:'os',unit:'u5'})[0];
-   assert.equal(row.status,'review');assert.deepEqual(Array.from(row.references,r=>r.id),[73]);assert.equal(row.answers.length,0);
+   assert.equal(row.status,'matched');assert.deepEqual(Array.from(row.references,r=>r.id),[73]);assert.equal(row.answers.length,3);
    console.log('PASS actual 25-question thread file: question 2 references only U5 #73, never One-to-One #20');
   }
   const attempted='<script>window.__batchInjected=true</script><img src="https://batch-test.invalid/pixel"><iframe src="https://batch-test.invalid/frame"></iframe>'+safeHTML;

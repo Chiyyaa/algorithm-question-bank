@@ -3,7 +3,7 @@ import { curatePublishedQuestions } from './question-curation.js?v=20261029-u7ba
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
 import { initNavigation } from "./navigation.js";
-import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261029-muji2";
+import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261030-os-u5";
 import { initMusic } from "./music.js";
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017-formats1";
 import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';
