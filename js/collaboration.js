@@ -1,9 +1,9 @@
 import { createReviewDecisions } from './review-decision.js?v=20261030-replace1';
-import { createContributionBank, classifyContribution, comparisonMarkup } from './collaboration-import.js?v=20261030-replace1';
+import { createContributionBank, classifyContribution, comparisonMarkup } from './collaboration-import.js?v=20261030-preview2';
 import { initCollaborationTheme } from './collaboration-theme.js?v=20261030-replace1';
 import { createBulkReview } from './collaboration-review.js?v=20261030-replace1';
 import { escapeHtml } from './utils.js?v=20261017-formats1';
-import { parseSubmission, questionCount, createBatchEditor } from './collaboration-batch.js?v=20261030-replace1';
+import { parseSubmission, questionCount, createBatchEditor } from './collaboration-batch.js?v=20261030-preview2';
 import { SUBJECTS, getUnit, mergeCollaborationUnits } from './units.js?v=20261017-formats1';
 import * as service from './collaboration-api.js?v=20261030-replace1';
 
@@ -53,9 +53,9 @@ function subjectLabel(q){return (SUBJECTS.find(s=>s.id===q.subject_id)?.name||q.
 function authorName(id){return members.find(m=>m.user_id===id)?.display_name||(id===member?.user_id?member.display_name:'協作者');}
 function time(value){return new Date(value).toLocaleString('zh-TW');}
 function updateFormat(){
-    $('submissionDraft').placeholder=$('submissionFormat').value==='no_options'?'題目：請輸入題目\n\n你的答案：\n請貼上作答內容\n\n正確答案：\n請貼上正確答案\n\n得分：1 / 1':'題目：請輸入題目\n\nA. 選項一\nB. 選項二\n\n你的答案：\n選項一\n\n正確答案：\n選項二';
+    $('submissionDraft').placeholder='題目：請輸入題目（填空可使用 [__1__]）\n\n選項：\nA. 選項一\nB. 選項二\n\n正確答案：\n選項二';
 }
-function resetEditor(){editing=null;batchEditor.clear({force:true});$('editorHeading').textContent='新增題目';$('submissionDraft').value='';$('submissionFormat').value='no_options';updateFormat();}
+function resetEditor(){editing=null;batchEditor.clear({force:true});$('editorHeading').textContent='新增題目';$('submissionDraft').value='';updateFormat();}
 function replacementLink(q){return Array.isArray(q.question_replacement_publications)?q.question_replacement_publications[0]:q.question_replacement_publications;}
 function publishedVisible(q){const r=q.question_replacements;const v=Array.isArray(r)?r[0]:r;if(v)return v.visible!==false;const p=q.published_questions;return Array.isArray(p)?p[0]?.visible!==false:p?.visible!==false;}
 function renderRows(){
@@ -108,7 +108,7 @@ async function save(submit){
     if(questionCount($('submissionDraft').value)>1){batchEditor.preview();return;}
     const subject=$('submissionSubject').value,unit=$('submissionUnit').value;
     if(!getUnit(subject,unit))throw new Error('請選擇有效的科目與單元。');
-    const content=contentFrom($('submissionDraft').value,$('submissionFormat').value);
+    const content=contentFrom($('submissionDraft').value);
     const saved=await service.rpc('save_question_submission',{p_id:editing?.id||null,p_subject:subject,p_unit:unit,p_content:content,p_submit:submit,p_revision:editing?.revision||null});
     if(submit)resetEditor();else{editing=saved;$('editorHeading').textContent='編輯草稿';}
     await refresh();notice(submit?'已送出審核，核准後才會公開。':'草稿已儲存。');
@@ -137,7 +137,7 @@ async function review(action){
 
 $('submissionSubject').replaceChildren(...SUBJECTS.filter(s=>s.available).map(s=>new Option(s.name,s.id)));populateUnits();
 $('submissionSubject').addEventListener('change',populateUnits);
-$('submissionFormat').addEventListener('change',updateFormat);
+
 $('openUnitDialog').addEventListener('click',()=>{$('unitForm').reset();$('unitSubjectLabel').textContent=SUBJECTS.find(s=>s.id===$('submissionSubject').value).name;$('unitDialog').showModal();});
 $('cancelUnit').addEventListener('click',()=>$('unitDialog').close());
 $('unitForm').addEventListener('submit',e=>{e.preventDefault();run(async()=>{
@@ -155,12 +155,12 @@ $('refreshCollab').addEventListener('click',()=>run(refresh));
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>run(async()=>{clearCredentials();tab=b.dataset.tab;await refresh();notice('');})));
 $('submissionForm').addEventListener('submit',e=>{e.preventDefault();run(()=>save(true));});
 $('saveSubmission').addEventListener('click',()=>run(()=>save(false)));
-$('newSubmission').addEventListener('click',()=>{if(!$('submissionDraft').value||confirm('要開啟新草稿嗎？未儲存的內容不會保留。'))resetEditor();});
+$('newSubmission').addEventListener('click',()=>{if((!batchEditor.has()&&!$('submissionDraft').value)||confirm('要開啟新草稿嗎？未儲存的內容不會保留；送出結果待查核的題目請先確認，避免重複新增。'))resetEditor();});
 $('moreSubmissions').addEventListener('click',()=>run(()=>loadRows(true)));
 $('submissionList').addEventListener('click',e=>{
     const button=e.target.closest('button');if(!button||busy)return;
     const q=rows.find(q=>q.id===(button.dataset.edit||button.dataset.view||button.dataset.publication));if(!q)return;
-    if(button.dataset.edit){if($('submissionDraft').value&&editing?.id!==q.id&&!confirm('要開啟這筆草稿嗎？未儲存的內容不會保留。'))return;batchEditor.clear({force:true});editing=q;$('submissionFormat').value=q.content.options?.length?'with_options':'no_options';updateFormat();$('submissionSubject').value=q.subject_id;populateUnits();$('submissionUnit').value=q.unit_id;$('submissionDraft').value=asDraft(q.content);$('editorHeading').textContent=q.status==='returned'?'修改退回題目':'編輯草稿';$('submissionDraft').focus();batchEditor.syncControls();}
+    if(button.dataset.edit){if($('submissionDraft').value&&editing?.id!==q.id&&!confirm('要開啟這筆草稿嗎？未儲存的內容不會保留。'))return;batchEditor.clear({force:true});editing=q;updateFormat();$('submissionSubject').value=q.subject_id;populateUnits();$('submissionUnit').value=q.unit_id;$('submissionDraft').value=asDraft(q.content);$('editorHeading').textContent=q.status==='returned'?'修改退回題目':'編輯草稿';$('submissionDraft').focus();batchEditor.syncControls();}
     else if(button.dataset.view)openReview(q);
     else if(button.dataset.publication)run(async()=>{await service.rpc('review_question_submission',{p_id:q.id,p_revision:q.revision,p_action:button.dataset.action,p_content:null,p_note:''});await refresh();notice(button.dataset.action==='withdraw'?'題目已撤回，可隨時恢復。':'題目已恢復發布。');});
 });

@@ -46,6 +46,18 @@ function answerParts(q) {
     }).map(optionKey);
     return [...new Set(parts)].sort();
 }
+export function inferContributionKind(content, sourceKind) {
+    if(!content)return 'unknown';
+    if(content.type==='fill_blank')return 'fill';
+    if(content.type==='choice')return ['single','multiple'].includes(sourceKind)?sourceKind:answerParts(content).length>1?'multiple':'single';
+    return content.type==='short_answer'?'short':'unknown';
+}
+export function validateContributionChoice(content, sourceKind) {
+    if(content?.type!=='choice')return '';
+    if(!contentSignature(content))return '正確答案無法完整對應選項，請修正題目、選項或答案。';
+    if(sourceKind==='single'&&answerParts(content).length!==1)return '原檔是單選題，但目前有多個正確答案，請核對答案。';
+    return '';
+}
 export function contentSignature(q) {
     const options = (q.options || []).map(optionKey), answers = answerParts(q);
     if (!q.question || !answers.length || q.type === 'disputed' || q.image || ['known_options_only','missing'].includes(q.options_status)) return null;
@@ -67,7 +79,7 @@ export function pairHTML(questions, answers) {
             type:input.kind==='fill'?'fill_blank':'choice'};
         if (!error && content.type === 'choice' && (!contentSignature(content) || (input.kind==='single' && answerParts(content).length!==1))) error = '正確答案無法完整對應本次選項，請人工核對';
         if (!error && (content.question.length>10000 || answer.length>10000 || content.options.length>12 || content.options.some(o=>o.length>2000))) error='題目、答案或選項超過送審上限';
-        return {content,error,number:input.number,format:'auto',selected:!error,status:'ready',row:null,message:'',text:asSubmissionText(content)};
+        return {content,error,number:input.number,sourceKind:input.kind,selected:!error,status:'ready',row:null,message:'',text:asSubmissionText(content)};
     }).map((entry,_,entries) => {
         // Never silently ignore an answer from a different result page.
         if (answers.some(a => !used.has(a))) { entry.error ||= '答案頁有未能配對的題目；請確認題目頁與答案頁屬於同一次測驗'; entry.selected=false; }

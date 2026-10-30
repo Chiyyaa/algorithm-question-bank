@@ -86,7 +86,7 @@ async function batchFlows(context, base) {
     async function closePreview() {await alice.locator('#closeBatchPreview').click();await alice.locator('#batchPreview').waitFor({state:'hidden'});}
     await login(alice,'alice');
     await alice.locator('#submissionSubject').selectOption('os');await alice.locator('#submissionUnit').selectOption('u6');
-    await alice.locator('#submissionFormat').selectOption('auto');
+    
     const raw='題目：批次題一\n你的答案：thread\n正確答案：kernel\n得分：0 / 1\n\n題目：批次題二\nA. 甲\nB. 乙\n\n題目：<img src=x onerror=alert(1)>\n正確答案：<script>alert(1)</script>';
     await alice.locator('#submissionDraft').fill(raw);await alice.locator('#submitForReview').click();await idle(alice);
     assert.equal(await alice.locator('.batch-item').count(),3);assert.equal(saveCalls.length,0);
@@ -169,7 +169,7 @@ async function batchFlows(context, base) {
     const beforeEdit=saveCalls.length;await alice.locator('#submissionDraft').fill('題目：不應覆寫第一題\n正確答案：a\n題目：不應覆寫第二題\n正確答案：b');
     await alice.locator('#submitForReview').click();await idle(alice);assert.equal(saveCalls.length,beforeEdit);
     assert.match(await alice.locator('#collabMessage').innerText(),/編輯既有草稿/);
-    await alice.locator('#submissionFormat').selectOption('no_options');
+    
     await alice.locator('#submissionDraft').fill('題目：批次題二修正版\n正確答案：乙');
     await alice.locator('#saveSubmission').click();await idle(alice);assert.equal((await inspect()).length,5);
     pass('Administrator reviews one question at a time, only the approved row becomes public, and returned single-question editing cannot overwrite a record with multiple pasted questions');
@@ -189,7 +189,7 @@ async function batchFlows(context, base) {
 }
 async function bulkReviewFlows(context,base){
  const c=await context(),p=await c.newPage();p.setDefaultTimeout(15000);
- const idle=()=>p.waitForFunction(()=>!document.querySelector('#refreshCollab').disabled);
+ const idle=()=>p.waitForFunction(()=>!document.querySelector('#refreshCollab').disabled,null,{timeout:45000});
  const clickConfirm=async id=>{p.once('dialog',d=>d.accept());await p.locator(id).click();await idle();};
  const inspect=async()=>{await gate;await db.exec('reset role');return(await db.query('select * from public.question_submissions')).rows;};
  await gate;await db.exec('reset role');

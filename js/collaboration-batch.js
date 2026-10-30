@@ -1,4 +1,4 @@
-import { importContributionFiles, classifyEntries, comparisonMarkup } from './collaboration-import.js?v=20261030-replace1';
+import { importContributionFiles, classifyEntries, comparisonMarkup, inferContributionKind, validateContributionChoice } from './collaboration-import.js?v=20261030-preview2';
 import { parseDraft } from './custom-questions.js?v=20261017-formats1';
 import { escapeHtml } from './utils.js?v=20261017-formats1';
 
@@ -19,13 +19,14 @@ export function questionCount(text) {
 export function parseSubmission(text, format = 'auto') {
     if (String(text).length > MAX_SUBMISSION_TEXT) throw new Error('單題原始內容超過 60000 字元，請整理後再提交。');
     const q = parseDraft(text, { format, retainAnswer:true });
+    if(format==='auto'&&q.type==='choice_options_missing')q.type='short_answer';
     if (q.question.length > 10000 || q.correct_answer.length > 10000 || (q.user_answer || '').length > 10000 || q.options.length > 12 || q.options.some(o => o.length > 2000)) {
         throw new Error('題目、答案或選項過長，請分開整理後再提交。');
     }
     return q;
 }
 
-export function parseBatch(text, format = 'no_options') {
+export function parseBatch(text, format = 'auto') {
     if (String(text).length > MAX_BATCH_TEXT) throw new Error('整批內容超過 6000000 字元，請分批貼上。原始文字尚未送出。');
     const normalized = normalizeBatchText(text).trim();
     const headings = [...normalized.matchAll(/^[ \t]*題目[：:]/gm)];
@@ -76,14 +77,17 @@ export function createBatchEditor({ loadBank, service, getMember, getEditing, no
         const uncertain = batch.entries.filter(e => e.status === 'uncertain').length;
         $('batchSummary').textContent = `共 ${batch.entries.length} 題 · 已勾選 ${selected.length} 題 · 格式錯誤 ${invalid} 題 · 已送審 ${pending} 題 · 草稿 ${drafts} 題${batch.imported ? ` · 重複排除 ${batch.entries.filter(e=>e.comparison?.kind==='duplicate').length} 題` : ''}`;
         $('batchReconcile').hidden = !uncertain;
+        $('batchActionSummary').textContent='已勾選 '+selected.length+' 題 · 待處理 '+selected.filter(e=>!locked(e)).length+' 題';
         syncControls();
     }
+    function kindLabel(entry){const kind=inferContributionKind(entry.content,entry.sourceKind);const blanks=new Set([...(entry.content?.question||'').matchAll(/\[__(\d+)__\]/g)].map(m=>m[1])).size;return kind==='fill'?'填空題'+(blanks?' · '+blanks+' 格':''):{single:'單選題',multiple:'複選題',short:'簡答題',unknown:'待辨識'}[kind];}
+    function openPreview(){render();$('batchPreviewHeading').focus({preventScroll:true});$('batchPreview').scrollIntoView({block:'start',behavior:'instant'});}
     function render() {
         if (!batch) return;
         duplicates();
         $('batchPreview').hidden = false;
         $('batchDestination').textContent = batch.destinationLabel;
-        $('batchItems').innerHTML = batch.entries.map((entry, i) => `<article class="batch-item" data-batch-index="${i}"><div class="section-heading"><label class="batch-check"><input type="checkbox" data-batch-select="${i}"${entry.selected ? ' checked' : ''}${locked(entry) || isBusy() ? ' disabled' : ''}>第 ${i + 1} 題</label><span class="status-pill" data-batch-status="${i}">${entry.error ? '格式需修正' : labels[entry.status]}</span></div><div data-batch-body="${i}">${body(entry)}</div><p class="batch-entry-message" data-batch-message="${i}" role="status">${escapeHtml(entry.message)}</p><details class="batch-edit"><summary>修改第 ${i + 1} 題</summary><label for="batchFormat-${i}">第 ${i + 1} 題格式</label><select id="batchFormat-${i}" data-batch-format="${i}"${locked(entry) || isBusy() ? ' disabled' : ''}><option value="no_options"${entry.format === 'no_options' ? ' selected' : ''}>無選項</option><option value="with_options"${entry.format === 'with_options' ? ' selected' : ''}>含選項</option><option value="auto"${entry.format === 'auto' ? ' selected' : ''}>自動辨識</option></select><label for="batchText-${i}">第 ${i + 1} 題內容</label><textarea id="batchText-${i}" data-batch-text="${i}" rows="7"${locked(entry) ? ' readonly' : ''}${isBusy() ? ' disabled' : ''}>${escapeHtml(entry.text)}</textarea></details></article>`).join('');
+        $('batchItems').innerHTML = batch.entries.map((entry, i) => `<article class="batch-item" data-batch-index="${i}"><div class="section-heading"><label class="batch-check"><input type="checkbox" data-batch-select="${i}"${entry.selected ? ' checked' : ''}${locked(entry) || isBusy() ? ' disabled' : ''}>第 ${i + 1} 題</label><span class="question-kind" data-batch-kind="${i}" data-question-kind="${inferContributionKind(entry.content,entry.sourceKind)}">${kindLabel(entry)}</span><span class="status-pill" data-batch-status="${i}">${entry.error ? '格式需修正' : labels[entry.status]}</span></div><div data-batch-body="${i}">${body(entry)}</div><p class="batch-entry-message" data-batch-message="${i}" role="status">${escapeHtml(entry.message)}</p><details class="batch-edit"><summary>修改第 ${i + 1} 題</summary><label for="batchText-${i}">第 ${i + 1} 題內容</label><textarea id="batchText-${i}" data-batch-text="${i}" rows="7"${locked(entry) ? ' readonly' : ''}${isBusy() ? ' disabled' : ''}>${escapeHtml(entry.text)}</textarea></details></article>`).join('');
         if(batch.imported){
             const excluded=[...$('batchItems').querySelectorAll('.batch-item')].filter(host=>batch.entries[Number(host.dataset.batchIndex)].comparison?.kind==='duplicate');
             if(excluded.length){const details=document.createElement('details');details.className='excluded-contributions';const title=document.createElement('summary');title.textContent='已排除 '+excluded.length+' 題重複題目（展開查看）';details.append(title,...excluded);$('batchItems').append(details);}
@@ -92,16 +96,20 @@ export function createBatchEditor({ loadBank, service, getMember, getEditing, no
     }
     function syncControls() {
         const active = !!batch, busy = isBusy();
+        $('questionsView').classList.toggle('batch-mode',active);
+        const actionHome=active ? $('batchPreviewTools') : $('submissionEditor').querySelector('.section-heading');
+        if($('newSubmission').parentElement!==actionHome)actionHome.append($('newSubmission'));
+        $('batchActionSummary').hidden=!active;
         $('submissionDraft').readOnly = active;
         for(const id of ['contributionQuestionFile','contributionAnswerFile','importContribution']) $(id).disabled=active||busy||!!getEditing();
-        for (const id of ['submissionSubject','submissionUnit','submissionFormat','openUnitDialog']) $(id).disabled = active || busy;
+        for (const id of ['submissionSubject','submissionUnit','openUnitDialog']) $(id).disabled = active || busy;
         $('previewSubmissions').disabled = active || busy || !!getEditing();
         $('saveSubmission').textContent = active ? '批次儲存草稿' : '儲存草稿';
         $('submitForReview').textContent = active ? '批次送出審核' : '送出審核';
         for (const id of ['closeBatchPreview','batchReconcile']) $(id).disabled = busy;
         if (batch) {
             for (const [i, entry] of batch.entries.entries()) {
-                for (const attr of ['select','format','text']) {
+                for (const attr of ['select','text']) {
                     const element = document.querySelector(`[data-batch-${attr}="${i}"]`);
                     if (element) element.disabled = busy || locked(entry);
                 }
@@ -111,11 +119,11 @@ export function createBatchEditor({ loadBank, service, getMember, getEditing, no
     function preview() {
         if (getEditing()) throw new Error('編輯既有草稿時只能修改該題。請先開新草稿，再貼上多題。');
         if (batch) return;
-        const entries = parseBatch($('submissionDraft').value, $('submissionFormat').value);
+        const entries = parseBatch($('submissionDraft').value);
         batch = { entries, subject:$('submissionSubject').value, unit:$('submissionUnit').value,
             author:getMember().user_id, baseline:null, destinationLabel:$('submissionSubject').selectedOptions[0].textContent + '｜' + $('submissionUnit').selectedOptions[0].textContent };
         $('batchProgress').textContent = '請逐題檢查、修正或取消勾選，再按下方的批次送出。';
-        render();
+        openPreview();
         notify(`已拆成 ${entries.length} 題，請逐題預覽後再批次送審。`);
     }
     async function importHTML(){
@@ -129,7 +137,7 @@ export function createBatchEditor({ loadBank, service, getMember, getEditing, no
             batch={entries:result.entries,subject,unit,bank,imported:true,author:getMember().user_id,baseline:null,destinationLabel:$('submissionSubject').selectedOptions[0].textContent+'｜'+unit.toUpperCase()};
             $('batchProgress').textContent='已排除確認重複的題目。請檢查留下的新增／補齊提案，再送出審核。';
             $('manualContribution').open=false;
-            $('importStatus').textContent=result.warning||'比對完成；尚未送出任何題目。';render();
+            $('importStatus').textContent=result.warning||'比對完成；尚未送出任何題目。';openPreview();
         }catch(e){$('importStatus').textContent='未完成匯入，沒有送出任何題目。';throw e;}
     }
     $('importContribution').addEventListener('click',()=>run(importHTML));
@@ -141,8 +149,9 @@ export function createBatchEditor({ loadBank, service, getMember, getEditing, no
             notify('已儲存草稿的修改尚未儲存，請先批次儲存草稿，再關閉預覽。', true); return false;
         }
         if (batch && preserve) $('submissionDraft').value = batch.entries.filter(e => !e.row && e.comparison?.kind!=='duplicate').map(e => e.text).join('\n\n');
+        const imported=batch?.imported;
         batch = null; $('contributionQuestionFile').value='';$('contributionAnswerFile').value='';$('importStatus').textContent=''; $('batchPreview').hidden = true; $('batchItems').replaceChildren();
-        $('batchProgress').textContent = ''; syncControls(); return true;
+        $('batchProgress').textContent = ''; syncControls(); if(preserve){$('manualContribution').open=!imported||!!$('submissionDraft').value;(imported?$('importContribution'):$('previewSubmissions')).focus({preventScroll:true});$('submissionEditor').scrollIntoView({block:'start',behavior:'instant'});}return true;
     }
     async function recent() {
         if (!getMember() || getMember().user_id !== batch.author) throw new Error('登入身分已變更，請重新登入後整理題目。');
@@ -200,17 +209,18 @@ export function createBatchEditor({ loadBank, service, getMember, getEditing, no
     $('batchItems').addEventListener('input', event => {
         if (!batch || isBusy()) return;
         const target = event.target;
-        const index = target.dataset.batchText ?? target.dataset.batchFormat ?? target.dataset.batchSelect;
+        const index = target.dataset.batchText ?? target.dataset.batchSelect;
         if (index === undefined) return;
         const entry = batch.entries[Number(index)]; if (!entry || locked(entry)) return;
         if (target.dataset.batchSelect !== undefined) entry.selected = target.checked;
         else {
-            if (target.dataset.batchText !== undefined) entry.text = target.value; else entry.format = target.value;
-            try { entry.content = parseSubmission(entry.text, entry.format); entry.error = ''; } catch (e) { entry.content = null; entry.error = e.message; }
+            entry.text = target.value;
+            try { entry.content = parseSubmission(entry.text); entry.error = batch.imported ? validateContributionChoice(entry.content,entry.sourceKind) : ''; } catch (e) { entry.content = null; entry.error = e.message; }
             entry.status = 'ready'; entry.message = '';
             duplicates();
             batch.entries.forEach((e, i) => {
                 document.querySelector(`[data-batch-body="${i}"]`).innerHTML = body(e);
+                const badge=document.querySelector(`[data-batch-kind="${i}"]`);badge.textContent=kindLabel(e);badge.dataset.questionKind=inferContributionKind(e.content,e.sourceKind);
                 document.querySelector(`[data-batch-status="${i}"]`).textContent = e.error ? '格式需修正' : labels[e.status];
                 document.querySelector(`[data-batch-message="${i}"]`).textContent = e.message;
             });

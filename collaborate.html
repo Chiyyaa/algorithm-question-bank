@@ -5,7 +5,7 @@
  <meta name="referrer" content="strict-origin-when-cross-origin">
  <title>題庫協作</title>
  <link rel="stylesheet" href="./css/style.css?v=20261009-os">
- <link rel="stylesheet" href="./css/collaboration.css?v=20261030-replace1">
+ <link rel="stylesheet" href="./css/collaboration.css?v=20261030-preview2">
 </head>
 <body class="collaboration-page" data-subject="algorithm">
 <main class="collab-container">
@@ -37,21 +37,19 @@
      <button id="openUnitDialog" type="button">＋ 新增單元</button>
      <section class="html-import" aria-labelledby="htmlImportHeading"><h3 id="htmlImportHeading">匯入題目與答案 HTML</h3><p class="help-text">選擇同一次測驗的兩份檔案。系統會核對題幹與選項，排除已收錄的相同題目。</p><div class="html-file-grid"><div><label for="contributionQuestionFile">題目頁 .html</label><input id="contributionQuestionFile" type="file" accept=".html,.htm"></div><div><label for="contributionAnswerFile">答案頁 .html</label><input id="contributionAnswerFile" type="file" accept=".html,.htm"></div></div><p class="help-text">每份上限 2 MB，每批最多 100 題。只擷取題目與正確答案，不上傳整份網頁。</p><button id="importContribution" class="primary-btn" type="button">解析並比對題庫</button><p id="importStatus" role="status" aria-live="polite"></p></section>
      <details id="manualContribution"><summary>手動補充或修改題目</summary>
-     <label for="submissionFormat">新增格式</label><select id="submissionFormat"><option value="no_options">無選項新增</option><option value="with_options">含選項新增</option><option value="auto">自動辨識（可混合題型）</option></select>
      <label for="submissionDraft">題目與答案（可貼上多題）</label>
      <textarea id="submissionDraft" rows="12" placeholder="題目：請輸入題目&#10;&#10;你的答案：&#10;請貼上作答內容&#10;&#10;正確答案：&#10;請貼上正確答案&#10;&#10;得分：1 / 1"></textarea>
      <p class="help-text">每題以「題目：」開頭，並包含「正確答案：」。多題貼上後請先預覽；得分會忽略，不同的作答答案會保留為錯答備註。每批最多 100 題，每帳號每小時最多新增 300 題。</p>
      <button id="previewSubmissions" class="batch-preview-button" type="button">解析並逐題預覽</button>
      </details>
      <section id="batchPreview" class="batch-preview" aria-label="批次題目預覽" hidden>
-      <div class="section-heading"><h3>批次題目預覽</h3><button id="closeBatchPreview" type="button">關閉預覽</button></div>
+      <div class="section-heading"><h2 id="batchPreviewHeading" tabindex="-1">批次題目預覽</h2><div id="batchPreviewTools"><button id="closeBatchPreview" type="button">返回編輯</button></div></div>
       <p id="batchDestination" class="help-text"></p><p id="batchSummary" role="status" aria-live="polite"></p>
       <p class="help-text">只處理勾選的題目；格式錯誤需先修正或取消勾選。已成功的題目不會重送。</p>
       <p id="batchProgress" role="status" aria-live="polite"></p>
-      <button id="batchReconcile" type="button" hidden>查核送出狀態</button>
       <div id="batchItems"></div>
      </section>
-     <div class="form-actions"><button id="saveSubmission" type="button">儲存草稿</button><button id="submitForReview" class="primary-btn" type="submit">送出審核</button></div>
+     <div id="submissionActions"><p id="batchActionSummary" role="status" aria-live="polite" hidden></p><button id="batchReconcile" type="button" hidden>查核送出狀態</button><div class="form-actions"><button id="saveSubmission" type="button">儲存草稿</button><button id="submitForReview" class="primary-btn" type="submit">送出審核</button></div></div>
      <p class="help-text">草稿只有你與管理員可見；送審不會直接公開。管理員會對照原題與新題，決定取代指定舊題或新增一題。</p>
     </form>
    </section>
@@ -78,5 +76,5 @@
 </dialog>
 <dialog id="unitDialog"><h2>新增單元</h2><form id="unitForm"><p id="unitSubjectLabel"></p><label for="newUnitNumber">單元編號</label><input id="newUnitNumber" type="number" min="2" max="999" step="1" required placeholder="例如：7"><p class="help-text">第一題經管理員核准後，這個單元才會公開；相同編號會共用。</p><div class="form-actions"><button id="cancelUnit" type="button">取消</button><button class="primary-btn" type="submit">建立並選用</button></div></form></dialog>
 <dialog id="passwordDialog"><h2>變更密碼</h2><form id="passwordForm"><label for="newPassword">新密碼（至少 12 個字元）</label><input id="newPassword" type="password" autocomplete="new-password" minlength="12" required><label for="confirmPassword">再次輸入新密碼</label><input id="confirmPassword" type="password" autocomplete="new-password" minlength="12" required><div class="form-actions"><button id="cancelPassword" type="button">取消</button><button type="submit" class="primary-btn">更新密碼</button></div></form></dialog>
-<script type="module" src="./js/collaboration.js?v=20261030-replace1"></script>
+<script type="module" src="./js/collaboration.js?v=20261030-preview2"></script>
 </body></html>
