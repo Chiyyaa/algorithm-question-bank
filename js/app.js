@@ -7,6 +7,8 @@ import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=2026102
 import { initMusic } from "./music.js";
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017-formats1";
 import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';
+import { initBatch } from './batch.js?v=20261030-batch1';
+import { batchQuestionHref } from './batch-core.js?v=20261030-batch1';
 
 initAppearance();
 const { close: closeMusic } = initMusic();
@@ -19,6 +21,7 @@ let currentUnit = null;
 let requestVersion = 0;
 let loading = false;
 let ready = false;
+let pendingQuestionTarget = null;
 const { updateBackToTop, setSidebarOpen } = initNavigation({
     onSelectUnit: selectUnit,
     onLeaveSubject: leaveSubject
@@ -41,6 +44,25 @@ const practice = initPractice({
     }
 });
 const PAGE_SIZE = 25;
+const batch = initBatch({
+    getUnits: subject => SUBJECTS.find(s => s.id === subject)?.units.filter(u => u.dataUrl || u.sharedOnly) || [],
+    async loadUnit(subjectId, unitId) {
+        const unit = getUnit(subjectId, unitId);
+        if (!unit) throw new Error('單元不存在。');
+        let builtIn = [];
+        if (unit.dataUrl) {
+            const response = await fetch(new URL(unit.dataUrl, import.meta.url), {cache:'no-cache',signal:AbortSignal.timeout(15000)});
+            if (!response.ok) throw new Error('題庫無法載入。');
+            builtIn = await response.json();
+            if (!Array.isArray(builtIn) || builtIn.some(q => !q || !Number.isSafeInteger(q.id) || typeof q.question !== 'string' || typeof q.correct_answer !== 'string')) throw new Error('題庫格式不正確。');
+        }
+        try {
+            const shared = await curatePublishedQuestions(await loadPublishedQuestions(subjectId, unitId), subjectId, unitId);
+            return {questions:[...builtIn,...shared],warning:''};
+        } catch { return {questions:builtIn,warning:'共用題庫暫時無法載入，目前僅比對內建題目。'}; }
+    },
+    onOpenQuestion(target) { enterSubject(target.subject, target.unit, true, target.id); }
+});
 let currentPage = 1;
 let currentFilter = "all";
 const answersVisible = new Set();
@@ -218,7 +240,7 @@ function renderUnitChoices() {
         </button>`;
     }).join("");
 }
-if (collaborationEnabled()) publishedCounts().then(rows => {
+const publishedUnitsReady = collaborationEnabled() ? publishedCounts().then(rows => {
     mergeCollaborationUnits(rows.filter(row => Number(row.question_count)>0));
     const curated = row => (['os','algorithm'].includes(row.subject_id) && row.unit_id === 'u6') ||
         (row.subject_id === 'algorithm' && row.unit_id === 'u7');
@@ -231,7 +253,7 @@ if (collaborationEnabled()) publishedCounts().then(rows => {
             .then(questions => { sharedCounts.set(subject+':'+unit, questions.length); renderUnitChoices(); })
             .catch(() => { /* Keep the classified count unavailable until a successful retry. */ });
     }
-}).catch(() => { /* Built-in counts remain available if the shared service is offline. */ });
+}).catch(() => { /* Built-in counts remain available if the shared service is offline. */ }) : Promise.resolve();
 
 function selectUnit(unitId) {
     const unit = getUnit(currentSubject?.id, unitId);
@@ -255,7 +277,7 @@ function selectUnit(unitId) {
     document.title = label + " 題庫";
     renderUnitChoices();
     if (history.state?.questionBank?.view === "bank") {
-        history.replaceState({ ...history.state, questionBank: { view: "bank", subjectId: currentSubject.id, unitId: unit.id } }, "");
+        history.replaceState({ ...history.state, questionBank: { view: "bank", subjectId: currentSubject.id, unitId: unit.id, ...(pendingQuestionTarget ? {questionId:pendingQuestionTarget.id} : {}) } }, "", pendingQuestionTarget ? batchQuestionHref(pendingQuestionTarget) : location.pathname);
     }
     loadQuestionBank();
 }
@@ -268,7 +290,9 @@ function leaveSubject(fromHistory = false) {
     ready = false;
     currentSubject = null;
     currentUnit = null;
+    pendingQuestionTarget = null;
     practice.setSubject(null);
+    batch.setSubject(null);
     QUESTIONS.length = 0;
     answersVisible.clear();
     answersHidden.clear();
@@ -286,16 +310,21 @@ function leaveSubject(fromHistory = false) {
 
 history.replaceState({ ...history.state, questionBank: { view: "home" } }, "");
 window.addEventListener("popstate", event => {
-    if (event.state?.questionBank?.view === "bank") enterSubject(event.state.questionBank.subjectId || "algorithm", event.state.questionBank.unitId, false);
+    if (event.state?.questionBank?.view === "bank") enterSubject(event.state.questionBank.subjectId || "algorithm", event.state.questionBank.unitId, false, event.state.questionBank.questionId);
     else leaveSubject(true);
 });
 
-function enterSubject(subjectId, unitId, pushHistory = true) {
+function enterSubject(subjectId, unitId, pushHistory = true, questionId = null) {
+    if (questionId != null && (!Number.isSafeInteger(questionId) || questionId < 1 || !getUnit(subjectId, unitId))) return;
     currentSubject = SUBJECTS.find(subject => subject.id === subjectId && subject.available);
     if (!currentSubject) return;
+    pendingQuestionTarget = questionId != null ? {subject:subjectId,unit:unitId,id:questionId} : null;
     practice.setSubject(currentSubject.id);
+    batch.setSubject(currentSubject.id);
     const selected = getUnit(currentSubject.id, unitId) || getUnit(currentSubject.id, currentSubject.defaultUnit);
-    if (pushHistory) history.pushState({ ...history.state, questionBank: { view: "bank", subjectId: currentSubject.id, unitId: selected.id } }, "");
+    const bankState = {view:'bank',subjectId:currentSubject.id,unitId:selected.id,...(pendingQuestionTarget ? {questionId} : {})};
+    if (pushHistory) history.pushState({ ...history.state, questionBank: bankState }, "", pendingQuestionTarget ? batchQuestionHref(pendingQuestionTarget) : location.pathname);
+    else history.replaceState({ ...history.state, questionBank: bankState }, "");
     document.body.dataset.subject = currentSubject.id;
     document.getElementById("bankHeading").textContent = currentSubject.name + "題庫搜尋系統";
     document.getElementById("unitSubjectDescription").textContent = currentSubject.name + " · 選擇今天的練習單元";
@@ -312,8 +341,9 @@ function enterSubject(subjectId, unitId, pushHistory = true) {
     document.getElementById("mobileMenuBtn").hidden = false;
     document.querySelector('.nav-btn[data-panel="bank"]').click();
     selectUnit(selected.id);
-    setSidebarOpen(true);
+    setSidebarOpen(questionId != null ? matchMedia('(min-width: 851px)').matches : true);
     document.getElementById("bankHeading").focus({ preventScroll: true });
+    if (ready) revealQuestionTarget();
 }
 document.getElementById("algorithmSubjectBtn").addEventListener("click", () => enterSubject("algorithm"));
  document.getElementById("osSubjectBtn").addEventListener("click", () => enterSubject("os"));
@@ -363,6 +393,7 @@ async function loadQuestionBank() {
         ready = true;
         controls.forEach(control => { control.disabled = false; });
         render();
+        revealQuestionTarget();
     } catch (error) {
         if (version !== requestVersion) return;
         console.error("Question bank could not be loaded:", error);
@@ -373,5 +404,31 @@ async function loadQuestionBank() {
     } finally {
         if (version === requestVersion) loading = false;
     }
+}
+
+function revealQuestionTarget() {
+    const target = pendingQuestionTarget;
+    if (!target || target.subject !== currentSubject?.id || target.unit !== currentUnit?.id || !ready) return;
+    pendingQuestionTarget = null;
+    const index = QUESTIONS.findIndex(q => q.id === target.id);
+    if (index < 0) {
+        const notice = document.createElement('p');notice.className='missing';notice.setAttribute('role','status');
+        notice.textContent='這個連結的題目目前沒有載入，可能已更新，或共用題庫暫時無法連線。';
+        document.getElementById('bankFooter').append(notice);return;
+    }
+    searchInput.value='';currentFilter='all';currentPage=Math.floor(index/PAGE_SIZE)+1;
+    document.querySelectorAll('.filter-btn').forEach(button=>button.classList.toggle('active',button.dataset.filter==='all'));
+    answersHidden.delete(target.id);answersVisible.add(target.id);render();
+    const card=list.querySelector('[data-id="'+target.id+'"]');
+    if(card){card.classList.add('batch-target');card.tabIndex=-1;card.style.scrollMarginTop=(document.querySelector('.toolbar').offsetHeight+90)+'px';card.focus({preventScroll:true});card.scrollIntoView({block:'start',behavior:'instant'});}
+    if(matchMedia('(max-width: 850px)').matches)setSidebarOpen(false);
+}
+
+const linkParams = new URLSearchParams(location.search);
+const initialQuestionLink = {subject:linkParams.get('subject'),unit:linkParams.get('unit'),id:Number(linkParams.get('question'))};
+if (['algorithm','os'].includes(initialQuestionLink.subject) && /^u(?:[2-9]|[1-9][0-9]{1,2})$/.test(initialQuestionLink.unit||'') && Number.isSafeInteger(initialQuestionLink.id) && initialQuestionLink.id > 0) {
+    const openLinkedQuestion=()=>{if(getUnit(initialQuestionLink.subject,initialQuestionLink.unit))enterSubject(initialQuestionLink.subject,initialQuestionLink.unit,false,initialQuestionLink.id);};
+    if(getUnit(initialQuestionLink.subject,initialQuestionLink.unit))openLinkedQuestion();
+    else publishedUnitsReady.then(openLinkedQuestion);
 }
 

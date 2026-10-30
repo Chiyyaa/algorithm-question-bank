@@ -7,7 +7,8 @@
 <link rel="stylesheet" href="./css/style.css?v=20261007-os">
 <link rel="stylesheet" href="./css/english-home.css?v=20261017-english1">
 <link rel="stylesheet" href="./css/practice.css?v=20261029-practice">
-<link rel="stylesheet" href="./css/muji.css?v=20261029-focus1">
+<link rel="stylesheet" href="./css/muji.css?v=20261030-batch1">
+<link rel="stylesheet" href="./css/batch.css?v=20261030-batch1">
 </head>
 <body class="home-mode muji-theme">
 <section id="subjectHome" class="subject-home" aria-labelledby="subjectHeading">
@@ -84,6 +85,7 @@
     <nav class="sidebar-nav">
         <button class="nav-btn active" data-panel="bank" type="button">題庫搜尋</button>
         <button class="nav-btn" data-panel="units" type="button">選擇單元</button>
+        <button id="batchNavBtn" class="nav-btn" data-panel="batch" type="button">批次查題</button>
         <button id="practiceNavBtn" class="nav-btn" data-panel="practice" type="button" hidden>測驗練習</button>
     </nav>
     <button id="switchSubjectBtn" class="nav-btn" type="button">切換科目</button>
@@ -144,6 +146,21 @@
         <div id="unitGrid" class="unit-grid"></div>
     </section>
 
+    <section id="panel-batch" class="panel" aria-labelledby="batchHeading">
+        <header><h1 id="batchHeading" tabindex="-1">批次查題</h1><p class="subtitle">匯入題目頁 HTML，依原本順序查看題庫可對應的答案。</p></header>
+        <div class="batch-form">
+            <div class="batch-controls">
+                <label class="batch-field">比對範圍<select id="batchScope"><option value="all">全部單元</option></select></label>
+                <label class="batch-field">題目頁 HTML<input id="batchFile" type="file" accept=".html,.htm" aria-describedby="batchImportHelp"></label>
+            </div>
+            <p id="batchImportHelp" class="batch-muted">單檔最多 2 MB、100 題。檔案只在這台裝置讀取，不會上傳或自動修改題庫。初版僅匯入題目頁。</p>
+            <div class="batch-actions"><button id="batchCompare" class="primary-btn" type="button" disabled>批次查答案</button><button id="batchClear" type="button">清除本次匯入</button></div>
+            <p id="batchStatus" role="status" aria-live="polite"></p>
+        </div>
+        <section id="batchPreview" class="batch-preview" aria-labelledby="batchPreviewHeading" hidden><h2 id="batchPreviewHeading">辨識預覽</h2><p id="batchPreviewSummary"></p><ol id="batchPreviewList"></ol></section>
+        <section id="batchResults" aria-labelledby="batchResultsHeading" hidden><h2 id="batchResultsHeading" tabindex="-1">查題結果</h2><p id="batchResultSummary" role="status" aria-live="polite"></p><p id="batchCoverage"></p><ol id="batchResultList"></ol></section>
+    </section>
+
     <section id="panel-practice" class="panel" aria-labelledby="practiceHeading">
         <header><h1 id="practiceHeading" tabindex="-1">測驗練習</h1><p class="subtitle">先從演算法 U6、U7 開始，每題作答後立即核對答案。</p></header>
         <form id="practiceSettings" class="practice-settings">
@@ -161,7 +178,7 @@
 </div>
 <button id="backToTopBtn" class="back-to-top" type="button" aria-label="回到頁面頂端" hidden>↑ 回到頂端</button>
 
-<script type="module" src="./js/app.js?v=20261029-focus1"></script>
+<script type="module" src="./js/app.js?v=20261030-batch1"></script>
 </body>
 </html>
 
