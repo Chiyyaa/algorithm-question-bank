@@ -65,7 +65,10 @@
     ],
     "source_question_number": 67,
     "source_response_type": "單選題",
-    "source_location": "試煉_5 第23題"
+    "source_location": "試煉_5 第23題",
+    "question_aliases": [
+      "使用者層級執行緒(User-levelr threads)的管理主要由誰負責?"
+    ]
   },
   {
     "id": 4,
@@ -214,21 +217,28 @@
     "type": "choice",
     "question": "What company developed Grand Central Dispatch?",
     "options": [
+      "IBM",
       "Apple",
+      "Microsoft",
       "Google"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "Apple",
     "answer_variants": [
       "Apple"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
     ],
     "source_question_number": 10,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "completeness_verification": {
+      "reference_question_id": "threads-085",
+      "method": "參考網站同題中文版本，四個選項均為相同英文公司名稱；補齊 IBM、Microsoft。"
+    }
   },
   {
     "id": 11,
@@ -286,18 +296,23 @@
       "Using the Runnable class",
       "Creating a new process"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "Inheriting the Thread class\nImplementing the Runnable interface",
     "answer_variants": [
       "Inheriting the Thread class\nImplementing the Runnable interface"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
     ],
     "source_question_number": 13,
     "source_response_type": "複選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "completeness_verification": {
+      "reference_question_id": "threads-061",
+      "method": "與參考網站 Java 建立執行緒題的四個選項逐項中英對照，兩個正確答案一致；保留原英文選項。"
+    }
   },
   {
     "id": 14,
@@ -372,7 +387,7 @@
     "id": 17,
     "title": "",
     "type": "fill_blank",
-    "question": "Amdahl's Law 的公式為：speedup? (1/(S+(1-S)/N)) ，其中 S 代表應用程式的[__1__]部分。(請用英文小寫回答，單字間留一空白)",
+    "question": "Amdahl's Law 的公式為 speedup = 1/(S+(1-S)/N)，其中 S 代表應用程式的 [__1__] 部分。（請用英文小寫回答，單字間留一空白）",
     "options": [],
     "options_status": "not_applicable_or_not_recorded",
     "correct_answer": "serial portion",
@@ -387,6 +402,9 @@
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "afds"
+    ],
+    "question_aliases": [
+      "Amdahl's Law 的公式為：speedup? (1/(S+(1-S)/N)) ，其中 S 代表應用程式的[__1__]部分。(請用英文小寫回答，單字間留一空白)"
     ]
   },
   {
@@ -572,21 +590,28 @@
     "type": "choice",
     "question": "Which of the following is not a method of implicit threading?",
     "options": [
+      "OpenMP",
+      "Thread Pools",
       "pthread_create()",
       "Grand Central Dispatch"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "pthread_create()",
     "answer_variants": [
       "pthread_create()"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
     ],
     "source_question_number": 26,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "completeness_verification": {
+      "reference_question_id": "threads-046",
+      "method": "參考網站同題中文版本的四個選項均為相同英文技術名稱；補齊 OpenMP、Thread Pools。"
+    }
   },
   {
     "id": 27,
@@ -978,18 +1003,23 @@
       "Java threads",
       "Linux threads"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "POSIX Pthreads\nWin32 threads\nJava threads",
     "answer_variants": [
       "POSIX Pthreads\nWin32 threads\nJava threads"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
     ],
     "source_question_number": 44,
     "source_response_type": "複選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "completeness_verification": {
+      "reference_question_id": "threads-034",
+      "method": "與參考網站完整四選項相同；另有使用者 5-3 HTML 第4題直接證實選項集合與複選題型。"
+    }
   },
   {
     "id": 45,
@@ -1287,7 +1317,10 @@
     ],
     "source_question_number": 66,
     "source_response_type": "多選題",
-    "source_location": "試煉_5 第13題"
+    "source_location": "試煉_5 第13題",
+    "question_aliases": [
+      "在多執行緒環境中，處理信號的方式可以有哪些種？"
+    ]
   },
   {
     "id": 58,
@@ -1792,7 +1825,7 @@
     "id": 80,
     "title": "",
     "type": "fill_blank",
-    "question": "Amdahl's Law 的公式為:speedup? (1/(S+(1-S)/N))   ,N 代表 [__1__] 的數量。(請用英文小寫回答,單字間留一空白)",
+    "question": "Amdahl's Law 的公式為 speedup = 1/(S+(1-S)/N)，N 代表 [__1__] 的數量。（請用英文小寫回答，單字間留一空白）",
     "options": [],
     "options_status": "not_applicable",
     "correct_answer": "processing cores",
@@ -1805,7 +1838,10 @@
     ],
     "source_question_number": 16,
     "source_response_type": "填空題",
-    "source_location": "試煉_1 第16題"
+    "source_location": "試煉_1 第16題",
+    "question_aliases": [
+      "Amdahl's Law 的公式為:speedup? (1/(S+(1-S)/N))   ,N 代表 [__1__] 的數量。(請用英文小寫回答,單字間留一空白)"
+    ]
   },
   {
     "id": 81,
@@ -2277,18 +2313,23 @@
       "Separates the task from the mechanism that creates the task",
       "Ensures that each request uses a new thread"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "Using existing threads to service requests is faster than creating new threads\nAllows the number of threads in the application to be limited to the size of the pool\nSeparates the task from the mechanism that creates the task",
     "answer_variants": [
       "Using existing threads to service requests is faster than creating new threads\nAllows the number of threads in the application to be limited to the size of the pool\nSeparates the task from the mechanism that creates the task"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
     ],
     "source_question_number": 102,
     "source_response_type": "複選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "completeness_verification": {
+      "reference_question_id": "threads-050",
+      "method": "與參考網站正式英文選項翻譯逐項一致，三個答案亦對應中文原答案。"
+    }
   },
   {
     "id": 103,

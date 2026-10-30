@@ -7,8 +7,8 @@ import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=2026103
 import { initMusic } from "./music.js";
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261017-formats1";
 import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';
-import { initBatch } from './batch.js?v=20261030-candidates2';
-import { batchQuestionHref } from './batch-core.js?v=20261030-candidates2';
+import { initBatch } from './batch.js?v=20261030-complete-u5';
+import { batchQuestionHref } from './batch-core.js?v=20261030-complete-u5';
 
 initAppearance();
 const { close: closeMusic } = initMusic();

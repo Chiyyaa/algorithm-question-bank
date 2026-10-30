@@ -4,7 +4,7 @@ const root=path.resolve(__dirname,'..'),bank=JSON.parse(fs.readFileSync(path.joi
  assert.equal(bank.length,126);assert.deepEqual(bank.map(q=>q.id),Array.from({length:126},(_,i)=>i+1));
  const get=id=>bank.find(q=>q.id===id);assert.equal(get(72).correct_answer,'many-to-many');assert.equal(get(126).correct_answer,'many-to-one');assert.match(get(126).question,/single kernel thread/);assert.match(get(72).question,/many kernel threads/);
  assert.equal(get(5).correct_answer,'processing cores');assert.equal(get(125).correct_answer,'serial portion');assert.equal(get(3).question.includes('User-levelr'),false);
- assert.deepEqual(bank.filter(q=>q.type==='disputed').map(q=>q.id),[28,116]);assert.deepEqual(bank.filter(q=>q.options_status==='known_options_only').map(q=>q.id),[10,13,26,44,99,102,106]);
+ assert.deepEqual(bank.filter(q=>q.type==='disputed').map(q=>q.id),[28,116]);assert.deepEqual(bank.filter(q=>q.options_status==='known_options_only').map(q=>q.id),[99,106]);
  for(const q of bank){assert.ok(q.correct_answer.trim());assert.ok(q.sources.length);if(q.options_status==='complete')for(const a of q.correct_answer.split('\n'))assert.ok(q.options.includes(a),'#'+q.id+' answer must be an option');if(q.type==='fill_blank'){assert.equal(q.options.length,0);assert.equal((q.question.match(/\[__1__\]/g)||[]).length,1);}}
  const m=new vm.SourceTextModule(fs.readFileSync(path.join(root,'js/batch-core.js'),'utf8'));await m.link(()=>{throw Error('Unexpected dependency');});await m.evaluate();const core=m.namespace;
  const index=core.createBatchIndex(bank.map(q=>({...q,subject:'os',unit:'u5'})));

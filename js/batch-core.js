@@ -11,7 +11,7 @@ function compatibleModels(a,b){const first=threadModels(a),second=threadModels(b
 export function createBatchIndex(entries){
     return entries.filter(e=>e&&['algorithm','os'].includes(e.subject)&&/^u\d+$/.test(e.unit)&&Number.isSafeInteger(e.id)&&e.id>0&&typeof e.question==='string').map(e=>{
         const stem=normalizeBatchText(e.question),options=(e.options||[]).map(stripBatchOption).map(normalizeBatchText);
-        return {...e,normalizedStem:stem,normalizedOptions:options,grams:grams(stem.toLowerCase()),blanks:blankCount(e.question)};
+        return {...e,normalizedStem:stem,normalizedStems:[stem,...(Array.isArray(e.question_aliases)?e.question_aliases.filter(s=>typeof s==='string'&&s.trim()).map(normalizeBatchText):[])],normalizedOptions:options,grams:grams(stem.toLowerCase()),blanks:blankCount(e.question)};
     });
 }
 export function batchQuestionHref(entry){
@@ -36,7 +36,7 @@ function answerFor(input,entry){
         return {lines:answers.map((a,i)=>'第 '+(i+1)+' 格：'+a),signature:JSON.stringify(answers.map(normalizeBatchText))};
     }
     if(entry.type!=='choice'||!sameOptions(input,entry))return null;
-    if((/單選/.test(entry.source_type||'')&&input.kind!=='single')||(/多選|複選/.test(entry.source_type||'')&&input.kind!=='multiple'))return null;
+    if((/單選/.test(entry.source_type||entry.source_response_type||'')&&input.kind!=='single')||(/多選|複選/.test(entry.source_type||entry.source_response_type||'')&&input.kind!=='multiple'))return null;
     const parts=entry.correct_answer.split(/\r?\n/).map(s=>stripBatchOption(s.replace(/^\s*[-*•]\s*/,''))).filter(Boolean);
     const keys=[...new Set(parts.map(normalizeBatchText))];
     if(!keys.length||keys.some(key=>!entry.normalizedOptions.includes(key))||(input.kind==='single'&&keys.length!==1))return null;
@@ -48,9 +48,9 @@ export function compareBatchQuestions(questions,index,{subject,unit='all'}={}){
     const eligible=index.filter(e=>e.subject===subject&&(unit==='all'||e.unit===unit));
     return questions.map(input=>{
         const stem=normalizeBatchText(input.stem);
-        const same=eligible.filter(e=>e.normalizedStem===stem);
+        const same=eligible.filter(e=>(e.normalizedStems||[e.normalizedStem]).includes(stem));
         const exact=same.filter(e=>input.kind==='fill'?!e.normalizedOptions.length&&e.blanks===input.blankCount:sameOptions(input,e));
-        const validInput=!input.issues.length&&input.stem&&(!input.options.length||new Set(input.options.map(o=>normalizeBatchText(o.text))).size===input.options.length);
+        const validInput=!input.issues.length&&input.stem&&(!input.options.length||new Set(input.options.map(o=>normalizeBatchText(o.text))).size===input.options.length)&&new Set(input.options.map(o=>o.label)).size===input.options.length;
         if(validInput&&exact.length){
             const resolved=exact.map(e=>answerFor(input,e));
             if(resolved.every(Boolean)&&new Set(resolved.map(a=>a.signature)).size===1){
@@ -59,10 +59,10 @@ export function compareBatchQuestions(questions,index,{subject,unit='all'}={}){
             }
         }
         const inputGrams=grams(stem.toLowerCase());
-        const candidates=(same.length?same:eligible.filter(e=>compatibleModels(input.stem,e.question))).map(e=>({entry:e,score:e.normalizedStem===stem?1:similarity(inputGrams,e.grams)}))
+        const candidates=(same.length?same:eligible.filter(e=>compatibleModels(input.stem,e.question))).map(e=>({entry:e,score:(e.normalizedStems||[e.normalizedStem]).includes(stem)?1:similarity(inputGrams,e.grams)}))
             .filter(e=>e.score>=(stem.length<12?.8:.56)).sort((a,b)=>b.score-a.score||a.entry.unit.localeCompare(b.entry.unit)||a.entry.id-b.entry.id)
             .slice(0,3).map(e=>e.entry);
-        let reason=input.issues.length?input.issues.join('；'):exact.length?'找到相同題目，但答案版本、題型或可核對格式仍有差異。':same.length?'題幹相同，但選項內容、數量或填空格數不同。':'找到相近題目，請核對數值、條件與選項。';
+        let reason=input.issues.length?input.issues.join('；'):!validInput?'匯入題目的選項代號、內容重複或題幹不完整，請核對原始檔案。':exact.some(e=>e.type==='disputed')?'題庫原標準答案有爭議，請開啟題庫查看提醒。':exact.some(e=>e.options_status==='known_options_only')?'題庫尚未確認完整選項，暫不自動套用答案。':exact.some(e=>e.image)?'題庫題目含圖片，請開啟題庫核對完整內容。':exact.some(e=>(/單選/.test(e.source_type||e.source_response_type||'')&&input.kind!=='single')||(/多選|複選/.test(e.source_type||e.source_response_type||'')&&input.kind!=='multiple'))?'匯入檔案與題庫的單選／多選題型不同，請核對原始題型。':exact.length?(exact.map(e=>answerFor(input,e)).every(Boolean)?'題庫存在不同答案版本，請人工核對。':'題庫答案無法完整對應本次選項或填空格式，請開啟題庫核對。'):same.length?'題幹相同，但選項內容、數量或填空格數不同。':'找到相近題目，請核對數值、條件與選項。';
         if(!candidates.length)reason=input.issues.length?reason+'；目前沒有可對應的題庫題目。':'目前沒有找到可可靠對應的題目。';
         return {input,status:candidates.length?'review':'unmatched',answers:[],notes:[],references:candidates,reason};
     });
