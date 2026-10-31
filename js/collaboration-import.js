@@ -186,7 +186,7 @@ export function createContributionBank(service) {
                     const params=new URLSearchParams({select:'id,content',subject_id:'eq.'+subject,unit_id:'eq.'+unit.id,visible:'eq.true',order:'id.asc',limit:'500',offset:String(offset)});
                     const rows=await service.api('/rest/v1/published_questions?'+params,{authenticated:false});
                     if(!Array.isArray(rows))throw new Error('共用題庫載入失敗。');
-                    shared.push(...rows.map(r=>({...r.content,id:Number(r.id),shared_question:true,options_status:'known_options_only'})));
+                    shared.push(...rows.map(r=>({...r.content,id:Number(r.id),shared_question:true})));
                     if(rows.length<500) return mergeQuestionVersions(local,await curatePublishedQuestions([...shared,...await loadQuestionReplacements(subject,unit.id)],subject,unit.id)).map(q=>({...q,subject,unit:unit.id}));
                 }
                 throw new Error('共用題庫超過比對上限。');

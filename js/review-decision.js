@@ -1,5 +1,5 @@
 import { escapeHtml as esc } from './utils.js?v=20261017-formats1';
-import { classifyContribution } from './collaboration-import.js?v=20261031-bank1';
+import { classifyContribution } from './collaboration-import.js?v=20261031-bank2';
 import { reviewContent, sameReviewContent } from './question-versions.js?v=20261030-replace1';
 
 function imageMarkup(q){if(!q.image)return '';try{const url=new URL(q.image,import.meta.url),root=new URL('../images/',import.meta.url);return url.href.startsWith(root.href)?'<img class="review-question-image" src="'+esc(url.href)+'" alt="'+esc(q.image_alt||'原題圖片')+'"><p class="help-text">原題含圖片，取代後以新題內容為準。</p>':'';}catch{return '';}}
