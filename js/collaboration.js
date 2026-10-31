@@ -1,10 +1,10 @@
-import { createReviewDecisions } from './review-decision.js?v=20261030-replace1';
-import { createContributionBank, classifyContribution, comparisonMarkup } from './collaboration-import.js?v=20261030-pairing1';
+import { createReviewDecisions } from './review-decision.js?v=20261031-bank1';
+import { createContributionBank, classifyContribution, comparisonMarkup } from './collaboration-import.js?v=20261031-bank1';
 import { initCollaborationTheme } from './collaboration-theme.js?v=20261030-replace1';
 import { createBulkReview } from './collaboration-review.js?v=20261030-replace1';
 import { escapeHtml } from './utils.js?v=20261017-formats1';
-import { parseSubmission, questionCount, createBatchEditor } from './collaboration-batch.js?v=20261030-pairing1';
-import { SUBJECTS, getUnit, mergeCollaborationUnits } from './units.js?v=20261017-formats1';
+import { parseSubmission, questionCount, createBatchEditor } from './collaboration-batch.js?v=20261031-bank1';
+import { SUBJECTS, getUnit, mergeCollaborationUnits } from './units.js?v=20261031-bank1';
 import * as service from './collaboration-api.js?v=20261030-replace1';
 
 const $=id=>document.getElementById(id);

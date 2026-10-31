@@ -12,11 +12,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 62,
     "source_response_type": "填空題",
-    "source_location": "試煉_5 第3題"
+    "source_location": "試煉_5 第3題",
+    "reference_question_ids": [
+      "threads-077"
+    ],
+    "question_aliases": [
+      "The popularity of ________ techniques is due to the difficulty of ensuring program correctness as the number of threads increases. (請用英文小寫回答，單字間留一空白)"
+    ]
   },
   {
     "id": 2,
@@ -36,11 +43,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 87,
     "source_response_type": "單選題",
-    "source_location": "Unit5全部題目 039"
+    "source_location": "Unit5全部題目 039",
+    "reference_question_ids": [
+      "threads-039"
+    ]
   },
   {
     "id": 3,
@@ -61,13 +72,19 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 67,
     "source_response_type": "單選題",
     "source_location": "試煉_5 第23題",
     "question_aliases": [
-      "使用者層級執行緒(User-levelr threads)的管理主要由誰負責?"
+      "使用者層級執行緒(User-levelr threads)的管理主要由誰負責?",
+      "使用者層級執行緒（User-levelr threads）的管理主要由誰負責？"
+    ],
+    "reference_question_ids": [
+      "threads-059",
+      "community-2aa0ecfb-6355-4e00-bd7a-6bfc5023d145-4"
     ]
   },
   {
@@ -88,11 +105,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 85,
     "source_response_type": "多選題",
-    "source_location": "Unit5全部題目 025"
+    "source_location": "Unit5全部題目 025",
+    "reference_question_ids": [
+      "threads-066"
+    ]
   },
   {
     "id": 5,
@@ -107,12 +128,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 5,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "asdf"
+    ],
+    "reference_question_ids": [
+      "friend-os-u5-005"
+    ],
+    "question_aliases": [
+      "Amdahl's Law is formulated as: speedup = 1/(S+(1-S)/N), where N represents the number of ________.(Please answer in lowercase English, leaving a space between each word)"
     ]
   },
   {
@@ -133,11 +161,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 65,
     "source_response_type": "多選題",
-    "source_location": "試煉_5 第8題"
+    "source_location": "試煉_5 第8題",
+    "reference_question_ids": [
+      "friend-os-u5-006"
+    ]
   },
   {
     "id": 7,
@@ -157,11 +189,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 6,
     "source_response_type": "單選題",
-    "source_location": "試煉_1 第6題"
+    "source_location": "試煉_1 第6題",
+    "reference_question_ids": [
+      "threads-030"
+    ],
+    "question_aliases": [
+      "執行緒本地儲存（Thread-local storage TLS）有何用途？"
+    ]
   },
   {
     "id": 8,
@@ -181,11 +220,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 24,
     "source_response_type": "單選題",
-    "source_location": "試煉_1 第24題"
+    "source_location": "試煉_1 第24題",
+    "reference_question_ids": [
+      "friend-os-u5-008"
+    ],
+    "question_aliases": [
+      "POSIX Pthreads 是什麼？"
+    ]
   },
   {
     "id": 9,
@@ -205,11 +251,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 20,
     "source_response_type": "單選題",
-    "source_location": "試煉_1 第20題"
+    "source_location": "試煉_1 第20題",
+    "reference_question_ids": [
+      "threads-051"
+    ],
+    "question_aliases": [
+      "多執行緒伺服器架構中，當一個客戶端請求到達時，伺服器會做什麼？"
+    ]
   },
   {
     "id": 10,
@@ -230,7 +283,8 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統U5.txt",
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 10,
     "source_response_type": "單選",
@@ -238,7 +292,10 @@
     "completeness_verification": {
       "reference_question_id": "threads-085",
       "method": "參考網站同題中文版本，四個選項均為相同英文公司名稱；補齊 IBM、Microsoft。"
-    }
+    },
+    "reference_question_ids": [
+      "community-2aa0ecfb-6355-4e00-bd7a-6bfc5023d145-2"
+    ]
   },
   {
     "id": 11,
@@ -258,11 +315,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 18,
     "source_response_type": "多選題",
-    "source_location": "試煉_1 第18題"
+    "source_location": "試煉_1 第18題",
+    "reference_question_ids": [
+      "threads-053"
+    ],
+    "question_aliases": [
+      "下列關於 fork() 和 exec() 系統呼叫在多執行緒環境下的語義描述，哪些是正確的？"
+    ]
   },
   {
     "id": 12,
@@ -277,12 +341,20 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 12,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "gh"
+    ],
+    "reference_question_ids": [
+      "threads-015",
+      "community-7194cbec-f4e8-4431-b237-d8864d7ca8ea-5"
+    ],
+    "question_aliases": [
+      "在 ________ 模型中，多個使用者層級執行緒映射到單一核心執行緒。（請用小寫英文回答，字母間用-連接）"
     ]
   },
   {
@@ -332,11 +404,20 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 31,
     "source_response_type": "多選題",
-    "source_location": "試煉_2 第12題"
+    "source_location": "試煉_2 第12題",
+    "reference_question_ids": [
+      "threads-034",
+      "threads-079",
+      "friend-os-u5-014"
+    ],
+    "question_aliases": [
+      "下列哪些屬於使用者層級執行緒函式庫？"
+    ]
   },
   {
     "id": 15,
@@ -351,12 +432,20 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 15,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "asdf"
+    ],
+    "reference_question_ids": [
+      "threads-014",
+      "friend-os-u5-015"
+    ],
+    "question_aliases": [
+      "在 ________ 模型中，每個使用者層級執行緒映射到一個核心執行緒。（請用小寫英文回答，字母間用-連接）"
     ]
   },
   {
@@ -377,11 +466,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 11,
     "source_response_type": "多選題",
-    "source_location": "試煉_1 第11題"
+    "source_location": "試煉_1 第11題",
+    "reference_question_ids": [
+      "threads-063",
+      "threads-069"
+    ],
+    "question_aliases": [
+      "多執行緒程式設計的好處包括？"
+    ]
   },
   {
     "id": 17,
@@ -396,7 +493,8 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 17,
     "source_response_type": "填空",
@@ -404,7 +502,13 @@
       "afds"
     ],
     "question_aliases": [
-      "Amdahl's Law 的公式為：speedup? (1/(S+(1-S)/N)) ，其中 S 代表應用程式的[__1__]部分。(請用英文小寫回答，單字間留一空白)"
+      "Amdahl's Law 的公式為：speedup? (1/(S+(1-S)/N)) ，其中 S 代表應用程式的[__1__]部分。(請用英文小寫回答，單字間留一空白)",
+      "Amdahl's Law 的公式為 speedup = 1/(S+(1-S)/N)，其中 S 代表應用程式的 ________ 部分。（請用英文小寫回答，單字間留一空白）",
+      "Amdahl's Law 的公式為：speedup? (1/(S+(1-S)/N)) ，其中 S 代表應用程式的________部分。(請用英文小寫回答，單字間留一空白)"
+    ],
+    "reference_question_ids": [
+      "threads-041",
+      "friend-os-u5-017"
     ]
   },
   {
@@ -425,11 +529,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 7,
     "source_response_type": "單選題",
-    "source_location": "試煉_1 第7題"
+    "source_location": "試煉_1 第7題",
+    "reference_question_ids": [
+      "threads-046"
+    ],
+    "question_aliases": [
+      "下列哪一個不是隱式執行緒（Implicit Threading）的方法？"
+    ]
   },
   {
     "id": 19,
@@ -449,11 +560,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 4,
     "source_response_type": "單選題",
-    "source_location": "試煉_1 第4題"
+    "source_location": "試煉_1 第4題",
+    "reference_question_ids": [
+      "threads-068"
+    ],
+    "question_aliases": [
+      "Java 執行緒通常由誰管理？"
+    ]
   },
   {
     "id": 20,
@@ -473,11 +591,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 21,
     "source_response_type": "多選題",
-    "source_location": "試煉_1 第21題"
+    "source_location": "試煉_1 第21題",
+    "reference_question_ids": [
+      "threads-017"
+    ],
+    "question_aliases": [
+      "One-to-One 模型有何特性？"
+    ]
   },
   {
     "id": 21,
@@ -497,11 +622,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 55,
     "source_response_type": "多選題",
-    "source_location": "試煉_4 第12題"
+    "source_location": "試煉_4 第12題",
+    "reference_question_ids": [
+      "threads-050"
+    ],
+    "question_aliases": [
+      "執行緒池（Thread Pools）的優點包括？"
+    ]
   },
   {
     "id": 22,
@@ -516,11 +648,20 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 28,
     "source_response_type": "填空題",
-    "source_location": "試煉_2 第4題"
+    "source_location": "試煉_2 第4題",
+    "reference_question_ids": [
+      "threads-013",
+      "threads-080",
+      "friend-os-u5-022"
+    ],
+    "question_aliases": [
+      "在 ________ 模型中，許多使用者層級執行緒可以被映射到許多核心執行緒。（請用小寫英文回答，字母間用-連接）"
+    ]
   },
   {
     "id": 23,
@@ -535,11 +676,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 46,
     "source_response_type": "填空題",
-    "source_location": "試煉_3 第12題"
+    "source_location": "試煉_3 第12題",
+    "reference_question_ids": [
+      "threads-024",
+      "friend-os-u5-023"
+    ],
+    "question_aliases": [
+      "Windows 執行緒實作了 ________ 模型。（請用小寫英文回答，字母間用-連接）"
+    ]
   },
   {
     "id": 24,
@@ -554,11 +703,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 76,
     "source_response_type": "填空題",
-    "source_location": "試煉_6 第24題"
+    "source_location": "試煉_6 第24題",
+    "reference_question_ids": [
+      "threads-032",
+      "friend-os-u5-024"
+    ],
+    "question_aliases": [
+      "有三種主要的使用者層級執行緒函式庫：POSIX Pthreads、Win32 threads 和 ________。（請用小寫英文回答，字母間留一個空白）"
+    ]
   },
   {
     "id": 25,
@@ -578,11 +735,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 82,
     "source_response_type": "單選題",
-    "source_location": "Unit5全部題目 008"
+    "source_location": "Unit5全部題目 008",
+    "reference_question_ids": [
+      "threads-008"
+    ]
   },
   {
     "id": 26,
@@ -603,7 +764,8 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統U5.txt",
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 26,
     "source_response_type": "單選",
@@ -611,7 +773,10 @@
     "completeness_verification": {
       "reference_question_id": "threads-046",
       "method": "參考網站同題中文版本的四個選項均為相同英文技術名稱；補齊 OpenMP、Thread Pools。"
-    }
+    },
+    "reference_question_ids": [
+      "community-e31036c8-d1a7-4212-8818-715306385626-2"
+    ]
   },
   {
     "id": 27,
@@ -626,11 +791,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 78,
     "source_response_type": "填空題",
-    "source_location": "試煉_7 第9題"
+    "source_location": "試煉_7 第9題",
+    "reference_question_ids": [
+      "friend-os-u5-027"
+    ],
+    "question_aliases": [
+      "________ is a method for terminating a thread that allows the target thread to periodically check whether it should be canceled.(Please answer in lowercase English, leaving a space between each word)"
+    ]
   },
   {
     "id": 28,
@@ -674,10 +846,14 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": "threads-063",
-    "source_response_type": "多選題"
+    "source_response_type": "多選題",
+    "reference_question_ids": [
+      "threads-063"
+    ]
   },
   {
     "id": 30,
@@ -692,11 +868,20 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 23,
     "source_response_type": "填空題",
-    "source_location": "試煉_1 第23題"
+    "source_location": "試煉_1 第23題",
+    "reference_question_ids": [
+      "threads-004",
+      "threads-074",
+      "friend-os-u5-030"
+    ],
+    "question_aliases": [
+      "由於執行緒共用程序的資源，因此 ________ 比共享記憶體或訊息傳遞更容易實現。（請用英文小寫回答，單字間留一空白）"
+    ]
   },
   {
     "id": 31,
@@ -716,11 +901,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 15,
     "source_response_type": "單選題",
-    "source_location": "試煉_1 第15題"
+    "source_location": "試煉_1 第15題",
+    "reference_question_ids": [
+      "threads-085"
+    ],
+    "question_aliases": [
+      "Grand Central Dispatch 是由哪家公司開發的技術？"
+    ]
   },
   {
     "id": 32,
@@ -740,10 +932,14 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": "threads-016",
-    "source_response_type": "單選題"
+    "source_response_type": "單選題",
+    "reference_question_ids": [
+      "threads-016"
+    ]
   },
   {
     "id": 33,
@@ -763,10 +959,14 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": "threads-072",
-    "source_response_type": "單選題"
+    "source_response_type": "單選題",
+    "reference_question_ids": [
+      "threads-072"
+    ]
   },
   {
     "id": 34,
@@ -781,11 +981,20 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 35,
     "source_response_type": "填空題",
-    "source_location": "試煉_2 第17題"
+    "source_location": "試煉_2 第17題",
+    "reference_question_ids": [
+      "threads-049",
+      "threads-062",
+      "friend-os-u5-034"
+    ],
+    "question_aliases": [
+      "在 ________ 模型中，會創建一定數量的執行緒，並將其放置在池中等待工作。（請用小寫英文回答，字母間留一個空白）"
+    ]
   },
   {
     "id": 35,
@@ -800,11 +1009,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 89,
     "source_response_type": "填空題",
-    "source_location": "Unit5全部題目 048"
+    "source_location": "Unit5全部題目 048",
+    "reference_question_ids": [
+      "threads-048",
+      "friend-os-u5-035"
+    ],
+    "question_aliases": [
+      "________ 是一個 Apple 的技術，用於 Mac OS X 和 iOS 作業系統，允許識別平行區域並管理執行緒的細節。（請用小寫英文回答，字母間留一個空白）"
+    ]
   },
   {
     "id": 36,
@@ -824,11 +1041,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 26,
     "source_response_type": "多選題",
-    "source_location": "試煉_2 第2題"
+    "source_location": "試煉_2 第2題",
+    "reference_question_ids": [
+      "threads-066"
+    ],
+    "question_aliases": [
+      "在 Linux 系統中，關於執行緒的敘述哪些是正確的？"
+    ]
   },
   {
     "id": 37,
@@ -843,11 +1067,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 72,
     "source_response_type": "填空題",
-    "source_location": "試煉_6 第9題"
+    "source_location": "試煉_6 第9題",
+    "reference_question_ids": [
+      "threads-040",
+      "friend-os-u5-037"
+    ],
+    "question_aliases": [
+      "________ 指將執行緒分配到不同的核心上，每個執行緒執行獨特的任務。（請用英文小寫回答，單字間留一空白）"
+    ]
   },
   {
     "id": 38,
@@ -867,11 +1099,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 43,
     "source_response_type": "單選題",
-    "source_location": "試煉_3 第6題"
+    "source_location": "試煉_3 第6題",
+    "reference_question_ids": [
+      "threads-044"
+    ],
+    "question_aliases": [
+      "OpenMP 主要提供在哪種環境下進行平行程式設計的支援？"
+    ]
   },
   {
     "id": 39,
@@ -891,11 +1130,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 83,
     "source_response_type": "單選題",
-    "source_location": "Unit5全部題目 011"
+    "source_location": "Unit5全部題目 011",
+    "reference_question_ids": [
+      "threads-010"
+    ]
   },
   {
     "id": 40,
@@ -915,11 +1158,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 41,
     "source_response_type": "多選題",
-    "source_location": "試煉_2 第24題"
+    "source_location": "試煉_2 第24題",
+    "reference_question_ids": [
+      "community-e31036c8-d1a7-4212-8818-715306385626-5"
+    ]
   },
   {
     "id": 41,
@@ -939,10 +1186,14 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": "threads-057",
-    "source_response_type": "單選題"
+    "source_response_type": "單選題",
+    "reference_question_ids": [
+      "threads-057"
+    ]
   },
   {
     "id": 42,
@@ -962,11 +1213,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 19,
     "source_response_type": "多選題",
-    "source_location": "試煉_1 第19題"
+    "source_location": "試煉_1 第19題",
+    "reference_question_ids": [
+      "community-2dbc9c78-9179-4ed1-a8f6-412e2d28d934-2"
+    ],
+    "question_aliases": [
+      "延遲取消（Deferred cancellation）有何特性？"
+    ]
   },
   {
     "id": 43,
@@ -986,11 +1244,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 49,
     "source_response_type": "多選題",
-    "source_location": "試煉_3 第19題"
+    "source_location": "試煉_3 第19題",
+    "reference_question_ids": [
+      "threads-038",
+      "friend-os-u5-043"
+    ],
+    "question_aliases": [
+      "在多核心系統中進行程式設計時，可能遇到的挑戰包括？"
+    ]
   },
   {
     "id": 44,
@@ -1011,7 +1277,8 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統U5.txt",
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 44,
     "source_response_type": "複選",
@@ -1019,7 +1286,10 @@
     "completeness_verification": {
       "reference_question_id": "threads-034",
       "method": "與參考網站完整四選項相同；另有使用者 5-3 HTML 第4題直接證實選項集合與複選題型。"
-    }
+    },
+    "reference_question_ids": [
+      "friend-os-u5-044"
+    ]
   },
   {
     "id": 45,
@@ -1039,10 +1309,14 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": "threads-009",
-    "source_response_type": "單選題"
+    "source_response_type": "單選題",
+    "reference_question_ids": [
+      "threads-009"
+    ]
   },
   {
     "id": 46,
@@ -1062,11 +1336,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 94,
     "source_response_type": "多選題",
-    "source_location": "Unit5全部題目 067"
+    "source_location": "Unit5全部題目 067",
+    "reference_question_ids": [
+      "threads-001"
+    ]
   },
   {
     "id": 47,
@@ -1086,11 +1364,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 8,
     "source_response_type": "多選題",
-    "source_location": "試煉_1 第8題"
+    "source_location": "試煉_1 第8題",
+    "reference_question_ids": [
+      "threads-052"
+    ],
+    "question_aliases": [
+      "多執行緒伺服器架構的優點包含？"
+    ]
   },
   {
     "id": 48,
@@ -1110,11 +1395,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 73,
     "source_response_type": "多選題",
-    "source_location": "試煉_6 第13題"
+    "source_location": "試煉_6 第13題",
+    "reference_question_ids": [
+      "threads-019"
+    ],
+    "question_aliases": [
+      "下列哪些作業系統採用 One-to-One 模型？"
+    ]
   },
   {
     "id": 49,
@@ -1134,11 +1426,16 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 37,
     "source_response_type": "單選題",
-    "source_location": "試煉_2 第20題"
+    "source_location": "試煉_2 第20題",
+    "reference_question_ids": [
+      "community-e31036c8-d1a7-4212-8818-715306385626-4",
+      "friend-os-u5-049"
+    ]
   },
   {
     "id": 50,
@@ -1153,13 +1450,21 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 50,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "asdf",
       "parallelism"
+    ],
+    "reference_question_ids": [
+      "threads-088",
+      "friend-os-u5-050"
+    ],
+    "question_aliases": [
+      "________ refers to a system's ability to support the progression of more than one task at the same time. (Please answer in lowercase English)"
     ]
   },
   {
@@ -1180,11 +1485,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 59,
     "source_response_type": "單選題",
-    "source_location": "試煉_4 第22題"
+    "source_location": "試煉_4 第22題",
+    "reference_question_ids": [
+      "threads-039",
+      "threads-075"
+    ],
+    "question_aliases": [
+      "在多核心程式設計中，將相同資料集的子集分配到多個核心上，並在每個核心上執行相同的操作，這屬於哪種類型的平行處理？"
+    ]
   },
   {
     "id": 52,
@@ -1204,10 +1517,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": "threads-026",
-    "source_response_type": "單選題"
+    "source_response_type": "單選題",
+    "reference_question_ids": [
+      "threads-026",
+      "threads-027"
+    ]
   },
   {
     "id": 53,
@@ -1222,11 +1540,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 79,
     "source_response_type": "填空題",
-    "source_location": "試煉_7 第23題"
+    "source_location": "試煉_7 第23題",
+    "reference_question_ids": [
+      "threads-012",
+      "friend-os-u5-053"
+    ],
+    "question_aliases": [
+      "創建執行緒的成本比程序(process)少，且執行緒切換的開銷也低於________。 (請用小寫英文回答 文字間留一個空白)"
+    ]
   },
   {
     "id": 54,
@@ -1241,11 +1567,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 69,
     "source_response_type": "填空題",
-    "source_location": "試煉_6 第2題"
+    "source_location": "試煉_6 第2題",
+    "reference_question_ids": [
+      "friend-os-u5-054"
+    ],
+    "question_aliases": [
+      "________ refers to the distribution of subsets of the same data set to multiple cores, with the same operation being performed on each core.(Please answer in lowercase English, leaving a space between each word)"
+    ]
   },
   {
     "id": 55,
@@ -1265,11 +1598,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 36,
     "source_response_type": "單選題",
-    "source_location": "試煉_2 第18題"
+    "source_location": "試煉_2 第18題",
+    "reference_question_ids": [
+      "community-e31036c8-d1a7-4212-8818-715306385626-3"
+    ]
   },
   {
     "id": 56,
@@ -1289,11 +1626,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 60,
     "source_response_type": "單選題",
-    "source_location": "試煉_4 第24題"
+    "source_location": "試煉_4 第24題",
+    "reference_question_ids": [
+      "community-7c45c6a2-c776-4e3f-b48a-2c31f8739357-2"
+    ],
+    "question_aliases": [
+      "Amdahl's Law 主要用來識別什麼樣的效能提升？"
+    ]
   },
   {
     "id": 57,
@@ -1313,13 +1657,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 66,
     "source_response_type": "多選題",
     "source_location": "試煉_5 第13題",
     "question_aliases": [
-      "在多執行緒環境中，處理信號的方式可以有哪些種？"
+      "在多執行緒環境中，處理信號的方式可以有哪些種？",
+      "在多執行緒環境中，處理信號的方式可以有哪幾種？"
+    ],
+    "reference_question_ids": [
+      "threads-086",
+      "community-2aa0ecfb-6355-4e00-bd7a-6bfc5023d145-3"
     ]
   },
   {
@@ -1340,11 +1690,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 58,
     "source_response_type": "多選題",
-    "source_location": "試煉_4 第20題"
+    "source_location": "試煉_4 第20題",
+    "reference_question_ids": [
+      "threads-005"
+    ],
+    "question_aliases": [
+      "單執行緒程序和多執行緒程序共享哪些資源？"
+    ]
   },
   {
     "id": 59,
@@ -1364,11 +1721,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 51,
     "source_response_type": "多選題",
-    "source_location": "試煉_3 第22題"
+    "source_location": "試煉_3 第22題",
+    "reference_question_ids": [
+      "threads-045"
+    ],
+    "question_aliases": [
+      "隱式執行緒（Implicit Threading）的優勢在於？"
+    ]
   },
   {
     "id": 60,
@@ -1383,12 +1747,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 60,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "asfd"
+    ],
+    "reference_question_ids": [
+      "friend-os-u5-060"
+    ],
+    "question_aliases": [
+      "There are three major user-level thread libraries: POSIX Pthreads, Win32 threads, and ________.(Please answer in lowercase English, leaving a space between each word)"
     ]
   },
   {
@@ -1409,11 +1780,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 22,
     "source_response_type": "單選題",
-    "source_location": "試煉_1 第22題"
+    "source_location": "試煉_1 第22題",
+    "reference_question_ids": [
+      "threads-023"
+    ],
+    "question_aliases": [
+      "在 Windows 系統中，每個執行緒的「上下文（context）」不包含下列哪一項？"
+    ]
   },
   {
     "id": 62,
@@ -1433,11 +1811,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 92,
     "source_response_type": "單選題",
-    "source_location": "Unit5全部題目 058"
+    "source_location": "Unit5全部題目 058",
+    "reference_question_ids": [
+      "threads-044"
+    ]
   },
   {
     "id": 63,
@@ -1457,11 +1839,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 38,
     "source_response_type": "多選題",
-    "source_location": "試煉_2 第21題"
+    "source_location": "試煉_2 第21題",
+    "reference_question_ids": [
+      "threads-031"
+    ],
+    "question_aliases": [
+      "執行緒本地儲存（Thread-local storage TLS）與區域變數有何不同？"
+    ]
   },
   {
     "id": 64,
@@ -1481,11 +1870,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 74,
     "source_response_type": "單選題",
-    "source_location": "試煉_6 第19題"
+    "source_location": "試煉_6 第19題",
+    "reference_question_ids": [
+      "community-397ef7d1-7c02-405d-adc2-a72f0d2d3d5f-2"
+    ]
   },
   {
     "id": 65,
@@ -1500,11 +1893,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 25,
     "source_response_type": "填空題",
-    "source_location": "試煉_1 第25題"
+    "source_location": "試煉_1 第25題",
+    "reference_question_ids": [
+      "threads-070",
+      "friend-os-u5-065"
+    ],
+    "question_aliases": [
+      "________ 用於在 UNIX 系統中通知程序發生特定事件。(請用小寫英文回答)"
+    ]
   },
   {
     "id": 66,
@@ -1524,11 +1925,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 86,
     "source_response_type": "單選題",
-    "source_location": "Unit5全部題目 029"
+    "source_location": "Unit5全部題目 029",
+    "reference_question_ids": [
+      "threads-030"
+    ]
   },
   {
     "id": 67,
@@ -1543,12 +1948,20 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 67,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "asdf"
+    ],
+    "reference_question_ids": [
+      "threads-090",
+      "friend-os-u5-067"
+    ],
+    "question_aliases": [
+      "In the ________ model, each user-level thread is mapped to one kernel thread. (Please answer in lowercase English, connecting letters with hyphens)"
     ]
   },
   {
@@ -1569,11 +1982,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 33,
     "source_response_type": "單選題",
-    "source_location": "試煉_2 第15題"
+    "source_location": "試煉_2 第15題",
+    "reference_question_ids": [
+      "threads-033"
+    ],
+    "question_aliases": [
+      "下列哪一個不是主要的使用者層級執行緒函式庫？"
+    ]
   },
   {
     "id": 69,
@@ -1593,11 +2013,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 30,
     "source_response_type": "單選題",
-    "source_location": "試煉_2 第11題"
+    "source_location": "試煉_2 第11題",
+    "reference_question_ids": [
+      "threads-010"
+    ],
+    "question_aliases": [
+      "執行緒（Thread）與程序（Process）相比，其創建成本有何不同？"
+    ]
   },
   {
     "id": 70,
@@ -1612,11 +2039,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 42,
     "source_response_type": "填空題",
-    "source_location": "試煉_2 第25題"
+    "source_location": "試煉_2 第25題",
+    "reference_question_ids": [
+      "threads-028",
+      "friend-os-u5-070"
+    ],
+    "question_aliases": [
+      "________ 允許每個執行緒擁有自己的資料副本。（請用小寫英文回答，字母間留一個空白）"
+    ]
   },
   {
     "id": 71,
@@ -1636,11 +2071,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 80,
     "source_response_type": "單選題",
-    "source_location": "試煉_7 第25題"
+    "source_location": "試煉_7 第25題",
+    "reference_question_ids": [
+      "community-52b2bd1a-7b5d-4e33-ad3d-1c79791ff340-1"
+    ]
   },
   {
     "id": 72,
@@ -1655,12 +2094,20 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 72,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "asdf"
+    ],
+    "reference_question_ids": [
+      "threads-013",
+      "friend-os-u5-072"
+    ],
+    "question_aliases": [
+      "In the ________ model, many user-level threads can be mapped to many kernel threads. (Please answer in lowercase English, connecting letters with hyphens)"
     ]
   },
   {
@@ -1681,11 +2128,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 2,
     "source_response_type": "多選題",
-    "source_location": "試煉_1 第2題"
+    "source_location": "試煉_1 第2題",
+    "reference_question_ids": [
+      "threads-060"
+    ],
+    "question_aliases": [
+      "Many-to-One 模型有何特性？"
+    ]
   },
   {
     "id": 74,
@@ -1705,11 +2159,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 47,
     "source_response_type": "單選題",
-    "source_location": "試煉_3 第14題"
+    "source_location": "試煉_3 第14題",
+    "reference_question_ids": [
+      "community-7194cbec-f4e8-4431-b237-d8864d7ca8ea-2"
+    ],
+    "question_aliases": [
+      "執行緒取消（Thread Cancellation）的兩種方法中，哪一種會立即終止目標執行緒？"
+    ]
   },
   {
     "id": 75,
@@ -1729,11 +2190,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 70,
     "source_response_type": "多選題",
-    "source_location": "試煉_6 第3題"
+    "source_location": "試煉_6 第3題",
+    "reference_question_ids": [
+      "community-397ef7d1-7c02-405d-adc2-a72f0d2d3d5f-1"
+    ]
   },
   {
     "id": 76,
@@ -1748,11 +2213,20 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 71,
     "source_response_type": "填空題",
-    "source_location": "試煉_6 第4題"
+    "source_location": "試煉_6 第4題",
+    "reference_question_ids": [
+      "threads-006",
+      "threads-081",
+      "friend-os-u5-076"
+    ],
+    "question_aliases": [
+      "多執行緒應用程式的優點之一是 ________，因為即使程序的一部分被阻塞，程式碼也能繼續執行。（請用小寫英文回答）"
+    ]
   },
   {
     "id": 77,
@@ -1767,11 +2241,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 12,
     "source_response_type": "填空題",
-    "source_location": "試煉_1 第12題"
+    "source_location": "試煉_1 第12題",
+    "reference_question_ids": [
+      "friend-os-u5-077"
+    ],
+    "question_aliases": [
+      "________ refers to the distribution of threads to different cores, with each thread performing a unique task.(Please answer in lowercase English, leaving a space between each word)"
+    ]
   },
   {
     "id": 78,
@@ -1791,11 +2272,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 10,
     "source_response_type": "單選題",
-    "source_location": "試煉_1 第10題"
+    "source_location": "試煉_1 第10題",
+    "reference_question_ids": [
+      "threads-035"
+    ]
   },
   {
     "id": 79,
@@ -1815,11 +2300,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 61,
     "source_response_type": "多選題",
-    "source_location": "試煉_5 第2題"
+    "source_location": "試煉_5 第2題",
+    "reference_question_ids": [
+      "threads-021"
+    ]
   },
   {
     "id": 80,
@@ -1834,13 +2323,20 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 16,
     "source_response_type": "填空題",
     "source_location": "試煉_1 第16題",
     "question_aliases": [
-      "Amdahl's Law 的公式為:speedup? (1/(S+(1-S)/N))   ,N 代表 [__1__] 的數量。(請用英文小寫回答,單字間留一空白)"
+      "Amdahl's Law 的公式為:speedup? (1/(S+(1-S)/N))   ,N 代表 [__1__] 的數量。(請用英文小寫回答,單字間留一空白)",
+      "Amdahl's Law 的公式為 speedup = 1/(S+(1-S)/N)，N 代表 ________ 的數量。（請用英文小寫回答，單字間留一空白）",
+      "Amdahl's Law 的公式為：speedup? (1/(S+(1-S)/N)) ，N 代表________的數量。(請用英文小寫回答，單字間留一空白)"
+    ],
+    "reference_question_ids": [
+      "threads-042",
+      "friend-os-u5-080"
     ]
   },
   {
@@ -1861,10 +2357,14 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": "threads-007",
-    "source_response_type": "單選題"
+    "source_response_type": "單選題",
+    "reference_question_ids": [
+      "threads-007"
+    ]
   },
   {
     "id": 82,
@@ -1879,11 +2379,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 17,
     "source_response_type": "填空題",
-    "source_location": "試煉_1 第17題"
+    "source_location": "試煉_1 第17題",
+    "reference_question_ids": [
+      "threads-076",
+      "friend-os-u5-082"
+    ],
+    "question_aliases": [
+      "________ 指將相同資料集的子集分配到多個核心上，並在每個核心上執行相同的操作。（請用英文小寫回答，單字間留一空白）"
+    ]
   },
   {
     "id": 83,
@@ -1903,11 +2411,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 96,
     "source_response_type": "多選題",
-    "source_location": "Unit5全部題目 073"
+    "source_location": "Unit5全部題目 073",
+    "reference_question_ids": [
+      "threads-073"
+    ]
   },
   {
     "id": 84,
@@ -1922,11 +2434,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 13,
     "source_response_type": "填空題",
-    "source_location": "試煉_1 第13題"
+    "source_location": "試煉_1 第13題",
+    "reference_question_ids": [
+      "threads-089",
+      "friend-os-u5-084"
+    ],
+    "question_aliases": [
+      "________ refers to a system's ability to execute more than one task simultaneously. (Please answer in lowercase English)"
+    ]
   },
   {
     "id": 85,
@@ -1946,11 +2466,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 54,
     "source_response_type": "單選題",
-    "source_location": "試煉_4 第9題"
+    "source_location": "試煉_4 第9題",
+    "reference_question_ids": [
+      "threads-020",
+      "threads-091"
+    ],
+    "question_aliases": [
+      "下列哪一個作業系統的執行緒實作採用 One-to-One 模型？"
+    ]
   },
   {
     "id": 86,
@@ -1965,11 +2493,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 45,
     "source_response_type": "填空題",
-    "source_location": "試煉_3 第9題"
+    "source_location": "試煉_3 第9題",
+    "reference_question_ids": [
+      "threads-003",
+      "friend-os-u5-086"
+    ],
+    "question_aliases": [
+      "________ 是指一個系統可以支援一個以上的任務同時取得進展。（請用小寫英文回答）"
+    ]
   },
   {
     "id": 87,
@@ -1989,11 +2525,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 50,
     "source_response_type": "多選題",
-    "source_location": "試煉_3 第21題"
+    "source_location": "試煉_3 第21題",
+    "reference_question_ids": [
+      "threads-021"
+    ],
+    "question_aliases": [
+      "在 Windows 執行緒的資料結構中，使用者空間（user space）包含哪些區塊？"
+    ]
   },
   {
     "id": 88,
@@ -2013,11 +2556,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 97,
     "source_response_type": "單選題",
-    "source_location": "Unit5全部題目 082"
+    "source_location": "Unit5全部題目 082",
+    "reference_question_ids": [
+      "threads-082"
+    ]
   },
   {
     "id": 89,
@@ -2037,11 +2584,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 5,
     "source_response_type": "單選題",
-    "source_location": "試煉_1 第5題"
+    "source_location": "試煉_1 第5題",
+    "reference_question_ids": [
+      "threads-026"
+    ]
   },
   {
     "id": 90,
@@ -2061,11 +2612,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 63,
     "source_response_type": "多選題",
-    "source_location": "試煉_5 第6題"
+    "source_location": "試煉_5 第6題",
+    "reference_question_ids": [
+      "threads-061"
+    ],
+    "question_aliases": [
+      "在 Java 中，創建執行緒的方法有哪兩種？"
+    ]
   },
   {
     "id": 91,
@@ -2085,11 +2643,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 44,
     "source_response_type": "多選題",
-    "source_location": "試煉_3 第8題"
+    "source_location": "試煉_3 第8題",
+    "reference_question_ids": [
+      "community-7194cbec-f4e8-4431-b237-d8864d7ca8ea-1"
+    ]
   },
   {
     "id": 92,
@@ -2104,11 +2666,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 64,
     "source_response_type": "填空題",
-    "source_location": "試煉_5 第7題"
+    "source_location": "試煉_5 第7題",
+    "reference_question_ids": [
+      "threads-055",
+      "friend-os-u5-092"
+    ],
+    "question_aliases": [
+      "________ 是 CPU 利用率的基本單位，也是多執行緒電腦系統的基礎。（請用小寫英文回答）"
+    ]
   },
   {
     "id": 93,
@@ -2123,11 +2693,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 32,
     "source_response_type": "填空題",
-    "source_location": "試煉_2 第13題"
+    "source_location": "試煉_2 第13題",
+    "reference_question_ids": [
+      "threads-002",
+      "friend-os-u5-093"
+    ],
+    "question_aliases": [
+      "________ 是指一個系統可以同時執行一個以上的任務。（請用小寫英文回答）"
+    ]
   },
   {
     "id": 94,
@@ -2142,11 +2720,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 95,
     "source_response_type": "填空題",
-    "source_location": "Unit5全部題目 070"
+    "source_location": "Unit5全部題目 070",
+    "reference_question_ids": [
+      "friend-os-u5-094"
+    ],
+    "question_aliases": [
+      "________ are used in UNIX systems to notify a process that a specific event has occurred.(Please answer in lowercase English)"
+    ]
   },
   {
     "id": 95,
@@ -2166,11 +2751,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 14,
     "source_response_type": "多選題",
-    "source_location": "試煉_1 第14題"
+    "source_location": "試煉_1 第14題",
+    "reference_question_ids": [
+      "friend-os-u5-095"
+    ]
   },
   {
     "id": 96,
@@ -2190,10 +2779,14 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": "threads-071",
-    "source_response_type": "單選題"
+    "source_response_type": "單選題",
+    "reference_question_ids": [
+      "threads-071"
+    ]
   },
   {
     "id": 97,
@@ -2208,11 +2801,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 34,
     "source_response_type": "填空題",
-    "source_location": "試煉_2 第16題"
+    "source_location": "試煉_2 第16題",
+    "reference_question_ids": [
+      "threads-036",
+      "friend-os-u5-097"
+    ],
+    "question_aliases": [
+      "________ 是一種終止執行緒的方法，它允許目標執行緒定期檢查是否應被取消。（請用小寫英文回答，字母間留一個空白）"
+    ]
   },
   {
     "id": 98,
@@ -2232,11 +2833,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 27,
     "source_response_type": "多選題",
-    "source_location": "試煉_2 第3題"
+    "source_location": "試煉_2 第3題",
+    "reference_question_ids": [
+      "threads-001"
+    ],
+    "question_aliases": [
+      "下列關於平行性（Parallelism）與並行性（Concurrency）的敘述，哪些是正確的？"
+    ]
   },
   {
     "id": 99,
@@ -2277,11 +2885,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 88,
     "source_response_type": "多選題",
-    "source_location": "Unit5全部題目 043"
+    "source_location": "Unit5全部題目 043",
+    "reference_question_ids": [
+      "threads-073"
+    ]
   },
   {
     "id": 101,
@@ -2296,11 +2908,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 93,
     "source_response_type": "填空題",
-    "source_location": "Unit5全部題目 065"
+    "source_location": "Unit5全部題目 065",
+    "reference_question_ids": [
+      "friend-os-u5-101",
+      "threads-065"
+    ],
+    "question_aliases": [
+      "Windows threads implement the ________ model.(Please answer in lowercase English, connecting letters with hyphens)"
+    ]
   },
   {
     "id": 102,
@@ -2321,7 +2941,8 @@
     "answer_basis": "provided_source_answer",
     "sources": [
       "作業系統U5.txt",
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 102,
     "source_response_type": "複選",
@@ -2329,7 +2950,10 @@
     "completeness_verification": {
       "reference_question_id": "threads-050",
       "method": "與參考網站正式英文選項翻譯逐項一致，三個答案亦對應中文原答案。"
-    }
+    },
+    "reference_question_ids": [
+      "friend-os-u5-102"
+    ]
   },
   {
     "id": 103,
@@ -2344,11 +2968,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 77,
     "source_response_type": "填空題",
-    "source_location": "試煉_7 第8題"
+    "source_location": "試煉_7 第8題",
+    "reference_question_ids": [
+      "threads-004",
+      "friend-os-u5-103"
+    ],
+    "question_aliases": [
+      "Because threads share a process's resources, ________ is easier to achieve than shared memory or message passing. (Please answer in lowercase English, leaving a space between each word)"
+    ]
   },
   {
     "id": 104,
@@ -2363,11 +2995,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 81,
     "source_response_type": "填空題",
-    "source_location": "Unit5全部題目 006"
+    "source_location": "Unit5全部題目 006",
+    "reference_question_ids": [
+      "threads-006",
+      "friend-os-u5-104"
+    ],
+    "question_aliases": [
+      "One of the advantages of multithreaded applications is ________, as code can continue to run even if part of the process is blocked. (Please answer in lowercase English)"
+    ]
   },
   {
     "id": 105,
@@ -2387,10 +3027,14 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": "threads-007",
-    "source_response_type": "單選題"
+    "source_response_type": "單選題",
+    "reference_question_ids": [
+      "threads-007"
+    ]
   },
   {
     "id": 106,
@@ -2433,11 +3077,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 3,
     "source_response_type": "多選題",
-    "source_location": "試煉_1 第3題"
+    "source_location": "試煉_1 第3題",
+    "reference_question_ids": [
+      "threads-022"
+    ],
+    "question_aliases": [
+      "在 Windows 執行緒的資料結構中，核心空間（kernel space）包含哪些區塊？"
+    ]
   },
   {
     "id": 108,
@@ -2457,11 +3108,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 91,
     "source_response_type": "單選題",
-    "source_location": "Unit5全部題目 054"
+    "source_location": "Unit5全部題目 054",
+    "reference_question_ids": [
+      "threads-068"
+    ]
   },
   {
     "id": 109,
@@ -2481,10 +3136,14 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027"
+      "https://yocheng06.github.io/course-library/os.html?v=theme-toggle-20261027",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": "threads-020",
-    "source_response_type": "單選題"
+    "source_response_type": "單選題",
+    "reference_question_ids": [
+      "threads-020"
+    ]
   },
   {
     "id": 110,
@@ -2504,11 +3163,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 57,
     "source_response_type": "多選題",
-    "source_location": "試煉_4 第17題"
+    "source_location": "試煉_4 第17題",
+    "reference_question_ids": [
+      "community-7c45c6a2-c776-4e3f-b48a-2c31f8739357-1"
+    ]
   },
   {
     "id": 111,
@@ -2523,11 +3186,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 90,
     "source_response_type": "填空題",
-    "source_location": "Unit5全部題目 049"
+    "source_location": "Unit5全部題目 049",
+    "reference_question_ids": [
+      "threads-049",
+      "friend-os-u5-111"
+    ],
+    "question_aliases": [
+      "In the ________ model, a number of threads are created and placed in a pool to await work. (Please answer in lowercase English, leaving a space between each word)"
+    ]
   },
   {
     "id": 112,
@@ -2542,11 +3213,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 112,
     "source_response_type": "填空",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "reference_question_ids": [
+      "friend-os-u5-112"
+    ],
+    "question_aliases": [
+      "________ is the basic unit of CPU utilization and the foundation of multithreaded computer systems.(Please answer in lowercase English)"
+    ]
   },
   {
     "id": 113,
@@ -2566,11 +3244,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 52,
     "source_response_type": "多選題",
-    "source_location": "試煉_4 第6題"
+    "source_location": "試煉_4 第6題",
+    "reference_question_ids": [
+      "friend-os-u5-113"
+    ]
   },
   {
     "id": 114,
@@ -2614,11 +3296,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 53,
     "source_response_type": "單選題",
-    "source_location": "試煉_4 第8題"
+    "source_location": "試煉_4 第8題",
+    "reference_question_ids": [
+      "threads-051"
+    ]
   },
   {
     "id": 116,
@@ -2662,11 +3348,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 75,
     "source_response_type": "多選題",
-    "source_location": "試煉_6 第22題"
+    "source_location": "試煉_6 第22題",
+    "reference_question_ids": [
+      "community-397ef7d1-7c02-405d-adc2-a72f0d2d3d5f-3"
+    ]
   },
   {
     "id": 118,
@@ -2686,11 +3376,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 29,
     "source_response_type": "多選題",
-    "source_location": "試煉_2 第6題"
+    "source_location": "試煉_2 第6題",
+    "reference_question_ids": [
+      "community-e31036c8-d1a7-4212-8818-715306385626-1"
+    ]
   },
   {
     "id": 119,
@@ -2705,11 +3399,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 68,
     "source_response_type": "填空題",
-    "source_location": "試煉_5 第25題"
+    "source_location": "試煉_5 第25題",
+    "reference_question_ids": [
+      "friend-os-u5-119"
+    ],
+    "question_aliases": [
+      "________ is an Apple technology used in the Mac OS X and iOS operating systems that allows for the identification of parallel regions and management of thread details.(Please answer in lowercase English, leaving a space between each word)"
+    ]
   },
   {
     "id": 120,
@@ -2724,11 +3425,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 84,
     "source_response_type": "填空題",
-    "source_location": "Unit5全部題目 012"
+    "source_location": "Unit5全部題目 012",
+    "reference_question_ids": [
+      "friend-os-u5-120"
+    ],
+    "question_aliases": [
+      "The cost of creating a thread is less than a process, and the overhead of a thread switch is also lower than a ________.(Please answer in lowercase English with a blank between words)"
+    ]
   },
   {
     "id": 121,
@@ -2743,11 +3451,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 40,
     "source_response_type": "填空題",
-    "source_location": "試煉_2 第23題"
+    "source_location": "試煉_2 第23題",
+    "reference_question_ids": [
+      "threads-047"
+    ],
+    "question_aliases": [
+      "________ 技術的流行，是因為當執行緒數量增加時，程式的正確性變得更難以確保。（請用小寫英文回答，字母間留一個空白）"
+    ]
   },
   {
     "id": 122,
@@ -2767,11 +3482,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 48,
     "source_response_type": "多選題",
-    "source_location": "試煉_3 第15題"
+    "source_location": "試煉_3 第15題",
+    "reference_question_ids": [
+      "community-7194cbec-f4e8-4431-b237-d8864d7ca8ea-3"
+    ]
   },
   {
     "id": 123,
@@ -2791,11 +3510,15 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 39,
     "source_response_type": "多選題",
-    "source_location": "試煉_2 第22題"
+    "source_location": "試煉_2 第22題",
+    "reference_question_ids": [
+      "threads-037"
+    ]
   },
   {
     "id": 124,
@@ -2810,12 +3533,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U5.txt"
+      "作業系統U5.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 124,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "asd"
+    ],
+    "reference_question_ids": [
+      "friend-os-u5-124"
+    ],
+    "question_aliases": [
+      "________ allows each thread to have its own copy of the data.(Please answer in lowercase English, leaving a space between each word)"
     ]
   },
   {
@@ -2831,11 +3561,18 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 1,
     "source_response_type": "填空題",
-    "source_location": "試煉_1 第1題"
+    "source_location": "試煉_1 第1題",
+    "reference_question_ids": [
+      "friend-os-u5-125"
+    ],
+    "question_aliases": [
+      "Amdahl's Law is formulated as: speedup = 1/(S+(1-S)/N), where S represents the ________ of the application.(Please answer in lowercase English, leaving a space between each word)"
+    ]
   },
   {
     "id": 126,
@@ -2850,10 +3587,39 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt"
+      "作業系統_Unit5_試煉1至7_統整去重_題目選項答案.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 9,
     "source_response_type": "填空題",
-    "source_location": "試煉_1 第9題"
+    "source_location": "試煉_1 第9題",
+    "reference_question_ids": [
+      "community-2dbc9c78-9179-4ed1-a8f6-412e2d28d934-1"
+    ],
+    "question_aliases": [
+      "In the ____________ model, many user-level threads are mapped to a single kernel thread.(Please answer in lowercase English, connecting letters with hyphens)"
+    ]
+  },
+  {
+    "id": 127,
+    "title": "",
+    "question": "What is POSIX Pthreads?",
+    "options": [
+      "一個用於執行緒創建和同步的 API 標準",
+      "一個特定的執行緒實作",
+      "一個 Windows 專用的執行緒函式庫",
+      "一個只在 Java 虛擬機中使用的函式庫"
+    ],
+    "correct_answer": "一個用於執行緒創建和同步的 API 標準",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "threads-078"
+    ]
   }
 ]

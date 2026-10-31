@@ -2,11 +2,11 @@ import { mergeQuestionVersions } from './question-versions.js?v=20261030-replace
 import { createQuestionLinkController } from './question-links.js?v=20261030-batch-v2';
 import { initPractice } from './practice.js?v=20261031-practice1';
 import { PRACTICE_UNITS } from './practice-core.js?v=20261031-practice1';
-import { curatePublishedQuestions } from './question-curation.js?v=20261030-replace1';
+import { curatePublishedQuestions } from './question-curation.js?v=20261031-bank1';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
 import { initNavigation } from "./navigation.js";
-import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261030-os34";
+import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261031-bank1";
 import { initMusic } from "./music.js";
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261030-replace1";
 import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';

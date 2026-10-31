@@ -1,0 +1,631 @@
+{
+  "schema": 1,
+  "checked_on": "2026-10-31",
+  "reference": "https://yocheng06.github.io/course-library/",
+  "scope": [
+    {
+      "subject": "algorithm",
+      "unit": "u2",
+      "before": 60,
+      "after": 63,
+      "added": 3
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u3",
+      "before": 60,
+      "after": 62,
+      "added": 2
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u4",
+      "before": 59,
+      "after": 60,
+      "added": 1
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "before": 60,
+      "after": 60,
+      "added": 0
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u6",
+      "before": 71,
+      "after": 74,
+      "added": 3
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u7",
+      "before": 60,
+      "after": 60,
+      "added": 0
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "before": 23,
+      "after": 82,
+      "added": 59
+    },
+    {
+      "subject": "os",
+      "unit": "u3",
+      "before": 291,
+      "after": 294,
+      "added": 3
+    },
+    {
+      "subject": "os",
+      "unit": "u4",
+      "before": 147,
+      "after": 147,
+      "added": 0
+    },
+    {
+      "subject": "os",
+      "unit": "u5",
+      "before": 126,
+      "after": 127,
+      "added": 1
+    },
+    {
+      "subject": "os",
+      "unit": "u6",
+      "before": 233,
+      "after": 234,
+      "added": 1
+    }
+  ],
+  "added": [
+    {
+      "subject": "algorithm",
+      "unit": "u2",
+      "id": 61,
+      "reference_id": "L2-007"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u2",
+      "id": 62,
+      "reference_id": "L2-029"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u2",
+      "id": 63,
+      "reference_id": "L2-056"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u3",
+      "id": 61,
+      "reference_id": "L3-030"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u3",
+      "id": 62,
+      "reference_id": "L3-009"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u4",
+      "id": 60,
+      "reference_id": "L4-014"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u6",
+      "id": 61,
+      "reference_id": "L6-029-original-O"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u6",
+      "id": 62,
+      "reference_id": "L6-009"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u6",
+      "id": 63,
+      "reference_id": "L6-064"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1,
+      "reference_id": "basics-1"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 2,
+      "reference_id": "basics-2"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 3,
+      "reference_id": "basics-3"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 4,
+      "reference_id": "community-a353a3c9-59a1-4dc4-8cc3-c70d12a6738a-2"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 5,
+      "reference_id": "basics-6"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 6,
+      "reference_id": "basics-4"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 7,
+      "reference_id": "basics-5"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 8,
+      "reference_id": "basics-7"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 9,
+      "reference_id": "community-b5fa3636-bfa3-4439-80ab-b63b02f97307-7"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 10,
+      "reference_id": "basics-8"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 11,
+      "reference_id": "basics-9"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 12,
+      "reference_id": "basics-44"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 13,
+      "reference_id": "community-b5fa3636-bfa3-4439-80ab-b63b02f97307-6"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 14,
+      "reference_id": "basics-48"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 15,
+      "reference_id": "basics-52"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 16,
+      "reference_id": "basics-60"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 17,
+      "reference_id": "basics-11"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 18,
+      "reference_id": "basics-14"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 19,
+      "reference_id": "basics-15"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 20,
+      "reference_id": "basics-53"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 21,
+      "reference_id": "community-2215fba3-0142-4ff9-87fd-e7434b627f12-4"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 22,
+      "reference_id": "community-b218102d-60b5-451f-8ae6-4d074ce7aa32-3"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 23,
+      "reference_id": "community-b218102d-60b5-451f-8ae6-4d074ce7aa32-1"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 24,
+      "reference_id": "basics-59"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 25,
+      "reference_id": "basics-17"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 26,
+      "reference_id": "basics-66"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 27,
+      "reference_id": "basics-18"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 28,
+      "reference_id": "basics-16"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 29,
+      "reference_id": "basics-19"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 30,
+      "reference_id": "basics-20"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 31,
+      "reference_id": "basics-54"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 32,
+      "reference_id": "basics-22"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 33,
+      "reference_id": "basics-24"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 34,
+      "reference_id": "basics-25"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 35,
+      "reference_id": "basics-50"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 36,
+      "reference_id": "basics-64"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 37,
+      "reference_id": "basics-26"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 38,
+      "reference_id": "basics-27"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 39,
+      "reference_id": "basics-28"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 40,
+      "reference_id": "basics-49"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 41,
+      "reference_id": "basics-30"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 42,
+      "reference_id": "community-719cea30-56ae-4d9c-b3c2-e5cd5a70e812-10"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 43,
+      "reference_id": "community-2215fba3-0142-4ff9-87fd-e7434b627f12-3"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 44,
+      "reference_id": "basics-32"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 45,
+      "reference_id": "basics-31"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 46,
+      "reference_id": "basics-62"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 47,
+      "reference_id": "basics-33"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 48,
+      "reference_id": "community-719cea30-56ae-4d9c-b3c2-e5cd5a70e812-7"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 49,
+      "reference_id": "basics-35"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 50,
+      "reference_id": "basics-34"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 51,
+      "reference_id": "basics-37"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 52,
+      "reference_id": "basics-67"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 53,
+      "reference_id": "community-b5fa3636-bfa3-4439-80ab-b63b02f97307-2"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 54,
+      "reference_id": "basics-36"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 55,
+      "reference_id": "community-a353a3c9-59a1-4dc4-8cc3-c70d12a6738a-1"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 56,
+      "reference_id": "basics-39"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 57,
+      "reference_id": "basics-51"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 58,
+      "reference_id": "basics-40"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 59,
+      "reference_id": "basics-41"
+    },
+    {
+      "subject": "os",
+      "unit": "u3",
+      "id": 319,
+      "reference_id": "friend-os-u3-062"
+    },
+    {
+      "subject": "os",
+      "unit": "u3",
+      "id": 320,
+      "reference_id": "community-e462552b-cd2b-4d07-b30f-cabf50893593-6"
+    },
+    {
+      "subject": "os",
+      "unit": "u3",
+      "id": 321,
+      "reference_id": "community-239e1711-48d9-41ae-aede-76dd97d31338-4"
+    },
+    {
+      "subject": "os",
+      "unit": "u5",
+      "id": 127,
+      "reference_id": "threads-078"
+    },
+    {
+      "subject": "os",
+      "unit": "u6",
+      "id": 289,
+      "reference_id": "community-c8fd251c-2f96-418c-b6ec-ce209abb0975-1"
+    }
+  ],
+  "updated_existing": 170,
+  "source_review": [
+    {
+      "subject": "algorithm",
+      "unit": "u2",
+      "reference_id": "L2-026",
+      "reason": "來源答案有疑點，保留現有題庫答案"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u3",
+      "reference_id": "L3-033",
+      "reason": "來源答案有疑點，保留現有題庫答案"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "reference_id": "L5-007",
+      "reason": "來源答案有疑點，保留現有題庫答案"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "reference_id": "community-2215fba3-0142-4ff9-87fd-e7434b627f12-6",
+      "reason": "來源答案有疑點，保留現有題庫答案"
+    },
+    {
+      "subject": "os",
+      "unit": "u3",
+      "reference_id": "community-4f304e00-3bda-42c9-980e-9feda8e76af0-7",
+      "reason": "source marked for review"
+    },
+    {
+      "subject": "os",
+      "unit": "u3",
+      "reference_id": "community-e462552b-cd2b-4d07-b30f-cabf50893593-1",
+      "reason": "source marked for review"
+    },
+    {
+      "subject": "os",
+      "unit": "u3",
+      "reference_id": "community-e462552b-cd2b-4d07-b30f-cabf50893593-11",
+      "reason": "source marked for review"
+    },
+    {
+      "subject": "os",
+      "unit": "u3",
+      "reference_id": "community-e462552b-cd2b-4d07-b30f-cabf50893593-9",
+      "reason": "source marked for review"
+    },
+    {
+      "subject": "os",
+      "unit": "u4",
+      "reference_id": "process-97",
+      "reason": "來源答案有疑點，保留現有題庫答案"
+    },
+    {
+      "subject": "os",
+      "unit": "u4",
+      "reference_id": "process-21",
+      "reason": "同題同選項有不同答案，保留已核對舊答案，來源版本另待核對"
+    },
+    {
+      "subject": "os",
+      "unit": "u4",
+      "reference_id": "process-55",
+      "reason": "同題同選項有不同答案，保留已核對舊答案，來源版本另待核對"
+    },
+    {
+      "subject": "os",
+      "unit": "u4",
+      "reference_id": "process-102",
+      "reason": "同題同選項有不同答案，保留已核對舊答案，來源版本另待核對"
+    },
+    {
+      "subject": "os",
+      "unit": "u4",
+      "reference_id": "community-9e5559de-2377-43bf-8d2f-e124e2aa2bd1-1",
+      "reason": "source marked for review"
+    },
+    {
+      "subject": "os",
+      "unit": "u4",
+      "reference_id": "community-9e5559de-2377-43bf-8d2f-e124e2aa2bd1-2",
+      "reason": "source marked for review"
+    },
+    {
+      "subject": "os",
+      "unit": "u5",
+      "reference_id": "threads-018",
+      "reason": "來源答案有疑點，保留現有題庫答案"
+    },
+    {
+      "subject": "os",
+      "unit": "u5",
+      "reference_id": "threads-084",
+      "reason": "來源答案有疑點，保留現有題庫答案"
+    },
+    {
+      "subject": "os",
+      "unit": "u6",
+      "reference_id": "community-347bfabe-39d8-48b1-871e-e2da467131d4-1",
+      "reason": "source marked for review"
+    }
+  ],
+  "preserve_existing_ids": true,
+  "preserve_admin_replacements": true
+}

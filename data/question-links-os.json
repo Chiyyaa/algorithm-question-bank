@@ -11,16 +11,19 @@
       "source_id": 90,
       "target_id": 10,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
-        "type": "choice_options_missing",
+        "type": "choice",
         "question": "In operating system design, what two principles are separated to achieve maximum flexibility?",
         "options": [
-          "Policy and mechanism"
+          "Protection and security",
+          "Policy and mechanism",
+          "Kernel and user",
+          "Mechanism and architecture"
         ],
         "correct_answer": "Policy and mechanism",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "complete",
+        "source_type": "mcq"
       },
       "expected_target": {
         "type": "choice",
@@ -35,7 +38,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-90"
       ]
@@ -45,16 +48,19 @@
       "source_id": 112,
       "target_id": 39,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
-        "type": "choice_options_missing",
-        "question": "The macOS kernel combines Mach microkernel and BSD Unix parts. This\narchitecture is called:",
+        "type": "choice",
+        "question": "The macOS kernel combines Mach microkernel and BSD Unix parts. This architecture is called:",
         "options": [
-          "Hybrid system"
+          "Monolithic system",
+          "Hybrid system",
+          "Simple system",
+          "Pure microkernel system"
         ],
         "correct_answer": "Hybrid system",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "complete",
+        "source_type": "單選題"
       },
       "expected_target": {
         "type": "choice",
@@ -69,7 +75,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-72"
       ]
@@ -79,18 +85,19 @@
       "source_id": 125,
       "target_id": 14,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
-        "type": "choice_options_missing",
+        "type": "choice",
         "question": "微核心系統結構的好處有哪些？",
         "options": [
-          "更容易擴展",
           "更容易移植到新的架構",
-          "核心模式下執行的程式碼較少，因此更可靠"
+          "核心模式下執行的程式碼較少，因此更可靠",
+          "效能較高",
+          "更容易擴展"
         ],
-        "correct_answer": "更容易擴展\n更容易移植到新的架構\n核心模式下執行的程式碼較少，因此更可靠",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "correct_answer": "更容易移植到新的架構\n核心模式下執行的程式碼較少，因此更可靠\n更容易擴展",
+        "options_status": "complete",
+        "source_type": "多選題"
       },
       "expected_target": {
         "type": "choice",
@@ -105,7 +112,7 @@
         "options_status": "complete",
         "source_type": "複選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-67"
       ]
@@ -115,7 +122,7 @@
       "source_id": 127,
       "target_id": 270,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice_options_missing",
         "question": "What is the program used to obtain specific hardware configuration\ninformation to build a compiled kernel?",
@@ -123,8 +130,7 @@
           "SYSGEN"
         ],
         "correct_answer": "SYSGEN",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -139,7 +145,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-106"
       ]
@@ -149,7 +155,7 @@
       "source_id": 163,
       "target_id": 80,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "Select the three user interfaces for the operating system.",
@@ -160,7 +166,7 @@
           "API"
         ],
         "correct_answer": "CLI\nGUI\nBatch",
-        "options_status": "known_options_only",
+        "options_status": "complete",
         "source_type": "複選"
       },
       "expected_target": {
@@ -176,7 +182,7 @@
         "options_status": "complete",
         "source_type": "複選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-1"
       ]
@@ -186,16 +192,19 @@
       "source_id": 166,
       "target_id": 308,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
-        "type": "choice_options_missing",
+        "type": "choice",
         "question": "大多數現代作業系統採用哪種方法來實現可動態載入的功能？",
         "options": [
-          "Modularity"
+          "Unix structure",
+          "Single layer",
+          "Modularity",
+          "Simple structure"
         ],
         "correct_answer": "Modularity",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "complete",
+        "source_type": "mcq"
       },
       "expected_target": {
         "type": "choice",
@@ -210,7 +219,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-86",
         "https://yocheng06.github.io/course-library/os.html?question=architecture-86"
@@ -221,16 +230,19 @@
       "source_id": 174,
       "target_id": 63,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
-        "type": "choice_options_missing",
+        "type": "choice",
         "question": "哪種作業系統通常沒有同時包含 CLI 和 GUI 介面？",
         "options": [
-          "MS-DOS"
+          "Microsoft Windows",
+          "MS-DOS",
+          "Apple Mac OS X",
+          "Linux"
         ],
         "correct_answer": "MS-DOS",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "complete",
+        "source_type": "單選題"
       },
       "expected_target": {
         "type": "choice",
@@ -245,7 +257,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-7"
       ]
@@ -255,7 +267,7 @@
       "source_id": 177,
       "target_id": 96,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice_options_missing",
         "question": "In the layered approach of an operating system structure, what does layer 0 represent?",
@@ -263,8 +275,7 @@
           "Hardware"
         ],
         "correct_answer": "Hardware",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -279,7 +290,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-77"
       ]
@@ -289,7 +300,7 @@
       "source_id": 180,
       "target_id": 106,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice_options_missing",
         "question": "An important principle of operating system design is to separate policy from what?",
@@ -297,8 +308,7 @@
           "mechanism"
         ],
         "correct_answer": "mechanism",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -313,7 +323,7 @@
         "options_status": "complete",
         "source_type": "單選題"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=community-eb1592ba-0e1e-47b2-a83d-0c7992445ee9-1"
       ]
@@ -323,7 +333,7 @@
       "source_id": 186,
       "target_id": 136,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "According to the slides, what are typical user goals for an operating system?",
@@ -334,8 +344,7 @@
           "Easy to design and maintain"
         ],
         "correct_answer": "Convenient to use\nEasy to learn\nFast and safe",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -350,7 +359,7 @@
         "options_status": "complete",
         "source_type": "複選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-93"
       ]
@@ -360,7 +369,7 @@
       "source_id": 191,
       "target_id": 218,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice_options_missing",
         "question": "The API is used to:",
@@ -368,8 +377,7 @@
           "Provides an interface for programs to call the OS"
         ],
         "correct_answer": "Provides an interface for programs to call the OS",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -384,7 +392,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-47"
       ]
@@ -394,7 +402,7 @@
       "source_id": 225,
       "target_id": 69,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice_options_missing",
         "question": "Which of the following operating systems include both CLI and GUI interfaces?",
@@ -404,8 +412,7 @@
           "Linux"
         ],
         "correct_answer": "Microsoft Windows\nApple Mac OS X\nLinux",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -420,7 +427,7 @@
         "options_status": "complete",
         "source_type": "複選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-8"
       ]
@@ -430,7 +437,7 @@
       "source_id": 247,
       "target_id": 15,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "What are the three general methods used to pass parameters to the operating system?",
@@ -441,8 +448,7 @@
           "Pass parameters via network packets"
         ],
         "correct_answer": "Pass parameters in registers\nStore parameters in a block/table in memory\nPush/pop parameters onto/off the stack",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -457,7 +463,7 @@
         "options_status": "complete",
         "source_type": "多選題"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=community-dcd2e755-8451-456a-9d22-357dd584f328-3"
       ]
@@ -467,7 +473,7 @@
       "source_id": 273,
       "target_id": 102,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice_options_missing",
         "question": "What are the common characteristics of Command-Line Interfaces (CLI) or command interpreters?",
@@ -477,8 +483,7 @@
           "Multiple flavors implemented, known as shells"
         ],
         "correct_answer": "Sometimes implemented as system programs\nSometimes implemented directly in kernel\nMultiple flavors implemented, known as shells",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -493,7 +498,7 @@
         "options_status": "complete",
         "source_type": "多選題"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-11"
       ]
@@ -503,7 +508,7 @@
       "source_id": 281,
       "target_id": 98,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "Which programming language is most commonly used to write modern operating systems?",
@@ -512,8 +517,7 @@
           "JavaScript"
         ],
         "correct_answer": "C",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -528,7 +532,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-97"
       ]
@@ -538,17 +542,19 @@
       "source_id": 292,
       "target_id": 202,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "Which operating system architecture moves most functionality out of the kernel?",
         "options": [
-          "Microkernel",
-          "Hybrid"
+          "Monolithic",
+          "Hybrid",
+          "DOS",
+          "Microkernel"
         ],
         "correct_answer": "Microkernel",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "complete",
+        "source_type": "單選題"
       },
       "expected_target": {
         "type": "choice",
@@ -563,7 +569,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-65"
       ]
@@ -573,19 +579,19 @@
       "source_id": 11,
       "target_id": 144,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "下列哪些是 Cooperating Process 的優點？",
         "options": [
+          "efficiency",
           "information sharing",
-          "computation speedup",
           "modularity",
-          "efficiency"
+          "computation speedup"
         ],
         "correct_answer": "information sharing\nmodularity\ncomputation speedup",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "options_status": "complete",
+        "source_type": ""
       },
       "expected_target": {
         "type": "choice",
@@ -600,7 +606,7 @@
         "options_status": "complete",
         "source_type": "多選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-52",
         "https://yocheng06.github.io/course-library/os.html?question=process-52"
@@ -611,19 +617,19 @@
       "source_id": 30,
       "target_id": 74,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "What is a characteristic of an I/O-bound process?",
         "options": [
-          "spends most of its time performing I/O operations",
-          "spends most of its time computing",
           "rarely performs I/O operations",
-          "has only one CPU burst"
+          "spends most of its time performing I/O operations",
+          "has only one CPU burst",
+          "spends most of its time computing"
         ],
         "correct_answer": "spends most of its time performing I/O operations",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "complete",
+        "source_type": ""
       },
       "expected_target": {
         "type": "choice",
@@ -638,7 +644,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-33"
       ]
@@ -648,16 +654,19 @@
       "source_id": 64,
       "target_id": 56,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
-        "type": "choice_options_missing",
+        "type": "choice",
         "question": "Which part of a process's memory contains memory used for dynamic memory allocation?",
         "options": [
-          "heap"
+          "stack",
+          "text section",
+          "heap",
+          "data section"
         ],
         "correct_answer": "heap",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "complete",
+        "source_type": ""
       },
       "expected_target": {
         "type": "choice",
@@ -672,7 +681,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-6"
       ]
@@ -682,7 +691,7 @@
       "source_id": 69,
       "target_id": 146,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "哪些是訊息傳遞中的同步化類型？",
@@ -693,7 +702,7 @@
           "bounded capacity"
         ],
         "correct_answer": "blocking (synchronous)\nnon-blocking (asynchronous)",
-        "options_status": "known_options_only",
+        "options_status": "complete",
         "source_type": "複選"
       },
       "expected_target": {
@@ -709,7 +718,7 @@
         "options_status": "complete",
         "source_type": "多選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-69",
         "https://yocheng06.github.io/course-library/os.html?question=process-69"
@@ -720,7 +729,7 @@
       "source_id": 71,
       "target_id": 49,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice_options_missing",
         "question": "Which scheduler is responsible for loading processes from disk into main memory to control the degree of multiprogramming?",
@@ -728,8 +737,7 @@
           "Long-term scheduler"
         ],
         "correct_answer": "Long-term scheduler",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -744,7 +752,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-23"
       ]
@@ -754,7 +762,7 @@
       "source_id": 79,
       "target_id": 147,
       "status": "confirmed",
-      "reason": "題幹及選項逐項核對，差異為英文措辭；請依完整版本查看選項。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "In an operating system, what is a \"process\" defined as being in execution?",
@@ -765,8 +773,7 @@
           "a copy of code"
         ],
         "correct_answer": "an executing program",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -781,7 +788,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-4",
         "https://yocheng06.github.io/course-library/os.html?question=process-4"
@@ -792,19 +799,19 @@
       "source_id": 89,
       "target_id": 24,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "What is a characteristic of an CPU-bound process?",
         "options": [
           "spends most of its time computing",
-          "spends most of its time performing I/O operations",
           "has only one CPU burst",
+          "spends most of its time performing I/O operations",
           "rarely performs I/O operations"
         ],
         "correct_answer": "spends most of its time computing",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "complete",
+        "source_type": ""
       },
       "expected_target": {
         "type": "choice",
@@ -819,7 +826,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-28"
       ]
@@ -829,7 +836,7 @@
       "source_id": 95,
       "target_id": 21,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "Which of the following are characteristics of Ordinary Pipes?",
@@ -840,8 +847,7 @@
           "communication is bidirectional"
         ],
         "correct_answer": "communication is unidirectional\nrequires a parent-child relationship",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -856,7 +862,7 @@
         "options_status": "complete",
         "source_type": "多選題"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-76"
       ]
@@ -866,7 +872,7 @@
       "source_id": 105,
       "target_id": 72,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice_options_missing",
         "question": "Which scheduler controls the degree of multiprogramming?",
@@ -874,8 +880,7 @@
           "long-term scheduler"
         ],
         "correct_answer": "long-term scheduler",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -890,7 +895,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-25"
       ]
@@ -900,7 +905,7 @@
       "source_id": 115,
       "target_id": 18,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "What happens if a child process remains after its parent process has terminated?",
@@ -911,7 +916,7 @@
           "resource leak"
         ],
         "correct_answer": "orphan process",
-        "options_status": "known_options_only",
+        "options_status": "complete",
         "source_type": "單選"
       },
       "expected_target": {
@@ -927,7 +932,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-48"
       ]
@@ -937,19 +942,19 @@
       "source_id": 120,
       "target_id": 44,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "Which of the following are different types of processes in the Chrome browser's multi-process architecture?",
         "options": [
           "browser process",
-          "renderer process",
+          "kernel process",
           "plug-in process",
-          "kernel process"
+          "renderer process"
         ],
         "correct_answer": "browser process\nplug-in process\nrenderer process",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "options_status": "complete",
+        "source_type": ""
       },
       "expected_target": {
         "type": "choice",
@@ -964,7 +969,7 @@
         "options_status": "complete",
         "source_type": "複選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-93"
       ]
@@ -974,17 +979,19 @@
       "source_id": 126,
       "target_id": 2,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "What term refers to having more than one executing branch in a single process?",
         "options": [
+          "multiprogramming",
           "thread",
-          "multiprogramming"
+          "context switch",
+          "multitasking"
         ],
         "correct_answer": "thread",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "complete",
+        "source_type": ""
       },
       "expected_target": {
         "type": "choice",
@@ -999,7 +1006,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-2"
       ]
@@ -1009,7 +1016,7 @@
       "source_id": 127,
       "target_id": 111,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "What is the state of a process when it is waiting for some event to occur?",
@@ -1020,8 +1027,7 @@
           "new"
         ],
         "correct_answer": "waiting",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -1036,7 +1042,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-108"
       ]
@@ -1046,19 +1052,19 @@
       "source_id": 133,
       "target_id": 4,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "In a process control block (PCB), which piece of information records the location of the next instruction to be executed?",
         "options": [
+          "process state",
           "program counter",
           "CPU registers",
-          "I/O status information",
-          "process state"
+          "I/O status information"
         ],
         "correct_answer": "program counter",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "complete",
+        "source_type": ""
       },
       "expected_target": {
         "type": "choice",
@@ -1073,7 +1079,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-9"
       ]
@@ -1083,9 +1089,9 @@
       "source_id": 136,
       "target_id": 1,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
-        "type": "choice_options_missing",
+        "type": "choice",
         "question": "Which parts does a process contain?",
         "options": [
           "text section",
@@ -1094,7 +1100,7 @@
           "heap"
         ],
         "correct_answer": "text section\nprogram counter and registers\nstack\nheap",
-        "options_status": "known_options_only",
+        "options_status": "complete",
         "source_type": "複選"
       },
       "expected_target": {
@@ -1110,7 +1116,7 @@
         "options_status": "complete",
         "source_type": "複選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-1"
       ]
@@ -1120,7 +1126,7 @@
       "source_id": 138,
       "target_id": 31,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice_options_missing",
         "question": "Which of the following are implementation issues for a communication link?",
@@ -1131,8 +1137,7 @@
           "whether the message size is fixed or variable"
         ],
         "correct_answer": "how to establish a link\nwhether a link can be associated with multiple processes\nwhat the capacity of the communication link is\nwhether the message size is fixed or variable",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -1147,7 +1152,7 @@
         "options_status": "complete",
         "source_type": "複選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-62"
       ]
@@ -1157,7 +1162,7 @@
       "source_id": 143,
       "target_id": 75,
       "status": "confirmed",
-      "reason": "已逐題核對題意、條件與已知選項；含中英文對照版本。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "What type of process spends most of its time performing I/O operations?",
@@ -1168,8 +1173,7 @@
           "CPU-bound process"
         ],
         "correct_answer": "I/O-bound process",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -1184,7 +1188,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-34"
       ]
@@ -1194,18 +1198,19 @@
       "source_id": 144,
       "target_id": 94,
       "status": "candidate",
-      "reason": "同為作業系統的系統目標，但選項集合不同，僅供核對。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
-        "type": "choice_options_missing",
+        "type": "choice",
         "question": "作業系統設計中的「系統目標（System Goals）」通常包括下列哪些期望？",
         "options": [
-          "易於設計、實現與維護",
+          "介面華麗好玩",
+          "高效且無錯誤（Error-free）",
           "具備彈性與可靠性",
-          "高效且無錯誤（Error-free）"
+          "易於設計、實現與維護"
         ],
-        "correct_answer": "易於設計、實現與維護\n具備彈性與可靠性\n高效且無錯誤（Error-free）",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "correct_answer": "高效且無錯誤（Error-free）\n具備彈性與可靠性\n易於設計、實現與維護",
+        "options_status": "complete",
+        "source_type": "多選題"
       },
       "expected_target": {
         "type": "choice",
@@ -1220,7 +1225,7 @@
         "options_status": "complete",
         "source_type": "複選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-94"
       ]
@@ -1230,7 +1235,7 @@
       "source_id": 201,
       "target_id": 94,
       "status": "candidate",
-      "reason": "同為作業系統的系統目標，但選項集合不同，僅供核對。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "According to the slides, what are typical system goals for an operating system?",
@@ -1241,8 +1246,7 @@
           "Fancy and playful interface"
         ],
         "correct_answer": "Flexible and reliable\nEfficient and error-free\nEasy to design, implement, and maintain",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -1257,7 +1261,7 @@
         "options_status": "complete",
         "source_type": "複選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=architecture-94"
       ]
@@ -1267,7 +1271,7 @@
       "source_id": 7,
       "target_id": 28,
       "status": "confirmed",
-      "reason": "已核對題意、條件及中英文選項，連結提供完整版本供查看。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "In direct communication, is a link established automatically?",
@@ -1278,8 +1282,7 @@
           "Only after a message is received"
         ],
         "correct_answer": "Yes, as long as processes explicitly name each other",
-        "options_status": "known_options_only",
-        "source_type": "單選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -1294,7 +1297,7 @@
         "options_status": "complete",
         "source_type": "單選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-64"
       ]
@@ -1304,19 +1307,19 @@
       "source_id": 17,
       "target_id": 86,
       "status": "confirmed",
-      "reason": "已核對題意、條件及中英文選項，連結提供完整版本供查看。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
-        "type": "choice_options_missing",
+        "type": "choice",
         "question": "Which of the following are reasons for process cooperation?",
         "options": [
-          "information sharing",
-          "computation speedup",
+          "convenience",
           "modularity",
-          "convenience"
+          "information sharing",
+          "computation speedup"
         ],
         "correct_answer": "convenience\nmodularity\ninformation sharing\ncomputation speedup",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "options_status": "complete",
+        "source_type": ""
       },
       "expected_target": {
         "type": "choice",
@@ -1331,7 +1334,7 @@
         "options_status": "complete",
         "source_type": "複選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-51"
       ]
@@ -1341,7 +1344,7 @@
       "source_id": 61,
       "target_id": 146,
       "status": "confirmed",
-      "reason": "已核對題意、條件及中英文選項，連結提供完整版本供查看。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice",
         "question": "What are the synchronization types in message passing?",
@@ -1352,7 +1355,7 @@
           "infinite capacity"
         ],
         "correct_answer": "blocking (synchronous)\nnon-blocking (asynchronous)",
-        "options_status": "known_options_only",
+        "options_status": "complete",
         "source_type": "複選"
       },
       "expected_target": {
@@ -1368,7 +1371,7 @@
         "options_status": "complete",
         "source_type": "多選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-69",
         "https://yocheng06.github.io/course-library/os.html?question=process-69"
@@ -1379,7 +1382,7 @@
       "source_id": 108,
       "target_id": 54,
       "status": "confirmed",
-      "reason": "已核對題意、條件及中英文選項，連結提供完整版本供查看。",
+      "reason": "已依本次補題逐項核對題意、條件與選項；原題號與完整題目連結保持不變。",
       "expected_source": {
         "type": "choice_options_missing",
         "question": "In indirect communication, which of the following statements are correct?",
@@ -1389,8 +1392,7 @@
           "processes can only communicate when they share a mailbox"
         ],
         "correct_answer": "a mailbox has a unique ID\na link can be associated with many processes\nprocesses can only communicate when they share a mailbox",
-        "options_status": "known_options_only",
-        "source_type": "複選"
+        "options_status": "known_options_only"
       },
       "expected_target": {
         "type": "choice",
@@ -1405,7 +1407,7 @@
         "options_status": "complete",
         "source_type": "複選"
       },
-      "checked_on": "2026-10-30",
+      "checked_on": "2026-10-31",
       "reference_urls": [
         "https://yocheng06.github.io/course-library/os.html?question=process-66"
       ]

@@ -1,0 +1,1236 @@
+[
+  {
+    "id": 1,
+    "title": "",
+    "question": "什麼是作業系統？",
+    "options": [
+      "在使用者與電腦硬體之間充當中介的程式",
+      "儲存檔案的實體裝置",
+      "只用於遊戲的應用程式",
+      "編譯原始碼的編譯器"
+    ],
+    "correct_answer": "在使用者與電腦硬體之間充當中介的程式",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-1"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "",
+    "question": "下列何者為作業系統的常見目標？",
+    "options": [
+      "僅僅執行程式",
+      "最小化記憶體",
+      "便利性與效率",
+      "僅僅保護硬體"
+    ],
+    "correct_answer": "便利性與效率",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-2"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "",
+    "question": "作業系統定義的目標包含？",
+    "options": [
+      "Execute user programs",
+      "Solve user problems",
+      "Make computer convenient",
+      "Use hardware efficiently"
+    ],
+    "correct_answer": "Execute user programs\nSolve user problems\nMake computer convenient\nUse hardware efficiently",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-3"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "",
+    "question": "What are the goals of the operating system?",
+    "options": [
+      "Solve user problems",
+      "Use hardware efficiently",
+      "Make computer convenient",
+      "Execute user programs"
+    ],
+    "correct_answer": "Solve user problems\nUse hardware efficiently\nMake computer convenient\nExecute user programs",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-a353a3c9-59a1-4dc4-8cc3-c70d12a6738a-2"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "",
+    "question": "作業系統主要扮演什麼角色？",
+    "options": [
+      "網路伺服器",
+      "使用者與硬體的中介者",
+      "應用程式開發工具",
+      "硬體控制中心"
+    ],
+    "correct_answer": "使用者與硬體的中介者",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-6"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "",
+    "question": "計算機系統的四大組成部分包含？",
+    "options": [
+      "應用程式",
+      "硬體",
+      "作業系統",
+      "使用者"
+    ],
+    "correct_answer": "應用程式\n硬體\n作業系統\n使用者",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-4"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "",
+    "question": "硬體資源包含？",
+    "options": [
+      "CPU",
+      "System calls",
+      "Memory",
+      "I/O devices"
+    ],
+    "correct_answer": "CPU\nMemory\nI/O devices",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-5"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "",
+    "question": "負責啟動電腦並載入作業系統核心的程式稱為？",
+    "options": [
+      "Linker",
+      "Compiler",
+      "Assembler",
+      "Bootstrap program"
+    ],
+    "correct_answer": "Bootstrap program",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-7"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "",
+    "question": "電腦系統啟動時載入的程式稱為 [__1__] (請用小寫英文回答字母間留一個空白)。",
+    "options": [],
+    "correct_answer": "bootstrap program",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-b5fa3636-bfa3-4439-80ab-b63b02f97307-7"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "",
+    "question": "中斷 (Interrupt) 的常見類型包含？",
+    "options": [
+      "硬體中斷",
+      "使用者請求產生的中斷",
+      "錯誤產生的中斷",
+      "軟體中斷 (Trap/Exception)"
+    ],
+    "correct_answer": "硬體中斷\n使用者請求產生的中斷\n錯誤產生的中斷\n軟體中斷 (Trap/Exception)",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-8"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "",
+    "question": "中斷 (Interrupt) 的常見類型包含？",
+    "options": [
+      "Software interrupt (Trap/Exception)",
+      "Network-request generated",
+      "Error-generated",
+      "Timer interrupt"
+    ],
+    "correct_answer": "Software interrupt (Trap/Exception)\nError-generated",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-9"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "",
+    "question": "Trap 或 Exception 是什麼？",
+    "options": [
+      "一定由硬體裝置產生",
+      "由軟體錯誤引發，例如除以零",
+      "使用者要求 OS 服務，例如 system call",
+      "等同網路要求"
+    ],
+    "correct_answer": "由軟體錯誤引發，例如除以零\n使用者要求 OS 服務，例如 system call",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-44"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "",
+    "question": "中斷 (Interrupt) 的常見類型包含？",
+    "options": [
+      "Software interrupt (Trap/Exception)",
+      "Error-generated",
+      "Networkr-request generated",
+      "Timer interrupt"
+    ],
+    "correct_answer": "Software interrupt (Trap/Exception)\nError-generated",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-b5fa3636-bfa3-4439-80ab-b63b02f97307-6"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "",
+    "question": "當 I/O 操作完成時，硬體裝置會透過什麼機制通知 CPU？",
+    "options": [
+      "System call",
+      "Trap",
+      "Interrupt",
+      "Polling"
+    ],
+    "correct_answer": "Interrupt",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-48"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "",
+    "question": "為了防止程式進入無窮迴圈，系統會使用 [__1__] 來定期中斷（請用小寫英文回答）。",
+    "options": [],
+    "correct_answer": "timer",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空／簡答",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-52"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "",
+    "question": "儲存裝置階層中，位於最底層通常是？",
+    "options": [
+      "暫存器",
+      "磁帶",
+      "主記憶體",
+      "快取"
+    ],
+    "correct_answer": "磁帶",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-60"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "",
+    "question": "What are the characteristics of the storage hierarchy?",
+    "options": [
+      "Speed",
+      "Cost",
+      "Volatility",
+      "Capacity"
+    ],
+    "correct_answer": "Speed\nCost\nVolatility\nCapacity",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-11"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "",
+    "question": "快取 (Cache) 管理問題包含？",
+    "options": [
+      "Replacement policy",
+      "Cache coherency",
+      "Cache size",
+      "Interrupt handling"
+    ],
+    "correct_answer": "Replacement policy\nCache coherency\nCache size",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-14"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "",
+    "question": "儲存管理活動包含？",
+    "options": [
+      "Caching",
+      "File-system management",
+      "I/O subsystem management",
+      "Mass-storage management"
+    ],
+    "correct_answer": "Caching\nFile-system management\nI/O subsystem management\nMass-storage management",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-15"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "",
+    "question": "儲存管理活動包含？",
+    "options": [
+      "Caching",
+      "File-system management",
+      "Deadlock handling",
+      "I/O subsystem management"
+    ],
+    "correct_answer": "Caching\nFile-system management\nDeadlock handling\nI/O subsystem management",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-53"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "",
+    "question": "What are the cache management problems?",
+    "options": [
+      "Interrupt handling",
+      "Cache coherency",
+      "Cache size",
+      "Replacement policy"
+    ],
+    "correct_answer": "Cache coherency\nCache size\nReplacement policy",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-2215fba3-0142-4ff9-87fd-e7434b627f12-4"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "",
+    "question": "儲存裝置階層的特性包含？",
+    "options": [
+      "Capacity",
+      "Cost",
+      "Volatility",
+      "Speed"
+    ],
+    "correct_answer": "Capacity\nCost\nVolatility\nSpeed",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-b218102d-60b5-451f-8ae6-4d074ce7aa32-3"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "",
+    "question": "作業系統為了將檔案映射到二級儲存體，通常會建立 [__1__] (請用小寫英文回答 字母間留一空白)。",
+    "options": [],
+    "correct_answer": "file system",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-b218102d-60b5-451f-8ae6-4d074ce7aa32-1"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "",
+    "question": "在多處理器環境中，[__1__] 保證所有 CPU 快取中的值皆為最新（請用小寫英文回答，字母間留一空白）。",
+    "options": [],
+    "correct_answer": "cache coherency",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空／簡答",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-59",
+      "community-2215fba3-0142-4ff9-87fd-e7434b627f12-7"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "",
+    "question": "在 Von Neumann 架構中，CPU 與裝置之間的記憶體存取可以透過什麼來減輕 CPU 負擔？",
+    "options": [
+      "中斷",
+      "系統呼叫",
+      "直接記憶體存取（DMA）",
+      "快取"
+    ],
+    "correct_answer": "直接記憶體存取（DMA）",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-17"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "",
+    "question": "在 Von Neumann 架構中，[__1__] 可以允許裝置傳輸資料至記憶體而不需 CPU 介入（請用小寫英文回答）。",
+    "options": [],
+    "correct_answer": "dma",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空／簡答",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-66",
+      "community-2215fba3-0142-4ff9-87fd-e7434b627f12-5"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "",
+    "question": "Spooling 的作用是什麼？",
+    "options": [
+      "重疊一個工作輸出與另一個工作的輸入",
+      "將程式載入記憶體",
+      "管理 CPU 排程",
+      "讓資料永久保存"
+    ],
+    "correct_answer": "重疊一個工作輸出與另一個工作的輸入",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-18"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "",
+    "question": "存取硬體裝置時，核心使用 [__1__] 來提供統一的介面 (請用小寫英文回答 字母間留一空白)。",
+    "options": [],
+    "correct_answer": "device driver",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-16"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "",
+    "question": "多處理器系統（Multiprocessing）的優點包括？",
+    "options": [
+      "增加吞吐量",
+      "規模經濟",
+      "提高可靠性",
+      "平穩降級"
+    ],
+    "correct_answer": "增加吞吐量\n規模經濟\n提高可靠性\n平穩降級",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-19"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "",
+    "question": "Symmetric Multiprocessing (SMP) 的特性是？",
+    "options": [
+      "架構對稱",
+      "效能較低",
+      "每個處理器被指定特定任務",
+      "每個處理器執行所有任務"
+    ],
+    "correct_answer": "架構對稱\n每個處理器執行所有任務",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-20"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "",
+    "question": "多處理器系統 (Multiprocessing) 的優點包括？",
+    "options": [
+      "Economy of scale",
+      "Increased throughput",
+      "Power saving",
+      "Graceful degradation"
+    ],
+    "correct_answer": "Economy of scale\nIncreased throughput\nGraceful degradation",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-54"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "",
+    "question": "多程式化 (Multiprogramming) 的目的是為了？",
+    "options": [
+      "提高 CPU 使用率",
+      "增加單一程式速度",
+      "保持 I/O 裝置忙碌",
+      "組織工作序列"
+    ],
+    "correct_answer": "提高 CPU 使用率\n保持 I/O 裝置忙碌",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-22"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "",
+    "question": "Process 的定義是什麼？",
+    "options": [
+      "作業系統本身",
+      "檔案的集合",
+      "被動的實體",
+      "執行中的程式"
+    ],
+    "correct_answer": "執行中的程式",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-24"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "",
+    "question": "Process 管理包含哪些活動？",
+    "options": [
+      "Creating and deleting processes",
+      "Suspending and resuming processes",
+      "Process synchronization and communication",
+      "Deadlock handling"
+    ],
+    "correct_answer": "Creating and deleting processes\nSuspending and resuming processes\nProcess synchronization and communication\nDeadlock handling",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-25"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "",
+    "question": "Process 管理包含哪些活動？",
+    "options": [
+      "磁碟格式化",
+      "建立／刪除程序",
+      "死結處理",
+      "記憶體管理"
+    ],
+    "correct_answer": "建立／刪除程序\n死結處理",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-50"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "",
+    "question": "Process 管理包含哪些活動？",
+    "options": [
+      "Suspending/resuming processes",
+      "Deadlock handling",
+      "Creating/deleting processes",
+      "Synchronization mechanisms"
+    ],
+    "correct_answer": "Suspending/resuming processes\nDeadlock handling\nCreating/deleting processes\nSynchronization mechanisms",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-64"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "",
+    "question": "記憶體管理的主要目的之一是？",
+    "options": [
+      "加速網路連線",
+      "增加硬碟空間",
+      "最佳化 CPU 使用率",
+      "減少檔案大小"
+    ],
+    "correct_answer": "最佳化 CPU 使用率",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-26"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "",
+    "question": "當記憶體不足時，[__1__]技術允許執行未完全在記憶體中的程式。（請用小寫英文回答，字母間留一空白）",
+    "options": [],
+    "correct_answer": "virtual memory",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空／簡答",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-27",
+      "community-b5fa3636-bfa3-4439-80ab-b63b02f97307-3"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "",
+    "question": "作業系統為了區分使用者程式與核心程式，提供了什麼來保障系統安全？",
+    "options": [
+      "File system",
+      "Dual-mode operation",
+      "Cache",
+      "Spooling"
+    ],
+    "correct_answer": "Dual-mode operation",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-28"
+    ]
+  },
+  {
+    "id": 40,
+    "title": "",
+    "question": "系統呼叫 (System call) 會導致模式從？",
+    "options": [
+      "不切換模式",
+      "直接重新開機",
+      "使用者模式切換至核心模式",
+      "核心模式切換至使用者模式"
+    ],
+    "correct_answer": "使用者模式切換至核心模式",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-49"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "",
+    "question": "保護與安全性涉及？",
+    "options": [
+      "Denial-of-service",
+      "Privilege escalation",
+      "User IDs/Group IDs",
+      "Identity theft"
+    ],
+    "correct_answer": "Denial-of-service\nPrivilege escalation\nUser IDs/Group IDs\nIdentity theft",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-30"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "",
+    "question": "CPU 執行程式時區分使用者模式與 [__1__] 模式 (請用小寫英文回答)。",
+    "options": [],
+    "correct_answer": "kernel",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-719cea30-56ae-4d9c-b3c2-e5cd5a70e812-10"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "",
+    "question": "When executing programs, the CPU distinguishes between user mode and [__1__] mode (please answer in lowercase english).",
+    "options": [],
+    "correct_answer": "kernel",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-2215fba3-0142-4ff9-87fd-e7434b627f12-3"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "",
+    "question": "二元搜尋樹的搜尋時間複雜度在平衡時為？",
+    "options": [
+      "O(1)",
+      "O(n^2)",
+      "O(lg n)",
+      "O(n)"
+    ],
+    "correct_answer": "O(lg n)",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-32",
+      "community-719cea30-56ae-4d9c-b3c2-e5cd5a70e812-2"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "",
+    "question": "核心常用的資料結構包含？",
+    "options": [
+      "單向鏈結串列",
+      "二元搜尋樹",
+      "雙向鏈結串列",
+      "環狀鏈結串列"
+    ],
+    "correct_answer": "單向鏈結串列\n二元搜尋樹\n雙向鏈結串列\n環狀鏈結串列",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-31"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "",
+    "question": "核心常用的資料結構包含？",
+    "options": [
+      "Array",
+      "Binary search tree",
+      "Circular linked list",
+      "Doubly linked list"
+    ],
+    "correct_answer": "Binary search tree\nCircular linked list\nDoubly linked list",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-62"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "",
+    "question": "[__1__] 是一種用來表示 n 個項目狀態的二元字串（請用小寫英文回答）。",
+    "options": [],
+    "correct_answer": "bitmap",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空／簡答",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-33"
+    ]
+  },
+  {
+    "id": 48,
+    "title": "",
+    "question": "二元搜尋樹的平衡版本可以達到 [__1__] 的搜尋效率 (請用英文回答 如 O(n)、O(nlgn)、O(lgn)、O(n^2) )。",
+    "options": [],
+    "correct_answer": "O(lgn)",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-719cea30-56ae-4d9c-b3c2-e5cd5a70e812-7"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "",
+    "question": "P2P 運算環境中，節點之間的關係是？",
+    "options": [
+      "無關係",
+      "主從關係 (Client-Server)",
+      "對等關係 (Peers)",
+      "階層關係"
+    ],
+    "correct_answer": "對等關係 (Peers)",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-35"
+    ]
+  },
+  {
+    "id": 50,
+    "title": "",
+    "question": "下列哪些是分散式系統的網路類型？",
+    "options": [
+      "PAN",
+      "LAN",
+      "MAN",
+      "WAN"
+    ],
+    "correct_answer": "PAN\nLAN\nMAN\nWAN",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-34"
+    ]
+  },
+  {
+    "id": 51,
+    "title": "",
+    "question": "虛擬機管理程式通常稱為？",
+    "options": [
+      "VMM",
+      "DMA",
+      "Device driver",
+      "Compiler"
+    ],
+    "correct_answer": "VMM",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-37"
+    ]
+  },
+  {
+    "id": 52,
+    "title": "",
+    "question": "虛擬化技術中提供虛擬化服務的軟體稱為 [__1__]（請用小寫英文縮寫回答）。",
+    "options": [],
+    "correct_answer": "vmm",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空／簡答",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-67",
+      "community-b218102d-60b5-451f-8ae6-4d074ce7aa32-2"
+    ]
+  },
+  {
+    "id": 53,
+    "title": "",
+    "question": "虛擬機管理程式通常稱為？",
+    "options": [
+      "VMM",
+      "BIOS",
+      "Kernel",
+      "OS"
+    ],
+    "correct_answer": "VMM",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-b5fa3636-bfa3-4439-80ab-b63b02f97307-2"
+    ]
+  },
+  {
+    "id": 54,
+    "title": "",
+    "question": "虛擬化的優點包含？",
+    "options": [
+      "執行多個 OS",
+      "硬體直接存取",
+      "資源整合",
+      "應用程式開發測試"
+    ],
+    "correct_answer": "執行多個 OS\n資源整合\n應用程式開發測試",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-36"
+    ]
+  },
+  {
+    "id": 55,
+    "title": "",
+    "question": "In virtualization technology, the software that provides virtualization services is called [__1__] (Please answer using lowercase English abbreviations).",
+    "options": [],
+    "correct_answer": "vmm",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-a353a3c9-59a1-4dc4-8cc3-c70d12a6738a-1"
+    ]
+  },
+  {
+    "id": 56,
+    "title": "",
+    "question": "雲端運算中，IaaS 代表什麼？",
+    "options": [
+      "Internet as a Service",
+      "Input as a Service",
+      "Interface as a Service",
+      "Infrastructure as a Service"
+    ],
+    "correct_answer": "Infrastructure as a Service",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-39"
+    ]
+  },
+  {
+    "id": 57,
+    "title": "",
+    "question": "[__1__] 是一種雲端運算模型，它提供使用者按需存取伺服器、儲存、網路和虛擬化等基礎設施資源（請用小寫英文縮寫回答）。",
+    "options": [],
+    "correct_answer": "iaas",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空／簡答",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-51",
+      "community-b5fa3636-bfa3-4439-80ab-b63b02f97307-1"
+    ]
+  },
+  {
+    "id": 58,
+    "title": "",
+    "question": "即時作業系統 (Real-time OS) 的核心特徵是？",
+    "options": [
+      "約定的時間限制",
+      "圖形化介面",
+      "多使用者",
+      "高效能"
+    ],
+    "correct_answer": "約定的時間限制",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-40"
+    ]
+  },
+  {
+    "id": 59,
+    "title": "",
+    "question": "開放原始碼作業系統通常使用什麼授權？",
+    "options": [
+      "Proprietary",
+      "Closed-source",
+      "DRM",
+      "GPL"
+    ],
+    "correct_answer": "GPL",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "basics-41"
+    ]
+  }
+]

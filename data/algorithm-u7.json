@@ -17,9 +17,13 @@
     "source_id": "ALG7-EXPORT-001",
     "source_inferred_id": true,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-001"
+      "演算法U7題庫.txt ALG7-EXPORT-001",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2493"
+    ]
   },
   {
     "id": 2,
@@ -39,9 +43,13 @@
     "source_id": "ALG7-EXPORT-002",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-002"
+      "演算法U7題庫.txt ALG7-EXPORT-002",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2490"
+    ]
   },
   {
     "id": 3,
@@ -56,10 +64,17 @@
     "source_id": "ALG7-EXPORT-003",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-003"
+      "演算法U7題庫.txt ALG7-EXPORT-003",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000216
+    ],
+    "reference_question_ids": [
+      "L7-2520"
+    ],
+    "question_aliases": [
+      "請完成以下的虛擬碼\n\nRANDOMIZED_SELECT(A, p, r, i)\n1 if p = r\n2     then return A[p]\n3 q <- RANDOMIZED_PARTITION(A, p, r)\n4 k <- q - p + 1\n5 if i = k     > the pivot value is the answer\n6     then return A[q]\n7 elseif i < k\n8     then return RANDOMIZED_SELECT(A, p,  ＿＿＿ , i)\n9 else return RANDOMIZED_SELECT(A,  ＿＿＿ , r,  ＿＿＿ )"
     ]
   },
   {
@@ -80,10 +95,14 @@
     "source_id": "ALG7-EXPORT-004",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-004"
+      "演算法U7題庫.txt ALG7-EXPORT-004",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000203
+    ],
+    "reference_question_ids": [
+      "L7-2478"
     ]
   },
   {
@@ -104,9 +123,13 @@
     "source_id": "ALG7-EXPORT-005",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-005"
+      "演算法U7題庫.txt ALG7-EXPORT-005",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2471"
+    ]
   },
   {
     "id": 6,
@@ -121,9 +144,16 @@
     "source_id": "ALG7-EXPORT-006",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-006"
+      "演算法U7題庫.txt ALG7-EXPORT-006",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2516"
+    ],
+    "question_aliases": [
+      "中位數選擇法（Median Order / Quickselect） 假設我們有以下 18 個未排序的整數： 42, 17, 89, 8, 55, 23, 71, 94, 12, 59, 31, 76, 5, 50, 82, 29, 66, 37 當他進行第一輪分割後 選中的基準值 (Pivot) 為何 ____________ 我們要找的目標 是在比基準值 (Pivot) 大的組裡的 第幾小的數 ____________"
+    ]
   },
   {
     "id": 7,
@@ -143,9 +173,13 @@
     "source_id": "ALG7-EXPORT-007",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-007"
+      "演算法U7題庫.txt ALG7-EXPORT-007",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2496"
+    ]
   },
   {
     "id": 8,
@@ -165,9 +199,13 @@
     "source_id": "ALG7-EXPORT-008",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-008"
+      "演算法U7題庫.txt ALG7-EXPORT-008",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2504"
+    ]
   },
   {
     "id": 9,
@@ -187,9 +225,13 @@
     "source_id": "ALG7-EXPORT-009",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-009"
+      "演算法U7題庫.txt ALG7-EXPORT-009",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2484"
+    ]
   },
   {
     "id": 10,
@@ -209,9 +251,13 @@
     "source_id": "ALG7-EXPORT-010",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-010"
+      "演算法U7題庫.txt ALG7-EXPORT-010",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2486"
+    ]
   },
   {
     "id": 11,
@@ -226,9 +272,16 @@
     "source_id": "ALG7-EXPORT-011",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-011"
+      "演算法U7題庫.txt ALG7-EXPORT-011",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2527"
+    ],
+    "question_aliases": [
+      "同時找出陣列中的最大值（Maximum）與最小值（Minimum）\n完成以下的做法使它經過(3 n/2 )次比較 得到結果\n\nGET_MIN_MAX(A)\n1 n <- A.length\n2 if n = 0\n3     then return (NIL, NIL)\n4\n5 // 步驟 1：初始化 min 與 max\n6 if n % 2 != 0          // 陣列長度為奇數\n7     then min <- A[1]\n8          max <- A[1]\n9          start_idx <- 2\n10    else                 // 陣列長度為偶數\n11         if A[1] < A[2]\n12             then min <- A[1]\n13                  max <- A[2]\n14             else min <- A[2]\n15                  max <- A[1]\n16         start_idx <- 3\n17\n18 // 步驟 2：兩兩分組進行比較\n19 for i <-  ＿＿＿  to n - 1 step 2\n20     do if A[i] <  ＿＿＿\n21            then if A[i] < min\n22                     then min <- A[i]\n23                 if A[i + 1] > max\n24                     then max <- A[i + 1]\n25            else if A[i + 1] < min\n26                     then min <- A[i + 1]\n27                 if A[i] > max\n28                     then max <- A[i]\n29\n30 return (min, max)"
+    ]
   },
   {
     "id": 12,
@@ -248,9 +301,13 @@
     "source_id": "ALG7-EXPORT-012",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-012"
+      "演算法U7題庫.txt ALG7-EXPORT-012",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2485"
+    ]
   },
   {
     "id": 13,
@@ -265,9 +322,16 @@
     "source_id": "ALG7-EXPORT-013",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-013"
+      "演算法U7題庫.txt ALG7-EXPORT-013",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2514"
+    ],
+    "question_aliases": [
+      "同時尋找最大與最小值時，配對比較法總共需要 ____________ 次比較 (請用小寫英文與分數型態回答)"
+    ]
   },
   {
     "id": 14,
@@ -287,9 +351,13 @@
     "source_id": "ALG7-EXPORT-014",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-014"
+      "演算法U7題庫.txt ALG7-EXPORT-014",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2495"
+    ]
   },
   {
     "id": 15,
@@ -304,9 +372,16 @@
     "source_id": "ALG7-EXPORT-015",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-015"
+      "演算法U7題庫.txt ALG7-EXPORT-015",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2518"
+    ],
+    "question_aliases": [
+      "Randomized-Select 的時間複雜度在最壞情況為 O(＿＿＿)"
+    ]
   },
   {
     "id": 16,
@@ -321,9 +396,16 @@
     "source_id": "ALG7-EXPORT-016",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-016"
+      "演算法U7題庫.txt ALG7-EXPORT-016",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2522"
+    ],
+    "question_aliases": [
+      "為了保證線性時間， median order 裡面的Select 演算法將元素分成＿＿＿組"
+    ]
   },
   {
     "id": 17,
@@ -343,10 +425,14 @@
     "source_id": "ALG7-EXPORT-017",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-017"
+      "演算法U7題庫.txt ALG7-EXPORT-017",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000210
+    ],
+    "reference_question_ids": [
+      "L7-2477"
     ]
   },
   {
@@ -362,10 +448,17 @@
     "source_id": "ALG7-EXPORT-018",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-018"
+      "演算法U7題庫.txt ALG7-EXPORT-018",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000211
+    ],
+    "reference_question_ids": [
+      "L7-2511"
+    ],
+    "question_aliases": [
+      "中位數是第________個順序統計量"
     ]
   },
   {
@@ -386,10 +479,14 @@
     "source_id": "ALG7-EXPORT-019",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-019"
+      "演算法U7題庫.txt ALG7-EXPORT-019",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000207
+    ],
+    "reference_question_ids": [
+      "L7-2503"
     ]
   },
   {
@@ -410,10 +507,14 @@
     "source_id": "ALG7-EXPORT-020",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-020"
+      "演算法U7題庫.txt ALG7-EXPORT-020",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000212
+    ],
+    "reference_question_ids": [
+      "L7-2469"
     ]
   },
   {
@@ -434,10 +535,14 @@
     "source_id": "ALG7-EXPORT-021",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-021"
+      "演算法U7題庫.txt ALG7-EXPORT-021",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000217
+    ],
+    "reference_question_ids": [
+      "L7-2494"
     ]
   },
   {
@@ -458,10 +563,14 @@
     "source_id": "ALG7-EXPORT-022",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-022"
+      "演算法U7題庫.txt ALG7-EXPORT-022",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000213
+    ],
+    "reference_question_ids": [
+      "L7-2499"
     ]
   },
   {
@@ -482,10 +591,14 @@
     "source_id": "ALG7-EXPORT-023",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-023"
+      "演算法U7題庫.txt ALG7-EXPORT-023",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000202
+    ],
+    "reference_question_ids": [
+      "L7-2491"
     ]
   },
   {
@@ -506,9 +619,13 @@
     "source_id": "ALG7-EXPORT-024",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-024"
+      "演算法U7題庫.txt ALG7-EXPORT-024",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2505"
+    ]
   },
   {
     "id": 25,
@@ -528,9 +645,13 @@
     "source_id": "ALG7-EXPORT-025",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-025"
+      "演算法U7題庫.txt ALG7-EXPORT-025",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2472"
+    ]
   },
   {
     "id": 26,
@@ -545,10 +666,17 @@
     "source_id": "ALG7-EXPORT-026",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-026"
+      "演算法U7題庫.txt ALG7-EXPORT-026",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000209
+    ],
+    "reference_question_ids": [
+      "L7-2508"
+    ],
+    "question_aliases": [
+      "根據課本的例子，考慮以下的 Median of Medians 的遞迴關係式\n\nT(n) = O(1), if  n < 140\nT(n) = T(⌈n/5⌉) +  ＿＿＿  +  ＿＿＿  , if  n >= 140"
     ]
   },
   {
@@ -569,9 +697,13 @@
     "source_id": "ALG7-EXPORT-027",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-027"
+      "演算法U7題庫.txt ALG7-EXPORT-027",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2506"
+    ]
   },
   {
     "id": 28,
@@ -591,10 +723,14 @@
     "source_id": "ALG7-EXPORT-028",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-028"
+      "演算法U7題庫.txt ALG7-EXPORT-028",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000201
+    ],
+    "reference_question_ids": [
+      "L7-2475"
     ]
   },
   {
@@ -615,9 +751,13 @@
     "source_id": "ALG7-EXPORT-029",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-029"
+      "演算法U7題庫.txt ALG7-EXPORT-029",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2498"
+    ]
   },
   {
     "id": 30,
@@ -638,9 +778,16 @@
     "source_inferred_id": false,
     "sources": [
       "演算法U7題庫.txt ALG7-EXPORT-030",
-      "演算法U7題庫.txt UF366E7F8DA2D4E07B74E2065D6E8BD94"
+      "演算法U7題庫.txt UF366E7F8DA2D4E07B74E2065D6E8BD94",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2479"
+    ],
+    "question_aliases": [
+      "**********若 n=1，集合的第 1 個順序統計量即為？"
+    ]
   },
   {
     "id": 31,
@@ -660,9 +807,13 @@
     "source_id": "ALG7-EXPORT-031",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-031"
+      "演算法U7題庫.txt ALG7-EXPORT-031",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2476"
+    ]
   },
   {
     "id": 32,
@@ -682,9 +833,13 @@
     "source_id": "ALG7-EXPORT-032",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-032"
+      "演算法U7題庫.txt ALG7-EXPORT-032",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2468"
+    ]
   },
   {
     "id": 33,
@@ -704,9 +859,13 @@
     "source_id": "ALG7-EXPORT-033",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-033"
+      "演算法U7題庫.txt ALG7-EXPORT-033",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2483"
+    ]
   },
   {
     "id": 34,
@@ -726,10 +885,14 @@
     "source_id": "ALG7-EXPORT-034",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-034"
+      "演算法U7題庫.txt ALG7-EXPORT-034",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000219
+    ],
+    "reference_question_ids": [
+      "L7-2507"
     ]
   },
   {
@@ -745,10 +908,17 @@
     "source_id": "ALG7-EXPORT-035",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-035"
+      "演算法U7題庫.txt ALG7-EXPORT-035",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000200
+    ],
+    "reference_question_ids": [
+      "L7-2515"
+    ],
+    "question_aliases": [
+      "中位數選擇法（Median Order / Quickselect）\n假設我們有以下 18 個未排序的整數：\n42, 17, 89, 8, 55, 23, 71, 94, 12, 63, 31, 76, 5, 50, 82, 29, 66, 37\n當他進行第一輪分割後\n選中的基準值 (Pivot) 為何  ＿＿＿\n比基準值 (Pivot) 大的有幾個  ＿＿＿"
     ]
   },
   {
@@ -769,9 +939,13 @@
     "source_id": "ALG7-EXPORT-036",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-036"
+      "演算法U7題庫.txt ALG7-EXPORT-036",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2489"
+    ]
   },
   {
     "id": 37,
@@ -786,9 +960,16 @@
     "source_id": "ALG7-EXPORT-037",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-037"
+      "演算法U7題庫.txt ALG7-EXPORT-037",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2521"
+    ],
+    "question_aliases": [
+      "在 partition 操作中，pivot 最終歸位於＿＿＿"
+    ]
   },
   {
     "id": 38,
@@ -803,9 +984,16 @@
     "source_id": "ALG7-EXPORT-038",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-038"
+      "演算法U7題庫.txt ALG7-EXPORT-038",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2510"
+    ],
+    "question_aliases": [
+      "尋找 n 個元素中的最小值需要＿＿＿次比較"
+    ]
   },
   {
     "id": 39,
@@ -825,9 +1013,13 @@
     "source_id": "ALG7-EXPORT-039",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-039"
+      "演算法U7題庫.txt ALG7-EXPORT-039",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2473"
+    ]
   },
   {
     "id": 40,
@@ -842,9 +1034,16 @@
     "source_id": "ALG7-EXPORT-040",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-040"
+      "演算法U7題庫.txt ALG7-EXPORT-040",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2509"
+    ],
+    "question_aliases": [
+      "Randomized-Select 的平均時間複雜度為 ____________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})"
+    ]
   },
   {
     "id": 41,
@@ -864,9 +1063,13 @@
     "source_id": "ALG7-EXPORT-041",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-041"
+      "演算法U7題庫.txt ALG7-EXPORT-041",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2502"
+    ]
   },
   {
     "id": 42,
@@ -887,9 +1090,16 @@
     "source_inferred_id": false,
     "sources": [
       "演算法U7題庫.txt ALG7-EXPORT-042",
-      "演算法U7題庫.txt U5CBBD9526E0148ACA1673555B9EBB039"
+      "演算法U7題庫.txt U5CBBD9526E0148ACA1673555B9EBB039",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2480"
+    ],
+    "question_aliases": [
+      "**********Select 演算法（Deterministic-Select）的時間複雜度為？"
+    ]
   },
   {
     "id": 43,
@@ -909,10 +1119,14 @@
     "source_id": "ALG7-EXPORT-043",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-043"
+      "演算法U7題庫.txt ALG7-EXPORT-043",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000214
+    ],
+    "reference_question_ids": [
+      "L7-2488"
     ]
   },
   {
@@ -933,10 +1147,14 @@
     "source_id": "ALG7-EXPORT-044",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-044"
+      "演算法U7題庫.txt ALG7-EXPORT-044",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000218
+    ],
+    "reference_question_ids": [
+      "L7-2470"
     ]
   },
   {
@@ -957,9 +1175,13 @@
     "source_id": "ALG7-EXPORT-045",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-045"
+      "演算法U7題庫.txt ALG7-EXPORT-045",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2487"
+    ]
   },
   {
     "id": 46,
@@ -974,9 +1196,16 @@
     "source_id": "ALG7-EXPORT-046",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-046"
+      "演算法U7題庫.txt ALG7-EXPORT-046",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2526"
+    ],
+    "question_aliases": [
+      "順序統計量問題中，我們假設元素是________的"
+    ]
   },
   {
     "id": 47,
@@ -991,9 +1220,16 @@
     "source_id": "ALG7-EXPORT-047",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-047"
+      "演算法U7題庫.txt ALG7-EXPORT-047",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2523"
+    ],
+    "question_aliases": [
+      "順序統計量(order statistic)演算法中，＿＿＿的作用與 Quicksort 相同"
+    ]
   },
   {
     "id": 48,
@@ -1013,10 +1249,14 @@
     "source_id": "ALG7-EXPORT-048",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-048"
+      "演算法U7題庫.txt ALG7-EXPORT-048",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000199
+    ],
+    "reference_question_ids": [
+      "L7-2492"
     ]
   },
   {
@@ -1032,10 +1272,17 @@
     "source_id": "ALG7-EXPORT-049",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-049"
+      "演算法U7題庫.txt ALG7-EXPORT-049",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000206
+    ],
+    "reference_question_ids": [
+      "L7-2519"
+    ],
+    "question_aliases": [
+      "尋找第二小元素在最壞情況下需要＿＿＿次比較"
     ]
   },
   {
@@ -1051,9 +1298,16 @@
     "source_id": "ALG7-EXPORT-050",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-050"
+      "演算法U7題庫.txt ALG7-EXPORT-050",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2513"
+    ],
+    "question_aliases": [
+      "假定有 n 個數 (以下的 A B C D .... 都是數值) 考慮以下的 Median of Medians 問題 若根據課本的的演算法 各組已排序 且找到中位數也以排序 若以下的 M 為中間值 請問 比M大的 節點數 會大於多少 (不用 CEILING 與 FLOOR) ____________ A ... B C D ... E F ... G H I ... J K ... L_M_N ... O P ... Q R S ... T U ... V W X"
+    ]
   },
   {
     "id": 51,
@@ -1068,9 +1322,16 @@
     "source_id": "ALG7-EXPORT-051",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-051"
+      "演算法U7題庫.txt ALG7-EXPORT-051",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2512"
+    ],
+    "question_aliases": [
+      "Randomized-Select 演算法依賴＿＿＿函數來進行分割"
+    ]
   },
   {
     "id": 52,
@@ -1090,9 +1351,13 @@
     "source_id": "ALG7-EXPORT-052",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-052"
+      "演算法U7題庫.txt ALG7-EXPORT-052",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2482"
+    ]
   },
   {
     "id": 53,
@@ -1113,10 +1378,17 @@
     "source_inferred_id": false,
     "sources": [
       "演算法U7題庫.txt ALG7-EXPORT-053",
-      "演算法U7題庫.txt U874E276906EE47CCA2E0D04D10BE1925"
+      "演算法U7題庫.txt U874E276906EE47CCA2E0D04D10BE1925",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000204
+    ],
+    "reference_question_ids": [
+      "L7-2481"
+    ],
+    "question_aliases": [
+      "**********順序統計量問題通常屬於哪類演算法應用？"
     ]
   },
   {
@@ -1137,9 +1409,13 @@
     "source_id": "ALG7-EXPORT-054",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-054"
+      "演算法U7題庫.txt ALG7-EXPORT-054",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2500"
+    ]
   },
   {
     "id": 55,
@@ -1154,10 +1430,17 @@
     "source_id": "ALG7-EXPORT-055",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-055"
+      "演算法U7題庫.txt ALG7-EXPORT-055",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000205
+    ],
+    "reference_question_ids": [
+      "L7-2524"
+    ],
+    "question_aliases": [
+      "同時找出陣列中的最大值（Maximum）與最小值（Minimum）\n以下的做法 會經過幾次比較 ＿＿＿\n先尋找最小值 再 尋找最大值"
     ]
   },
   {
@@ -1178,9 +1461,13 @@
     "source_id": "ALG7-EXPORT-056",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-056"
+      "演算法U7題庫.txt ALG7-EXPORT-056",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2501"
+    ]
   },
   {
     "id": 57,
@@ -1195,10 +1482,17 @@
     "source_id": "ALG7-EXPORT-057",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-057"
+      "演算法U7題庫.txt ALG7-EXPORT-057",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000208
+    ],
+    "reference_question_ids": [
+      "L7-2525"
+    ],
+    "question_aliases": [
+      "Randomized-Select 演算法在＿＿＿情況下表現最快"
     ]
   },
   {
@@ -1219,9 +1513,13 @@
     "source_id": "ALG7-EXPORT-058",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-058"
+      "演算法U7題庫.txt ALG7-EXPORT-058",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2497"
+    ]
   },
   {
     "id": 59,
@@ -1236,9 +1534,16 @@
     "source_id": "ALG7-EXPORT-059",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-059"
+      "演算法U7題庫.txt ALG7-EXPORT-059",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_shared_ids": []
+    "previous_shared_ids": [],
+    "reference_question_ids": [
+      "L7-2517"
+    ],
+    "question_aliases": [
+      "中位數選擇法（Median Order / Quickselect） 假設我們有以下 18 個未排序的整數： 42, 17, 89, 8, 55, 23, 71, 94, 12, 63, 31, 76, 5, 50, 82, 29, 66, 37 當他進行第一輪分割後 要找的目標在比選中的基準值 (Pivot) 大的組別裡面的第幾個 ____________ 比基準值 (Pivot) 小的有幾個 ____________"
+    ]
   },
   {
     "id": 60,
@@ -1258,11 +1563,14 @@
     "source_id": "ALG7-EXPORT-060",
     "source_inferred_id": false,
     "sources": [
-      "演算法U7題庫.txt ALG7-EXPORT-060"
+      "演算法U7題庫.txt ALG7-EXPORT-060",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_shared_ids": [
       1000000215
+    ],
+    "reference_question_ids": [
+      "L7-2474"
     ]
   }
 ]
-

@@ -3,18 +3,19 @@ export const SUBJECTS = [
     {
         id: "algorithm", name: "演算法", available: true, defaultUnit: "u6",
         units: [
-            { id: "u2", name: "U2", questionCount: 60, dataUrl: "../data/questions.json" },
-            { id: "u3", name: "U3", questionCount: 60, dataUrl: "../data/algorithm-u3.json" },
-            { id: "u4", name: "U4", questionCount: 59, dataUrl: "../data/algorithm-u4.json" },
-            { id: "u6", name: "U6", questionCount: 71, dataUrl: "../data/algorithm-u6.json" },
+            { id: "u2", name: "U2", questionCount: 63, dataUrl: "../data/questions.json" },
+            { id: "u3", name: "U3", questionCount: 62, dataUrl: "../data/algorithm-u3.json" },
+            { id: "u4", name: "U4", questionCount: 60, dataUrl: "../data/algorithm-u4.json" },
+            { id: "u6", name: "U6", questionCount: 74, dataUrl: "../data/algorithm-u6.json" },
             { id: "u7", name: "U7", questionCount: 60, dataUrl: "../data/algorithm-u7.json" }
         ]
     },
     { id: "os", name: "作業系統", available: true, defaultUnit: "u3", units: [
-        { id: "u3", name: "U3", questionCount: 291, dataUrl: "../data/os-u3.json" },
+        { id: "u2", name: "U2", questionCount: 59, dataUrl: "../data/os-u2.json" },
+        { id: "u3", name: "U3", questionCount: 294, dataUrl: "../data/os-u3.json" },
         { id: "u4", name: "U4", questionCount: 147, dataUrl: "../data/os-u4.json" },
-        { id: "u5", name: "U5", questionCount: 126, dataUrl: "../data/os-u5.json" },
-        { id: "u6", name: "U6", questionCount: 233, dataUrl: "../data/os-u6.json" }
+        { id: "u5", name: "U5", questionCount: 127, dataUrl: "../data/os-u5.json" },
+        { id: "u6", name: "U6", questionCount: 234, dataUrl: "../data/os-u6.json" }
     ] }
 ];
 

@@ -2,52 +2,79 @@
   {
     "id": 1,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "堆積排序為何常被應用？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "應用程式本身需要\n作為其他演算法的子程序\n演算法多樣性",
+    "options": [
+      "演算法多樣性",
+      "作為其他演算法的子程序",
+      "應用程式本身需要",
+      "處理非原地排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "演算法多樣性\n作為其他演算法的子程序\n應用程式本身需要",
     "answer_variants": [
       "應用程式本身需要\n作為其他演算法的子程序\n演算法多樣性"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-042"
     ]
   },
   {
     "id": 2,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Max-Heapify 可能會影響哪些節點的屬性？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "目標節點\n左子節點\n右子節點",
+    "options": [
+      "父節點",
+      "右子節點",
+      "左子節點",
+      "目標節點"
+    ],
+    "options_status": "complete",
+    "correct_answer": "右子節點\n左子節點\n目標節點",
     "answer_variants": [
       "目標節點\n左子節點\n右子節點"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-043"
     ]
   },
   {
     "id": 3,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "堆積排序的第一步驟是？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "Increase-Key",
+      "Heap-Sort",
+      "Extract-Max",
+      "Build-Max-Heap"
+    ],
+    "options_status": "complete",
     "correct_answer": "Build-Max-Heap",
     "answer_variants": [
       "Build-Max-Heap"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-038"
     ]
   },
   {
@@ -64,24 +91,40 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-006"
+    ],
+    "question_aliases": [
+      "在 Max-Heap 中，父節點的值必須 ________ 子節點 (請用小寫英文回答)"
     ]
   },
   {
     "id": 5,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "在 Heapsort 過程中，堆積的大小（heap-size）會？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "逐漸增加",
+      "保持不變",
+      "逐漸減少",
+      "指數增加"
+    ],
+    "options_status": "complete",
     "correct_answer": "逐漸減少",
     "answer_variants": [
       "逐漸減少"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-037"
     ]
   },
   {
@@ -98,7 +141,14 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-004"
+    ],
+    "question_aliases": [
+      "Heapsort 中的 exchange 是為了 ____________ 元素 (請用小寫英文回答)"
     ]
   },
   {
@@ -115,109 +165,170 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-009"
+    ],
+    "question_aliases": [
+      "堆積結構中的節點通常以 [1] 儲存 (請用小寫英文回答)"
     ]
   },
   {
     "id": 8,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Max-Heapify 假設子樹已經是？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "Empty",
+      "Max-Heap",
+      "Binary-Tree",
+      "Sorted-List"
+    ],
+    "options_status": "complete",
     "correct_answer": "Max-Heap",
     "answer_variants": [
       "Max-Heap"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-023"
     ]
   },
   {
     "id": 9,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "優先佇列支援哪些操作？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "Insert\nMaximum\nExtract-Max\nIncrease-Key",
+    "options": [
+      "Maximum",
+      "Increase-Key",
+      "Extract-Max",
+      "Insert"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Maximum\nIncrease-Key\nExtract-Max\nInsert",
     "answer_variants": [
       "Insert\nMaximum\nExtract-Max\nIncrease-Key"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-051"
     ]
   },
   {
     "id": 10,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "優先佇列的應用場景包含？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "任務排程\n處理程序管理\n網路封包傳輸",
+    "options": [
+      "網路封包傳輸",
+      "任務排程",
+      "處理程序管理",
+      "靜態搜尋"
+    ],
+    "options_status": "complete",
+    "correct_answer": "網路封包傳輸\n任務排程\n處理程序管理",
     "answer_variants": [
       "任務排程\n處理程序管理\n網路封包傳輸"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-055"
     ]
   },
   {
     "id": 11,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Max-Heapify 的作用是？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "刪除最大值",
+      "插入元素",
+      "維護堆積屬性",
+      "建立新堆積"
+    ],
+    "options_status": "complete",
     "correct_answer": "維護堆積屬性",
     "answer_variants": [
       "維護堆積屬性"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-030"
     ]
   },
   {
     "id": 12,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "在 Max-Heap 中，父節點的值與子節點相比應為？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "小於或等於",
+      "大於或等於",
+      "必須相等",
+      "無關"
+    ],
+    "options_status": "complete",
     "correct_answer": "大於或等於",
     "answer_variants": [
       "大於或等於"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-026"
     ]
   },
   {
     "id": 13,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Increase-Key 動作需要？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "更新節點值\n維護堆積屬性\n向上比較直到根",
+    "options": [
+      "維護堆積屬性",
+      "僅修改根節點",
+      "更新節點值",
+      "向上比較直到根"
+    ],
+    "options_status": "complete",
+    "correct_answer": "維護堆積屬性\n更新節點值\n向上比較直到根",
     "answer_variants": [
       "更新節點值\n維護堆積屬性\n向上比較直到根"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-052"
     ]
   },
   {
@@ -234,58 +345,92 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字多項",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-060"
+    ],
+    "question_aliases": [
+      "Build-Max-Heap 的複雜度為 ____________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})"
     ]
   },
   {
     "id": 15,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "堆積排序為何較 Insertion Sort 快？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "因為時間複雜度較低\n因為比較次數較少\n因為原地交換",
+    "options": [
+      "因為比較次數較少",
+      "因為時間複雜度較低",
+      "因為原地交換",
+      "因為是穩定排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "因為比較次數較少\n因為時間複雜度較低\n因為原地交換",
     "answer_variants": [
       "因為時間複雜度較低\n因為比較次數較少\n因為原地交換"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-041"
     ]
   },
   {
     "id": 16,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列何者不是堆積排序的優點？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "易於實作",
+      "原地排序",
+      "複雜度 O(n log n)",
+      "是穩定的排序"
+    ],
+    "options_status": "complete",
     "correct_answer": "是穩定的排序",
     "answer_variants": [
       "是穩定的排序"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-029"
     ]
   },
   {
     "id": 17,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "堆積結構中的關鍵概念為何？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "Parent(i)\nLeft(i)\nRight(i)",
+    "options": [
+      "Right(i)",
+      "Left(i)",
+      "Depth(i)",
+      "Parent(i)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Right(i)\nLeft(i)\nParent(i)",
     "answer_variants": [
       "Parent(i)\nLeft(i)\nRight(i)"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-040"
     ]
   },
   {
@@ -302,24 +447,40 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-005"
+    ],
+    "question_aliases": [
+      "在 Max-Heapify 中，若節點索引為 i，其左子節點為 ____________ (請用小寫英文回答)"
     ]
   },
   {
     "id": 19,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "堆積排序屬於哪種排序類型？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "穩定排序",
+      "原地排序",
+      "外部排序",
+      "非原地排序"
+    ],
+    "options_status": "complete",
     "correct_answer": "原地排序",
     "answer_variants": [
       "原地排序"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-034"
     ]
   },
   {
@@ -336,7 +497,14 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "community-66351d2d-019c-491e-8427-646241ac4739-1"
+    ],
+    "question_aliases": [
+      "這是Build-Max-Heap(A) 建立過程的結果 目前程式跑到 i 點 下一步 也就是 i-1 陣列A內應該是甚麼結果 \n\nBuild-Max-Heap(A)\n1   heap-size[A] = length[A]\n2   for i = flooe(length[A]/2) downto 1\n3  \t    do Max-Heapify(A, i)\n\n\n索引 i: (1)\n陣列位置內容 A: [4]\n\n         (1)[4]\n        /      \\\n    (2)[1]    (3)[3]\n    /    \\     /    \\\n(4)[2]  i(5)[16] (6)[9] (7)[10]\n /   \\     /\n(8)[14] (9)[8] (10)[7]\n\n ____________ (請用數字回答) 格式: 1,2,3,4,5,6,7,8,9"
     ]
   },
   {
@@ -353,7 +521,14 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-001"
+    ],
+    "question_aliases": [
+      "堆積排序的比較次數大約為 ____________ (請用小寫英文回答)"
     ]
   },
   {
@@ -370,7 +545,14 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-010"
+    ],
+    "question_aliases": [
+      "在 Max-Heap 中，根節點通常包含 ____________ 值 (請用小寫英文回答)"
     ]
   },
   {
@@ -387,92 +569,144 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字多項",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-007"
+    ],
+    "question_aliases": [
+      "____________ 是堆積排序中用來維護堆積性質的函數 (請用小寫英文回答，單字間留 -)"
     ]
   },
   {
     "id": 24,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Build-Max-Heap 包含哪些操作？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "對非葉節點進行 Max-Heapify\n從中間節點往根部進行\n初始化堆積\n將陣列轉換為堆積",
+    "options": [
+      "初始化堆積",
+      "對非葉節點進行 Max-Heapify",
+      "將陣列轉換為堆積",
+      "從中間節點往根部進行"
+    ],
+    "options_status": "complete",
+    "correct_answer": "初始化堆積\n對非葉節點進行 Max-Heapify\n將陣列轉換為堆積\n從中間節點往根部進行",
     "answer_variants": [
       "對非葉節點進行 Max-Heapify\n從中間節點往根部進行\n初始化堆積\n將陣列轉換為堆積"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-044"
     ]
   },
   {
     "id": 25,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "堆積排序中，交換 A[1] 與 A[i] 的目的是？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "增加堆積高度",
+      "清空堆積",
+      "減少比較次數",
+      "將最大值放到正確位置"
+    ],
+    "options_status": "complete",
     "correct_answer": "將最大值放到正確位置",
     "answer_variants": [
       "將最大值放到正確位置"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-024"
     ]
   },
   {
     "id": 26,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "堆積結構適用於哪類問題？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "尋找最大值\n持續更新優先級\n需要 O(n log n) 排序",
+    "options": [
+      "需要 O(n log n) 排序",
+      "持續更新優先級",
+      "穩定的大量資料排序",
+      "尋找最大值"
+    ],
+    "options_status": "complete",
+    "correct_answer": "需要 O(n log n) 排序\n持續更新優先級\n尋找最大值",
     "answer_variants": [
       "尋找最大值\n持續更新優先級\n需要 O(n log n) 排序"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-039"
     ]
   },
   {
     "id": 27,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Max-Heap 的最大元素位於？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "根節點",
+      "最後一個位置",
+      "葉節點",
+      "隨機位置"
+    ],
+    "options_status": "complete",
     "correct_answer": "根節點",
     "answer_variants": [
       "根節點"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-021"
     ]
   },
   {
     "id": 28,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "堆積排序演算法中，迴圈執行的次數大約為？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "n/2",
+      "log n",
+      "n-1",
+      "n^2"
+    ],
+    "options_status": "complete",
     "correct_answer": "n-1",
     "answer_variants": [
       "n-1"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-028"
     ]
   },
   {
@@ -489,7 +723,11 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字多項",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-036"
     ]
   },
   {
@@ -506,41 +744,66 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字多項",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "community-97f746d1-91e8-4b86-ad2f-24b74111e3db-1"
+    ],
+    "question_aliases": [
+      "這是Heapsort(A) 過程的結果 目前程式跑到 i 點 下一步 也就是 i-1 陣列A內應該是甚麼結果 \n\n索引 i: (1)\n陣列位置內容 A: [4]\n\n         (1)[14]\n        /      \\\n    (2)[8]    (3)[10]\n    /    \\     /    \\\n(4)[4] (5)[7] (6)[9] (7)[3]\n /   \\     /\n(8)[2] (9)[1] i(10)[16]\n\n ____________ (請用數字回答) 格式: 1,2,3,4,5,6,7,8,9"
     ]
   },
   {
     "id": 31,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列哪些是堆積排序的特性？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "原地排序\n複雜度 O(n log n)\n使用遞迴",
+    "options": [
+      "複雜度 O(n log n)",
+      "穩定排序",
+      "使用遞迴",
+      "原地排序"
+    ],
+    "options_status": "complete",
+    "correct_answer": "複雜度 O(n log n)\n使用遞迴\n原地排序",
     "answer_variants": [
       "原地排序\n複雜度 O(n log n)\n使用遞迴"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-053"
     ]
   },
   {
     "id": 32,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列哪些關於堆積排序的敘述是正確的？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "原地排序",
+      "複雜度 O(n log n)",
+      "不穩定排序",
+      "需要 O(n) 額外空間"
+    ],
+    "options_status": "complete",
     "correct_answer": "原地排序\n複雜度 O(n log n)\n不穩定排序",
     "answer_variants": [
       "原地排序\n複雜度 O(n log n)\n不穩定排序"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-045"
     ]
   },
   {
@@ -557,41 +820,66 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "community-66351d2d-019c-491e-8427-646241ac4739-3"
+    ],
+    "question_aliases": [
+      "這是Heapsort(A) 過程的結果 目前程式跑到 i 點 下一步 也就是 i-1 陣列A內應該是甚麼結果 \n\n索引 i: (1)\n陣列位置內容 A: [4]\n\n         (1)[8]\n        /      \\\n    (2)[7]    (3)[3]\n    /    \\     /    \\\n(4)[4] (5)[2] (6)[1] i(7)[9]\n /   \\     /\n(8)[10] (9)[14] (10)[16]\n\n ____________ (請用數字回答) 格式: 1,2,3,4,5,6,7,8,9"
     ]
   },
   {
     "id": 34,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Build-Max-Heap 的時間複雜度為？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ],
+    "options_status": "complete",
     "correct_answer": "O(n)",
     "answer_variants": [
       "O(n)"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-031"
     ]
   },
   {
     "id": 35,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Max-Heapify 需要哪些參數？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "比較運算子",
+      "堆積大小 n",
+      "陣列 A",
+      "節點索引 i"
+    ],
+    "options_status": "complete",
     "correct_answer": "陣列 A\n節點索引 i",
     "answer_variants": [
       "陣列 A\n節點索引 i"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-059"
     ]
   },
   {
@@ -608,24 +896,40 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-011"
+    ],
+    "question_aliases": [
+      "Build-Max-Heap 的過程是為了建立 ________ 屬性 (請用小寫英文回答，單字間留 -)"
     ]
   },
   {
     "id": 37,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列何者是優先佇列（Priority Queue）支援的操作？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "Insert",
+      "Delete-All",
+      "Binary-Search",
+      "Sort"
+    ],
+    "options_status": "complete",
     "correct_answer": "Insert",
     "answer_variants": [
       "Insert"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-032"
     ]
   },
   {
@@ -635,14 +939,21 @@
     "question": "請寫出 Max-Heapify (A, i) 的遞回式 [__1__] (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,} 中間不留空白)",
     "options": [],
     "options_status": "not_applicable_or_not_recorded",
-    "correct_answer": "T(n)<=T(2n/3)+big_theta(1)",
+    "correct_answer": "T(n)<=T(2n/3)+big-theta(1)",
     "answer_variants": [
       "T(n)<=T(2n/3)+big_theta(1)"
     ],
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-003"
+    ],
+    "question_aliases": [
+      "請寫出 Max-Heapify (A, i) 的遞回式 ____________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,} 中間不留空白)"
     ]
   },
   {
@@ -659,58 +970,92 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-015"
+    ],
+    "question_aliases": [
+      "優先佇列中，插入操作的複雜度通常為 ____________"
     ]
   },
   {
     "id": 40,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "當堆積大小 < 1 時，Extract-Max 會發生？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "Heap-Underflow",
+      "Success",
+      "Overflow",
+      "Reset"
+    ],
+    "options_status": "complete",
     "correct_answer": "Heap-Underflow",
     "answer_variants": [
       "Heap-Underflow"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-058"
     ]
   },
   {
     "id": 41,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "堆積的完整樹形狀意味著？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "除最後一層外均填滿\n節點由左至右填入\n沒有空缺",
+    "options": [
+      "節點由左至右填入",
+      "除最後一層外均填滿",
+      "沒有空缺",
+      "可以有空節點"
+    ],
+    "options_status": "complete",
+    "correct_answer": "節點由左至右填入\n除最後一層外均填滿\n沒有空缺",
     "answer_variants": [
       "除最後一層外均填滿\n節點由左至右填入\n沒有空缺"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-056"
     ]
   },
   {
     "id": 42,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "二元堆積（Binary Heap）可以被視為哪種資料結構？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "完全二元樹",
+      "雜湊表",
+      "連結串列",
+      "圖"
+    ],
+    "options_status": "complete",
     "correct_answer": "完全二元樹",
     "answer_variants": [
       "完全二元樹"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-022"
     ]
   },
   {
@@ -727,109 +1072,174 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-047"
+    ],
+    "question_aliases": [
+      "關於虛擬碼的 第6與第10行 請問以下哪些正確"
     ]
   },
   {
     "id": 44,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Extract-Max 操作的時間複雜度為？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "O(log n)",
+      "O(1)",
+      "O(n^2)",
+      "O(n)"
+    ],
+    "options_status": "complete",
     "correct_answer": "O(log n)",
     "answer_variants": [
       "O(log n)"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-020"
     ]
   },
   {
     "id": 45,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列何者影響堆積效率？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "比較操作次數\n資料存取頻率\n堆積高度\n陣列大小",
+    "options": [
+      "堆積高度",
+      "資料存取頻率",
+      "陣列大小",
+      "比較操作次數"
+    ],
+    "options_status": "complete",
+    "correct_answer": "堆積高度\n資料存取頻率\n陣列大小\n比較操作次數",
     "answer_variants": [
       "比較操作次數\n資料存取頻率\n堆積高度\n陣列大小"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-049"
     ]
   },
   {
     "id": 46,
     "title": "",
-    "type": "choice_options_missing",
-    "question": "請問下列的最小-最大堆積樹中的「?」，應該填入那一個值才是正確？ 4 / 50 40 / \\ / 10 8 7 ? / 30 20",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "5\n9",
+    "type": "choice",
+    "question": "請問下列的最小-最大堆積樹中的「?」，應該填入那一個值才是正確？ \n\n      4\n    /   \\\n  50     40\n /  \\   /  \\\n10   8 7    ?\n/ \\\n30 20",
+    "options": [
+      "9",
+      "5",
+      "2",
+      "3"
+    ],
+    "options_status": "complete",
+    "correct_answer": "9\n5",
     "answer_variants": [
       "5\n9"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "community-3f378d34-90b1-4772-8fba-22cd24614876-4"
+    ],
+    "question_aliases": [
+      "請問下列的最小-最大堆積樹中的「?」，應該填入那一個值才是正確？ \n\n      4\n    /   \\\n  50     40\n /  \\   /  \\\n10   8 7    ?\n/ \\\n30 20",
+      "請問下列的最小-最大堆積樹中的「?」，應該填入那一個值才是正確？ 4 / 50 40 / \\ / 10 8 7 ? / 30 20"
     ]
   },
   {
     "id": 47,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列哪些操作在 Max-Heap 中維持屬性？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "Build-Max-Heap\nMax-Heapify\nExtract-Max",
+    "options": [
+      "Heap-Sort",
+      "Max-Heapify",
+      "Build-Max-Heap",
+      "Extract-Max"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Max-Heapify\nBuild-Max-Heap\nExtract-Max",
     "answer_variants": [
       "Build-Max-Heap\nMax-Heapify\nExtract-Max"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-054"
     ]
   },
   {
     "id": 48,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Max-Heapify 操作的時間複雜度為？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "O(log n)",
+      "O(1)",
+      "O(n log n)",
+      "O(n)"
+    ],
+    "options_status": "complete",
     "correct_answer": "O(log n)",
     "answer_variants": [
       "O(log n)"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-025"
     ]
   },
   {
     "id": 49,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列何者定義了堆積（Heap）的性質？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "Sort Property",
+      "BST Property",
+      "Heap Property",
+      "Search Property"
+    ],
+    "options_status": "complete",
     "correct_answer": "Heap Property",
     "answer_variants": [
       "Heap Property"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字多項",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-035"
     ]
   },
   {
@@ -846,7 +1256,14 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "community-3f378d34-90b1-4772-8fba-22cd24614876-3"
+    ],
+    "question_aliases": [
+      "這是Build-Max-Heap(A) 建立過程的結果 目前程式跑到 i 點 下一步 也就是 i-1 陣列A內應該是甚麼結果 \n\nBuild-Max-Heap(A)\n1   heap-size[A] = length[A]\n2   for i = flooe(length[A]/2) downto 1\n3  \t    do Max-Heapify(A, i)\n\n\n索引 i: (1)\n陣列位置內容 A: [4]\n\n         (1)[4]\n        /      \\\n    (2)[1]    i(3)[3]\n    /    \\     /    \\\n(4)[14] (5)[16] (6)[9] (7)[10]\n /   \\     /\n(8)[2] (9)[8] (10)[7]\n\n ____________ (請用數字回答) 格式: 1,2,3,4,5,6,7,8,9"
     ]
   },
   {
@@ -863,58 +1280,92 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字多項",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-013"
+    ],
+    "question_aliases": [
+      "堆積排序屬於 ________ 排序，意指不需要額外儲存空間 (請用小寫英文回答)"
     ]
   },
   {
     "id": 52,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列關於 Extract-Max 的敘述，哪些正確？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "移除並回傳最大值",
+      "需維護堆積屬性",
+      "只適用於空堆積",
+      "時間複雜度 O(log n)"
+    ],
+    "options_status": "complete",
     "correct_answer": "移除並回傳最大值\n需維護堆積屬性\n時間複雜度 O(log n)",
     "answer_variants": [
       "移除並回傳最大值\n需維護堆積屬性\n時間複雜度 O(log n)"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-057"
     ]
   },
   {
     "id": 53,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "堆積排序（Heapsort）的時間複雜度為？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "O(n^2)",
+      "O(n)",
+      "O(log n)",
+      "O(n log n)"
+    ],
+    "options_status": "complete",
     "correct_answer": "O(n log n)",
     "answer_variants": [
       "O(n log n)"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-033"
     ]
   },
   {
     "id": 54,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "給定陣列索引 i，其父節點的索引計算方式為？",
-    "options": [],
-    "options_status": "not_recorded",
+    "options": [
+      "floor(i/2)",
+      "2i+1",
+      "i-1",
+      "2i"
+    ],
+    "options_status": "complete",
     "correct_answer": "floor(i/2)",
     "answer_variants": [
       "floor(i/2)"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "單選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-027"
     ]
   },
   {
@@ -931,7 +1382,14 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字作答",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-008"
+    ],
+    "question_aliases": [
+      "堆積排序演算法中，執行 heap-size[A] <- heap-size[A] - 1 是為了 ____________ 堆積大小 (請用小寫英文回答)"
     ]
   },
   {
@@ -948,24 +1406,40 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字多項",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-012"
+    ],
+    "question_aliases": [
+      "堆積排序的時間複雜度為 ____________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})"
     ]
   },
   {
     "id": 57,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "關於 Binary Heap 陣列表示法，下列何者正確？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "索引 1 為根節點\n子節點位於 2i 與 2i+1\n父節點位於 ⌊ i/2 ⌋",
+    "options": [
+      "父節點位於 ⌊ i/2 ⌋",
+      "陣列長度即堆積大小",
+      "子節點位於 2i 與 2i+1",
+      "索引 1 為根節點"
+    ],
+    "options_status": "complete",
+    "correct_answer": "父節點位於 ⌊ i/2 ⌋\n子節點位於 2i 與 2i+1\n索引 1 為根節點",
     "answer_variants": [
       "索引 1 為根節點\n子節點位於 2i 與 2i+1\n父節點位於 ⌊ i/2 ⌋"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-050"
     ]
   },
   {
@@ -982,25 +1456,57 @@
     "answer_basis": "provided_unit4_answer",
     "source_type": "文字多項",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-002"
+    ],
+    "question_aliases": [
+      "堆積是一種陣列物件，可被視為一棵 ________ 二元樹 (請用小寫英文回答)"
     ]
   },
   {
     "id": 59,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "堆積的類型有哪些？",
-    "options": [],
-    "options_status": "not_recorded",
-    "correct_answer": "Max-Heap\nMin-Heap\nBinary-Heap",
+    "options": [
+      "Binary-Heap",
+      "Min-Heap",
+      "Max-Heap",
+      "Linked-Heap"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Binary-Heap\nMin-Heap\nMax-Heap",
     "answer_variants": [
       "Max-Heap\nMin-Heap\nBinary-Heap"
     ],
     "answer_basis": "provided_unit4_answer",
-    "source_type": "文字作答",
+    "source_type": "多選題",
     "sources": [
-      "演算法題庫_整理版.txt"
+      "演算法題庫_整理版.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-048"
+    ]
+  },
+  {
+    "id": 60,
+    "title": "",
+    "question": "堆積樹的高度通常為 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "logn",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L4-014"
     ]
   }
 ]
-

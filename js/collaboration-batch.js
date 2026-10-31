@@ -1,4 +1,4 @@
-import { importContributionFiles, classifyEntries, comparisonMarkup, inferContributionKind, validateContributionChoice } from './collaboration-import.js?v=20261030-pairing1';
+import { importContributionFiles, classifyEntries, comparisonMarkup, inferContributionKind, validateContributionChoice } from './collaboration-import.js?v=20261031-bank1';
 import { parseDraft } from './custom-questions.js?v=20261017-formats1';
 import { escapeHtml } from './utils.js?v=20261017-formats1';
 

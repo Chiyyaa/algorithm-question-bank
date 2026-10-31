@@ -1,0 +1,2332 @@
+{
+  "schema": 1,
+  "checked_on": "2026-10-31",
+  "records": [
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000001,
+      "expected": {
+        "question": "快速排序的征服階段包含兩個 [__1__] 呼叫 (請用小寫英文回答)",
+        "options": [],
+        "correct_answer": "recursive",
+        "type": "fill_blank",
+        "user_answer": "recursive"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "快速排序的征服階段包含兩個 ________ 呼叫 (請用小寫英文回答)"
+        ],
+        "reference_question_ids": [
+          "L5-023"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000003,
+      "expected": {
+        "question": "下列關於 PARTITION 的敘述，何者正確？",
+        "options": [
+          "A. 回傳 pivot 的索引",
+          "B. 移動小於 pivot 的元素到右側",
+          "C. 回傳所有元素的總和",
+          "D. 交換陣列的所有元素"
+        ],
+        "correct_answer": "回傳 pivot 的索引",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-020"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 17 題",
+          "try2.txt 第 4 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000004,
+      "expected": {
+        "question": "快速排序的空間複雜度為 [**1**] (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
+        "options": [],
+        "correct_answer": "O(logn)",
+        "type": "short_answer"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "快速排序的空間複雜度為 ________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})"
+        ],
+        "reference_question_ids": [
+          "L5-041"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000005,
+      "expected": {
+        "question": "快速排序演算法中的「征服 (Conquer)」步驟意指？",
+        "options": [
+          "A. 將陣列分割",
+          "B. 將結果連結",
+          "C. 遞迴呼叫排序子問題",
+          "D. 尋找 pivot"
+        ],
+        "correct_answer": "遞迴呼叫排序子問題",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-059"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 12 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000006,
+      "expected": {
+        "question": "快速排序最差情況的複雜度為 [**1**](請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
+        "options": [],
+        "correct_answer": "O(n^2)",
+        "type": "short_answer"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "快速排序最差情況的複雜度為 ________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})"
+        ],
+        "reference_question_ids": [
+          "L5-010"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000007,
+      "expected": {
+        "question": "選出課本上的 Quicksort Partition(A, p, r) Worst-case partition 與 Best-case partition 遞迴式子",
+        "options": [
+          "A. T(n)=2T(n/2)+Θ(1)",
+          "B. T(n)=T(n-1)+Θ(n)",
+          "C. T(n)=2T(n/2)+Θ(n)",
+          "D. T(n)=T(n-1)-Θ(n)"
+        ],
+        "correct_answer": "* T(n)=T(n-1)+Θ(n)\n* T(n)=2T(n/2)+Θ(n)",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-032"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try2.txt 第 7 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000008,
+      "expected": {
+        "question": "下列哪些是快速排序的優點？",
+        "options": [
+          "A. 不需要額外記憶體",
+          "B. 平均情況下非常快",
+          "C. 不穩定排序",
+          "D. 容易實作"
+        ],
+        "correct_answer": "* 不需要額外記憶體\n* 平均情況下非常快\n* 容易實作",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-039"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 18 題",
+          "try2.txt 第 18 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000009,
+      "expected": {
+        "question": "快速排序在 [**1**] 情況下表現最好 (請用小寫英文回答)",
+        "options": [],
+        "correct_answer": "average",
+        "type": "short_answer"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "快速排序在 ________ 情況下表現最好 (請用小寫英文回答)"
+        ],
+        "reference_question_ids": [
+          "L5-050"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000010,
+      "expected": {
+        "question": "如何提升快速排序的效率？",
+        "options": [
+          "避免使用遞迴",
+          "在子問題很小時切換到插入排序",
+          "使用三數取中法 (Median-of-three)",
+          "使用隨機化 Pivot"
+        ],
+        "correct_answer": "在子問題很小時切換到插入排序\n使用三數取中法 (Median-of-three)\n使用隨機化 Pivot",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-017"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000011,
+      "expected": {
+        "question": "哪些是快速排序的關鍵步驟？",
+        "options": [
+          "Conquer",
+          "Combine",
+          "Divide",
+          "Scan"
+        ],
+        "correct_answer": "Conquer\nCombine\nDivide",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-040"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000012,
+      "expected": {
+        "question": "快速排序在處理小陣列時可能會較慢，原因為？",
+        "options": [
+          "比較次數過多",
+          "Partition 函數的效能",
+          "不穩定性",
+          "遞迴呼叫的額外開銷"
+        ],
+        "correct_answer": "比較次數過多\n遞迴呼叫的額外開銷",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "複選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-051"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000013,
+      "expected": {
+        "question": "在分析快速排序時，我們考慮？",
+        "options": [
+          "A. 最差情況",
+          "B. 平均情況",
+          "C. 陣列的顏色",
+          "D. 最好情況"
+        ],
+        "correct_answer": "* 最好情況\n* 平均情況\n* 最差情況",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-031"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try2.txt 第 16 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000014,
+      "expected": {
+        "question": "快速排序的「原地 (in-place)」特性指？",
+        "options": [
+          "不需要複製陣列",
+          "在輸入陣列本身進行運算",
+          "不需要變數",
+          "僅使用常數額外空間"
+        ],
+        "correct_answer": "不需要複製陣列\n在輸入陣列本身進行運算\n僅使用常數額外空間",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-053"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000015,
+      "expected": {
+        "question": "若快速排序出現最差情況，通常是因為 [**1**] 選擇不當 (請用小寫英文回答)",
+        "options": [],
+        "correct_answer": "pivot",
+        "type": "short_answer"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "若快速排序出現最差情況，通常是因為 ________ 選擇不當 (請用小寫英文回答)"
+        ],
+        "reference_question_ids": [
+          "L5-042"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000016,
+      "expected": {
+        "question": "給定課本版本的快速排序法分割演算法 Partition(A, p, r)。 PARTITION(A, p, r) 1 x = A[r] 2 i = p - 1 3 for j = p to r - 1 4 if A[j] ≤ x 5 i = i + 1 6 exchange(A[i], A[j]) 7 exchange (A[i+1], A[r]) 8 return i + 1 若改為以第一個元素 A[p] 為 pivot PARTITION(A, p, r) 1 x ← A[p] 2 i ← p 3 for j ← p + 1 to r 4 if A[j] ≤ x 5 i ← i + 1 6 exchange(A[i], A[j]) 7 [**1**] 8 [**2**] 第7與8行要怎麼改 (空格中不要留空白)",
+        "options": [],
+        "correct_answer": "* exchange(A[p],A[i])|exchange(A[i],A[p])\n* return i",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "not_applicable",
+        "source_type": "兩格填空／程式碼修改】【本次唯一未得分",
+        "question_aliases": [
+          "給定課本版本的快速排序法分割演算法 Partition(A, p, r)。\n\nPARTITION(A, p, r)\n1  x = A[r]\n2  i = p - 1\n3  for j = p to r - 1\n4      if A[j] ≤ x\n5          i = i + 1\n6          exchange(A[i], A[j])\n7  exchange(A[i+1], A[r])\n8  return i + 1\n\n若改為以第一個元素 A[p] 為 pivot\n\nPARTITION(A, p, r)\n1  x = A[p]\n2  i = p\n3  for j = p + 1 to r\n4      if A[j] ≤ x\n5          i = i + 1\n6          exchange(A[i], A[j])\n7  ________\n8  ________\n\n第7與8行要怎麼改 (空格中不要留空白)"
+        ],
+        "reference_question_ids": [
+          "L5-004"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try2.txt 第 14 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000017,
+      "expected": {
+        "question": "快速排序適用於 [**1**] 陣列排序 (請用小寫英文回答)",
+        "options": [],
+        "correct_answer": "large",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "not_applicable",
+        "source_type": "填空",
+        "question_aliases": [
+          "快速排序適用於 ________ 陣列排序 (請用小寫英文回答)"
+        ],
+        "reference_question_ids": [
+          "L5-047"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 6 題",
+          "try2.txt 第 11 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000018,
+      "expected": {
+        "question": "在快速排序的 PARTITION 函數中，pivot（樞紐）通常選擇哪一個元素？",
+        "options": [
+          "A. 中間元素",
+          "B. 隨機元素",
+          "C. 第一個元素 (A[p])",
+          "D. 最後一個元素 (A[r])"
+        ],
+        "correct_answer": "最後一個元素 (A[r])",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選",
+        "question_aliases": [
+          "在快速排序的 PARTITION 函數中，pivot (樞紐) 通常選擇哪一個元素？"
+        ],
+        "reference_question_ids": [
+          "L5-016"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 10 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000019,
+      "expected": {
+        "question": "快速排序的平均時間複雜度為？",
+        "options": [
+          "A. O(log n)",
+          "B. O(n log n)",
+          "C. O(n)",
+          "D. O(n²)"
+        ],
+        "correct_answer": "O(n log n)",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-029"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try2.txt 第 12 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000020,
+      "expected": {
+        "question": "下列何者是快速排序的特徵？",
+        "options": [
+          "A. 穩定排序 (Stable)",
+          "B. 原地排序 (In-place)",
+          "C. 需要 O(n) 額外空間",
+          "D. 非原地排序"
+        ],
+        "correct_answer": "原地排序 (In-place)",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-014"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 19 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000021,
+      "expected": {
+        "question": "關於 Quicksort(A, p, r)，下列正確的是？",
+        "options": [
+          "若 p >= r 則進行 partition",
+          "p 是起始索引",
+          "若 p < r 則進行 partition",
+          "r 是結束索引"
+        ],
+        "correct_answer": "p 是起始索引\n若 p < r 則進行 partition\nr 是結束索引",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-049"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000022,
+      "expected": {
+        "question": "快速排序的空間複雜度 (Space complexity) 主要取決於？",
+        "options": [
+          "Pivot 的大小",
+          "陣列總長度",
+          "比較次數",
+          "遞迴堆疊的深度"
+        ],
+        "correct_answer": "遞迴堆疊的深度",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [
+          "快速排序的空間複雜度 (Space complexity) 主要取決於？",
+          "快速排序的空間複雜度（Space complexity）主要取決於？"
+        ],
+        "reference_question_ids": [
+          "L5-026"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000023,
+      "expected": {
+        "question": "快速排序的遞迴樹深度在理想情況為 [**1**] (請用小寫英文回答)",
+        "options": [],
+        "correct_answer": "logn",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "not_applicable",
+        "source_type": "填空",
+        "question_aliases": [
+          "快速排序的遞迴樹深度在理想情況為 ________ (請用小寫英文回答)"
+        ],
+        "reference_question_ids": [
+          "L5-001"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 9 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000024,
+      "expected": {
+        "question": "給定課本版本的快速排序法分割演算法 Partition(A, p, r)。 一開始，陣列 A 的狀態如下：指標位置：p 和 j 指向第一個元素 3，且 i 位於 p 的左側外（尚未進入陣列）。 陣列內容： 問題 1：當 j 移動到指向元素 1 的當下，陣列的內容會是哪一個？[**1**] 問題 2：當 PARTITION 函數執行完畢後，最終的陣列內容會是什麼？[**2**] (Please format your answer as: 1,2,3,4,5,6,7,8)",
+        "options": [],
+        "correct_answer": "* 3, 2, 9, 8, 1, 7, 6, 5\n* 3, 2, 1, 5, 9, 7, 6, 8",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "not_applicable",
+        "source_type": "兩格填空／陣列狀態題",
+        "question_aliases": [
+          "給定課本版本的快速排序法分割演算法 Partition(A, p, r)。\n\n一開始，陣列 A 的狀態如下： Array contents: [3] [9] [2] [8] [1] [7] [6] [5] 指標位置：p 和 j 指向第一個元素 3，且 i 位於 p 的左側外 (尚未進入陣列)。 陣列內容：\n\n問題 1：當 j 移動到指向元素 1 的當下，陣列的內容會是哪一個？ ________\n問題 2：當 PARTITION 函數執行完畢後，最終的陣列內容會是什麼？ ________\n(Please format your answer as: 1,2,3,4,5,6,7,8)"
+        ],
+        "reference_question_ids": [
+          "L5-044"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 4 題",
+          "try2.txt 第 1 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000025,
+      "expected": {
+        "question": "關於快速排序的遞迴，下列何者正確？",
+        "options": [
+          "只對右子陣列遞迴",
+          "不需要遞迴",
+          "只對左子陣列遞迴",
+          "對左右兩個子陣列分別進行遞迴"
+        ],
+        "correct_answer": "對左右兩個子陣列分別進行遞迴",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-036"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000026,
+      "expected": {
+        "question": "選出課本上的 Quicksort Partition(A, p, r) average-case partition 可能的 遞迴式子",
+        "options": [
+          "A. T(n)=2T(n/2)+Θ(n)",
+          "B. T(n)=2T(n-1)+Θ(n)",
+          "C. T(n)=T(9n/10)+T(n/10)+Θ(n)",
+          "D. T(n)=T(n-1)+Θ(n)"
+        ],
+        "correct_answer": "T(n)=2T(n/2)+Θ(n)\nT(n)=T(9n/10)+T(n/10)+Θ(n)",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選",
+        "question_aliases": [],
+        "reference_question_ids": [],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 5 題",
+          "try2.txt 第 17 題"
+        ],
+        "answer_note": "原來源平均情況遞迴式漏寫加號，依現有完整選項補齊加號；未套用來源缺字版本。"
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000027,
+      "expected": {
+        "question": "快速排序在處理已經排序過的陣列 (且選擇最後一個元素為 pivot) 時，複雜度為？",
+        "options": [
+          "O(n log n)",
+          "O(log n)",
+          "O(n)",
+          "O(n²)"
+        ],
+        "correct_answer": "O(n²)",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [
+          "快速排序在處理已經排序過的陣列 (且選擇最後一個元素為 pivot) 時，複雜度為？",
+          "快速排序在處理已經排序過的陣列（且選擇最後一個元素為 pivot）時，複雜度為？"
+        ],
+        "reference_question_ids": [
+          "L5-056"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000028,
+      "expected": {
+        "question": "課本上的 Quicksort Partition(A, p, r) 一開始陣列A 指標位置：p 和 j 指向第一個元素 2，i 位於 p 的左側外 (尚未進入陣列)。 陣列內容：[2] [8] [7] [1] [3] [5] [6] [4]\n\n當j 執行到指向[3] 這個元素 時 陣列內容：是以下哪一個",
+        "options": [
+          "[2] [8] [7] [1] [3] [5] [6] [4]",
+          "[2] [1] [7] [8] [3] [5] [6] [4]",
+          "[2] [1] [3] [4] [7] [5] [6] [8]",
+          "[2] [1] [3] [8] [7] [5] [6] [4]"
+        ],
+        "correct_answer": "[2] [1] [7] [8] [3] [5] [6] [4]",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [
+          "課本上的 Quicksort Partition(A, p, r) 一開始陣列A 指標位置：p 和 j 指向第一個元素 2，i 位於 p 的左側外 (尚未進入陣列)。 陣列內容：[2] [8] [7] [1] [3] [5] [6] [4]\n\n當j 執行到指向[3] 這個元素 時 陣列內容：是以下哪一個",
+          "課本上的 Quicksort Partition(A, p, r) 一開始陣列A 指標位置：p 和 j 指向第一個元素 2，i 位於 p 的左側外（尚未進入陣列）。 陣列內容：[2] [8] [7] [1] [3] [5] [6] [4] 當j 執行到指向[3]這個元素 時 陣列內容：是以下哪一個"
+        ],
+        "reference_question_ids": [
+          "L5-024"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 2 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000029,
+      "expected": {
+        "question": "PARTITION 執行後的性質包含？",
+        "options": [
+          "A. Pivot 位於 q 位置",
+          "B. 所有右側元素 > pivot",
+          "C. 陣列已經完全排序",
+          "D. 所有左側元素 <= pivot"
+        ],
+        "correct_answer": "* 所有左側元素 <= pivot\n* 所有右側元素 > pivot\n* Pivot 位於 q 位置",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-009"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 8 題",
+          "try2.txt 第 3 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000030,
+      "expected": {
+        "question": "快速排序的主要策略是 [**1**] (請用英文小寫回答，單字間留一空白)",
+        "options": [],
+        "correct_answer": "divide and conquer",
+        "type": "short_answer"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "快速排序的主要策略是 ________ (請用英文小寫回答，單字間留一空白)"
+        ],
+        "reference_question_ids": [
+          "L5-058"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000031,
+      "expected": {
+        "question": "快速排序為了避免最差情況，可以使用 [**1**] 策略 (請用小寫英文回答)",
+        "options": [],
+        "correct_answer": "randomized",
+        "type": "short_answer"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "快速排序為了避免最差情況，可以使用 ________ 策略 (請用小寫英文回答)"
+        ],
+        "reference_question_ids": [
+          "L5-037"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000032,
+      "expected": {
+        "question": "若要達成 O(n log n) 的期望時間複雜度，快速排序需要？",
+        "options": [
+          "有限的記憶體",
+          "正確的遞迴處理",
+          "隨機選擇 pivot",
+          "均勻的分割"
+        ],
+        "correct_answer": "正確的遞迴處理\n隨機選擇 pivot\n均勻的分割",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-054"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000034,
+      "expected": {
+        "question": "為什麼快速排序需要進行交換 (exchange)？",
+        "options": [
+          "A. 確保 pivot 歸位",
+          "B. 維持原地排序性質",
+          "C. 移動元素到適當分區",
+          "D. 清除不需要的元素"
+        ],
+        "correct_answer": "* 移動元素到適當分區\n* 維持原地排序性質\n* 確保 pivot 歸位",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-008"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 14 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000035,
+      "expected": {
+        "question": "快速排序與合併排序（Merge Sort）的主要差別在於？",
+        "options": [
+          "A. 快速排序需要大量記憶體",
+          "B. 兩者無差別",
+          "C. 合併排序較慢",
+          "D. 快速排序是原地排序"
+        ],
+        "correct_answer": "快速排序是原地排序",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選",
+        "question_aliases": [
+          "快速排序與合併排序 (Merge Sort) 的主要差別在於？"
+        ],
+        "reference_question_ids": [
+          "L5-048"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try2.txt 第 15 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000036,
+      "expected": {
+        "question": "在快速排序中，交換元素使用 [**1**] 操作 (請用小寫英文回答)",
+        "options": [],
+        "correct_answer": "exchange",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "not_applicable",
+        "source_type": "填空",
+        "question_aliases": [
+          "在快速排序中，交換元素使用 ________ 操作 (請用小寫英文回答)"
+        ],
+        "reference_question_ids": [
+          "L5-022"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 7 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000037,
+      "expected": {
+        "question": "在分析 QuickSort 時，什麼會影響複雜度？",
+        "options": [
+          "A. Pivot 的選擇",
+          "B. 電腦的處理器速度",
+          "C. 資料的分佈情況",
+          "D. 遞迴樹的結構"
+        ],
+        "correct_answer": "Pivot 的選擇\n資料的分佈情況\n遞迴樹的結構",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-013"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 21 題",
+          "try2.txt 第 2 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000038,
+      "expected": {
+        "question": "在快速排序中，我們通常選擇陣列的 [**1**] 元素作為 pivot (請用小寫英文回答)",
+        "options": [],
+        "correct_answer": "last",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "not_applicable",
+        "source_type": "填空",
+        "question_aliases": [
+          "在快速排序中，我們通常選擇陣列的 ________ 元素作為 pivot (請用小寫英文回答)"
+        ],
+        "reference_question_ids": [
+          "L5-002"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 15 題",
+          "try2.txt 第 20 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000039,
+      "expected": {
+        "question": "快速排序的最差情況 (O(n²)) 可能發生在？",
+        "options": [
+          "輸入陣列為反向排序",
+          "輸入陣列已排序",
+          "Pivot 選擇總是最大或最小值",
+          "Pivot 選擇總是中間值"
+        ],
+        "correct_answer": "輸入陣列為反向排序\n輸入陣列已排序\nPivot 選擇總是最大或最小值",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [
+          "快速排序的最差情況 (O(n²)) 可能發生在？",
+          "快速排序的最差情況（O(n²)）可能發生在？"
+        ],
+        "reference_question_ids": [
+          "L5-035"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000040,
+      "expected": {
+        "question": "在快速排序遞迴呼叫中，不包含哪個部分？",
+        "options": [
+          "A. 合併 (Combine)",
+          "B. 征服 (Conquer)",
+          "C. 分治 (Divide)",
+          "D. 選擇 (pivot)"
+        ],
+        "correct_answer": "合併 (Combine)",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-027"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try2.txt 第 5 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000041,
+      "expected": {
+        "question": "若陣列中有重複元素，快速排序可以處理嗎？",
+        "options": [
+          "僅能處理整數",
+          "會造成無窮迴圈",
+          "可以",
+          "不可以"
+        ],
+        "correct_answer": "可以",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-043"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000042,
+      "expected": {
+        "question": "快速排序 (Quicksort) 主要利用哪種演算法設計策略？",
+        "options": [
+          "貪婪演算法 (Greedy Algorithm)",
+          "動態規劃 (Dynamic Programming)",
+          "回溯法 (Backtracking)",
+          "分治法 (Divide and Conquer)"
+        ],
+        "correct_answer": "分治法 (Divide and Conquer)",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [
+          "快速排序 (Quicksort) 主要利用哪種演算法設計策略？",
+          "快速排序（Quicksort）主要利用哪種演算法設計策略？"
+        ],
+        "reference_question_ids": [
+          "L5-011"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000043,
+      "expected": {
+        "question": "快速排序法的遞迴式若為 T(n)=T(9n/10)+T(n/10)Θ(n) 用遞迴樹展開後 較高的那邊 高度是多少 [**1**] (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^ ，下標請用_，如 log_(5)(n^2) ，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
+        "options": [],
+        "correct_answer": "log_(10/9)(n)",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "not_applicable",
+        "source_type": "填空",
+        "question_aliases": [
+          "快速排序法的遞迴式若為 T(n)=T(9n/10)+T(n/10)Θ(n) 用遞迴樹展開後 較高的那邊 高度是多少 ____________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^ ，下標請用_，如 log_(5)(n^2) ，符號請用 {big-theta, theta, big-omega, omega, O, o,})"
+        ],
+        "reference_question_ids": [
+          "L5-012"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try2.txt 第 13 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000044,
+      "expected": {
+        "question": "Partition 演算法中的 j 指標作用是？",
+        "options": [
+          "A. 指向陣列開頭",
+          "B. 指向 pivot",
+          "C. 掃描陣列元素",
+          "D. 計算交換次數"
+        ],
+        "correct_answer": "掃描陣列元素",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-038"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 13 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000045,
+      "expected": {
+        "question": "快速排序將陣列分為兩部分後，分別對左右陣列 [**1**] 排序 (請用小寫英文回答)",
+        "options": [],
+        "correct_answer": "recursively",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "not_applicable",
+        "source_type": "填空",
+        "question_aliases": [
+          "快速排序將陣列分為兩部分後，分別對左右陣列 ________ 排序 (請用小寫英文回答)"
+        ],
+        "reference_question_ids": [
+          "L5-003"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try2.txt 第 10 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000046,
+      "expected": {
+        "question": "快速排序的時間複雜度在平均情況為 [**1**] (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
+        "options": [],
+        "correct_answer": "O(nlogn)",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "not_applicable",
+        "source_type": "填空",
+        "question_aliases": [
+          "快速排序的時間複雜度在平均情況為 ________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})"
+        ],
+        "reference_question_ids": [
+          "L5-057"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 11 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000047,
+      "expected": {
+        "question": "快速排序的 [**1**] 步驟通常不需額外動作 (請用小寫英文回答)",
+        "options": [],
+        "correct_answer": "combine",
+        "type": "choice_options_missing"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "快速排序的 ________ 步驟通常不需額外動作 (請用小寫英文回答)"
+        ],
+        "reference_question_ids": [
+          "L5-025"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000048,
+      "expected": {
+        "question": "下列哪些演算法與快速排序同樣使用分治法？",
+        "options": [
+          "Heap Sort",
+          "Insertion Sort",
+          "Binary Search",
+          "Merge Sort"
+        ],
+        "correct_answer": "Binary Search\nMerge Sort",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-018"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000049,
+      "expected": {
+        "question": "快速排序處理 n 個元素的複雜度級別為 [**1**] (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
+        "options": [],
+        "correct_answer": "O(nlogn)",
+        "type": "choice_options_missing"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "快速排序處理 n 個元素的複雜度級別為 ________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})"
+        ],
+        "reference_question_ids": [
+          "L5-028"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000050,
+      "expected": {
+        "question": "快速排序在最差情況 (Worst-case) 下的時間複雜度為？",
+        "options": [
+          "O(n²)",
+          "O(n log n)",
+          "O(log n)",
+          "O(n)"
+        ],
+        "correct_answer": "O(n²)",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [
+          "快速排序在最差情況 (Worst-case) 下的時間複雜度為？",
+          "快速排序在最差情況（Worst-case）下的時間複雜度為？"
+        ],
+        "reference_question_ids": [
+          "L5-055"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000051,
+      "expected": {
+        "question": "下列何者會導致快速排序變慢？",
+        "options": [
+          "Pivot 選擇太好",
+          "沒有進行排序",
+          "Pivot 選擇不佳 (分割不平衡)",
+          "陣列元素太少"
+        ],
+        "correct_answer": "Pivot 選擇不佳 (分割不平衡)",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-034"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000052,
+      "expected": {
+        "question": "快速排序與堆積排序的比較，下列正確的是？",
+        "options": [
+          "兩者都是原地排序",
+          "快速排序在平均情況下通常較快",
+          "堆積排序保證 O(n log n)",
+          "兩者都是穩定排序"
+        ],
+        "correct_answer": "兩者都是原地排序\n快速排序在平均情況下通常較快\n堆積排序保證 O(n log n)",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-052"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000053,
+      "expected": {
+        "question": "Partition 函數中的 exchange 操作用於？",
+        "options": [
+          "節省陣列空間",
+          "將較大元素留在右區",
+          "將 pivot 移到正確位置",
+          "將較小元素移到左區"
+        ],
+        "correct_answer": "將 pivot 移到正確位置\n將較小元素移到左區",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-046"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 1 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000054,
+      "expected": {
+        "question": "快速排序法的遞迴式若為 T(n)=T(9n/10)+T(n/10)Θ(n) 用遞迴樹展開後 較低的那邊 高度是多少 [**1**] (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^ ，下標請用_，如 log_(5)(n^2) log_(5)(n)，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
+        "options": [],
+        "correct_answer": "log_(10)(n)",
+        "type": "choice_options_missing"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "快速排序法的遞迴式若為 T(n)=T(9n/10)+T(n/10)Θ(n) 用遞迴樹展開後 較低的那邊 高度是多少 ________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，下標請用_，如 log_(5)(n^2) log_(5)(n)，符號請用 {big-theta, theta, big-omega, omega, O, o,})"
+        ],
+        "reference_question_ids": [
+          "L5-030"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000055,
+      "expected": {
+        "question": "關於 Partition 函數的變數，下列敘述正確的是？",
+        "options": [
+          "A. p 為陣列的結束索引",
+          "B. i 用來標記小於 pivot 的區域邊界",
+          "C. x 為 Pivot",
+          "D. j 用於掃描陣列"
+        ],
+        "correct_answer": "* x 為 Pivot\n* i 用來標記小於 pivot 的區域邊界\n* j 用於掃描陣列",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-033"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try2.txt 第 21 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000056,
+      "expected": {
+        "question": "當分割後左右兩邊的子問題大小非常不平均時，會發生什麼情況？",
+        "options": [
+          "A. 排序失敗",
+          "B. 記憶體溢位",
+          "C. 效能下降至最差情況",
+          "D. 效能提升"
+        ],
+        "correct_answer": "效能下降至最差情況",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-006"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try2.txt 第 9 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000057,
+      "expected": {
+        "question": "隨機化快速排序（Randomized Quicksort）的主要目的是？",
+        "options": [
+          "A. 簡化程式碼",
+          "B. 增加記憶體使用量",
+          "C. 避免最差情況的頻繁發生",
+          "D. 減少比較次數"
+        ],
+        "correct_answer": "避免最差情況的頻繁發生",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選",
+        "question_aliases": [
+          "隨機化快速排序 (Randomized Quicksort) 的主要目的是？"
+        ],
+        "reference_question_ids": [
+          "L5-045"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 20 題",
+          "try2.txt 第 8 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000058,
+      "expected": {
+        "question": "快速排序的空間開銷來源包括？",
+        "options": [
+          "陣列的指針",
+          "遞迴堆疊",
+          "輸入陣列",
+          "交換用的暫存變數"
+        ],
+        "correct_answer": "遞迴堆疊\n交換用的暫存變數",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-060"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000059,
+      "expected": {
+        "question": "快速排序在工程實作中為何受歡迎？",
+        "options": [
+          "保證最壞情況為 O(n log n)",
+          "程式碼最簡短",
+          "效能優良且常數因子小",
+          "是穩定排序"
+        ],
+        "correct_answer": "效能優良且常數因子小",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-021"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000060,
+      "expected": {
+        "question": "課本上的 Quicksort Partition(A, p, r) 一開始陣列A 指標位置：p 和 j 指向第一個元素 2，i 位於 p 的左側外 pivot 是 [4]（尚未進入陣列）。 陣列內容：[2] [8] [7] [1] [3] [5] [6] [4] 當PARTITION 函數執行完畢後，pivot 元素會位於什麼位置？",
+        "options": [
+          "A. 陣列的第5個位置",
+          "B. 陣列的第4個位置",
+          "C. 陣列的最後一個位置",
+          "D. 陣列的第一個位置"
+        ],
+        "correct_answer": "陣列的第4個位置",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選",
+        "question_aliases": [
+          "課本上的 Quicksort Partition(A, p, r) 一開始陣列A 指標位置：p 和 j 指向第一個元素 2，i 位於 p 的左側外 pivot 是 [4] (尚未進入陣列)。 陣列內容：[2] [8] [7] [1] [3] [5] [6] [4]\n\n當PARTITION 函數執行完畢後，pivot 元素會位於什麼位置？"
+        ],
+        "reference_question_ids": [
+          "L5-015"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try2.txt 第 6 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000061,
+      "expected": {
+        "question": "在 partition 函數中，pivot 的值為 [**1**] (請用小寫英文回答)",
+        "options": [],
+        "correct_answer": "x",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "not_applicable",
+        "source_type": "填空",
+        "question_aliases": [
+          "在 partition 函數中，pivot 的值為 ________ (請用小寫英文回答)"
+        ],
+        "reference_question_ids": [
+          "L5-019"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 3 題",
+          "try2.txt 第 19 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "id": 1000000062,
+      "expected": {
+        "question": "快速排序的遞迴呼叫順序為何？",
+        "options": [
+          "A. 再對 q+1 到 r 進行排序",
+          "B. 沒有特定的順序",
+          "C. 對中間的 pivot 進行排序",
+          "D. 先對 p 到 q-1 進行排序"
+        ],
+        "correct_answer": "先對 p 到 q-1 進行排序\n再對 q+1 到 r 進行排序",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "L5-005"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "try1.txt 第 16 題",
+          "https://yocheng06.github.io/course-library/algorithms.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000220,
+      "expected": {
+        "question": "儲存體單位包含？",
+        "options": [
+          "Word",
+          "System call",
+          "Bit",
+          "Byte"
+        ],
+        "correct_answer": "Word\nBit\nByte",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "basics-10"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000221,
+      "expected": {
+        "question": "作業系統定義程式執行時的結構稱為 [__1__] (請用小寫英文回答)。",
+        "options": [],
+        "correct_answer": "process",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "作業系統定義程式執行時的結構稱為 ____________ (請用小寫英文回答)。",
+          "The structure defined by the operating system for program execution is called a ____________ (please answer in lowercase english)."
+        ],
+        "reference_question_ids": [
+          "community-2215fba3-0142-4ff9-87fd-e7434b627f12-2",
+          "community-719cea30-56ae-4d9c-b3c2-e5cd5a70e812-9"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000222,
+      "expected": {
+        "question": "叢集系統中，存取共享儲存通常透過 [__1__] (請用小寫英文回答)。",
+        "options": [],
+        "correct_answer": "san",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "叢集系統中，存取共享儲存通常透過 [__1__]（請用小寫英文回答）。"
+        ],
+        "reference_question_ids": [
+          "basics-57"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000223,
+      "expected": {
+        "question": "叢集系統生存故障的關鍵在於提供 [__1__] 服務 (請用小寫英文回答 字母間留一空白)。",
+        "options": [],
+        "correct_answer": "high availability",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "叢集系統生存故障的關鍵在於提供 [__1__] 服務（請用小寫英文回答，字母間留一空白）。"
+        ],
+        "reference_question_ids": [
+          "basics-56",
+          "community-719cea30-56ae-4d9c-b3c2-e5cd5a70e812-5"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000224,
+      "expected": {
+        "question": "為了實現互動式運算，[__1__] 讓 CPU 在不同作業之間快速切換 (請用小寫英文回答字母間留一個空白)。",
+        "options": [],
+        "correct_answer": "time sharing",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "為了實現互動式運算，[__1__]讓 CPU 在不同作業之間快速切換。（請用小寫英文回答，字母間留一個空白）"
+        ],
+        "reference_question_ids": [
+          "basics-23"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000225,
+      "expected": {
+        "question": "[__1__] 是一種透過將輸出與輸入重疊來提升 I/O 效率的技術 (請用小寫英文回答)。",
+        "options": [],
+        "correct_answer": "spooling",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "[__1__] 是一種透過將輸出與輸入重疊來提升 I/O 效率的技術（請用小寫英文回答）。"
+        ],
+        "reference_question_ids": [
+          "basics-65",
+          "community-b5fa3636-bfa3-4439-80ab-b63b02f97307-8"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000226,
+      "expected": {
+        "question": "雙模式操作 (Dual-mode operation) 使用什麼來區分？",
+        "options": [
+          "Mode bit",
+          "Privileged instructions",
+          "Interrupt vectors",
+          "System calls"
+        ],
+        "correct_answer": "Mode bit\nPrivileged instructions",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "basics-29"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000227,
+      "expected": {
+        "question": "雲端運算的服務模型包含？",
+        "options": [
+          "Hardware as a Service",
+          "PaaS",
+          "IaaS",
+          "SaaS"
+        ],
+        "correct_answer": "PaaS\nIaaS\nSaaS",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "basics-38"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000228,
+      "expected": {
+        "question": "硬體資源包含？",
+        "options": [
+          "System calls",
+          "I/O devices",
+          "Interrupt vectors",
+          "CPU"
+        ],
+        "correct_answer": "I/O devices\nCPU",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "basics-55"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000229,
+      "expected": {
+        "question": "計算機系統的四大組成部分包含？",
+        "options": [
+          "A. Users",
+          "B. Hardware",
+          "C. Application programs",
+          "D. Operating system"
+        ],
+        "correct_answer": "Hardware\nOperating system\nApplication programs\nUsers",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [],
+        "reference_question_ids": [],
+        "sources": [
+          "協作題庫（管理員已審核）"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000230,
+      "expected": {
+        "question": "下列哪些屬於作業系統的資源管理功能？",
+        "options": [
+          "Memory management",
+          "File generation",
+          "CPU scheduling",
+          "User management"
+        ],
+        "correct_answer": "Memory management\nCPU scheduling",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "basics-42"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000231,
+      "expected": {
+        "question": "叢集系統（Clustered Systems）包含哪些類型？",
+        "options": [
+          "Distributed locking",
+          "Stand-alone",
+          "Asymmetric clustering",
+          "Symmetric clustering"
+        ],
+        "correct_answer": "Asymmetric clustering\nSymmetric clustering",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [
+          "叢集系統（Clustered Systems）包含哪些類型？",
+          "叢集系統 (Clustered Systems) 包含哪些類型？"
+        ],
+        "reference_question_ids": [
+          "basics-21"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000232,
+      "expected": {
+        "question": "電腦系統中執行時最核心且永遠在運作的程式是？",
+        "options": [
+          "Driver",
+          "Application",
+          "Kernel",
+          "Shell"
+        ],
+        "correct_answer": "Kernel",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [
+          "What is the program that runs at all times on the computer?"
+        ],
+        "reference_question_ids": [
+          "community-0193fc99-46c4-43ba-9be0-88c92d11d376-2",
+          "community-b218102d-60b5-451f-8ae6-4d074ce7aa32-4"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000233,
+      "expected": {
+        "question": "多處理器(multiprocessing)架構中區分任務分配的兩類型為[__1__]（請用小寫英文回答字母間 用 and 寫法如 b and a)。",
+        "options": [],
+        "correct_answer": "asymmetric and symmetric|symmetric and asymmetric",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "多處理器(multiprocessing)架構中區分任務分配的兩類型為 [__1__]（請用小寫英文回答，字母間用 and，寫法如 b and a）。",
+          "多處理器(multiprocessing)架構中區分任務分配的兩類型為 ____________ （請用小寫英文回答字母間 用 and 寫法如 b and a)。"
+        ],
+        "reference_question_ids": [
+          "basics-63",
+          "community-719cea30-56ae-4d9c-b3c2-e5cd5a70e812-1"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000234,
+      "expected": {
+        "question": "中斷 (Interrupt) 的常見類型包含？",
+        "options": [
+          "A. User-request generated",
+          "B. Error-generated",
+          "C. Hardware interrupt",
+          "D. Software interrupt (Trap/Exception)"
+        ],
+        "correct_answer": "Hardware interrupt\nSoftware interrupt (Trap/Exception)\nError-generated\nUser-request generated",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [],
+        "reference_question_ids": [],
+        "sources": [
+          "協作題庫（管理員已審核）"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000235,
+      "expected": {
+        "question": "Process 管理包含哪些活動？",
+        "options": [
+          "Deadlock handling",
+          "Disk formating",
+          "Creating/deleting processes",
+          "Memory management"
+        ],
+        "correct_answer": "Deadlock handling\nCreating/deleting processes",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "community-719cea30-56ae-4d9c-b3c2-e5cd5a70e812-4"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000236,
+      "expected": {
+        "question": "即時作業系統 (Real-time OS) 的核心特徵是？",
+        "options": [
+          "固定的時間限制",
+          "圖形化介面",
+          "多使用者",
+          "高效能"
+        ],
+        "correct_answer": "固定的時間限制",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "community-b5fa3636-bfa3-4439-80ab-b63b02f97307-9"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000237,
+      "expected": {
+        "question": "下列哪種儲存媒介的速度最快？",
+        "options": [
+          "Hard disk",
+          "Registers",
+          "Cache",
+          "Main memory"
+        ],
+        "correct_answer": "Registers",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "basics-12",
+          "community-719cea30-56ae-4d9c-b3c2-e5cd5a70e812-6"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000238,
+      "expected": {
+        "question": "保護 (Protection) 機制主要是用來？",
+        "options": [
+          "建立檔案",
+          "控制對系統資源的存取",
+          "管理網路流量",
+          "防禦外部攻擊"
+        ],
+        "correct_answer": "控制對系統資源的存取",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [],
+        "reference_question_ids": [
+          "community-2215fba3-0142-4ff9-87fd-e7434b627f12-1"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000239,
+      "expected": {
+        "question": "系統中定義的一組使用者可以透過 [__1__] 來管理權限 (請用小寫英文回答 字母間留一空白)。",
+        "options": [],
+        "correct_answer": "group id",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "系統中定義的一組使用者可以透過 [__1__] 來管理權限（請用小寫英文回答，字母間留一空白）。"
+        ],
+        "reference_question_ids": [
+          "basics-47",
+          "community-719cea30-56ae-4d9c-b3c2-e5cd5a70e812-3"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000240,
+      "expected": {
+        "question": "哪種連結串列結構適合表示循環的資源管理？",
+        "options": [
+          "Binary search tree",
+          "Singly linked list",
+          "Doubly linked list",
+          "Circular linked list"
+        ],
+        "correct_answer": "Circular linked list",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "單選題",
+        "question_aliases": [
+          "哪種連結串列結構適合表示循環的資源管理？",
+          "Which linked list structure is suitable for cyclic resource management?"
+        ],
+        "reference_question_ids": [
+          "basics-46",
+          "community-a241a5bb-8b24-4bae-af12-2d896244a7bc-1"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000241,
+      "expected": {
+        "question": "Through the method of [__1__], the operating system can retrieve data from slow storage devices into faster cache memory. (Please use lowercase English letters)",
+        "options": [],
+        "correct_answer": "caching",
+        "type": "fill_blank"
+      },
+      "metadata": {
+        "options_status": "known_options_only",
+        "source_type": "",
+        "question_aliases": [
+          "[__1__] 技術是指將資訊從較慢儲存體複製到較快儲存體的過程（請用小寫英文回答）。",
+          "Through the method of ____________ , the operating system can retrieve data from slow storage devices into faster cache memory. (Please use lowercase English letters)",
+          "透過 ____________ 的方式，作業系統可由慢速儲存裝置中提取資料到較快速的快取記憶體中。(請用英文小寫)"
+        ],
+        "reference_question_ids": [
+          "basics-13",
+          "community-0193fc99-46c4-43ba-9be0-88c92d11d376-1",
+          "community-b5fa3636-bfa3-4439-80ab-b63b02f97307-5"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "id": 1000000242,
+      "expected": {
+        "question": "雲端運算的服務模型包含？",
+        "options": [
+          "IaaS",
+          "Hardware as a Service",
+          "FaaS",
+          "SaaS"
+        ],
+        "correct_answer": "IaaS\nFaaS\nSaaS",
+        "type": "choice"
+      },
+      "metadata": {
+        "options_status": "complete",
+        "source_type": "多選題",
+        "question_aliases": [
+          "What are the cloud computing service models?"
+        ],
+        "reference_question_ids": [
+          "basics-61",
+          "community-719cea30-56ae-4d9c-b3c2-e5cd5a70e812-8"
+        ],
+        "sources": [
+          "協作題庫（管理員已審核）",
+          "https://yocheng06.github.io/course-library/os.html"
+        ]
+      }
+    }
+  ]
+}

@@ -32,7 +32,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 71,
     "question_aliases": [
-      "Apple 的移動作業系統 iOS 是基於 [__1__] 的結構。\n（用英文小寫回答，字母間請留一個空白）"
+      "Apple 的移動作業系統 iOS 是基於 [__1__] 的結構。\n（用英文小寫回答，字母間請留一個空白）",
+      "Apple 的移動作業系統 iOS 是基於 _______ 的結構。(用英文小寫回答)"
     ],
     "reference_question_ids": [
       "architecture-120"
@@ -67,7 +68,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 206,
     "question_aliases": [
-      "最常見的三個 API 是 Windows 的 Win32 API、POSIX 系統的 POSIX API，以及 [__1__] 虛擬機的 Java API。\n（用英文小寫回答）"
+      "最常見的三個 API 是 Windows 的 Win32 API、POSIX 系統的 POSIX API，以及 [__1__] 虛擬機的 Java API。\n（用英文小寫回答）",
+      "最常見的三個 API 是 Windows 的 Win32 API、POSIX 系統的 POSIX API，以及 _______ 虛擬機的 Java API。(用英文小寫回答)"
     ],
     "reference_question_ids": [
       "architecture-46"
@@ -168,10 +170,14 @@
     "source_response_type": "填空",
     "latest_source_question_number": 73,
     "question_aliases": [
-      "在 UNIX 中，[__1__] 包含在系統呼叫介面之下以及實體硬體之上的一切。\n（用英文小寫回答）"
+      "在 UNIX 中，[__1__] 包含在系統呼叫介面之下以及實體硬體之上的一切。\n（用英文小寫回答）",
+      "在 UNIX 中，_______ 包含在系統呼叫介面之下以及實體硬體之上的一切。(用英文小寫回答)",
+      "在 UNIX 中， ____________ 包含在系統呼叫介面之下以及實體硬體之上的一切。 (用英文小寫回答 字母間請流一個空白)"
     ],
     "reference_question_ids": [
-      "architecture-80"
+      "architecture-80",
+      "friend-os-u3-006",
+      "community-5c7a7dab-12ae-412b-b022-bc13900862ef-13"
     ]
   },
   {
@@ -200,10 +206,12 @@
     "question_aliases": [
       "Which built-in kernel debugging tool allows live instrumentation and dynamic tracing on production systems such as Solaris, FreeBSD, and macOS?",
       "[__1__] tools allows Solaris, FreeBSD, Mac OS X systems to perform\nreal-time monitor.(Capitalize the first letter of the English text)",
-      "The live instrumentation tool used in Solaris and macOS to trace system calls is [__1__] .(please answer in lowercase english)"
+      "The live instrumentation tool used in Solaris and macOS to trace system calls is [__1__] .(please answer in lowercase english)",
+      "The live instrumentation tool used in Solaris and macOS to trace system calls is ____________ .(please answer in lowercase english)"
     ],
     "reference_question_ids": [
-      "architecture-115"
+      "architecture-115",
+      "community-dcd2e755-8451-456a-9d22-357dd584f328-9"
     ],
     "legacy_question_ids": [
       111
@@ -300,7 +308,8 @@
     ],
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-90"
+      "architecture-90",
+      "community-5c7a7dab-12ae-412b-b022-bc13900862ef-6"
     ]
   },
   {
@@ -613,10 +622,15 @@
     "latest_source_question_number": 145,
     "question_aliases": [
       "The small piece of code stored in ROM that locates the kernel and starts it is called [__1__].\n（please answer in lowercase English with a space between answers）",
-      "[__1__] is a small piece of code stored in ROM or EEPROM that is used to locate the kernel and load it into memory.(Please answer in lowercase English, leaving a space between each word)"
+      "[__1__] is a small piece of code stored in ROM or EEPROM that is used to locate the kernel and load it into memory.(Please answer in lowercase English, leaving a space between each word)",
+      "The small piece of code stored in ROM that locates the kernel and starts it is called _______.",
+      "____________ is a small piece of code stored in ROM or EEPROM that is used to locate the kernel and load it into memory.(Please answer in lowercase English, leaving a space between each word)",
+      "The small piece of code stored in ROM that locates the kernel and starts it is called ____________ .(please answer in lowercase english with a space between answers)"
     ],
     "reference_question_ids": [
-      "architecture-102"
+      "architecture-102",
+      "community-4f304e00-3bda-42c9-980e-9feda8e76af0-1",
+      "community-4f304e00-3bda-42c9-980e-9feda8e76af0-2"
     ],
     "legacy_question_ids": [
       264
@@ -674,10 +688,12 @@
     "source_response_type": "填空",
     "latest_source_question_number": 121,
     "question_aliases": [
-      "Most modern operating systems use a [__1__] approach to implement dynamically loadable functionality.\n（用英文小寫回答）"
+      "Most modern operating systems use a [__1__] approach to implement dynamically loadable functionality.\n（用英文小寫回答）",
+      "Most modern operating systems use a _______ approach to implement dynamically loadable functionality.(用英文小寫回答)"
     ],
     "reference_question_ids": [
-      "architecture-86"
+      "architecture-86",
+      "community-dc64f46b-6ebd-4b30-a6c2-277d8fb70389-2"
     ]
   },
   {
@@ -724,14 +740,21 @@
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第一次訓練.txt",
       "pasted.txt",
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 23,
     "source_incorrect_responses": [
       "core dump"
     ],
     "source_response_type": "填空",
-    "latest_source_question_number": 106
+    "latest_source_question_number": 106,
+    "reference_question_ids": [
+      "community-239e1711-48d9-41ae-aede-76dd97d31338-2"
+    ],
+    "question_aliases": [
+      "Operating system failure can generate a ____________ file containing kernel memory.(please answer in lowercase english with a space between answers)"
+    ]
   },
   {
     "id": 27,
@@ -1132,7 +1155,8 @@
     ],
     "source_type": "複選",
     "reference_question_ids": [
-      "architecture-34"
+      "architecture-34",
+      "community-e462552b-cd2b-4d07-b30f-cabf50893593-4"
     ]
   },
   {
@@ -1167,7 +1191,8 @@
     ],
     "source_type": "複選",
     "reference_question_ids": [
-      "architecture-31"
+      "architecture-31",
+      "community-5c7a7dab-12ae-412b-b022-bc13900862ef-1"
     ]
   },
   {
@@ -1201,7 +1226,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 201,
     "question_aliases": [
-      "在 Unix/Linux 系統中，用來建立全新行程（Process）的系統呼叫是 [__1__]。\n（請用小寫英文回答）"
+      "在 Unix/Linux 系統中，用來建立全新行程（Process）的系統呼叫是 [__1__]。\n（請用小寫英文回答）",
+      "在 Unix/Linux 系統中，用來建立全新行程（Process）的系統呼叫是 ____________ 。(請用小寫英文回答)"
     ],
     "reference_question_ids": [
       "community-dc64f46b-6ebd-4b30-a6c2-277d8fb70389-11"
@@ -1237,7 +1263,8 @@
     "latest_source_question_number": 123,
     "source_type": "多選題",
     "reference_question_ids": [
-      "architecture-friend-u3-045"
+      "architecture-friend-u3-045",
+      "friend-os-u3-045"
     ],
     "answer_note": "英文來源另列一個與 D 選項重複的錯誤選項，已保留中文版本的四個選項。"
   },
@@ -1264,7 +1291,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 239,
     "question_aliases": [
-      "The program execution service in the operating system services allows the system to load programs into [__1__].\n（英文小寫回答）"
+      "The program execution service in the operating system services allows the system to load programs into [__1__].\n（英文小寫回答）",
+      "The program execution service in the operating system services allows the system to load programs into ____________ .(英文小寫回答)"
     ],
     "reference_question_ids": [
       "community-5c7a7dab-12ae-412b-b022-bc13900862ef-11"
@@ -1290,12 +1318,16 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第二次訓練.txt",
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 41,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 23
+    "latest_source_question_number": 23,
+    "reference_question_ids": [
+      "community-44192aa0-5ca5-4a32-a11b-de905cc1ee7a-2"
+    ]
   },
   {
     "id": 48,
@@ -1317,12 +1349,16 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第二次訓練.txt",
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 42,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 43
+    "latest_source_question_number": 43,
+    "reference_question_ids": [
+      "community-e462552b-cd2b-4d07-b30f-cabf50893593-3"
+    ]
   },
   {
     "id": 49,
@@ -1345,12 +1381,16 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第二次訓練.txt",
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 43,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 93
+    "latest_source_question_number": 93,
+    "reference_question_ids": [
+      "community-e462552b-cd2b-4d07-b30f-cabf50893593-8"
+    ]
   },
   {
     "id": 50,
@@ -1382,7 +1422,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 47,
     "question_aliases": [
-      "作業系統需要不斷地偵測可能的 [__1__]。\n（英文小寫回答）"
+      "作業系統需要不斷地偵測可能的 [__1__]。\n（英文小寫回答）",
+      "作業系統需要不斷地偵測可能的 _______。(英文小寫回答)"
     ],
     "reference_question_ids": [
       "architecture-41"
@@ -1452,7 +1493,8 @@
     ],
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-16"
+      "architecture-16",
+      "community-239e1711-48d9-41ae-aede-76dd97d31338-1"
     ]
   },
   {
@@ -1482,6 +1524,9 @@
     "reference_question_ids": [
       "friend-os-u3-053",
       "architecture-22"
+    ],
+    "question_aliases": [
+      "Background services that run continuously from boot to shutdown are also known as ________.\n（please answer in lowercase English）"
     ]
   },
   {
@@ -1511,10 +1556,13 @@
     "source_response_type": "填空",
     "latest_source_question_number": 30,
     "question_aliases": [
-      "在微核心架構中，使用者空間的模組與模組之間，主要是透過 [__1__] 的機制來進行溝通。\n（請用小寫英文回答，字母間留一個空白）"
+      "在微核心架構中，使用者空間的模組與模組之間，主要是透過 [__1__] 的機制來進行溝通。\n（請用小寫英文回答，字母間留一個空白）",
+      "在微核心架構中，使用者空間的模組與模組之間，主要是透過 _______ 的機制來進行溝通。(請用小寫英文回答)",
+      "在微核心架構中，使用者空間的模組與模組之間，主要是透過 ________ 的機制來進行溝通。\n（請用小寫英文回答，字母間留一個空白）"
     ],
     "reference_question_ids": [
-      "architecture-70"
+      "architecture-70",
+      "friend-os-u3-054"
     ]
   },
   {
@@ -1542,10 +1590,13 @@
     "latest_source_question_number": 188,
     "question_aliases": [
       "對於每個錯誤類型，作業系統應該採取適當的行動來確保正確和 [__1__] 的運算。\n（英文小寫回答）",
-      "對於每個錯誤類型，作業系統應該採取適當的行動來確保正確和 [__1__] 的運算。(英文小寫回答)"
+      "對於每個錯誤類型，作業系統應該採取適當的行動來確保正確和 [__1__] 的運算。(英文小寫回答)",
+      "對於每個錯誤類型，作業系統應該採取適當行動來確保正確和 _______ 的運算。(英文小寫回答)",
+      "對於每個錯誤類型，作業系統應該採取適當的行動來確保正確和 ____________ 的運算。(英文小寫回答)"
     ],
     "reference_question_ids": [
-      "architecture-42"
+      "architecture-42",
+      "community-887db733-c68b-45e5-9727-ea6831f12258-4"
     ]
   },
   {
@@ -1601,11 +1652,15 @@
     "source_response_type": "填空",
     "latest_source_question_number": 214,
     "question_aliases": [
-      "現代作業系統設計原則中，強調將規定「做什麼」的 [__1__] 與規定「怎麼做」的 [__2__] 分離開來。\n（請用小寫英文回答）"
+      "現代作業系統設計原則中，強調將規定「做什麼」的 [__1__] 與規定「怎麼做」的 [__2__] 分離開來。\n（請用小寫英文回答）",
+      "現代作業系統設計原則中，強調將規定『做什麼』的 _______ 與規定『怎麼做』的 _______ 分離開來。(請用小寫英文回答)",
+      "現代作業系統設計原則中，強調將規定「做什麼」的 ________ 與規定「怎麼做」的 ________ 分離開來。\n（請用小寫英文回答）"
     ],
     "reference_question_ids": [
       "architecture-91",
-      "architecture-90"
+      "architecture-90",
+      "community-eb1592ba-0e1e-47b2-a83d-0c7992445ee9-7",
+      "friend-os-u3-057"
     ]
   },
   {
@@ -1665,6 +1720,9 @@
     "reference_question_ids": [
       "friend-os-u3-059",
       "architecture-85"
+    ],
+    "question_aliases": [
+      "Many modern operating systems implement loadable kernel ________.\n（please answer in lowercase English）"
     ]
   },
   {
@@ -1807,9 +1865,12 @@
     "source_response_type": "填空",
     "latest_source_question_number": 272,
     "reference_question_ids": [
-      "architecture-95"
+      "architecture-95",
+      "friend-os-u3-064"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "The design and implementation of an operating system is a process of defining ______.\n（Please answer in lowercase English ex a and b）"
+    ]
   },
   {
     "id": 65,
@@ -1843,7 +1904,8 @@
     ],
     "source_type": "複選",
     "reference_question_ids": [
-      "architecture-62"
+      "architecture-62",
+      "community-5c7a7dab-12ae-412b-b022-bc13900862ef-4"
     ]
   },
   {
@@ -1867,12 +1929,16 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "pasted.txt",
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 60,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 62
+    "latest_source_question_number": 62,
+    "reference_question_ids": [
+      "community-4f304e00-3bda-42c9-980e-9feda8e76af0-9"
+    ]
   },
   {
     "id": 67,
@@ -1904,7 +1970,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 245,
     "question_aliases": [
-      "用來獲取特定硬體配置資訊以編譯客製化核心的系統生成程式簡稱為 [__1__]。\n（請用小寫英文回答）"
+      "用來獲取特定硬體配置資訊以編譯客製化核心的系統生成程式簡稱為 [__1__]。\n（請用小寫英文回答）",
+      "用來獲取特定硬體配置資訊以編譯客製化核心的系統生成程式簡稱為 ____________ 。(請用小寫英文回答)"
     ],
     "reference_question_ids": [
       "community-eb1592ba-0e1e-47b2-a83d-0c7992445ee9-2"
@@ -2128,10 +2195,12 @@
     "source_response_type": "填空",
     "latest_source_question_number": 117,
     "question_aliases": [
-      "在 Windows 中，用來設定檔案安全權限、屬於保護（Protection）領域的系統呼叫是 [__1__]。\n（請用小寫英文回答）"
+      "在 Windows 中，用來設定檔案安全權限、屬於保護（Protection）領域的系統呼叫是 [__1__]。\n（請用小寫英文回答）",
+      "在 Windows 中，用來設定檔案安全權限、屬於保護（Protection）領域的系統呼叫是 _______。(請用小寫英文回答)"
     ],
     "reference_question_ids": [
-      "architecture-60"
+      "architecture-60",
+      "friend-os-u3-074"
     ]
   },
   {
@@ -2163,6 +2232,9 @@
     "reference_question_ids": [
       "friend-os-u3-075",
       "architecture-96"
+    ],
+    "question_aliases": [
+      "根據克尼漢定律（Kernighan's Law），除錯的難度是撰寫程式碼的 ______ 倍。\n（請用小寫英文數字或英文回答）"
     ]
   },
   {
@@ -2193,7 +2265,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 9,
     "question_aliases": [
-      "現代系統最基礎、最核心，用來管理硬體與行程的作業系統主體程式稱為 [__1__]。\n（請用小寫英文回答）"
+      "現代系統最基礎、最核心，用來管理硬體與行程的作業系統主體程式稱為 [__1__]。\n（請用小寫英文回答）",
+      "現代系統最基礎、最核心，用來管理硬體與行程的作業系統主體程式稱為 ____________ 。(請用小寫英文回答)"
     ],
     "reference_question_ids": [
       "community-dc64f46b-6ebd-4b30-a6c2-277d8fb70389-12"
@@ -2283,7 +2356,8 @@
     "latest_source_question_number": 89,
     "source_type": "複選",
     "reference_question_ids": [
-      "architecture-1"
+      "architecture-1",
+      "friend-os-u3-080"
     ]
   },
   {
@@ -2310,7 +2384,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 267,
     "question_aliases": [
-      "What is the Linux command to create a new process [__1__] 格式 : fun()"
+      "What is the Linux command to create a new process [__1__] 格式 : fun()",
+      "What is the Linux command to create a new process _______ 格式：fun()"
     ],
     "reference_question_ids": [
       "architecture-55",
@@ -2408,7 +2483,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 246,
     "question_aliases": [
-      "大多數現代作業系統採用[__1__]方法來實現可動態載入的功能。(用英文小寫回答)"
+      "大多數現代作業系統採用[__1__]方法來實現可動態載入的功能。(用英文小寫回答)",
+      "大多數現代作業系統採用 ____________ 方法來實現可動態載入的功能。(用英文小寫回答)"
     ],
     "reference_question_ids": [
       "community-b52c9a6b-e697-4c98-997b-a34d57103cc3-1"
@@ -2480,7 +2556,9 @@
     ],
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-40"
+      "architecture-40",
+      "community-e462552b-cd2b-4d07-b30f-cabf50893593-10",
+      "friend-os-u3-087"
     ]
   },
   {
@@ -2520,12 +2598,15 @@
   {
     "id": 90,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "In operating system design, what two principles are separated to achieve maximum flexibility?",
     "options": [
-      "Policy and mechanism"
+      "Protection and security",
+      "Policy and mechanism",
+      "Kernel and user",
+      "Mechanism and architecture"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "Policy and mechanism",
     "answer_variants": [
       "Policy and mechanism"
@@ -2548,7 +2629,8 @@
     "reference_question_ids": [
       "architecture-92",
       "architecture-90"
-    ]
+    ],
+    "source_type": "mcq"
   },
   {
     "id": 91,
@@ -2579,7 +2661,8 @@
     "latest_source_question_number": 178,
     "source_type": "多選題",
     "reference_question_ids": [
-      "community-dc64f46b-6ebd-4b30-a6c2-277d8fb70389-4"
+      "community-dc64f46b-6ebd-4b30-a6c2-277d8fb70389-4",
+      "friend-os-u3-091"
     ]
   },
   {
@@ -2683,7 +2766,8 @@
     "latest_source_question_number": 74,
     "question_aliases": [
       "[__1__]是一種小型程式碼，儲存在 ROM 或 EEPROM 中，用於定位核心並將其載入記憶體。(請用英文小寫回答，單字間留一空白)",
-      "在開機過程中，儲存於 ROM 中負責定位核心並將其載入記憶體運行的程式稱為 [__1__] 。(請用小寫英文回答字母間留一個空白)"
+      "在開機過程中，儲存於 ROM 中負責定位核心並將其載入記憶體運行的程式稱為 [__1__] 。(請用小寫英文回答字母間留一個空白)",
+      "____________ 是一種小型程式碼，儲存在 ROM 或 EEPROM 中，用於定位核心並將其載入記憶體。(請用英文小寫回答，單字間留一空白)"
     ],
     "reference_question_ids": [
       "community-5c7a7dab-12ae-412b-b022-bc13900862ef-2"
@@ -2824,7 +2908,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 90,
     "question_aliases": [
-      "The program that obtains information concerning hardware\nconfiguration to build a specific kernel is called [__1__].(please\nanswer in lowercase english)"
+      "The program that obtains information concerning hardware\nconfiguration to build a specific kernel is called [__1__].(please\nanswer in lowercase english)",
+      "The program that obtains information concerning hardware configuration to build a specific kernel is called _______."
     ],
     "reference_question_ids": [
       "architecture-107",
@@ -2895,7 +2980,8 @@
     ],
     "source_type": "複選",
     "reference_question_ids": [
-      "architecture-35"
+      "architecture-35",
+      "community-5c7a7dab-12ae-412b-b022-bc13900862ef-12"
     ]
   },
   {
@@ -3056,9 +3142,12 @@
     "source_response_type": "填空",
     "latest_source_question_number": 273,
     "reference_question_ids": [
-      "architecture-71"
+      "architecture-71",
+      "friend-os-u3-109"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "歷史上第一個實現微核心（Microkernel）重要實驗性作業系統專案名稱為 _______。(請用小寫英文回答)"
+    ]
   },
   {
     "id": 110,
@@ -3096,12 +3185,15 @@
   {
     "id": 112,
     "title": "",
-    "type": "choice_options_missing",
-    "question": "The macOS kernel combines Mach microkernel and BSD Unix parts. This\narchitecture is called:",
+    "type": "choice",
+    "question": "The macOS kernel combines Mach microkernel and BSD Unix parts. This architecture is called:",
     "options": [
-      "Hybrid system"
+      "Monolithic system",
+      "Hybrid system",
+      "Simple system",
+      "Pure microkernel system"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "Hybrid system",
     "answer_variants": [
       "Hybrid system"
@@ -3111,12 +3203,21 @@
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練2.txt",
       "第六次訓練.txt",
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 106,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 259
+    "latest_source_question_number": 259,
+    "reference_question_ids": [
+      "community-e462552b-cd2b-4d07-b30f-cabf50893593-5"
+    ],
+    "question_aliases": [
+      "The macOS kernel combines Mach microkernel and BSD Unix parts. This architecture is called:",
+      "The macOS kernel combines Mach microkernel and BSD Unix parts. This\narchitecture is called:"
+    ],
+    "source_type": "單選題"
   },
   {
     "id": 113,
@@ -3211,9 +3312,12 @@
     "source_response_type": "填空",
     "latest_source_question_number": 7,
     "reference_question_ids": [
-      "architecture-112"
+      "architecture-112",
+      "friend-os-u3-115"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "藉由定期對指令指標（Instruction Pointer）進行採樣以尋找統計趨勢的效能調校方法稱為 ________。(請用小寫英文回答)"
+    ]
   },
   {
     "id": 116,
@@ -3273,10 +3377,13 @@
     "source_response_type": "填空",
     "latest_source_question_number": 217,
     "question_aliases": [
-      "蘋果 iOS 的開發架構中，最上層提供 Objective-C API 給開發者編寫應用程式的層級稱為\n[__1__]。(請用小寫英文回答字母間留一個空白)"
+      "蘋果 iOS 的開發架構中，最上層提供 Objective-C API 給開發者編寫應用程式的層級稱為\n[__1__]。(請用小寫英文回答字母間留一個空白)",
+      "蘋果 iOS 的開發架構中，最上層提供 Objective-C API 給開發者編寫應用程式的層級稱為 _______.(請用小寫英文回答)",
+      "蘋果 iOS 的開發架構中，最上層提供 Objective-C API 給開發者編寫應用程式的層級稱為\n________。(請用小寫英文回答字母間留一個空白)"
     ],
     "reference_question_ids": [
-      "architecture-121"
+      "architecture-121",
+      "friend-os-u3-117"
     ]
   },
   {
@@ -3304,7 +3411,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 69,
     "question_aliases": [
-      "The UNIX kernel provides file system management, [__1__], memory\nmanagement, and other functions of Operation System.(Use uppercase for\nEnglish acronyms; place a single space between letters.)"
+      "The UNIX kernel provides file system management, [__1__], memory\nmanagement, and other functions of Operation System.(Use uppercase for\nEnglish acronyms; place a single space between letters.)",
+      "The UNIX kernel provides file system management, _______ , memory management, and other functions of Operating System."
     ],
     "reference_question_ids": [
       "architecture-81"
@@ -3371,6 +3479,9 @@
     "reference_question_ids": [
       "friend-os-u3-120",
       "architecture-118"
+    ],
+    "question_aliases": [
+      "Android libraries include frameworks for web browsers such as\n________.(please answer in lowercase english)"
     ]
   },
   {
@@ -3403,7 +3514,8 @@
     "latest_source_question_number": 195,
     "source_type": "複選",
     "reference_question_ids": [
-      "architecture-36"
+      "architecture-36",
+      "friend-os-u3-121"
     ]
   },
   {
@@ -3432,10 +3544,12 @@
     "source_response_type": "填空",
     "latest_source_question_number": 68,
     "question_aliases": [
-      "早期的作業系統大多以[__1__]語言編寫。(英文小寫回答)"
+      "早期的作業系統大多以[__1__]語言編寫。(英文小寫回答)",
+      "早期的作業系統大多以 _______ 語言編寫。(英文小寫回答)"
     ],
     "reference_question_ids": [
-      "architecture-98"
+      "architecture-98",
+      "friend-os-u3-122"
     ]
   },
   {
@@ -3498,15 +3612,16 @@
   {
     "id": 125,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "微核心系統結構的好處有哪些？",
     "options": [
-      "更容易擴展",
       "更容易移植到新的架構",
-      "核心模式下執行的程式碼較少，因此更可靠"
+      "核心模式下執行的程式碼較少，因此更可靠",
+      "效能較高",
+      "更容易擴展"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "更容易擴展\n更容易移植到新的架構\n核心模式下執行的程式碼較少，因此更可靠",
+    "options_status": "complete",
+    "correct_answer": "更容易移植到新的架構\n核心模式下執行的程式碼較少，因此更可靠\n更容易擴展",
     "answer_variants": [
       "更容易擴展\n更容易移植到新的架構\n核心模式下執行的程式碼較少，因此更可靠",
       "A, B, C"
@@ -3516,13 +3631,18 @@
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "接收訓練3.txt",
       "接收訓練6.txt",
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 119,
     "answer_note": "來源記錄存在差異：\n接收訓練3.txt：更容易擴展\n更容易移植到新的架構\n核心模式下執行的程式碼較少，因此更可靠\n接收訓練6.txt：A, B, C（由滿分作答推定）",
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 50
+    "latest_source_question_number": 50,
+    "reference_question_ids": [
+      "community-44192aa0-5ca5-4a32-a11b-de905cc1ee7a-1"
+    ],
+    "source_type": "多選題"
   },
   {
     "id": 126,
@@ -3550,6 +3670,9 @@
     "reference_question_ids": [
       "friend-os-u3-126",
       "architecture-19"
+    ],
+    "question_aliases": [
+      "Programs that provide a convenient environment for program\ndevelopment and execution are called ________.(please answer in\nlowercase english with a space between answers)"
     ]
   },
   {
@@ -3599,9 +3722,12 @@
     "source_response_type": "填空",
     "latest_source_question_number": 81,
     "reference_question_ids": [
-      "architecture-74"
+      "architecture-74",
+      "friend-os-u3-129"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "結合了多種核心結構特徵（如 monolithic 加 modular）的現代系統架構稱為 ________ 系統。(請用小寫英文回答)"
+    ]
   },
   {
     "id": 130,
@@ -3662,7 +3788,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 18,
     "question_aliases": [
-      "指令列介面（CLI）有時在核心中實現，有時則由[__1__]程式實現。(用英文小寫回答)"
+      "指令列介面（CLI）有時在核心中實現，有時則由[__1__]程式實現。(用英文小寫回答)",
+      "指令列介面（CLI）有時在核心中實現，有時則由 _______ 程式實現。(用英文小寫回答)"
     ],
     "reference_question_ids": [
       "architecture-12"
@@ -3772,9 +3899,12 @@
     "source_response_type": "填空",
     "latest_source_question_number": 222,
     "reference_question_ids": [
-      "architecture-45"
+      "architecture-45",
+      "friend-os-u3-135"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "廣為 Unix、Linux 以及 macOS 所遵守的標準可移植作業系統介面 API 規範簡稱為 ________。(請用小寫英文回答)"
+    ]
   },
   {
     "id": 136,
@@ -3808,7 +3938,8 @@
     ],
     "source_type": "複選",
     "reference_question_ids": [
-      "architecture-93"
+      "architecture-93",
+      "community-4f304e00-3bda-42c9-980e-9feda8e76af0-10"
     ]
   },
   {
@@ -3862,10 +3993,13 @@
     "source_response_type": "填空",
     "latest_source_question_number": 37,
     "question_aliases": [
-      "作業系統中的「保護」服務與對[__1__]存取的控制有關。(用英文小寫回答 字母間請留一個空白)"
+      "作業系統中的「保護」服務與對[__1__]存取的控制有關。(用英文小寫回答 字母間請留一個空白)",
+      "作業系統中的『保護』服務與對 _______ 存取的控制有關。(用英文小寫回答)",
+      "作業系統中的「保護」服務與對________存取的控制有關。(用英文小寫回答 字母間請留一個空白)"
     ],
     "reference_question_ids": [
-      "architecture-32"
+      "architecture-32",
+      "friend-os-u3-138"
     ]
   },
   {
@@ -3899,7 +4033,8 @@
     ],
     "answer_note": "附圖依參考網站目前公開圖片補回；批次查題含圖片時仍需查看附圖核對。",
     "question_aliases": [
-      "what is the name circled in this figure[__1__]?"
+      "what is the name circled in this figure[__1__]?",
+      "what is the name circled in this figure ____________ ?"
     ],
     "legacy_question_ids": [
       286
@@ -3932,9 +4067,12 @@
     "source_response_type": "填空",
     "latest_source_question_number": 60,
     "reference_question_ids": [
-      "architecture-22"
+      "architecture-22",
+      "friend-os-u3-141"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "常駐於系統背景，從開機一直執行到關機且運行於使用者內文（User Context）的系統服務或守護行程常被稱為 ________。(請用小寫英文回答)"
+    ]
   },
   {
     "id": 142,
@@ -3962,9 +4100,14 @@
     "source_response_type": "填空",
     "latest_source_question_number": 220,
     "reference_question_ids": [
-      "architecture-9"
+      "architecture-9",
+      "community-239e1711-48d9-41ae-aede-76dd97d31338-5",
+      "friend-os-u3-142"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "指令行介面的縮寫為 _______，而圖形使用者介面的縮寫為 _______。(請用小寫英文回答)",
+      "指令行介面的縮寫為 ________，而圖形使用者介面的縮寫為 ________。(請用小寫英文回答)"
+    ]
   },
   {
     "id": 143,
@@ -4001,15 +4144,16 @@
   {
     "id": 144,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "作業系統設計中的「系統目標（System Goals）」通常包括下列哪些期望？",
     "options": [
-      "易於設計、實現與維護",
+      "介面華麗好玩",
+      "高效且無錯誤（Error-free）",
       "具備彈性與可靠性",
-      "高效且無錯誤（Error-free）"
+      "易於設計、實現與維護"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "易於設計、實現與維護\n具備彈性與可靠性\n高效且無錯誤（Error-free）",
+    "options_status": "complete",
+    "correct_answer": "高效且無錯誤（Error-free）\n具備彈性與可靠性\n易於設計、實現與維護",
     "answer_variants": [
       "易於設計、實現與維護\n具備彈性與可靠性\n高效且無錯誤（Error-free）"
     ],
@@ -4018,12 +4162,17 @@
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第四次訓練.txt",
       "第六次訓練.txt",
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 138,
     "source_incorrect_responses": [],
     "source_response_type": "複選",
-    "latest_source_question_number": 11
+    "latest_source_question_number": 11,
+    "reference_question_ids": [
+      "community-4f304e00-3bda-42c9-980e-9feda8e76af0-4"
+    ],
+    "source_type": "多選題"
   },
   {
     "id": 145,
@@ -4053,9 +4202,12 @@
     "latest_source_question_number": 185,
     "reference_question_ids": [
       "architecture-91",
-      "architecture-90"
+      "architecture-90",
+      "friend-os-u3-145"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "In OS design, it is an important principle to separate ________ and ________.(please answer in lowercase english with a space between answers)"
+    ]
   },
   {
     "id": 146,
@@ -4083,11 +4235,14 @@
     "latest_source_question_number": 132,
     "question_aliases": [
       "[__1__]工具在 Solaris, FreeBSD, Mac OS X 中允許在生產系統上進行即時監控。(英文第一個字大寫)",
-      "Solaris、FreeBSD 與 macOS 中內建，允許在生產系統上進行即時動態追蹤的核心除錯工具名為 [__1__]。(請用小寫英文回答)"
+      "Solaris、FreeBSD 與 macOS 中內建，允許在生產系統上進行即時動態追蹤的核心除錯工具名為 [__1__]。(請用小寫英文回答)",
+      "Solaris、FreeBSD 與 macOS 中內建，允許在生產系統上進行即時動態追蹤的核心除錯工具名為 _______。(請用小寫英文回答)",
+      "_______ 工具在 Solaris, FreeBSD, Mac OS X 中允許在生產系統上進行即時監控。(英文第一個字大寫)"
     ],
     "reference_question_ids": [
       "architecture-114",
-      "architecture-115"
+      "architecture-115",
+      "friend-os-u3-189"
     ],
     "legacy_question_ids": [
       189
@@ -4374,7 +4529,8 @@
     "latest_source_question_number": 137,
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-57"
+      "architecture-57",
+      "friend-os-u3-157"
     ]
   },
   {
@@ -4410,7 +4566,8 @@
     ],
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-61"
+      "architecture-61",
+      "community-eb1592ba-0e1e-47b2-a83d-0c7992445ee9-5"
     ]
   },
   {
@@ -4438,6 +4595,9 @@
     "reference_question_ids": [
       "friend-os-u3-159",
       "architecture-71"
+    ],
+    "question_aliases": [
+      "An example of an early microkernel system mentioned in the textbook\nis ________.(please answer in lowercase english)"
     ]
   },
   {
@@ -4466,9 +4626,12 @@
     "source_response_type": "填空",
     "latest_source_question_number": 241,
     "reference_question_ids": [
-      "architecture-9"
+      "architecture-9",
+      "friend-os-u3-160"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "The acronym for Command-Line Interface is ________, and for Graphical User Interface is ________.(please answer in lowercase english with a space between answers)"
+    ]
   },
   {
     "id": 161,
@@ -4537,7 +4700,7 @@
       "Batch",
       "API"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "CLI\nGUI\nBatch",
     "answer_variants": [
       "CLI\nGUI\nBatch"
@@ -4618,12 +4781,15 @@
   {
     "id": 166,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "大多數現代作業系統採用哪種方法來實現可動態載入的功能？",
     "options": [
-      "Modularity"
+      "Unix structure",
+      "Single layer",
+      "Modularity",
+      "Simple structure"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "Modularity",
     "answer_variants": [
       "Modularity"
@@ -4642,8 +4808,10 @@
     "latest_source_question_number": 219,
     "reference_question_ids": [
       "architecture-87",
-      "architecture-86"
-    ]
+      "architecture-86",
+      "friend-os-u3-166"
+    ],
+    "source_type": "mcq"
   },
   {
     "id": 167,
@@ -4703,9 +4871,12 @@
     "source_response_type": "填空",
     "latest_source_question_number": 53,
     "reference_question_ids": [
-      "architecture-19"
+      "architecture-19",
+      "friend-os-u3-168"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "終端使用者通常接觸到的作業系統核心外圍環境，提供開發與執行便利性的程式稱為 ________。(請用小寫英文回答字母間留一個空白)"
+    ]
   },
   {
     "id": 170,
@@ -4768,7 +4939,8 @@
     "latest_source_question_number": 170,
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-102"
+      "architecture-102",
+      "architecture-103"
     ]
   },
   {
@@ -4835,12 +5007,15 @@
   {
     "id": 174,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "哪種作業系統通常沒有同時包含 CLI 和 GUI 介面？",
     "options": [
-      "MS-DOS"
+      "Microsoft Windows",
+      "MS-DOS",
+      "Apple Mac OS X",
+      "Linux"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "MS-DOS",
     "answer_variants": [
       "MS-DOS"
@@ -4849,12 +5024,17 @@
     "sources": [
       "作業系統_U3_全題庫_完整題目選項答案.txt",
       "第六次訓練.txt",
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 168,
     "source_incorrect_responses": [],
     "source_response_type": "單選",
-    "latest_source_question_number": 199
+    "latest_source_question_number": 199,
+    "reference_question_ids": [
+      "community-e462552b-cd2b-4d07-b30f-cabf50893593-12"
+    ],
+    "source_type": "單選題"
   },
   {
     "id": 175,
@@ -4920,7 +5100,8 @@
     "latest_source_question_number": 134,
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-5"
+      "architecture-5",
+      "friend-os-u3-176"
     ]
   },
   {
@@ -5035,7 +5216,8 @@
     "source_response_type": "填空",
     "latest_source_question_number": 167,
     "question_aliases": [
-      "MS-DOS 屬於[__1__] 的作業系統。(英文小寫回答 字母間留一個空白)"
+      "MS-DOS 屬於[__1__] 的作業系統。(英文小寫回答 字母間留一個空白)",
+      "MS-DOS 屬於 ____________ 的作業系統。(英文小寫回答 字母間留一個空白)"
     ],
     "reference_question_ids": [
       "community-5c7a7dab-12ae-412b-b022-bc13900862ef-16"
@@ -5186,11 +5368,13 @@
     "source_response_type": "填空",
     "latest_source_question_number": 153,
     "question_aliases": [
-      "A common bootstrap loader that allows selection of kernel options\nand versions is [__1__].(please answer in lowercase english)"
+      "A common bootstrap loader that allows selection of kernel options\nand versions is [__1__].(please answer in lowercase english)",
+      "A common bootstrap loader that allows selection of kernel options and versions is _______.(please answer in lowercase english)"
     ],
     "reference_question_ids": [
       "architecture-105",
-      "architecture-104"
+      "architecture-104",
+      "friend-os-u3-187"
     ],
     "legacy_answer_note": "來源答案由滿分作答推定；原檔未保留完整選項。"
   },
@@ -5257,7 +5441,9 @@
     "latest_source_question_number": 105,
     "source_type": "單選題",
     "reference_question_ids": [
-      "community-dc64f46b-6ebd-4b30-a6c2-277d8fb70389-9"
+      "community-dc64f46b-6ebd-4b30-a6c2-277d8fb70389-9",
+      "architecture-friend-u3-190",
+      "friend-os-u3-190"
     ]
   },
   {
@@ -5313,7 +5499,8 @@
     "latest_source_question_number": 175,
     "source_type": "複選",
     "reference_question_ids": [
-      "architecture-43"
+      "architecture-43",
+      "friend-os-u3-192"
     ]
   },
   {
@@ -5341,10 +5528,13 @@
     "source_response_type": "填空",
     "latest_source_question_number": 1,
     "question_aliases": [
-      "系統呼叫通常與[__1__]語言編寫的程式有關。 (用英文小寫回答 字母間請流一個空白)"
+      "系統呼叫通常與[__1__]語言編寫的程式有關。 (用英文小寫回答 字母間請流一個空白)",
+      "系統呼叫通常與 _______ 語言編寫的程式有關。(用英文小寫回答)",
+      "系統呼叫通常與 ____________ 語言編寫的程式有關。 (用英文小寫回答 字母間請流一個空白)"
     ],
     "reference_question_ids": [
-      "architecture-64"
+      "architecture-64",
+      "community-e462552b-cd2b-4d07-b30f-cabf50893593-2"
     ]
   },
   {
@@ -5376,7 +5566,8 @@
     "latest_source_question_number": 52,
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-4"
+      "architecture-4",
+      "friend-os-u3-194"
     ]
   },
   {
@@ -5436,6 +5627,9 @@
     "reference_question_ids": [
       "friend-os-u3-196",
       "architecture-80"
+    ],
+    "question_aliases": [
+      "In UNIX, the ________ consists of everything below the system call interface and above the physical hardware. (用英文小寫回答 字母間請流一個空白)"
     ]
   },
   {
@@ -5469,13 +5663,13 @@
     "type": "choice",
     "question": "關於 Apple iOS 的分層架構，主要包含下列哪些層（Layers）？",
     "options": [
-      "觸控可可層（Cocoa Touch）",
-      "多媒體服務層（Media Services）",
-      "核心服務層與核心作業系統層（Core Services / Core OS）",
-      "達爾維克虛擬機層（Dalvik VM）"
+      "觸控可可層(Cocoa Touch)",
+      "多媒體服務層(Media Services)",
+      "核心服務層與核心作業系統層(Core Services / Core OS)",
+      "達爾維克虛擬機層(Dalvik VM)"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "觸控可可層（Cocoa Touch）\n多媒體服務層（Media Services）\n核心服務層與核心作業系統層（Core Services / Core OS）",
+    "options_status": "complete",
+    "correct_answer": "觸控可可層(Cocoa Touch)\n多媒體服務層(Media Services)\n核心服務層與核心作業系統層(Core Services / Core OS)",
     "answer_variants": [
       "觸控可可層（Cocoa Touch）\n多媒體服務層（Media Services）\n核心服務層與核心作業系統層（Core Services / Core OS）"
     ],
@@ -5492,7 +5686,8 @@
     "latest_source_question_number": 78,
     "source_type": "多選題",
     "reference_question_ids": [
-      "architecture-friend-u3-198"
+      "architecture-friend-u3-198",
+      "friend-os-u3-198"
     ],
     "answer_note": "原始題庫僅記錄已知選項，可能未包含所有選項；未補造選項。"
   },
@@ -5651,28 +5846,38 @@
     "reference_question_ids": [
       "community-5c7a7dab-12ae-412b-b022-bc13900862ef-7"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "一個運行中的程式若需要進行檔案 manipulation 或網路傳輸，必須透過 ____________ 系統向核心發出請求。(請用小寫英文回答字母間留一個空白)"
+    ]
   },
   {
     "id": 205,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "標準 C 語言函式庫中的 printf() 函數，在 Unix 系統底層是呼叫哪一個系統呼叫？",
     "options": [
-      "write()"
+      "fork()",
+      "read()",
+      "write()",
+      "open()"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "write()",
     "answer_variants": [
       "write()"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 3,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "reference_question_ids": [
+      "community-e462552b-cd2b-4d07-b30f-cabf50893593-7"
+    ],
+    "source_type": "單選題"
   },
   {
     "id": 206,
@@ -5706,12 +5911,15 @@
   {
     "id": 207,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "關於開機引導（System Boot）的過程，下列哪些敘述不符合教材說明的？",
     "options": [
+      "開機引導程式負責定位核心並將其載入記憶體",
+      "韌體 ROM 用於保存初始引導程式（Bootstrap Loader）",
+      "通電時，執行從固定的記憶體位置開始",
       "核心直接常駐在 CPU 暫存器中不需要引導"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "核心直接常駐在 CPU 暫存器中不需要引導",
     "answer_variants": [
       "核心直接常駐在 CPU 暫存器中不需要引導"
@@ -5727,7 +5935,8 @@
     "reference_question_ids": [
       "architecture-friend-u3-207"
     ],
-    "answer_note": "原始題庫未收錄完整選項，請以文字作答；未補造干擾選項。"
+    "answer_note": "原始題庫未收錄完整選項，請以文字作答；未補造干擾選項。",
+    "source_type": "多選題"
   },
   {
     "id": 208,
@@ -5751,6 +5960,9 @@
     "reference_question_ids": [
       "friend-os-u3-208",
       "architecture-74"
+    ],
+    "question_aliases": [
+      "Operating systems that combine multiple structural approaches are called ________ systems.(please answer in lowercase english)"
     ]
   },
   {
@@ -5779,7 +5991,8 @@
     "source_incorrect_responses": [],
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-5"
+      "architecture-5",
+      "friend-os-u3-209"
     ]
   },
   {
@@ -5858,7 +6071,8 @@
     "source_incorrect_responses": [],
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-4"
+      "architecture-4",
+      "friend-os-u3-212"
     ]
   },
   {
@@ -6072,7 +6286,11 @@
     ],
     "reference_question_ids": [
       "architecture-48",
-      "architecture-47"
+      "architecture-47",
+      "friend-os-u3-221"
+    ],
+    "question_aliases": [
+      "應用程式用來呼叫作業系統核心服務的程式化介面簡稱為 _______。(請用小寫英文回答)"
     ]
   },
   {
@@ -6102,7 +6320,8 @@
     "source_type": "單選",
     "reference_question_ids": [
       "architecture-87",
-      "architecture-86"
+      "architecture-86",
+      "friend-os-u3-222"
     ]
   },
   {
@@ -6131,7 +6350,8 @@
     "source_incorrect_responses": [],
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-57"
+      "architecture-57",
+      "friend-os-u3-223"
     ]
   },
   {
@@ -6147,12 +6367,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 57,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "rom"
+    ],
+    "reference_question_ids": [
+      "community-4f304e00-3bda-42c9-980e-9feda8e76af0-8"
+    ],
+    "question_aliases": [
+      "當系統啟動時，會從一個固定的記憶體位置開始執行，該位置通常在 ____________ 中。(用英文小寫回答)"
     ]
   },
   {
@@ -6181,7 +6408,7 @@
   {
     "id": 226,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "which are the functions provided by OS",
     "options": [
       "file access",
@@ -6189,7 +6416,7 @@
       "load and execute program",
       "programming language support"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "file access\nstatistic information\nload and execute program\nprogramming language support",
     "answer_variants": [
       "file access\nstatistic information\nload and execute program\nprogramming language support"
@@ -6205,7 +6432,8 @@
     "reference_question_ids": [
       "friend-os-u3-226",
       "architecture-friend-u3-226"
-    ]
+    ],
+    "source_type": "複選"
   },
   {
     "id": 227,
@@ -6229,6 +6457,9 @@
     "reference_question_ids": [
       "friend-os-u3-227",
       "architecture-98"
+    ],
+    "question_aliases": [
+      "In the past, Operating System is implemented by ________ language. (Please answer in lowercase English)"
     ]
   },
   {
@@ -6255,6 +6486,9 @@
     "reference_question_ids": [
       "friend-os-u3-228",
       "architecture-47"
+    ],
+    "question_aliases": [
+      "Programming interface to the services provided by the OS is commonly accessed via ________.(please answer in lowercase english)"
     ]
   },
   {
@@ -6279,9 +6513,12 @@
       "h"
     ],
     "reference_question_ids": [
-      "architecture-51"
+      "architecture-51",
+      "friend-os-u3-229"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "在標準 C 函式庫範例中，要使用 read() 系統呼叫前，程式必須包含引入的標頭檔為 _______。(請用小寫英文回答)"
+    ]
   },
   {
     "id": 230,
@@ -6364,23 +6601,31 @@
   {
     "id": 233,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Which of the following is a communication mechanism that uses message passing?",
     "options": [
+      "Memory-mapped I/O",
+      "Signal Bus",
+      "Shared Library",
       "Message Passing"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "Message Passing",
     "answer_variants": [
       "Message Passing"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 91,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "reference_question_ids": [
+      "community-44192aa0-5ca5-4a32-a11b-de905cc1ee7a-3"
+    ],
+    "source_type": "單選題"
   },
   {
     "id": 234,
@@ -6408,7 +6653,8 @@
     "source_incorrect_responses": [],
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-40"
+      "architecture-40",
+      "friend-os-u3-234"
     ]
   },
   {
@@ -6436,6 +6682,9 @@
     "reference_question_ids": [
       "friend-os-u3-235",
       "architecture-112"
+    ],
+    "question_aliases": [
+      "Periodic sampling of the instruction pointer to look for statistical trends is called ________.(please answer in lowercase english)"
     ]
   },
   {
@@ -6470,14 +6719,15 @@
   {
     "id": 237,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "下列哪些系統呼叫屬於 Unix/Linux 系統中的「檔案管理（File Management）」範疇？",
     "options": [
-      "open()",
+      "write()",
       "read()",
-      "write()"
+      "open()",
+      "ioctl()"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "write()\nread()\nopen()",
     "answer_variants": [
       "write()\nread()\nopen()"
@@ -6493,7 +6743,8 @@
     "reference_question_ids": [
       "architecture-friend-u3-237"
     ],
-    "answer_note": "原始題庫未收錄完整選項，請以文字作答；未補造干擾選項。"
+    "answer_note": "原始題庫未收錄完整選項，請以文字作答；未補造干擾選項。",
+    "source_type": "多選題"
   },
   {
     "id": 238,
@@ -6517,6 +6768,9 @@
     "reference_question_ids": [
       "friend-os-u3-238",
       "architecture-96"
+    ],
+    "question_aliases": [
+      "According to Kernighan's Law, debugging is ________ as hard as writing the code.(please answer in lowercase english)"
     ]
   },
   {
@@ -6657,14 +6911,14 @@
   {
     "id": 245,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "Apple's iOS architecture is structured into which of the following layers?",
     "options": [
       "Cocoa Touch",
       "Media Services",
       "Core Services & Core OS"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "Cocoa Touch\nMedia Services\nCore Services & Core OS",
     "answer_variants": [
       "Cocoa Touch\nMedia Services\nCore Services & Core OS"
@@ -6678,9 +6932,11 @@
     "source_response_type": "複選",
     "source_incorrect_responses": [],
     "reference_question_ids": [
-      "architecture-friend-u3-198"
+      "architecture-friend-u3-198",
+      "friend-os-u3-245"
     ],
-    "answer_note": "原始題庫僅記錄已知選項，可能未包含所有選項；未補造選項。"
+    "answer_note": "原始題庫僅記錄已知選項，可能未包含所有選項；未補造選項。",
+    "source_type": "複選"
   },
   {
     "id": 246,
@@ -6702,7 +6958,8 @@
     "source_response_type": "填空",
     "source_incorrect_responses": [],
     "question_aliases": [
-      "[__1__]結構的缺點是使用者空間與核心空間之間通訊的開銷。(用英文小寫回答)"
+      "[__1__]結構的缺點是使用者空間與核心空間之間通訊的開銷。(用英文小寫回答)",
+      "_______ 結構的缺點是使用者空間與核心空間之間通訊的開銷。(用英文小寫回答)"
     ],
     "reference_question_ids": [
       "architecture-69"
@@ -6755,9 +7012,12 @@
       "kernelLi"
     ],
     "reference_question_ids": [
-      "architecture-85"
+      "architecture-85",
+      "friend-os-u3-248"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "現代許多作業系統（如 Linux、Solaris）為了彈性擴充核心，皆實作了可載入核心 _______。(請用小寫英文回答)"
+    ]
   },
   {
     "id": 249,
@@ -6810,7 +7070,9 @@
     "reference_question_ids": [
       "community-dc64f46b-6ebd-4b30-a6c2-277d8fb70389-10"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "A programming interface to request kernel services is known as a ____________ .(please answer in lowercase english with a space between answers)"
+    ]
   },
   {
     "id": 251,
@@ -6911,6 +7173,9 @@
     "reference_question_ids": [
       "friend-os-u3-254",
       "architecture-104"
+    ],
+    "question_aliases": [
+      "一種常見且強大的開機引導載入程式，允許使用者從多個硬碟、作業系統版本中進行開機選擇的工具縮寫為 ________。(請用小寫英文回答)"
     ]
   },
   {
@@ -6945,23 +7210,31 @@
   {
     "id": 256,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "能夠在生產系統上進行即時動態追蹤與動態檢測（Live Instrumentation）的進階工具為何？",
     "options": [
-      "DTrace"
+      "top",
+      "DTrace",
+      "Task Manager",
+      "GRUB"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "DTrace",
     "answer_variants": [
       "DTrace"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 158,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "reference_question_ids": [
+      "community-4f304e00-3bda-42c9-980e-9feda8e76af0-5"
+    ],
+    "source_type": "單選題"
   },
   {
     "id": 257,
@@ -7058,6 +7331,9 @@
     "reference_question_ids": [
       "friend-os-u3-260",
       "architecture-60"
+    ],
+    "question_aliases": [
+      "The Win32 API used to set security permissions on a file is ________.(please answer in lowercase english)"
     ]
   },
   {
@@ -7082,6 +7358,9 @@
     "reference_question_ids": [
       "friend-os-u3-261",
       "architecture-51"
+    ],
+    "question_aliases": [
+      "A C program using the read() function must include the ________ header file.(please answer in lowercase english)"
     ]
   },
   {
@@ -7097,12 +7376,19 @@
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 179,
     "source_response_type": "填空",
     "source_incorrect_responses": [
       "javaweb"
+    ],
+    "reference_question_ids": [
+      "community-4f304e00-3bda-42c9-980e-9feda8e76af0-6"
+    ],
+    "question_aliases": [
+      "The three most common APIs are the Win32 API for Windows, the POSIX API for POSIX systems, and the Java API for the ____________ virtual machine. (用英文小寫回答)"
     ]
   },
   {
@@ -7125,10 +7411,13 @@
     "source_response_type": "填空",
     "source_incorrect_responses": [],
     "reference_question_ids": [
-      "architecture-118"
+      "architecture-118",
+      "friend-os-u3-263"
     ],
     "answer_note": "來源採早期 Android 架構；現行元件與名稱可能不同。",
-    "question_aliases": []
+    "question_aliases": [
+      "網頁瀏覽器底層常用的排版與核心渲染引擎架構（如 Android 內建程式庫所含）名為 ________。(請用小寫英文回答)"
+    ]
   },
   {
     "id": 265,
@@ -7182,10 +7471,13 @@
       "goals and rules"
     ],
     "question_aliases": [
-      "作業系統的設計和實作是一個定義[__1__]的過程。(英文小寫回答 中間 用and 如 a and b)"
+      "作業系統的設計和實作是一個定義[__1__]的過程。(英文小寫回答 中間 用and 如 a and b)",
+      "作業系統的設計和實作是一個定義 _______ 的過程。(英文小寫回答，中間用 and)",
+      "作業系統的設計和實作是一個定義________的過程。(英文小寫回答 中間 用and 如 a and b)"
     ],
     "reference_question_ids": [
-      "architecture-95"
+      "architecture-95",
+      "friend-os-u3-266"
     ]
   },
   {
@@ -7210,10 +7502,13 @@
       "rom"
     ],
     "question_aliases": [
-      "When the system boots up, it starts executing from a fixed memory location, usually in the [__1__].(用英文小寫回答 字母間請留一個空白)"
+      "When the system boots up, it starts executing from a fixed memory location, usually in the [__1__].(用英文小寫回答 字母間請留一個空白)",
+      "When the system boots up, it starts executing from a fixed memory location, usually in the _______.",
+      "When the system boots up, it starts executing from a fixed memory location, usually in the ____________ .(用英文小寫回答)"
     ],
     "reference_question_ids": [
-      "architecture-101"
+      "architecture-101",
+      "community-b52c9a6b-e697-4c98-997b-a34d57103cc3-6"
     ]
   },
   {
@@ -7343,11 +7638,13 @@
     "source_response_type": "填空",
     "source_incorrect_responses": [],
     "question_aliases": [
-      "圖形使用者介面（GUI）的桌面介面是在[__1__]發明的。 (英文小寫回答 單字間留一個空白)"
+      "圖形使用者介面（GUI）的桌面介面是在[__1__]發明的。 (英文小寫回答 單字間留一個空白)",
+      "圖形使用者介面（GUI）的桌面介面是在 _______ 發明的。(英文小寫回答，單字間留一個空白)"
     ],
     "reference_question_ids": [
       "architecture-15",
-      "architecture-14"
+      "architecture-14",
+      "friend-os-u3-272"
     ]
   },
   {
@@ -7427,21 +7724,28 @@
     "type": "choice",
     "question": "What is the name of the virtual machine that runs translated Java bytecode in Android?",
     "options": [
+      "Mach",
+      "JVM",
       "Dalvik virtual machine",
-      "JVM"
+      "Aqua"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "Dalvik virtual machine",
     "answer_variants": [
       "Dalvik virtual machine"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 205,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "reference_question_ids": [
+      "community-239e1711-48d9-41ae-aede-76dd97d31338-3"
+    ],
+    "source_type": "單選題"
   },
   {
     "id": 277,
@@ -7484,7 +7788,8 @@
     "source_response_type": "填空",
     "source_incorrect_responses": [],
     "question_aliases": [
-      "MS-DOS is a [__1__] Operation system。(Please answer in lowercase English, leaving a space between each word)"
+      "MS-DOS is a [__1__] Operation system。(Please answer in lowercase English, leaving a space between each word)",
+      "MS-DOS is a _______ Operating system.(Please answer in lowercase English)"
     ],
     "reference_question_ids": [
       "architecture-83"
@@ -7621,6 +7926,9 @@
     "reference_question_ids": [
       "friend-os-u3-283",
       "architecture-70"
+    ],
+    "question_aliases": [
+      "In a microkernel system structure, communication takes place between user modules using ________.(please answer in lowercase english with a space between answers)"
     ]
   },
   {
@@ -7645,6 +7953,9 @@
     "reference_question_ids": [
       "friend-os-u3-284",
       "architecture-121"
+    ],
+    "question_aliases": [
+      "The layer in iOS that provides the API for developing applications is called ________ .(please answer in lowercase english)"
     ]
   },
   {
@@ -7717,6 +8028,9 @@
     "reference_question_ids": [
       "friend-os-u3-288",
       "architecture-45"
+    ],
+    "question_aliases": [
+      "The standard API for UNIX-based systems is known as the ________ API.(please answer in lowercase english)"
     ]
   },
   {
@@ -7804,21 +8118,28 @@
     "type": "choice",
     "question": "Which operating system architecture moves most functionality out of the kernel?",
     "options": [
-      "Microkernel",
-      "Hybrid"
+      "Monolithic",
+      "Hybrid",
+      "DOS",
+      "Microkernel"
     ],
-    "options_status": "known_options_only",
+    "options_status": "complete",
     "correct_answer": "Microkernel",
     "answer_variants": [
       "Microkernel"
     ],
     "answer_basis": "provided_source_answer",
     "sources": [
-      "作業系統U3.txt"
+      "作業系統U3.txt",
+      "https://yocheng06.github.io/course-library/os.html"
     ],
     "source_question_number": 255,
     "source_response_type": "單選",
-    "source_incorrect_responses": []
+    "source_incorrect_responses": [],
+    "reference_question_ids": [
+      "community-4f304e00-3bda-42c9-980e-9feda8e76af0-3"
+    ],
+    "source_type": "單選題"
   },
   {
     "id": 293,
@@ -7867,7 +8188,8 @@
     "source_incorrect_responses": [],
     "source_type": "單選",
     "reference_question_ids": [
-      "architecture-14"
+      "architecture-14",
+      "friend-os-u3-294"
     ]
   },
   {
@@ -7923,6 +8245,9 @@
     "reference_question_ids": [
       "friend-os-u3-296",
       "architecture-32"
+    ],
+    "question_aliases": [
+      "The \"protection\" service in the operating system is concerned with controlling access to ________.(Please answer in lowercase English, leaving a space between each word)"
     ]
   },
   {
@@ -7991,7 +8316,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-17",
       "architecture-17"
     ]
   },
@@ -8017,7 +8341,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-33",
       "architecture-33"
     ]
   },
@@ -8043,7 +8366,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-37",
       "architecture-37"
     ]
   },
@@ -8069,7 +8391,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-23",
       "architecture-23"
     ]
   },
@@ -8095,7 +8416,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-30",
       "architecture-30"
     ]
   },
@@ -8121,7 +8441,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-36",
       "architecture-36"
     ]
   },
@@ -8147,7 +8466,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-54",
       "architecture-54"
     ]
   },
@@ -8173,7 +8491,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-49",
       "architecture-49"
     ]
   },
@@ -8199,7 +8516,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-82",
       "architecture-82"
     ]
   },
@@ -8225,7 +8541,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-86",
       "architecture-86"
     ]
   },
@@ -8251,7 +8566,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-96",
       "architecture-96"
     ]
   },
@@ -8277,7 +8591,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-75",
       "architecture-75"
     ]
   },
@@ -8298,10 +8611,11 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "architecture-108",
       "architecture-108"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "Some systems implement a _______ used to store and retrieve configuration information.(please answer in lowercase english)"
+    ]
   },
   {
     "id": 312,
@@ -8320,10 +8634,11 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "community-5c7a7dab-12ae-412b-b022-bc13900862ef-9",
       "community-5c7a7dab-12ae-412b-b022-bc13900862ef-9"
     ],
-    "question_aliases": []
+    "question_aliases": [
+      "System calls are usually written in the ____________ language. (用英文小寫回答 字母間請流一個空白)"
+    ]
   },
   {
     "id": 313,
@@ -8347,7 +8662,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "community-dc64f46b-6ebd-4b30-a6c2-277d8fb70389-7",
       "community-dc64f46b-6ebd-4b30-a6c2-277d8fb70389-7"
     ]
   },
@@ -8373,7 +8687,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "community-dcd2e755-8451-456a-9d22-357dd584f328-6",
       "community-dcd2e755-8451-456a-9d22-357dd584f328-6"
     ]
   },
@@ -8399,7 +8712,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "community-887db733-c68b-45e5-9727-ea6831f12258-2",
       "community-887db733-c68b-45e5-9727-ea6831f12258-2"
     ]
   },
@@ -8425,7 +8737,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "community-887db733-c68b-45e5-9727-ea6831f12258-7",
       "community-887db733-c68b-45e5-9727-ea6831f12258-7"
     ]
   },
@@ -8451,7 +8762,6 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "community-887db733-c68b-45e5-9727-ea6831f12258-8",
       "community-887db733-c68b-45e5-9727-ea6831f12258-8",
       "architecture-54"
     ],
@@ -8481,8 +8791,74 @@
     ],
     "answer_basis": "provided_source_answer",
     "reference_question_ids": [
-      "community-887db733-c68b-45e5-9727-ea6831f12258-9",
       "community-887db733-c68b-45e5-9727-ea6831f12258-9"
+    ]
+  },
+  {
+    "id": 319,
+    "title": "",
+    "question": "Which statements accurately describe the multitasking program execution in FreeBSD/Unix?",
+    "options": [
+      "User login invokes user's choice of shell",
+      "Shell executes fork() to create process",
+      "Executes exec() to load program into process",
+      "Process can only return error code 100",
+      "Process exits must always return error code 100"
+    ],
+    "correct_answer": "User login invokes user's choice of shell\nShell executes fork() to create process\nExecutes exec() to load program into process",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "複選",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "friend-os-u3-062"
+    ]
+  },
+  {
+    "id": 320,
+    "title": "",
+    "question": "Which of the following are modules supported in modern modular kernels like Solaris?",
+    "options": [
+      "Scheduling classes",
+      "Physical hardware wires",
+      "File systems",
+      "Loadable system calls"
+    ],
+    "correct_answer": "Scheduling classes\nFile systems\nLoadable system calls",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-e462552b-cd2b-4d07-b30f-cabf50893593-6"
+    ]
+  },
+  {
+    "id": 321,
+    "title": "",
+    "question": "Which core design method dynamically loads core components at runtime with object-oriented features?",
+    "options": [
+      "Simple structure",
+      "Layered approach",
+      "Loadable kernel modules",
+      "Monolithic kernel"
+    ],
+    "correct_answer": "Loadable kernel modules",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html"
+    ],
+    "reference_question_ids": [
+      "community-239e1711-48d9-41ae-aede-76dd97d31338-4"
     ]
   }
 ]

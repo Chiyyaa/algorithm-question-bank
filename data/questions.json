@@ -16,9 +16,18 @@
       "0930訓練-45.txt",
       "0930訓練三.txt",
       "0930訓練五.txt",
-      "0930訓練四.txt"
+      "0930訓練四.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 4
+    "times_seen_in_0930": 4,
+    "reference_question_ids": [
+      "L2-055",
+      "L2-060"
+    ],
+    "question_aliases": [
+      "遞迴式 T(n)=2T(n/2)+cn 的漸進解為 _________。",
+      "請輸入 Merge Sort 遞迴解的 LMS 精確字串。"
+    ]
   },
   {
     "id": 2,
@@ -36,9 +45,16 @@
     "sources": [
       "上週題庫.txt",
       "0930訓練一.txt",
-      "0930訓練三.txt"
+      "0930訓練三.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 2
+    "times_seen_in_0930": 2,
+    "reference_question_ids": [
+      "L2-054"
+    ],
+    "question_aliases": [
+      "當問題規模 n > 1 時，Merge Sort 的遞迴關係式為 T(n)=2T(n/2)+ _________。"
+    ]
   },
   {
     "id": 3,
@@ -74,9 +90,16 @@
     "answer_basis": "explicit_training_answer",
     "sources": [
       "上週題庫.txt",
-      "0930訓練三.txt"
+      "0930訓練三.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 1
+    "times_seen_in_0930": 1,
+    "reference_question_ids": [
+      "L2-012"
+    ],
+    "question_aliases": [
+      "若滿足 m <= n 則 f(m) >= f(n)，此函數性質稱為 _________。"
+    ]
   },
   {
     "id": 5,
@@ -92,9 +115,16 @@
     "answer_basis": "explicit_training_answer",
     "sources": [
       "上週題庫.txt",
-      "0930訓練二.txt"
+      "0930訓練二.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 1
+    "times_seen_in_0930": 1,
+    "reference_question_ids": [
+      "L2-011"
+    ],
+    "question_aliases": [
+      "若滿足 m < n 則 f(m) < f(n)，此函數性質稱為 _________。"
+    ]
   },
   {
     "id": 6,
@@ -111,9 +141,18 @@
     "sources": [
       "上週題庫.txt",
       "0930訓練-45.txt",
-      "0930訓練三.txt"
+      "0930訓練三.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 2
+    "times_seen_in_0930": 2,
+    "reference_question_ids": [
+      "L2-035",
+      "L2-061"
+    ],
+    "question_aliases": [
+      "史特林近似公式指出 log(n!) = _________。",
+      "請輸入 log(n!) 的 LMS 精確漸進答案。"
+    ]
   },
   {
     "id": 7,
@@ -131,9 +170,18 @@
       "上週題庫.txt",
       "0930訓練-45.txt",
       "0930訓練五.txt",
-      "0930訓練四.txt"
+      "0930訓練四.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 3
+    "times_seen_in_0930": 3,
+    "reference_question_ids": [
+      "L2-036",
+      "L2-062"
+    ],
+    "question_aliases": [
+      "史特林公式中指出，階乘 n! 的增長大於常數指數 2^n，即 n! = _________。",
+      "請輸入 n! 相對於 2^n 的 LMS 精確答案。"
+    ]
   },
   {
     "id": 8,
@@ -151,9 +199,16 @@
     "sources": [
       "上週題庫.txt",
       "0930訓練三.txt",
-      "0930訓練五.txt"
+      "0930訓練五.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 2
+    "times_seen_in_0930": 2,
+    "reference_question_ids": [
+      "L2-033"
+    ],
+    "question_aliases": [
+      "請完成 Fibonacci 程式：if ( _________ ) return 0; else if ( _________ ) return 1;"
+    ]
   },
   {
     "id": 9,
@@ -171,9 +226,16 @@
     "sources": [
       "上週題庫.txt",
       "0930訓練-45.txt",
-      "0930訓練二.txt"
+      "0930訓練二.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 2
+    "times_seen_in_0930": 2,
+    "reference_question_ids": [
+      "L2-022"
+    ],
+    "question_aliases": [
+      "若一個函數滿足 f(n) = _________，則稱此函數是多對數有界（polylogarithmically bounded）。"
+    ]
   },
   {
     "id": 10,
@@ -190,9 +252,16 @@
     "sources": [
       "上週題庫.txt",
       "0930訓練-45.txt",
-      "0930訓練五.txt"
+      "0930訓練五.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 2
+    "times_seen_in_0930": 2,
+    "reference_question_ids": [
+      "L2-021"
+    ],
+    "question_aliases": [
+      "若一個函數滿足 f(n) = _________，則稱此函數是多項式有界。"
+    ]
   },
   {
     "id": 11,
@@ -209,9 +278,16 @@
     "answer_basis": "previous_bank",
     "sources": [
       "上週題庫.txt",
-      "0930訓練-45.txt"
+      "0930訓練-45.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 1
+    "times_seen_in_0930": 1,
+    "reference_question_ids": [
+      "L2-008"
+    ],
+    "question_aliases": [
+      "對成本函數 f(n)，漸進上界與漸進下界的表示法分別為 _________ 與 _________。"
+    ]
   },
   {
     "id": 12,
@@ -229,9 +305,16 @@
       "上週題庫.txt",
       "0930訓練-45.txt",
       "0930訓練二.txt",
-      "0930訓練四.txt"
+      "0930訓練四.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 3
+    "times_seen_in_0930": 3,
+    "reference_question_ids": [
+      "L2-041"
+    ],
+    "question_aliases": [
+      "若一排序演算法在重排陣列時，最多僅需常數個額外記憶體空間在陣列外，此演算法被稱為 _________ 排序。"
+    ]
   },
   {
     "id": 13,
@@ -283,11 +366,18 @@
     "sources": [
       "上週題庫.txt",
       "0930訓練四.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 1,
     "import_source_ids": [
       "ALG-B1-15"
+    ],
+    "reference_question_ids": [
+      "L2-006"
+    ],
+    "question_aliases": [
+      "非漸進緊確的下界（Lower bound that is not asymptotically tight）是用下列哪一個符號表示？"
     ]
   },
   {
@@ -367,11 +457,18 @@
       "上週題庫.txt",
       "0930訓練-45.txt",
       "0930訓練三.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 2,
     "import_source_ids": [
       "ALG-B1-06"
+    ],
+    "reference_question_ids": [
+      "L2-004"
+    ],
+    "question_aliases": [
+      "漸進緊確界（Asymptotic tight bound）是用下列哪一個漸進符號表示？"
     ]
   },
   {
@@ -397,11 +494,15 @@
       "0930訓練二.txt",
       "0930訓練五.txt",
       "0930訓練四.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 4,
     "import_source_ids": [
       "ALG-B2-09"
+    ],
+    "reference_question_ids": [
+      "L2-031"
     ]
   },
   {
@@ -427,12 +528,19 @@
       "上週題庫.txt",
       "0930訓練一.txt",
       "0930訓練二.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 2,
     "import_source_ids": [
       "ALG-B1-17",
       "ALG-U2-055"
+    ],
+    "reference_question_ids": [
+      "L2-058"
+    ],
+    "question_aliases": [
+      "關於 RAM（Random Access Machine）模型，下列哪些敘述正確？"
     ]
   },
   {
@@ -460,11 +568,18 @@
       "0930訓練三.txt",
       "0930訓練二.txt",
       "0930訓練五.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 4,
     "import_source_ids": [
       "ALG-B2-11"
+    ],
+    "reference_question_ids": [
+      "L2-052"
+    ],
+    "question_aliases": [
+      "分治法（Divide-and-Conquer）通常包含下列哪些核心步驟？"
     ]
   },
   {
@@ -487,11 +602,18 @@
     "sources": [
       "上週題庫.txt",
       "0930訓練一.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 1,
     "import_source_ids": [
       "ALG-U2-049"
+    ],
+    "reference_question_ids": [
+      "L2-044"
+    ],
+    "question_aliases": [
+      "插入排序法（Insertion Sort）在最佳情況（Best-case）下的時間複雜度為何？"
     ]
   },
   {
@@ -517,11 +639,20 @@
       "0930訓練一.txt",
       "0930訓練三.txt",
       "0930訓練四.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 4,
     "import_source_ids": [
       "ALG-B1-18"
+    ],
+    "reference_question_ids": [
+      "L2-050",
+      "L2-051"
+    ],
+    "question_aliases": [
+      "合併排序法（Merge Sort）採用的是下列哪一種演算法設計方法？",
+      "合併排序法（Merge Sort）採用的是下列哪一種演算法設計方法？（另一版本選項順序）"
     ]
   },
   {
@@ -573,11 +704,18 @@
     "sources": [
       "上週題庫.txt",
       "0930訓練-45.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 1,
     "import_source_ids": [
       "ALG-U2-065"
+    ],
+    "reference_question_ids": [
+      "L2-032"
+    ],
+    "question_aliases": [
+      "關於費氏數列（Fibonacci numbers），下列定義與數學公式哪些是正確的？"
     ]
   },
   {
@@ -602,13 +740,20 @@
     "sources": [
       "上週題庫.txt",
       "0930訓練二.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 1,
     "import_source_ids": [
       "ALG-B2-06"
     ],
-    "answer_note": "本題採教材使用哨兵的 Merge 版本；其他實作也可以用邊界檢查取代哨兵。"
+    "answer_note": "本題採教材使用哨兵的 Merge 版本；其他實作也可以用邊界檢查取代哨兵。",
+    "reference_question_ids": [
+      "L2-053"
+    ],
+    "question_aliases": [
+      "在合併排序法的 Merge(A,p,q,r) 中，使用了哪些輔助常規？"
+    ]
   },
   {
     "id": 26,
@@ -631,11 +776,18 @@
     "answer_basis": "content_verified_2026_10_04",
     "sources": [
       "上週題庫.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 0,
     "import_source_ids": [
       "ALG-B1-14"
+    ],
+    "reference_question_ids": [
+      "L2-010"
+    ],
+    "question_aliases": [
+      "下列關於漸進符號對稱性（Symmetry）與轉置對稱性（Transpose Symmetry）的敘述，哪些正確？"
     ]
   },
   {
@@ -662,11 +814,18 @@
       "上週題庫.txt",
       "0930訓練-45.txt",
       "0930訓練三.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 2,
     "import_source_ids": [
       "ALG-B1-10"
+    ],
+    "reference_question_ids": [
+      "L2-001"
+    ],
+    "question_aliases": [
+      "關於漸進符號的遞移性（Transitivity），下列哪些選項是正確的？"
     ]
   },
   {
@@ -688,12 +847,19 @@
     "answer_basis": "content_verified_2026_10_04",
     "sources": [
       "上週題庫.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 0,
     "import_source_ids": [
       "ALG-B1-07",
       "ALG-B2-18"
+    ],
+    "reference_question_ids": [
+      "L2-042"
+    ],
+    "question_aliases": [
+      "下列哪一種排序演算法屬於 in-place sorting？"
     ]
   },
   {
@@ -716,12 +882,19 @@
     "sources": [
       "上週題庫.txt",
       "0930訓練五.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 1,
     "import_source_ids": [
       "ALG-B2-04",
       "UAF21EB5933EB40BABCCD31D92AFC7619"
+    ],
+    "reference_question_ids": [
+      "L2-013"
+    ],
+    "question_aliases": [
+      "若 m <= n 則 f(m) <= f(n)，此函數屬於哪一種單調性？"
     ]
   },
   {
@@ -750,11 +923,15 @@
       "0930訓練二.txt",
       "0930訓練五.txt",
       "0930訓練四.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 4,
     "import_source_ids": [
       "U21694E4C18064696914A3C4B966DF4CB"
+    ],
+    "reference_question_ids": [
+      "L2-003"
     ]
   },
   {
@@ -784,11 +961,18 @@
       "0930訓練二.txt",
       "0930訓練五.txt",
       "0930訓練四.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 6,
     "import_source_ids": [
       "ALG-B2-07"
+    ],
+    "reference_question_ids": [
+      "L2-038"
+    ],
+    "question_aliases": [
+      "下列關於階乘（Factorial）增長率的漸進關係，哪些選項是正確的？"
     ]
   },
   {
@@ -816,11 +1000,18 @@
       "0930訓練-45.txt",
       "0930訓練二.txt",
       "0930訓練四.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 3,
     "import_source_ids": [
       "ALG-U2-051"
+    ],
+    "reference_question_ids": [
+      "L2-027"
+    ],
+    "question_aliases": [
+      "關於重複對數函數（Iterative logarithm function, lg* n），下列敘述哪些是正確的？"
     ]
   },
   {
@@ -874,11 +1065,18 @@
       "0930訓練一.txt",
       "0930訓練三.txt",
       "0930訓練五.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 3,
     "import_source_ids": [
       "ALG-U2-053"
+    ],
+    "reference_question_ids": [
+      "L2-028"
+    ],
+    "question_aliases": [
+      "重複對數函數值 lg* 16 的結果為多少？"
     ]
   },
   {
@@ -904,11 +1102,18 @@
       "上週題庫.txt",
       "0930訓練三.txt",
       "0930訓練四.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 2,
     "import_source_ids": [
       "UF964E2BC0EED4AC2A38679A3D70C15FB"
+    ],
+    "reference_question_ids": [
+      "L2-059"
+    ],
+    "question_aliases": [
+      "為什麼演算法分析通常特別關注 worst-case running time？"
     ]
   },
   {
@@ -933,12 +1138,19 @@
       "0930訓練-45.txt",
       "0930訓練三.txt",
       "0930訓練二.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 3,
     "import_source_ids": [
       "ALG-B1-20",
       "ALG-U2-058"
+    ],
+    "reference_question_ids": [
+      "L2-020"
+    ],
+    "question_aliases": [
+      "對於任何常數 a > 1，當 n 趨近於無窮大時，(n^b / a^n) 的極限值為多少？"
     ]
   },
   {
@@ -962,12 +1174,19 @@
       "上週題庫.txt",
       "0930訓練-45.txt",
       "0930訓練三.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 2,
     "import_source_ids": [
       "ALG-B2-02",
       "ALG-U2-057"
+    ],
+    "reference_question_ids": [
+      "L2-018"
+    ],
+    "question_aliases": [
+      "在計算機科學中，若無特別註明，「lg n」通常表示以下列哪一個數為底的對數？"
     ]
   },
   {
@@ -991,11 +1210,18 @@
     "answer_basis": "content_verified_2026_10_04",
     "sources": [
       "上週題庫.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 0,
     "import_source_ids": [
       "ALG-B1-02"
+    ],
+    "reference_question_ids": [
+      "L2-047"
+    ],
+    "question_aliases": [
+      "關於 Insertion Sort 的 loop invariant，下列哪些敘述正確？"
     ]
   },
   {
@@ -1021,13 +1247,17 @@
       "0930訓練一.txt",
       "0930訓練三.txt",
       "0930訓練五.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 3,
     "import_source_ids": [
       "ALG-U2-054"
     ],
-    "answer_note": "「正指數」指底數 a > 1；「正多項式」指具有正的增長次方，不包含常數函數。"
+    "answer_note": "「正指數」指底數 a > 1；「正多項式」指具有正的增長次方，不包含常數函數。",
+    "reference_question_ids": [
+      "L2-019"
+    ]
   },
   {
     "id": 40,
@@ -1050,18 +1280,27 @@
     "sources": [
       "上週題庫.txt",
       "0930訓練一.txt",
-      "0930訓練二.txt"
+      "0930訓練二.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 2
+    "times_seen_in_0930": 2,
+    "reference_question_ids": [
+      "L2-025"
+    ]
   },
   {
     "id": 41,
     "title": "",
-    "type": "choice_options_missing",
+    "type": "choice",
     "question": "大於或等於實數 x 的最小整數是用下列哪一個函數表示？",
-    "options": [],
-    "options_status": "source_record_did_not_include_options",
-    "correct_answer": "高斯函數 (Ceiling)",
+    "options": [
+      "四捨五入 (Round)",
+      "地板函數 (Floor)",
+      "絕對值 (Absolute)",
+      "天花板函數 (Ceiling)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "天花板函數 (Ceiling)",
     "answer_variants": [
       "A",
       "高斯函數 (Ceiling)"
@@ -1070,9 +1309,14 @@
     "sources": [
       "0930訓練-45.txt",
       "0930訓練一.txt",
-      "0930訓練五.txt"
+      "0930訓練五.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 3
+    "times_seen_in_0930": 3,
+    "reference_question_ids": [
+      "L2-014"
+    ],
+    "source_type": "單選題"
   },
   {
     "id": 42,
@@ -1089,9 +1333,16 @@
     "sources": [
       "0930訓練-45.txt",
       "0930訓練一.txt",
-      "0930訓練二.txt"
+      "0930訓練二.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 3
+    "times_seen_in_0930": 3,
+    "reference_question_ids": [
+      "L2-037"
+    ],
+    "question_aliases": [
+      "階乘增長率與指數增長率相比，n! 屬於 o(n^n)，但與 2^n 相比，n! 屬於 _________ 關係。"
+    ]
   },
   {
     "id": 43,
@@ -1127,10 +1378,13 @@
     "type": "choice",
     "question": "插入排序法（Insertion Sort）在最壞情況（Worst-case）下的時間複雜度為何？",
     "options": [
-      "A. O(n²)"
+      "O(n log n)",
+      "O(2^n)",
+      "O(n^2)",
+      "O(n)"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "A. O(n²)",
+    "options_status": "complete",
+    "correct_answer": "O(n^2)",
     "answer_variants": [
       "O(n²)"
     ],
@@ -1139,12 +1393,17 @@
       "0930訓練-45.txt",
       "0930訓練三.txt",
       "0930訓練二.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 3,
     "import_source_ids": [
       "ALG-U2-060"
-    ]
+    ],
+    "reference_question_ids": [
+      "L2-043"
+    ],
+    "source_type": "單選題"
   },
   {
     "id": 45,
@@ -1152,10 +1411,13 @@
     "type": "choice",
     "question": "漸進下界（Asymptotic lower bound）是用下列哪一個漸進符號表示？",
     "options": [
-      "A. Ω"
+      "O",
+      "Ω",
+      "Θ",
+      "o"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "A. Ω",
+    "options_status": "complete",
+    "correct_answer": "Ω",
     "answer_variants": [
       "Ω"
     ],
@@ -1163,12 +1425,17 @@
     "sources": [
       "0930訓練-45.txt",
       "0930訓練二.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 2,
     "import_source_ids": [
       "ALG-B2-20"
-    ]
+    ],
+    "reference_question_ids": [
+      "L2-005"
+    ],
+    "source_type": "單選題"
   },
   {
     "id": 46,
@@ -1188,11 +1455,15 @@
       "0930訓練-45.txt",
       "0930訓練二.txt",
       "0930訓練五.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 3,
     "import_source_ids": [
       "ALG-B2-01"
+    ],
+    "reference_question_ids": [
+      "L2-015"
     ]
   },
   {
@@ -1201,10 +1472,13 @@
     "type": "choice",
     "question": "插入排序法（Insertion Sort）採用的是下列哪一種演算法設計方法？",
     "options": [
-      "A. 增量法 (Incremental Approach)"
+      "增量法 (Incremental Approach)",
+      "貪婪演算法 (Greedy Algorithm)",
+      "動態規劃 (Dynamic Programming)",
+      "分治法 (Divide-and-Conquer)"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "A. 增量法 (Incremental Approach)",
+    "options_status": "complete",
+    "correct_answer": "增量法 (Incremental Approach)",
     "answer_variants": [
       "增量法 (Incremental Approach)"
     ],
@@ -1214,11 +1488,20 @@
       "0930訓練一.txt",
       "0930訓練二.txt",
       "0930訓練五.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 4,
     "import_source_ids": [
       "ALG-U2-063"
+    ],
+    "reference_question_ids": [
+      "L2-039",
+      "L2-040"
+    ],
+    "source_type": "單選題",
+    "question_aliases": [
+      "插入排序法（Insertion Sort）採用的是下列哪一種演算法設計方法？（另一版本選項順序）"
     ]
   },
   {
@@ -1227,13 +1510,13 @@
     "type": "choice",
     "question": "下列哪些函數屬於多對數有界（Polylogarithmically bounded）的範疇？",
     "options": [
-      "A. f(n) = (lg n)^2",
-      "B. f(n) = (lg n)^5",
-      "C. f(n) = lg(lg n)",
-      "D. f(n) = n"
+      "f(n) = (lg n)^2",
+      "f(n) = (lg n)^5",
+      "f(n) = lg(lg n)",
+      "f(n) = n"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "A. f(n) = (lg n)^2\nB. f(n) = (lg n)^5\nC. f(n) = lg(lg n)",
+    "options_status": "complete",
+    "correct_answer": "f(n) = (lg n)^2\nf(n) = (lg n)^5\nf(n) = lg(lg n)",
     "answer_variants": [
       "f(n) = (lg n)^2",
       "f(n) = (lg n)^5",
@@ -1242,13 +1525,18 @@
     "answer_basis": "content_verified_2026_10_04",
     "sources": [
       "0930訓練-45.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 1,
     "import_source_ids": [
       "ALG-B2-13"
     ],
-    "answer_note": "多對數有界表示 f(n) = O((log n)^k)，其中 k 為固定常數。(lg n)^2、(lg n)^5 與 lg(lg n) 符合，n 不符合。答案依目前選項內容列出。"
+    "answer_note": "多對數有界表示 f(n) = O((log n)^k)，其中 k 為固定常數。(lg n)^2、(lg n)^5 與 lg(lg n) 符合，n 不符合。答案依目前選項內容列出。",
+    "reference_question_ids": [
+      "L2-024"
+    ],
+    "source_type": "複選題"
   },
   {
     "id": 49,
@@ -1274,11 +1562,18 @@
       "0930訓練一.txt",
       "0930訓練三.txt",
       "0930訓練五.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 3,
     "import_source_ids": [
       "ALG-B1-12"
+    ],
+    "reference_question_ids": [
+      "L2-057"
+    ],
+    "question_aliases": [
+      "分析演算法時，可能考慮哪些資源（resources）？"
     ]
   },
   {
@@ -1295,9 +1590,18 @@
     "answer_basis": "explicit_correct_answer",
     "sources": [
       "0930訓練一.txt",
-      "0930訓練三.txt"
+      "0930訓練三.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 2
+    "times_seen_in_0930": 2,
+    "reference_question_ids": [
+      "L2-045",
+      "L2-063"
+    ],
+    "question_aliases": [
+      "插入排序法的最壞情況執行時間是 n 的 _________ 函數，最佳情況執行時間是 n 的 _________ 函數（最嚴謹答案）。",
+      "請輸入 Insertion Sort 最壞／最佳的 LMS 精確答案。"
+    ]
   },
   {
     "id": 51,
@@ -1313,9 +1617,16 @@
     "answer_basis": "explicit_correct_answer",
     "sources": [
       "0930訓練一.txt",
-      "0930訓練四.txt"
+      "0930訓練四.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 2
+    "times_seen_in_0930": 2,
+    "reference_question_ids": [
+      "L2-009"
+    ],
+    "question_aliases": [
+      "若 f(n)=O(g(n))，依轉置對稱（transpose symmetry）可寫成 g(n)= _________。"
+    ]
   },
   {
     "id": 52,
@@ -1338,11 +1649,18 @@
     "answer_basis": "content_verified_2026_10_04",
     "sources": [
       "0930訓練一.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 1,
     "import_source_ids": [
       "ALG-U2-052"
+    ],
+    "reference_question_ids": [
+      "L2-023"
+    ],
+    "question_aliases": [
+      "下列哪些函數屬於多項式有界 f(n)=n^{O(1)} 的例子？"
     ]
   },
   {
@@ -1361,9 +1679,16 @@
       "0930訓練一.txt",
       "0930訓練二.txt",
       "0930訓練五.txt",
-      "0930訓練四.txt"
+      "0930訓練四.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 4
+    "times_seen_in_0930": 4,
+    "reference_question_ids": [
+      "L2-048"
+    ],
+    "question_aliases": [
+      "Insertion-Sort(A)（每行成本皆為 1）：\n1  for j ← 2 to length[A]\n2      do key ← A[j]\n3      // 將 A[j] 插入已排序的 A[1 .. j - 1]\n4      i ← j - 1\n5      while i > 0 and A[i] > key\n6          do A[i + 1] ← A[i]\n7          i ← i - 1\n8      A[i + 1] ← key\n若 A 長度為 n，且第 5 行在每次外層迭代中都執行 1 次，總執行成本是多少？（請以小寫英文作答，不留空白。）"
+    ]
   },
   {
     "id": 54,
@@ -1379,9 +1704,16 @@
     "answer_basis": "explicit_correct_answer",
     "sources": [
       "0930訓練一.txt",
-      "0930訓練二.txt"
+      "0930訓練二.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 2
+    "times_seen_in_0930": 2,
+    "reference_question_ids": [
+      "L2-046"
+    ],
+    "question_aliases": [
+      "證明 Insertion Sort 正確性時，使用的核心方法稱為 _________。"
+    ]
   },
   {
     "id": 55,
@@ -1396,9 +1728,16 @@
     ],
     "answer_basis": "explicit_correct_answer",
     "sources": [
-      "0930訓練二.txt"
+      "0930訓練二.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 1
+    "times_seen_in_0930": 1,
+    "reference_question_ids": [
+      "L2-002"
+    ],
+    "question_aliases": [
+      "若且唯若 f(n)=O(g(n)) 且 f(n)=Ω(g(n))，則 f(n)= _________。"
+    ]
   },
   {
     "id": 56,
@@ -1423,11 +1762,15 @@
     "sources": [
       "0930訓練三.txt",
       "0930訓練五.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 2,
     "import_source_ids": [
       "ALG-B1-21"
+    ],
+    "reference_question_ids": [
+      "L2-017"
     ]
   },
   {
@@ -1444,23 +1787,30 @@
     "answer_basis": "explicit_correct_answer",
     "sources": [
       "0930訓練五.txt",
-      "0930訓練四.txt"
+      "0930訓練四.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "times_seen_in_0930": 2
+    "times_seen_in_0930": 2,
+    "reference_question_ids": [
+      "L2-030"
+    ],
+    "question_aliases": [
+      "重複對數函數（Iterative logarithm）的符號寫成 _________。"
+    ]
   },
   {
     "id": 58,
     "title": "",
     "type": "choice",
-    "question": "對於任意實數 x 或整數 n，下列關於地板與天花板函數的數學性質哪些是正確的？\n（第四個選項中的 a、b 為正整數。）",
+    "question": "對於任意實數 x 或整數 n，下列關於地板與天花板函數的數學性質哪些是正確的？（D 選項中的 a、b 為正整數。）",
     "options": [
-      "A. x − 1 < ⌊x⌋ ≤ x",
-      "B. x ≤ ⌈x⌉ < x + 1",
-      "C. ⌈n/2⌉ + ⌊n/2⌋ = n",
-      "D. ⌊⌊n/a⌋/b⌋ = ⌊n/(ab)⌋"
+      "⌈n/2⌉ + ⌊n/2⌋ = n",
+      "x - 1 < ⌊x⌋ <= x",
+      "x <= ⌈x⌉ < x + 1",
+      "⌊⌊n/a⌋/b⌋ = ⌊n/(ab)⌋"
     ],
-    "options_status": "known_options_only",
-    "correct_answer": "A. x − 1 < ⌊x⌋ ≤ x\nB. x ≤ ⌈x⌉ < x + 1\nC. ⌈n/2⌉ + ⌊n/2⌋ = n\nD. ⌊⌊n/a⌋/b⌋ = ⌊n/(ab)⌋",
+    "options_status": "complete",
+    "correct_answer": "⌈n/2⌉ + ⌊n/2⌋ = n\nx - 1 < ⌊x⌋ <= x\nx <= ⌈x⌉ < x + 1\n⌊⌊n/a⌋/b⌋ = ⌊n/(ab)⌋",
     "answer_variants": [
       "x − 1 < ⌊x⌋ ≤ x",
       "x ≤ ⌈x⌉ < x + 1",
@@ -1470,13 +1820,22 @@
     "answer_basis": "content_verified_2026_10_04",
     "sources": [
       "0930訓練四.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 1,
     "import_source_ids": [
       "ALG-B2-03"
     ],
-    "answer_note": "第四式的分母是 a×b，寫作 ⌊n/(ab)⌋；a、b 為正整數。"
+    "answer_note": "第四式的分母是 a×b，寫作 ⌊n/(ab)⌋；a、b 為正整數。",
+    "reference_question_ids": [
+      "L2-016"
+    ],
+    "question_aliases": [
+      "對於任意實數 x 或整數 n，下列關於地板與天花板函數的數學性質哪些是正確的？（D 選項中的 a、b 為正整數。）",
+      "對於任意實數 x 或整數 n，下列關於地板與天花板函數的數學性質哪些是正確的？\n（第四個選項中的 a、b 為正整數。）"
+    ],
+    "source_type": "複選題"
   },
   {
     "id": 59,
@@ -1495,11 +1854,18 @@
     "answer_basis": "content_verified_2026_10_04",
     "sources": [
       "0930訓練四.txt",
-      "演算法題庫_v1.txt"
+      "演算法題庫_v1.txt",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "times_seen_in_0930": 1,
     "import_source_ids": [
       "ALG-B1-04"
+    ],
+    "reference_question_ids": [
+      "L2-034"
+    ],
+    "question_aliases": [
+      "史特林公式（Stirling's approximation）主要用來估計哪一類函數？"
     ]
   },
   {
@@ -1518,6 +1884,66 @@
       "0930訓練五.txt"
     ],
     "times_seen_in_0930": 1
+  },
+  {
+    "id": 61,
+    "title": "",
+    "question": "非漸進緊確的上界（Upper bound that is not asymptotically tight）是用哪一個符號表示？",
+    "options": [
+      "O",
+      "Ω",
+      "o",
+      "Θ"
+    ],
+    "correct_answer": "o",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L2-007"
+    ]
+  },
+  {
+    "id": 62,
+    "title": "",
+    "question": "lg* 4 = [__1__]。",
+    "options": [],
+    "correct_answer": "2",
+    "type": "fill_blank",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L2-029"
+    ]
+  },
+  {
+    "id": 63,
+    "title": "",
+    "question": "Merge Sort 在最壞情況下的時間複雜度為何？",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(2^n)"
+    ],
+    "correct_answer": "O(n log n)",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L2-056"
+    ]
   }
 ]
-

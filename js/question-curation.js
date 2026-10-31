@@ -82,4 +82,21 @@ async function curateOriginalPublishedQuestions(questions, subject, unit) {
 }
 
 
-export async function curatePublishedQuestions(questions,subject,unit){const overlays=questions.filter(q=>q.replacement_question);const originals=questions.filter(q=>!q.replacement_question);const curated=await curateOriginalPublishedQuestions(originals,subject,unit);const ids=new Set(curated.map(q=>q.id));for(const overlay of overlays){const source=originals.find(q=>q.id===overlay.id);if(source&&!ids.has(source.id)){curated.push(source);ids.add(source.id);}}return [...curated,...overlays];}
+let reviewedSharedBank;
+const reviewedSharedSignature=q=>JSON.stringify([q.question,q.options||[],q.correct_answer,q.type,Object.hasOwn(q,'user_answer'),q.user_answer]);
+export function applyReviewedSharedBank(questions, registry, subject, unit) {
+    if(registry?.schema!==1||!Array.isArray(registry.records))throw new Error('共用題庫核對資料格式不正確。');
+    const records=new Map(registry.records.filter(r=>r.subject===subject&&r.unit===unit).map(r=>[Number(r.id),r]));
+    return questions.map(q=>{
+        const record=records.get(Number(q.id));
+        if(!record||q.replacement_question||reviewedSharedSignature(q)!==reviewedSharedSignature(record.expected))return q;
+        return {...q,...record.metadata,sources:[...new Set([...(q.sources||[]),...(record.metadata.sources||[])])]};
+    });
+}
+async function reviewedMetadata(questions,subject,unit) {
+    if(!questions.length||!(subject==='algorithm'&&unit==='u5'||subject==='os'&&unit==='u2'))return questions;
+    if(!reviewedSharedBank)reviewedSharedBank=fetch(new URL('../data/shared-bank-reviewed.json?v=20261031-bank1',import.meta.url),{cache:'no-cache',signal:AbortSignal.timeout(15000)})
+        .then(r=>{if(!r.ok)throw new Error('共用題庫核對資料無法載入，請重試。');return r.json();}).catch(e=>{reviewedSharedBank=null;throw e;});
+    return applyReviewedSharedBank(questions,await reviewedSharedBank,subject,unit);
+}
+export async function curatePublishedQuestions(questions,subject,unit){const overlays=questions.filter(q=>q.replacement_question);const originals=questions.filter(q=>!q.replacement_question);const curated=await curateOriginalPublishedQuestions(originals,subject,unit);const ids=new Set(curated.map(q=>q.id));for(const overlay of overlays){const source=originals.find(q=>q.id===overlay.id);if(source&&!ids.has(source.id)){curated.push(source);ids.add(source.id);}}return reviewedMetadata([...curated,...overlays],subject,unit);}

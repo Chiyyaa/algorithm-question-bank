@@ -17,10 +17,17 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-023"
+      "L6-023",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1
+    ],
+    "reference_question_ids": [
+      "L6-023",
+      "L6-024",
+      "L6-024-V01",
+      "L6-024-V02"
     ]
   },
   {
@@ -36,10 +43,17 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-042"
+      "L6-042",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       2
+    ],
+    "reference_question_ids": [
+      "L6-042"
+    ],
+    "question_aliases": [
+      "給定課本版本的COUNTING_SORT演算法。 COUNTING_SORT(A, B, k) 1 for i <- 1 to k 2 do c[i] <- 0 3 for j <- 1 to length[A] 4 do c[A[j]] <- c[A[j]] + 1 5 > c[i] now contains the number of elements equal to i 6 for i <- 2 to k 7 do c[i] <- c[i] + c[i-1] 8 > c[i] now contains the number of elements less than or equal to i 9 for j <- length[A] downto 1 10 do B[c[A[j]]] <- A[j] 11 c[A[j]] <- c[A[j]] - 1 A陣列的內容為 2, 5, 3, 0, 2, 3, 0, 5, 1, 2, 1, 3, 2, 0, 4. 執行完後 B陣列的內容為何 ____________ 格式: 2,5,3,0,2,3,0,3 C陣列的內容為何 ____________ 格式: 2,5,3,0,2,3,0,3"
     ]
   },
   {
@@ -60,10 +74,16 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-043"
+      "L6-043",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       3
+    ],
+    "reference_question_ids": [
+      "L6-043",
+      "L6-043-V01",
+      "L6-043-V02"
     ]
   },
   {
@@ -84,10 +104,16 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-044"
+      "L6-044",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       4
+    ],
+    "reference_question_ids": [
+      "L6-044",
+      "L6-044-V01",
+      "L6-044-V02"
     ]
   },
   {
@@ -103,10 +129,17 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-022"
+      "L6-022",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       5
+    ],
+    "reference_question_ids": [
+      "L6-022"
+    ],
+    "question_aliases": [
+      "給定課本版本的COUNTING_SORT演算法。 COUNTING_SORT(A, B, k) 1 for i <- 1 to k 2 do c[i] <- 0 3 for j <- 1 to length[A] 4 do c[A[j]] <- c[A[j]] + 1 5 > c[i] now contains the number of elements equal to i 6 for i <- 2 to k 7 do c[i] <- c[i] + c[i-1] 8 > c[i] now contains the number of elements less than or equal to i 9 for j <- length[A] downto 1 10 do B[c[A[j]]] <- A[j] 11 c[A[j]] <- c[A[j]] - 1 A陣列的內容為 2, 5, 3, 0, 2, 3, 0, 5, 1, 2, 1, 3, 2, 0, 4. 做到第9行 j = 12 B陣列的內容為何 ____________ 格式: 2,5,3,0,2,3,0,3 C陣列的內容為何 ____________ 格式: 2,5,3,0,2,3,0,3"
     ]
   },
   {
@@ -127,10 +160,16 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-045"
+      "L6-045",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       6
+    ],
+    "reference_question_ids": [
+      "L6-045",
+      "L6-045-V01",
+      "L6-045-V02"
     ]
   },
   {
@@ -146,10 +185,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-008"
+      "L6-008",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       7
+    ],
+    "reference_question_ids": [
+      "L6-008"
     ]
   },
   {
@@ -170,10 +213,16 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-032"
+      "L6-032",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       8
+    ],
+    "reference_question_ids": [
+      "L6-032",
+      "L6-032-V01",
+      "L6-032-V02"
     ]
   },
   {
@@ -194,10 +243,17 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-014"
+      "L6-014",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       9
+    ],
+    "reference_question_ids": [
+      "L6-014",
+      "L6-015",
+      "L6-015-V01",
+      "L6-016"
     ]
   },
   {
@@ -218,10 +274,15 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-010"
+      "L6-010",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       10
+    ],
+    "reference_question_ids": [
+      "L6-010",
+      "L6-010-V01"
     ]
   },
   {
@@ -242,10 +303,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-033"
+      "L6-033",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       11
+    ],
+    "reference_question_ids": [
+      "L6-033"
     ]
   },
   {
@@ -266,10 +331,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-046"
+      "L6-046",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       12
+    ],
+    "reference_question_ids": [
+      "L6-046"
     ]
   },
   {
@@ -285,10 +354,18 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-001"
+      "L6-001",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       13
+    ],
+    "reference_question_ids": [
+      "L6-001",
+      "L6-001-original-review-20261026"
+    ],
+    "question_aliases": [
+      "給定課本版本的RADIX_SORT 演算法。\n\nRADIX_SORT(A, d)\n1 for i <- 1 to d\n2   do use a stable sort to sort array A on digit i\n\nA陣列的內容為 4329,4057,6507,2839,6436,7720,8355 \n當 i = 3 時\nA陣列的內容為陣列的內容為何[__1__]  格式:  2,5,3,0,2,3,0,3"
     ]
   },
   {
@@ -304,10 +381,17 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-047"
+      "L6-047",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       14
+    ],
+    "reference_question_ids": [
+      "L6-047"
+    ],
+    "question_aliases": [
+      "給定課本版本的COUNTING_SORT演算法。 COUNTING_SORT(A, B, k) 1 for i <- 1 to k 2 do c[i] <- 0 3 for j <- 1 to length[A] 4 do c[A[j]] <- c[A[j]] + 1 5 > c[i] now contains the number of elements equal to i 6 for i <- 2 to k 7 do c[i] <- c[i] + c[i-1] 8 > c[i] now contains the number of elements less than or equal to i 9 for j <- length[A] downto 1 10 do B[c[A[j]]] <- A[j] 11 c[A[j]] <- c[A[j]] - 1 A陣列的內容為 2,5,3,0,2,3,0,3 做到第9行 的 j = 2 時 B陣列的內容為何 ____________ 格式: 2,5,3,0,2,3,0,3 C陣列的內容為何 ____________ 格式: 2,5,3,0,2,3,0,3"
     ]
   },
   {
@@ -323,10 +407,17 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-005"
+      "L6-005",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       15
+    ],
+    "reference_question_ids": [
+      "L6-005"
+    ],
+    "question_aliases": [
+      "給定課本版本的BUCKET_SORT 演算法。 BUCKET_SORT(A) 1 n <- length[A] 2 for i <- 1 to n 3 do insert A[i] into list B[⌊nA[i]⌋] 4 for i <- 0 to n-1 5 do sort list B[i] with insertion sort 6 concatenate B[0], B[1], ..., B[n-1] together in order A陣列的內容為 0.78,0.17,0.39,0.26,0.72,0.94,0.21,0.12,0.23,0.68 第2行做到 i=7 B 陣列的內容如何 B陣列的B[1]B[2]B[7] 的內容為何 ____________ ____________ ____________ 格式: 0.2,0.5,0.3,0.1,0.2,0.3,0.5,0.3"
     ]
   },
   {
@@ -347,10 +438,15 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-048"
+      "L6-048",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       16
+    ],
+    "reference_question_ids": [
+      "L6-048",
+      "L6-048-V01"
     ]
   },
   {
@@ -371,10 +467,15 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-049"
+      "L6-049",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       17
+    ],
+    "reference_question_ids": [
+      "L6-049",
+      "L6-049-V01"
     ]
   },
   {
@@ -395,10 +496,18 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-013"
+      "L6-013",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       18
+    ],
+    "reference_question_ids": [
+      "L6-013",
+      "L6-013-V01",
+      "L6-013-V02",
+      "L6-013-V03",
+      "L6-013-V04"
     ]
   },
   {
@@ -419,10 +528,16 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-038"
+      "L6-038",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       19
+    ],
+    "reference_question_ids": [
+      "L6-038",
+      "L6-038-V01",
+      "L6-038-V02"
     ]
   },
   {
@@ -443,10 +558,16 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-041"
+      "L6-041",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       20
+    ],
+    "reference_question_ids": [
+      "L6-041",
+      "L6-041-V01",
+      "L6-041-V02"
     ]
   },
   {
@@ -462,10 +583,18 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-002"
+      "L6-002",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       21
+    ],
+    "reference_question_ids": [
+      "L6-002",
+      "L6-002-original-review-20261026"
+    ],
+    "question_aliases": [
+      "給定課本版本的RADIX_SORT 演算法。\n\nRADIX_SORT(A, d)\n1 for i <- 1 to d\n2   do use a stable sort to sort array A on digit i\n\nA陣列的內容為 329,457,657,839,436,720,355 \n當 i = 2 時\nA陣列的內容為陣列的內容為何[__1__]  格式:  2,5,3,0,2,3,0,3"
     ]
   },
   {
@@ -486,10 +615,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-057"
+      "L6-057",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       22
+    ],
+    "reference_question_ids": [
+      "L6-057"
     ]
   },
   {
@@ -510,10 +643,15 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-050"
+      "L6-050",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       23
+    ],
+    "reference_question_ids": [
+      "L6-050",
+      "L6-050-V01"
     ]
   },
   {
@@ -529,10 +667,18 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-021"
+      "L6-021",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       24
+    ],
+    "reference_question_ids": [
+      "L6-021",
+      "L6-021-original-review-20261026"
+    ],
+    "question_aliases": [
+      "給定課本版本的COUNTING_SORT演算法。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 1 to k\n2    do c[i] <- 0\n3  for j <- 1 to length[A]\n4    do c[A[j]] <- c[A[j]] + 1\n5  > c[i] now contains the number of elements equal to i\n6  for i <- 2 to k\n7    do c[i] <- c[i] + c[i-1]\n8  > c[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[c[A[j]]] <- A[j]\n11      c[A[j]] <- c[A[j]] - 1\n\nA陣列的內容為 2, 5, 3, 0, 2, 3, 0, 5, 1, 2, 1, 3, 2, 0, 4. \n\n做到第9行前\nB陣列的內容為何[__1__]  格式:  2,5,3,0,2,3,0,3\nC陣列的內容為何[__2__]  格式:  2,5,3,0,2,3,0,3"
     ]
   },
   {
@@ -548,10 +694,17 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-058"
+      "L6-058",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       25
+    ],
+    "reference_question_ids": [
+      "L6-058"
+    ],
+    "question_aliases": [
+      "給定課本版本的BUCKET_SORT 演算法。 BUCKET_SORT(A) 1 n <- length[A] 2 for i <- 1 to n 3 do insert A[i] into list B[⌊nA[i]⌋] 4 for i <- 0 to n-1 5 do sort list B[i] with insertion sort 6 concatenate B[0], B[1], ..., B[n-1] together in order A陣列的內容為 0.78,0.17,0.39,0.26,0.72,0.94,0.21,0.12,0.23,0.68 第4行做到 i=5 B 陣列的內容如何 B陣列的B[1]B[2]B[6] 的內容為何 ____________ ____________ ____________ 格式: 0.2,0.5,0.3,0.1,0.2,0.3,0.5,0.3"
     ]
   },
   {
@@ -567,10 +720,18 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-052"
+      "L6-052",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       26
+    ],
+    "reference_question_ids": [
+      "L6-052",
+      "L6-052-original-review-20261026"
+    ],
+    "question_aliases": [
+      "給定課本版本的COUNTING_SORT演算法。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 1 to k\n2    do c[i] <- 0\n3  for j <- 1 to length[A]\n4    do c[A[j]] <- c[A[j]] + 1\n5  > c[i] now contains the number of elements equal to i\n6  for i <- 2 to k\n7    do c[i] <- c[i] + c[i-1]\n8  > c[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[c[A[j]]] <- A[j]\n11      c[A[j]] <- c[A[j]] - 1\n\nA陣列的內容為 2, 5, 3, 0, 2, 3, 0, 5, 1, 2, 1, 3, 2, 0, 4. \n\n做到第9行  j = 4 \nB陣列的內容為何[__1__]  格式:  2,5,3,0,2,3,0,3\nC陣列的內容為何[__2__]  格式:  2,5,3,0,2,3,0,3"
     ]
   },
   {
@@ -591,10 +752,16 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-029"
+      "L6-029",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       27
+    ],
+    "reference_question_ids": [
+      "L6-029",
+      "L6-030",
+      "L6-030-V01"
     ]
   },
   {
@@ -615,10 +782,16 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-018"
+      "L6-018",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       28
+    ],
+    "reference_question_ids": [
+      "L6-018",
+      "L6-018-V01",
+      "L6-018-V02"
     ]
   },
   {
@@ -639,10 +812,16 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-007"
+      "L6-007",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       29
+    ],
+    "reference_question_ids": [
+      "L6-007",
+      "L6-007-V01",
+      "L6-007-V02"
     ]
   },
   {
@@ -663,10 +842,15 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-054"
+      "L6-054",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       30
+    ],
+    "reference_question_ids": [
+      "L6-054",
+      "L6-054-V01"
     ]
   },
   {
@@ -687,10 +871,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-020"
+      "L6-020",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000163
+    ],
+    "reference_question_ids": [
+      "L6-020"
     ]
   },
   {
@@ -711,10 +899,16 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-025"
+      "L6-025",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000169
+    ],
+    "reference_question_ids": [
+      "L6-025",
+      "L6-025-V01",
+      "L6-025-V02"
     ]
   },
   {
@@ -735,10 +929,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-059"
+      "L6-059",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000165
+    ],
+    "reference_question_ids": [
+      "L6-059"
     ]
   },
   {
@@ -759,10 +957,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-004"
+      "L6-004",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000164
+    ],
+    "reference_question_ids": [
+      "L6-004"
     ]
   },
   {
@@ -778,10 +980,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-036"
+      "L6-036",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000170
+    ],
+    "reference_question_ids": [
+      "L6-036"
     ]
   },
   {
@@ -802,10 +1008,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-051"
+      "L6-051",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000151
+    ],
+    "reference_question_ids": [
+      "L6-051"
     ]
   },
   {
@@ -821,10 +1031,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-027"
+      "L6-027",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000151
+    ],
+    "reference_question_ids": [
+      "L6-027"
     ]
   },
   {
@@ -840,10 +1054,17 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-003"
+      "L6-003",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000146
+    ],
+    "reference_question_ids": [
+      "L6-003"
+    ],
+    "question_aliases": [
+      "給定課本版本的BUCKET_SORT 演算法。 BUCKET_SORT(A) 1 n <- length[A] 2 for i <- 1 to n 3 do insert A[i] into list B[⌊nA[i]⌋] 4 for i <- 0 to n-1 5 do sort list B[i] with insertion sort 6 concatenate B[0], B[1], ..., B[n-1] together in order A陣列的內容為 0.78,0.17,0.39,0.26,0.72,0.94,0.21,0.12,0.23,0.68 第2行做到 i=5 B 陣列的內容如何 B陣列的B[1]B[2]B[7] 的內容為何 ____________ ____________ ____________ 格式: 0.2,0.5,0.3,0.1,0.2,0.3,0.5,0.3"
     ]
   },
   {
@@ -859,10 +1080,18 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-035"
+      "L6-035",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000149
+    ],
+    "reference_question_ids": [
+      "L6-035",
+      "L6-035-original-review-20261026"
+    ],
+    "question_aliases": [
+      "給定課本版本的BUCKET_SORT 演算法。\n\nBUCKET_SORT(A)\n1  n <- length[A]\n2  for i <- 1 to n\n3    do insert A[i] into\n         list B[⌊nA[i]⌋]\n4  for i <- 0 to n-1\n5    do sort list B[i] with insertion sort\n6  concatenate B[0], B[1], ..., B[n-1] together in order\n\nA陣列的內容為 0.78,0.17,0.39,0.26,0.72,0.94,0.21,0.12,0.23,0.68 \n第4行做到 i=7 B 陣列的內容如何\nB陣列的B[1]B[2]B[7] 的內容為何[__1__][__2__][__3__]  格式:  0.2,0.5,0.3,0.1,0.2,0.3,0.5,0.3"
     ]
   },
   {
@@ -883,10 +1112,15 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-012"
+      "L6-012",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000134
+    ],
+    "reference_question_ids": [
+      "L6-012",
+      "L6-012-V01"
     ]
   },
   {
@@ -907,10 +1141,19 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-039"
+      "L6-039",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000131
+    ],
+    "reference_question_ids": [
+      "L6-039",
+      "L6-039-V01",
+      "L6-039-original-review-20261026"
+    ],
+    "question_aliases": [
+      "任何基於比較的排序(comparison-based sortin)演算法，其最差時間複雜度下界為？"
     ]
   },
   {
@@ -931,10 +1174,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-053"
+      "L6-053",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000138
+    ],
+    "reference_question_ids": [
+      "L6-053"
     ]
   },
   {
@@ -955,10 +1202,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-061"
+      "L6-061",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000123
+    ],
+    "reference_question_ids": [
+      "L6-061"
     ]
   },
   {
@@ -979,10 +1230,16 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-006"
+      "L6-006",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000125
+    ],
+    "reference_question_ids": [
+      "L6-006",
+      "L6-006-V01",
+      "L6-006-V02"
     ]
   },
   {
@@ -1003,10 +1260,15 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-011"
+      "L6-011",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000127
+    ],
+    "reference_question_ids": [
+      "L6-011",
+      "L6-011-V01"
     ]
   },
   {
@@ -1027,10 +1289,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-056"
+      "L6-056",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000132
+    ],
+    "reference_question_ids": [
+      "L6-056"
     ]
   },
   {
@@ -1046,10 +1312,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-034"
+      "L6-034",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000133
+    ],
+    "reference_question_ids": [
+      "L6-034"
     ]
   },
   {
@@ -1065,10 +1335,17 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-060"
+      "L6-060",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000130
+    ],
+    "reference_question_ids": [
+      "L6-060"
+    ],
+    "question_aliases": [
+      "比較排序的時間複雜度下界為 ____________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})"
     ]
   },
   {
@@ -1084,10 +1361,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-055"
+      "L6-055",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000137
+    ],
+    "reference_question_ids": [
+      "L6-055"
     ]
   },
   {
@@ -1108,10 +1389,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-062"
+      "L6-062",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000194
+    ],
+    "reference_question_ids": [
+      "L6-062"
     ]
   },
   {
@@ -1132,10 +1417,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-017"
+      "L6-017",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000195
+    ],
+    "reference_question_ids": [
+      "L6-017"
     ]
   },
   {
@@ -1156,10 +1445,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-026"
+      "L6-026",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000197
+    ],
+    "reference_question_ids": [
+      "L6-026"
     ]
   },
   {
@@ -1180,10 +1473,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-040"
+      "L6-040",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000191
+    ],
+    "reference_question_ids": [
+      "L6-040"
     ]
   },
   {
@@ -1228,10 +1525,14 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-031"
+      "L6-031",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000190
+    ],
+    "reference_question_ids": [
+      "L6-031"
     ]
   },
   {
@@ -1271,11 +1572,18 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-028"
+      "L6-028",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000185,
       1000000184
+    ],
+    "reference_question_ids": [
+      "L6-028"
+    ],
+    "question_aliases": [
+      "給定課本版本的COUNTING_SORT演算法。 COUNTING_SORT(A, B, k) 1 for i <- 1 to k 2 do c[i] <- 0 3 for j <- 1 to length[A] 4 do c[A[j]] <- c[A[j]] + 1 5 > c[i] now contains the number of elements equal to i 6 for i <- 2 to k 7 do c[i] <- c[i] + c[i-1] 8 > c[i] now contains the number of elements less than or equal to i 9 for j <- length[A] downto 1 10 do B[c[A[j]]] <- A[j] 11 c[A[j]] <- c[A[j]] - 1 A陣列的內容為 2,5,3,0,2,3,0,3 做到第9行前 B陣列的內容為何 ____________ 格式: 2,5,3,0,2,3,0,3 C陣列的內容為何 ____________ 格式: 2,5,3,0,2,3,0,3"
     ]
   },
   {
@@ -1291,11 +1599,18 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-063"
+      "L6-063",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000183,
       1000000182
+    ],
+    "reference_question_ids": [
+      "L6-063"
+    ],
+    "question_aliases": [
+      "給定課本版本的COUNTING_SORT演算法。 COUNTING_SORT(A, B, k) 1 for i <- 1 to k 2 do c[i] <- 0 3 for j <- 1 to length[A] 4 do c[A[j]] <- c[A[j]] + 1 5 > c[i] now contains the number of elements equal to i 6 for i <- 2 to k 7 do c[i] <- c[i] + c[i-1] 8 > c[i] now contains the number of elements less than or equal to i 9 for j <- length[A] downto 1 10 do B[c[A[j]]] <- A[j] 11 c[A[j]] <- c[A[j]] - 1 A陣列的內容為 2,5,3,0,2,3,0,3 做到第9行 的 j = 4 時 B陣列的內容為何 ____________ 格式: 2,5,3,0,2,3,0,3 C陣列的內容為何 ____________ 格式: 2,5,3,0,2,3,0,3"
     ]
   },
   {
@@ -1311,9 +1626,17 @@
     "answer_basis": "reference_algorithm_derivation",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-065"
+      "L6-065",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
-    "previous_site_ids": []
+    "previous_site_ids": [],
+    "reference_question_ids": [
+      "L6-065",
+      "L6-065-original-review-20261026"
+    ],
+    "question_aliases": [
+      "給定課本版本的COUNTING_SORT演算法。\n\nCOUNTING_SORT(A, B, k)\n1 for i <- 1 to k\n2   do C[i] <- 0\n3 for j <- 1 to length[A]\n4   do C[A[j]] <- C[A[j]] + 1\n5 > C[i] now contains the number of elements equal to i\n6 for i <- 2 to k\n7   do C[i] <- C[i] + C[i-1]\n8 > C[i] now contains the number of elements less than or equal to i\n9 for j <- length[A] downto 1\n10  do B[C[A[j]]] <- A[j]\n11     C[A[j]] <- C[A[j]] - 1\n\nA陣列的內容為 2,5,3,0,1,2,1,3,2,0,4\n做到第9行 j=4\nB陣列的內容為何[__1__] 格式: 2,5,3,0,2,3,0,3\nC陣列的內容為何[__2__] 格式: 2,5,3,0,2,3,0,3"
+    ]
   },
   {
     "id": 60,
@@ -1328,28 +1651,49 @@
     "answer_basis": "reference_question_bank",
     "sources": [
       "參考題庫：https://yocheng06.github.io/course-library/algorithms.html",
-      "L6-066"
+      "L6-066",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000179,
       1000000178
+    ],
+    "reference_question_ids": [
+      "L6-066"
+    ],
+    "question_aliases": [
+      "給定課本版本的COUNTING_SORT演算法。 COUNTING_SORT(A, B, k) 1 for i <- 1 to k 2 do c[i] <- 0 3 for j <- 1 to length[A] 4 do c[A[j]] <- c[A[j]] + 1 5 > c[i] now contains the number of elements equal to i 6 for i <- 2 to k 7 do c[i] <- c[i] + c[i-1] 8 > c[i] now contains the number of elements less than or equal to i 9 for j <- length[A] downto 1 10 do B[c[A[j]]] <- A[j] 11 c[A[j]] <- c[A[j]] - 1 A陣列的內容為 2, 5, 3, 0, 1, 2, 1, 3, 2, 0, 4. 執行完後 B陣列的內容為何 ____________ 格式: 2,5,3,0,2,3,0,3 C陣列的內容為何 ____________ 格式: 2,5,3,0,2,3,0,3"
     ]
   },
   {
     "id": 1000000135,
     "title": "",
-    "type": "choice_options_missing",
-    "question": "決策樹的高度代表什麼？",
-    "options": [],
-    "options_status": "not_recorded",
+    "type": "choice",
+    "question": "在決策樹模型中，樹的高度代表了？",
+    "options": [
+      "排序的空間成本",
+      "節點的數量",
+      "最差情況的比較次數",
+      "平均情況的比較次數"
+    ],
+    "options_status": "complete",
     "correct_answer": "最差情況的比較次數",
     "answer_note": "保留原網站獨有的補充題。參考網站未提供本題選項，未自行補造選項。",
     "sources": [
-      "原網站已審核協助題 #1000000135"
+      "原網站已審核協助題 #1000000135",
+      "https://yocheng06.github.io/course-library/algorithms.html"
     ],
     "previous_site_ids": [
       1000000135
-    ]
+    ],
+    "reference_question_ids": [
+      "community-ff4cc29e-e524-4859-9764-a5b597317e87-6"
+    ],
+    "question_aliases": [
+      "在決策樹模型中，樹的高度代表了？",
+      "決策樹的高度代表什麼？"
+    ],
+    "source_type": "單選題"
   },
   {
     "id": 1000000136,
@@ -1510,6 +1854,71 @@
     "previous_site_ids": [
       1000000188
     ]
+  },
+  {
+    "id": 61,
+    "title": "",
+    "question": "下列關於排序演算法複雜度的敘述，正確的有？",
+    "options": [
+      "計數排序可以做到 Θ(n+k)",
+      "比較排序下界 Ω(n log n)",
+      "所有排序都能做到 O(n)",
+      "桶排序平均情況為 O(n)"
+    ],
+    "correct_answer": "計數排序可以做到 Θ(n+k)\n比較排序下界 Ω(n log n)\n桶排序平均情況為 O(n)",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L6-029-original-O"
+    ]
+  },
+  {
+    "id": 62,
+    "title": "",
+    "question": "計數排序(Counting Sort)需要哪幾個輔助陣列？",
+    "options": [
+      "A (輸入陣列)",
+      "D (用於遞迴)",
+      "B (用於存放結果)",
+      "C (用於計數)"
+    ],
+    "correct_answer": "B (用於存放結果)\nC (用於計數)",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L6-009"
+    ]
+  },
+  {
+    "id": 63,
+    "title": "",
+    "question": "計數排序(Counting Sort)的特性包含？",
+    "options": [
+      "線性時間複雜度",
+      "需要 O(k) 額外空間",
+      "穩定",
+      "適用於實數"
+    ],
+    "correct_answer": "線性時間複雜度\n需要 O(k) 額外空間\n穩定",
+    "type": "choice",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "answer_basis": "reference_site_verified_20261031",
+    "sources": [
+      "https://yocheng06.github.io/course-library/algorithms.html"
+    ],
+    "reference_question_ids": [
+      "L6-064"
+    ]
   }
 ]
-
