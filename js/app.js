@@ -1,8 +1,8 @@
 import { initEssentials } from './essentials.js?v=20261101-os-essentials1';
 import { mergeQuestionVersions } from './question-versions.js?v=20261030-replace1';
 import { createQuestionLinkController } from './question-links.js?v=20261030-batch-v2';
-import { initPractice } from './practice.js?v=20261031-practice1';
-import { PRACTICE_UNITS } from './practice-core.js?v=20261031-practice1';
+import { initPractice } from './practice.js?v=20261101-os-practice1';
+import { practiceUnits } from './practice-core.js?v=20261101-os-practice1';
 import { curatePublishedQuestions } from './question-curation.js?v=20261031-bank1';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
@@ -37,7 +37,7 @@ const practice = initPractice({
         leaveSubject(true);
     },
     async loadQuestions(subjectId, unitId) {
-        if (subjectId !== 'algorithm' || !PRACTICE_UNITS.includes(unitId)) throw new Error('目前開放演算法 U2～U7。');
+        if (!practiceUnits(subjectId).includes(unitId)) throw new Error('目前開放演算法 U2～U7、作業系統 U2～U6。');
         // U5 uses the published shared bank and has no built-in JSON file.
         const unit = getUnit(subjectId, unitId) || (unitId === 'u5' ? {dataUrl:null,sharedOnly:true} : null);
         if (!unit) throw new Error('此單元尚無可用題庫，請稍後重試。');

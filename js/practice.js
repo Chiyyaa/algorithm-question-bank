@@ -1,4 +1,4 @@
-import { PRACTICE_UNITS, PRACTICE_COUNTS, buildPracticePool, createPractice, gradePracticeQuestion, practiceSummary } from './practice-core.js?v=20261031-practice1';
+import { practiceUnits, PRACTICE_COUNTS, buildPracticePool, createPractice, gradePracticeQuestion, practiceSummary } from './practice-core.js?v=20261101-os-practice1';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function prepareVerificationQuestions(raw) {
@@ -26,7 +26,8 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
     let subject=null,opened=false,pool=null,poolUnit=null,loading=false,version=0,session=null,verificationPool=null,verification=null;
     const selectedCount=()=>{const value=document.querySelector('[name="practiceCount"]:checked')?.value;return value==='all'?'all':Number(value);};
     const resolvedCount=()=>selectedCount()==='all'?(pool?.length||0):selectedCount();
-    const unitLabel=unit=>'演算法｜'+unit.toUpperCase();
+    const subjectLabel=()=>subject==='os'?'作業系統':'演算法';
+    const unitLabel=unit=>subjectLabel()+'｜'+unit.toUpperCase();
     function message(text,error=false) {
         $('practicePoolStatus').textContent=text;
         $('practicePoolStatus').classList.toggle('is-error',error);
@@ -40,7 +41,7 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
         $('practiceUnit').disabled=running;
         document.querySelectorAll('[name="practiceCount"]').forEach(input=>input.disabled=running);
         $('practiceStart').hidden=running;
-        $('practiceStart').disabled=subject!=='algorithm'||loading||!pool||!verificationPool||poolUnit!==$('practiceUnit').value||
+        $('practiceStart').disabled=!practiceUnits(subject).length||loading||!pool||!verificationPool||poolUnit!==$('practiceUnit').value||
             !PRACTICE_COUNTS.includes(selectedCount())||!resolvedCount()||pool.length<resolvedCount();
         $('practiceStart').textContent=session?.complete?'開始新練習':'開始練習';
         $('practiceReset').hidden=!running;
@@ -50,21 +51,21 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
         $('practiceContent').innerHTML='<div class="practice-placeholder"><p>先選擇單元與題數，再開始這次練習。每次先隨機出 1 題考者驗證，答對才進入正式測驗。</p><p>單選使用圓形選項，複選使用方形選項；填空依題目輸入答案。</p></div>';
     }
     async function load() {
-        const unit=$('practiceUnit').value,request=++version;
+        const unit=$('practiceUnit').value,requestedSubject=subject,request=++version;
         pool=null;poolUnit=null;verificationPool=null;loading=true;$('practiceRetry').hidden=true;
         message('正在載入 '+unitLabel(unit)+'……');sync();
         try {
-            if(subject!=='algorithm'||!PRACTICE_UNITS.includes(unit))throw new Error('目前開放演算法 U2～U7。');
+            if(!practiceUnits(subject).length||!practiceUnits(subject).includes(unit))throw new Error((subject==='os'?'目前開放作業系統 U2～U6。':'目前開放演算法 U2～U7。'));
             const [questions,checks]=await Promise.all([
-                loadQuestions('algorithm',unit),
+                loadQuestions(requestedSubject,unit),
                 (async()=>{
                     const response=await fetch(new URL('../data/practice-verification.json?v=20261029-verification1',import.meta.url),{cache:'no-cache'});
                     if(!response.ok)throw new Error('驗證題庫無法載入，請重新載入後再試。');
                     return prepareVerificationQuestions(await response.json());
                 })()
             ]);
-            if(request!==version||subject!=='algorithm'||$('practiceUnit').value!==unit)return;
-            pool=buildPracticePool(questions,'algorithm',unit);poolUnit=unit;verificationPool=checks;
+            if(request!==version||subject!==requestedSubject||$('practiceUnit').value!==unit)return;
+            pool=buildPracticePool(questions,requestedSubject,unit);poolUnit=unit;verificationPool=checks;
             message(unitLabel(unit)+'：共 '+questions.length+' 題，可出題 '+pool.length+' 題；爭議、缺選項或無法可靠核對格式的題目暫不納入。'+(pool.length<30?' 本單元不足 30 題，請選擇較少題數或全部題。':''));
         } catch(error) {
             if(request!==version)return;
@@ -96,12 +97,17 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
             pending.submitted=true;
             if(Number(selected.value)!==q.expected){verification=null;session=null;onVerificationFailed();return;}
             try {
-                session=createPractice(pool,'algorithm',pending.unit,pending.selection);
+                session=createPractice(pool,subject,pending.unit,pending.selection);
                 verification=null;render();$('practiceQuestionHeading').focus({preventScroll:true});
                 window.scrollTo({top:0,behavior:'instant'});
             } catch(error){verification=null;session=null;render();message(error.message,true);}
         });
         if(focus)$('verificationHeading').focus({preventScroll:true});
+    }
+    function questionImage(q) {
+        if(typeof q.image!=='string'||!/^\.\.\/images\/[a-zA-Z0-9_-]+\.(?:png|jpg|jpeg|webp|svg)$/.test(q.image))return '';
+        const url=escape(new URL(q.image,import.meta.url).href);
+        return '<a class="practice-image-link" href="'+url+'" target="_blank" rel="noopener noreferrer" aria-label="在新分頁放大題目圖片"><img class="practice-question-image" src="'+url+'" alt="'+escape(q.image_alt||'題目附圖')+'"></a><p class="practice-help">點圖片可在新分頁放大查看。</p>';
     }
     function showQuestion(focus=false) {
         if(!session)return;
@@ -116,7 +122,7 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
         const feedback=item.answered?'<div class="practice-feedback '+(item.correct?'correct':'incorrect')+'" role="status"><h3 id="practiceFeedbackHeading" tabindex="-1">'+(item.correct?'✓ 答對了':'答錯了，再記住這題')+'</h3><strong>正確答案</strong><pre>'+escape(expected(item))+'</pre>'+
             (!item.correct?'<strong>你的答案</strong><pre>'+escape(responseText(item))+'</pre>':'')+
             (q.answer_note?'<details class="practice-note"><summary>題庫補充說明</summary><p>'+escape(q.answer_note)+'</p></details>':'')+'</div>':'';
-        $('practiceContent').innerHTML='<article class="practice-card" data-practice-unit="'+session.unit+'" data-practice-question-id="'+item.id+'" data-practice-kind="'+item.kind+'"><div class="practice-question-header"><span>'+unitLabel(session.unit)+'</span><span>第 '+(session.index+1)+' / '+session.count+' 題</span></div><progress class="practice-progress" value="'+answered+'" max="'+session.count+'" aria-label="已作答題數"></progress><div class="practice-question-heading"><h2 id="practiceQuestionHeading" tabindex="-1">'+type+'</h2><span>題庫 #'+item.id+'</span></div><div class="practice-stem">'+escape(q.question)+'</div><form id="practiceAnswerForm">'+choices+'<p id="practiceAnswerError" class="practice-error" role="alert" hidden></p>'+feedback+'<div class="practice-actions">'+
+        $('practiceContent').innerHTML='<article class="practice-card" data-practice-unit="'+session.unit+'" data-practice-question-id="'+item.id+'" data-practice-kind="'+item.kind+'"><div class="practice-question-header"><span>'+unitLabel(session.unit)+'</span><span>第 '+(session.index+1)+' / '+session.count+' 題</span></div><progress class="practice-progress" value="'+answered+'" max="'+session.count+'" aria-label="已作答題數"></progress><div class="practice-question-heading"><h2 id="practiceQuestionHeading" tabindex="-1">'+type+'</h2><span>題庫 #'+item.id+'</span></div><div class="practice-stem">'+escape(q.question)+'</div>'+questionImage(q)+'<form id="practiceAnswerForm">'+choices+'<p id="practiceAnswerError" class="practice-error" role="alert" hidden></p>'+feedback+'<div class="practice-actions">'+
             (item.answered?'<button id="practiceNext" class="primary-btn" type="button">'+(session.index===session.count-1?'查看成績':'下一題 →')+'</button>':'<button id="practiceSubmit" class="primary-btn" type="submit">送出答案</button>')+'</div></form></article>';
         const form=$('practiceAnswerForm');
         function collect() {
@@ -145,7 +151,7 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
     function showResults() {
         const summary=practiceSummary(session);
         $('practiceContent').innerHTML='<section class="practice-result"><p class="practice-help">'+unitLabel(session.unit)+' · '+summary.total+' 題</p><h2 id="practiceResultHeading" tabindex="-1">練習完成</h2><div class="practice-score">'+summary.score+'<small> / 100</small></div><p>答對 '+summary.correct+' / '+summary.total+' 題 · 答錯 '+summary.incorrect.length+' 題</p><p class="practice-help">可在上方直接更換單元與題數，再開始一輪練習。</p>'+
-            (summary.incorrect.length?'<h3>錯誤題目複習</h3>'+summary.incorrect.map(item=>'<details class="practice-review"><summary>題庫 #'+item.id+' · '+escape(item.question.question.slice(0,65))+'</summary><div class="practice-stem">'+escape(item.question.question)+'</div><strong>你的答案</strong><pre>'+escape(responseText(item))+'</pre><strong>正確答案</strong><pre>'+escape(expected(item))+'</pre></details>').join(''):'<p class="practice-perfect">本次全部答對！</p>')+'</section>';
+            (summary.incorrect.length?'<h3>錯誤題目複習</h3>'+summary.incorrect.map(item=>'<details class="practice-review"><summary>題庫 #'+item.id+' · '+escape(item.question.question.slice(0,65))+'</summary><div class="practice-stem">'+escape(item.question.question)+'</div>'+questionImage(item.question)+'<strong>你的答案</strong><pre>'+escape(responseText(item))+'</pre><strong>正確答案</strong><pre>'+escape(expected(item))+'</pre></details>').join(''):'<p class="practice-perfect">本次全部答對！</p>')+'</section>';
     }
     function render(){sync();if(verification)showVerification();else if(session)showQuestion();else placeholder();}
     function reset(ask=true) {
@@ -153,8 +159,8 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
         session=null;verification=null;render();window.scrollTo({top:0,behavior:'instant'});$('practiceHeading').focus({preventScroll:true});
     }
     function open() {
-        if(subject!=='algorithm')return;
-        if(!opened){const current=getContext()?.unitId;if(PRACTICE_UNITS.includes(current))$('practiceUnit').value=current;opened=true;}
+        if(!practiceUnits(subject).length)return;
+        if(!opened){const current=getContext()?.unitId;if(practiceUnits(subject).includes(current))$('practiceUnit').value=current;opened=true;}
         render();if(!session&&(!pool||poolUnit!==$('practiceUnit').value)&&!loading)load();
         const heading=verification?$('verificationHeading'):session&&!session.complete?$('practiceQuestionHeading'):$('practiceHeading');
         heading.focus({preventScroll:true});
@@ -162,7 +168,7 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
     }
     $('practiceNavBtn').addEventListener('click',open);
     $('practiceSettings').addEventListener('submit',event=>{
-        event.preventDefault();if(verification||session&&!session.complete||loading||!pool||!verificationPool||poolUnit!==$('practiceUnit').value||subject!=='algorithm')return;
+        event.preventDefault();if(verification||session&&!session.complete||loading||!pool||!verificationPool||poolUnit!==$('practiceUnit').value||!practiceUnits(subject).length)return;
         try {
             const count=resolvedCount();
             if(!PRACTICE_COUNTS.includes(selectedCount())||!count||pool.length<count)throw new Error('請選擇可用的 15 題、30 題或全部題。');
@@ -176,11 +182,13 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
     $('practiceRetry').addEventListener('click',load);
     $('practiceReset').addEventListener('click',()=>reset(true));
     function setSubject(next) {
-        $('practiceNavBtn').hidden=next!=='algorithm';
+        $('practiceNavBtn').hidden=!practiceUnits(next).length;
         if(next===subject)return;
         subject=next;version++;pool=null;poolUnit=null;verificationPool=null;verification=null;loading=false;session=null;opened=false;
-        $('practiceUnit').value='u6';document.querySelector('[name="practiceCount"][value="30"]').checked=true;
-        $('practiceRetry').hidden=true;message('目前開放演算法 U2～U7。');render();
+        $('practiceUnit').innerHTML=practiceUnits(next).map(unit=>'<option value="'+unit+'">'+subjectLabel()+' '+unit.toUpperCase()+'</option>').join('');
+        $('practiceUnit').value=next==='os'?'u3':'u6';
+        $('practiceDescription').textContent=next==='os'?'作業系統 U2～U6，每題作答後立即核對答案。全部題包含本單元所有可出題的題目。':'演算法 U2～U7，每題作答後立即核對答案。全部題包含本單元所有可出題的題目。';document.querySelector('[name="practiceCount"][value="30"]').checked=true;
+        $('practiceRetry').hidden=true;message((subject==='os'?'目前開放作業系統 U2～U6。':'目前開放演算法 U2～U7。'));render();
     }
     setSubject(null);
     return {setSubject};

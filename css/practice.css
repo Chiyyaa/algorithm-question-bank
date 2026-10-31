@@ -39,3 +39,5 @@
 .practice-score small{font-size:1.1rem;color:var(--muted)}
 .practice-perfect{color:var(--primary);font-weight:700}
 @media(max-width:600px){.practice-settings,.practice-card,.practice-result,.practice-placeholder{padding:16px}.practice-settings{align-items:stretch}.practice-setting{flex-basis:100%}.practice-option{padding:12px}.practice-count{flex-basis:100%}}
+
+.practice-image-link{display:block;margin:1rem 0}.practice-question-image{display:block;max-width:100%;max-height:260px;height:auto;object-fit:contain}

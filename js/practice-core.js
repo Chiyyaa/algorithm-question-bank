@@ -1,4 +1,6 @@
 export const PRACTICE_UNITS = Object.freeze(['u2', 'u3', 'u4', 'u5', 'u6', 'u7']);
+export const OS_PRACTICE_UNITS = Object.freeze(['u2', 'u3', 'u4', 'u5', 'u6']);
+export function practiceUnits(subject) { return subject==='algorithm'?PRACTICE_UNITS:subject==='os'?OS_PRACTICE_UNITS:[]; }
 export const PRACTICE_COUNTS = Object.freeze([15, 30, 'all']);
 
 export function normalizePracticeAnswer(value) {
@@ -17,9 +19,20 @@ export function normalizePracticeAnswer(value) {
 export function optionText(value) {
     return String(value).replace(/^\s*[A-H][.．、)）:：]\s*/,'').trim();
 }
-function expectedFill(question) {
+function expectedFill(question, subject) {
     const ids=[...new Set([...question.question.matchAll(/\[(?:__|\*\*)(\d+)(?:__|\*\*)\]/g)].map(m=>Number(m[1])))];
-    if (!ids.length || ids.some((id,i)=>id!==i+1)) return null;
+    if (!ids.length) {
+        // Only split slash-separated answers when an OS question has matching multiple blanks.
+        // A single answer such as I/O must remain intact.
+        if(subject!=='os')return null;
+        const count=(question.question.match(/_{2,}|＿{2,}/g)||[]).length;
+        const answer=question.correct_answer.trim();
+        if(/\r?\n/.test(answer))return null;
+        if(count<=1)return [answer];
+        const parts=answer.split('/').map(s=>s.trim());
+        return parts.length===count&&parts.every(Boolean)?parts:null;
+    }
+    if (ids.some((id,i)=>id!==i+1)) return null;
     const lines=String(question.correct_answer).split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
     if (lines.length!==ids.length) return null;
     const labelled=lines.every((s,i)=>new RegExp('^[（(]'+(i+1)+'[）)]').test(s));
@@ -31,7 +44,7 @@ function prepareQuestion(question, subject, unit) {
     if (!question || !Number.isFinite(question.id) || typeof question.question!=='string' ||
         !question.question.trim() || typeof question.correct_answer!=='string' || !question.correct_answer.trim()) return null;
     if (question.type==='fill_blank') {
-        const answers=expectedFill(question);
+        const answers=expectedFill(question,subject);
         return answers?{subject,unit,id:question.id,kind:'fill',question:JSON.parse(JSON.stringify(question)),answers}:null;
     }
     if (question.type!=='choice' || question.options_status==='known_options_only' || !Array.isArray(question.options) || question.options.length<2) return null;
@@ -46,15 +59,15 @@ function prepareQuestion(question, subject, unit) {
         question:JSON.parse(JSON.stringify(question)),options,expected};
 }
 export function buildPracticePool(questions, subject, unit) {
-    if (subject!=='algorithm' || !PRACTICE_UNITS.includes(unit)) throw new Error('目前開放演算法 U2～U7 測驗練習。');
+    if (!practiceUnits(subject).includes(unit)) throw new Error('目前開放演算法 U2～U7、作業系統 U2～U6 測驗練習。');
     if (!Array.isArray(questions)) throw new Error('題庫格式不正確。');
     const unique=new Map();
     for (const question of questions) if(question&&Number.isFinite(question.id)) unique.set(question.id,question);
     return [...unique.values()].map(q=>prepareQuestion(q,subject,unit)).filter(Boolean);
 }
 export function createPractice(pool, subject, unit, count, random=Math.random) {
-    if (subject!=='algorithm' || !PRACTICE_UNITS.includes(unit) || !PRACTICE_COUNTS.includes(count))
-        throw new Error('請選擇演算法 U2～U7，以及 15 題、30 題或全部題。');
+    if (!practiceUnits(subject).includes(unit) || !PRACTICE_COUNTS.includes(count))
+        throw new Error('請選擇此科目開放的單元，以及 15 題、30 題或全部題。');
     count = count === 'all' ? pool.length : count;
     if (!count) throw new Error('此單元目前沒有可出題的題目。');
     if (pool.some(q=>q.subject!==subject||q.unit!==unit)) throw new Error('題庫範圍不一致，請重新載入選定單元。');
