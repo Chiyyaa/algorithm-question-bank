@@ -1,0 +1,28 @@
+html.notice-open,
+html.notice-open body { overflow: hidden; }
+
+.site-notice {
+    width: min(480px, calc(100% - 32px));
+    max-height: calc(100vh - 48px);
+    max-height: calc(100dvh - 48px);
+    margin: auto;
+    padding: clamp(24px, 5vw, 40px);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+    color: var(--text);
+    font-weight: 400;
+    line-height: 1.9;
+    overflow: auto;
+    transition: background .3s ease, color .3s ease, border-color .3s ease;
+}
+.site-notice[open] { animation: notice-appear .3s ease; }
+.site-notice::backdrop { background: rgb(20 19 17 / .45); }
+.site-notice h2 { margin: 0 0 24px; font-size: 1.25rem; font-weight: 600; }
+.site-notice p { margin: 0 0 20px; }
+.site-notice strong { font-weight: 750; color: var(--link); }
+.site-notice-image { display: block; width: auto; max-width: 100%; height: auto; max-height: min(26vh, 260px); margin: 24px auto 0; border-radius: 8px; object-fit: contain; }
+.site-notice form { margin-top: 28px; text-align: right; }
+body.muji-theme .site-notice button { background: var(--primary); color: var(--button-text); }
+@keyframes notice-appear { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .site-notice[open] { animation: none; } }

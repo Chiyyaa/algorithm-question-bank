@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="./css/muji.css?v=20261030-batch1">
 <link rel="stylesheet" href="./css/batch.css?v=20261030-batch1">
 <link rel="stylesheet" href="./css/question-links.css?v=20261030-batch-v2">
+<link rel="stylesheet" href="./css/notice.css?v=20261101-notice1">
 </head>
 <body class="home-mode muji-theme">
 <section id="subjectHome" class="subject-home" aria-labelledby="subjectHeading">
@@ -193,6 +194,17 @@
 <button id="backToTopBtn" class="back-to-top" type="button" aria-label="回到頁面頂端" hidden>↑ 回到頂端</button>
 
 <script type="module" src="./js/app.js?v=20261101-os-practice1"></script>
+<dialog id="siteNotice" class="site-notice" aria-labelledby="siteNoticeHeading" aria-describedby="siteNoticeText">
+    <h2 id="siteNoticeHeading">網站更新提醒</h2>
+    <div id="siteNoticeText">
+        <p>新增 <strong>考前必會</strong> 幫助不知怎麼讀的使用者 版主現在也很無助...</p>
+        <p>若有問題 就有問題吧 我也沒時間修理了</p>
+        <p>在此祝各位通過期中考~~</p>
+    </div>
+    <img class="site-notice-image" src="./images/notice-winter.jpg" alt="提醒視窗附圖：用餐中的 Winter" width="673" height="673">
+    <form method="dialog"><button type="submit" autofocus>我知道了</button></form>
+</dialog>
+<script type="module" src="./js/notice.js?v=20261101-notice1"></script>
 </body>
 </html>
 
