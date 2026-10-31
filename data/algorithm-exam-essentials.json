@@ -1,0 +1,1884 @@
+{
+  "schema": 1,
+  "title": "考前必會",
+  "sourceDate": "2026-10-31",
+  "groups": [
+    {
+      "id": "key",
+      "label": "重點題",
+      "count": 50
+    },
+    {
+      "id": "extra",
+      "label": "延伸題",
+      "count": 15
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "group": "key",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "複選題",
+      "question": "下列漸進符號集合的數學定義，哪些是正確的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Θ(g(n))：存在 c1,c2,n0，使 c1g(n) <= f(n) <= c2g(n)（n>=n0）"
+        },
+        {
+          "label": "B",
+          "text": "o(g(n))：lim f(n)/g(n) = 0"
+        },
+        {
+          "label": "C",
+          "text": "Ω(g(n))：存在 c,n0，使 0 <= c*g(n) <= f(n)（n>=n0）"
+        },
+        {
+          "label": "D",
+          "text": "O(g(n))：存在 c,n0，使 0 <= f(n) <= c*g(n)（n>=n0）"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "O、Ω、Θ、o 的定義與判斷條件。",
+      "note": "選項的常數需為正，並採函數最終非負、比較分母最終為正的課程假設；O、Ω 不等同於最壞、最佳情況。",
+      "answer": "A、B、C、D",
+      "answerText": "A．Θ(g(n))：存在 c1,c2,n0，使 c1g(n) <= f(n) <= c2g(n)（n>=n0）\nB．o(g(n))：lim f(n)/g(n) = 0\nC．Ω(g(n))：存在 c,n0，使 0 <= c*g(n) <= f(n)（n>=n0）\nD．O(g(n))：存在 c,n0，使 0 <= f(n) <= c*g(n)（n>=n0）",
+      "explanation": "A 用上下兩個常數倍夾住 f；C 給下界；D 給上界，其中 c、c₁、c₂ 都必須是正的常數，n₀ 是門檻。B 在 g 最終為正時以 f/g→0 表示 f=o(g)。這些是對足夠大的 n 的關係，不要求從 n=1 就成立。",
+      "sourceId": "L2-003",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L2-003"
+    },
+    {
+      "number": 2,
+      "group": "key",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "複選題",
+      "question": "下列關於漸進符號對稱性（Symmetry）與轉置對稱性（Transpose Symmetry）的敘述，哪些正確？",
+      "options": [
+        {
+          "label": "A",
+          "text": "f(n) = o(g(n)) 若且唯若 g(n) = ω(f(n))"
+        },
+        {
+          "label": "B",
+          "text": "f(n) = O(g(n)) 若且唯若 g(n) = O(f(n))"
+        },
+        {
+          "label": "C",
+          "text": "f(n) = Θ(g(n)) 若且唯若 g(n) = Θ(f(n))"
+        },
+        {
+          "label": "D",
+          "text": "f(n) = O(g(n)) 若且唯若 g(n) = Ω(f(n))"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "對稱性、轉置對稱性；避免誤認 O 也能雙向互推。",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．f(n) = o(g(n)) 若且唯若 g(n) = ω(f(n))\nC．f(n) = Θ(g(n)) 若且唯若 g(n) = Θ(f(n))\nD．f(n) = O(g(n)) 若且唯若 g(n) = Ω(f(n))",
+      "explanation": "A 是 o 與 ω 的轉置對稱；C 是 Θ 的對稱性；D 是 O 與 Ω 的轉置對稱。B 不成立，因為 O 不具對稱性，例如 n=O(n²)，但 n² 不是 O(n)。",
+      "sourceId": "L2-010",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L2-010"
+    },
+    {
+      "number": 3,
+      "group": "key",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "複選題",
+      "question": "關於函數增長率的比較，下列哪些敘述是正確的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "n log n 增長速度快於 n^2"
+        },
+        {
+          "label": "B",
+          "text": "任何正多項式函數增長速度都快於任何多對數 (Polylogarithmic) 函數"
+        },
+        {
+          "label": "C",
+          "text": "對數函數增長快於階乘函數"
+        },
+        {
+          "label": "D",
+          "text": "任何正指數函數增長速度都快於任何多項式函數"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "對數、多項式、指數的成長速度比較。",
+      "note": "",
+      "answer": "B、D",
+      "answerText": "B．任何正多項式函數增長速度都快於任何多對數 (Polylogarithmic) 函數\nD．任何正指數函數增長速度都快於任何多項式函數",
+      "explanation": "在正的固定指數、底數大於 1 的條件下，常見順序是 (log n)^k ≺ nᵇ ≺ aⁿ ≺ n!。A 錯，因 (n log n)/n²=log n/n→0；C 也顛倒。B、D 所描述的是 polylog 小於正次方多項式、常數底指數大於多項式。常數多項式 n⁰ 不屬於這裡「正次方」的比較。",
+      "sourceId": "L2-019",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L2-019"
+    },
+    {
+      "number": 4,
+      "group": "key",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "複選題",
+      "question": "下列關於階乘（Factorial）增長率的漸進關係，哪些選項是正確的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "log(n!) = Θ(n log n)"
+        },
+        {
+          "label": "B",
+          "text": "n! = o(n^n)"
+        },
+        {
+          "label": "C",
+          "text": "n! = ω(2^n)"
+        },
+        {
+          "label": "D",
+          "text": "n! = O(2^n)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "階乘與指數的成長比較，以及 log(n!) 的緊確界。",
+      "note": "",
+      "answer": "A、B、C",
+      "answerText": "A．log(n!) = Θ(n log n)\nB．n! = o(n^n)\nC．n! = ω(2^n)",
+      "explanation": "Stirling 近似 n!≈√(2πn)(n/e)ⁿ。取對數得到 log(n!)=n log n−n log e+O(log n)，主導項是 n log n，所以為 Θ(n log n)。\n\n另外 n!/nⁿ≈√(2πn)e⁻ⁿ→0，故 n!=o(nⁿ)；n!/2ⁿ→∞，故 n!=ω(2ⁿ)，不是 O(2ⁿ)。不同固定對數底數只差常數倍。",
+      "sourceId": "L2-038",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L2-038"
+    },
+    {
+      "number": 5,
+      "group": "key",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "複選題",
+      "question": "關於 Insertion Sort 的 loop invariant，下列哪些敘述正確？",
+      "options": [
+        {
+          "label": "A",
+          "text": "可用來證明演算法正確性"
+        },
+        {
+          "label": "B",
+          "text": "A[1..j-1] 由原本 A[1..j-1] 的元素組成"
+        },
+        {
+          "label": "C",
+          "text": "A[1..j-1] 已排序"
+        },
+        {
+          "label": "D",
+          "text": "A[j..n] 一定已排序"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Insertion Sort 的迴圈不變量與正確性。",
+      "note": "",
+      "answer": "A、B、C",
+      "answerText": "A．可用來證明演算法正確性\nB．A[1..j-1] 由原本 A[1..j-1] 的元素組成\nC．A[1..j-1] 已排序",
+      "explanation": "本題的選項代號 A、B、C 是三個正確敘述；它們提到的 A[1..j−1] 則是輸入陣列 A 的前綴。第 j 輪開始時，這段前綴已排序，且元素集合與原本相同：選項 B 描述元素沒有遺漏或新增，選項 C 描述前綴已排序。選項 A 說明 loop invariant 的用途；選項 D 不正確，未處理的 A[j..n] 不保證排序。",
+      "sourceId": "L2-047",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L2-047"
+    },
+    {
+      "number": 6,
+      "group": "key",
+      "unit": "u2",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "插入排序法的最壞情況執行時間是 n 的 _________ 函數，最佳情況執行時間是 n 的 _________ 函數（最嚴謹答案）。",
+      "options": [],
+      "blankCount": 2,
+      "focus": "Insertion Sort 的最佳／最壞時間，以及何時發生。",
+      "note": "",
+      "answer": "big-theta(n^2)、big-theta(n)",
+      "answerText": "big-theta(n^2)、big-theta(n)",
+      "explanation": "若資料反向，第 j 次插入最多移動 j−1 個元素，總量為 1+2+…+(n−1)=n(n−1)/2，所以最壞時間是 Θ(n²)。\n\n若資料已排序，每輪只檢查前一元素並結束，共 n−1 輪，最佳時間是 Θ(n)。O 也能給出對應上界，但 Θ 同時表達上下界，更精確。",
+      "sourceId": "L2-045",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L2-045"
+    },
+    {
+      "number": 7,
+      "group": "key",
+      "unit": "u2",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "Insertion-Sort(A)（每行成本皆為 1）：\n1  for j ← 2 to length[A]\n2      do key ← A[j]\n3      // 將 A[j] 插入已排序的 A[1 .. j - 1]\n4      i ← j - 1\n5      while i > 0 and A[i] > key\n6          do A[i + 1] ← A[i]\n7          i ← i - 1\n8      A[i + 1] ← key\n若 A 長度為 n，且第 5 行在每次外層迭代中都執行 1 次，總執行成本是多少？（請以小寫英文作答，不留空白。）",
+      "options": [],
+      "blankCount": 1,
+      "focus": "讀虛擬碼、計算每行次數與總成本。",
+      "note": "",
+      "answer": "5n-4",
+      "answerText": "5n-4",
+      "explanation": "令外層迴圈執行 n−1 次。第 1 行的迴圈測試執行 n 次；第 2、4、5、8 行各執行 n−1 次；第 6、7 行因第 5 行每次只測試一次而不執行。第 3 行是註解，不執行。總成本為 n + 4(n−1) = 5n−4。",
+      "sourceId": "L2-048",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L2-048"
+    },
+    {
+      "number": 8,
+      "group": "key",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "複選題",
+      "question": "在合併排序法的 Merge(A,p,q,r) 中，使用了哪些輔助常規？",
+      "options": [
+        {
+          "label": "A",
+          "text": "完全不需要額外的記憶體空間"
+        },
+        {
+          "label": "B",
+          "text": "建立兩個輔助陣列 L 和 R"
+        },
+        {
+          "label": "C",
+          "text": "將排序結果複製回原陣列 A"
+        },
+        {
+          "label": "D",
+          "text": "在輔助陣列尾端放置無限大值 (∞) 作為哨兵 (Sentinels)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Merge 的輔助陣列、結果回寫與哨兵。",
+      "note": "",
+      "answer": "B、C、D",
+      "answerText": "B．建立兩個輔助陣列 L 和 R\nC．將排序結果複製回原陣列 A\nD．在輔助陣列尾端放置無限大值 (∞) 作為哨兵 (Sentinels)",
+      "explanation": "此題指附哨兵的經典 Merge：先複製左右已排序區段到 L、R，尾端各放一個 ∞；每次比較兩端尚未取出的最小元素，把較小者寫回 A。B、C、D 因此成立，A 錯，因輔助陣列總空間是 Θ(n)。沒有哨兵的 Merge 版本也正確，只是必須另外檢查序列是否已取完。",
+      "sourceId": "L2-053",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L2-053"
+    },
+    {
+      "number": 9,
+      "group": "key",
+      "unit": "u2",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "當問題規模 n > 1 時，Merge Sort 的遞迴關係式為 T(n)=2T(n/2)+ _________。",
+      "options": [],
+      "blankCount": 1,
+      "focus": "將 Merge Sort 的分治流程寫成遞迴式。",
+      "note": "",
+      "answer": "big-theta(n)",
+      "answerText": "big-theta(n)",
+      "explanation": "標準 Merge Sort 滿足 T(n)=2T(n/2)+Θ(n)，T(1)=Θ(1)。第 k 層有 2ᵏ 個規模 n/2ᵏ 的子問題，該層合併成本總和為 Θ(n)；到規模 1 約有 log₂n 層，所以總時間為 Θ(n log n)。選擇題選最緊的常見上界 O(n log n)，文字格式 big-theta(nlogn) 對應其緊確界。",
+      "sourceId": "L2-054",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L2-054"
+    },
+    {
+      "number": 10,
+      "group": "key",
+      "unit": "u3",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "以代入法證明 T(n) = 2T(n/2) + n，我們先猜他是 O(nlogn)，請依此寫出之帶導入的式子",
+      "options": [],
+      "blankCount": 1,
+      "focus": "代入法的歸納假設要代到較小規模 n/2。",
+      "note": "",
+      "answer": "T(n/2)<=c(n/2)log(n/2)",
+      "answerText": "T(n/2)<=c(n/2)log(n/2)",
+      "explanation": "歸納假設用在較小規模 n/2：T(n/2)≤c(n/2)log₂(n/2)。代回得 T(n)≤cn(log₂n−1)+n=cn log₂n+(1−c)n；選 c≥1 後不超過 cn log₂n。還需選適當基底，因 log₂1=0，不能直接用正的 T(1)≤c·1·log₂1；可從 n≥2 開始驗證，或加入線性修正項。",
+      "sourceId": "L3-052",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L3-052"
+    },
+    {
+      "number": 11,
+      "group": "key",
+      "unit": "u3",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "遞迴樹法中，我們關注的是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "樹的根節點代價"
+        },
+        {
+          "label": "B",
+          "text": "樹的節點數量"
+        },
+        {
+          "label": "C",
+          "text": "樹的高度"
+        },
+        {
+          "label": "D",
+          "text": "樹中所有節點的成本總和"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "遞迴樹需加總全部節點與各層成本。",
+      "note": "",
+      "answer": "樹中所有節點的成本總和",
+      "answerText": "樹中所有節點的成本總和",
+      "explanation": "整體成本要加總根、中間層與葉層，因為每個遞迴呼叫都在其中某個節點完成工作。\n\n例如 2T(n/2)+n 的內部各層成本為 n，共約 log₂n 層，另有 n 個常數成本葉節點，因此總成本為 n log₂n+O(n)=Θ(n log n)。只計根成本 n 會漏掉其他層。",
+      "sourceId": "L3-007",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L3-007"
+    },
+    {
+      "number": 12,
+      "group": "key",
+      "unit": "u3",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "對於 T(n) = T(n/2) + n，其複雜度為何？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(log n)"
+        },
+        {
+          "label": "B",
+          "text": "O(n)"
+        },
+        {
+          "label": "C",
+          "text": "O(n log n)"
+        },
+        {
+          "label": "D",
+          "text": "O(n²)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "單一子問題形成等比級數，與兩個子問題區分。",
+      "note": "",
+      "answer": "O(n)",
+      "answerText": "O(n)",
+      "explanation": "展開 T(n)=T(n/2)+n 得到 n+n/2+n/4+…，直到常數基底。這是公比 1/2 的等比級數，總和小於 2n，加上常數葉成本仍為 O(n)。根節點本身就花 n，给出 Ω(n)，因此緊確界是 Θ(n)。此式每次只有一個子問題，不是 Merge Sort 的兩個。",
+      "sourceId": "L3-015",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L3-015"
+    },
+    {
+      "number": 13,
+      "group": "key",
+      "unit": "u3",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "遞迴式 T(n) = T(n/2) + T(n/2) + 1 的解時間複雜度級別為何？",
+      "options": [
+        {
+          "label": "A",
+          "text": "線性 O(n)"
+        },
+        {
+          "label": "B",
+          "text": "平方 O(n²)"
+        },
+        {
+          "label": "C",
+          "text": "對數 O(log n)"
+        },
+        {
+          "label": "D",
+          "text": "階乘 O(n!)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "遞迴外成本由 n 改成 1 後，總成本如何改變。",
+      "note": "",
+      "answer": "線性 O(n)",
+      "answerText": "線性 O(n)",
+      "explanation": "假設 T(1)=Θ(1)，n 是 2 的冪次。T(n)=2T(n/2)+1 形成有 n 個葉節點的滿二元樹；內部節點為 n−1，每節點工作為常數，總成本為 Θ(n)。不是每層都只有 1：第 k 層有 2ᵏ 個節點，該層總成本也隨之增加。",
+      "sourceId": "L3-058",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L3-058"
+    },
+    {
+      "number": 14,
+      "group": "key",
+      "unit": "u3",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "大師定理中 a 與 b 的物理意義為何？",
+      "options": [
+        {
+          "label": "A",
+          "text": "a 為遞迴深度"
+        },
+        {
+          "label": "B",
+          "text": "b 為單層處理成本"
+        },
+        {
+          "label": "C",
+          "text": "b 為輸入大小縮減因子"
+        },
+        {
+          "label": "D",
+          "text": "a 為子問題個數"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "a、b 的意義與每個子問題規模。",
+      "note": "",
+      "answer": "a 為子問題個數、b 為輸入大小縮減因子",
+      "answerText": "a 為子問題個數、b 為輸入大小縮減因子",
+      "explanation": "a 是一次呼叫分出的子問題數，b 是規模縮減因子，所以每個子問題大小為 n/b。以 4T(n/2)+n 為例，一次分出 4 個、各大小 n/2 的問題，而不是深度為 4 或每層成本為 2。遞迴深度與各層成本要再依 a、b、f(n) 計算。",
+      "sourceId": "L3-033",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L3-033"
+    },
+    {
+      "number": 15,
+      "group": "key",
+      "unit": "u3",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "大師定理 Case 1 的條件包含？",
+      "options": [
+        {
+          "label": "A",
+          "text": "a, b 是常數"
+        },
+        {
+          "label": "B",
+          "text": "f(n) 成長較快"
+        },
+        {
+          "label": "C",
+          "text": "ε > 0"
+        },
+        {
+          "label": "D",
+          "text": "f(n) 為 O(n^(log_b(a) - ε))"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Master Case 1 的多項式差距 ε。",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．a, b 是常數\nC．ε > 0\nD．f(n) 為 O(n^(log_b(a) - ε))",
+      "explanation": "Case 1 需常數 a≥1、b>1 及 ε>0，使 f(n)=O(n^(log_b a−ε))。例如 T(n)=8T(n/2)+n²：log₂8=3，f 比 n³ 少一個 n 的因子（ε=1），因此解為 Θ(n³)。B 的「成長較快」與 Case 1 相反。",
+      "originalAnswer": "f(n) 為 O(n^(logb(a) - ε))、ε > 0、a, b 是常數",
+      "sourceId": "L3-036",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L3-036"
+    },
+    {
+      "number": 16,
+      "group": "key",
+      "unit": "u3",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "對於 T(n) = 2T(n/2) + n，其複雜度為 O(n [ ____ ] n)",
+      "options": [],
+      "blankCount": 1,
+      "focus": "Master Case 2 的典型例子：2T(n/2)+n。",
+      "note": "",
+      "answer": "log",
+      "answerText": "log",
+      "explanation": "在 T(n)=2T(n/2)+n 中，第 k 層有 2^k 個問題，每個非遞迴成本 n/2^k，該層共 n。問題大小經 log₂n 層降到 1，因此內部成本是 n log₂n，葉層另加 O(n)，合計 Θ(n log n)。對數因子來自層數，不是子問題數。",
+      "sourceId": "L3-047",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L3-047"
+    },
+    {
+      "number": 17,
+      "group": "key",
+      "unit": "u3",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "大師定理 Case 3 的條件包含？",
+      "options": [
+        {
+          "label": "A",
+          "text": "存在常數 epsilon > 0"
+        },
+        {
+          "label": "B",
+          "text": "a 必須小於 1"
+        },
+        {
+          "label": "C",
+          "text": "滿足規則性條件 (regularity condition)"
+        },
+        {
+          "label": "D",
+          "text": "f(n) = Ω(n^(log_b(a) + ε))"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Master Case 3 的多項式差距與 regularity condition。",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．存在常數 epsilon > 0\nC．滿足規則性條件 (regularity condition)\nD．f(n) = Ω(n^(log_b(a) + ε))",
+      "explanation": "令 p=log_b a。Case 3 必須存在 ε>0，使 f(n)=Ω(n^(p+ε))，並且有常數 c<1，使 a f(n/b)≤c f(n) 對足夠大的 n 成立（regularity condition）。這表示往下一層的工作按固定比例減少，成本由根部主導，才可得 T(n)=Θ(f(n))。只說 f「比較大」不夠。",
+      "originalAnswer": "f(n) 成長速度大於 n^(logb(a))、存在常數 epsilon > 0、滿足規則性條件 (regularity condition)",
+      "sourceId": "L3-035",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L3-035"
+    },
+    {
+      "number": 18,
+      "group": "key",
+      "unit": "u4",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "關於 Binary Heap 陣列表示法，下列何者正確？",
+      "options": [
+        {
+          "label": "A",
+          "text": "父節點位於 ⌊ i/2 ⌋"
+        },
+        {
+          "label": "B",
+          "text": "陣列長度即堆積大小"
+        },
+        {
+          "label": "C",
+          "text": "子節點位於 2i 與 2i+1"
+        },
+        {
+          "label": "D",
+          "text": "索引 1 為根節點"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "1-based 堆積索引，及 heap-size 與陣列長度的差別。",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．父節點位於 ⌊ i/2 ⌋\nC．子節點位於 2i 與 2i+1\nD．索引 1 為根節點",
+      "explanation": "索引從 1 開始時，A[1] 是根，i 的父節點為 floor(i/2)，左右子節點為 2i、2i+1，故選 A、C、D。\n\n陣列長度表示可存放的範圍，heap-size 表示目前仍屬於堆積的有效範圍。Heapsort 已排序的尾端仍在陣列內，卻不再屬於堆積，所以兩者不一定相等。",
+      "sourceId": "L4-050",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L4-050"
+    },
+    {
+      "number": 19,
+      "group": "key",
+      "unit": "u4",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "在 Max-Heap 中，父節點的值與子節點相比應為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "小於或等於"
+        },
+        {
+          "label": "B",
+          "text": "大於或等於"
+        },
+        {
+          "label": "C",
+          "text": "必須相等"
+        },
+        {
+          "label": "D",
+          "text": "無關"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Max-Heap 的大小關係允許等號。",
+      "note": "",
+      "answer": "B. 大於或等於",
+      "answerText": "B．大於或等於",
+      "explanation": "Max-Heap 要求每個父節點都大於或等於其子節點，並允許相同鍵值。例如父節點為 10、子節點為 7 與 10 仍合法。沿任一根到葉路徑，值不會增加；兄弟節點彼此則不必排序。\n\n小於或等於是 Min-Heap 的方向，「必須相等」與「無關」都不符合 Max-Heap 的條件。",
+      "sourceId": "L4-026",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L4-026"
+    },
+    {
+      "number": 20,
+      "group": "key",
+      "unit": "u4",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "Max-Heapify 假設子樹已經是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Empty"
+        },
+        {
+          "label": "B",
+          "text": "Max-Heap"
+        },
+        {
+          "label": "C",
+          "text": "Binary-Tree"
+        },
+        {
+          "label": "D",
+          "text": "Sorted-List"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Max-Heapify 的先決條件：左右子樹已各為最大堆積。",
+      "note": "",
+      "answer": "B. Max-Heap",
+      "answerText": "B．Max-Heap",
+      "explanation": "左右子樹必須先各自是 Max-Heap，違規才可能只出在根 i。把最大的子節點換上根後，只剩被換下去的那一側可能違規，於是一次遞迴就能修復。若子樹內本來也有任意違規，只呼叫這一次 Max-Heapify 不能保證整棵子樹正確。",
+      "sourceId": "L4-023",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L4-023"
+    },
+    {
+      "number": 21,
+      "group": "key",
+      "unit": "u4",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "Max-Heapify 操作的時間複雜度為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(log n)"
+        },
+        {
+          "label": "B",
+          "text": "O(1)"
+        },
+        {
+          "label": "C",
+          "text": "O(n log n)"
+        },
+        {
+          "label": "D",
+          "text": "O(n)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "單次 Max-Heapify 的成本取決於樹高。",
+      "note": "",
+      "answer": "A. O(log n)",
+      "answerText": "A．O(log n)",
+      "explanation": "每次調整只比較常數個值，交換後只沿其中一個子樹繼續，並不同時走訪整棵樹。完全二元樹的高度為 Θ(log n)，因此最壞情況一路降到葉節點，花 O(log n)。若目標節點原本就符合堆積規則，則可在常數時間停止。",
+      "sourceId": "L4-025",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L4-025"
+    },
+    {
+      "number": 22,
+      "group": "key",
+      "unit": "u4",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "Build-Max-Heap 的時間複雜度為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(n)"
+        },
+        {
+          "label": "B",
+          "text": "O(n log n)"
+        },
+        {
+          "label": "C",
+          "text": "O(n^2)"
+        },
+        {
+          "label": "D",
+          "text": "O(log n)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Build-Max-Heap 為線性時間，與完整排序區分。",
+      "note": "",
+      "answer": "A. O(n)",
+      "answerText": "A．O(n)",
+      "explanation": "核心觀念：Build-Max-Heap 是由下往上建堆積，總時間為 Θ(n)，不是把每個節點都按最大高度收費。\n\n解題步驟：高度為 h 的節點數至多約 n/2^(h+1)，每個節點花 O(h)。總成本上界為 nΣ(h/2^(h+1))；此級數收斂，所以是 O(n)。大多數節點接近葉層，實際調整很短。\n\n適用條件：這是教材的自底向上建堆積；若改成依序插入 n 個元素，最壞成本可達 O(n log n)。",
+      "sourceId": "L4-031",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L4-031"
+    },
+    {
+      "number": 23,
+      "group": "key",
+      "unit": "u4",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "下列哪些關於堆積排序的敘述是正確的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "原地排序"
+        },
+        {
+          "label": "B",
+          "text": "複雜度 O(n log n)"
+        },
+        {
+          "label": "C",
+          "text": "不穩定排序"
+        },
+        {
+          "label": "D",
+          "text": "需要 O(n) 額外空間"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Heapsort 的時間、原地與穩定性。",
+      "note": "",
+      "answer": "A、B、C",
+      "answerText": "A．原地排序\nB．複雜度 O(n log n)\nC．不穩定排序",
+      "explanation": "Heapsort 在原陣列中交換，無須 O(n) 的第二個排序陣列；建堆積後逐一取出最大值，平均與最壞時間為 O(n log n)。\n\n它的遠距離交換可能讓相同鍵值的元素改變相對順序，因此不穩定。A、B、C 分別對應這三項性質，D 不是標準原地實作的必要空間。",
+      "sourceId": "L4-045",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L4-045"
+    },
+    {
+      "number": 24,
+      "group": "key",
+      "unit": "u4",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "Increase-Key 動作需要？",
+      "options": [
+        {
+          "label": "A",
+          "text": "維護堆積屬性"
+        },
+        {
+          "label": "B",
+          "text": "僅修改根節點"
+        },
+        {
+          "label": "C",
+          "text": "更新節點值"
+        },
+        {
+          "label": "D",
+          "text": "向上比較直到根"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Increase-Key 更新後向上修復的流程。",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．維護堆積屬性\nC．更新節點值\nD．向上比較直到根",
+      "explanation": "Increase-Key 先確認新鍵值不小於舊值，再更新指定節點。若它大於父節點就交換並繼續向上，直到根或父節點已不小於它。因此需更新值、維持堆積規則並向上比較，選 A、C、D。\n\n「直到根」是最長可能路徑，不代表每次都必須到根；操作可從任意合法索引開始，並不限根節點。",
+      "sourceId": "L4-052",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L4-052"
+    },
+    {
+      "number": 25,
+      "group": "key",
+      "unit": "u4",
+      "kind": "fill",
+      "typeLabel": "圖片題",
+      "question": "這是Build-Max-Heap(A) 建立過程的結果 目前程式跑到 i 點 下一步 也就是 i-1 陣列A內應該是甚麼結果",
+      "options": [],
+      "blankCount": 1,
+      "focus": "追蹤 Build-Max-Heap 的下一輪陣列。",
+      "note": "原題為圖片題。圖中文字轉錄：採 1-based 索引，A=4,1,3,14,16,9,10,2,8,7，當前要處理 i=3。請完成該輪 Max-Heapify，寫出進入 i=2 之前的完整陣列。",
+      "answer": "4,1,10,14,16,9,3,2,8,7",
+      "answerText": "4,1,10,14,16,9,3,2,8,7",
+      "explanation": "核心觀念：Build-Max-Heap 由後往前修復非葉節點，圖中下一輪之前要先完成 i=3 的 Max-Heapify。\n\n解題步驟：初始陣列為 4,1,3,14,16,9,10,2,8,7。A[3]=3，左右子節點 A[6]=9、A[7]=10，最大值 10 在索引 7。交換索引 3、7，得到 4,1,10,14,16,9,3,2,8,7。索引 7 無子節點，修復停止。\n\n適用條件：此時只是完成以索引 3 為根的子樹；根值仍為 4，不表示整個陣列已成最大堆積。",
+      "sourceId": "L4-017",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L4-017",
+      "image": "./images/exam-l4-017.png",
+      "imageAlt": "Build-Max-Heap：陣列 4,1,3,14,16,9,10,2,8,7，標示 i=3。",
+      "bankQuestionId": 50
+    },
+    {
+      "number": 26,
+      "group": "key",
+      "unit": "u4",
+      "kind": "fill",
+      "typeLabel": "圖片題",
+      "question": "這是Heapsort(A) 過程的結果 目前程式跑到 i 點 下一步 也就是 i-1 陣列A內應該是甚麼結果",
+      "options": [],
+      "blankCount": 1,
+      "focus": "追蹤 Heapsort 的交換、縮小有效堆積與向下修復。",
+      "note": "原題為圖片題。圖中文字轉錄：A=14,8,10,4,7,9,3,2,1,16。16 已在排序完成區，heap-size=9；接續完成下一輪（i=9）的交換及 Max-Heapify，再寫完整陣列。",
+      "answer": "10,8,9,4,7,1,3,2,14,16",
+      "answerText": "10,8,9,4,7,1,3,2,14,16",
+      "explanation": "核心觀念：圖中 16 已在排序完成區；下一輪只處理前 9 格的有效堆積。\n\n解題步驟：先把根 14 與 A[9]=1 交換，得到 1,8,10,4,7,9,3,2,14,16，並把 heap-size 改為 8。根 1 與較大子節點 10 交換，再在索引 3 與子節點 9 交換，得到 10,8,9,4,7,1,3,2,14,16。\n\n適用條件：索引 9、10 的 14、16 已排序，不能再參與 Heapify；本題是接續圖中的狀態，不是從頭重建堆積。",
+      "sourceId": "L4-019",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L4-019",
+      "image": "./images/exam-l4-019.png",
+      "imageAlt": "Heapsort：陣列 14,8,10,4,7,9,3,2,1,16，尾端 16 已排序。",
+      "bankQuestionId": 30
+    },
+    {
+      "number": 27,
+      "group": "key",
+      "unit": "u5",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "在快速排序的 PARTITION 函數中，pivot (樞紐) 通常選擇哪一個元素？",
+      "options": [
+        {
+          "label": "A",
+          "text": "第一個元素 (A[p])"
+        },
+        {
+          "label": "B",
+          "text": "中間元素"
+        },
+        {
+          "label": "C",
+          "text": "隨機元素"
+        },
+        {
+          "label": "D",
+          "text": "最後一個元素 (A[r])"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "課本 Lomuto Partition 的 pivot 選法。",
+      "note": "此題以講義的 A[r] 版本為準；其他 Partition 實作可採不同 pivot。",
+      "answer": "D",
+      "answerText": "D．最後一個元素 (A[r])",
+      "explanation": "課本的 PARTITION 令 x=A[r]，因此是最後一個元素。這是課本實作選擇，不是所有 Quicksort 必須遵守的規則。",
+      "originalAnswer": "D. 最後一個元素 (A[r])",
+      "sourceId": "L5-016",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L5-016"
+    },
+    {
+      "number": 28,
+      "group": "key",
+      "unit": "u5",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "關於 Partition 函數的變數，下列敘述正確的是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "x 為 Pivot"
+        },
+        {
+          "label": "B",
+          "text": "p 為陣列的結束索引"
+        },
+        {
+          "label": "C",
+          "text": "j 用於掃描陣列"
+        },
+        {
+          "label": "D",
+          "text": "i 用來標記小於 pivot 的區域邊界"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "x、p、i、j 的角色與分區邊界。",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．x 為 Pivot\nC．j 用於掃描陣列\nD．i 用來標記小於 pivot 的區域邊界",
+      "explanation": "x 存 pivot 值；j 從左到右掃描；i 維護不大於 pivot 元素區的最後位置。p 是起始索引，r 才是結束索引。",
+      "sourceId": "L5-033",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L5-033"
+    },
+    {
+      "number": 29,
+      "group": "key",
+      "unit": "u5",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "PARTITION 執行後的性質包含？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pivot 位於 q 位置"
+        },
+        {
+          "label": "B",
+          "text": "陣列已經完全排序"
+        },
+        {
+          "label": "C",
+          "text": "所有左側元素 <= pivot"
+        },
+        {
+          "label": "D",
+          "text": "所有右側元素 > pivot"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Partition 後 pivot 歸位，但兩側尚未各自排序。",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．Pivot 位於 q 位置\nC．所有左側元素 <= pivot\nD．所有右側元素 > pivot",
+      "explanation": "Pivot 最後位於 q；左側都 ≤ pivot，右側都 > pivot。注意兩側內部不一定已經排序，必須再遞迴處理。",
+      "sourceId": "L5-009",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L5-009"
+    },
+    {
+      "number": 30,
+      "group": "key",
+      "unit": "u5",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "給定課本版本的快速排序法分割演算法 Partition(A, p, r)。\n\n一開始，陣列 A 的狀態如下： Array contents: [3] [9] [2] [8] [1] [7] [6] [5] 指標位置：p 和 j 指向第一個元素 3，且 i 位於 p 的左側外 (尚未進入陣列)。 陣列內容：\n\n問題 1：當 j 移動到指向元素 1 的當下，陣列的內容會是哪一個？ ________\n問題 2：當 PARTITION 函數執行完畢後，最終的陣列內容會是什麼？ ________\n(Please format your answer as: 1,2,3,4,5,6,7,8)",
+      "options": [],
+      "blankCount": 2,
+      "focus": "逐步追蹤 Partition；區分剛指向與已處理。",
+      "note": "「j 移動到指向」依題庫定義，指尚未處理該元素。",
+      "answer": "第 1 格：3,2,9,8,1,7,6,5\n第 2 格：3,2,1,5,9,7,6,8",
+      "answerText": "第 1 格：3,2,9,8,1,7,6,5\n第 2 格：3,2,1,5,9,7,6,8",
+      "explanation": "Pivot=5。掃描 3 不變，遇 9 暫不換，掃描 2 時與 9 交換，形成 3,2,9,8,1,7,6,5；此時 j 才剛指向 1。處理 1 後得 3,2,1,8,9,7,6,5，最後 pivot 5 與 8 換位。",
+      "sourceId": "L5-044",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L5-044"
+    },
+    {
+      "number": 31,
+      "group": "key",
+      "unit": "u5",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "選出課本上的 Quicksort Partition(A, p, r) Worst-case partition 與 Best-case partition 遞迴式子",
+      "options": [
+        {
+          "label": "A",
+          "text": "T(n)=2T(n/2)+Θ(n)"
+        },
+        {
+          "label": "B",
+          "text": "T(n)=T(n-1)+Θ(n)"
+        },
+        {
+          "label": "C",
+          "text": "T(n)=2T(n/2)+Θ(1)"
+        },
+        {
+          "label": "D",
+          "text": "T(n)=T(n-1)-Θ(n)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "最佳／最壞分割如何寫出不同遞迴式。",
+      "note": "",
+      "answer": "A、B",
+      "answerText": "A．T(n)=2T(n/2)+Θ(n)\nB．T(n)=T(n-1)+Θ(n)",
+      "explanation": "Best: 左右各 n/2 且分割成本 Θ(n)，故 2T(n/2)+Θ(n)。Worst: 一側為 n−1，故 T(n−1)+Θ(n)。分割成本一定用「+」累加。",
+      "sourceId": "L5-032",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L5-032"
+    },
+    {
+      "number": 32,
+      "group": "key",
+      "unit": "u5",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "快速排序的平均時間複雜度為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(n²)"
+        },
+        {
+          "label": "B",
+          "text": "O(n)"
+        },
+        {
+          "label": "C",
+          "text": "O(log n)"
+        },
+        {
+          "label": "D",
+          "text": "O(n log n)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Quicksort 平均時間。",
+      "note": "",
+      "answer": "D",
+      "answerText": "D．O(n log n)",
+      "explanation": "平均來說，分割不會長期退化成 0:n−1，遞迴樹總成本為 Θ(nlogn)。",
+      "originalAnswer": "D. O(n log n)",
+      "sourceId": "L5-029",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L5-029"
+    },
+    {
+      "number": 33,
+      "group": "key",
+      "unit": "u5",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "快速排序在最差情況 (Worst-case) 下的時間複雜度為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(n²)"
+        },
+        {
+          "label": "B",
+          "text": "O(n log n)"
+        },
+        {
+          "label": "C",
+          "text": "O(log n)"
+        },
+        {
+          "label": "D",
+          "text": "O(n)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Quicksort 最壞時間與極端分割。",
+      "note": "",
+      "answer": "A",
+      "answerText": "A．O(n²)",
+      "explanation": "若 pivot 每次都選到最大或最小元素，分割結果是 0 與 n-1。每層 Partition 要 Θ(n) 時間，總和 n+(n-1)+…+1 為 Θ(n²)，所以最差 O(n²)。此題是選擇題，與同概念的填空題分開保留。",
+      "originalAnswer": "A. O(n²)",
+      "sourceId": "L5-055",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L5-055"
+    },
+    {
+      "number": 34,
+      "group": "key",
+      "unit": "u5",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "隨機化快速排序 (Randomized Quicksort) 的主要目的是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "簡化程式碼"
+        },
+        {
+          "label": "B",
+          "text": "避免最差情況的頻繁發生"
+        },
+        {
+          "label": "C",
+          "text": "增加記憶體使用量"
+        },
+        {
+          "label": "D",
+          "text": "減少比較次數"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "隨機選 pivot 降低壞分割持續發生的風險。",
+      "note": "",
+      "answer": "B",
+      "answerText": "B．避免最差情況的頻繁發生",
+      "explanation": "Randomized pivot 的目的，是讓輸入排列不容易持續誘發糟糕分割，從而得到期望 Θ(nlogn)；不保證每一輪都比固定 pivot 比較少次。",
+      "originalAnswer": "B. 避免最差情況的頻繁發生",
+      "sourceId": "L5-045",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L5-045"
+    },
+    {
+      "number": 35,
+      "group": "key",
+      "unit": "u6",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "關於決策樹，下列敘述何者正確？",
+      "options": [
+        {
+          "label": "A",
+          "text": "每個分支代表一個比較結果"
+        },
+        {
+          "label": "B",
+          "text": "每個內部節點是一個比較"
+        },
+        {
+          "label": "C",
+          "text": "樹的葉節點數量至少為 n!"
+        },
+        {
+          "label": "D",
+          "text": "樹的高度與比較次數無關"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "決策樹的節點、分支、葉節點與比較次數。",
+      "note": "",
+      "answer": "A、B、C",
+      "answerText": "A．每個分支代表一個比較結果\nB．每個內部節點是一個比較\nC．樹的葉節點數量至少為 n!",
+      "explanation": "在比較排序的決策樹中，內部節點代表一次比較，分支代表比較結果。n 個互異元素共有 n! 種可能的排列，必須有至少 n! 個葉節點；樹的高度則反映最壞情況需要的比較次數。",
+      "sourceId": "L6-023",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L6-023"
+    },
+    {
+      "number": 36,
+      "group": "key",
+      "unit": "u6",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "任何基於比較的排序(comparison-based sorting)演算法，其最差時間複雜度下界為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ω(n^2)"
+        },
+        {
+          "label": "B",
+          "text": "O(log n)"
+        },
+        {
+          "label": "C",
+          "text": "Ω(n log n)"
+        },
+        {
+          "label": "D",
+          "text": "O(n)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "比較排序最壞情況下界的適用範圍。",
+      "note": "",
+      "answer": "C. Ω(n log n)",
+      "answerText": "C．Ω(n log n)",
+      "explanation": "任何基於比較的排序都受到決策樹下界 Ω(n log n) 的限制。這是最壞情況比較次數的下界，並不是說所有演算法的最佳情況都這麼慢。",
+      "sourceId": "L6-039",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L6-039"
+    },
+    {
+      "number": 37,
+      "group": "key",
+      "unit": "u6",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "計數排序(Counting Sort)中，陣列 C 的作用是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "儲存指標"
+        },
+        {
+          "label": "B",
+          "text": "儲存每個鍵的出現次數或累積計數"
+        },
+        {
+          "label": "C",
+          "text": "儲存原始資料"
+        },
+        {
+          "label": "D",
+          "text": "作為樞紐"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Counting Sort 的 C 先計次數，再轉為累積計數。",
+      "note": "",
+      "answer": "B. 儲存每個鍵的出現次數或累積計數",
+      "answerText": "B．儲存每個鍵的出現次數或累積計數",
+      "explanation": "一開始 C[x] 計算數字 x 出現幾次；接著做累積加總後，C[x] 表示小於等於 x 的元素數量。將資料放入 B 陣列時，就可以用 C[x] 判斷寫入位置。",
+      "sourceId": "L6-014",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L6-014"
+    },
+    {
+      "number": 38,
+      "group": "key",
+      "unit": "u6",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "如果所有輸入元素皆為 1 到 k，計數排序(Counting Sort)的時間複雜度為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Θ(n + k)"
+        },
+        {
+          "label": "B",
+          "text": "Θ(k log k)"
+        },
+        {
+          "label": "C",
+          "text": "Θ(n log n)"
+        },
+        {
+          "label": "D",
+          "text": "Θ(n^2)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Counting Sort 的 n 與 k 都必須計入成本。",
+      "note": "",
+      "answer": "A. Θ(n + k)",
+      "answerText": "A．Θ(n + k)",
+      "explanation": "Counting Sort 若鍵值是 1 到 k 的整數，可在 Θ(n+k) 時間完成。先統計各數值次數 O(n)，再處理計數範圍 O(k)，最後回填 O(n)。",
+      "sourceId": "L6-026",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L6-026"
+    },
+    {
+      "number": 39,
+      "group": "key",
+      "unit": "u6",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "給定 COUNTING_SORT 演算法（計數陣列支援鍵值 0 的版本）。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 0 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 1 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n\nA 與 B 的索引從 1 開始，C 的索引從 0 開始，k=5。\nA陣列的內容為 2,5,3,0,2,3,0,3\n第 9 行迴圈開始前（尚未進行任何回填），求：\nB陣列的內容為何[__1__]\nC陣列 C[0..5] 的內容為何[__2__]\n每格依索引順序填入所有數值，以逗號分隔。",
+      "options": [],
+      "blankCount": 2,
+      "focus": "手算 Counting Sort 回填前的 B、C。",
+      "note": "依網站題庫約定，B 尚未寫入的格子用 0 表示；這是填答約定，並非虛擬碼會自動初始化 B。",
+      "answer": "0,0,0,0,0,0,0,0 / 2,2,4,7,7,8",
+      "answerText": "0,0,0,0,0,0,0,0 / 2,2,4,7,7,8",
+      "explanation": "輸入有 8 個元素，鍵值 0～5 的出現次數為 2,0,2,3,0,1；累積後 C=2,2,4,7,7,8。尚未開始回填，所以 B 的所有位置依題庫填答約定以 0 表示。此時 B=0,0,0,0,0,0,0,0，C=2,2,4,7,7,8。",
+      "sourceId": "L6-028",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L6-028"
+    },
+    {
+      "number": 40,
+      "group": "key",
+      "unit": "u6",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "給定 COUNTING_SORT 演算法（計數陣列支援鍵值 0 的版本）。\n\nCOUNTING_SORT(A, B, k)\n1  for i <- 0 to k\n2    do C[i] <- 0\n3  for j <- 1 to length[A]\n4    do C[A[j]] <- C[A[j]] + 1\n5  > C[i] now contains the number of elements equal to i\n6  for i <- 1 to k\n7    do C[i] <- C[i] + C[i-1]\n8  > C[i] now contains the number of elements less than or equal to i\n9  for j <- length[A] downto 1\n10   do B[C[A[j]]] <- A[j]\n11      C[A[j]] <- C[A[j]] - 1\n\nA 與 B 的索引從 1 開始，C 的索引從 0 開始，k=5。\nA陣列的內容為 2,5,3,0,2,3,0,3\n第 9 行 j=4 該輪開始時（尚未執行該輪第 10、11 行），求：\nB陣列的內容為何[__1__]\nC陣列 C[0..5] 的內容為何[__2__]\n每格依索引順序填入所有數值，以逗號分隔。",
+      "options": [],
+      "blankCount": 2,
+      "focus": "手算 Counting Sort 中途回填狀態與 C 的遞減。",
+      "note": "依網站題庫約定，B 尚未寫入的格子用 0 表示；題目是 j=4 該輪開始前，尚未處理 A[4]。",
+      "answer": "0,0,0,2,0,3,3,0 / 1,2,3,5,7,8",
+      "answerText": "0,0,0,2,0,3,3,0 / 1,2,3,5,7,8",
+      "explanation": "輸入有 8 個元素，鍵值 0～5 的出現次數為 2,0,2,3,0,1；累積後 C=2,2,4,7,7,8。已處理 j=8 到 j=5，尚未處理 A[4]=0。此時 B=0,0,0,2,0,3,3,0，C=1,2,3,5,7,8。",
+      "sourceId": "L6-063",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L6-063"
+    },
+    {
+      "number": 41,
+      "group": "key",
+      "unit": "u6",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "基數排序(Radix Sort)要求子排序演算法必須是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "穩定排序"
+        },
+        {
+          "label": "B",
+          "text": "原地排序"
+        },
+        {
+          "label": "C",
+          "text": "快速排序"
+        },
+        {
+          "label": "D",
+          "text": "比較排序"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "LSD Radix Sort 為何要求子排序穩定。",
+      "note": "",
+      "answer": "A. 穩定排序",
+      "answerText": "A．穩定排序",
+      "explanation": "課本的 LSD Radix Sort 依序處理個位、十位、百位等。每一輪必須穩定，才能在高位相同時保留先前已排序的低位相對次序。",
+      "sourceId": "L6-048",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L6-048"
+    },
+    {
+      "number": 42,
+      "group": "key",
+      "unit": "u6",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "給定課本版本的RADIX_SORT 演算法。\n\nRADIX_SORT(A, d)\n1 for i <- 1 to d\n2   do use a stable sort to sort array A on digit i\n\nA陣列的內容為 329,457,657,839,436,720,355 \n當 i = 2 時\nA陣列的內容為何[__1__]  （依序填入所有數值，以逗號分隔）",
+      "options": [],
+      "blankCount": 1,
+      "focus": "Radix Sort 每一輪以哪一位為鍵，並保留同鍵順序。",
+      "note": "本題依網站解析，求完成第 2 輪（十位數）穩定排序後的狀態。",
+      "answer": "720,329,436,839,355,457,657",
+      "answerText": "720,329,436,839,355,457,657",
+      "explanation": "先按個位數做穩定排序，再按十位數排序。720 與 329 的十位數同為 2，必須保留上一輪 720 在 329 前的次序。第二輪的結果為 720,329,436,839,355,457,657；此時尚未排序百位數。",
+      "sourceId": "L6-002",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L6-002"
+    },
+    {
+      "number": 43,
+      "group": "key",
+      "unit": "u6",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "桶排序(Bucket Sort)中，若資料均勻分佈，預期時間複雜度為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Θ(n)"
+        },
+        {
+          "label": "B",
+          "text": "Θ(log n)"
+        },
+        {
+          "label": "C",
+          "text": "Θ(n log n)"
+        },
+        {
+          "label": "D",
+          "text": "Θ(n^2)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Bucket Sort 的預期線性時間與均勻分布假設。",
+      "note": "此答案採課本的均勻分布、n 個桶與桶內插入排序模型；不是任意輸入都保證線性。",
+      "answer": "A. Θ(n)",
+      "answerText": "A．Θ(n)",
+      "explanation": "假設 n 個值近似均勻分散到 n 個桶，每桶平均只有少量元素，所有桶的插入排序期望總成本是 Θ(n)，加上分配與合併工作也是 Θ(n)。",
+      "sourceId": "L6-041",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L6-041"
+    },
+    {
+      "number": 44,
+      "group": "key",
+      "unit": "u7",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "一個集合的第 i 個順序統計量（ith order statistic）是指該集合中第幾個小的元素？",
+      "options": [
+        {
+          "label": "A",
+          "text": "第 i 小的元素"
+        },
+        {
+          "label": "B",
+          "text": "第 i 大的元素"
+        },
+        {
+          "label": "C",
+          "text": "中位數"
+        },
+        {
+          "label": "D",
+          "text": "平均數"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "第 i 個順序統計量就是第 i 小。",
+      "note": "",
+      "answer": "A",
+      "answerText": "A．第 i 小的元素",
+      "explanation": "答案 A。將 n 個元素由小到大排列後，第 i 個元素就是第 i 順序統計量；i=1 是最小值，i=n 是最大值。這裡的 i 表示大小順位，不是元素原先在陣列中的位置。",
+      "sourceId": "L7-2468",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L7-2468"
+    },
+    {
+      "number": 45,
+      "group": "key",
+      "unit": "u7",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "若以兩兩比較的方式，尋找最小值需要進行幾次比較？",
+      "options": [
+        {
+          "label": "A",
+          "text": "n-1"
+        },
+        {
+          "label": "B",
+          "text": "n"
+        },
+        {
+          "label": "C",
+          "text": "n/2"
+        },
+        {
+          "label": "D",
+          "text": "1"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "找最小值的比較次數。",
+      "note": "",
+      "answer": "A",
+      "answerText": "A．n-1",
+      "explanation": "答案 A。用第一個值初始化最小值，剩下每個值各比較一次，總共 n−1 次。從比較的觀點看，每個非最小元素至少要輸掉一次，才能排除它成為最小值的可能，因此這也是必要的下界。",
+      "sourceId": "L7-2483",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L7-2483"
+    },
+    {
+      "number": 46,
+      "group": "key",
+      "unit": "u7",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "同時找出陣列中的最大值（Maximum）與最小值（Minimum）\n完成以下的做法使它經過(3 n/2 )次比較 得到結果\n\nGET_MIN_MAX(A)\n1 n <- A.length\n2 if n = 0\n3     then return (NIL, NIL)\n4\n5 // 步驟 1：初始化 min 與 max\n6 if n % 2 != 0          // 陣列長度為奇數\n7     then min <- A[1]\n8          max <- A[1]\n9          start_idx <- 2\n10    else                 // 陣列長度為偶數\n11         if A[1] < A[2]\n12             then min <- A[1]\n13                  max <- A[2]\n14             else min <- A[2]\n15                  max <- A[1]\n16         start_idx <- 3\n17\n18 // 步驟 2：兩兩分組進行比較\n19 for i <-  ＿＿＿  to n - 1 step 2\n20     do if A[i] <  ＿＿＿\n21            then if A[i] < min\n22                     then min <- A[i]\n23                 if A[i + 1] > max\n24                     then max <- A[i + 1]\n25            else if A[i + 1] < min\n26                     then min <- A[i + 1]\n27                 if A[i] > max\n28                     then max <- A[i]\n29\n30 return (min, max)",
+      "options": [],
+      "blankCount": 2,
+      "focus": "配對找 min/max 的程式填空與比較次數。",
+      "note": "原題的 3n/2 表示約略成本；此程式對偶數 n 的精確比較次數為 3n/2-2，奇數 n 為 3(n-1)/2。填空仍照原題程式作答。",
+      "answer": "start_idx / A[i+1]",
+      "answerText": "start_idx / A[i+1]",
+      "explanation": "依序填 start_idx、A[i+1]。start_idx 指向尚未處理的第一對：奇數個元素可用 A[1] 同時初始化極值並從 2 開始，偶數個則先比較 A[1]、A[2] 再從 3 開始。迴圈每次取 A[i] 與 A[i+1]，先判斷誰小誰大，再分別更新最小與最大；索引每次增加二。每對共三次比較，因而得到約 3n/2 的比較次數。\n補充：偶數 n 精確為 3n/2-2 次；奇數 n 精確為 3(n-1)/2 次。",
+      "sourceId": "L7-2527",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L7-2527"
+    },
+    {
+      "number": 47,
+      "group": "key",
+      "unit": "u7",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "Randomized-Select 的平均時間複雜度為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(n)"
+        },
+        {
+          "label": "B",
+          "text": "O(n²)"
+        },
+        {
+          "label": "C",
+          "text": "O(log n)"
+        },
+        {
+          "label": "D",
+          "text": "O(n log n)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Randomized-Select 的期望線性時間。",
+      "note": "",
+      "answer": "A",
+      "answerText": "A．O(n)",
+      "explanation": "答案 A。隨機選樞紐使演算法不容易反覆遇到極端分割；每層只處理目標所在的一側，其期望總工作量是 Θ(n)。這是對隨機選擇的期望保證，並不表示每一次執行都必定線性。",
+      "sourceId": "L7-2474",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L7-2474"
+    },
+    {
+      "number": 48,
+      "group": "key",
+      "unit": "u7",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "Randomized-Select 在最壞情況下的時間複雜度為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(n²)"
+        },
+        {
+          "label": "B",
+          "text": "O(n)"
+        },
+        {
+          "label": "C",
+          "text": "O(log n)"
+        },
+        {
+          "label": "D",
+          "text": "O(n log n)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Randomized-Select 仍可能有平方時間的最壞情況。",
+      "note": "",
+      "answer": "A",
+      "answerText": "A．O(n²)",
+      "explanation": "答案 A。若樞紐反覆是目前範圍的極小或極大值，而且目標留在其餘 n−1 個元素中，工作量為 n+(n−1)+⋯+1=Θ(n²)。隨機化降低這種路徑發生的機率，但沒有消除它。",
+      "sourceId": "L7-2477",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L7-2477"
+    },
+    {
+      "number": 49,
+      "group": "key",
+      "unit": "u7",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "請完成以下的虛擬碼\n\nRANDOMIZED_SELECT(A, p, r, i)\n1 if p = r\n2     then return A[p]\n3 q <- RANDOMIZED_PARTITION(A, p, r)\n4 k <- q - p + 1\n5 if i = k     > the pivot value is the answer\n6     then return A[q]\n7 elseif i < k\n8     then return RANDOMIZED_SELECT(A, p,  ＿＿＿ , i)\n9 else return RANDOMIZED_SELECT(A,  ＿＿＿ , r,  ＿＿＿ )",
+      "options": [],
+      "blankCount": 3,
+      "focus": "Select 只遞迴一側；往右時順位 i 要扣掉 k。",
+      "note": "",
+      "answer": "q-1 / q+1 / i-k",
+      "answerText": "q-1 / q+1 / i-k",
+      "explanation": "依序填 q−1、q+1、i−k。分割後 q 是樞紐位置，k=q−p+1 是樞紐在目前範圍的順位。i<k 時，目標在 p 到 q−1，順位仍為 i；i>k 時，排除左側與樞紐共 k 個元素，進入 q+1 到 r，改找第 i−k 小。兩個遞迴範圍都不再包含已確定位置的樞紐。",
+      "sourceId": "L7-2520",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L7-2520"
+    },
+    {
+      "number": 50,
+      "group": "key",
+      "unit": "u7",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "關於確定性選擇演算法（Select），正確的敘述有？",
+      "options": [
+        {
+          "label": "A",
+          "text": "時間複雜度為 O(n)"
+        },
+        {
+          "label": "B",
+          "text": "使用中位數的中位數作為 pivot"
+        },
+        {
+          "label": "C",
+          "text": "克服了最壞情況 O(n²)"
+        },
+        {
+          "label": "D",
+          "text": "比隨機選擇快"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "確定性 Select 的 pivot 品質與最壞線性保證。",
+      "note": "這些仍是題庫原題，優先練習完前 50 題後再做。",
+      "answer": "A、B、C",
+      "answerText": "A．時間複雜度為 O(n)\nB．使用中位數的中位數作為 pivot\nC．克服了最壞情況 O(n²)",
+      "explanation": "答案 A、B、C。中位數的中位數提供有品質保證的樞紐，使確定性 Select 的最壞時間維持 Θ(n)，避免隨機版本可能出現的平方時間。這個保證不代表實測一定更快；分組與挑選樞紐有額外常數成本，所以 D 不能一概成立。",
+      "sourceId": "L7-2492",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L7-2492"
+    },
+    {
+      "number": 51,
+      "group": "extra",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "複選題",
+      "question": "對於任意實數 x 或整數 n，下列關於地板與天花板函數的數學性質哪些是正確的？（D 選項中的 a、b 為正整數。）",
+      "options": [
+        {
+          "label": "A",
+          "text": "⌈n/2⌉ + ⌊n/2⌋ = n"
+        },
+        {
+          "label": "B",
+          "text": "x - 1 < ⌊x⌋ <= x"
+        },
+        {
+          "label": "C",
+          "text": "x <= ⌈x⌉ < x + 1"
+        },
+        {
+          "label": "D",
+          "text": "⌊⌊n/a⌋/b⌋ = ⌊n/(ab)⌋"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "floor／ceiling 的公式與整數條件。",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．⌈n/2⌉ + ⌊n/2⌋ = n\nB．x - 1 < ⌊x⌋ <= x\nC．x <= ⌈x⌉ < x + 1\nD．⌊⌊n/a⌋/b⌋ = ⌊n/(ab)⌋",
+      "explanation": "A：n 為偶數或奇數時，⌈n/2⌉ 與 ⌊n/2⌋ 相加都等於 n。B、C 分別是地板與天花板函數的定義。D：當 n 為整數且 a、b 為正整數時，先把 n 除以 a 再向下取整，接著除以 b 再向下取整，結果等於直接把 n 除以 ab 後向下取整。",
+      "sourceId": "L2-016",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L2-016"
+    },
+    {
+      "number": 52,
+      "group": "extra",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "複選題",
+      "question": "關於重複對數函數（Iterative logarithm function, lg* n），下列敘述哪些是正確的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "lg* 65536 = 4"
+        },
+        {
+          "label": "B",
+          "text": "在可觀測宇宙中幾乎遇不到 n 使得 lg* n > 5"
+        },
+        {
+          "label": "C",
+          "text": "lg* 2 = 1"
+        },
+        {
+          "label": "D",
+          "text": "它是極度緩慢增長的函數"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "lg* 的逐次取對數與極慢成長。",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．lg* 65536 = 4\nB．在可觀測宇宙中幾乎遇不到 n 使得 lg* n > 5\nC．lg* 2 = 1\nD．它是極度緩慢增長的函數",
+      "explanation": "以底數 2、降到 ≤1 為停止條件：65536→16→4→2→1，所以 A 為 4 次；2→1，所以 C 為 1 次。能讓次數超過 5 的數字必須大到遠超一般可表示的資料規模，因此 B 是對實務規模的說明；每多一次迭代所需的輸入規模會以冪塔方式增加，D 因而成立。",
+      "sourceId": "L2-027",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L2-027"
+    },
+    {
+      "number": 53,
+      "group": "extra",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "複選題",
+      "question": "關於 RAM（Random Access Machine）模型，下列哪些敘述正確？",
+      "options": [
+        {
+          "label": "A",
+          "text": "基本指令可視為常數時間"
+        },
+        {
+          "label": "B",
+          "text": "記憶體可隨機存取"
+        },
+        {
+          "label": "C",
+          "text": "基本模型以單一處理器、循序執行為主"
+        },
+        {
+          "label": "D",
+          "text": "假設記憶體或通訊頻寬是無限大"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "RAM 基本模型與常數時間假設。",
+      "note": "",
+      "answer": "A、B、C",
+      "answerText": "A．基本指令可視為常數時間\nB．記憶體可隨機存取\nC．基本模型以單一處理器、循序執行為主",
+      "explanation": "本題採單處理器 word-RAM：記憶體可按位址直接存取，且對固定字長或適當 word-size 內資料的基本讀寫、算術指令視為 O(1)。A、B、C 成立。不能把這個假設擴大成任意長整數運算都是常數時間；D 的無限通訊頻寬也不是 RAM 模型的條件。",
+      "sourceId": "L2-058",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L2-058"
+    },
+    {
+      "number": 54,
+      "group": "extra",
+      "unit": "u3",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "遞迴式 T(n) = 2T(n/2 + 17) + n 的分析難點在於？",
+      "options": [
+        {
+          "label": "A",
+          "text": "不能直接使用大師定理"
+        },
+        {
+          "label": "B",
+          "text": "無法使用歸納法"
+        },
+        {
+          "label": "C",
+          "text": "需要更複雜的代數變換"
+        },
+        {
+          "label": "D",
+          "text": "17 的存在使得 n/2 不純粹"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "遞迴規模含 +17，不能直接套標準 Master 形式。",
+      "note": "",
+      "answer": "17 的存在使得 n/2 不純粹、需要更複雜的代數變換、不能直接使用大師定理",
+      "answerText": "17 的存在使得 n/2 不純粹、需要更複雜的代數變換、不能直接使用大師定理",
+      "explanation": "子問題規模 n/2+17 不是標準 n/b，所以不能直接套大師定理；但可以代入或平移變數，並非無法歸納。令 S(m)=T(m+34) 後得到 2S(m/2)+m+34。原式在 n>34 才嚴格縮小，需要設定覆蓋小規模的停止條件；這才是 +17 真正增加的處理細節。",
+      "sourceId": "L3-029",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L3-029"
+    },
+    {
+      "number": 55,
+      "group": "extra",
+      "unit": "u3",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "遞迴關係式 T(n) = T(floor(n/2)) + T(ceil(n/2)) + 1 的解為 O( ____ )",
+      "options": [],
+      "blankCount": 1,
+      "focus": "含 floor／ceiling 的兩分支遞迴。",
+      "note": "",
+      "answer": "n",
+      "answerText": "n",
+      "explanation": "以 n≤1 為常數基底，每次把整數 n 分成 floor(n/2) 與 ceil(n/2)，兩者相加仍為 n，因此最後恰有 n 個大小 1 的葉節點。每個非葉節點有兩個子節點，非葉數為 n−1；節點總數 2n−1，常數工作加總為 Θ(n)，所填的 O 上界是 O(n)。",
+      "sourceId": "L3-053",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L3-053"
+    },
+    {
+      "number": 56,
+      "group": "extra",
+      "unit": "u3",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "T(n) = 2T(sqrt(n)) + logn，這問題需要用變數變換的技巧，我們會設定 m = ____ 來做變數變換",
+      "options": [],
+      "blankCount": 1,
+      "focus": "sqrt(n) 遞迴的變數變換 m=log n。",
+      "note": "",
+      "answer": "logn",
+      "answerText": "logn",
+      "explanation": "取以 2 為底的 m=log₂n，並定義 S(m)=T(2ᵐ)。sqrt(n)=2^(m/2)，原式變成 S(m)=2S(m/2)+m。由每層 Θ(m)、Θ(log m) 層，可得 S(m)=Θ(m log m)，代回為 T(n)=Θ(log n·log log n)。基底需在固定的小規模停止。",
+      "sourceId": "L3-054",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L3-054"
+    },
+    {
+      "number": 57,
+      "group": "extra",
+      "unit": "u4",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "請寫出 Max-Heapify (A, i) 的遞回式 ____________ (請用英文回答，請用 log，不可用 lg；上標用 ^；符號中間不留空白)",
+      "options": [],
+      "blankCount": 1,
+      "focus": "Max-Heapify 的最壞子問題規模上界。",
+      "note": "",
+      "answer": "T(n)<=T(2n/3)+big-theta(1)",
+      "answerText": "T(n)<=T(2n/3)+big-theta(1)",
+      "explanation": "核心觀念：Max-Heapify 每層做常數次比較，最多只遞迴進入一個子樹。\n\n解題步驟：完全二元樹中較大的子樹最多約占 2n/3，故 T(n)≤T(2n/3)+Θ(1)。每層規模乘上 2/3，經 Θ(log n) 層降到常數，總成本為 O(log n)。\n\n適用條件：左右子樹在呼叫前已各自是 Max-Heap。2n/3 是較大子樹的上界，不是每次都剛好走訪這麼多節點。",
+      "sourceId": "L4-003",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L4-003"
+    },
+    {
+      "number": 58,
+      "group": "extra",
+      "unit": "u4",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "下列關於 Extract-Max 的敘述，哪些正確？",
+      "options": [
+        {
+          "label": "A",
+          "text": "移除並回傳最大值"
+        },
+        {
+          "label": "B",
+          "text": "需維護堆積屬性"
+        },
+        {
+          "label": "C",
+          "text": "只適用於空堆積"
+        },
+        {
+          "label": "D",
+          "text": "時間複雜度 O(log n)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Extract-Max 的功能、修復流程與成本。",
+      "note": "",
+      "answer": "A、B、D",
+      "answerText": "A．移除並回傳最大值\nB．需維護堆積屬性\nD．時間複雜度 O(log n)",
+      "explanation": "Extract-Max 先保存根的最大值，把最後一個有效元素移到根，再將 heap-size 減 1，最後呼叫 Max-Heapify 修復。讀取最大值只需 O(1)，但刪除後最壞要走 Θ(log n) 高度，所以整體為 O(log n)。\n\n它用於非空堆積；空堆積會回報 Underflow，不能當成正常取值。",
+      "sourceId": "L4-057",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L4-057"
+    },
+    {
+      "number": 59,
+      "group": "extra",
+      "unit": "u5",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "給定課本版本的快速排序法分割演算法 Partition(A, p, r)。\n\nPARTITION(A, p, r)\n1  x = A[r]\n2  i = p - 1\n3  for j = p to r - 1\n4      if A[j] ≤ x\n5          i = i + 1\n6          exchange(A[i], A[j])\n7  exchange(A[i+1], A[r])\n8  return i + 1\n\n若改為以第一個元素 A[p] 為 pivot\n\nPARTITION(A, p, r)\n1  x = A[p]\n2  i = p\n3  for j = p + 1 to r\n4      if A[j] ≤ x\n5          i = i + 1\n6          exchange(A[i], A[j])\n7  ________\n8  ________\n\n第7與8行要怎麼改 (空格中不要留空白)",
+      "options": [],
+      "blankCount": 2,
+      "focus": "pivot 改為第一格後，最後交換與回傳索引也要改。",
+      "note": "",
+      "answer": "第 1 格：exchange(A[p],A[i])\n第 2 格：returni",
+      "answerText": "第 1 格：exchange(A[p],A[i])\n第 2 格：returni",
+      "explanation": "從第二個元素向右掃描，i 追蹤「小於等於 pivot 的元素」最後位置。處理完將 A[p] 與 A[i] 互換，pivot 就落在 i，再回傳 i。題庫第 8 行接受 returni；真正的偽程式碼通常寫 return i。",
+      "sourceId": "L5-004",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L5-004"
+    },
+    {
+      "number": 60,
+      "group": "extra",
+      "unit": "u5",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "快速排序法的遞迴式若為 T(n)=T(9n/10)+T(n/10)Θ(n) 用遞迴樹展開後 較高的那邊 高度是多少？ ________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，下標請用_，如 log_(5)(n^2)，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
+      "options": [],
+      "blankCount": 1,
+      "focus": "9:1 固定比例分割的較長遞迴路徑。",
+      "note": "原題遞迴式第二項與 Θ(n) 之間漏了加號；應讀作 T(n)=T(9n/10)+T(n/10)+Θ(n)。保留原題文字並在此更正排版。",
+      "answer": "log_(10/9)(n)",
+      "answerText": "log_(10/9)(n)",
+      "explanation": "沿較大的 9n/10 分支一直走：n(9/10)^h≈1。解得 h=log_(10/9)(n)，因為縮小得比較慢，所以這是較高的分支。",
+      "sourceId": "L5-012",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L5-012"
+    },
+    {
+      "number": 61,
+      "group": "extra",
+      "unit": "u6",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "給定課本版本的BUCKET_SORT 演算法。\n\nBUCKET_SORT(A)\n1  n <- length[A]\n2  for i <- 1 to n\n3    do insert A[i] into\n         list B[⌊nA[i]⌋]\n4  for i <- 0 to n-1\n5    do sort list B[i] with insertion sort\n6  concatenate B[0], B[1], ..., B[n-1] together in order\n\n各桶初始為空，元素依輸入順序附加至桶尾。\nA陣列的內容為 0.78,0.17,0.39,0.26,0.72,0.94,0.21,0.12,0.23,0.68\n第2行做到 i=5，求下列桶的內容：\nB[1]：[__1__]\nB[2]：[__2__]\nB[7]：[__3__]\n每格內多個數值以逗號分隔。",
+      "options": [],
+      "blankCount": 3,
+      "focus": "依 floor(nA[i]) 計算桶編號並追蹤桶內容。",
+      "note": "依網站答案，求完成第 i=5 次分桶後的狀態；各桶內尚未排序。",
+      "answer": "0.17 / 0.26 / 0.78,0.72",
+      "answerText": "0.17 / 0.26 / 0.78,0.72",
+      "explanation": "共有 10 個元素，所以放入的桶號為 ⌊10×A[i]⌋。處理前五個數：0.78→B[7]、0.17→B[1]、0.39→B[3]、0.26→B[2]、0.72→B[7]。還沒有進行第 5 行的桶內排序，B[7] 保持先加入的 0.78 在前。",
+      "sourceId": "L6-003",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L6-003"
+    },
+    {
+      "number": 62,
+      "group": "extra",
+      "unit": "u6",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "基數排序(Radix Sort)在處理 b-bit 數字時，時間複雜度為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "O(n)"
+        },
+        {
+          "label": "B",
+          "text": "O(n log n)"
+        },
+        {
+          "label": "C",
+          "text": "Θ((b/r)(n + 2^r))"
+        },
+        {
+          "label": "D",
+          "text": "O(n²)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "b-bit Radix Sort 的輪數與每輪鍵值範圍。",
+      "note": "",
+      "answer": "C. Θ((b/r)(n + 2^r))",
+      "answerText": "C．Θ((b/r)(n + 2^r))",
+      "explanation": "每輪以穩定計數排序處理 r 個位元，鍵值範圍為 2^r，每輪時間 Θ(n+2^r)。共需 ⌈b/r⌉ 輪，所以一般形式為 Θ(⌈b/r⌉(n+2^r))；在課本 1≤r≤b 的設定下，與選項 C 的 Θ((b/r)(n+2^r)) 同階。",
+      "sourceId": "L6-059",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L6-059"
+    },
+    {
+      "number": 63,
+      "group": "extra",
+      "unit": "u7",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "在尋找第二小元素（Second smallest）時，最壞情況下需要的比較次數為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "n + ⌈log n⌉ - 2"
+        },
+        {
+          "label": "B",
+          "text": "n"
+        },
+        {
+          "label": "C",
+          "text": "2n"
+        },
+        {
+          "label": "D",
+          "text": "log n"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "用淘汰賽找第二小，以及候選集合大小。",
+      "note": "此題採平衡淘汰賽分析；log 的底為 2。",
+      "answer": "A",
+      "answerText": "A．n + ⌈log n⌉ - 2",
+      "explanation": "答案 A。先用淘汰賽找最小值，需 n−1 次比較。第二小只能出現在曾經直接輸給最小值的元素中；平衡賽程下候選至多 ⌈log₂n⌉ 個，再用 ⌈log₂n⌉−1 次比較找出其中最小者，合計最壞 n+⌈log₂n⌉−2 次。",
+      "sourceId": "L7-2475",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L7-2475"
+    },
+    {
+      "number": 64,
+      "group": "extra",
+      "unit": "u7",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "根據課本的例子，考慮以下的 Median of Medians 的遞迴關係式\n\nT(n) = O(1), if  n < 140\nT(n) = T(⌈n/5⌉) +  ＿＿＿  +  ＿＿＿  , if  n >= 140",
+      "options": [],
+      "blankCount": 2,
+      "focus": "Median of Medians 的兩個遞迴規模與線性額外成本。",
+      "note": "",
+      "answer": "T(7n/10+6)/O(n)",
+      "answerText": "T(7n/10+6)/O(n)",
+      "explanation": "依序填 T(7n/10+6)、O(n)。T(⌈n/5⌉) 是遞迴選出各組中位數的中位數；Partition 後最壞保留至多約 7n/10+6 個元素，所以再加 T(7n/10+6)。每五個分組、組內排序及一次分割合計為線性工作 O(n)。兩個遞迴規模的主要比例為 1/5+7/10=9/10<1，可用代入法證明總時間 O(n)；題目指定的小規模 n<140 直接處理。答案中的斜線分隔兩個填空，不是把兩式相除。",
+      "sourceId": "L7-2508",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L7-2508"
+    },
+    {
+      "number": 65,
+      "group": "extra",
+      "unit": "u7",
+      "kind": "fill",
+      "typeLabel": "填空題",
+      "question": "假定有 n 個數 (以下的 A B C D .... 都是數值)  考慮以下的 Median of Medians 問題 若根據課本的的演算法 各組已排序 且找到中位數也以排序\n若以下的 M 為中間值 請問 比M大的 節點數 會大於多少 (不用 CEILING 與 FLOOR)   ＿＿＿\n\nA ... B C D ... E\nF ... G H I ... J\nK ... L_M_N ... O\nP ... Q R S ... T\nU ... V W X",
+      "options": [],
+      "blankCount": 1,
+      "focus": "可保證排除的元素數，與 7n/10+6 的來源。",
+      "note": "依課本相異元素假設回答保證下界；不是每次恰有這麼多元素。",
+      "answer": "3n/10-6",
+      "answerText": "3n/10-6",
+      "explanation": "填 3n/10−6，表示可保證的下界，而不是每次恰好有這麼多元素。各組五個元素排序後，一個組中位數連同它上方的兩個值共有三個；大約一半的組中位數不小於 M，這些組各提供三個不小於 M 的值。排除 M 所在組與不完整組後，可得到至少 3n/10−6 的保證；較小的一側也有對稱下界。因此最多只需遞迴約 7n/10+6 個元素。相異元素假設下可使用嚴格大小關係。",
+      "sourceId": "L7-2513",
+      "sourceUrl": "https://yocheng06.github.io/course-library/algorithms.html?question=L7-2513"
+    }
+  ]
+}

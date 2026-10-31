@@ -1,3 +1,4 @@
+import { initEssentials } from './essentials.js?v=20261031-essentials1';
 import { mergeQuestionVersions } from './question-versions.js?v=20261030-replace1';
 import { createQuestionLinkController } from './question-links.js?v=20261030-batch-v2';
 import { initPractice } from './practice.js?v=20261031-practice1';
@@ -51,6 +52,7 @@ const practice = initPractice({
         return mergeQuestionVersions(builtIn,shared);
     }
 });
+const essentials = initEssentials();
 const PAGE_SIZE = 25;
 const batch = initBatch({
     enrichRows: (rows,entries) => questionLinks.enrichBatch(rows,entries),
@@ -322,6 +324,7 @@ function leaveSubject(fromHistory = false) {
     currentUnit = null;
     pendingQuestionTarget = null;
     practice.setSubject(null);
+    essentials.setSubject(null);
     batch.setSubject(null);
     QUESTIONS.length = 0;
     answersVisible.clear();
@@ -350,6 +353,7 @@ function enterSubject(subjectId, unitId, pushHistory = true, questionId = null) 
     if (!currentSubject) return;
     pendingQuestionTarget = questionId != null ? {subject:subjectId,unit:unitId,id:questionId} : null;
     practice.setSubject(currentSubject.id);
+    essentials.setSubject(currentSubject.id);
     batch.setSubject(currentSubject.id);
     const selected = getUnit(currentSubject.id, unitId) || getUnit(currentSubject.id, currentSubject.defaultUnit);
     const bankState = {view:'bank',subjectId:currentSubject.id,unitId:selected.id,...(pendingQuestionTarget ? {questionId} : {})};
