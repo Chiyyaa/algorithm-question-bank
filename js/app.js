@@ -1,4 +1,4 @@
-import { initEssentials } from './essentials.js?v=20261031-essentials1';
+import { initEssentials } from './essentials.js?v=20261101-os-essentials1';
 import { mergeQuestionVersions } from './question-versions.js?v=20261030-replace1';
 import { createQuestionLinkController } from './question-links.js?v=20261030-batch-v2';
 import { initPractice } from './practice.js?v=20261031-practice1';

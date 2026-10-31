@@ -1,0 +1,1995 @@
+{
+  "schema": 1,
+  "subject": "os",
+  "title": "考前必會",
+  "sourceDate": "2026-11-01",
+  "groups": [
+    {
+      "id": "key",
+      "label": "重點題",
+      "count": 50
+    },
+    {
+      "id": "extra",
+      "label": "延伸題",
+      "count": 15
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "group": "key",
+      "unit": "u2",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "什麼是作業系統？",
+      "options": [
+        {
+          "label": "A",
+          "text": "在使用者與電腦硬體之間充當中介的程式"
+        },
+        {
+          "label": "B",
+          "text": "儲存檔案的實體裝置"
+        },
+        {
+          "label": "C",
+          "text": "只用於遊戲的應用程式"
+        },
+        {
+          "label": "D",
+          "text": "編譯原始碼的編譯器"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "作業系統定義",
+      "note": "",
+      "answer": "A",
+      "answerText": "A．在使用者與電腦硬體之間充當中介的程式",
+      "explanation": "先記住作業系統在使用者與硬體之間扮演中介。",
+      "sourceId": "basics-1",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=basics-1"
+    },
+    {
+      "number": 2,
+      "group": "key",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "Trap 或 Exception 是什麼？",
+      "options": [
+        {
+          "label": "A",
+          "text": "一定由硬體裝置產生"
+        },
+        {
+          "label": "B",
+          "text": "由軟體錯誤引發，例如除以零"
+        },
+        {
+          "label": "C",
+          "text": "使用者要求 OS 服務，例如 system call"
+        },
+        {
+          "label": "D",
+          "text": "等同網路要求"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "中斷、Trap 與 Exception",
+      "note": "",
+      "answer": "B、C",
+      "answerText": "B．由軟體錯誤引發，例如除以零\nC．使用者要求 OS 服務，例如 system call",
+      "explanation": "區分裝置中斷、程式錯誤，以及程式主動請求系統服務。",
+      "sourceId": "basics-44",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=basics-44"
+    },
+    {
+      "number": 3,
+      "group": "key",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "What are the characteristics of the storage hierarchy?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Speed"
+        },
+        {
+          "label": "B",
+          "text": "Cost"
+        },
+        {
+          "label": "C",
+          "text": "Volatility"
+        },
+        {
+          "label": "D",
+          "text": "Capacity"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "儲存階層",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．Speed\nB．Cost\nC．Volatility\nD．Capacity",
+      "explanation": "比較速度、容量、單位成本及易失性。",
+      "sourceId": "basics-11",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=basics-11"
+    },
+    {
+      "number": 4,
+      "group": "key",
+      "unit": "u2",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "在 Von Neumann 架構中，CPU 與裝置之間的記憶體存取可以透過什麼來減輕 CPU 負擔？",
+      "options": [
+        {
+          "label": "A",
+          "text": "中斷"
+        },
+        {
+          "label": "B",
+          "text": "系統呼叫"
+        },
+        {
+          "label": "C",
+          "text": "直接記憶體存取（DMA）"
+        },
+        {
+          "label": "D",
+          "text": "快取"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "DMA",
+      "note": "",
+      "answer": "C",
+      "answerText": "C．直接記憶體存取（DMA）",
+      "explanation": "DMA 可讓裝置與記憶體傳輸資料，減少 CPU 逐筆搬運的負擔。",
+      "sourceId": "basics-17",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=basics-17"
+    },
+    {
+      "number": 5,
+      "group": "key",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "Symmetric Multiprocessing (SMP) 的特性是？",
+      "options": [
+        {
+          "label": "A",
+          "text": "架構對稱"
+        },
+        {
+          "label": "B",
+          "text": "效能較低"
+        },
+        {
+          "label": "C",
+          "text": "每個處理器被指定特定任務"
+        },
+        {
+          "label": "D",
+          "text": "每個處理器執行所有任務"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "SMP 與非對稱多處理",
+      "note": "",
+      "answer": "A、D",
+      "answerText": "A．架構對稱\nD．每個處理器執行所有任務",
+      "explanation": "各處理器地位對等、都可執行一般任務，不代表同一任務要重複執行。",
+      "sourceId": "basics-20",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=basics-20"
+    },
+    {
+      "number": 6,
+      "group": "key",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "多程式化 (Multiprogramming) 的目的是為了？",
+      "options": [
+        {
+          "label": "A",
+          "text": "提高 CPU 使用率"
+        },
+        {
+          "label": "B",
+          "text": "增加單一程式速度"
+        },
+        {
+          "label": "C",
+          "text": "保持 I/O 裝置忙碌"
+        },
+        {
+          "label": "D",
+          "text": "組織工作序列"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "多程式化的目的",
+      "note": "",
+      "answer": "A、C",
+      "answerText": "A．提高 CPU 使用率\nC．保持 I/O 裝置忙碌",
+      "explanation": "一個程序等 I/O 時改跑其他程序，以提高整體資源利用率。",
+      "sourceId": "basics-22",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=basics-22"
+    },
+    {
+      "number": 7,
+      "group": "key",
+      "unit": "u2",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "作業系統為了區分使用者程式與核心程式，提供了什麼來保障系統安全？",
+      "options": [
+        {
+          "label": "A",
+          "text": "File system"
+        },
+        {
+          "label": "B",
+          "text": "Dual-mode operation"
+        },
+        {
+          "label": "C",
+          "text": "Cache"
+        },
+        {
+          "label": "D",
+          "text": "Spooling"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "使用者模式與核心模式",
+      "note": "",
+      "answer": "B",
+      "answerText": "B．Dual-mode operation",
+      "explanation": "Dual-mode operation 是保護機制；模式位元用來標記目前模式。",
+      "sourceId": "basics-28",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=basics-28"
+    },
+    {
+      "number": 8,
+      "group": "key",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "雲端運算的服務模型包含？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Hardware as a Service"
+        },
+        {
+          "label": "B",
+          "text": "PaaS"
+        },
+        {
+          "label": "C",
+          "text": "IaaS"
+        },
+        {
+          "label": "D",
+          "text": "SaaS"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "雲端三種服務模型",
+      "note": "",
+      "answer": "B、C、D",
+      "answerText": "B．PaaS\nC．IaaS\nD．SaaS",
+      "explanation": "分清 IaaS、PaaS、SaaS 各提供哪一層服務。",
+      "sourceId": "basics-38",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=basics-38"
+    },
+    {
+      "number": 9,
+      "group": "key",
+      "unit": "u3",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "選出作業系統的三種使用者介面。",
+      "options": [
+        {
+          "label": "A",
+          "text": "指令列介面（CLI）"
+        },
+        {
+          "label": "B",
+          "text": "圖形使用者介面（GUI）"
+        },
+        {
+          "label": "C",
+          "text": "批次介面（Batch）"
+        },
+        {
+          "label": "D",
+          "text": "應用程式介面（API）"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "使用者介面分類",
+      "note": "",
+      "answer": "A、B、C",
+      "answerText": "A．指令列介面（CLI）\nB．圖形使用者介面（GUI）\nC．批次介面（Batch）",
+      "explanation": "依本題選項辨識命令列、圖形與批次介面；API 是程式使用的介面。",
+      "sourceId": "architecture-1",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=architecture-1"
+    },
+    {
+      "number": 10,
+      "group": "key",
+      "unit": "u3",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "作業系統服務中，哪些功能對使用者有幫助？",
+      "options": [
+        {
+          "label": "A",
+          "text": "使用者介面"
+        },
+        {
+          "label": "B",
+          "text": "檔案系統操作"
+        },
+        {
+          "label": "C",
+          "text": "I/O 操作"
+        },
+        {
+          "label": "D",
+          "text": "程式執行"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "作業系統服務",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．使用者介面\nB．檔案系統操作\nC．I/O 操作\nD．程式執行",
+      "explanation": "辨識直接幫助使用者的服務，並與資源分配、統計等服務比較。",
+      "sourceId": "architecture-24",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=architecture-24"
+    },
+    {
+      "number": 11,
+      "group": "key",
+      "unit": "u3",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "現代作業系統最常提供給程式設計師使用的標準應用程式介面（API）包括下列哪些？",
+      "options": [
+        {
+          "label": "A",
+          "text": "POSIX API"
+        },
+        {
+          "label": "B",
+          "text": "Win32 API"
+        },
+        {
+          "label": "C",
+          "text": "Java API"
+        },
+        {
+          "label": "D",
+          "text": "DTrace API"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "三大 API",
+      "note": "",
+      "answer": "A、B、C",
+      "answerText": "A．POSIX API\nB．Win32 API\nC．Java API",
+      "explanation": "記住 Win32、POSIX 與 Java API 的對應環境。",
+      "sourceId": "architecture-43",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=architecture-43"
+    },
+    {
+      "number": 12,
+      "group": "key",
+      "unit": "u3",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "哪些是作業系統中用於將參數傳遞給作業系統的三種常見方法？",
+      "options": [
+        {
+          "label": "A",
+          "text": "在暫存器中傳遞參數"
+        },
+        {
+          "label": "B",
+          "text": "將參數壓入堆疊"
+        },
+        {
+          "label": "C",
+          "text": "透過檔案傳遞參數"
+        },
+        {
+          "label": "D",
+          "text": "在記憶體的區塊中儲存參數，並傳遞區塊地址"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "系統呼叫參數傳遞",
+      "note": "",
+      "answer": "A、B、D",
+      "answerText": "A．在暫存器中傳遞參數\nB．將參數壓入堆疊\nD．在記憶體的區塊中儲存參數，並傳遞區塊地址",
+      "explanation": "三種方法為暫存器、記憶體區塊／表格，以及堆疊。",
+      "sourceId": "architecture-63",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=architecture-63"
+    },
+    {
+      "number": 13,
+      "group": "key",
+      "unit": "u3",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "在軟體工程原則中，作業系統設計強調將『做什麼』與『怎麼做』分離，這兩者分別稱為什麼？",
+      "options": [
+        {
+          "label": "A",
+          "text": "機制與架構"
+        },
+        {
+          "label": "B",
+          "text": "保護與安全"
+        },
+        {
+          "label": "C",
+          "text": "政策與機制"
+        },
+        {
+          "label": "D",
+          "text": "核心與使用者"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "政策與機制",
+      "note": "",
+      "answer": "C. 政策與機制",
+      "answerText": "C．政策與機制",
+      "explanation": "政策決定做什麼，機制決定如何執行。",
+      "sourceId": "architecture-90",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=architecture-90"
+    },
+    {
+      "number": 14,
+      "group": "key",
+      "unit": "u3",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "關於微核心（Microkernel）架構的優點，下列哪些敘述是正確的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "更安全且可靠（較少程式碼運行在核心模式）"
+        },
+        {
+          "label": "B",
+          "text": "效能優於傳統單體核心"
+        },
+        {
+          "label": "C",
+          "text": "核心更容易擴充功能"
+        },
+        {
+          "label": "D",
+          "text": "更容易移植到新硬體架構上"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "微核心優缺點",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．更安全且可靠（較少程式碼運行在核心模式）\nC．核心更容易擴充功能\nD．更容易移植到新硬體架構上",
+      "explanation": "訊息傳遞及模式切換有成本，不能直接說微核心一定較快。",
+      "sourceId": "architecture-67",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=architecture-67"
+    },
+    {
+      "number": 15,
+      "group": "key",
+      "unit": "u3",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "下列哪一種核心設計方法在執行期動態載入核心組件，具備物件導向特性且比分層結構更靈活？",
+      "options": [
+        {
+          "label": "A",
+          "text": "單體核心"
+        },
+        {
+          "label": "B",
+          "text": "可載入核心模組"
+        },
+        {
+          "label": "C",
+          "text": "分層方法"
+        },
+        {
+          "label": "D",
+          "text": "簡單結構"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "可載入核心模組",
+      "note": "",
+      "answer": "B. 可載入核心模組",
+      "answerText": "B．可載入核心模組",
+      "explanation": "區分模組化、分層與微核心的設計方式。",
+      "sourceId": "architecture-88",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=architecture-88"
+    },
+    {
+      "number": 16,
+      "group": "key",
+      "unit": "u3",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "關於 Android 系統架構，包含下列哪些核心組件或層級？",
+      "options": [
+        {
+          "label": "A",
+          "text": "應用程式框架（Application Framework）"
+        },
+        {
+          "label": "B",
+          "text": "函式庫（如 Webkit, SQLite）"
+        },
+        {
+          "label": "C",
+          "text": "Android 執行期環境與修改版 Linux 核心"
+        },
+        {
+          "label": "D",
+          "text": "蘋果可可觸控（Cocoa Touch）"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Android 架構",
+      "note": "原站備註：來源採早期 Android 架構；現行元件與名稱可能不同。",
+      "answer": "A、B、C",
+      "answerText": "A．應用程式框架（Application Framework）\nB．函式庫（如 Webkit, SQLite）\nC．Android 執行期環境與修改版 Linux 核心",
+      "explanation": "依講義早期 Android 架構辨識；Cocoa Touch 屬於 iOS。",
+      "sourceId": "architecture-117",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=architecture-117"
+    },
+    {
+      "number": 17,
+      "group": "key",
+      "unit": "u3",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "電腦通電初始化後，執行的一小段最初步、用來尋找並載入核心的程式稱為？",
+      "options": [
+        {
+          "label": "A",
+          "text": "引導載入程式"
+        },
+        {
+          "label": "B",
+          "text": "核心程式"
+        },
+        {
+          "label": "C",
+          "text": "系統生成程式"
+        },
+        {
+          "label": "D",
+          "text": "除錯器"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "開機載入流程",
+      "note": "",
+      "answer": "A. 引導載入程式",
+      "answerText": "A．引導載入程式",
+      "explanation": "Bootstrap loader 負責定位、載入並啟動核心。",
+      "sourceId": "architecture-102",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=architecture-102"
+    },
+    {
+      "number": 18,
+      "group": "key",
+      "unit": "u4",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "一個程序（process）包含哪些多個部分？",
+      "options": [
+        {
+          "label": "A",
+          "text": "堆疊（stack）"
+        },
+        {
+          "label": "B",
+          "text": "程式碼（text section）"
+        },
+        {
+          "label": "C",
+          "text": "程式計數器和暫存器（program counter and registers）"
+        },
+        {
+          "label": "D",
+          "text": "堆（heap）"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "程序組成與執行狀態",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．堆疊（stack）\nB．程式碼（text section）\nC．程式計數器和暫存器（program counter and registers）\nD．堆（heap）",
+      "explanation": "程序包含 text、heap、stack 等記憶體部分，也具有 PC 與暫存器等執行狀態。",
+      "sourceId": "process-1",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-1"
+    },
+    {
+      "number": 19,
+      "group": "key",
+      "unit": "u4",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "下列哪些項目與程序控制區塊（PCB）相關？",
+      "options": [
+        {
+          "label": "A",
+          "text": "程序狀態"
+        },
+        {
+          "label": "B",
+          "text": "CPU暫存器"
+        },
+        {
+          "label": "C",
+          "text": "I/O狀態資訊"
+        },
+        {
+          "label": "D",
+          "text": "程式計數器"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "PCB 內容",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．程序狀態\nB．CPU暫存器\nC．I/O狀態資訊\nD．程式計數器",
+      "explanation": "PCB 保存程序管理與執行狀態，如 PC、暫存器及排程資訊。",
+      "sourceId": "process-10",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-10"
+    },
+    {
+      "number": 20,
+      "group": "key",
+      "unit": "u4",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "程序的五種狀態是：新建立（new）、執行中（running）、等待中（waiting）、就緒（ready）和[__1__]。",
+      "options": [],
+      "blankCount": 1,
+      "focus": "程序五態",
+      "note": "",
+      "answer": "terminated",
+      "answerText": "terminated",
+      "explanation": "除了背五個名稱，也要能說明各狀態的轉移原因。",
+      "sourceId": "process-16",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-16"
+    },
+    {
+      "number": 21,
+      "group": "key",
+      "unit": "u4",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "哪一種排程器負責將程序從磁碟載入到主記憶體中，以控制多重程式化的程度？",
+      "options": [
+        {
+          "label": "A",
+          "text": "短期排程器"
+        },
+        {
+          "label": "B",
+          "text": "中期排程器"
+        },
+        {
+          "label": "C",
+          "text": "分派器"
+        },
+        {
+          "label": "D",
+          "text": "長期排程器"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "長期與短期排程器",
+      "note": "",
+      "answer": "D. 長期排程器",
+      "answerText": "D．長期排程器",
+      "explanation": "長期排程器控制進入記憶體的工作及多程式化程度。",
+      "sourceId": "process-23",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-23"
+    },
+    {
+      "number": 22,
+      "group": "key",
+      "unit": "u4",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "中期排程器可以將一個程序從記憶體中移除並存到磁碟，再把它載回的過程稱為 [__1__]。",
+      "options": [],
+      "blankCount": 1,
+      "focus": "中期排程器與交換",
+      "note": "",
+      "answer": "swapping",
+      "answerText": "swapping",
+      "explanation": "Swapping 是換出到磁碟、之後再換回記憶體。",
+      "sourceId": "process-27",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-27"
+    },
+    {
+      "number": 23,
+      "group": "key",
+      "unit": "u4",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "哪一個 UNIX 系統呼叫會創建一個新的程序？",
+      "options": [
+        {
+          "label": "A",
+          "text": "wait()"
+        },
+        {
+          "label": "B",
+          "text": "exec()"
+        },
+        {
+          "label": "C",
+          "text": "fork()"
+        },
+        {
+          "label": "D",
+          "text": "abort()"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "fork 建立程序",
+      "note": "",
+      "answer": "C. fork()",
+      "answerText": "C．fork()",
+      "explanation": "fork 建立子程序；不要與載入新程式的 exec 混淆。",
+      "sourceId": "process-35",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-35"
+    },
+    {
+      "number": 24,
+      "group": "key",
+      "unit": "u4",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "UNIX系統中，哪一個系統呼叫用來替換程序的記憶體空間，載入一個新程式？",
+      "options": [],
+      "blankCount": 1,
+      "focus": "exec 取代程式映像",
+      "note": "",
+      "answer": "exec()",
+      "answerText": "exec()",
+      "explanation": "exec 取代目前程序的程式映像，本身不等於建立另一個程序。",
+      "sourceId": "process-36",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-36"
+    },
+    {
+      "number": 25,
+      "group": "key",
+      "unit": "u4",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "如果父程序沒有呼叫 wait()，終止的子程序會成為一個 [__1__] 程序。",
+      "options": [],
+      "blankCount": 1,
+      "focus": "Zombie",
+      "note": "",
+      "answer": "zombie",
+      "answerText": "zombie",
+      "explanation": "子程序已結束，但父程序尚未回收其終止狀態。",
+      "sourceId": "process-47",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-47"
+    },
+    {
+      "number": 26,
+      "group": "key",
+      "unit": "u4",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "如果一個子程序在父程序終止後仍然存在，這會導致什麼？",
+      "options": [
+        {
+          "label": "A",
+          "text": "資源洩漏"
+        },
+        {
+          "label": "B",
+          "text": "孤兒程序 (orphan process)"
+        },
+        {
+          "label": "C",
+          "text": "殭屍程序 (zombie process)"
+        },
+        {
+          "label": "D",
+          "text": "無限循環"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Orphan",
+      "note": "",
+      "answer": "B. 孤兒程序（orphan process）",
+      "answerText": "B．孤兒程序 (orphan process)",
+      "explanation": "父程序先結束、子程序仍存在；與 zombie 比較。",
+      "sourceId": "process-48",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-48"
+    },
+    {
+      "number": 27,
+      "group": "key",
+      "unit": "u4",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "Which of the following are distinctions between the shared memory and message passing models in IPC?",
+      "options": [
+        {
+          "label": "A",
+          "text": "one is controlled by the user program, the other by the operating system"
+        },
+        {
+          "label": "B",
+          "text": "one is memory region sharing, the other is message exchange"
+        },
+        {
+          "label": "C",
+          "text": "message passing mainly focuses on establishing a communication link"
+        },
+        {
+          "label": "D",
+          "text": "shared memory mainly focuses on synchronization"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "共享記憶體與訊息傳遞",
+      "note": "",
+      "answer": "B、C、D",
+      "answerText": "B．one is memory region sharing, the other is message exchange\nC．message passing mainly focuses on establishing a communication link\nD．shared memory mainly focuses on synchronization",
+      "explanation": "比較資料交換方式與同步需求，避免把共享記憶體說成完全不需要 OS。",
+      "sourceId": "process-59",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-59"
+    },
+    {
+      "number": 28,
+      "group": "key",
+      "unit": "u4",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "在間接通訊（indirect communication）中，以下哪些敘述是正確的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "程序只有在共享信箱時才能通訊"
+        },
+        {
+          "label": "B",
+          "text": "一個連結可能與許多程序相關聯"
+        },
+        {
+          "label": "C",
+          "text": "信箱有唯一的 ID"
+        },
+        {
+          "label": "D",
+          "text": "程序必須明確命名對方"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "直接與間接通訊",
+      "note": "",
+      "answer": "A、B、C",
+      "answerText": "A．程序只有在共享信箱時才能通訊\nB．一個連結可能與許多程序相關聯\nC．信箱有唯一的 ID",
+      "explanation": "間接通訊透過 mailbox／port，與直接命名對方比較。",
+      "sourceId": "process-66",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-66"
+    },
+    {
+      "number": 29,
+      "group": "key",
+      "unit": "u4",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "請選出訊息傳遞的佇列有三種實作的方式",
+      "options": [
+        {
+          "label": "A",
+          "text": "Zero capacity"
+        },
+        {
+          "label": "B",
+          "text": "Full capacity"
+        },
+        {
+          "label": "C",
+          "text": "Bounded capacity"
+        },
+        {
+          "label": "D",
+          "text": "Unbounded capacity"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "訊息緩衝與佇列",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．Zero capacity\nC．Bounded capacity\nD．Unbounded capacity",
+      "explanation": "分清零容量、有限容量、無限容量，以及何時會阻塞。",
+      "sourceId": "process-107",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-107"
+    },
+    {
+      "number": 30,
+      "group": "key",
+      "unit": "u5",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "下列關於平行性（Parallelism）與並行性（Concurrency）的敘述，哪些是正確的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "平行性意指一個系統可以同時執行多個任務"
+        },
+        {
+          "label": "B",
+          "text": "多核心系統可以提供平行性"
+        },
+        {
+          "label": "C",
+          "text": "單核心系統可以提供並行性"
+        },
+        {
+          "label": "D",
+          "text": "並行性意指一個系統可以支援多個任務同時進展"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "平行與並行",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．平行性意指一個系統可以同時執行多個任務\nB．多核心系統可以提供平行性\nC．單核心系統可以提供並行性\nD．並行性意指一個系統可以支援多個任務同時進展",
+      "explanation": "單核心可交錯推進多個任務；真正同時執行則需要可同時執行的硬體資源。",
+      "sourceId": "threads-001",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=threads-001"
+    },
+    {
+      "number": 31,
+      "group": "key",
+      "unit": "u5",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "單執行緒程序和多執行緒程序共享哪些資源？",
+      "options": [
+        {
+          "label": "A",
+          "text": "檔案"
+        },
+        {
+          "label": "B",
+          "text": "資料"
+        },
+        {
+          "label": "C",
+          "text": "堆疊（Stack）"
+        },
+        {
+          "label": "D",
+          "text": "程式碼"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "共享與獨立資源",
+      "note": "",
+      "answer": "A、B、D",
+      "answerText": "A．檔案\nB．資料\nD．程式碼",
+      "explanation": "同一程序內的執行緒共享程式碼、資料及檔案；各自有 stack、PC 與暫存器。",
+      "sourceId": "threads-005",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=threads-005"
+    },
+    {
+      "number": 32,
+      "group": "key",
+      "unit": "u5",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "多執行緒程式設計的好處包括？",
+      "options": [
+        {
+          "label": "A",
+          "text": "資源共享"
+        },
+        {
+          "label": "B",
+          "text": "可擴展性"
+        },
+        {
+          "label": "C",
+          "text": "經濟性"
+        },
+        {
+          "label": "D",
+          "text": "響應性"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "多執行緒四大優點",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．資源共享\nB．可擴展性\nC．經濟性\nD．響應性",
+      "explanation": "記住 responsiveness、resource sharing、economy 與 scalability。",
+      "sourceId": "threads-063",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=threads-063"
+    },
+    {
+      "number": 33,
+      "group": "key",
+      "unit": "u5",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "Many-to-One 模型有何特性？",
+      "options": [
+        {
+          "label": "A",
+          "text": "多個使用者層級執行緒映射到單一核心執行緒"
+        },
+        {
+          "label": "B",
+          "text": "每個使用者執行緒創建一個核心執行緒"
+        },
+        {
+          "label": "C",
+          "text": "一個執行緒阻塞會導致所有執行緒阻塞"
+        },
+        {
+          "label": "D",
+          "text": "在多核心系統上無法平行執行多個執行緒"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Many-to-One",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．多個使用者層級執行緒映射到單一核心執行緒\nC．一個執行緒阻塞會導致所有執行緒阻塞\nD．在多核心系統上無法平行執行多個執行緒",
+      "explanation": "多個使用者執行緒共用一個核心執行緒，不能跨核心平行執行。",
+      "sourceId": "threads-060",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=threads-060"
+    },
+    {
+      "number": 34,
+      "group": "key",
+      "unit": "u5",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "One-to-One 模型有何特性？",
+      "options": [
+        {
+          "label": "A",
+          "text": "每個使用者層級執行緒映射到一個核心執行緒"
+        },
+        {
+          "label": "B",
+          "text": "創建使用者層級執行緒會創建一個核心執行緒"
+        },
+        {
+          "label": "C",
+          "text": "程序中執行緒數量有時會因為開銷而受限"
+        },
+        {
+          "label": "D",
+          "text": "比 Many-to-One 模型提供更多的並行性"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "One-to-One",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．每個使用者層級執行緒映射到一個核心執行緒\nB．創建使用者層級執行緒會創建一個核心執行緒\nC．程序中執行緒數量有時會因為開銷而受限\nD．比 Many-to-One 模型提供更多的並行性",
+      "explanation": "可由核心個別排程，但建立核心執行緒會增加成本。",
+      "sourceId": "threads-017",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=threads-017"
+    },
+    {
+      "number": 35,
+      "group": "key",
+      "unit": "u5",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "下列哪些屬於使用者層級執行緒函式庫？",
+      "options": [
+        {
+          "label": "A",
+          "text": "Win32 threads"
+        },
+        {
+          "label": "B",
+          "text": "Linux threads"
+        },
+        {
+          "label": "C",
+          "text": "Java threads"
+        },
+        {
+          "label": "D",
+          "text": "POSIX Pthreads"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "執行緒函式庫",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．Win32 threads\nC．Java threads\nD．POSIX Pthreads",
+      "explanation": "辨識 Pthreads、Windows／Win32 與 Java threads。",
+      "sourceId": "threads-034",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=threads-034"
+    },
+    {
+      "number": 36,
+      "group": "key",
+      "unit": "u5",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "執行緒池（Thread Pools）的優點包括？",
+      "options": [
+        {
+          "label": "A",
+          "text": "使用現有執行緒服務請求比創建新執行緒更快"
+        },
+        {
+          "label": "B",
+          "text": "允許應用程式中的執行緒數量被限制在池的大小"
+        },
+        {
+          "label": "C",
+          "text": "能夠確保每個請求都使用一個新的執行緒"
+        },
+        {
+          "label": "D",
+          "text": "將任務與創建任務的機制分離"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "執行緒池",
+      "note": "",
+      "answer": "A、B、D",
+      "answerText": "A．使用現有執行緒服務請求比創建新執行緒更快\nB．允許應用程式中的執行緒數量被限制在池的大小\nD．將任務與創建任務的機制分離",
+      "explanation": "預先建立執行緒、重用執行緒並控制數量。",
+      "sourceId": "threads-050",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=threads-050"
+    },
+    {
+      "number": 37,
+      "group": "key",
+      "unit": "u5",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "________ 是一種終止執行緒的方法，它允許目標執行緒定期檢查是否應被取消。（請用小寫英文回答，字母間留一個空白）",
+      "options": [],
+      "blankCount": 1,
+      "focus": "延遲取消",
+      "note": "",
+      "answer": "deferred cancellation",
+      "answerText": "deferred cancellation",
+      "explanation": "Deferred cancellation 在取消點或檢查位置處理請求，便於先清理資源。",
+      "sourceId": "threads-036",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=threads-036"
+    },
+    {
+      "number": 38,
+      "group": "key",
+      "unit": "u5",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "Amdahl's Law 的公式為 speedup = 1/(S+(1-S)/N)，其中 S 代表應用程式的 ________ 部分。（請用英文小寫回答，單字間留一空白）",
+      "options": [],
+      "blankCount": 1,
+      "focus": "Amdahl’s Law",
+      "note": "",
+      "answer": "serial portion",
+      "answerText": "serial portion",
+      "explanation": "S 是不可平行化的序列部分；核心增加仍受它限制。",
+      "sourceId": "threads-041",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=threads-041"
+    },
+    {
+      "number": 39,
+      "group": "key",
+      "unit": "u6",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "CPU排程的決策通常發生在下列哪些情況？",
+      "options": [
+        {
+          "label": "A",
+          "text": "程序從執行中狀態切換到等待中狀態"
+        },
+        {
+          "label": "B",
+          "text": "程序從執行中狀態切換到就緒狀態"
+        },
+        {
+          "label": "C",
+          "text": "程序從等待中狀態切換到就緒狀態"
+        },
+        {
+          "label": "D",
+          "text": "行程終止"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "排程決策時機",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．程序從執行中狀態切換到等待中狀態\nB．程序從執行中狀態切換到就緒狀態\nC．程序從等待中狀態切換到就緒狀態\nD．行程終止",
+      "explanation": "分清哪些狀態轉移可能觸發排程，以及搶佔與非搶佔的差別。",
+      "sourceId": "os6-114",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-114"
+    },
+    {
+      "number": 40,
+      "group": "key",
+      "unit": "u6",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "分派器 (Dispatcher) 模組的工作包含哪些項目？",
+      "options": [
+        {
+          "label": "A",
+          "text": "切換到使用者模式"
+        },
+        {
+          "label": "B",
+          "text": "選擇下一個要運行的行程"
+        },
+        {
+          "label": "C",
+          "text": "切換上下文 (context switch)"
+        },
+        {
+          "label": "D",
+          "text": "跳轉到使用者程式中的正確位置以重新啟動該程式"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Dispatcher 的工作",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．切換到使用者模式\nC．切換上下文 (context switch)\nD．跳轉到使用者程式中的正確位置以重新啟動該程式",
+      "explanation": "記住 context switch、切換至使用者模式，以及跳到程式執行位置。",
+      "sourceId": "os6-022",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-022"
+    },
+    {
+      "number": 41,
+      "group": "key",
+      "unit": "u6",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "Criteria for CPU scheduling include CPU utilization, throughput, ________ time, ________ time, and ________ time.",
+      "options": [],
+      "blankCount": 3,
+      "focus": "排程五項評估指標",
+      "note": "",
+      "answer": "turnaround/waiting/response",
+      "answerText": "turnaround/waiting/response",
+      "explanation": "周轉、等待、回應時間的定義不同，不可互換。",
+      "sourceId": "os6-009",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-009"
+    },
+    {
+      "number": 42,
+      "group": "key",
+      "unit": "u6",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "哪一個排程演算法被認為是最佳的，因為它能提供給定程序集的最小平均等待時間？",
+      "options": [
+        {
+          "label": "A",
+          "text": "短工作優先 (SJF)"
+        },
+        {
+          "label": "B",
+          "text": "先到先服務 (FCFS)"
+        },
+        {
+          "label": "C",
+          "text": "輪轉 (RR)"
+        },
+        {
+          "label": "D",
+          "text": "優先權排程"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "SJF 的最佳性",
+      "note": "",
+      "answer": "A",
+      "answerText": "A．短工作優先 (SJF)",
+      "explanation": "題庫依課本基本模型判定 SJF 可最小化平均等待時間；勿套用為所有到達與搶佔情境的無條件保證。",
+      "sourceId": "os6-031",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-031"
+    },
+    {
+      "number": 43,
+      "group": "key",
+      "unit": "u6",
+      "kind": "fill",
+      "typeLabel": "圖片題",
+      "question": "Process Burst Time P1 20 P2 3 P3 7 Use Round Robin (RR) to schedule the above process. The following is the process of scheduling time from left to right (A to H represent the processed block H. There may be a schedule after the block, which is ignored because it is not in the question to be asked. Do not show) If TQ = 4, what is the order of A~H? Answer format: P0->P2->P4->P6->P5->P6 Format errors do not count ____________",
+      "options": [],
+      "blankCount": 1,
+      "focus": "RR 排程計算",
+      "note": "【原站圖片題】原題另附圖片；題幹已列出本題 RR 計算數據。\n題庫解析採用的計算條件：三程序均於時間 0 就緒，初始順序 P1、P2、P3，忽略切換成本；非另造題目。",
+      "answer": "P1->P2->P3->P1->P3->P1->P1->P1",
+      "answerText": "P1->P2->P3->P1->P3->P1->P1->P1",
+      "explanation": "逐段扣除剩餘 burst；未完成回隊尾，完成就離開。\n計算核對：P1 0–4；P2 4–7；P3 7–11；P1 11–15；P3 15–18；P1 18–22、22–26、26–30。",
+      "sourceId": "community-4402f31c-8cad-4746-8071-585f8e8a29bd-4",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=community-4402f31c-8cad-4746-8071-585f8e8a29bd-4",
+      "image": "./images/os-u6-rr.png",
+      "imageAlt": "RR 排程圖：P1 burst 20、P2 burst 3、P3 burst 7，時間片 4；執行區段 A–H，時間邊界 I–Q。",
+      "bankQuestionId": 163
+    },
+    {
+      "number": 44,
+      "group": "key",
+      "unit": "u6",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "當時間片（TQ）相對於上下文切換時間非常小時，迴圈排程（RR）的缺點是什麼？",
+      "options": [
+        {
+          "label": "A",
+          "text": "CPU utilization will decrease"
+        },
+        {
+          "label": "B",
+          "text": "周轉時間會變得非常長"
+        },
+        {
+          "label": "C",
+          "text": "回應時間會變差"
+        },
+        {
+          "label": "D",
+          "text": "系統額外開銷會很高"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "時間片與切換成本",
+      "note": "",
+      "answer": "A、D",
+      "answerText": "A．CPU utilization will decrease\nD．系統額外開銷會很高",
+      "explanation": "時間片過小會增加切換頻率與開銷；過大則行為趨近 FCFS。",
+      "sourceId": "os6-041",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-041"
+    },
+    {
+      "number": 45,
+      "group": "key",
+      "unit": "u6",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "在優先權排程中，解決「飢餓」問題的方法是什麼？",
+      "options": [
+        {
+          "label": "A",
+          "text": "增加時間量"
+        },
+        {
+          "label": "B",
+          "text": "將所有優先權設定為相同"
+        },
+        {
+          "label": "C",
+          "text": "老化 (Aging)"
+        },
+        {
+          "label": "D",
+          "text": "使用迴圈排程"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "飢餓與老化",
+      "note": "",
+      "answer": "C",
+      "answerText": "C．老化 (Aging)",
+      "explanation": "Aging 隨等待時間提高優先權，減少低優先權工作長期無法執行。",
+      "sourceId": "os6-046",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-046"
+    },
+    {
+      "number": 46,
+      "group": "key",
+      "unit": "u6",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "________ 允許程序根據其服務的時間長短在不同佇列之間移動。",
+      "options": [],
+      "blankCount": 1,
+      "focus": "多層級回饋佇列",
+      "note": "",
+      "answer": "multilevel feedback queue",
+      "answerText": "multilevel feedback queue",
+      "explanation": "可在不同佇列間移動，是與通常固定所在佇列的 multilevel queue 的主要差異。",
+      "sourceId": "os6-052",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-052"
+    },
+    {
+      "number": 47,
+      "group": "key",
+      "unit": "u6",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "在多處理器系統中，下列哪些排程方法屬於負荷平衡？",
+      "options": [
+        {
+          "label": "A",
+          "text": "處理器親和性 (Processor affinity)"
+        },
+        {
+          "label": "B",
+          "text": "拉取式遷移 (Pull migration)"
+        },
+        {
+          "label": "C",
+          "text": "對稱多處理 (SMP)"
+        },
+        {
+          "label": "D",
+          "text": "推動式遷移 (Push migration)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Push／Pull migration",
+      "note": "",
+      "answer": "B、D",
+      "answerText": "B．拉取式遷移 (Pull migration)\nD．推動式遷移 (Push migration)",
+      "explanation": "Push 由忙碌端推送工作；Pull 由空閒端取得工作。",
+      "sourceId": "os6-058",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-058"
+    },
+    {
+      "number": 48,
+      "group": "key",
+      "unit": "u6",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "最早截止時間優先排程 (Earliest Deadline First Scheduling) 的特性是什麼？",
+      "options": [
+        {
+          "label": "A",
+          "text": "是一種靜態優先權演算法"
+        },
+        {
+          "label": "B",
+          "text": "是一種動態優先權演算法"
+        },
+        {
+          "label": "C",
+          "text": "截止時間越晚的優先權越低"
+        },
+        {
+          "label": "D",
+          "text": "截止時間越早的優先權越高"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "EDF 即時排程",
+      "note": "",
+      "answer": "B、C、D",
+      "answerText": "B．是一種動態優先權演算法\nC．截止時間越晚的優先權越低\nD．截止時間越早的優先權越高",
+      "explanation": "依工作截止時間分配動態優先權；截止越早越優先。",
+      "sourceId": "os6-062",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-062"
+    },
+    {
+      "number": 49,
+      "group": "key",
+      "unit": "u6",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "What are the characteristics of Rate Monotonic Scheduling?",
+      "options": [
+        {
+          "label": "A",
+          "text": "根據週期的倒數來分配優先權"
+        },
+        {
+          "label": "B",
+          "text": "週期越長的任務優先權越低"
+        },
+        {
+          "label": "C",
+          "text": "週期越短的任務優先權越高"
+        },
+        {
+          "label": "D",
+          "text": "僅適用於硬即時系統"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Rate Monotonic",
+      "note": "",
+      "answer": "A、B、C",
+      "answerText": "A．根據週期的倒數來分配優先權\nB．週期越長的任務優先權越低\nC．週期越短的任務優先權越高",
+      "explanation": "週期越短優先權越高；與依截止時間排序的 EDF 比較。",
+      "sourceId": "os6-073",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-073"
+    },
+    {
+      "number": 50,
+      "group": "key",
+      "unit": "u6",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "Windows排程有哪些特性？",
+      "options": [
+        {
+          "label": "A",
+          "text": "使用基於優先權的搶佔式排程"
+        },
+        {
+          "label": "B",
+          "text": "有32個優先權等級"
+        },
+        {
+          "label": "C",
+          "text": "可以提升執行緒優先權"
+        },
+        {
+          "label": "D",
+          "text": "對應每個優先權等級有一個佇列"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Windows 排程",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．使用基於優先權的搶佔式排程\nB．有32個優先權等級\nC．可以提升執行緒優先權\nD．對應每個優先權等級有一個佇列",
+      "explanation": "掌握優先權搶佔、32 個等級與特定情況的動態提升。",
+      "sourceId": "os6-078",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-078"
+    },
+    {
+      "number": 51,
+      "group": "extra",
+      "unit": "u2",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "核心常用的資料結構包含？",
+      "options": [
+        {
+          "label": "A",
+          "text": "單向鏈結串列"
+        },
+        {
+          "label": "B",
+          "text": "二元搜尋樹"
+        },
+        {
+          "label": "C",
+          "text": "雙向鏈結串列"
+        },
+        {
+          "label": "D",
+          "text": "環狀鏈結串列"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "核心資料結構",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．單向鏈結串列\nB．二元搜尋樹\nC．雙向鏈結串列\nD．環狀鏈結串列",
+      "explanation": "比較不同串列及搜尋樹的操作需求，補足偏記憶的細節題。",
+      "sourceId": "basics-31",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=basics-31"
+    },
+    {
+      "number": 52,
+      "group": "extra",
+      "unit": "u2",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "在多處理器環境中，[__1__] 保證所有 CPU 快取中的值皆為最新（請用小寫英文回答，字母間留一空白）。",
+      "options": [],
+      "blankCount": 1,
+      "focus": "Cache coherency",
+      "note": "",
+      "answer": "cache coherency",
+      "answerText": "cache coherency",
+      "explanation": "多處理器必須維持快取的一致性，與一般 caching 機制比較。",
+      "sourceId": "basics-59",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=basics-59"
+    },
+    {
+      "number": 53,
+      "group": "extra",
+      "unit": "u3",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "Which program is used to build an operating system based on a specific hardware system configuration?",
+      "options": [
+        {
+          "label": "A",
+          "text": "GRUB"
+        },
+        {
+          "label": "B",
+          "text": "Kernighan's Law"
+        },
+        {
+          "label": "C",
+          "text": "SYSGEN"
+        },
+        {
+          "label": "D",
+          "text": "DTrace"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "SYSGEN",
+      "note": "",
+      "answer": "C. SYSGEN",
+      "answerText": "C．SYSGEN",
+      "explanation": "依特定硬體組態建置或設定系統；與開機載入程式分工不同。",
+      "sourceId": "architecture-106",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=architecture-106"
+    },
+    {
+      "number": 54,
+      "group": "extra",
+      "unit": "u3",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "Solaris、FreeBSD 與 macOS 中內建，允許在生產系統上進行即時動態追蹤的核心除錯工具名為 _______。(請用小寫英文回答)",
+      "options": [],
+      "blankCount": 1,
+      "focus": "DTrace",
+      "note": "",
+      "answer": "dtrace",
+      "answerText": "dtrace",
+      "explanation": "辨識動態追蹤工具，以及與 profiling、dump 的差別。",
+      "sourceId": "architecture-115",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=architecture-115"
+    },
+    {
+      "number": 55,
+      "group": "extra",
+      "unit": "u3",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "蘋果 iOS 的開發架構中，最上層提供 Objective-C API 給開發者編寫應用程式的層級稱為 _______.(請用小寫英文回答)",
+      "options": [],
+      "blankCount": 1,
+      "focus": "iOS 分層",
+      "note": "",
+      "answer": "cocoa touch",
+      "answerText": "cocoa touch",
+      "explanation": "Cocoa Touch 是講義中的高層開發介面，與 Android 架構交叉比較。",
+      "sourceId": "architecture-121",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=architecture-121"
+    },
+    {
+      "number": 56,
+      "group": "extra",
+      "unit": "u4",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "I/O綁定型程序（I/O-bound process）的特徵是什麼？",
+      "options": [
+        {
+          "label": "A",
+          "text": "花費大部分時間進行 I/O 操作"
+        },
+        {
+          "label": "B",
+          "text": "只有一個 CPU 突發"
+        },
+        {
+          "label": "C",
+          "text": "很少進行 I/O 操作"
+        },
+        {
+          "label": "D",
+          "text": "花費大部分時間進行計算"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "CPU-bound 與 I/O-bound",
+      "note": "",
+      "answer": "A",
+      "answerText": "A．花費大部分時間進行 I/O 操作",
+      "explanation": "I/O-bound 常見較短 CPU burst 與較多 I/O 等待；與 CPU-bound 對照。",
+      "sourceId": "process-33",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-33"
+    },
+    {
+      "number": 57,
+      "group": "extra",
+      "unit": "u4",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "Which of the following are characteristics of Named Pipes?",
+      "options": [
+        {
+          "label": "A",
+          "text": "communication is bidirectional"
+        },
+        {
+          "label": "B",
+          "text": "requires a parent-child relationship"
+        },
+        {
+          "label": "C",
+          "text": "does not require a parent-child relationship"
+        },
+        {
+          "label": "D",
+          "text": "communication is unidirectional"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Named Pipes",
+      "note": "",
+      "answer": "A、C",
+      "answerText": "A．communication is bidirectional\nC．does not require a parent-child relationship",
+      "explanation": "依本講義模型，具名管道可雙向通訊且不必具有親子關係。",
+      "sourceId": "process-79",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-79"
+    },
+    {
+      "number": 58,
+      "group": "extra",
+      "unit": "u4",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "在遠端程序呼叫（RPC）中，[__1__]是伺服器上實際程序的客戶端代理。",
+      "options": [],
+      "blankCount": 1,
+      "focus": "RPC 的 Stub",
+      "note": "",
+      "answer": "stubs",
+      "answerText": "stubs",
+      "explanation": "Stub 是遠端程序的本機代理，協助封送與解封參數。",
+      "sourceId": "process-85",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=process-85"
+    },
+    {
+      "number": 59,
+      "group": "extra",
+      "unit": "u5",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "在多核心程式設計中，將相同資料集的子集分配到多個核心上，並在每個核心上執行相同的操作，這屬於哪種類型的平行處理？",
+      "options": [
+        {
+          "label": "A",
+          "text": "系統平行"
+        },
+        {
+          "label": "B",
+          "text": "程式平行"
+        },
+        {
+          "label": "C",
+          "text": "任務平行（Task parallelism）"
+        },
+        {
+          "label": "D",
+          "text": "資料平行（Data parallelism）"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Data parallelism",
+      "note": "",
+      "answer": "D. 資料平行（Data parallelism）",
+      "answerText": "D．資料平行（Data parallelism）",
+      "explanation": "同樣操作分散到不同資料子集；與各執行緒做不同工作的 task parallelism 比較。",
+      "sourceId": "threads-039",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=threads-039"
+    },
+    {
+      "number": 60,
+      "group": "extra",
+      "unit": "u5",
+      "kind": "fill",
+      "typeLabel": "填空／簡答",
+      "question": "________ 允許每個執行緒擁有自己的資料副本。（請用小寫英文回答，字母間留一個空白）",
+      "options": [],
+      "blankCount": 1,
+      "focus": "Thread-local Storage",
+      "note": "",
+      "answer": "thread local storage",
+      "answerText": "thread local storage",
+      "explanation": "每個執行緒各有自己的資料副本；與程序內一般全域資料共享的情形比較。",
+      "sourceId": "threads-028",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=threads-028"
+    },
+    {
+      "number": 61,
+      "group": "extra",
+      "unit": "u5",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "下列關於 fork() 和 exec() 系統呼叫在多執行緒環境下的語義描述，哪些是正確的？",
+      "options": [
+        {
+          "label": "A",
+          "text": "fork() 有時會複製所有執行緒"
+        },
+        {
+          "label": "B",
+          "text": "fork() 有時只複製呼叫執行緒"
+        },
+        {
+          "label": "C",
+          "text": "exec() 通常會替換整個正在運行的程序，包括所有執行緒"
+        },
+        {
+          "label": "D",
+          "text": "exec() 會創建新的執行緒"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "多執行緒下的 fork／exec",
+      "note": "原站備註：適用語義需依平臺與接口版本判斷。",
+      "answer": "A、B、C",
+      "answerText": "A．fork() 有時會複製所有執行緒\nB．fork() 有時只複製呼叫執行緒\nC．exec() 通常會替換整個正在運行的程序，包括所有執行緒",
+      "explanation": "留意 fork 的複製語義及 exec 對整個程序映像的影響。",
+      "sourceId": "threads-053",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=threads-053"
+    },
+    {
+      "number": 62,
+      "group": "extra",
+      "unit": "u6",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "完全公平排程器（CFS）有哪些特性？",
+      "options": [
+        {
+          "label": "A",
+          "text": "維護一個每任務的虛擬運行時間 (vruntime)"
+        },
+        {
+          "label": "B",
+          "text": "選擇虛擬運行時間最短的任務運行"
+        },
+        {
+          "label": "C",
+          "text": "優先權基於nice值"
+        },
+        {
+          "label": "D",
+          "text": "基於固定的時間片分配"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Linux CFS",
+      "note": "",
+      "answer": "A、B、C",
+      "answerText": "A．維護一個每任務的虛擬運行時間 (vruntime)\nB．選擇虛擬運行時間最短的任務運行\nC．優先權基於nice值",
+      "explanation": "依教材版本理解公平分配與 vruntime，不把較新的核心實作混入本題。",
+      "sourceId": "os6-075",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-075"
+    },
+    {
+      "number": 63,
+      "group": "extra",
+      "unit": "u6",
+      "kind": "single",
+      "typeLabel": "單選題",
+      "question": "在Solaris作業系統中，預設的排程類別是什麼？",
+      "options": [
+        {
+          "label": "A",
+          "text": "系統(System)"
+        },
+        {
+          "label": "B",
+          "text": "即時 (Real Time)"
+        },
+        {
+          "label": "C",
+          "text": "互動式 (Interactive)"
+        },
+        {
+          "label": "D",
+          "text": "時程共享 (Time Sharing)"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Solaris 預設排程",
+      "note": "",
+      "answer": "D",
+      "answerText": "D．時程共享 (Time Sharing)",
+      "explanation": "記住預設類別 Time Sharing，並與其他排程類別區分。",
+      "sourceId": "os6-088",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-088"
+    },
+    {
+      "number": 64,
+      "group": "extra",
+      "unit": "u6",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "Little's Formula (n = λ x W) 的特性是什麼？",
+      "options": [
+        {
+          "label": "A",
+          "text": "在穩態下，離開佇列的程序數等於到達的程序數"
+        },
+        {
+          "label": "B",
+          "text": "可以計算 CPU 使用率"
+        },
+        {
+          "label": "C",
+          "text": "適用於任何排程演算法"
+        },
+        {
+          "label": "D",
+          "text": "適用於任何到達分佈"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "Little’s Formula",
+      "note": "",
+      "answer": "A、C、D",
+      "answerText": "A．在穩態下，離開佇列的程序數等於到達的程序數\nC．適用於任何排程演算法\nD．適用於任何到達分佈",
+      "explanation": "n=λW 的平均量須採相同範圍，並在穩定系統下使用。",
+      "sourceId": "os6-113",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-113"
+    },
+    {
+      "number": 65,
+      "group": "extra",
+      "unit": "u6",
+      "kind": "multiple",
+      "typeLabel": "多選題",
+      "question": "In scheduling algorithm evaluation, what methods can be used to evaluate an algorithm?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Deterministic modeling"
+        },
+        {
+          "label": "B",
+          "text": "Queueing models"
+        },
+        {
+          "label": "C",
+          "text": "Implementation"
+        },
+        {
+          "label": "D",
+          "text": "Simulations"
+        }
+      ],
+      "blankCount": 0,
+      "focus": "排程演算法評估",
+      "note": "",
+      "answer": "A、B、C、D",
+      "answerText": "A．Deterministic modeling\nB．Queueing models\nC．Implementation\nD．Simulations",
+      "explanation": "辨識確定性模型、佇列模型、模擬及實際建置等方法。",
+      "sourceId": "os6-106",
+      "sourceUrl": "https://yocheng06.github.io/course-library/os.html?question=os6-106"
+    }
+  ]
+}
