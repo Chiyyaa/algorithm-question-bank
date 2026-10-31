@@ -1,5 +1,5 @@
-export const PRACTICE_UNITS = Object.freeze(['u6', 'u7']);
-export const PRACTICE_COUNTS = Object.freeze([10, 20]);
+export const PRACTICE_UNITS = Object.freeze(['u2', 'u3', 'u4', 'u5', 'u6', 'u7']);
+export const PRACTICE_COUNTS = Object.freeze([15, 30, 'all']);
 
 export function normalizePracticeAnswer(value) {
     let text=String(value??'').replace(/²/g,'^2').replace(/³/g,'^3').normalize('NFKC');
@@ -46,7 +46,7 @@ function prepareQuestion(question, subject, unit) {
         question:JSON.parse(JSON.stringify(question)),options,expected};
 }
 export function buildPracticePool(questions, subject, unit) {
-    if (subject!=='algorithm' || !PRACTICE_UNITS.includes(unit)) throw new Error('目前僅開放演算法 U6、U7 測驗練習。');
+    if (subject!=='algorithm' || !PRACTICE_UNITS.includes(unit)) throw new Error('目前開放演算法 U2～U7 測驗練習。');
     if (!Array.isArray(questions)) throw new Error('題庫格式不正確。');
     const unique=new Map();
     for (const question of questions) if(question&&Number.isFinite(question.id)) unique.set(question.id,question);
@@ -54,7 +54,9 @@ export function buildPracticePool(questions, subject, unit) {
 }
 export function createPractice(pool, subject, unit, count, random=Math.random) {
     if (subject!=='algorithm' || !PRACTICE_UNITS.includes(unit) || !PRACTICE_COUNTS.includes(count))
-        throw new Error('請選擇演算法 U6／U7，以及 10 或 20 題。');
+        throw new Error('請選擇演算法 U2～U7，以及 15 題、30 題或全部題。');
+    count = count === 'all' ? pool.length : count;
+    if (!count) throw new Error('此單元目前沒有可出題的題目。');
     if (pool.some(q=>q.subject!==subject||q.unit!==unit)) throw new Error('題庫範圍不一致，請重新載入選定單元。');
     if (pool.length<count) throw new Error('此單元可用題目不足，請選擇較少題數。');
     const shuffled=[...pool];

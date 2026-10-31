@@ -1,6 +1,7 @@
 import { mergeQuestionVersions } from './question-versions.js?v=20261030-replace1';
 import { createQuestionLinkController } from './question-links.js?v=20261030-batch-v2';
-import { initPractice } from './practice.js?v=20261029-focus1';
+import { initPractice } from './practice.js?v=20261031-practice1';
+import { PRACTICE_UNITS } from './practice-core.js?v=20261031-practice1';
 import { curatePublishedQuestions } from './question-curation.js?v=20261030-replace1';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
@@ -35,12 +36,17 @@ const practice = initPractice({
         leaveSubject(true);
     },
     async loadQuestions(subjectId, unitId) {
-        if (subjectId !== 'algorithm' || !['u6','u7'].includes(unitId)) throw new Error('目前僅開放演算法 U6、U7。');
-        const unit = getUnit(subjectId, unitId);
-        const response = await fetch(new URL(unit.dataUrl, import.meta.url), {cache:'no-cache'});
-        if (!response.ok) throw new Error('題庫無法載入，請稍後重試。');
-        const builtIn = await response.json();
-        if (!Array.isArray(builtIn) || !builtIn.length) throw new Error('題庫格式不正確。');
+        if (subjectId !== 'algorithm' || !PRACTICE_UNITS.includes(unitId)) throw new Error('目前開放演算法 U2～U7。');
+        // U5 uses the published shared bank and has no built-in JSON file.
+        const unit = getUnit(subjectId, unitId) || (unitId === 'u5' ? {dataUrl:null,sharedOnly:true} : null);
+        if (!unit) throw new Error('此單元尚無可用題庫，請稍後重試。');
+        let builtIn = [];
+        if (unit.dataUrl) {
+            const response = await fetch(new URL(unit.dataUrl, import.meta.url), {cache:'no-cache',signal:AbortSignal.timeout(15000)});
+            if (!response.ok) throw new Error('題庫無法載入，請稍後重試。');
+            builtIn = await response.json();
+            if (!Array.isArray(builtIn) || !builtIn.length) throw new Error('題庫格式不正確。');
+        }
         const shared = await curatePublishedQuestions(await loadPublishedQuestions(subjectId, unitId), subjectId, unitId);
         return mergeQuestionVersions(builtIn,shared);
     }

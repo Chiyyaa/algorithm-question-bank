@@ -39,7 +39,7 @@ const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=
   const p=await browser.newPage({viewport:{width:1280,height:900},reducedMotion:'reduce'}),errors=[];
   p.setDefaultTimeout(15000);p.on('pageerror',e=>errors.push(e.message));
   const nav=async panel=>{if(await p.locator('#mobileMenuBtn').getAttribute('aria-expanded')!=='true')await p.locator('#mobileMenuBtn').click();await p.locator('[data-panel="'+panel+'"]').click();};
-  const start=async(index,unit='u6',count=10)=>{
+  const start=async(index,unit='u6',count=15)=>{
    await p.goto(url);await p.locator('#algorithmSubjectBtn').click();await nav('practice');
    await p.locator('#practiceUnit').selectOption(unit);await p.locator('[name="practiceCount"][value="'+count+'"]').check();
    await p.waitForFunction(()=>!document.getElementById('practiceStart').disabled);
@@ -47,7 +47,7 @@ const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=
    await p.locator('#practiceStart').click();await p.locator('#verificationHeading').waitFor();
   };
   for(let i=0;i<4;i++){
-   const q=data[i],unit=i%2?'u7':'u6',count=i%2?20:10;
+   const q=data[i],unit=i%2?'u7':'u6',count=i%2?30:15;
    await start(i,unit,count);
    assert.equal(await p.locator('[data-verification-question-id]').getAttribute('data-verification-question-id'),q.id);
    assert.equal(await p.locator('[data-practice-question-id],.practice-progress,.practice-result').count(),0);
@@ -83,7 +83,7 @@ const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=
    p.once('dialog',d=>d.accept());await p.locator('#practiceReset').click();
    await p.locator('#practiceStart').click();await p.locator('#verificationHeading').waitFor();
   }
-  console.log('PASS all four questions: empty-answer guard, wrong => homepage, correct => question 1 of 10/20, formal feedback, preserved pending answers and revalidation per attempt');
+  console.log('PASS all four questions: empty-answer guard, wrong => homepage, correct => question 1 of 15/30, formal feedback, preserved pending answers and revalidation per attempt');
   await p.reload();await p.locator('#algorithmSubjectBtn').click();await nav('practice');
   await p.waitForFunction(()=>!document.getElementById('practiceStart').disabled);await p.locator('#practiceStart').click();
   p.once('dialog',d=>d.accept());await p.locator('#practiceReset').click();assert.equal(await p.locator('#verificationHeading').count(),0);
