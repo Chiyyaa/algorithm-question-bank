@@ -1,6 +1,6 @@
 import { escapeHtml as esc } from './utils.js?v=20261017-formats1';
-import { classicRequest as duelRequest, validRoomCode } from './classic-api.js?v=20261103-classic1';
-import { renderQuestion } from './question-format.js?v=20261103-classic1';
+import { classicRequest as duelRequest, validRoomCode } from './classic-api.js?v=20261103-classic2';
+import { renderQuestion } from './question-format.js?v=20261103-classic2';
 
 export function initClassicDuel({onVerificationFailed,onEnterSubject}) {
     const $=id=>document.getElementById(id),root=$('duelContent'),key='question_bank_duel_v1';
