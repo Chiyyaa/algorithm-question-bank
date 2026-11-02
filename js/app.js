@@ -1,4 +1,4 @@
-import { initClassicDuel as initDuel } from './classic-duel.js?v=20261103-classic2';
+import { initClassicDuel as initDuel } from './classic-duel.js?v=20261103-leave1';
 import { initEssentials } from './essentials.js?v=20261101-os-essentials1';
 import { mergeQuestionVersions } from './question-versions.js?v=20261030-replace1';
 import { createQuestionLinkController } from './question-links.js?v=20261030-batch-v2';
