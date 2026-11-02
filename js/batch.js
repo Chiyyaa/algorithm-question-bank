@@ -1,5 +1,5 @@
 import {parseBatchHTML,decodeBatchFile,MAX_BATCH_BYTES} from './batch-import.js?v=20261030-batch1';
-import {createBatchIndex,compareBatchQuestions,batchQuestionHref} from './batch-core.js?v=20261030-complete-u5';
+import {createBatchIndex,compareBatchQuestions,batchQuestionHref} from './batch-core.js?v=20261102-treasure1';
 import {escapeHtml as esc} from './utils.js?v=20261017-formats1';
 
 export function initBatch({getUnits,loadUnit,enrichRows=(rows)=>rows}){
@@ -56,7 +56,7 @@ export function initBatch({getUnits,loadUnit,enrichRows=(rows)=>rows}){
             $('batchResultList').innerHTML=rows.map(row=>'<li class="batch-result" data-batch-number="'+row.input.number+'" data-status="'+row.status+'"><div class="batch-result-heading"><h3>第 '+row.input.number+' 題</h3><span class="batch-state batch-state-'+row.status+'">'+labels[row.status]+'</span></div><div class="batch-stem">'+esc(row.input.stem)+'</div>'+
                 (row.answers.length?'<div class="batch-answer"><strong>正確答案</strong>'+row.answers.map(a=>'<p>'+esc(a)+'</p>').join('')+'</div>':'<p class="batch-reason">'+esc(row.reason)+'</p>')+
                 row.notes.map(note=>'<p class="batch-note">'+esc(note)+'</p>').join('')+
-                (row.references.length?'<div class="batch-candidates">'+row.references.map(ref=>'<a class="batch-question-link" href="'+esc(batchQuestionHref(ref))+'" target="_blank" rel="noopener noreferrer" data-subject="'+esc(ref.subject)+'" data-unit="'+esc(ref.unit)+'" data-question-id="'+ref.id+'">查看題庫：'+names[ref.subject]+' '+esc(ref.unit.toUpperCase())+' 第 '+ref.id+' 題 ↗<span class="sr-only">（開啟新分頁）</span>'+(ref.relation_status?'<small>'+esc(ref.relation_status==='confirmed'?'已核對的完整版本':'可能對應的完整版本')+'</small><small>'+esc(ref.question.slice(0,160))+'</small><small>'+esc(ref.relation_reason||'請核對題意、條件與選項。')+'</small>':'')+'</a>').join('')+'</div>':'')+details(row.input)+'</li>').join('');
+                (row.references.length?'<div class="batch-candidates">'+row.references.map(ref=>'<a class="batch-question-link" href="'+esc(batchQuestionHref(ref))+'" target="_blank" rel="noopener noreferrer" data-subject="'+esc(ref.subject)+'" data-unit="'+esc(ref.unit)+'" data-question-id="'+ref.id+'">查看題庫：'+names[ref.subject]+' '+esc(ref.unit==='treasure'?'挖寶單元':ref.unit.toUpperCase())+' 第 '+ref.id+' 題 ↗<span class="sr-only">（開啟新分頁）</span>'+(ref.relation_status?'<small>'+esc(ref.relation_status==='confirmed'?'已核對的完整版本':'可能對應的完整版本')+'</small><small>'+esc(ref.question.slice(0,160))+'</small><small>'+esc(ref.relation_reason||'請核對題意、條件與選項。')+'</small>':'')+'</a>').join('')+'</div>':'')+details(row.input)+'</li>').join('');
             $('batchCoverage').textContent=warnings.length?'部分題庫尚未完整載入，本次結果可能不完整。'+warnings.join('；'):'答案依本次匯入的選項順序對應；需要核對的題目不會直接套用答案。';
             $('batchResults').hidden=false;status(warnings.length?'比對完成，請留意題庫載入提醒。':'比對完成。');
             $('batchResultsHeading').focus({preventScroll:true});$('batchResults').scrollIntoView({block:'start',behavior:'instant'});

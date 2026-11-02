@@ -1,4 +1,4 @@
-import { practiceUnits, PRACTICE_COUNTS, buildPracticePool, createPractice, gradePracticeQuestion, practiceSummary } from './practice-core.js?v=20261101-os-practice1';
+import { practiceUnits, PRACTICE_COUNTS, buildPracticePool, createPractice, gradePracticeQuestion, practiceSummary } from './practice-core.js?v=20261102-treasure1';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function prepareVerificationQuestions(raw) {
@@ -27,7 +27,7 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
     const selectedCount=()=>{const value=document.querySelector('[name="practiceCount"]:checked')?.value;return value==='all'?'all':Number(value);};
     const resolvedCount=()=>selectedCount()==='all'?(pool?.length||0):selectedCount();
     const subjectLabel=()=>subject==='os'?'作業系統':'演算法';
-    const unitLabel=unit=>subjectLabel()+'｜'+unit.toUpperCase();
+    const unitLabel=unit=>subjectLabel()+'｜'+(unit==='treasure'?'挖寶單元':unit.toUpperCase());
     function message(text,error=false) {
         $('practicePoolStatus').textContent=text;
         $('practicePoolStatus').classList.toggle('is-error',error);
@@ -55,7 +55,7 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
         pool=null;poolUnit=null;verificationPool=null;loading=true;$('practiceRetry').hidden=true;
         message('正在載入 '+unitLabel(unit)+'……');sync();
         try {
-            if(!practiceUnits(subject).length||!practiceUnits(subject).includes(unit))throw new Error((subject==='os'?'目前開放作業系統 U2～U6。':'目前開放演算法 U2～U7。'));
+            if(!practiceUnits(subject).length||!practiceUnits(subject).includes(unit))throw new Error((subject==='os'?'目前開放作業系統 U2～U6 與挖寶單元。':'目前開放演算法 U2～U7。'));
             const [questions,checks]=await Promise.all([
                 loadQuestions(requestedSubject,unit),
                 (async()=>{
@@ -185,10 +185,10 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
         $('practiceNavBtn').hidden=!practiceUnits(next).length;
         if(next===subject)return;
         subject=next;version++;pool=null;poolUnit=null;verificationPool=null;verification=null;loading=false;session=null;opened=false;
-        $('practiceUnit').innerHTML=practiceUnits(next).map(unit=>'<option value="'+unit+'">'+subjectLabel()+' '+unit.toUpperCase()+'</option>').join('');
+        $('practiceUnit').innerHTML=practiceUnits(next).map(unit=>'<option value="'+unit+'">'+subjectLabel()+' '+(unit==='treasure'?'挖寶單元':unit.toUpperCase())+'</option>').join('');
         $('practiceUnit').value=next==='os'?'u3':'u6';
-        $('practiceDescription').textContent=next==='os'?'作業系統 U2～U6，每題作答後立即核對答案。全部題包含本單元所有可出題的題目。':'演算法 U2～U7，每題作答後立即核對答案。全部題包含本單元所有可出題的題目。';document.querySelector('[name="practiceCount"][value="30"]').checked=true;
-        $('practiceRetry').hidden=true;message((subject==='os'?'目前開放作業系統 U2～U6。':'目前開放演算法 U2～U7。'));render();
+        $('practiceDescription').textContent=next==='os'?'作業系統 U2～U6 與挖寶單元，每題作答後立即核對答案。全部題包含本單元所有可出題的題目。':'演算法 U2～U7，每題作答後立即核對答案。全部題包含本單元所有可出題的題目。';document.querySelector('[name="practiceCount"][value="30"]').checked=true;
+        $('practiceRetry').hidden=true;message((subject==='os'?'目前開放作業系統 U2～U6 與挖寶單元。':'目前開放演算法 U2～U7。'));render();
     }
     setSubject(null);
     return {setSubject};

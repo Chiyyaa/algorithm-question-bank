@@ -1,0 +1,1764 @@
+[
+  {
+    "id": 1,
+    "title": "FCFS／FIFO 計算",
+    "type": "fill_blank",
+    "question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\n\nP1 0 6\n\nP2 1 5\n\nP3 2 8\n\nP4 3 1\n\n以上行程採用First- Come, First-Served (FCFS) Scheduling\n\nP1 P2 P3 P4 排完之後 每個行程產生的不連續處理區塊數量分別是多少？ [__1__] *答案格式範例:1,2,3,4 格式錯誤不給分",
+    "options": [],
+    "correct_answer": "1,1,1,1",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(1),(1),(1),(1)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：各行程的連續執行區塊數。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（0 ms 到達）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n2 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n3 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n6 ms：目前可執行 P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P2，所以開始執行 P2。\n11 ms：目前可執行 P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P3，所以開始執行 P3。\n19 ms：目前可執行 P4（3 ms 到達）。依規則選 P4，所以開始執行 P4。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–6） → P2（6–11） → P3（11–19） → P4（19–20）\n\n③ 只計算這一題問的量\nP1 出現在 P1（0–6），共 1 個連續區塊。\nP2 出現在 P2（6–11），共 1 個連續區塊。\nP3 出現在 P3（11–19），共 1 個連續區塊。\nP4 出現在 P4（19–20），共 1 個連續區塊。\n\n④ 對照答案\n本題結論：1、1、1、1。\n\n容易弄混的地方：區塊數看同一個名稱出現幾段，不是看做了幾毫秒。先到達不代表一定先完成；被搶先的工作可能隔一段時間才恢復。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-10"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-10"
+    ],
+    "image": "../images/os-treasure-4a4a45a0f243.png",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算",
+    "original_source_question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\n\nP1 0 6\n\nP2 1 5\n\nP3 2 8\n\nP4 3 1\n\n以上行程採用First- Come, First-Served (FCFS) Scheduling\n\nP1 P2 P3 P4 排完之後 每個行程產生的不連續處理區塊數量分別是多少？ ____________ *答案格式範例:1,2,3,4 格式錯誤不給分",
+    "question_aliases": [
+      "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\n\nP1 0 6\n\nP2 1 5\n\nP3 2 8\n\nP4 3 1\n\n以上行程採用First- Come, First-Served (FCFS) Scheduling\n\nP1 P2 P3 P4 排完之後 每個行程產生的不連續處理區塊數量分別是多少？ ____________ *答案格式範例:1,2,3,4 格式錯誤不給分"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，SJF 的平均等待(waiting)時間 是多少ms [__1__] (請用浮點數表示 如 1.2)",
+    "options": [],
+    "correct_answer": "3.4",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(3.4)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均等待時間。\n\n① 先用規則決定誰能上 CPU\n不可搶先 SJF：CPU 空下來才選「已到達且 CPU 時間最短」的人；沒做完前不換人。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 同樣長的工作採先到先做；尚未到達者不參加挑選。\n\n② 一步一步排時間線\n0 ms：目前可執行 A（需要 5 ms）。依規則選 A，所以開始執行 A。\n1 ms：目前可執行 A（需要 5 ms）、B（需要 4 ms）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n2 ms：目前可執行 A（需要 5 ms）、B（需要 4 ms）、C（需要 2 ms）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n3 ms：目前可執行 A（需要 5 ms）、B（需要 4 ms）、C（需要 2 ms）、D（需要 1 ms）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n5 ms：目前可執行 B（需要 4 ms）、C（需要 2 ms）、D（需要 1 ms）。依規則選 D，所以開始執行 D。\n6 ms：目前可執行 B（需要 4 ms）、C（需要 2 ms）。依規則選 C，所以開始執行 C。\n7 ms：目前可執行 B（需要 4 ms）、C（需要 2 ms）、E（需要 3 ms）。目前工作尚未完成，不可搶先，所以繼續執行 C。\n8 ms：目前可執行 B（需要 4 ms）、E（需要 3 ms）。依規則選 E，所以開始執行 E。\n11 ms：目前可執行 B（需要 4 ms）。依規則選 B，所以開始執行 B。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–5） → D（5–6） → C（6–8） → E（8–11） → B（11–15）\n\n③ 只計算這一題問的量\n等待＝完成－到達－CPU 時間。\nA：5－0－5＝0 ms。\nB：15－1－4＝10 ms。\nC：8－2－2＝4 ms。\nD：6－3－1＝2 ms。\nE：11－7－3＝1 ms。\n平均＝（0＋10＋4＋2＋1）÷5＝3.4 ms。\n\n④ 對照答案\n本題結論：3.4。\n\n容易弄混的地方：等待時間包含「第一次上 CPU 前」和「被搶先後再次排隊」的所有時間；不能只算第一次等待。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-25"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-25"
+    ],
+    "image": "../images/os-treasure-8adc650e182b.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，SJF 的平均等待(waiting)時間 是多少ms ____________ (請用浮點數表示 如 1.2)",
+    "question_aliases": [
+      "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，SJF 的平均等待(waiting)時間 是多少ms ____________ (請用浮點數表示 如 1.2)"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "假設有行程 A~E。其CPU BURST 與到達時間如：\n\n行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若可搶先(preemptive)使用SJF排程法時，平均迴轉時間為何? [__1__] 格式 : 1.0",
+    "options": [],
+    "correct_answer": "8.2",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(8.2)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均迴轉時間。\n\n① 先用規則決定誰能上 CPU\n可搶先 SJF／SRTF：新工作到達時，比較「還需要的 CPU 時間」；較短者先做。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 剩餘時間相等時，保留目前執行者；CPU 空出後同長度者採先到先做。\n\n② 一步一步排時間線\n0 ms：目前可執行 E（剩餘 6 ms）。依規則選 E，所以開始執行 E。\n1 ms：目前可執行 B（剩餘 3 ms）、E（剩餘 5 ms）。依規則選 B，所以開始執行 B。\n3 ms：目前可執行 B（剩餘 1 ms）、D（剩餘 4 ms）、E（剩餘 5 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 B。\n4 ms：目前可執行 C（剩餘 2 ms）、D（剩餘 4 ms）、E（剩餘 5 ms）。依規則選 C，所以開始執行 C。\n5 ms：目前可執行 A（剩餘 2 ms）、C（剩餘 1 ms）、D（剩餘 4 ms）、E（剩餘 5 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 C。\n6 ms：目前可執行 A（剩餘 2 ms）、D（剩餘 4 ms）、E（剩餘 5 ms）。依規則選 A，所以開始執行 A。\n8 ms：目前可執行 D（剩餘 4 ms）、E（剩餘 5 ms）。依規則選 D，所以開始執行 D。\n12 ms：目前可執行 E（剩餘 5 ms）。依規則選 E，所以開始執行 E。\n\n時間線（括號內是開始–結束，單位 ms）：\nE（0–1） → B（1–4） → C（4–6） → A（6–8） → D（8–12） → E（12–17）\n\n③ 只計算這一題問的量\n迴轉＝完成－到達。\nA：8－5＝3 ms。\nB：4－1＝3 ms。\nC：6－4＝2 ms。\nD：12－3＝9 ms。\nE：17－0＝17 ms。\n平均＝（3＋3＋2＋9＋17）÷5＝6.8 ms。\n\n④ 對照答案\n題庫提供的答案保留為 (8.2)。依上面明列的條件推得 6.8，與題庫答案有落差。這組資料的平均 CPU 時間是（2＋3＋2＋4＋6）÷5＝3.4；平均等待也是 3.4，因此平均迴轉必為 3.4＋3.4＝6.8。8.2 是這組資料在不可搶先 SJF 下的平均迴轉時間。這裡把可重算的過程寫出來，不以缺少的條件硬湊答案。\n\n容易弄混的地方：迴轉時間是這個行程進來到離開的整段時間，包含執行與等待；不是只平均完工時刻，也不是只加 CPU 時間。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-3"
+    ],
+    "reference_question_ids": [
+      "community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-3"
+    ],
+    "image": "../images/os-treasure-a80dbe4a672f.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "假設有行程 A~E。其CPU BURST 與到達時間如：\n\n行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若可搶先(preemptive)使用SJF排程法時，平均迴轉時間為何? ____________ 格式 : 1.0",
+    "question_aliases": [
+      "假設有行程 A~E。其CPU BURST 與到達時間如：\n\n行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若可搶先(preemptive)使用SJF排程法時，平均迴轉時間為何? ____________ 格式 : 1.0"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "EDF 即時排程",
+    "type": "choice",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10 40\nP2 60 20 50\nP3 30 10 30\n\n若採用 Early deadline first 排程法 以下哪一個資料會排入CPU之後 *沒有* 被插斷",
+    "options": [
+      "P2 第一塊資料",
+      "P2 第三塊資料",
+      "P2 第四塊資料",
+      "P1 第三塊資料"
+    ],
+    "correct_answer": "P2 第一塊資料\nP2 第三塊資料\nP2 第四塊資料\nP1 第三塊資料",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "多選題",
+    "original_source_answer": "A、B、C、D",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（截止 40）、P2_1（截止 50）、P3_1（截止 30）；依最早絕對截止選 P3_1，這段執行到 10 ms。此期已做滿 CPU 時間。\n10 ms：候選 P1_1（截止 40）、P2_1（截止 50）；依最早絕對截止選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（截止 50）；依最早絕對截止選 P2_1，這段執行到 40 ms。此期已做滿 CPU 時間。\n40 ms：候選 P3_2（截止 60）；依最早絕對截止選 P3_2，這段執行到 50 ms。此期已做滿 CPU 時間。\n50 ms：候選 P1_2（截止 90）；依最早絕對截止選 P1_2，這段執行到 60 ms。此期已做滿 CPU 時間。\n60 ms：候選 P2_2（截止 110）、P3_3（截止 90）；依最早絕對截止選 P3_3，這段執行到 70 ms。此期已做滿 CPU 時間。\n70 ms：候選 P2_2（截止 110）；依最早絕對截止選 P2_2，這段執行到 90 ms。此期已做滿 CPU 時間。\n90 ms：候選 P3_4（截止 120）；依最早絕對截止選 P3_4，這段執行到 100 ms。此期已做滿 CPU 時間。\n100 ms：候選 P1_3（截止 140）；依最早絕對截止選 P1_3，這段執行到 110 ms。此期已做滿 CPU 時間。\n110–120：已到達工作都完成，CPU 閒置。\n120 ms：候選 P2_3（截止 170）、P3_5（截止 150）；依最早絕對截止選 P3_5，這段執行到 130 ms。此期已做滿 CPU 時間。\n130 ms：候選 P2_3（截止 170）；依最早絕對截止選 P2_3，這段執行到 150 ms。此期已做滿 CPU 時間。\n150 ms：候選 P1_4（截止 190）、P3_6（截止 180）；依最早絕對截止選 P3_6，這段執行到 160 ms。此期已做滿 CPU 時間。\n160 ms：候選 P1_4（截止 190）；依最早絕對截止選 P1_4，這段執行到 170 ms。此期已做滿 CPU 時間。\n170–180：已到達工作都完成，CPU 閒置。\n180 ms：候選 P2_4（截止 230）、P3_7（截止 210）；依最早絕對截止選 P3_7，這段執行到 190 ms。此期已做滿 CPU 時間。\n190 ms：候選 P2_4（截止 230）；依最早絕對截止選 P2_4，這段執行到 210 ms。此期已做滿 CPU 時間。\n210 ms：候選 P1_5（截止 240）、P3_8（截止 240）；依最早絕對截止選 P1_5，這段執行到 220 ms。此期已做滿 CPU 時間。\n220 ms：候選 P3_8（截止 240）；依最早絕對截止選 P3_8，這段執行到 230 ms。此期已做滿 CPU 時間。\n230–240：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P3_1（0–10） → P1_1（10–20） → P2_1（20–40） → P3_2（40–50） → P1_2（50–60） → P3_3（60–70） → P2_2（70–90） → P3_4（90–100） → P1_3（100–110） → 閒置（110–120） → P3_5（120–130） → P2_3（130–150） → P3_6（150–160） → P1_4（160–170） → 閒置（170–180） → P3_7（180–190） → P2_4（190–210） → P1_5（210–220） → P3_8（220–230） → 閒置（230–240）\n\n\n④ 回到本題／逐項核對\nA．P2_1：第 1 期，到達＝（1－1）×60＝0，絕對截止＝0＋50＝50；需要 20 ms。實際執行：P2_1（20–40）。整期只占一個連續區塊，因此沒有被插斷；符合題目，所以選。\nB．P2_3：第 3 期，到達＝（3－1）×60＝120，絕對截止＝120＋50＝170；需要 20 ms。實際執行：P2_3（130–150）。整期只占一個連續區塊，因此沒有被插斷；符合題目，所以選。\nC．P2_4：第 4 期，到達＝（4－1）×60＝180，絕對截止＝180＋50＝230；需要 20 ms。實際執行：P2_4（190–210）。整期只占一個連續區塊，因此沒有被插斷；符合題目，所以選。\nD．P1_3：第 3 期，到達＝（3－1）×50＝100，絕對截止＝100＋40＝140；需要 10 ms。實際執行：P1_3（100–110）。整期只占一個連續區塊，因此沒有被插斷；符合題目，所以選。\n\n⑤ 對照答案\n本題結論：選 A、B、C、D。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-22"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-22"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "EDF 即時排程",
+    "type": "choice",
+    "question": "即時排程 問題\n\n已知有兩個行程 P1 P2 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 20\nP2 100 100 35\n\n若採用 Early deadline first 排程法 以下哪一個資料會排入CPU之後 *沒有* 被插斷",
+    "options": [
+      "P1 第一塊資料",
+      "P1 第二塊資料",
+      "P2 第一塊資料",
+      "P2 第二塊資料"
+    ],
+    "correct_answer": "P1 第一塊資料\nP1 第二塊資料\nP2 第一塊資料\nP2 第二塊資料",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "多選題",
+    "original_source_answer": "A、B、C、D",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 20 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（截止 50）、P2_1（截止 100）；依最早絕對截止選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（截止 100）；依最早絕對截止選 P2_1，這段執行到 55 ms。此期已做滿 CPU 時間。\n55 ms：候選 P1_2（截止 100）；依最早絕對截止選 P1_2，這段執行到 75 ms。此期已做滿 CPU 時間。\n75–100：已到達工作都完成，CPU 閒置。\n100 ms：候選 P1_3（截止 150）、P2_2（截止 200）；依最早絕對截止選 P1_3，這段執行到 120 ms。此期已做滿 CPU 時間。\n120 ms：候選 P2_2（截止 200）；依最早絕對截止選 P2_2，這段執行到 155 ms。此期已做滿 CPU 時間。\n155 ms：候選 P1_4（截止 200）；依最早絕對截止選 P1_4，這段執行到 175 ms。此期已做滿 CPU 時間。\n175–180：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P1_1（0–20） → P2_1（20–55） → P1_2（55–75） → 閒置（75–100） → P1_3（100–120） → P2_2（120–155） → P1_4（155–175） → 閒置（175–180）\n\n\n④ 回到本題／逐項核對\nA．P1_1：第 1 期，到達＝（1－1）×50＝0，絕對截止＝0＋50＝50；需要 20 ms。實際執行：P1_1（0–20）。整期只占一個連續區塊，因此沒有被插斷；符合題目，所以選。\nB．P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 20 ms。實際執行：P1_2（55–75）。整期只占一個連續區塊，因此沒有被插斷；符合題目，所以選。\nC．P2_1：第 1 期，到達＝（1－1）×100＝0，絕對截止＝0＋100＝100；需要 35 ms。實際執行：P2_1（20–55）。整期只占一個連續區塊，因此沒有被插斷；符合題目，所以選。\nD．P2_2：第 2 期，到達＝（2－1）×100＝100，絕對截止＝100＋100＝200；需要 35 ms。實際執行：P2_2（120–155）。整期只占一個連續區塊，因此沒有被插斷；符合題目，所以選。\n\n⑤ 對照答案\n本題結論：選 A、B、C、D。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-8"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-8"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Rate Monotonic 即時排程",
+    "type": "fill_blank",
+    "question": "即時排程 問題\n\n已知有兩個行程 P1 P2 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 20\nP2 100 100 35\n\n若使用 Rate Monotonic 方式 P2 的第一塊資料 最後完成的位置 在哪一個時間點 [__1__] 之前 (請給最接見的時間 數字)",
+    "options": [],
+    "correct_answer": "80",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(80)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 20 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nRM：週期越短，固定優先權越高；新一期高優先權工作到達，會搶先尚未完成的低優先權工作。\n本題固定優先順序：P1 ＞ P2。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（週期 50）、P2_1（週期 100）；依固定週期優先權選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（週期 100）；依固定週期優先權選 P2_1，這段執行到 50 ms。之後因更高優先權工作到達而換人。\n50 ms：候選 P1_2（週期 50）、P2_1（週期 100）；依固定週期優先權選 P1_2，這段執行到 70 ms。此期已做滿 CPU 時間。\n70 ms：候選 P2_1（週期 100）；依固定週期優先權選 P2_1，這段執行到 75 ms。此期已做滿 CPU 時間。\n75–100：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P1_1（0–20） → P2_1（20–50） → P1_2（50–70） → P2_1（70–75） → 閒置（75–100）\n\n\n④ 回到本題／逐項核對\nP2_1：第 1 期，到達＝（1－1）×100＝0，絕對截止＝0＋100＝100；需要 35 ms。\n它的實際 CPU 區塊是 P2_1（20–50） → P2_1（70–75）；總長度 30＋5＝35 ms，最後完成在 75 ms。\n本題問「在哪個時間點之前」，不同於問完工時刻。若依 10 ms 圖軸刻度作答，75 之後最近的刻度是 80，所以填 80；題幹沒有明列刻度，此處把採用的解讀寫清楚。\n\n⑤ 對照答案\n本題結論：80。真正完工時刻是 75 ms。老師答案 80 可解讀為「以 10 ms 刻度向後找最近的標記」：75＜80；若未指定刻度，不能把 80 當作實際完工時刻。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-8"
+    ],
+    "reference_question_ids": [
+      "community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-8"
+    ],
+    "original_source_question": "即時排程 問題\n\n已知有兩個行程 P1 P2 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 20\nP2 100 100 35\n\n若使用 Rate Monotonic 方式 P2 的第一塊資料 最後完成的位置 在哪一個時間點 ____________ 之前 (請給最接見的時間 數字)",
+    "question_aliases": [
+      "即時排程 問題\n\n已知有兩個行程 P1 P2 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 20\nP2 100 100 35\n\n若使用 Rate Monotonic 方式 P2 的第一塊資料 最後完成的位置 在哪一個時間點 ____________ 之前 (請給最接見的時間 數字)"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Round Robin 計算",
+    "type": "fill_blank",
+    "question": "採用 RR（Round Robin）排程\n\nProcess Arrival Time Burst Time\nP1 0 10\nP2 2 4\nP3 4 6\nP4 6 3\nP5 8 5\n\nTime Quantum = 3 ms Average Response Time = ? [__1__]",
+    "options": [],
+    "correct_answer": "4",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(4)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均回應時間。\n\n① 先用規則決定誰能上 CPU\nRR：依就緒佇列輪流，每次最多做一個時間片；未完成的人回隊尾。 本題每輪最多 3 ms。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 時間片＝3 ms；邊界時新到達者先入隊，再把用完時間片的工作放回隊尾；同時到達依表格順序。\n\n② 一步一步排時間線\n0–3：P1 做 3 ms，還剩 7 ms，回到隊尾；接下來的隊列是 P2 → P1。\n3–6：P2 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 P1 → P3 → P4 → P2。\n6–9：P1 做 3 ms，還剩 4 ms，回到隊尾；接下來的隊列是 P3 → P4 → P2 → P5 → P1。\n9–12：P3 做 3 ms，還剩 3 ms，回到隊尾；接下來的隊列是 P4 → P2 → P5 → P1 → P3。\n12–15：P4 做 3 ms，已完成，離開佇列；接下來的隊列是 P2 → P5 → P1 → P3。\n15–16：P2 做 1 ms，已完成，離開佇列；接下來的隊列是 P5 → P1 → P3。\n16–19：P5 做 3 ms，還剩 2 ms，回到隊尾；接下來的隊列是 P1 → P3 → P5。\n19–22：P1 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 P3 → P5 → P1。\n22–25：P3 做 3 ms，已完成，離開佇列；接下來的隊列是 P5 → P1。\n25–27：P5 做 2 ms，已完成，離開佇列；接下來的隊列是 P1。\n27–28：P1 做 1 ms，已完成，離開佇列；接下來的隊列是 空。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–3） → P2（3–6） → P1（6–9） → P3（9–12） → P4（12–15） → P2（15–16） → P5（16–19） → P1（19–22） → P3（22–25） → P5（25–27） → P1（27–28）\n\n③ 只計算這一題問的量\n回應＝第一次開始－到達。\nP1：0－0＝0 ms。\nP2：3－2＝1 ms。\nP3：9－4＝5 ms。\nP4：12－6＝6 ms。\nP5：16－8＝8 ms。\n平均＝（0＋1＋5＋6＋8）÷5＝4 ms。\n\n④ 對照答案\n本題結論：4。\n\n容易弄混的地方：回應時間只看第一次上 CPU，後來被搶先多久不再加進來；它和總等待時間不同。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-15"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-15"
+    ],
+    "original_source_question": "採用 RR（Round Robin）排程\n\nProcess Arrival Time Burst Time\nP1 0 10\nP2 2 4\nP3 4 6\nP4 6 3\nP5 8 5\n\nTime Quantum = 3 ms Average Response Time = ? ____________",
+    "question_aliases": [
+      "採用 RR（Round Robin）排程\n\nProcess Arrival Time Burst Time\nP1 0 10\nP2 2 4\nP3 4 6\nP4 6 3\nP5 8 5\n\nTime Quantum = 3 ms Average Response Time = ? ____________"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "已知有以下的四個行程 還有他們的到達時間與 cpu 運算需求\n\n若採用SJF 可搶先(preemptive) 請問 平均等待時間是多少 [__1__]",
+    "options": [],
+    "correct_answer": "6.5",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(6.5)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均等待時間。\n\n① 先用規則決定誰能上 CPU\n可搶先 SJF／SRTF：新工作到達時，比較「還需要的 CPU 時間」；較短者先做。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 剩餘時間相等時，保留目前執行者；CPU 空出後同長度者採先到先做。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（剩餘 8 ms）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 4 ms）。依規則選 P2，所以開始執行 P2。\n2 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 3 ms）、P3（剩餘 9 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 P2。\n3 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 2 ms）、P3（剩餘 9 ms）、P4（剩餘 5 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 P2。\n5 ms：目前可執行 P1（剩餘 7 ms）、P3（剩餘 9 ms）、P4（剩餘 5 ms）。依規則選 P4，所以開始執行 P4。\n10 ms：目前可執行 P1（剩餘 7 ms）、P3（剩餘 9 ms）。依規則選 P1，所以開始執行 P1。\n17 ms：目前可執行 P3（剩餘 9 ms）。依規則選 P3，所以開始執行 P3。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–1） → P2（1–5） → P4（5–10） → P1（10–17） → P3（17–26）\n\n③ 只計算這一題問的量\n等待＝完成－到達－CPU 時間。\nP1：17－0－8＝9 ms。\nP2：5－1－4＝0 ms。\nP3：26－2－9＝15 ms。\nP4：10－3－5＝2 ms。\n平均＝（9＋0＋15＋2）÷4＝6.5 ms。\n\n④ 對照答案\n本題結論：6.5。\n\n容易弄混的地方：等待時間包含「第一次上 CPU 前」和「被搶先後再次排隊」的所有時間；不能只算第一次等待。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-1"
+    ],
+    "reference_question_ids": [
+      "community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-1"
+    ],
+    "image": "../images/os-treasure-19dbd3095c04.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "已知有以下的四個行程 還有他們的到達時間與 cpu 運算需求\n\n若採用SJF 可搶先(preemptive) 請問 平均等待時間是多少 ____________",
+    "question_aliases": [
+      "已知有以下的四個行程 還有他們的到達時間與 cpu 運算需求\n\n若採用SJF 可搶先(preemptive) 請問 平均等待時間是多少 ____________"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "優先權排程",
+    "type": "fill_blank",
+    "question": "Suppose there are process P1~P5. Its CPU Burst Time & Priority as follows:\n\nProcess Burst Time Priority\n\nP1 10 3\nP2 1 1\nP3 2 4\nP4 1 5\nP5 5 2\n\n列出P1,P2,P3,P4,P5 每一個PROCESS最後完成的時間 [__1__] *答案格式範例:5->12->18->20->30 格式錯誤不給分",
+    "options": [],
+    "correct_answer": "16->1->18->19->6",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(16->1->18->19->6)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：每個行程的完工時刻。\n\n① 先用規則決定誰能上 CPU\n優先權排程：本題採數字越小、優先權越高；所有行程在 0 ms 已就緒。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（優先權 3）、P2（優先權 1）、P3（優先權 4）、P4（優先權 5）、P5（優先權 2）。依規則選 P2，所以開始執行 P2。\n1 ms：目前可執行 P1（優先權 3）、P3（優先權 4）、P4（優先權 5）、P5（優先權 2）。依規則選 P5，所以開始執行 P5。\n6 ms：目前可執行 P1（優先權 3）、P3（優先權 4）、P4（優先權 5）。依規則選 P1，所以開始執行 P1。\n16 ms：目前可執行 P3（優先權 4）、P4（優先權 5）。依規則選 P3，所以開始執行 P3。\n18 ms：目前可執行 P4（優先權 5）。依規則選 P4，所以開始執行 P4。\n\n時間線（括號內是開始–結束，單位 ms）：\nP2（0–1） → P5（1–6） → P1（6–16） → P3（16–18） → P4（18–19）\n\n③ 只計算這一題問的量\nP1 的最後一段結束在 16 ms，所以完工時刻是 16。\nP2 的最後一段結束在 1 ms，所以完工時刻是 1。\nP3 的最後一段結束在 18 ms，所以完工時刻是 18。\nP4 的最後一段結束在 19 ms，所以完工時刻是 19。\nP5 的最後一段結束在 6 ms，所以完工時刻是 6。\n最後依題目指定的行程名稱順序填入：16 → 1 → 18 → 19 → 6。\n\n④ 對照答案\n本題結論：16、1、18、19、6。\n\n容易弄混的地方：「按名稱列出每個行程完成時間」和「按時間先後列出執行順序」是兩個問題。例如優先權排程中 P2 先完成，但答案第一格若要求 P1，仍先填 P1 的完工時刻。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-10"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-10"
+    ],
+    "original_source_question": "Suppose there are process P1~P5. Its CPU Burst Time & Priority as follows:\n\nProcess Burst Time Priority\n\nP1 10 3\nP2 1 1\nP3 2 4\nP4 1 5\nP5 5 2\n\n列出P1,P2,P3,P4,P5 每一個PROCESS最後完成的時間 ____________ *答案格式範例:5->12->18->20->30 格式錯誤不給分",
+    "question_aliases": [
+      "Suppose there are process P1~P5. Its CPU Burst Time & Priority as follows:\n\nProcess Burst Time Priority\n\nP1 10 3\nP2 1 1\nP3 2 4\nP4 1 5\nP5 5 2\n\n列出P1,P2,P3,P4,P5 每一個PROCESS最後完成的時間 ____________ *答案格式範例:5->12->18->20->30 格式錯誤不給分"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n在不可搶先(nonpreemptive)的情況下使用SJF，在第一個行程載入之後，OS共執行了幾次 context switch? [__1__]",
+    "options": [],
+    "correct_answer": "4",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(4)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：內文切換次數。\n\n① 先用規則決定誰能上 CPU\n不可搶先 SJF：CPU 空下來才選「已到達且 CPU 時間最短」的人；沒做完前不換人。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 同樣長的工作採先到先做；尚未到達者不參加挑選。\n\n② 一步一步排時間線\n0 ms：目前可執行 A（需要 5 ms）。依規則選 A，所以開始執行 A。\n1 ms：目前可執行 A（需要 5 ms）、B（需要 4 ms）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n2 ms：目前可執行 A（需要 5 ms）、B（需要 4 ms）、C（需要 2 ms）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n3 ms：目前可執行 A（需要 5 ms）、B（需要 4 ms）、C（需要 2 ms）、D（需要 1 ms）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n5 ms：目前可執行 B（需要 4 ms）、C（需要 2 ms）、D（需要 1 ms）。依規則選 D，所以開始執行 D。\n6 ms：目前可執行 B（需要 4 ms）、C（需要 2 ms）。依規則選 C，所以開始執行 C。\n7 ms：目前可執行 B（需要 4 ms）、C（需要 2 ms）、E（需要 3 ms）。目前工作尚未完成，不可搶先，所以繼續執行 C。\n8 ms：目前可執行 B（需要 4 ms）、E（需要 3 ms）。依規則選 E，所以開始執行 E。\n11 ms：目前可執行 B（需要 4 ms）。依規則選 B，所以開始執行 B。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–5） → D（5–6） → C（6–8） → E（8–11） → B（11–15）\n\n③ 只計算這一題問的量\n5 ms：A → D\n6 ms：D → C\n8 ms：C → E\n11 ms：E → B\n共 4 次從一個行程切換到另一個行程。\n\n④ 對照答案\n本題結論：4。\n\n容易弄混的地方：題目寫「第一個行程載入之後」，所以開始時把第一個行程放上 CPU 不算；最後全部做完也不多算一次。不要把執行區塊數直接當成切換次數。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-5"
+    ],
+    "reference_question_ids": [
+      "community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-5"
+    ],
+    "image": "../images/os-treasure-8adc650e182b.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n在不可搶先(nonpreemptive)的情況下使用SJF，在第一個行程載入之後，OS共執行了幾次 context switch? ____________",
+    "question_aliases": [
+      "已知有以下的行程 與其CPU時間 與 到達時間\n\n在不可搶先(nonpreemptive)的情況下使用SJF，在第一個行程載入之後，OS共執行了幾次 context switch? ____________"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，SJF 的的執行順序為合 [__1__] (格式:CDEAB)",
+    "options": [],
+    "correct_answer": "ADCEB",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(ADCEB)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：CPU 執行順序。\n\n① 先用規則決定誰能上 CPU\n不可搶先 SJF：CPU 空下來才選「已到達且 CPU 時間最短」的人；沒做完前不換人。\n題圖的（CPU 時間，到達時間）為 A（5，0）、B（4，1）、C（2，2）、D（1，3）、E（3，7）。不可搶先表示 A 即使遇到較短的新工作，也要做完才換人；同樣地，7 ms 到達的 E 不會插斷正在執行的 C。\n單一 CPU；不計切換耗時；沒有額外 I/O。 同樣長的工作採先到先做；尚未到達者不參加挑選。\n\n② 一步一步排時間線\n0 ms：目前可執行 A（需要 5 ms）。依規則選 A，所以開始執行 A。\n5 ms：目前可執行 B（需要 4 ms）、C（需要 2 ms）、D（需要 1 ms）。依規則選 D，所以開始執行 D。\n6 ms：目前可執行 B（需要 4 ms）、C（需要 2 ms）。依規則選 C，所以開始執行 C。\n8 ms：目前可執行 B（需要 4 ms）、E（需要 3 ms）。依規則選 E，所以開始執行 E。\n11 ms：目前可執行 B（需要 4 ms）。依規則選 B，所以開始執行 B。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–5） → D（5–6） → C（6–8） → E（8–11） → B（11–15）\n\n③ 只計算這一題問的量\n沿時間線由左往右抄每個連續區塊：A → D → C → E → B。同一行程被搶先後再次回來，要再寫一次；不要把重複名稱刪掉。\n\n④ 對照答案\n本題結論：A → D → C → E → B。\n\n容易弄混的地方：不能在 0 ms 先挑全表最短的 D，因為 D 要到 3 ms 才到達。A 做完後是 D→C→E→B；依題目要求連寫成 ADCEB，不加空白或分隔號。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-5a83ac61-ae48-436f-9af1-8829ff5c9658-2"
+    ],
+    "reference_question_ids": [
+      "community-5a83ac61-ae48-436f-9af1-8829ff5c9658-2"
+    ],
+    "image": "../images/os-treasure-8adc650e182b.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，SJF 的的執行順序為合 ____________ (格式:CDEAB)",
+    "question_aliases": [
+      "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，SJF 的的執行順序為合 ____________ (格式:CDEAB)"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "EDF 即時排程",
+    "type": "fill_blank",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10 40\nP2 60 20 50\nP3 30 10 30\n\n若採用 Early deadline first 排程法 P2的第二塊資料會由哪一個時間點 排到哪一個時間點 [__1__] 格式: 20-55",
+    "options": [],
+    "correct_answer": "70-90",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(70-90)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n50 ms：候選 P1_2（截止 90）；依最早絕對截止選 P1_2，這段執行到 60 ms。此期已做滿 CPU 時間。\n60 ms：候選 P2_2（截止 110）、P3_3（截止 90）；依最早絕對截止選 P3_3，這段執行到 70 ms。此期已做滿 CPU 時間。\n70 ms：候選 P2_2（截止 110）；依最早絕對截止選 P2_2，這段執行到 90 ms。此期已做滿 CPU 時間。\n90 ms：候選 P3_4（截止 120）；依最早絕對截止選 P3_4，這段執行到 100 ms。此期已做滿 CPU 時間。\n\n時間線（ms）：P1_2（50–60） → P3_3（60–70） → P2_2（70–90） → P3_4（90–100）\n\n\n④ 回到本題／逐項核對\nP2_2：第 2 期，到達＝（2－1）×60＝60，絕對截止＝60＋50＝110；需要 20 ms。\n它的實際 CPU 區塊是 P2_2（70–90）；總長度 20＝20 ms，最後完成在 90 ms。\n\n\n⑤ 對照答案\n本題結論：70-90。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-20"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-20"
+    ],
+    "original_source_question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10 40\nP2 60 20 50\nP3 30 10 30\n\n若採用 Early deadline first 排程法 P2的第二塊資料會由哪一個時間點 排到哪一個時間點 ____________ 格式: 20-55",
+    "question_aliases": [
+      "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10 40\nP2 60 20 50\nP3 30 10 30\n\n若採用 Early deadline first 排程法 P2的第二塊資料會由哪一個時間點 排到哪一個時間點 ____________ 格式: 20-55"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "EDF 即時排程",
+    "type": "choice",
+    "question": "已知有兩個行程 P1 P2 要進行即時排程 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 25\nP2 100 80 35\n\n選出 Early deadline first 排 P2 第四塊 資料的位置",
+    "options": [
+      "325-335",
+      "240-250",
+      "280-290",
+      "290-300"
+    ],
+    "correct_answer": "240-250\n280-290\n290-300",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "多選題",
+    "original_source_answer": "B、C、D",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 25 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n230 ms：候選 P2_3（截止 280）；依最早絕對截止選 P2_3，這段執行到 260 ms。此期已做滿 CPU 時間。\n260 ms：候選 P1_6（截止 300）；依最早絕對截止選 P1_6，這段執行到 285 ms。此期已做滿 CPU 時間。\n285–300：已到達工作都完成，CPU 閒置。\n300 ms：候選 P1_7（截止 350）、P2_4（截止 380）；依最早絕對截止選 P1_7，這段執行到 325 ms。此期已做滿 CPU 時間。\n325 ms：候選 P2_4（截止 380）；依最早絕對截止選 P2_4，這段執行到 360 ms。此期已做滿 CPU 時間。\n360 ms：候選 P1_8（截止 400）；依最早絕對截止選 P1_8，這段執行到 370 ms。此處是本題觀察範圍終點。\n\n時間線（ms）：P2_3（230–260） → P1_6（260–285） → 閒置（285–300） → P1_7（300–325） → P2_4（325–360） → P1_8（360–370）\n\n\n④ 回到本題／逐項核對\nP2_4：第 4 期，到達＝（4－1）×100＝300，絕對截止＝300＋80＝380；需要 35 ms。\n它的實際 CPU 區塊是 P2_4（325–360）；總長度 35＝35 ms，最後完成在 360 ms。\nA．325-335：實際是 P2_4（325–335）；整段屬於目標工作，所以選。\nB．240-250：實際是 P2_3（240–250）；不是整段都在執行目標工作，所以不選。\nC．280-290：實際是 P1_6（280–285） → 閒置（285–290）；不是整段都在執行目標工作，所以不選。\nD．290-300：實際是 閒置（290–300）；不是整段都在執行目標工作，所以不選。\n\n⑤ 對照答案\n題庫提供的答案保留為 B、C、D。依上面明列的條件推得 A，與題庫答案有落差。這裡把可重算的過程寫出來，不以缺少的條件硬湊答案。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-17"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-17"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Round Robin 計算",
+    "type": "fill_blank",
+    "question": "採用 RR（Round Robin）排程\n\nProcess Arrival Time Burst Time\nP1 0 10\nP2 2 4\nP3 4 6\nP4 6 3\nP5 8 5\n\nTime Quantum = 3 ms Average Waiting Time =? [__1__]",
+    "options": [],
+    "correct_answer": "12.6",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(12.6)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均等待時間。\n\n① 先用規則決定誰能上 CPU\nRR：依就緒佇列輪流，每次最多做一個時間片；未完成的人回隊尾。 本題每輪最多 3 ms。\n這題問平均等待時間。先排完 RR 時間線，記下每個行程最後完成的時刻，再各自扣掉到達時間與真正執行 CPU 的時間。\n單一 CPU；不計切換耗時；沒有額外 I/O。 時間片＝3 ms；邊界時新到達者先入隊，再把用完時間片的工作放回隊尾；同時到達依表格順序。\n\n② 一步一步排時間線\n0–3：P1 做 3 ms，還剩 7 ms，回到隊尾；接下來的隊列是 P2 → P1。\n3–6：P2 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 P1 → P3 → P4 → P2。\n6–9：P1 做 3 ms，還剩 4 ms，回到隊尾；接下來的隊列是 P3 → P4 → P2 → P5 → P1。\n9–12：P3 做 3 ms，還剩 3 ms，回到隊尾；接下來的隊列是 P4 → P2 → P5 → P1 → P3。\n12–15：P4 做 3 ms，已完成，離開佇列；接下來的隊列是 P2 → P5 → P1 → P3。\n15–16：P2 做 1 ms，已完成，離開佇列；接下來的隊列是 P5 → P1 → P3。\n16–19：P5 做 3 ms，還剩 2 ms，回到隊尾；接下來的隊列是 P1 → P3 → P5。\n19–22：P1 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 P3 → P5 → P1。\n22–25：P3 做 3 ms，已完成，離開佇列；接下來的隊列是 P5 → P1。\n25–27：P5 做 2 ms，已完成，離開佇列；接下來的隊列是 P1。\n27–28：P1 做 1 ms，已完成，離開佇列；接下來的隊列是 空。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–3） → P2（3–6） → P1（6–9） → P3（9–12） → P4（12–15） → P2（15–16） → P5（16–19） → P1（19–22） → P3（22–25） → P5（25–27） → P1（27–28）\n\n③ 只計算這一題問的量\n等待＝完成－到達－CPU 時間。\nP1：28－0－10＝18 ms。\nP2：16－2－4＝10 ms。\nP3：25－4－6＝15 ms。\nP4：15－6－3＝6 ms。\nP5：27－8－5＝14 ms。\n平均＝（18＋10＋15＋6＋14）÷5＝12.6 ms。\n\n④ 對照答案\n本題結論：12.6。\n\n容易弄混的地方：P1 雖然 0 ms 就第一次上 CPU，之後仍會回隊尾等待，所以總等待不是 0。五個等待值為 18、10、15、6、14；這和平均回應時間 4 ms、平均迴轉時間 18.2 ms 是不同的量。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-5a83ac61-ae48-436f-9af1-8829ff5c9658-1"
+    ],
+    "reference_question_ids": [
+      "community-5a83ac61-ae48-436f-9af1-8829ff5c9658-1"
+    ],
+    "original_source_question": "採用 RR（Round Robin）排程\n\nProcess Arrival Time Burst Time\nP1 0 10\nP2 2 4\nP3 4 6\nP4 6 3\nP5 8 5\n\nTime Quantum = 3 ms Average Waiting Time =? ____________",
+    "question_aliases": [
+      "採用 RR（Round Robin）排程\n\nProcess Arrival Time Burst Time\nP1 0 10\nP2 2 4\nP3 4 6\nP4 6 3\nP5 8 5\n\nTime Quantum = 3 ms Average Waiting Time =? ____________"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "FCFS／FIFO 計算",
+    "type": "choice",
+    "question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\n\nP1 0 6\n\nP2 1 5\n\nP3 2 8\n\nP4 3 1\n\n以上行程採用First- Come, First-Served (FCFS) Scheduling\n\n請問其Average Response time 為多少?(ms)",
+    "options": [
+      "7.25",
+      "8.0",
+      "7.5",
+      "8.25"
+    ],
+    "correct_answer": "7.5",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "C",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均回應時間。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（0 ms 到達）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n2 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n3 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n6 ms：目前可執行 P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P2，所以開始執行 P2。\n11 ms：目前可執行 P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P3，所以開始執行 P3。\n19 ms：目前可執行 P4（3 ms 到達）。依規則選 P4，所以開始執行 P4。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–6） → P2（6–11） → P3（11–19） → P4（19–20）\n\n③ 只計算這一題問的量\n回應＝第一次開始－到達。\nP1：0－0＝0 ms。\nP2：6－1＝5 ms。\nP3：11－2＝9 ms。\nP4：19－3＝16 ms。\n平均＝（0＋5＋9＋16）÷4＝7.5 ms。\nA（7.25）：不是上述各行程數值加總後的平均，因此不選。\nB（8.0）：不是上述各行程數值加總後的平均，因此不選。\nC（7.5）：與計算值相同，所以選這項。\nD（8.25）：不是上述各行程數值加總後的平均，因此不選。\n\n④ 對照答案\n本題結論：選 C。\n\n容易弄混的地方：回應時間只看第一次上 CPU，後來被搶先多久不再加進來；它和總等待時間不同。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-10"
+    ],
+    "reference_question_ids": [
+      "community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-10"
+    ],
+    "image": "../images/os-treasure-4a4a45a0f243.png",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算"
+  },
+  {
+    "id": 16,
+    "title": "FCFS／FIFO 計算",
+    "type": "fill_blank",
+    "question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，FCFS 的平均迴轉(turnaround)時間 是多少ms [__1__] (請用浮點數表示 如 1.2)",
+    "options": [],
+    "correct_answer": "7.8",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(7.8)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均迴轉時間。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 A（0 ms 到達）。依規則選 A，所以開始執行 A。\n1 ms：目前可執行 A（0 ms 到達）、B（1 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n2 ms：目前可執行 A（0 ms 到達）、B（1 ms 到達）、C（2 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n3 ms：目前可執行 A（0 ms 到達）、B（1 ms 到達）、C（2 ms 到達）、D（3 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n5 ms：目前可執行 B（1 ms 到達）、C（2 ms 到達）、D（3 ms 到達）。依規則選 B，所以開始執行 B。\n7 ms：目前可執行 B（1 ms 到達）、C（2 ms 到達）、D（3 ms 到達）、E（7 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 B。\n9 ms：目前可執行 C（2 ms 到達）、D（3 ms 到達）、E（7 ms 到達）。依規則選 C，所以開始執行 C。\n11 ms：目前可執行 D（3 ms 到達）、E（7 ms 到達）。依規則選 D，所以開始執行 D。\n12 ms：目前可執行 E（7 ms 到達）。依規則選 E，所以開始執行 E。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–5） → B（5–9） → C（9–11） → D（11–12） → E（12–15）\n\n③ 只計算這一題問的量\n迴轉＝完成－到達。\nA：5－0＝5 ms。\nB：9－1＝8 ms。\nC：11－2＝9 ms。\nD：12－3＝9 ms。\nE：15－7＝8 ms。\n平均＝（5＋8＋9＋9＋8）÷5＝7.8 ms。\n\n④ 對照答案\n本題結論：7.8。\n\n容易弄混的地方：迴轉時間是這個行程進來到離開的整段時間，包含執行與等待；不是只平均完工時刻，也不是只加 CPU 時間。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-3"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-3"
+    ],
+    "image": "../images/os-treasure-8adc650e182b.png",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算",
+    "original_source_question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，FCFS 的平均迴轉(turnaround)時間 是多少ms ____________ (請用浮點數表示 如 1.2)",
+    "question_aliases": [
+      "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，FCFS 的平均迴轉(turnaround)時間 是多少ms ____________ (請用浮點數表示 如 1.2)"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "FCFS／FIFO 計算",
+    "type": "fill_blank",
+    "question": "行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若使用 FCFS排程法時，且不可搶先(non-preemptive)，平均迴轉時間為何? [__1__] 格式: 1.0",
+    "options": [],
+    "correct_answer": "9.4",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(9.4)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均迴轉時間。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 E（0 ms 到達）。依規則選 E，所以開始執行 E。\n1 ms：目前可執行 B（1 ms 到達）、E（0 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 E。\n3 ms：目前可執行 B（1 ms 到達）、D（3 ms 到達）、E（0 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 E。\n4 ms：目前可執行 B（1 ms 到達）、C（4 ms 到達）、D（3 ms 到達）、E（0 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 E。\n5 ms：目前可執行 A（5 ms 到達）、B（1 ms 到達）、C（4 ms 到達）、D（3 ms 到達）、E（0 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 E。\n6 ms：目前可執行 A（5 ms 到達）、B（1 ms 到達）、C（4 ms 到達）、D（3 ms 到達）。依規則選 B，所以開始執行 B。\n9 ms：目前可執行 A（5 ms 到達）、C（4 ms 到達）、D（3 ms 到達）。依規則選 D，所以開始執行 D。\n13 ms：目前可執行 A（5 ms 到達）、C（4 ms 到達）。依規則選 C，所以開始執行 C。\n15 ms：目前可執行 A（5 ms 到達）。依規則選 A，所以開始執行 A。\n\n時間線（括號內是開始–結束，單位 ms）：\nE（0–6） → B（6–9） → D（9–13） → C（13–15） → A（15–17）\n\n③ 只計算這一題問的量\n迴轉＝完成－到達。\nA：17－5＝12 ms。\nB：9－1＝8 ms。\nC：15－4＝11 ms。\nD：13－3＝10 ms。\nE：6－0＝6 ms。\n平均＝（12＋8＋11＋10＋6）÷5＝9.4 ms。\n\n④ 對照答案\n本題結論：9.4。\n\n容易弄混的地方：迴轉時間是這個行程進來到離開的整段時間，包含執行與等待；不是只平均完工時刻，也不是只加 CPU 時間。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-3"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-3"
+    ],
+    "image": "../images/os-treasure-a80dbe4a672f.png",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算",
+    "original_source_question": "行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若使用 FCFS排程法時，且不可搶先(non-preemptive)，平均迴轉時間為何? ____________ 格式: 1.0",
+    "question_aliases": [
+      "行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若使用 FCFS排程法時，且不可搶先(non-preemptive)，平均迴轉時間為何? ____________ 格式: 1.0"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Rate Monotonic 即時排程",
+    "type": "choice",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 由時間0ms到 180ms 以下哪些正確",
+    "options": [
+      "110-120沒有排工作",
+      "90-100排工作P3",
+      "170-180沒有排工作",
+      "40-50排工作P1"
+    ],
+    "correct_answer": "110-120沒有排工作\n90-100排工作P3\n170-180沒有排工作",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "多選題",
+    "original_source_answer": "A、B、C",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nRM：週期越短，固定優先權越高；新一期高優先權工作到達，會搶先尚未完成的低優先權工作。\n本題固定優先順序：P3 ＞ P1 ＞ P2。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（週期 50）、P2_1（週期 60）、P3_1（週期 30）；依固定週期優先權選 P3_1，這段執行到 10 ms。此期已做滿 CPU 時間。\n10 ms：候選 P1_1（週期 50）、P2_1（週期 60）；依固定週期優先權選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（週期 60）；依固定週期優先權選 P2_1，這段執行到 30 ms。之後因更高優先權工作到達而換人。\n30 ms：候選 P2_1（週期 60）、P3_2（週期 30）；依固定週期優先權選 P3_2，這段執行到 40 ms。此期已做滿 CPU 時間。\n40 ms：候選 P2_1（週期 60）；依固定週期優先權選 P2_1，這段執行到 50 ms。此期已做滿 CPU 時間。\n50 ms：候選 P1_2（週期 50）；依固定週期優先權選 P1_2，這段執行到 60 ms。此期已做滿 CPU 時間。\n60 ms：候選 P2_2（週期 60）、P3_3（週期 30）；依固定週期優先權選 P3_3，這段執行到 70 ms。此期已做滿 CPU 時間。\n70 ms：候選 P2_2（週期 60）；依固定週期優先權選 P2_2，這段執行到 90 ms。此期已做滿 CPU 時間。\n90 ms：候選 P3_4（週期 30）；依固定週期優先權選 P3_4，這段執行到 100 ms。此期已做滿 CPU 時間。\n100 ms：候選 P1_3（週期 50）；依固定週期優先權選 P1_3，這段執行到 110 ms。此期已做滿 CPU 時間。\n110–120：已到達工作都完成，CPU 閒置。\n120 ms：候選 P2_3（週期 60）、P3_5（週期 30）；依固定週期優先權選 P3_5，這段執行到 130 ms。此期已做滿 CPU 時間。\n130 ms：候選 P2_3（週期 60）；依固定週期優先權選 P2_3，這段執行到 150 ms。此期已做滿 CPU 時間。\n150 ms：候選 P1_4（週期 50）、P3_6（週期 30）；依固定週期優先權選 P3_6，這段執行到 160 ms。此期已做滿 CPU 時間。\n160 ms：候選 P1_4（週期 50）；依固定週期優先權選 P1_4，這段執行到 170 ms。此期已做滿 CPU 時間。\n170–180：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P3_1（0–10） → P1_1（10–20） → P2_1（20–30） → P3_2（30–40） → P2_1（40–50） → P1_2（50–60） → P3_3（60–70） → P2_2（70–90） → P3_4（90–100） → P1_3（100–110） → 閒置（110–120） → P3_5（120–130） → P2_3（130–150） → P3_6（150–160） → P1_4（160–170） → 閒置（170–180）\n\n\n④ 回到本題／逐項核對\nA．110-120沒有排工作：對照時間線是 閒置（110–120）；敘述相符，所以選。\nB．90-100排工作P3：對照時間線是 P3_4（90–100）；敘述相符，所以選。\nC．170-180沒有排工作：對照時間線是 閒置（170–180）；敘述相符，所以選。\nD．40-50排工作P1：對照時間線是 P2_1（40–50）；敘述不相符，所以不選。\n\n⑤ 對照答案\n本題結論：選 A、B、C。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-12"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-12"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "即時排程可行性",
+    "type": "choice",
+    "question": "即時排程 問題\n\n已知有兩個行程 P1 P2 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 20\nP2 100 100 35\n\n以下哪些正確",
+    "options": [
+      "採用 Rate Monotonic 排程法可以排成功",
+      "採用 Rate Monotonic 排程法不能排成功",
+      "採用 Early deadline first 排程法可以排成功",
+      "採用 Early deadline first 排程法不能排成功"
+    ],
+    "correct_answer": "採用 Rate Monotonic 排程法可以排成功\n採用 Early deadline first 排程法可以排成功",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "多選題",
+    "original_source_answer": "A、C",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 20 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nRM：週期越短，固定優先權越高；新一期高優先權工作到達，會搶先尚未完成的低優先權工作。\n本題固定優先順序：P1 ＞ P2。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（週期 50）、P2_1（週期 100）；依固定週期優先權選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（週期 100）；依固定週期優先權選 P2_1，這段執行到 50 ms。之後因更高優先權工作到達而換人。\n50 ms：候選 P1_2（週期 50）、P2_1（週期 100）；依固定週期優先權選 P1_2，這段執行到 70 ms。此期已做滿 CPU 時間。\n70 ms：候選 P2_1（週期 100）；依固定週期優先權選 P2_1，這段執行到 75 ms。此期已做滿 CPU 時間。\n75–100：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P1_1（0–20） → P2_1（20–50） → P1_2（50–70） → P2_1（70–75） → 閒置（75–100）\n\n兩種方法比較：\nRM（固定依週期排序）：P1_1（0–20） → P2_1（20–50） → P1_2（50–70） → P2_1（70–75） → 閒置（75–100）\nEDF（依絕對截止時刻排序）：P1_1（0–20） → P2_1（20–55） → P1_2（55–75） → 閒置（75–100）\n\n④ 回到本題／逐項核對\nRM：P2 第一期在 75 完成，早於截止 100；P1 兩期各在 20、70 完成，早於 50、100。\nEDF：P2 第一期在 55 完成，早於 100；P1 兩期各在 20、75 完成，早於 50、100。\n100 ms 後資料與起點重新對齊，而且沒有未完成工作，所以這個週期可以重複。\nA、C 說可以排成功，與兩張時間線相符；B、D 說不能成功，與完成時刻不符，因此不選。\n\n⑤ 對照答案\n本題結論：選 A、C。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-16"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-16"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "FCFS／FIFO 計算",
+    "type": "fill_blank",
+    "question": "已知有以下的四個行程 還有他們的到達時間與 cpu 運算需求\n\n若採用FCFS 可搶先(preemptive) 請問行程安排的順序是? [__1__] 格式 : P2_P3_P1_P4",
+    "options": [],
+    "correct_answer": "P1_P2_P3_P4",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(P1_P2_P3_P4)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：CPU 執行順序。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n題幹同時寫 FCFS 與「可搶先」。標準 FCFS 按先到先做，不會因新工作到達而搶走 CPU；下列時間線依 FCFS 與題庫答案 P1_P2_P3_P4 解讀。若另有搶先規則，必須另外指定。\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（0 ms 到達）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n2 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n3 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n8 ms：目前可執行 P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P2，所以開始執行 P2。\n12 ms：目前可執行 P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P3，所以開始執行 P3。\n21 ms：目前可執行 P4（3 ms 到達）。依規則選 P4，所以開始執行 P4。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–8） → P2（8–12） → P3（12–21） → P4（21–26）\n\n③ 只計算這一題問的量\n沿時間線由左往右抄每個連續區塊：P1 → P2 → P3 → P4。同一行程被搶先後再次回來，要再寫一次；不要把重複名稱刪掉。\n\n④ 對照答案\n本題結論：P1 → P2 → P3 → P4。\n\n容易弄混的地方：要求執行順序時，不要依 P1、P2、P3 的名稱排序；要依 CPU 實際先後順序填寫，並使用題目要求的箭號、底線或連寫格式。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-7"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-7"
+    ],
+    "image": "../images/os-treasure-19dbd3095c04.png",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算",
+    "original_source_question": "已知有以下的四個行程 還有他們的到達時間與 cpu 運算需求\n\n若採用FCFS 可搶先(preemptive) 請問行程安排的順序是? ____________ 格式 : P2_P3_P1_P4",
+    "question_aliases": [
+      "已知有以下的四個行程 還有他們的到達時間與 cpu 運算需求\n\n若採用FCFS 可搶先(preemptive) 請問行程安排的順序是? ____________ 格式 : P2_P3_P1_P4"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "EDF 即時排程",
+    "type": "choice",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10 40\nP2 60 20 50\nP3 30 10 30\n\n若採用 Early deadline first 排程法 由時間180ms到 240ms 以下哪些正確",
+    "options": [
+      "230-240沒有排工作",
+      "190-210排工作P2",
+      "180-190排工作P3",
+      "210-220排工作P3"
+    ],
+    "correct_answer": "230-240沒有排工作\n190-210排工作P2\n180-190排工作P3",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "多選題",
+    "original_source_answer": "A、B、C",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n180 ms：候選 P2_4（截止 230）、P3_7（截止 210）；依最早絕對截止選 P3_7，這段執行到 190 ms。此期已做滿 CPU 時間。\n190 ms：候選 P2_4（截止 230）；依最早絕對截止選 P2_4，這段執行到 210 ms。此期已做滿 CPU 時間。\n210 ms：候選 P1_5（截止 240）、P3_8（截止 240）；依最早絕對截止選 P1_5，這段執行到 220 ms。此期已做滿 CPU 時間。\n220 ms：候選 P3_8（截止 240）；依最早絕對截止選 P3_8，這段執行到 230 ms。此期已做滿 CPU 時間。\n230–240：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P3_7（180–190） → P2_4（190–210） → P1_5（210–220） → P3_8（220–230） → 閒置（230–240）\n\n\n④ 回到本題／逐項核對\nA．230-240沒有排工作：對照時間線是 閒置（230–240）；敘述相符，所以選。\nB．190-210排工作P2：對照時間線是 P2_4（190–210）；敘述相符，所以選。\nC．180-190排工作P3：對照時間線是 P3_7（180–190）；敘述相符，所以選。\nD．210-220排工作P3：對照時間線是 P1_5（210–220）；敘述不相符，所以不選。\n\n⑤ 對照答案\n本題結論：選 A、B、C。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-11"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-11"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Rate Monotonic 即時排程",
+    "type": "fill_blank",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 P1的第3塊資料會由哪一個時間點 排到哪一個時間點 [__1__] 格式: 20-55",
+    "options": [],
+    "correct_answer": "100-110",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(100-110)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nRM：週期越短，固定優先權越高；新一期高優先權工作到達，會搶先尚未完成的低優先權工作。\n本題固定優先順序：P3 ＞ P1 ＞ P2。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n90 ms：候選 P3_4（週期 30）；依固定週期優先權選 P3_4，這段執行到 100 ms。此期已做滿 CPU 時間。\n100 ms：候選 P1_3（週期 50）；依固定週期優先權選 P1_3，這段執行到 110 ms。此期已做滿 CPU 時間。\n110–120：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P3_4（90–100） → P1_3（100–110） → 閒置（110–120）\n\n\n④ 回到本題／逐項核對\nP1_3：第 3 期，到達＝（3－1）×50＝100，絕對截止＝100＋40＝140；需要 10 ms。\n它的實際 CPU 區塊是 P1_3（100–110）；總長度 10＝10 ms，最後完成在 110 ms。\n\n\n⑤ 對照答案\n本題結論：100-110。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-10"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-10"
+    ],
+    "original_source_question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 P1的第3塊資料會由哪一個時間點 排到哪一個時間點 ____________ 格式: 20-55",
+    "question_aliases": [
+      "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 P1的第3塊資料會由哪一個時間點 排到哪一個時間點 ____________ 格式: 20-55"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "FCFS／FIFO 計算",
+    "type": "fill_blank",
+    "question": "下圖為使用 FIFO CPU 排程演算法的排程結果\n\n請回答以下問題\n\n請問平均回應時間(response time)是多少 [__1__] (請填數字)",
+    "options": [],
+    "correct_answer": "17",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(17)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均回應時間。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 題圖只給先後順序，這組教材採三個行程皆在 0 ms 就緒。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（0 ms 到達）、P2（0 ms 到達）、P3（0 ms 到達）。依規則選 P1，所以開始執行 P1。\n24 ms：目前可執行 P2（0 ms 到達）、P3（0 ms 到達）。依規則選 P2，所以開始執行 P2。\n27 ms：目前可執行 P3（0 ms 到達）。依規則選 P3，所以開始執行 P3。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–24） → P2（24–27） → P3（27–30）\n\n③ 只計算這一題問的量\n回應＝第一次開始－到達。\nP1：0－0＝0 ms。\nP2：24－0＝24 ms。\nP3：27－0＝27 ms。\n平均＝（0＋24＋27）÷3＝17 ms。\n\n④ 對照答案\n本題結論：17。\n\n容易弄混的地方：回應時間只看第一次上 CPU，後來被搶先多久不再加進來；它和總等待時間不同。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-6"
+    ],
+    "reference_question_ids": [
+      "community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-6"
+    ],
+    "image": "../images/os-treasure-22bb3cb2a6ea.jpg",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算",
+    "original_source_question": "下圖為使用 FIFO CPU 排程演算法的排程結果\n\n請回答以下問題\n\n請問平均回應時間(response time)是多少 ____________ (請填數字)",
+    "question_aliases": [
+      "下圖為使用 FIFO CPU 排程演算法的排程結果\n\n請回答以下問題\n\n請問平均回應時間(response time)是多少 ____________ (請填數字)"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Round Robin 計算",
+    "type": "choice",
+    "question": "使用 Round Robin (RR) 進行排程\n\nProcess Burst Time\n\nP1 20\n\nP2 3\n\nP3 7\n\n請問其Average waiting time 為多少?",
+    "options": [
+      "6.25",
+      "6",
+      "7",
+      "6.75"
+    ],
+    "correct_answer": "6.25",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "單選題",
+    "original_source_answer": "A",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：RR 平均等待時間，但題面條件不足。\n\n① 先用規則決定誰能上 CPU\nRR：依就緒佇列輪流，每次最多做一個時間片；未完成的人回隊尾。 本題每輪最多 4 ms。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 時間片＝4 ms；邊界時新到達者先入隊，再把用完時間片的工作放回隊尾；同時到達依表格順序。 以下只是示範：假設全部在 0 ms 到達、TQ＝4 ms；題目本身並未提供這兩個條件。\n\n② 一步一步排時間線\n0–4：P1 做 4 ms，還剩 16 ms，回到隊尾；接下來的隊列是 P2 → P3 → P1。\n4–7：P2 做 3 ms，已完成，離開佇列；接下來的隊列是 P3 → P1。\n7–11：P3 做 4 ms，還剩 3 ms，回到隊尾；接下來的隊列是 P1 → P3。\n11–15：P1 做 4 ms，還剩 12 ms，回到隊尾；接下來的隊列是 P3 → P1。\n15–18：P3 做 3 ms，已完成，離開佇列；接下來的隊列是 P1。\n18–22：P1 做 4 ms，還剩 8 ms，回到隊尾；接下來的隊列是 P1。\n22–26：P1 做 4 ms，還剩 4 ms，回到隊尾；接下來的隊列是 P1。\n26–30：P1 做 4 ms，已完成，離開佇列；接下來的隊列是 空。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–4） → P2（4–7） → P3（7–11） → P1（11–15） → P3（15–18） → P1（18–30）\n\n③ 只計算這一題問的量\n題面沒有時間片 TQ，也沒有到達時間。RR 的隊列與等待時間會隨這些條件改變，無法唯一排出答案。\n若只作示範，取 TQ＝4、全部 0 ms 到達，P1、P2、P3 的等待時間為 P1：30－0－20＝10；P2：7－0－3＝4；P3：18－0－7＝11，平均＝（10＋4＋11）÷3＝8.3333 ms。這個示範不能當成原題已給的條件。\n\n④ 對照答案\n題庫提供的答案保留為 A。本題文字缺少足以唯一排程的條件。這裡把可重算的過程寫出來，不以缺少的條件硬湊答案。\n\n容易弄混的地方：題庫提供 A（6.25）。要解釋為何能得到 6.25，需要補上老師原本的時間片與到達條件；不能把別題四個行程的 6.25 計算搬過來。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-4"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-4"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "FCFS／FIFO 計算",
+    "type": "fill_blank",
+    "question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\n\nP1 0 6\n\nP2 1 5\n\nP3 2 8\n\nP4 3 1\n\n以上行程採用First- Come, First-Served (FCFS) Scheduling\n\n列出P1,P2,P3,P4, 每一個PROCESS最後完成的時間 [__1__] *答案格式範例:5->12->18->20->30 格式錯誤不給分",
+    "options": [],
+    "correct_answer": "6->11->19->20",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(6->11->19->20)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：每個行程的完工時刻。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（0 ms 到達）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n2 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n3 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n6 ms：目前可執行 P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P2，所以開始執行 P2。\n11 ms：目前可執行 P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P3，所以開始執行 P3。\n19 ms：目前可執行 P4（3 ms 到達）。依規則選 P4，所以開始執行 P4。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–6） → P2（6–11） → P3（11–19） → P4（19–20）\n\n③ 只計算這一題問的量\nP1 的最後一段結束在 6 ms，所以完工時刻是 6。\nP2 的最後一段結束在 11 ms，所以完工時刻是 11。\nP3 的最後一段結束在 19 ms，所以完工時刻是 19。\nP4 的最後一段結束在 20 ms，所以完工時刻是 20。\n最後依題目指定的行程名稱順序填入：6 → 11 → 19 → 20。\n\n④ 對照答案\n本題結論：6、11、19、20。\n\n容易弄混的地方：「按名稱列出每個行程完成時間」和「按時間先後列出執行順序」是兩個問題。例如優先權排程中 P2 先完成，但答案第一格若要求 P1，仍先填 P1 的完工時刻。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-8"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-8"
+    ],
+    "image": "../images/os-treasure-4a4a45a0f243.png",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算",
+    "original_source_question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\n\nP1 0 6\n\nP2 1 5\n\nP3 2 8\n\nP4 3 1\n\n以上行程採用First- Come, First-Served (FCFS) Scheduling\n\n列出P1,P2,P3,P4, 每一個PROCESS最後完成的時間 ____________ *答案格式範例:5->12->18->20->30 格式錯誤不給分",
+    "question_aliases": [
+      "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\n\nP1 0 6\n\nP2 1 5\n\nP3 2 8\n\nP4 3 1\n\n以上行程採用First- Come, First-Served (FCFS) Scheduling\n\n列出P1,P2,P3,P4, 每一個PROCESS最後完成的時間 ____________ *答案格式範例:5->12->18->20->30 格式錯誤不給分"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "EDF 即時排程",
+    "type": "fill_blank",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10 40\nP2 60 20 50\nP3 30 10 30\n\n若採用 Early deadline first 排程法 P1的第5塊資料會由哪一個時間點 排到哪一個時間點 [__1__] 格式: 20-55",
+    "options": [],
+    "correct_answer": "210-220",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(210-220)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n180 ms：候選 P2_4（截止 230）、P3_7（截止 210）；依最早絕對截止選 P3_7，這段執行到 190 ms。此期已做滿 CPU 時間。\n190 ms：候選 P2_4（截止 230）；依最早絕對截止選 P2_4，這段執行到 210 ms。此期已做滿 CPU 時間。\n210 ms：候選 P1_5（截止 240）、P3_8（截止 240）；依最早絕對截止選 P1_5，這段執行到 220 ms。此期已做滿 CPU 時間。\n220 ms：候選 P3_8（截止 240）；依最早絕對截止選 P3_8，這段執行到 230 ms。此期已做滿 CPU 時間。\n230–240：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P3_7（180–190） → P2_4（190–210） → P1_5（210–220） → P3_8（220–230） → 閒置（230–240）\n\n\n④ 回到本題／逐項核對\nP1_5：第 5 期，到達＝（5－1）×50＝200，絕對截止＝200＋40＝240；需要 10 ms。\n它的實際 CPU 區塊是 P1_5（210–220）；總長度 10＝10 ms，最後完成在 220 ms。\n\n\n⑤ 對照答案\n本題結論：210-220。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-19"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-19"
+    ],
+    "original_source_question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10 40\nP2 60 20 50\nP3 30 10 30\n\n若採用 Early deadline first 排程法 P1的第5塊資料會由哪一個時間點 排到哪一個時間點 ____________ 格式: 20-55",
+    "question_aliases": [
+      "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10 40\nP2 60 20 50\nP3 30 10 30\n\n若採用 Early deadline first 排程法 P1的第5塊資料會由哪一個時間點 排到哪一個時間點 ____________ 格式: 20-55"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，SJF 的平均迴轉(turnaround)時間 是多少ms [__1__] (請用浮點數表示 如 1.2)",
+    "options": [],
+    "correct_answer": "6.4",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(6.4)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均迴轉時間。\n\n① 先用規則決定誰能上 CPU\n不可搶先 SJF：CPU 空下來才選「已到達且 CPU 時間最短」的人；沒做完前不換人。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 同樣長的工作採先到先做；尚未到達者不參加挑選。\n\n② 一步一步排時間線\n0 ms：目前可執行 A（需要 5 ms）。依規則選 A，所以開始執行 A。\n1 ms：目前可執行 A（需要 5 ms）、B（需要 4 ms）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n2 ms：目前可執行 A（需要 5 ms）、B（需要 4 ms）、C（需要 2 ms）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n3 ms：目前可執行 A（需要 5 ms）、B（需要 4 ms）、C（需要 2 ms）、D（需要 1 ms）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n5 ms：目前可執行 B（需要 4 ms）、C（需要 2 ms）、D（需要 1 ms）。依規則選 D，所以開始執行 D。\n6 ms：目前可執行 B（需要 4 ms）、C（需要 2 ms）。依規則選 C，所以開始執行 C。\n7 ms：目前可執行 B（需要 4 ms）、C（需要 2 ms）、E（需要 3 ms）。目前工作尚未完成，不可搶先，所以繼續執行 C。\n8 ms：目前可執行 B（需要 4 ms）、E（需要 3 ms）。依規則選 E，所以開始執行 E。\n11 ms：目前可執行 B（需要 4 ms）。依規則選 B，所以開始執行 B。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–5） → D（5–6） → C（6–8） → E（8–11） → B（11–15）\n\n③ 只計算這一題問的量\n迴轉＝完成－到達。\nA：5－0＝5 ms。\nB：15－1＝14 ms。\nC：8－2＝6 ms。\nD：6－3＝3 ms。\nE：11－7＝4 ms。\n平均＝（5＋14＋6＋3＋4）÷5＝6.4 ms。\n\n④ 對照答案\n本題結論：6.4。\n\n容易弄混的地方：迴轉時間是這個行程進來到離開的整段時間，包含執行與等待；不是只平均完工時刻，也不是只加 CPU 時間。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-24"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-24"
+    ],
+    "image": "../images/os-treasure-8adc650e182b.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，SJF 的平均迴轉(turnaround)時間 是多少ms ____________ (請用浮點數表示 如 1.2)",
+    "question_aliases": [
+      "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，SJF 的平均迴轉(turnaround)時間 是多少ms ____________ (請用浮點數表示 如 1.2)"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "FCFS／FIFO 計算",
+    "type": "fill_blank",
+    "question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，FCFS 的平均等待(waiting)時間 是多少ms [__1__] (請用浮點數表示 如 1.2)",
+    "options": [],
+    "correct_answer": "4.8",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(4.8)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均等待時間。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 A（0 ms 到達）。依規則選 A，所以開始執行 A。\n1 ms：目前可執行 A（0 ms 到達）、B（1 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n2 ms：目前可執行 A（0 ms 到達）、B（1 ms 到達）、C（2 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n3 ms：目前可執行 A（0 ms 到達）、B（1 ms 到達）、C（2 ms 到達）、D（3 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n5 ms：目前可執行 B（1 ms 到達）、C（2 ms 到達）、D（3 ms 到達）。依規則選 B，所以開始執行 B。\n7 ms：目前可執行 B（1 ms 到達）、C（2 ms 到達）、D（3 ms 到達）、E（7 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 B。\n9 ms：目前可執行 C（2 ms 到達）、D（3 ms 到達）、E（7 ms 到達）。依規則選 C，所以開始執行 C。\n11 ms：目前可執行 D（3 ms 到達）、E（7 ms 到達）。依規則選 D，所以開始執行 D。\n12 ms：目前可執行 E（7 ms 到達）。依規則選 E，所以開始執行 E。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–5） → B（5–9） → C（9–11） → D（11–12） → E（12–15）\n\n③ 只計算這一題問的量\n等待＝完成－到達－CPU 時間。\nA：5－0－5＝0 ms。\nB：9－1－4＝4 ms。\nC：11－2－2＝7 ms。\nD：12－3－1＝8 ms。\nE：15－7－3＝5 ms。\n平均＝（0＋4＋7＋8＋5）÷5＝4.8 ms。\n\n④ 對照答案\n本題結論：4.8。\n\n容易弄混的地方：等待時間包含「第一次上 CPU 前」和「被搶先後再次排隊」的所有時間；不能只算第一次等待。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-4"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-4"
+    ],
+    "image": "../images/os-treasure-8adc650e182b.png",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算",
+    "original_source_question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，FCFS 的平均等待(waiting)時間 是多少ms ____________ (請用浮點數表示 如 1.2)",
+    "question_aliases": [
+      "已知有以下的行程 與其CPU時間 與 到達時間\n\n若在不可搶先(nonpreemptive)的情況下，FCFS 的平均等待(waiting)時間 是多少ms ____________ (請用浮點數表示 如 1.2)"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Round Robin 計算",
+    "type": "fill_blank",
+    "question": "採用 RR（Round Robin）排程\n\nProcess Arrival Time Burst Time\nP1 0 10\nP2 2 4\nP3 4 6\nP4 6 3\nP5 8 5\n\nTime Quantum = 3 ms 請寫出全部的行程排程順序 [__1__] *答案格式範例:P1->P2->P3->P2->P5->P9 格式錯誤不給分",
+    "options": [],
+    "correct_answer": "P1->P2->P1->P3->P4->P2->P5->P1->P3->P5->P1",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(P1->P2->P1->P3->P4->P2->P5->P1->P3->P5->P1)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：CPU 執行順序。\n\n① 先用規則決定誰能上 CPU\nRR：依就緒佇列輪流，每次最多做一個時間片；未完成的人回隊尾。 本題每輪最多 3 ms。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 時間片＝3 ms；邊界時新到達者先入隊，再把用完時間片的工作放回隊尾；同時到達依表格順序。\n\n② 一步一步排時間線\n0–3：P1 做 3 ms，還剩 7 ms，回到隊尾；接下來的隊列是 P2 → P1。\n3–6：P2 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 P1 → P3 → P4 → P2。\n6–9：P1 做 3 ms，還剩 4 ms，回到隊尾；接下來的隊列是 P3 → P4 → P2 → P5 → P1。\n9–12：P3 做 3 ms，還剩 3 ms，回到隊尾；接下來的隊列是 P4 → P2 → P5 → P1 → P3。\n12–15：P4 做 3 ms，已完成，離開佇列；接下來的隊列是 P2 → P5 → P1 → P3。\n15–16：P2 做 1 ms，已完成，離開佇列；接下來的隊列是 P5 → P1 → P3。\n16–19：P5 做 3 ms，還剩 2 ms，回到隊尾；接下來的隊列是 P1 → P3 → P5。\n19–22：P1 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 P3 → P5 → P1。\n22–25：P3 做 3 ms，已完成，離開佇列；接下來的隊列是 P5 → P1。\n25–27：P5 做 2 ms，已完成，離開佇列；接下來的隊列是 P1。\n27–28：P1 做 1 ms，已完成，離開佇列；接下來的隊列是 空。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–3） → P2（3–6） → P1（6–9） → P3（9–12） → P4（12–15） → P2（15–16） → P5（16–19） → P1（19–22） → P3（22–25） → P5（25–27） → P1（27–28）\n\n③ 只計算這一題問的量\n沿時間線由左往右抄每個連續區塊：P1 → P2 → P1 → P3 → P4 → P2 → P5 → P1 → P3 → P5 → P1。同一行程被搶先後再次回來，要再寫一次；不要把重複名稱刪掉。\n\n④ 對照答案\n本題結論：P1 → P2 → P1 → P3 → P4 → P2 → P5 → P1 → P3 → P5 → P1。\n\n容易弄混的地方：要求執行順序時，不要依 P1、P2、P3 的名稱排序；要依 CPU 實際先後順序填寫，並使用題目要求的箭號、底線或連寫格式。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-14"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-14"
+    ],
+    "original_source_question": "採用 RR（Round Robin）排程\n\nProcess Arrival Time Burst Time\nP1 0 10\nP2 2 4\nP3 4 6\nP4 6 3\nP5 8 5\n\nTime Quantum = 3 ms 請寫出全部的行程排程順序 ____________ *答案格式範例:P1->P2->P3->P2->P5->P9 格式錯誤不給分",
+    "question_aliases": [
+      "採用 RR（Round Robin）排程\n\nProcess Arrival Time Burst Time\nP1 0 10\nP2 2 4\nP3 4 6\nP4 6 3\nP5 8 5\n\nTime Quantum = 3 ms 請寫出全部的行程排程順序 ____________ *答案格式範例:P1->P2->P3->P2->P5->P9 格式錯誤不給分"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Round Robin 計算",
+    "type": "fill_blank",
+    "question": "已知有以下五個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\nA 0 3\nB 1 2\nC 3 4\nD 3 3\nE 5 2\n\n若使用RR（TQ = 3）排程法時 平均等待時間為何 格式 : 直接填數字 [__1__]",
+    "options": [],
+    "correct_answer": "4",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(4)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均等待時間。\n\n① 先用規則決定誰能上 CPU\nRR：依就緒佇列輪流，每次最多做一個時間片；未完成的人回隊尾。 本題每輪最多 3 ms。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 時間片＝3 ms；邊界時新到達者先入隊，再把用完時間片的工作放回隊尾；同時到達依表格順序。\n\n② 一步一步排時間線\n0–3：A 做 3 ms，已完成，離開佇列；接下來的隊列是 B → C → D。\n3–5：B 做 2 ms，已完成，離開佇列；接下來的隊列是 C → D → E。\n5–8：C 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 D → E → C。\n8–11：D 做 3 ms，已完成，離開佇列；接下來的隊列是 E → C。\n11–13：E 做 2 ms，已完成，離開佇列；接下來的隊列是 C。\n13–14：C 做 1 ms，已完成，離開佇列；接下來的隊列是 空。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–3） → B（3–5） → C（5–8） → D（8–11） → E（11–13） → C（13–14）\n\n③ 只計算這一題問的量\n等待＝完成－到達－CPU 時間。\nA：3－0－3＝0 ms。\nB：5－1－2＝2 ms。\nC：14－3－4＝7 ms。\nD：11－3－3＝5 ms。\nE：13－5－2＝6 ms。\n平均＝（0＋2＋7＋5＋6）÷5＝4 ms。\n\n④ 對照答案\n本題結論：4。\n\n容易弄混的地方：等待時間包含「第一次上 CPU 前」和「被搶先後再次排隊」的所有時間；不能只算第一次等待。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-6"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-6"
+    ],
+    "original_source_question": "已知有以下五個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\nA 0 3\nB 1 2\nC 3 4\nD 3 3\nE 5 2\n\n若使用RR（TQ = 3）排程法時 平均等待時間為何 格式 : 直接填數字 ____________",
+    "question_aliases": [
+      "已知有以下五個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\nA 0 3\nB 1 2\nC 3 4\nD 3 3\nE 5 2\n\n若使用RR（TQ = 3）排程法時 平均等待時間為何 格式 : 直接填數字 ____________"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "假設有行程 A~E。其CPU時間、到達時間如下\n\n若可搶先(preemptive)使用SJF排程法時，平均迴轉(turnaround)時間為 [__1__] ms (格式為浮點入如 1.0)",
+    "options": [],
+    "correct_answer": "6.0",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(6.0)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均迴轉時間。\n\n① 先用規則決定誰能上 CPU\n可搶先 SJF／SRTF：新工作到達時，比較「還需要的 CPU 時間」；較短者先做。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 剩餘時間相等時，保留目前執行者；CPU 空出後同長度者採先到先做。\n\n② 一步一步排時間線\n0 ms：目前可執行 A（剩餘 5 ms）。依規則選 A，所以開始執行 A。\n1 ms：目前可執行 A（剩餘 4 ms）、B（剩餘 4 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 A。\n2 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）、C（剩餘 2 ms）。依規則選 C，所以開始執行 C。\n3 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）、C（剩餘 1 ms）、D（剩餘 1 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 C。\n4 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）、D（剩餘 1 ms）。依規則選 D，所以開始執行 D。\n5 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）。依規則選 A，所以開始執行 A。\n7 ms：目前可執行 A（剩餘 1 ms）、B（剩餘 4 ms）、E（剩餘 3 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 A。\n8 ms：目前可執行 B（剩餘 4 ms）、E（剩餘 3 ms）。依規則選 E，所以開始執行 E。\n11 ms：目前可執行 B（剩餘 4 ms）。依規則選 B，所以開始執行 B。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–2） → C（2–4） → D（4–5） → A（5–8） → E（8–11） → B（11–15）\n\n③ 只計算這一題問的量\n迴轉＝完成－到達。\nA：8－0＝8 ms。\nB：15－1＝14 ms。\nC：4－2＝2 ms。\nD：5－3＝2 ms。\nE：11－7＝4 ms。\n平均＝（8＋14＋2＋2＋4）÷5＝6 ms。\n\n④ 對照答案\n本題結論：6。\n\n容易弄混的地方：迴轉時間是這個行程進來到離開的整段時間，包含執行與等待；不是只平均完工時刻，也不是只加 CPU 時間。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-16"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-16"
+    ],
+    "image": "../images/os-treasure-8adc650e182b.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "假設有行程 A~E。其CPU時間、到達時間如下\n\n若可搶先(preemptive)使用SJF排程法時，平均迴轉(turnaround)時間為 ____________ ms (格式為浮點入如 1.0)",
+    "question_aliases": [
+      "假設有行程 A~E。其CPU時間、到達時間如下\n\n若可搶先(preemptive)使用SJF排程法時，平均迴轉(turnaround)時間為 ____________ ms (格式為浮點入如 1.0)"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Rate Monotonic 即時排程",
+    "type": "choice",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 由時間0ms到 150ms 以下哪些正確",
+    "options": [
+      "110-120沒有排工作",
+      "90-100沒有排工作",
+      "100-110排工作P1",
+      "40-50排工作P2"
+    ],
+    "correct_answer": "110-120沒有排工作\n100-110排工作P1\n40-50排工作P2",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "多選題",
+    "original_source_answer": "A、C、D",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nRM：週期越短，固定優先權越高；新一期高優先權工作到達，會搶先尚未完成的低優先權工作。\n本題固定優先順序：P3 ＞ P1 ＞ P2。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（週期 50）、P2_1（週期 60）、P3_1（週期 30）；依固定週期優先權選 P3_1，這段執行到 10 ms。此期已做滿 CPU 時間。\n10 ms：候選 P1_1（週期 50）、P2_1（週期 60）；依固定週期優先權選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（週期 60）；依固定週期優先權選 P2_1，這段執行到 30 ms。之後因更高優先權工作到達而換人。\n30 ms：候選 P2_1（週期 60）、P3_2（週期 30）；依固定週期優先權選 P3_2，這段執行到 40 ms。此期已做滿 CPU 時間。\n40 ms：候選 P2_1（週期 60）；依固定週期優先權選 P2_1，這段執行到 50 ms。此期已做滿 CPU 時間。\n50 ms：候選 P1_2（週期 50）；依固定週期優先權選 P1_2，這段執行到 60 ms。此期已做滿 CPU 時間。\n60 ms：候選 P2_2（週期 60）、P3_3（週期 30）；依固定週期優先權選 P3_3，這段執行到 70 ms。此期已做滿 CPU 時間。\n70 ms：候選 P2_2（週期 60）；依固定週期優先權選 P2_2，這段執行到 90 ms。此期已做滿 CPU 時間。\n90 ms：候選 P3_4（週期 30）；依固定週期優先權選 P3_4，這段執行到 100 ms。此期已做滿 CPU 時間。\n100 ms：候選 P1_3（週期 50）；依固定週期優先權選 P1_3，這段執行到 110 ms。此期已做滿 CPU 時間。\n110–120：已到達工作都完成，CPU 閒置。\n120 ms：候選 P2_3（週期 60）、P3_5（週期 30）；依固定週期優先權選 P3_5，這段執行到 130 ms。此期已做滿 CPU 時間。\n130 ms：候選 P2_3（週期 60）；依固定週期優先權選 P2_3，這段執行到 150 ms。此期已做滿 CPU 時間。\n\n時間線（ms）：P3_1（0–10） → P1_1（10–20） → P2_1（20–30） → P3_2（30–40） → P2_1（40–50） → P1_2（50–60） → P3_3（60–70） → P2_2（70–90） → P3_4（90–100） → P1_3（100–110） → 閒置（110–120） → P3_5（120–130） → P2_3（130–150）\n\n\n④ 回到本題／逐項核對\nA．110-120沒有排工作：對照時間線是 閒置（110–120）；敘述相符，所以選。\nB．90-100沒有排工作：對照時間線是 P3_4（90–100）；敘述不相符，所以不選。\nC．100-110排工作P1：對照時間線是 P1_3（100–110）；敘述相符，所以選。\nD．40-50排工作P2：對照時間線是 P2_1（40–50）；敘述相符，所以選。\n\n⑤ 對照答案\n本題結論：選 A、C、D。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-6"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-6"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Round Robin 計算",
+    "type": "fill_blank",
+    "question": "Round Robin (RR) 排程\n\nProcess Arrival Time Burst Time\nP1 0 8\nP2 1 4\nP3 2 6\nP4 3 1\n\nIf RR Scheduling is used with TQ = 3, Please write down the completed time of the processes P1, P2, P3, P4 [__1__] Answer format: 10,15,4,6",
+    "options": [],
+    "correct_answer": "19,14,17,10",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(19),(14),(17),(10)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：每個行程的完工時刻。\n\n① 先用規則決定誰能上 CPU\nRR：依就緒佇列輪流，每次最多做一個時間片；未完成的人回隊尾。 本題每輪最多 3 ms。\ncompleted time 問的是每個行程最後完成時的時鐘讀數，不是等待時間，也不是第一次上 CPU 的時刻。3 ms 邊界到達的 P4 先入隊，再把用完時間片的 P1 放回隊尾。\n單一 CPU；不計切換耗時；沒有額外 I/O。 時間片＝3 ms；邊界時新到達者先入隊，再把用完時間片的工作放回隊尾；同時到達依表格順序。\n\n② 一步一步排時間線\n0–3：P1 做 3 ms，還剩 5 ms，回到隊尾；接下來的隊列是 P2 → P3 → P4 → P1。\n3–6：P2 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 P3 → P4 → P1 → P2。\n6–9：P3 做 3 ms，還剩 3 ms，回到隊尾；接下來的隊列是 P4 → P1 → P2 → P3。\n9–10：P4 做 1 ms，已完成，離開佇列；接下來的隊列是 P1 → P2 → P3。\n10–13：P1 做 3 ms，還剩 2 ms，回到隊尾；接下來的隊列是 P2 → P3 → P1。\n13–14：P2 做 1 ms，已完成，離開佇列；接下來的隊列是 P3 → P1。\n14–17：P3 做 3 ms，已完成，離開佇列；接下來的隊列是 P1。\n17–19：P1 做 2 ms，已完成，離開佇列；接下來的隊列是 空。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–3） → P2（3–6） → P3（6–9） → P4（9–10） → P1（10–13） → P2（13–14） → P3（14–17） → P1（17–19）\n\n③ 只計算這一題問的量\nP1 的最後一段結束在 19 ms，所以完工時刻是 19。\nP2 的最後一段結束在 14 ms，所以完工時刻是 14。\nP3 的最後一段結束在 17 ms，所以完工時刻是 17。\nP4 的最後一段結束在 10 ms，所以完工時刻是 10。\n最後依題目指定的行程名稱順序填入：19 → 14 → 17 → 10。\n\n④ 對照答案\n本題結論：19、14、17、10。\n\n容易弄混的地方：CPU 的完成先後是 P4→P2→P3→P1，但題目要求按 P1、P2、P3、P4 列答案，因此依序填 19、14、17、10；不要改成按完成先後排列。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-5a83ac61-ae48-436f-9af1-8829ff5c9658-3"
+    ],
+    "reference_question_ids": [
+      "community-5a83ac61-ae48-436f-9af1-8829ff5c9658-3"
+    ],
+    "original_source_question": "Round Robin (RR) 排程\n\nProcess Arrival Time Burst Time\nP1 0 8\nP2 1 4\nP3 2 6\nP4 3 1\n\nIf RR Scheduling is used with TQ = 3, Please write down the completed time of the processes P1, P2, P3, P4 ____________ Answer format: 10,15,4,6",
+    "question_aliases": [
+      "Round Robin (RR) 排程\n\nProcess Arrival Time Burst Time\nP1 0 8\nP2 1 4\nP3 2 6\nP4 3 1\n\nIf RR Scheduling is used with TQ = 3, Please write down the completed time of the processes P1, P2, P3, P4 ____________ Answer format: 10,15,4,6"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "EDF 即時排程",
+    "type": "fill_blank",
+    "question": "即時排程 問題\n\n已知有兩個行程 P1 P2 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 20\nP2 100 100 35\n\n若採用 Early deadline first 排程法 由時間0ms到 80ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) [__1__] 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1",
+    "options": [],
+    "correct_answer": "P1_1,P2_1,P1_2",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(P1_1),(P2_1),(P1_2)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 20 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（截止 50）、P2_1（截止 100）；依最早絕對截止選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（截止 100）；依最早絕對截止選 P2_1，這段執行到 55 ms。此期已做滿 CPU 時間。\n55 ms：候選 P1_2（截止 100）；依最早絕對截止選 P1_2，這段執行到 75 ms。此期已做滿 CPU 時間。\n75–80：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P1_1（0–20） → P2_1（20–55） → P1_2（55–75） → 閒置（75–80）\n\n\n④ 回到本題／逐項核對\n只讀 0–80 ms 的區塊，由左往右得到 P1_1 → P2_1 → P1_2。\n閒置區間仍畫在時間線中，但不是行程，不填入行程順序。被插斷後又回來的同一期工作，需再寫一次。\n\n⑤ 對照答案\n本題結論：P1_1 → P2_1 → P1_2。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-9"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-9"
+    ],
+    "original_source_question": "即時排程 問題\n\n已知有兩個行程 P1 P2 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 20\nP2 100 100 35\n\n若採用 Early deadline first 排程法 由時間0ms到 80ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) ____________ 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1",
+    "question_aliases": [
+      "即時排程 問題\n\n已知有兩個行程 P1 P2 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 20\nP2 100 100 35\n\n若採用 Early deadline first 排程法 由時間0ms到 80ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) ____________ 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "優先權排程",
+    "type": "choice",
+    "question": "Suppose there are process P1~P5. Its CPU Burst Time & Priority as follows:\n\nProcess Burst Time Priority\n\nP1 10 3\nP2 1 1\nP3 2 4\nP4 1 5\nP5 5 2\n\n請問其Average waiting time 為多少？",
+    "options": [
+      "7.8",
+      "8.2",
+      "8.0",
+      "8.4"
+    ],
+    "correct_answer": "8.2",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "單選題",
+    "original_source_answer": "B",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均等待時間。\n\n① 先用規則決定誰能上 CPU\n優先權排程：本題採數字越小、優先權越高；所有行程在 0 ms 已就緒。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（優先權 3）、P2（優先權 1）、P3（優先權 4）、P4（優先權 5）、P5（優先權 2）。依規則選 P2，所以開始執行 P2。\n1 ms：目前可執行 P1（優先權 3）、P3（優先權 4）、P4（優先權 5）、P5（優先權 2）。依規則選 P5，所以開始執行 P5。\n6 ms：目前可執行 P1（優先權 3）、P3（優先權 4）、P4（優先權 5）。依規則選 P1，所以開始執行 P1。\n16 ms：目前可執行 P3（優先權 4）、P4（優先權 5）。依規則選 P3，所以開始執行 P3。\n18 ms：目前可執行 P4（優先權 5）。依規則選 P4，所以開始執行 P4。\n\n時間線（括號內是開始–結束，單位 ms）：\nP2（0–1） → P5（1–6） → P1（6–16） → P3（16–18） → P4（18–19）\n\n③ 只計算這一題問的量\n等待＝完成－到達－CPU 時間。\nP1：16－0－10＝6 ms。\nP2：1－0－1＝0 ms。\nP3：18－0－2＝16 ms。\nP4：19－0－1＝18 ms。\nP5：6－0－5＝1 ms。\n平均＝（6＋0＋16＋18＋1）÷5＝8.2 ms。\nA（7.8）：不是上述各行程數值加總後的平均，因此不選。\nB（8.2）：與計算值相同，所以選這項。\nC（8.0）：不是上述各行程數值加總後的平均，因此不選。\nD（8.4）：不是上述各行程數值加總後的平均，因此不選。\n\n④ 對照答案\n本題結論：選 B。\n\n容易弄混的地方：等待時間包含「第一次上 CPU 前」和「被搶先後再次排隊」的所有時間；不能只算第一次等待。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-2"
+    ],
+    "reference_question_ids": [
+      "community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-2"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "EDF 即時排程",
+    "type": "fill_blank",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10 40\nP2 60 20 50\nP3 30 10 30\n\n若採用 Early deadline first 排程法 由時間0ms到 70ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) [__1__] 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1",
+    "options": [],
+    "correct_answer": "P3_1,P1_1,P2_1,P3_2,P1_2,P3_3",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(P3_1),(P1_1),(P2_1),(P3_2),(P1_2),(P3_3)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（截止 40）、P2_1（截止 50）、P3_1（截止 30）；依最早絕對截止選 P3_1，這段執行到 10 ms。此期已做滿 CPU 時間。\n10 ms：候選 P1_1（截止 40）、P2_1（截止 50）；依最早絕對截止選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（截止 50）；依最早絕對截止選 P2_1，這段執行到 40 ms。此期已做滿 CPU 時間。\n40 ms：候選 P3_2（截止 60）；依最早絕對截止選 P3_2，這段執行到 50 ms。此期已做滿 CPU 時間。\n50 ms：候選 P1_2（截止 90）；依最早絕對截止選 P1_2，這段執行到 60 ms。此期已做滿 CPU 時間。\n60 ms：候選 P2_2（截止 110）、P3_3（截止 90）；依最早絕對截止選 P3_3，這段執行到 70 ms。此期已做滿 CPU 時間。\n\n時間線（ms）：P3_1（0–10） → P1_1（10–20） → P2_1（20–40） → P3_2（40–50） → P1_2（50–60） → P3_3（60–70）\n\n\n④ 回到本題／逐項核對\n只讀 0–70 ms 的區塊，由左往右得到 P3_1 → P1_1 → P2_1 → P3_2 → P1_2 → P3_3。\n閒置區間仍畫在時間線中，但不是行程，不填入行程順序。被插斷後又回來的同一期工作，需再寫一次。\n\n⑤ 對照答案\n本題結論：P3_1 → P1_1 → P2_1 → P3_2 → P1_2 → P3_3。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-21"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-21"
+    ],
+    "original_source_question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10 40\nP2 60 20 50\nP3 30 10 30\n\n若採用 Early deadline first 排程法 由時間0ms到 70ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) ____________ 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1",
+    "question_aliases": [
+      "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10 40\nP2 60 20 50\nP3 30 10 30\n\n若採用 Early deadline first 排程法 由時間0ms到 70ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) ____________ 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "FCFS／FIFO 計算",
+    "type": "choice",
+    "question": "下圖為使用 FIFO CPU 排程演算法的排程結果\n\n請回答以下問題\n\n請問平均等待時間(waiting time)是多少",
+    "options": [
+      "24",
+      "17",
+      "27"
+    ],
+    "correct_answer": "17",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "B",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均等待時間。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 題圖只給先後順序，這組教材採三個行程皆在 0 ms 就緒。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（0 ms 到達）、P2（0 ms 到達）、P3（0 ms 到達）。依規則選 P1，所以開始執行 P1。\n24 ms：目前可執行 P2（0 ms 到達）、P3（0 ms 到達）。依規則選 P2，所以開始執行 P2。\n27 ms：目前可執行 P3（0 ms 到達）。依規則選 P3，所以開始執行 P3。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–24） → P2（24–27） → P3（27–30）\n\n③ 只計算這一題問的量\n等待＝完成－到達－CPU 時間。\nP1：24－0－24＝0 ms。\nP2：27－0－3＝24 ms。\nP3：30－0－3＝27 ms。\n平均＝（0＋24＋27）÷3＝17 ms。\nA（24）：不是上述各行程數值加總後的平均，因此不選。\nB（17）：與計算值相同，所以選這項。\nC（27）：不是上述各行程數值加總後的平均，因此不選。\n\n④ 對照答案\n本題結論：選 B。\n\n容易弄混的地方：等待時間包含「第一次上 CPU 前」和「被搶先後再次排隊」的所有時間；不能只算第一次等待。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-1"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-1"
+    ],
+    "image": "../images/os-treasure-22bb3cb2a6ea.jpg",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算"
+  },
+  {
+    "id": 38,
+    "title": "FCFS／FIFO 計算",
+    "type": "choice",
+    "question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\n\nP1 0 6\n\nP2 1 5\n\nP3 2 8\n\nP4 3 1\n\n以上行程採用First- Come, First-Served (FCFS) Scheduling\n\n請問其Average waiting time 為多少?(ms)",
+    "options": [
+      "7.5",
+      "7.25",
+      "8.0",
+      "8.25"
+    ],
+    "correct_answer": "7.5",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "A",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均等待時間。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（0 ms 到達）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n2 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n3 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n6 ms：目前可執行 P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P2，所以開始執行 P2。\n11 ms：目前可執行 P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P3，所以開始執行 P3。\n19 ms：目前可執行 P4（3 ms 到達）。依規則選 P4，所以開始執行 P4。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–6） → P2（6–11） → P3（11–19） → P4（19–20）\n\n③ 只計算這一題問的量\n等待＝完成－到達－CPU 時間。\nP1：6－0－6＝0 ms。\nP2：11－1－5＝5 ms。\nP3：19－2－8＝9 ms。\nP4：20－3－1＝16 ms。\n平均＝（0＋5＋9＋16）÷4＝7.5 ms。\nA（7.5）：與計算值相同，所以選這項。\nB（7.25）：不是上述各行程數值加總後的平均，因此不選。\nC（8.0）：不是上述各行程數值加總後的平均，因此不選。\nD（8.25）：不是上述各行程數值加總後的平均，因此不選。\n\n④ 對照答案\n本題結論：選 A。\n\n容易弄混的地方：等待時間包含「第一次上 CPU 前」和「被搶先後再次排隊」的所有時間；不能只算第一次等待。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-1"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-1"
+    ],
+    "image": "../images/os-treasure-4a4a45a0f243.png",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算"
+  },
+  {
+    "id": 39,
+    "title": "EDF 即時排程",
+    "type": "choice",
+    "question": "已知有兩個行程 P1 P2 要進行即時排程 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 25\nP2 100 80 35\n\n選出 Early deadline first 排 P2 第二塊 資料的位置",
+    "options": [
+      "85-100",
+      "125-130",
+      "140-145",
+      "130-140"
+    ],
+    "correct_answer": "85-100\n125-130\n140-145\n130-140",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "多選題",
+    "original_source_answer": "A、B、C、D",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 25 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n80 ms：候選 P1_2（截止 100）；依最早絕對截止選 P1_2，這段執行到 85 ms。此期已做滿 CPU 時間。\n85–100：已到達工作都完成，CPU 閒置。\n100 ms：候選 P1_3（截止 150）、P2_2（截止 180）；依最早絕對截止選 P1_3，這段執行到 125 ms。此期已做滿 CPU 時間。\n125 ms：候選 P2_2（截止 180）；依最早絕對截止選 P2_2，這段執行到 160 ms。此期已做滿 CPU 時間。\n160 ms：候選 P1_4（截止 200）；依最早絕對截止選 P1_4，這段執行到 180 ms。此處是本題觀察範圍終點。\n\n時間線（ms）：P1_2（80–85） → 閒置（85–100） → P1_3（100–125） → P2_2（125–160） → P1_4（160–180）\n\n\n④ 回到本題／逐項核對\nP2_2：第 2 期，到達＝（2－1）×100＝100，絕對截止＝100＋80＝180；需要 35 ms。\n它的實際 CPU 區塊是 P2_2（125–160）；總長度 35＝35 ms，最後完成在 160 ms。\nA．85-100：實際是 閒置（85–100）；不是整段都在執行目標工作，所以不選。\nB．125-130：實際是 P2_2（125–130）；整段屬於目標工作，所以選。\nC．140-145：實際是 P2_2（140–145）；整段屬於目標工作，所以選。\nD．130-140：實際是 P2_2（130–140）；整段屬於目標工作，所以選。\n\n⑤ 對照答案\n題庫提供的答案保留為 A、B、C、D。依上面明列的條件推得 B、C、D，與題庫答案有落差。這裡把可重算的過程寫出來，不以缺少的條件硬湊答案。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-13"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-13"
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Rate Monotonic 即時排程",
+    "type": "choice",
+    "question": "即時排程 問題\n\n已知有兩個行程 P1 P2 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 20\nP2 100 100 35\n\n若採用 Rate Monotonic 排程法 以下哪一個資料會排入CPU之後有被插斷",
+    "options": [
+      "P1 第一塊資料",
+      "P1 第二塊資料",
+      "P2 第一塊資料",
+      "P2 第二塊資料"
+    ],
+    "correct_answer": "P1 第二塊資料\nP2 第二塊資料",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "多選題",
+    "original_source_answer": "B、D",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 20 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nRM：週期越短，固定優先權越高；新一期高優先權工作到達，會搶先尚未完成的低優先權工作。\n本題固定優先順序：P1 ＞ P2。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（週期 50）、P2_1（週期 100）；依固定週期優先權選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（週期 100）；依固定週期優先權選 P2_1，這段執行到 50 ms。之後因更高優先權工作到達而換人。\n50 ms：候選 P1_2（週期 50）、P2_1（週期 100）；依固定週期優先權選 P1_2，這段執行到 70 ms。此期已做滿 CPU 時間。\n70 ms：候選 P2_1（週期 100）；依固定週期優先權選 P2_1，這段執行到 75 ms。此期已做滿 CPU 時間。\n75–100：已到達工作都完成，CPU 閒置。\n100 ms：候選 P1_3（週期 50）、P2_2（週期 100）；依固定週期優先權選 P1_3，這段執行到 120 ms。此期已做滿 CPU 時間。\n120 ms：候選 P2_2（週期 100）；依固定週期優先權選 P2_2，這段執行到 150 ms。之後因更高優先權工作到達而換人。\n150 ms：候選 P1_4（週期 50）、P2_2（週期 100）；依固定週期優先權選 P1_4，這段執行到 170 ms。此期已做滿 CPU 時間。\n170 ms：候選 P2_2（週期 100）；依固定週期優先權選 P2_2，這段執行到 175 ms。此期已做滿 CPU 時間。\n175–180：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P1_1（0–20） → P2_1（20–50） → P1_2（50–70） → P2_1（70–75） → 閒置（75–100） → P1_3（100–120） → P2_2（120–150） → P1_4（150–170） → P2_2（170–175） → 閒置（175–180）\n\n\n④ 回到本題／逐項核對\nA．P1_1：第 1 期，到達＝（1－1）×50＝0，絕對截止＝0＋50＝50；需要 20 ms。實際執行：P1_1（0–20）。整期只占一個連續區塊，因此沒有被插斷；不符合題目，所以不選。\nB．P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 20 ms。實際執行：P1_2（50–70）。整期只占一個連續區塊，因此沒有被插斷；不符合題目，所以不選。\nC．P2_1：第 1 期，到達＝（1－1）×100＝0，絕對截止＝0＋100＝100；需要 35 ms。實際執行：P2_1（20–50） → P2_1（70–75）。做到一半被換下，之後回來，因此有被插斷；符合題目，所以選。\nD．P2_2：第 2 期，到達＝（2－1）×100＝100，絕對截止＝100＋100＝200；需要 35 ms。實際執行：P2_2（120–150） → P2_2（170–175）。做到一半被換下，之後回來，因此有被插斷；符合題目，所以選。\n\n⑤ 對照答案\n題庫提供的答案保留為 B、D。依上面明列的條件推得 C、D，與題庫答案有落差。這裡把可重算的過程寫出來，不以缺少的條件硬湊答案。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-3"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-3"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "Rate Monotonic 即時排程",
+    "type": "fill_blank",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 由時間0ms到 70ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) [__1__] 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1",
+    "options": [],
+    "correct_answer": "P3_1,P1_1,P2_1,P3_2,P2_1,P1_2,P3_3",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(P3_1),(P1_1),(P2_1),(P3_2),(P2_1),(P1_2),(P3_3)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nRM：週期越短，固定優先權越高；新一期高優先權工作到達，會搶先尚未完成的低優先權工作。\n本題固定優先順序：P3 ＞ P1 ＞ P2。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（週期 50）、P2_1（週期 60）、P3_1（週期 30）；依固定週期優先權選 P3_1，這段執行到 10 ms。此期已做滿 CPU 時間。\n10 ms：候選 P1_1（週期 50）、P2_1（週期 60）；依固定週期優先權選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（週期 60）；依固定週期優先權選 P2_1，這段執行到 30 ms。之後因更高優先權工作到達而換人。\n30 ms：候選 P2_1（週期 60）、P3_2（週期 30）；依固定週期優先權選 P3_2，這段執行到 40 ms。此期已做滿 CPU 時間。\n40 ms：候選 P2_1（週期 60）；依固定週期優先權選 P2_1，這段執行到 50 ms。此期已做滿 CPU 時間。\n50 ms：候選 P1_2（週期 50）；依固定週期優先權選 P1_2，這段執行到 60 ms。此期已做滿 CPU 時間。\n60 ms：候選 P2_2（週期 60）、P3_3（週期 30）；依固定週期優先權選 P3_3，這段執行到 70 ms。此期已做滿 CPU 時間。\n\n時間線（ms）：P3_1（0–10） → P1_1（10–20） → P2_1（20–30） → P3_2（30–40） → P2_1（40–50） → P1_2（50–60） → P3_3（60–70）\n\n\n④ 回到本題／逐項核對\n只讀 0–70 ms 的區塊，由左往右得到 P3_1 → P1_1 → P2_1 → P3_2 → P2_1 → P1_2 → P3_3。\n閒置區間仍畫在時間線中，但不是行程，不填入行程順序。被插斷後又回來的同一期工作，需再寫一次。\n\n⑤ 對照答案\n本題結論：P3_1 → P1_1 → P2_1 → P3_2 → P2_1 → P1_2 → P3_3。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-11"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-11"
+    ],
+    "original_source_question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 由時間0ms到 70ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) ____________ 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1",
+    "question_aliases": [
+      "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 由時間0ms到 70ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) ____________ 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "SJF／SRTF 計算",
+    "type": "choice",
+    "question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\nP1 0 8\nP2 1 4\nP3 2 6\nP4 3 5\n\n使用Preemptive Shortest-Job-First (SJF) Scheduling\n\n請問其Average Response time 為多少?(ms)",
+    "options": [
+      "2.5",
+      "2.6",
+      "2.0",
+      "2.75"
+    ],
+    "correct_answer": "2.5",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "單選題",
+    "original_source_answer": "A",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均回應時間。\n\n① 先用規則決定誰能上 CPU\n可搶先 SJF／SRTF：新工作到達時，比較「還需要的 CPU 時間」；較短者先做。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 剩餘時間相等時，保留目前執行者；CPU 空出後同長度者採先到先做。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（剩餘 8 ms）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 4 ms）。依規則選 P2，所以開始執行 P2。\n2 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 3 ms）、P3（剩餘 6 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 P2。\n3 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 2 ms）、P3（剩餘 6 ms）、P4（剩餘 5 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 P2。\n5 ms：目前可執行 P1（剩餘 7 ms）、P3（剩餘 6 ms）、P4（剩餘 5 ms）。依規則選 P4，所以開始執行 P4。\n10 ms：目前可執行 P1（剩餘 7 ms）、P3（剩餘 6 ms）。依規則選 P3，所以開始執行 P3。\n16 ms：目前可執行 P1（剩餘 7 ms）。依規則選 P1，所以開始執行 P1。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–1） → P2（1–5） → P4（5–10） → P3（10–16） → P1（16–23）\n\n③ 只計算這一題問的量\n回應＝第一次開始－到達。\nP1：0－0＝0 ms。\nP2：1－1＝0 ms。\nP3：10－2＝8 ms。\nP4：5－3＝2 ms。\n平均＝（0＋0＋8＋2）÷4＝2.5 ms。\nA（2.5）：與計算值相同，所以選這項。\nB（2.6）：不是上述各行程數值加總後的平均，因此不選。\nC（2.0）：不是上述各行程數值加總後的平均，因此不選。\nD（2.75）：不是上述各行程數值加總後的平均，因此不選。\n\n④ 對照答案\n本題結論：選 A。\n\n容易弄混的地方：回應時間只看第一次上 CPU，後來被搶先多久不再加進來；它和總等待時間不同。 這題 P3 需要 6 ms；請勿套用另一張 P3 需要 9 ms 的題圖。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-8"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-8"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "假設有行程 A~E。其CPU BURST 與到達時間如：\n\n行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若可搶先(preemptive)使用SJF排程法時，平均等待時間為何? [__1__] 格式 : 1.0",
+    "options": [],
+    "correct_answer": "3.4",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(3.4)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均等待時間。\n\n① 先用規則決定誰能上 CPU\n可搶先 SJF／SRTF：新工作到達時，比較「還需要的 CPU 時間」；較短者先做。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 剩餘時間相等時，保留目前執行者；CPU 空出後同長度者採先到先做。\n\n② 一步一步排時間線\n0 ms：目前可執行 E（剩餘 6 ms）。依規則選 E，所以開始執行 E。\n1 ms：目前可執行 B（剩餘 3 ms）、E（剩餘 5 ms）。依規則選 B，所以開始執行 B。\n3 ms：目前可執行 B（剩餘 1 ms）、D（剩餘 4 ms）、E（剩餘 5 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 B。\n4 ms：目前可執行 C（剩餘 2 ms）、D（剩餘 4 ms）、E（剩餘 5 ms）。依規則選 C，所以開始執行 C。\n5 ms：目前可執行 A（剩餘 2 ms）、C（剩餘 1 ms）、D（剩餘 4 ms）、E（剩餘 5 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 C。\n6 ms：目前可執行 A（剩餘 2 ms）、D（剩餘 4 ms）、E（剩餘 5 ms）。依規則選 A，所以開始執行 A。\n8 ms：目前可執行 D（剩餘 4 ms）、E（剩餘 5 ms）。依規則選 D，所以開始執行 D。\n12 ms：目前可執行 E（剩餘 5 ms）。依規則選 E，所以開始執行 E。\n\n時間線（括號內是開始–結束，單位 ms）：\nE（0–1） → B（1–4） → C（4–6） → A（6–8） → D（8–12） → E（12–17）\n\n③ 只計算這一題問的量\n等待＝完成－到達－CPU 時間。\nA：8－5－2＝1 ms。\nB：4－1－3＝0 ms。\nC：6－4－2＝0 ms。\nD：12－3－4＝5 ms。\nE：17－0－6＝11 ms。\n平均＝（1＋0＋0＋5＋11）÷5＝3.4 ms。\n\n④ 對照答案\n本題結論：3.4。\n\n容易弄混的地方：等待時間包含「第一次上 CPU 前」和「被搶先後再次排隊」的所有時間；不能只算第一次等待。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-4"
+    ],
+    "reference_question_ids": [
+      "community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-4"
+    ],
+    "image": "../images/os-treasure-a80dbe4a672f.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "假設有行程 A~E。其CPU BURST 與到達時間如：\n\n行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若可搶先(preemptive)使用SJF排程法時，平均等待時間為何? ____________ 格式 : 1.0",
+    "question_aliases": [
+      "假設有行程 A~E。其CPU BURST 與到達時間如：\n\n行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若可搶先(preemptive)使用SJF排程法時，平均等待時間為何? ____________ 格式 : 1.0"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "EDF 即時排程",
+    "type": "choice",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10 40\nP2 60 20 50\nP3 30 10 30\n\n若採用 Early deadline first 排程法 由時間0ms到 150ms 以下哪些正確",
+    "options": [
+      "110-120沒有排工作",
+      "90-100沒有排工作",
+      "100-110排工作P1",
+      "40-50排工作P2"
+    ],
+    "correct_answer": "110-120沒有排工作\n100-110排工作P1",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "多選題",
+    "original_source_answer": "A、C",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（截止 40）、P2_1（截止 50）、P3_1（截止 30）；依最早絕對截止選 P3_1，這段執行到 10 ms。此期已做滿 CPU 時間。\n10 ms：候選 P1_1（截止 40）、P2_1（截止 50）；依最早絕對截止選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（截止 50）；依最早絕對截止選 P2_1，這段執行到 40 ms。此期已做滿 CPU 時間。\n40 ms：候選 P3_2（截止 60）；依最早絕對截止選 P3_2，這段執行到 50 ms。此期已做滿 CPU 時間。\n50 ms：候選 P1_2（截止 90）；依最早絕對截止選 P1_2，這段執行到 60 ms。此期已做滿 CPU 時間。\n60 ms：候選 P2_2（截止 110）、P3_3（截止 90）；依最早絕對截止選 P3_3，這段執行到 70 ms。此期已做滿 CPU 時間。\n70 ms：候選 P2_2（截止 110）；依最早絕對截止選 P2_2，這段執行到 90 ms。此期已做滿 CPU 時間。\n90 ms：候選 P3_4（截止 120）；依最早絕對截止選 P3_4，這段執行到 100 ms。此期已做滿 CPU 時間。\n100 ms：候選 P1_3（截止 140）；依最早絕對截止選 P1_3，這段執行到 110 ms。此期已做滿 CPU 時間。\n110–120：已到達工作都完成，CPU 閒置。\n120 ms：候選 P2_3（截止 170）、P3_5（截止 150）；依最早絕對截止選 P3_5，這段執行到 130 ms。此期已做滿 CPU 時間。\n130 ms：候選 P2_3（截止 170）；依最早絕對截止選 P2_3，這段執行到 150 ms。此期已做滿 CPU 時間。\n\n時間線（ms）：P3_1（0–10） → P1_1（10–20） → P2_1（20–40） → P3_2（40–50） → P1_2（50–60） → P3_3（60–70） → P2_2（70–90） → P3_4（90–100） → P1_3（100–110） → 閒置（110–120） → P3_5（120–130） → P2_3（130–150）\n\n\n④ 回到本題／逐項核對\nA．110-120沒有排工作：對照時間線是 閒置（110–120）；敘述相符，所以選。\nB．90-100沒有排工作：對照時間線是 P3_4（90–100）；敘述不相符，所以不選。\nC．100-110排工作P1：對照時間線是 P1_3（100–110）；敘述相符，所以選。\nD．40-50排工作P2：對照時間線是 P3_2（40–50）；敘述不相符，所以不選。\n\n⑤ 對照答案\n本題結論：選 A、C。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-12"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-12"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "Rate Monotonic 即時排程",
+    "type": "fill_blank",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 由時間90ms到 150ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) [__1__] 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1",
+    "options": [],
+    "correct_answer": "P3_4,P1_3,P3_5,P2_3",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(P3_4),(P1_3),(P3_5),(P2_3)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nRM：週期越短，固定優先權越高；新一期高優先權工作到達，會搶先尚未完成的低優先權工作。\n本題固定優先順序：P3 ＞ P1 ＞ P2。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n90 ms：候選 P3_4（週期 30）；依固定週期優先權選 P3_4，這段執行到 100 ms。此期已做滿 CPU 時間。\n100 ms：候選 P1_3（週期 50）；依固定週期優先權選 P1_3，這段執行到 110 ms。此期已做滿 CPU 時間。\n110–120：已到達工作都完成，CPU 閒置。\n120 ms：候選 P2_3（週期 60）、P3_5（週期 30）；依固定週期優先權選 P3_5，這段執行到 130 ms。此期已做滿 CPU 時間。\n130 ms：候選 P2_3（週期 60）；依固定週期優先權選 P2_3，這段執行到 150 ms。此期已做滿 CPU 時間。\n\n時間線（ms）：P3_4（90–100） → P1_3（100–110） → 閒置（110–120） → P3_5（120–130） → P2_3（130–150）\n\n\n④ 回到本題／逐項核對\n只讀 90–150 ms 的區塊，由左往右得到 P3_4 → P1_3 → P3_5 → P2_3。\n閒置區間仍畫在時間線中，但不是行程，不填入行程順序。被插斷後又回來的同一期工作，需再寫一次。\n\n⑤ 對照答案\n本題結論：P3_4 → P1_3 → P3_5 → P2_3。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-1"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-1"
+    ],
+    "original_source_question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 由時間90ms到 150ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) ____________ 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1",
+    "question_aliases": [
+      "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 由時間90ms到 150ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) ____________ 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "即時排程可行性",
+    "type": "choice",
+    "question": "已知有兩個行程 P1 P2 要進行即時排程 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 25\nP2 100 80 35\n\n選出錯的",
+    "options": [
+      "Rate Monotonic 的方法不能排成功",
+      "Early deadline first 的方法不能排成功",
+      "Rate Monotonic 的方法先排P1",
+      "Early deadline first 的方法先排P1"
+    ],
+    "correct_answer": "Early deadline first 的方法不能排成功",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "單選題",
+    "original_source_answer": "B",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 25 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（截止 50）、P2_1（截止 80）；依最早絕對截止選 P1_1，這段執行到 25 ms。此期已做滿 CPU 時間。\n25 ms：候選 P2_1（截止 80）；依最早絕對截止選 P2_1，這段執行到 60 ms。此期已做滿 CPU 時間。\n60 ms：候選 P1_2（截止 100）；依最早絕對截止選 P1_2，這段執行到 85 ms。此期已做滿 CPU 時間。\n85–100：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P1_1（0–25） → P2_1（25–60） → P1_2（60–85） → 閒置（85–100）\n\n兩種方法比較：\nRM（固定依週期排序）：P1_1（0–25） → P2_1（25–50） → P1_2（50–75） → P2_1（75–85） → 閒置（85–100）\nEDF（依絕對截止時刻排序）：P1_1（0–25） → P2_1（25–60） → P1_2（60–85） → 閒置（85–100）\n\n④ 回到本題／逐項核對\n本題要找錯的。\nA．RM 的 P2_1 到 85 完成，超過截止 80，確實排不成功，這句正確，不選。\nB．EDF 讓 P2_1 在 60 完成、P1_2 在 85 完成，分別早於截止 80、100；後續每 100 ms 重複，能排成功。所以「不能成功」是錯的，選 B。\nC、D．0 ms 時 P1 週期較短、絕對截止也較早，兩種方法都先排 P1，所以兩句正確，不選。\n\n⑤ 對照答案\n本題結論：選 B。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-12"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-12"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "即時排程可行性",
+    "type": "choice",
+    "question": "已知有兩個行程 P1 P2 要進行即時排程 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 25\nP2 100 80 35\n\n選出對的",
+    "options": [
+      "Rate Monotonic 的方法不能排成功是因為第一塊資料完成時間在85",
+      "Early deadline first的方法 P2第一塊資料完成時間在60",
+      "Rate Monotonic 的方法不能排成功是因為第一塊資料完成時間在80",
+      "Early deadline first的方法P2第二塊資料被切成兩段"
+    ],
+    "correct_answer": "Rate Monotonic 的方法不能排成功是因為第一塊資料完成時間在85\nEarly deadline first的方法 P2第一塊資料完成時間在60",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "多選題",
+    "original_source_answer": "A、B",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 25 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（截止 50）、P2_1（截止 80）；依最早絕對截止選 P1_1，這段執行到 25 ms。此期已做滿 CPU 時間。\n25 ms：候選 P2_1（截止 80）；依最早絕對截止選 P2_1，這段執行到 60 ms。此期已做滿 CPU 時間。\n60 ms：候選 P1_2（截止 100）；依最早絕對截止選 P1_2，這段執行到 85 ms。此期已做滿 CPU 時間。\n85–100：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P1_1（0–25） → P2_1（25–60） → P1_2（60–85） → 閒置（85–100）\n\n兩種方法比較：\nRM（固定依週期排序）：P1_1（0–25） → P2_1（25–50） → P1_2（50–75） → P2_1（75–85） → 閒置（85–100）\nEDF（依絕對截止時刻排序）：P1_1（0–25） → P2_1（25–60） → P1_2（60–85） → 閒置（85–100）\n\n④ 回到本題／逐項核對\nA．RM 的 P2_1 被 50–75 的 P1_2 插斷，到 85 才完成，超過自己的截止 80，因此正確。\nB．EDF 的 P2_1 在 25–60 連續做滿 35 ms，因此正確。\nC．RM 的完工時刻是 85，80 是截止時刻，不能互換，因此不選。\nD．EDF 的 P2_2 是 125–160 連續執行；150 到達的 P1_4 截止 200，晚於 P2_2 的 180，不會插斷它，因此不選。\n\n⑤ 對照答案\n本題結論：選 A、B。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-11"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-11"
+    ]
+  },
+  {
+    "id": 48,
+    "title": "Round Robin 計算",
+    "type": "fill_blank",
+    "question": "Suppose there are process A~E. Its CPU BURST time is as follows:\n\nProcess Burst Time Arrival Time\n\nA 4 1\nB 6 0\nC 2 6\nD 4 3\nE 2 9\n\nIf TQ = 3 when using RR scheduling method, what is the average waiting time? [__1__]",
+    "options": [],
+    "correct_answer": "7.8",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(7.8)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均等待時間。\n\n① 先用規則決定誰能上 CPU\nRR：依就緒佇列輪流，每次最多做一個時間片；未完成的人回隊尾。 本題每輪最多 3 ms。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 時間片＝3 ms；邊界時新到達者先入隊，再把用完時間片的工作放回隊尾；同時到達依表格順序。\n\n② 一步一步排時間線\n0–3：B 做 3 ms，還剩 3 ms，回到隊尾；接下來的隊列是 A → D → B。\n3–6：A 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 D → B → C → A。\n6–9：D 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 B → C → A → E → D。\n9–12：B 做 3 ms，已完成，離開佇列；接下來的隊列是 C → A → E → D。\n12–14：C 做 2 ms，已完成，離開佇列；接下來的隊列是 A → E → D。\n14–15：A 做 1 ms，已完成，離開佇列；接下來的隊列是 E → D。\n15–17：E 做 2 ms，已完成，離開佇列；接下來的隊列是 D。\n17–18：D 做 1 ms，已完成，離開佇列；接下來的隊列是 空。\n\n時間線（括號內是開始–結束，單位 ms）：\nB（0–3） → A（3–6） → D（6–9） → B（9–12） → C（12–14） → A（14–15） → E（15–17） → D（17–18）\n\n③ 只計算這一題問的量\n等待＝完成－到達－CPU 時間。\nA：15－1－4＝10 ms。\nB：12－0－6＝6 ms。\nC：14－6－2＝6 ms。\nD：18－3－4＝11 ms。\nE：17－9－2＝6 ms。\n平均＝（10＋6＋6＋11＋6）÷5＝7.8 ms。\n\n④ 對照答案\n本題結論：7.8。\n\n容易弄混的地方：等待時間包含「第一次上 CPU 前」和「被搶先後再次排隊」的所有時間；不能只算第一次等待。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-14"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-14"
+    ],
+    "original_source_question": "Suppose there are process A~E. Its CPU BURST time is as follows:\n\nProcess Burst Time Arrival Time\n\nA 4 1\nB 6 0\nC 2 6\nD 4 3\nE 2 9\n\nIf TQ = 3 when using RR scheduling method, what is the average waiting time? ____________",
+    "question_aliases": [
+      "Suppose there are process A~E. Its CPU BURST time is as follows:\n\nProcess Burst Time Arrival Time\n\nA 4 1\nB 6 0\nC 2 6\nD 4 3\nE 2 9\n\nIf TQ = 3 when using RR scheduling method, what is the average waiting time? ____________"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "假設有行程 A~E。其CPU時間、到達時間如下\n\n若可搶先(preemptive)使用SJF排程法時，平均等待(waiting)時間為 [__1__] ms (格式為浮點入如 1.0)",
+    "options": [],
+    "correct_answer": "3.0",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(3.0)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均等待時間。\n\n① 先用規則決定誰能上 CPU\n可搶先 SJF／SRTF：新工作到達時，比較「還需要的 CPU 時間」；較短者先做。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 剩餘時間相等時，保留目前執行者；CPU 空出後同長度者採先到先做。\n\n② 一步一步排時間線\n0 ms：目前可執行 A（剩餘 5 ms）。依規則選 A，所以開始執行 A。\n1 ms：目前可執行 A（剩餘 4 ms）、B（剩餘 4 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 A。\n2 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）、C（剩餘 2 ms）。依規則選 C，所以開始執行 C。\n3 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）、C（剩餘 1 ms）、D（剩餘 1 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 C。\n4 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）、D（剩餘 1 ms）。依規則選 D，所以開始執行 D。\n5 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）。依規則選 A，所以開始執行 A。\n7 ms：目前可執行 A（剩餘 1 ms）、B（剩餘 4 ms）、E（剩餘 3 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 A。\n8 ms：目前可執行 B（剩餘 4 ms）、E（剩餘 3 ms）。依規則選 E，所以開始執行 E。\n11 ms：目前可執行 B（剩餘 4 ms）。依規則選 B，所以開始執行 B。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–2） → C（2–4） → D（4–5） → A（5–8） → E（8–11） → B（11–15）\n\n③ 只計算這一題問的量\n等待＝完成－到達－CPU 時間。\nA：8－0－5＝3 ms。\nB：15－1－4＝10 ms。\nC：4－2－2＝0 ms。\nD：5－3－1＝1 ms。\nE：11－7－3＝1 ms。\n平均＝（3＋10＋0＋1＋1）÷5＝3 ms。\n\n④ 對照答案\n本題結論：3。\n\n容易弄混的地方：等待時間包含「第一次上 CPU 前」和「被搶先後再次排隊」的所有時間；不能只算第一次等待。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-5"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-5"
+    ],
+    "image": "../images/os-treasure-8adc650e182b.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "假設有行程 A~E。其CPU時間、到達時間如下\n\n若可搶先(preemptive)使用SJF排程法時，平均等待(waiting)時間為 ____________ ms (格式為浮點入如 1.0)",
+    "question_aliases": [
+      "假設有行程 A~E。其CPU時間、到達時間如下\n\n若可搶先(preemptive)使用SJF排程法時，平均等待(waiting)時間為 ____________ ms (格式為浮點入如 1.0)"
+    ]
+  },
+  {
+    "id": 50,
+    "title": "FCFS／FIFO 計算",
+    "type": "fill_blank",
+    "question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\n\nP1 0 6\n\nP2 1 5\n\nP3 2 8\n\nP4 3 1\n\n以上行程採用First- Come, First-Served (FCFS) Scheduling\n\n請寫出全部的行程排程順序 [__1__] *答案格式範例:P1->P2->P3->P2->P5->P9 格式錯誤不給分",
+    "options": [],
+    "correct_answer": "P1->P2->P3->P4",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(P1->P2->P3->P4)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：CPU 執行順序。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（0 ms 到達）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n2 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n3 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n6 ms：目前可執行 P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P2，所以開始執行 P2。\n11 ms：目前可執行 P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P3，所以開始執行 P3。\n19 ms：目前可執行 P4（3 ms 到達）。依規則選 P4，所以開始執行 P4。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–6） → P2（6–11） → P3（11–19） → P4（19–20）\n\n③ 只計算這一題問的量\n沿時間線由左往右抄每個連續區塊：P1 → P2 → P3 → P4。同一行程被搶先後再次回來，要再寫一次；不要把重複名稱刪掉。\n\n④ 對照答案\n本題結論：P1 → P2 → P3 → P4。\n\n容易弄混的地方：要求執行順序時，不要依 P1、P2、P3 的名稱排序；要依 CPU 實際先後順序填寫，並使用題目要求的箭號、底線或連寫格式。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-11"
+    ],
+    "reference_question_ids": [
+      "community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-11"
+    ],
+    "image": "../images/os-treasure-4a4a45a0f243.png",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算",
+    "original_source_question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\n\nP1 0 6\n\nP2 1 5\n\nP3 2 8\n\nP4 3 1\n\n以上行程採用First- Come, First-Served (FCFS) Scheduling\n\n請寫出全部的行程排程順序 ____________ *答案格式範例:P1->P2->P3->P2->P5->P9 格式錯誤不給分",
+    "question_aliases": [
+      "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\n\nP1 0 6\n\nP2 1 5\n\nP3 2 8\n\nP4 3 1\n\n以上行程採用First- Come, First-Served (FCFS) Scheduling\n\n請寫出全部的行程排程順序 ____________ *答案格式範例:P1->P2->P3->P2->P5->P9 格式錯誤不給分"
+    ]
+  },
+  {
+    "id": 51,
+    "title": "FCFS／FIFO 計算",
+    "type": "choice",
+    "question": "下圖為使用 FIFO CPU 排程演算法的排程結果\n\n請回答以下問題\n\n關於每一個行程的等待時間 選出正確的",
+    "options": [
+      "P1 = 0",
+      "P1 = 2",
+      "P2 = 24",
+      "P2 = 27"
+    ],
+    "correct_answer": "P1 = 0\nP2 = 24",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "A、C",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：各行程等待時間。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 題圖只給先後順序，這組教材採三個行程皆在 0 ms 就緒。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（0 ms 到達）、P2（0 ms 到達）、P3（0 ms 到達）。依規則選 P1，所以開始執行 P1。\n24 ms：目前可執行 P2（0 ms 到達）、P3（0 ms 到達）。依規則選 P2，所以開始執行 P2。\n27 ms：目前可執行 P3（0 ms 到達）。依規則選 P3，所以開始執行 P3。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–24） → P2（24–27） → P3（27–30）\n\n③ 只計算這一題問的量\nP1：24－0－24＝等待 0 ms。\nP2：27－0－3＝等待 24 ms。\nP3：30－0－3＝等待 27 ms。\nA「P1 = 0」：與該行程等待時間相符。\nB「P1 = 2」：與該行程等待時間不符。\nC「P2 = 24」：與該行程等待時間相符。\nD「P2 = 27」：與該行程等待時間不符。\n\n④ 對照答案\n本題結論：選 A、C。\n\n容易弄混的地方：P2 在 24 ms 才開始，所以 P2 等待 24；27 是 P3 的第一次開始時刻，不能挪給 P2。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-2"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-2"
+    ],
+    "image": "../images/os-treasure-22bb3cb2a6ea.jpg",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算"
+  },
+  {
+    "id": 52,
+    "title": "EDF 即時排程",
+    "type": "fill_blank",
+    "question": "已知有兩個行程 P1 P2 要進行即時排程 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 25\nP2 100 80 35\n\n若採用 Early deadline first 排程法 由時間50ms到 150ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) [__1__] 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1",
+    "options": [],
+    "correct_answer": "P2_1,P1_2,P2_2,P1_3,P2_2,P3_1",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(P2_1),(P1_2),(P2_2),(P1_3),(P2_2),(P3_1)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 25 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n50 ms：候選 P1_2（截止 100）、P2_1（截止 80）；依最早絕對截止選 P2_1，這段執行到 60 ms。此期已做滿 CPU 時間。\n60 ms：候選 P1_2（截止 100）；依最早絕對截止選 P1_2，這段執行到 85 ms。此期已做滿 CPU 時間。\n85–100：已到達工作都完成，CPU 閒置。\n100 ms：候選 P1_3（截止 150）、P2_2（截止 180）；依最早絕對截止選 P1_3，這段執行到 125 ms。此期已做滿 CPU 時間。\n125 ms：候選 P2_2（截止 180）；依最早絕對截止選 P2_2，這段執行到 150 ms。此處是本題觀察範圍終點。\n\n時間線（ms）：P2_1（50–60） → P1_2（60–85） → 閒置（85–100） → P1_3（100–125） → P2_2（125–150）\n\n\n④ 回到本題／逐項核對\n只讀 50–150 ms 的區塊，由左往右得到 P2_1 → P1_2 → P1_3 → P2_2。\n閒置區間仍畫在時間線中，但不是行程，不填入行程順序。被插斷後又回來的同一期工作，需再寫一次。\n\n⑤ 對照答案\n題庫提供的答案保留為 (P2_1),(P1_2),(P2_2),(P1_3),(P2_2),(P3_1)。依上面明列的條件推得 P2_1 → P1_2 → P1_3 → P2_2，與題庫答案有落差。這裡把可重算的過程寫出來，不以缺少的條件硬湊答案。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-18"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-18"
+    ],
+    "original_source_question": "已知有兩個行程 P1 P2 要進行即時排程 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 25\nP2 100 80 35\n\n若採用 Early deadline first 排程法 由時間50ms到 150ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) ____________ 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1",
+    "question_aliases": [
+      "已知有兩個行程 P1 P2 要進行即時排程 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 25\nP2 100 80 35\n\n若採用 Early deadline first 排程法 由時間50ms到 150ms 行程排入的順序是甚麼(每一個連續區塊寫一次如 P1的第一塊資料 寫 P1_1，P3的第二塊資料 寫 P3_2) ____________ 格式: P1_1,P2_1,P3_1,P2_1,P2_3,P3_1"
+    ]
+  },
+  {
+    "id": 53,
+    "title": "EDF 即時排程",
+    "type": "fill_blank",
+    "question": "已知有兩個行程 P1 P2 要進行即時排程 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 25\nP2 100 80 35\n\nEarly deadline first 在 時間 140-145 排的是哪一個行程 [__1__]",
+    "options": [],
+    "correct_answer": "P2",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(P2)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 25 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nEDF：只比較「已到達、還沒完成」工作的絕對截止時刻，越早截止越先做；新工作不一定能搶先。\n例如新工作雖已到達，若它的截止更晚，就不能搶走目前較急的工作。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n100 ms：候選 P1_3（截止 150）、P2_2（截止 180）；依最早絕對截止選 P1_3，這段執行到 125 ms。此期已做滿 CPU 時間。\n125 ms：候選 P2_2（截止 180）；依最早絕對截止選 P2_2，這段執行到 160 ms。此期已做滿 CPU 時間。\n160 ms：候選 P1_4（截止 200）；依最早絕對截止選 P1_4，這段執行到 180 ms。此處是本題觀察範圍終點。\n\n時間線（ms）：P1_3（100–125） → P2_2（125–160） → P1_4（160–180）\n\n\n④ 回到本題／逐項核對\n140–145 ms 包含在 P2_2（140–145），因此是 P2。不要用這個區間剛好在哪一期的到達時間來猜，要看 CPU 真正執行者。\n\n⑤ 對照答案\n本題結論：P2。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-17"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-17"
+    ],
+    "original_source_question": "已知有兩個行程 P1 P2 要進行即時排程 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 25\nP2 100 80 35\n\nEarly deadline first 在 時間 140-145 排的是哪一個行程 ____________",
+    "question_aliases": [
+      "已知有兩個行程 P1 P2 要進行即時排程 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 25\nP2 100 80 35\n\nEarly deadline first 在 時間 140-145 排的是哪一個行程 ____________"
+    ]
+  },
+  {
+    "id": 54,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\nP1 0 8\nP2 1 4\nP3 2 6\nP4 3 5\n\n使用Preemptive Shortest-Job-First (SJF) Scheduling\n\n請寫出全部的行程排程順序 [__1__] *答案格式範例:P1->P2->P3->P2->P5->P9 格式錯誤不給分",
+    "options": [],
+    "correct_answer": "P1->P2->P4->P3->P1",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(P1->P2->P4->P3->P1)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：CPU 執行順序。\n\n① 先用規則決定誰能上 CPU\n可搶先 SJF／SRTF：新工作到達時，比較「還需要的 CPU 時間」；較短者先做。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 剩餘時間相等時，保留目前執行者；CPU 空出後同長度者採先到先做。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（剩餘 8 ms）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 4 ms）。依規則選 P2，所以開始執行 P2。\n2 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 3 ms）、P3（剩餘 6 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 P2。\n3 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 2 ms）、P3（剩餘 6 ms）、P4（剩餘 5 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 P2。\n5 ms：目前可執行 P1（剩餘 7 ms）、P3（剩餘 6 ms）、P4（剩餘 5 ms）。依規則選 P4，所以開始執行 P4。\n10 ms：目前可執行 P1（剩餘 7 ms）、P3（剩餘 6 ms）。依規則選 P3，所以開始執行 P3。\n16 ms：目前可執行 P1（剩餘 7 ms）。依規則選 P1，所以開始執行 P1。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–1） → P2（1–5） → P4（5–10） → P3（10–16） → P1（16–23）\n\n③ 只計算這一題問的量\n沿時間線由左往右抄每個連續區塊：P1 → P2 → P4 → P3 → P1。同一行程被搶先後再次回來，要再寫一次；不要把重複名稱刪掉。\n\n④ 對照答案\n本題結論：P1 → P2 → P4 → P3 → P1。\n\n容易弄混的地方：要求執行順序時，不要依 P1、P2、P3 的名稱排序；要依 CPU 實際先後順序填寫，並使用題目要求的箭號、底線或連寫格式。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-7"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-7"
+    ],
+    "original_source_question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\nP1 0 8\nP2 1 4\nP3 2 6\nP4 3 5\n\n使用Preemptive Shortest-Job-First (SJF) Scheduling\n\n請寫出全部的行程排程順序 ____________ *答案格式範例:P1->P2->P3->P2->P5->P9 格式錯誤不給分",
+    "question_aliases": [
+      "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\nP1 0 8\nP2 1 4\nP3 2 6\nP4 3 5\n\n使用Preemptive Shortest-Job-First (SJF) Scheduling\n\n請寫出全部的行程排程順序 ____________ *答案格式範例:P1->P2->P3->P2->P5->P9 格式錯誤不給分"
+    ]
+  },
+  {
+    "id": 55,
+    "title": "SJF／SRTF 計算",
+    "type": "choice",
+    "question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\nP1 0 8\nP2 1 4\nP3 2 6\nP4 3 5\n\n使用Preemptive Shortest-Job-First (SJF) Scheduling\n\n請問其Average waiting time 為多少?(ms)",
+    "options": [
+      "6.25",
+      "6.5",
+      "6.0",
+      "6.75"
+    ],
+    "correct_answer": "6.25",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "單選題",
+    "original_source_answer": "A",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均等待時間。\n\n① 先用規則決定誰能上 CPU\n可搶先 SJF／SRTF：新工作到達時，比較「還需要的 CPU 時間」；較短者先做。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 剩餘時間相等時，保留目前執行者；CPU 空出後同長度者採先到先做。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（剩餘 8 ms）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 4 ms）。依規則選 P2，所以開始執行 P2。\n2 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 3 ms）、P3（剩餘 6 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 P2。\n3 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 2 ms）、P3（剩餘 6 ms）、P4（剩餘 5 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 P2。\n5 ms：目前可執行 P1（剩餘 7 ms）、P3（剩餘 6 ms）、P4（剩餘 5 ms）。依規則選 P4，所以開始執行 P4。\n10 ms：目前可執行 P1（剩餘 7 ms）、P3（剩餘 6 ms）。依規則選 P3，所以開始執行 P3。\n16 ms：目前可執行 P1（剩餘 7 ms）。依規則選 P1，所以開始執行 P1。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–1） → P2（1–5） → P4（5–10） → P3（10–16） → P1（16–23）\n\n③ 只計算這一題問的量\n等待＝完成－到達－CPU 時間。\nP1：23－0－8＝15 ms。\nP2：5－1－4＝0 ms。\nP3：16－2－6＝8 ms。\nP4：10－3－5＝2 ms。\n平均＝（15＋0＋8＋2）÷4＝6.25 ms。\nA（6.25）：與計算值相同，所以選這項。\nB（6.5）：不是上述各行程數值加總後的平均，因此不選。\nC（6.0）：不是上述各行程數值加總後的平均，因此不選。\nD（6.75）：不是上述各行程數值加總後的平均，因此不選。\n\n④ 對照答案\n本題結論：選 A。\n\n容易弄混的地方：等待時間包含「第一次上 CPU 前」和「被搶先後再次排隊」的所有時間；不能只算第一次等待。 這題 P3 需要 6 ms；請勿套用另一張 P3 需要 9 ms 的題圖。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-7"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-7"
+    ]
+  },
+  {
+    "id": 56,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "假設有行程 A~E。其CPU時間、到達時間如下\n\n若可搶先(preemptive)使用SJF排程法時，第一個行程載入之後，OS進行了幾次內文切換(context switch) [__1__]",
+    "options": [],
+    "correct_answer": "5",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(5)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：內文切換次數。\n\n① 先用規則決定誰能上 CPU\n可搶先 SJF／SRTF：新工作到達時，比較「還需要的 CPU 時間」；較短者先做。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 剩餘時間相等時，保留目前執行者；CPU 空出後同長度者採先到先做。\n\n② 一步一步排時間線\n0 ms：目前可執行 A（剩餘 5 ms）。依規則選 A，所以開始執行 A。\n1 ms：目前可執行 A（剩餘 4 ms）、B（剩餘 4 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 A。\n2 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）、C（剩餘 2 ms）。依規則選 C，所以開始執行 C。\n3 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）、C（剩餘 1 ms）、D（剩餘 1 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 C。\n4 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）、D（剩餘 1 ms）。依規則選 D，所以開始執行 D。\n5 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）。依規則選 A，所以開始執行 A。\n7 ms：目前可執行 A（剩餘 1 ms）、B（剩餘 4 ms）、E（剩餘 3 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 A。\n8 ms：目前可執行 B（剩餘 4 ms）、E（剩餘 3 ms）。依規則選 E，所以開始執行 E。\n11 ms：目前可執行 B（剩餘 4 ms）。依規則選 B，所以開始執行 B。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–2） → C（2–4） → D（4–5） → A（5–8） → E（8–11） → B（11–15）\n\n③ 只計算這一題問的量\n2 ms：A → C\n4 ms：C → D\n5 ms：D → A\n8 ms：A → E\n11 ms：E → B\n共 5 次從一個行程切換到另一個行程。\n\n④ 對照答案\n本題結論：5。\n\n容易弄混的地方：題目寫「第一個行程載入之後」，所以開始時把第一個行程放上 CPU 不算；最後全部做完也不多算一次。不要把執行區塊數直接當成切換次數。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-5"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-5"
+    ],
+    "image": "../images/os-treasure-8adc650e182b.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "假設有行程 A~E。其CPU時間、到達時間如下\n\n若可搶先(preemptive)使用SJF排程法時，第一個行程載入之後，OS進行了幾次內文切換(context switch) ____________",
+    "question_aliases": [
+      "假設有行程 A~E。其CPU時間、到達時間如下\n\n若可搶先(preemptive)使用SJF排程法時，第一個行程載入之後，OS進行了幾次內文切換(context switch) ____________"
+    ]
+  },
+  {
+    "id": 57,
+    "title": "Rate Monotonic 即時排程",
+    "type": "choice",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 以下哪一個資料會排入CPU之後又被插斷",
+    "options": [
+      "P2 第一塊資料",
+      "P2 第三塊資料",
+      "P2 第四塊資料",
+      "P1 第三塊資料"
+    ],
+    "correct_answer": "P2 第一塊資料\nP2 第四塊資料",
+    "options_status": "complete",
+    "source_type": "多選題",
+    "original_source_type": "多選題",
+    "original_source_answer": "A、C",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nRM：週期越短，固定優先權越高；新一期高優先權工作到達，會搶先尚未完成的低優先權工作。\n本題固定優先順序：P3 ＞ P1 ＞ P2。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（週期 50）、P2_1（週期 60）、P3_1（週期 30）；依固定週期優先權選 P3_1，這段執行到 10 ms。此期已做滿 CPU 時間。\n10 ms：候選 P1_1（週期 50）、P2_1（週期 60）；依固定週期優先權選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（週期 60）；依固定週期優先權選 P2_1，這段執行到 30 ms。之後因更高優先權工作到達而換人。\n30 ms：候選 P2_1（週期 60）、P3_2（週期 30）；依固定週期優先權選 P3_2，這段執行到 40 ms。此期已做滿 CPU 時間。\n40 ms：候選 P2_1（週期 60）；依固定週期優先權選 P2_1，這段執行到 50 ms。此期已做滿 CPU 時間。\n50 ms：候選 P1_2（週期 50）；依固定週期優先權選 P1_2，這段執行到 60 ms。此期已做滿 CPU 時間。\n60 ms：候選 P2_2（週期 60）、P3_3（週期 30）；依固定週期優先權選 P3_3，這段執行到 70 ms。此期已做滿 CPU 時間。\n70 ms：候選 P2_2（週期 60）；依固定週期優先權選 P2_2，這段執行到 90 ms。此期已做滿 CPU 時間。\n90 ms：候選 P3_4（週期 30）；依固定週期優先權選 P3_4，這段執行到 100 ms。此期已做滿 CPU 時間。\n100 ms：候選 P1_3（週期 50）；依固定週期優先權選 P1_3，這段執行到 110 ms。此期已做滿 CPU 時間。\n110–120：已到達工作都完成，CPU 閒置。\n120 ms：候選 P2_3（週期 60）、P3_5（週期 30）；依固定週期優先權選 P3_5，這段執行到 130 ms。此期已做滿 CPU 時間。\n130 ms：候選 P2_3（週期 60）；依固定週期優先權選 P2_3，這段執行到 150 ms。此期已做滿 CPU 時間。\n150 ms：候選 P1_4（週期 50）、P3_6（週期 30）；依固定週期優先權選 P3_6，這段執行到 160 ms。此期已做滿 CPU 時間。\n160 ms：候選 P1_4（週期 50）；依固定週期優先權選 P1_4，這段執行到 170 ms。此期已做滿 CPU 時間。\n170–180：已到達工作都完成，CPU 閒置。\n180 ms：候選 P2_4（週期 60）、P3_7（週期 30）；依固定週期優先權選 P3_7，這段執行到 190 ms。此期已做滿 CPU 時間。\n190 ms：候選 P2_4（週期 60）；依固定週期優先權選 P2_4，這段執行到 200 ms。之後因更高優先權工作到達而換人。\n200 ms：候選 P1_5（週期 50）、P2_4（週期 60）；依固定週期優先權選 P1_5，這段執行到 210 ms。此期已做滿 CPU 時間。\n210 ms：候選 P2_4（週期 60）、P3_8（週期 30）；依固定週期優先權選 P3_8，這段執行到 220 ms。此期已做滿 CPU 時間。\n220 ms：候選 P2_4（週期 60）；依固定週期優先權選 P2_4，這段執行到 230 ms。此期已做滿 CPU 時間。\n230–240：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P3_1（0–10） → P1_1（10–20） → P2_1（20–30） → P3_2（30–40） → P2_1（40–50） → P1_2（50–60） → P3_3（60–70） → P2_2（70–90） → P3_4（90–100） → P1_3（100–110） → 閒置（110–120） → P3_5（120–130） → P2_3（130–150） → P3_6（150–160） → P1_4（160–170） → 閒置（170–180） → P3_7（180–190） → P2_4（190–200） → P1_5（200–210） → P3_8（210–220） → P2_4（220–230） → 閒置（230–240）\n\n\n④ 回到本題／逐項核對\nA．P2_1：第 1 期，到達＝（1－1）×60＝0，絕對截止＝0＋50＝50；需要 20 ms。實際執行：P2_1（20–30） → P2_1（40–50）。做到一半被換下，之後回來，因此有被插斷；符合題目，所以選。\nB．P2_3：第 3 期，到達＝（3－1）×60＝120，絕對截止＝120＋50＝170；需要 20 ms。實際執行：P2_3（130–150）。整期只占一個連續區塊，因此沒有被插斷；不符合題目，所以不選。\nC．P2_4：第 4 期，到達＝（4－1）×60＝180，絕對截止＝180＋50＝230；需要 20 ms。實際執行：P2_4（190–200） → P2_4（220–230）。做到一半被換下，之後回來，因此有被插斷；符合題目，所以選。\nD．P1_3：第 3 期，到達＝（3－1）×50＝100，絕對截止＝100＋40＝140；需要 10 ms。實際執行：P1_3（100–110）。整期只占一個連續區塊，因此沒有被插斷；不符合題目，所以不選。\n\n⑤ 對照答案\n本題結論：選 A、C。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-9"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-9"
+    ]
+  },
+  {
+    "id": 58,
+    "title": "Round Robin 計算",
+    "type": "fill_blank",
+    "question": "採用 RR（Round Robin）排程\n\nProcess Arrival Time Burst Time\nP1 0 10\nP2 2 4\nP3 4 6\nP4 6 3\nP5 8 5\n\nTime Quantum = 3 ms Average Turnaround Time =? [__1__]",
+    "options": [],
+    "correct_answer": "18.2",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(18.2)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均迴轉時間。\n\n① 先用規則決定誰能上 CPU\nRR：依就緒佇列輪流，每次最多做一個時間片；未完成的人回隊尾。 本題每輪最多 3 ms。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 時間片＝3 ms；邊界時新到達者先入隊，再把用完時間片的工作放回隊尾；同時到達依表格順序。\n\n② 一步一步排時間線\n0–3：P1 做 3 ms，還剩 7 ms，回到隊尾；接下來的隊列是 P2 → P1。\n3–6：P2 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 P1 → P3 → P4 → P2。\n6–9：P1 做 3 ms，還剩 4 ms，回到隊尾；接下來的隊列是 P3 → P4 → P2 → P5 → P1。\n9–12：P3 做 3 ms，還剩 3 ms，回到隊尾；接下來的隊列是 P4 → P2 → P5 → P1 → P3。\n12–15：P4 做 3 ms，已完成，離開佇列；接下來的隊列是 P2 → P5 → P1 → P3。\n15–16：P2 做 1 ms，已完成，離開佇列；接下來的隊列是 P5 → P1 → P3。\n16–19：P5 做 3 ms，還剩 2 ms，回到隊尾；接下來的隊列是 P1 → P3 → P5。\n19–22：P1 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 P3 → P5 → P1。\n22–25：P3 做 3 ms，已完成，離開佇列；接下來的隊列是 P5 → P1。\n25–27：P5 做 2 ms，已完成，離開佇列；接下來的隊列是 P1。\n27–28：P1 做 1 ms，已完成，離開佇列；接下來的隊列是 空。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–3） → P2（3–6） → P1（6–9） → P3（9–12） → P4（12–15） → P2（15–16） → P5（16–19） → P1（19–22） → P3（22–25） → P5（25–27） → P1（27–28）\n\n③ 只計算這一題問的量\n迴轉＝完成－到達。\nP1：28－0＝28 ms。\nP2：16－2＝14 ms。\nP3：25－4＝21 ms。\nP4：15－6＝9 ms。\nP5：27－8＝19 ms。\n平均＝（28＋14＋21＋9＋19）÷5＝18.2 ms。\n\n④ 對照答案\n本題結論：18.2。\n\n容易弄混的地方：迴轉時間是這個行程進來到離開的整段時間，包含執行與等待；不是只平均完工時刻，也不是只加 CPU 時間。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-9"
+    ],
+    "reference_question_ids": [
+      "community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-9"
+    ],
+    "original_source_question": "採用 RR（Round Robin）排程\n\nProcess Arrival Time Burst Time\nP1 0 10\nP2 2 4\nP3 4 6\nP4 6 3\nP5 8 5\n\nTime Quantum = 3 ms Average Turnaround Time =? ____________",
+    "question_aliases": [
+      "採用 RR（Round Robin）排程\n\nProcess Arrival Time Burst Time\nP1 0 10\nP2 2 4\nP3 4 6\nP4 6 3\nP5 8 5\n\nTime Quantum = 3 ms Average Turnaround Time =? ____________"
+    ]
+  },
+  {
+    "id": 59,
+    "title": "FCFS／FIFO 計算",
+    "type": "fill_blank",
+    "question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n在不可搶先(nonpreemptive)的情況下使用FCFS，在第一個行程載入之後，OS共執行了幾次 context switch? [__1__]",
+    "options": [],
+    "correct_answer": "4",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(4)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：內文切換次數。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 A（0 ms 到達）。依規則選 A，所以開始執行 A。\n1 ms：目前可執行 A（0 ms 到達）、B（1 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n2 ms：目前可執行 A（0 ms 到達）、B（1 ms 到達）、C（2 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n3 ms：目前可執行 A（0 ms 到達）、B（1 ms 到達）、C（2 ms 到達）、D（3 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 A。\n5 ms：目前可執行 B（1 ms 到達）、C（2 ms 到達）、D（3 ms 到達）。依規則選 B，所以開始執行 B。\n7 ms：目前可執行 B（1 ms 到達）、C（2 ms 到達）、D（3 ms 到達）、E（7 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 B。\n9 ms：目前可執行 C（2 ms 到達）、D（3 ms 到達）、E（7 ms 到達）。依規則選 C，所以開始執行 C。\n11 ms：目前可執行 D（3 ms 到達）、E（7 ms 到達）。依規則選 D，所以開始執行 D。\n12 ms：目前可執行 E（7 ms 到達）。依規則選 E，所以開始執行 E。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–5） → B（5–9） → C（9–11） → D（11–12） → E（12–15）\n\n③ 只計算這一題問的量\n5 ms：A → B\n9 ms：B → C\n11 ms：C → D\n12 ms：D → E\n共 4 次從一個行程切換到另一個行程。\n\n④ 對照答案\n本題結論：4。\n\n容易弄混的地方：題目寫「第一個行程載入之後」，所以開始時把第一個行程放上 CPU 不算；最後全部做完也不多算一次。不要把執行區塊數直接當成切換次數。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-23"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-23"
+    ],
+    "image": "../images/os-treasure-8adc650e182b.png",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算",
+    "original_source_question": "已知有以下的行程 與其CPU時間 與 到達時間\n\n在不可搶先(nonpreemptive)的情況下使用FCFS，在第一個行程載入之後，OS共執行了幾次 context switch? ____________",
+    "question_aliases": [
+      "已知有以下的行程 與其CPU時間 與 到達時間\n\n在不可搶先(nonpreemptive)的情況下使用FCFS，在第一個行程載入之後，OS共執行了幾次 context switch? ____________"
+    ]
+  },
+  {
+    "id": 60,
+    "title": "SJF／SRTF 計算",
+    "type": "choice",
+    "question": "假設有行程 A~E。其CPU時間、到達時間如下\n\n若可搶先(preemptive)使用SJF排程法時，哪一個行程被分成了兩次執行?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correct_answer": "A",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "A",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：被分成兩段的行程。\n\n① 先用規則決定誰能上 CPU\n可搶先 SJF／SRTF：新工作到達時，比較「還需要的 CPU 時間」；較短者先做。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 剩餘時間相等時，保留目前執行者；CPU 空出後同長度者採先到先做。\n\n② 一步一步排時間線\n0 ms：目前可執行 A（剩餘 5 ms）。依規則選 A，所以開始執行 A。\n1 ms：目前可執行 A（剩餘 4 ms）、B（剩餘 4 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 A。\n2 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）、C（剩餘 2 ms）。依規則選 C，所以開始執行 C。\n3 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）、C（剩餘 1 ms）、D（剩餘 1 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 C。\n4 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）、D（剩餘 1 ms）。依規則選 D，所以開始執行 D。\n5 ms：目前可執行 A（剩餘 3 ms）、B（剩餘 4 ms）。依規則選 A，所以開始執行 A。\n7 ms：目前可執行 A（剩餘 1 ms）、B（剩餘 4 ms）、E（剩餘 3 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 A。\n8 ms：目前可執行 B（剩餘 4 ms）、E（剩餘 3 ms）。依規則選 E，所以開始執行 E。\n11 ms：目前可執行 B（剩餘 4 ms）。依規則選 B，所以開始執行 B。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–2） → C（2–4） → D（4–5） → A（5–8） → E（8–11） → B（11–15）\n\n③ 只計算這一題問的量\nA 出現在 A（0–2）、A（5–8），共 2 個連續區塊。\nB 出現在 B（11–15），共 1 個連續區塊。\nC 出現在 C（2–4），共 1 個連續區塊。\nD 出現在 D（4–5），共 1 個連續區塊。\nE 出現在 E（8–11），共 1 個連續區塊。\nA 指行程 A：恰有兩段，符合題意。\nB 指行程 B：只有一段，不符合「分成兩次」。\nC 指行程 C：只有一段，不符合「分成兩次」。\nD 指行程 D：只有一段，不符合「分成兩次」。\n\n④ 對照答案\n本題結論：選 A。\n\n容易弄混的地方：區塊數看同一個名稱出現幾段，不是看做了幾毫秒。先到達不代表一定先完成；被搶先的工作可能隔一段時間才恢復。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-6"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-6"
+    ],
+    "image": "../images/os-treasure-8adc650e182b.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算"
+  },
+  {
+    "id": 61,
+    "title": "SJF／SRTF 計算",
+    "type": "choice",
+    "question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\nP1 0 8\nP2 1 4\nP3 2 6\nP4 3 5\n\n使用Preemptive Shortest-Job-First (SJF) Scheduling\n\n請問其Average turnaround time 為多少?(ms)",
+    "options": [
+      "12",
+      "13",
+      "11",
+      "10"
+    ],
+    "correct_answer": "12",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "單選題",
+    "original_source_answer": "A",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均迴轉時間。\n\n① 先用規則決定誰能上 CPU\n可搶先 SJF／SRTF：新工作到達時，比較「還需要的 CPU 時間」；較短者先做。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 剩餘時間相等時，保留目前執行者；CPU 空出後同長度者採先到先做。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（剩餘 8 ms）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 4 ms）。依規則選 P2，所以開始執行 P2。\n2 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 3 ms）、P3（剩餘 6 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 P2。\n3 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 2 ms）、P3（剩餘 6 ms）、P4（剩餘 5 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 P2。\n5 ms：目前可執行 P1（剩餘 7 ms）、P3（剩餘 6 ms）、P4（剩餘 5 ms）。依規則選 P4，所以開始執行 P4。\n10 ms：目前可執行 P1（剩餘 7 ms）、P3（剩餘 6 ms）。依規則選 P3，所以開始執行 P3。\n16 ms：目前可執行 P1（剩餘 7 ms）。依規則選 P1，所以開始執行 P1。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–1） → P2（1–5） → P4（5–10） → P3（10–16） → P1（16–23）\n\n③ 只計算這一題問的量\n迴轉＝完成－到達。\nP1：23－0＝23 ms。\nP2：5－1＝4 ms。\nP3：16－2＝14 ms。\nP4：10－3＝7 ms。\n平均＝（23＋4＋14＋7）÷4＝12 ms。\nA（12）：與計算值相同，所以選這項。\nB（13）：不是上述各行程數值加總後的平均，因此不選。\nC（11）：不是上述各行程數值加總後的平均，因此不選。\nD（10）：不是上述各行程數值加總後的平均，因此不選。\n\n④ 對照答案\n本題結論：選 A。\n\n容易弄混的地方：迴轉時間是這個行程進來到離開的整段時間，包含執行與等待；不是只平均完工時刻，也不是只加 CPU 時間。 這題 P3 需要 6 ms；請勿套用另一張 P3 需要 9 ms 的題圖。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-13"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-13"
+    ]
+  },
+  {
+    "id": 62,
+    "title": "FCFS／FIFO 計算",
+    "type": "choice",
+    "question": "下圖為使用 FIFO CPU 排程演算法的排程結果\n\n請回答以下問題\n\n請問平均迴轉時間(turnaround time)是多少",
+    "options": [
+      "27",
+      "24",
+      "30"
+    ],
+    "correct_answer": "27",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "A",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均迴轉時間。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 題圖只給先後順序，這組教材採三個行程皆在 0 ms 就緒。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（0 ms 到達）、P2（0 ms 到達）、P3（0 ms 到達）。依規則選 P1，所以開始執行 P1。\n24 ms：目前可執行 P2（0 ms 到達）、P3（0 ms 到達）。依規則選 P2，所以開始執行 P2。\n27 ms：目前可執行 P3（0 ms 到達）。依規則選 P3，所以開始執行 P3。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–24） → P2（24–27） → P3（27–30）\n\n③ 只計算這一題問的量\n迴轉＝完成－到達。\nP1：24－0＝24 ms。\nP2：27－0＝27 ms。\nP3：30－0＝30 ms。\n平均＝（24＋27＋30）÷3＝27 ms。\nA（27）：與計算值相同，所以選這項。\nB（24）：不是上述各行程數值加總後的平均，因此不選。\nC（30）：不是上述各行程數值加總後的平均，因此不選。\n\n④ 對照答案\n本題結論：選 A。\n\n容易弄混的地方：迴轉時間是這個行程進來到離開的整段時間，包含執行與等待；不是只平均完工時刻，也不是只加 CPU 時間。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-7"
+    ],
+    "reference_question_ids": [
+      "community-70c0705f-a1d7-4e2e-b00f-a94d9b435d25-7"
+    ],
+    "image": "../images/os-treasure-22bb3cb2a6ea.jpg",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算"
+  },
+  {
+    "id": 63,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若使用 SJF排程法時，且不可搶先(non-preemptive)，平均迴轉時間為何? [__1__] 格式: 1.0",
+    "options": [],
+    "correct_answer": "8.2",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(8.2)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均迴轉時間。\n\n① 先用規則決定誰能上 CPU\n不可搶先 SJF：CPU 空下來才選「已到達且 CPU 時間最短」的人；沒做完前不換人。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 同樣長的工作採先到先做；尚未到達者不參加挑選。\n\n② 一步一步排時間線\n0 ms：目前可執行 E（需要 6 ms）。依規則選 E，所以開始執行 E。\n1 ms：目前可執行 B（需要 3 ms）、E（需要 6 ms）。目前工作尚未完成，不可搶先，所以繼續執行 E。\n3 ms：目前可執行 B（需要 3 ms）、D（需要 4 ms）、E（需要 6 ms）。目前工作尚未完成，不可搶先，所以繼續執行 E。\n4 ms：目前可執行 B（需要 3 ms）、C（需要 2 ms）、D（需要 4 ms）、E（需要 6 ms）。目前工作尚未完成，不可搶先，所以繼續執行 E。\n5 ms：目前可執行 A（需要 2 ms）、B（需要 3 ms）、C（需要 2 ms）、D（需要 4 ms）、E（需要 6 ms）。目前工作尚未完成，不可搶先，所以繼續執行 E。\n6 ms：目前可執行 A（需要 2 ms）、B（需要 3 ms）、C（需要 2 ms）、D（需要 4 ms）。依規則選 C，所以開始執行 C。\n8 ms：目前可執行 A（需要 2 ms）、B（需要 3 ms）、D（需要 4 ms）。依規則選 A，所以開始執行 A。\n10 ms：目前可執行 B（需要 3 ms）、D（需要 4 ms）。依規則選 B，所以開始執行 B。\n13 ms：目前可執行 D（需要 4 ms）。依規則選 D，所以開始執行 D。\n\n時間線（括號內是開始–結束，單位 ms）：\nE（0–6） → C（6–8） → A（8–10） → B（10–13） → D（13–17）\n\n③ 只計算這一題問的量\n迴轉＝完成－到達。\nA：10－5＝5 ms。\nB：13－1＝12 ms。\nC：8－4＝4 ms。\nD：17－3＝14 ms。\nE：6－0＝6 ms。\n平均＝（5＋12＋4＋14＋6）÷5＝8.2 ms。\n\n④ 對照答案\n本題結論：8.2。\n\n容易弄混的地方：迴轉時間是這個行程進來到離開的整段時間，包含執行與等待；不是只平均完工時刻，也不是只加 CPU 時間。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-2"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-2"
+    ],
+    "image": "../images/os-treasure-a80dbe4a672f.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若使用 SJF排程法時，且不可搶先(non-preemptive)，平均迴轉時間為何? ____________ 格式: 1.0",
+    "question_aliases": [
+      "行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若使用 SJF排程法時，且不可搶先(non-preemptive)，平均迴轉時間為何? ____________ 格式: 1.0"
+    ]
+  },
+  {
+    "id": 64,
+    "title": "Round Robin 計算",
+    "type": "fill_blank",
+    "question": "已知有以下五個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\nA 0 3\nB 1 2\nC 3 4\nD 3 3\nE 5 2\n\n若使用RR（TQ = 3）排程法時 又行程的執行順序為何 格式 : ABCDE [__1__]",
+    "options": [],
+    "correct_answer": "ABCDEC",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(ABCDEC)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：CPU 執行順序。\n\n① 先用規則決定誰能上 CPU\nRR：依就緒佇列輪流，每次最多做一個時間片；未完成的人回隊尾。 本題每輪最多 3 ms。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 時間片＝3 ms；邊界時新到達者先入隊，再把用完時間片的工作放回隊尾；同時到達依表格順序。\n\n② 一步一步排時間線\n0–3：A 做 3 ms，已完成，離開佇列；接下來的隊列是 B → C → D。\n3–5：B 做 2 ms，已完成，離開佇列；接下來的隊列是 C → D → E。\n5–8：C 做 3 ms，還剩 1 ms，回到隊尾；接下來的隊列是 D → E → C。\n8–11：D 做 3 ms，已完成，離開佇列；接下來的隊列是 E → C。\n11–13：E 做 2 ms，已完成，離開佇列；接下來的隊列是 C。\n13–14：C 做 1 ms，已完成，離開佇列；接下來的隊列是 空。\n\n時間線（括號內是開始–結束，單位 ms）：\nA（0–3） → B（3–5） → C（5–8） → D（8–11） → E（11–13） → C（13–14）\n\n③ 只計算這一題問的量\n沿時間線由左往右抄每個連續區塊：A → B → C → D → E → C。同一行程被搶先後再次回來，要再寫一次；不要把重複名稱刪掉。\n\n④ 對照答案\n本題結論：A → B → C → D → E → C。\n\n容易弄混的地方：要求執行順序時，不要依 P1、P2、P3 的名稱排序；要依 CPU 實際先後順序填寫，並使用題目要求的箭號、底線或連寫格式。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-5"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-5"
+    ],
+    "original_source_question": "已知有以下五個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\nA 0 3\nB 1 2\nC 3 4\nD 3 3\nE 5 2\n\n若使用RR（TQ = 3）排程法時 又行程的執行順序為何 格式 : ABCDE ____________",
+    "question_aliases": [
+      "已知有以下五個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\nA 0 3\nB 1 2\nC 3 4\nD 3 3\nE 5 2\n\n若使用RR（TQ = 3）排程法時 又行程的執行順序為何 格式 : ABCDE ____________"
+    ]
+  },
+  {
+    "id": 65,
+    "title": "優先權排程",
+    "type": "fill_blank",
+    "question": "Suppose there are process P1~P5. Its CPU Burst Time & Priority as follows:\n\nProcess Burst Time Priority\n\nP1 10 3\nP2 1 1\nP3 2 4\nP4 1 5\nP5 5 2\n\n請寫出全部的行程排程順序 *答案格式範例:P1->P2->P3->P2->P5->P9 格式錯誤不給分 [__1__]",
+    "options": [],
+    "correct_answer": "P2->P5->P1->P3->P4",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(P2->P5->P1->P3->P4)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：CPU 執行順序。\n\n① 先用規則決定誰能上 CPU\n優先權排程：本題採數字越小、優先權越高；所有行程在 0 ms 已就緒。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（優先權 3）、P2（優先權 1）、P3（優先權 4）、P4（優先權 5）、P5（優先權 2）。依規則選 P2，所以開始執行 P2。\n1 ms：目前可執行 P1（優先權 3）、P3（優先權 4）、P4（優先權 5）、P5（優先權 2）。依規則選 P5，所以開始執行 P5。\n6 ms：目前可執行 P1（優先權 3）、P3（優先權 4）、P4（優先權 5）。依規則選 P1，所以開始執行 P1。\n16 ms：目前可執行 P3（優先權 4）、P4（優先權 5）。依規則選 P3，所以開始執行 P3。\n18 ms：目前可執行 P4（優先權 5）。依規則選 P4，所以開始執行 P4。\n\n時間線（括號內是開始–結束，單位 ms）：\nP2（0–1） → P5（1–6） → P1（6–16） → P3（16–18） → P4（18–19）\n\n③ 只計算這一題問的量\n沿時間線由左往右抄每個連續區塊：P2 → P5 → P1 → P3 → P4。同一行程被搶先後再次回來，要再寫一次；不要把重複名稱刪掉。\n\n④ 對照答案\n本題結論：P2 → P5 → P1 → P3 → P4。\n\n容易弄混的地方：要求執行順序時，不要依 P1、P2、P3 的名稱排序；要依 CPU 實際先後順序填寫，並使用題目要求的箭號、底線或連寫格式。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-15"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-15"
+    ],
+    "original_source_question": "Suppose there are process P1~P5. Its CPU Burst Time & Priority as follows:\n\nProcess Burst Time Priority\n\nP1 10 3\nP2 1 1\nP3 2 4\nP4 1 5\nP5 5 2\n\n請寫出全部的行程排程順序 *答案格式範例:P1->P2->P3->P2->P5->P9 格式錯誤不給分 ____________",
+    "question_aliases": [
+      "Suppose there are process P1~P5. Its CPU Burst Time & Priority as follows:\n\nProcess Burst Time Priority\n\nP1 10 3\nP2 1 1\nP3 2 4\nP4 1 5\nP5 5 2\n\n請寫出全部的行程排程順序 *答案格式範例:P1->P2->P3->P2->P5->P9 格式錯誤不給分 ____________"
+    ]
+  },
+  {
+    "id": 66,
+    "title": "Rate Monotonic 即時排程",
+    "type": "choice",
+    "question": "即時排程 問題\n\n已知有兩個行程 P1 P2 分別需要的 CPU 、deladline 時間如下\n\nPeriod Deadline CPU\nP1 50 50 20\nP2 100 100 35\n\n若使用 Rate Monotonic 方式 在 55-60 與 70-75 分別排入的行程是哪一個",
+    "options": [
+      "P1, P2",
+      "P1, P1",
+      "P2, P1",
+      "P2, P2"
+    ],
+    "correct_answer": "P2, P1",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "單選題",
+    "original_source_answer": "C",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋50＝100；需要 20 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nRM：週期越短，固定優先權越高；新一期高優先權工作到達，會搶先尚未完成的低優先權工作。\n本題固定優先順序：P1 ＞ P2。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n0 ms：候選 P1_1（週期 50）、P2_1（週期 100）；依固定週期優先權選 P1_1，這段執行到 20 ms。此期已做滿 CPU 時間。\n20 ms：候選 P2_1（週期 100）；依固定週期優先權選 P2_1，這段執行到 50 ms。之後因更高優先權工作到達而換人。\n50 ms：候選 P1_2（週期 50）、P2_1（週期 100）；依固定週期優先權選 P1_2，這段執行到 70 ms。此期已做滿 CPU 時間。\n70 ms：候選 P2_1（週期 100）；依固定週期優先權選 P2_1，這段執行到 75 ms。此期已做滿 CPU 時間。\n75–100：已到達工作都完成，CPU 閒置。\n\n時間線（ms）：P1_1（0–20） → P2_1（20–50） → P1_2（50–70） → P2_1（70–75） → 閒置（75–100）\n\n\n④ 回到本題／逐項核對\n55–60 ms 落在 P1_2（55–60），所以是 P1。\n70–75 ms 落在 P2_1（70–75），所以是 P2。\nA．P1, P2：兩個時段都吻合，所以選。\nB．P1, P1：與上面兩個時段的實際工作不一致，所以不選。\nC．P2, P1：與上面兩個時段的實際工作不一致，所以不選。\nD．P2, P2：與上面兩個時段的實際工作不一致，所以不選。\n\n⑤ 對照答案\n題庫提供的答案保留為 C。依上面明列的條件推得 A，與題庫答案有落差。這裡把可重算的過程寫出來，不以缺少的條件硬湊答案。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-4"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-4"
+    ]
+  },
+  {
+    "id": 67,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若使用 SJF排程法時，且不可搶先(non-preemptive)，行程執行的順序為何? [__1__] 格式 : ABCDE",
+    "options": [],
+    "correct_answer": "ECABD",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(ECABD)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：CPU 執行順序。\n\n① 先用規則決定誰能上 CPU\n不可搶先 SJF：CPU 空下來才選「已到達且 CPU 時間最短」的人；沒做完前不換人。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 同樣長的工作採先到先做；尚未到達者不參加挑選。\n\n② 一步一步排時間線\n0 ms：目前可執行 E（需要 6 ms）。依規則選 E，所以開始執行 E。\n1 ms：目前可執行 B（需要 3 ms）、E（需要 6 ms）。目前工作尚未完成，不可搶先，所以繼續執行 E。\n3 ms：目前可執行 B（需要 3 ms）、D（需要 4 ms）、E（需要 6 ms）。目前工作尚未完成，不可搶先，所以繼續執行 E。\n4 ms：目前可執行 B（需要 3 ms）、C（需要 2 ms）、D（需要 4 ms）、E（需要 6 ms）。目前工作尚未完成，不可搶先，所以繼續執行 E。\n5 ms：目前可執行 A（需要 2 ms）、B（需要 3 ms）、C（需要 2 ms）、D（需要 4 ms）、E（需要 6 ms）。目前工作尚未完成，不可搶先，所以繼續執行 E。\n6 ms：目前可執行 A（需要 2 ms）、B（需要 3 ms）、C（需要 2 ms）、D（需要 4 ms）。依規則選 C，所以開始執行 C。\n8 ms：目前可執行 A（需要 2 ms）、B（需要 3 ms）、D（需要 4 ms）。依規則選 A，所以開始執行 A。\n10 ms：目前可執行 B（需要 3 ms）、D（需要 4 ms）。依規則選 B，所以開始執行 B。\n13 ms：目前可執行 D（需要 4 ms）。依規則選 D，所以開始執行 D。\n\n時間線（括號內是開始–結束，單位 ms）：\nE（0–6） → C（6–8） → A（8–10） → B（10–13） → D（13–17）\n\n③ 只計算這一題問的量\n沿時間線由左往右抄每個連續區塊：E → C → A → B → D。同一行程被搶先後再次回來，要再寫一次；不要把重複名稱刪掉。\n\n④ 對照答案\n本題結論：E → C → A → B → D。\n\n容易弄混的地方：要求執行順序時，不要依 P1、P2、P3 的名稱排序；要依 CPU 實際先後順序填寫，並使用題目要求的箭號、底線或連寫格式。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-2"
+    ],
+    "reference_question_ids": [
+      "community-c8889cff-484a-4c3e-b8aa-2bb9e2f90d1a-2"
+    ],
+    "image": "../images/os-treasure-a80dbe4a672f.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若使用 SJF排程法時，且不可搶先(non-preemptive)，行程執行的順序為何? ____________ 格式 : ABCDE",
+    "question_aliases": [
+      "行程 CPU Burst (ms) 到達時間\nA 2 5\nB 3 1\nC 2 4\nD 4 3\nE 6 0\n\n若使用 SJF排程法時，且不可搶先(non-preemptive)，行程執行的順序為何? ____________ 格式 : ABCDE"
+    ]
+  },
+  {
+    "id": 68,
+    "title": "Rate Monotonic 即時排程",
+    "type": "fill_blank",
+    "question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 P2的第二塊資料會由哪一個時間點 排到哪一個時間點 [__1__] 格式: 20-55",
+    "options": [],
+    "correct_answer": "70-90",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "填空題",
+    "original_source_answer": "(70-90)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "① 先讀懂資料和名稱\nPeriod 是多久來一份新工作；CPU 是每份要做多久；Deadline 是每份從到達起最多能等多久。\n例如 P1_2：第 2 期，到達＝（2－1）×50＝50，絕對截止＝50＋40＝90；需要 10 ms。下標代表第幾期，不是被切開的第幾段。\n\n② 套用排程規則\nRM：週期越短，固定優先權越高；新一期高優先權工作到達，會搶先尚未完成的低優先權工作。\n本題固定優先順序：P3 ＞ P1 ＞ P2。\n第一期都在 0 ms 到達；之後每隔一個 Period 產生新一期工作。 Deadline 欄是相對到達時間的期限；絕對截止＝到達＋Deadline。 單一 CPU，不計切換成本；同截止時刻者採先到先做。\n\n③ 一段一段看誰占 CPU\n50 ms：候選 P1_2（週期 50）；依固定週期優先權選 P1_2，這段執行到 60 ms。此期已做滿 CPU 時間。\n60 ms：候選 P2_2（週期 60）、P3_3（週期 30）；依固定週期優先權選 P3_3，這段執行到 70 ms。此期已做滿 CPU 時間。\n70 ms：候選 P2_2（週期 60）；依固定週期優先權選 P2_2，這段執行到 90 ms。此期已做滿 CPU 時間。\n90 ms：候選 P3_4（週期 30）；依固定週期優先權選 P3_4，這段執行到 100 ms。此期已做滿 CPU 時間。\n\n時間線（ms）：P1_2（50–60） → P3_3（60–70） → P2_2（70–90） → P3_4（90–100）\n\n\n④ 回到本題／逐項核對\nP2_2：第 2 期，到達＝（2－1）×60＝60，絕對截止＝60＋50＝110；需要 20 ms。\n它的實際 CPU 區塊是 P2_2（70–90）；總長度 20＝20 ms，最後完成在 90 ms。\n\n\n⑤ 對照答案\n本題結論：70-90。\n\n容易弄混的地方：工作「到達」不代表立即上 CPU；相對 Deadline 必須先加上到達時刻，才能用 EDF 比較。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-13"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-13"
+    ],
+    "original_source_question": "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 P2的第二塊資料會由哪一個時間點 排到哪一個時間點 ____________ 格式: 20-55",
+    "question_aliases": [
+      "已知有三個行程 進行即時排程\n\nPeriod CPU Deadline\nP1 50 10ms 40\nP2 60 20ms 50\nP3 30 10ms 30\n\n若採用 Rate Monotonic 排程法 P2的第二塊資料會由哪一個時間點 排到哪一個時間點 ____________ 格式: 20-55"
+    ]
+  },
+  {
+    "id": 69,
+    "title": "SJF／SRTF 計算",
+    "type": "fill_blank",
+    "question": "已知有以下的四個行程 還有他們的到達時間與 cpu 運算需求\n\n若採用SJF 可搶先(preemptive) 請問行程安排的順序是? [__1__] 格式 : P2_P3_P1_P4",
+    "options": [],
+    "correct_answer": "P1_P2_P4_P1_P3",
+    "options_status": "not_applicable",
+    "source_type": "填空題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "(P1_P2_P4_P1_P3)",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：CPU 執行順序。\n\n① 先用規則決定誰能上 CPU\n可搶先 SJF／SRTF：新工作到達時，比較「還需要的 CPU 時間」；較短者先做。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。 剩餘時間相等時，保留目前執行者；CPU 空出後同長度者採先到先做。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（剩餘 8 ms）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 4 ms）。依規則選 P2，所以開始執行 P2。\n2 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 3 ms）、P3（剩餘 9 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 P2。\n3 ms：目前可執行 P1（剩餘 7 ms）、P2（剩餘 2 ms）、P3（剩餘 9 ms）、P4（剩餘 5 ms）。沒有更短的剩餘工作；相等時沿用目前工作，所以繼續執行 P2。\n5 ms：目前可執行 P1（剩餘 7 ms）、P3（剩餘 9 ms）、P4（剩餘 5 ms）。依規則選 P4，所以開始執行 P4。\n10 ms：目前可執行 P1（剩餘 7 ms）、P3（剩餘 9 ms）。依規則選 P1，所以開始執行 P1。\n17 ms：目前可執行 P3（剩餘 9 ms）。依規則選 P3，所以開始執行 P3。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–1） → P2（1–5） → P4（5–10） → P1（10–17） → P3（17–26）\n\n③ 只計算這一題問的量\n沿時間線由左往右抄每個連續區塊：P1 → P2 → P4 → P1 → P3。同一行程被搶先後再次回來，要再寫一次；不要把重複名稱刪掉。\n\n④ 對照答案\n本題結論：P1 → P2 → P4 → P1 → P3。\n\n容易弄混的地方：要求執行順序時，不要依 P1、P2、P3 的名稱排序；要依 CPU 實際先後順序填寫，並使用題目要求的箭號、底線或連寫格式。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-26"
+    ],
+    "reference_question_ids": [
+      "community-310b2ef0-f0cc-4f7a-a5ad-86421a1227f6-26"
+    ],
+    "image": "../images/os-treasure-19dbd3095c04.png",
+    "image_alt": "CPU 排程題資料圖：SJF／SRTF 計算",
+    "original_source_question": "已知有以下的四個行程 還有他們的到達時間與 cpu 運算需求\n\n若採用SJF 可搶先(preemptive) 請問行程安排的順序是? ____________ 格式 : P2_P3_P1_P4",
+    "question_aliases": [
+      "已知有以下的四個行程 還有他們的到達時間與 cpu 運算需求\n\n若採用SJF 可搶先(preemptive) 請問行程安排的順序是? ____________ 格式 : P2_P3_P1_P4"
+    ]
+  },
+  {
+    "id": 70,
+    "title": "FCFS／FIFO 計算",
+    "type": "choice",
+    "question": "已知有以下四個PROCESSES 其到達時間與所需的CPU執行時間(ms)\n\nProcess Arrival TimeT Burst Time\n\nP1 0 6\n\nP2 1 5\n\nP3 2 8\n\nP4 3 1\n\n以上行程採用First- Come, First-Served (FCFS) Scheduling\n\n請問其Average turnaround time 為多少(ms)",
+    "options": [
+      "12",
+      "12.5",
+      "13",
+      "13.5"
+    ],
+    "correct_answer": "12.5",
+    "options_status": "complete",
+    "source_type": "單選題",
+    "original_source_type": "圖片題",
+    "original_source_answer": "B",
+    "answer_basis": "reference_treasure_20261102",
+    "answer_note": "先認清本題在問：平均迴轉時間。\n\n① 先用規則決定誰能上 CPU\nFCFS／FIFO：已到達的人先來先做，一旦開始就做完。\n\n單一 CPU；不計切換耗時；沒有額外 I/O。\n\n② 一步一步排時間線\n0 ms：目前可執行 P1（0 ms 到達）。依規則選 P1，所以開始執行 P1。\n1 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n2 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n3 ms：目前可執行 P1（0 ms 到達）、P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。目前工作尚未完成，不可搶先，所以繼續執行 P1。\n6 ms：目前可執行 P2（1 ms 到達）、P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P2，所以開始執行 P2。\n11 ms：目前可執行 P3（2 ms 到達）、P4（3 ms 到達）。依規則選 P3，所以開始執行 P3。\n19 ms：目前可執行 P4（3 ms 到達）。依規則選 P4，所以開始執行 P4。\n\n時間線（括號內是開始–結束，單位 ms）：\nP1（0–6） → P2（6–11） → P3（11–19） → P4（19–20）\n\n③ 只計算這一題問的量\n迴轉＝完成－到達。\nP1：6－0＝6 ms。\nP2：11－1＝10 ms。\nP3：19－2＝17 ms。\nP4：20－3＝17 ms。\n平均＝（6＋10＋17＋17）÷4＝12.5 ms。\nA（12）：不是上述各行程數值加總後的平均，因此不選。\nB（12.5）：與計算值相同，所以選這項。\nC（13）：不是上述各行程數值加總後的平均，因此不選。\nD（13.5）：不是上述各行程數值加總後的平均，因此不選。\n\n④ 對照答案\n本題結論：選 B。\n\n容易弄混的地方：迴轉時間是這個行程進來到離開的整段時間，包含執行與等待；不是只平均完工時刻，也不是只加 CPU 時間。",
+    "sources": [
+      "https://yocheng06.github.io/course-library/os.html?question=community-31668494-b954-40b4-b0ee-614fffc0d46c-9"
+    ],
+    "reference_question_ids": [
+      "community-31668494-b954-40b4-b0ee-614fffc0d46c-9"
+    ],
+    "image": "../images/os-treasure-4a4a45a0f243.png",
+    "image_alt": "CPU 排程題資料圖：FCFS／FIFO 計算"
+  }
+]

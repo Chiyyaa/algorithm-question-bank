@@ -9,7 +9,7 @@ function similarity(a,b){if(a===b)return 1;if(!a.size||!b.size)return 0;let shar
 function threadModels(text){return [...String(text).matchAll(/\b(many|one)\s*-?\s*to\s*-?\s*(many|one)\b/gi)].map(m=>m[1].toLowerCase()+'-to-'+m[2].toLowerCase()).sort();}
 function compatibleModels(a,b){const first=threadModels(a),second=threadModels(b);return !first.length||!second.length||JSON.stringify([...new Set(first)])===JSON.stringify([...new Set(second)]);}
 export function createBatchIndex(entries){
-    return entries.filter(e=>e&&['algorithm','os'].includes(e.subject)&&/^u\d+$/.test(e.unit)&&Number.isSafeInteger(e.id)&&e.id>0&&typeof e.question==='string').map(e=>{
+    return entries.filter(e=>e&&['algorithm','os'].includes(e.subject)&&(/^u\d+$/.test(e.unit)||e.subject==='os'&&e.unit==='treasure')&&Number.isSafeInteger(e.id)&&e.id>0&&typeof e.question==='string').map(e=>{
         const stem=normalizeBatchText(e.question),options=(e.options||[]).map(stripBatchOption).map(normalizeBatchText);
         return {...e,normalizedStem:stem,normalizedStems:[stem,...(Array.isArray(e.question_aliases)?e.question_aliases.filter(s=>typeof s==='string'&&s.trim()).map(normalizeBatchText):[])],normalizedOptions:options,grams:grams(stem.toLowerCase()),blanks:blankCount(e.question)};
     });

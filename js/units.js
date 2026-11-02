@@ -15,7 +15,8 @@ export const SUBJECTS = [
         { id: "u3", name: "U3", questionCount: 294, dataUrl: "../data/os-u3.json" },
         { id: "u4", name: "U4", questionCount: 147, dataUrl: "../data/os-u4.json" },
         { id: "u5", name: "U5", questionCount: 127, dataUrl: "../data/os-u5.json" },
-        { id: "u6", name: "U6", questionCount: 234, dataUrl: "../data/os-u6.json" }
+        { id: "u6", name: "U6", questionCount: 234, dataUrl: "../data/os-u6.json" },
+        { id: "treasure", name: "挖寶單元", questionCount: 70, dataUrl: "../data/os-treasure.json" }
     ] }
 ];
 
@@ -31,7 +32,7 @@ export function mergeCollaborationUnits(rows) {
         if (!subject || !/^u(?:[2-9]|[1-9][0-9]{1,2})$/.test(row.unit_id)) continue;
         if (!subject.units.some(u => u.id === row.unit_id))
             subject.units.push({id:row.unit_id,name:row.unit_id.toUpperCase(),questionCount:0,dataUrl:null,sharedOnly:true});
-        subject.units.sort((a,b) => Number(a.id.slice(1))-Number(b.id.slice(1)));
+        subject.units.sort((a,b) => (a.id==='treasure'?Infinity:Number(a.id.slice(1)))-(b.id==='treasure'?Infinity:Number(b.id.slice(1))));
     }
 }
 
