@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="./css/muji.css?v=20261030-batch1">
 <link rel="stylesheet" href="./css/batch.css?v=20261030-batch1">
 <link rel="stylesheet" href="./css/question-links.css?v=20261030-batch-v2">
-<link rel="stylesheet" href="./css/notice.css?v=20261101-notice1">
 </head>
 <body class="home-mode muji-theme">
 <section id="subjectHome" class="subject-home" aria-labelledby="subjectHeading">
@@ -62,24 +61,6 @@
     <p class="home-collaboration"><a href="./collaborate.html">題庫協作登入 ↗</a></p>
     <noscript><p class="missing">請啟用 JavaScript 才能選擇科目與使用題庫。</p></noscript>
     </div>
-    <button id="musicToggleBtn" class="music-toggle" type="button" aria-label="展開音樂面板" aria-expanded="false" aria-controls="musicPanel" title="展開音樂面板">
-        <span class="vinyl-record" aria-hidden="true"><span class="vinyl-label">♫</span></span>
-    </button>
-    <section id="musicPanel" class="music-panel" aria-label="音樂播放器" hidden>
-        <div class="music-now"><h2 id="musicTitle">BLUE</h2><p id="musicArtist">WINTER</p></div>
-        <div class="music-progress">
-            <input id="musicSeek" type="range" min="0" max="1000" value="0" step="1" aria-label="播放進度" disabled>
-            <div class="music-time"><span id="musicElapsed">0:00</span><span id="musicDuration">0:00</span></div>
-        </div>
-        <div class="music-controls">
-            <button id="musicPlayBtn" type="button" aria-label="播放 BLUE" title="播放"><span aria-hidden="true">▶</span></button>
-            <button id="musicNextBtn" type="button" aria-label="下一首" title="下一首"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 5 10 7-10 7Z" fill="currentColor"/><path d="M18 5v14" stroke="currentColor" stroke-width="2"/></svg></button>
-            <label class="music-volume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4ZM16 8c3 2 3 6 0 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg><input id="musicVolume" type="range" min="0" max="100" step="1" value="50" aria-label="音量"></label>
-        </div>
-        <div id="musicTrackList" class="music-track-list" role="group" aria-label="歌單"></div>
-    </section>
-    <audio id="bgMusic" preload="none"></audio>
-    <span id="musicStatus" class="sr-only" role="status" aria-live="polite"></span>
 </section>
 <button hidden id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="展開選單">☰</button>
 <button id="sidebarBackdrop" class="sidebar-backdrop" type="button" aria-label="關閉選單" tabindex="-1" hidden></button>
@@ -193,18 +174,8 @@
 </div>
 <button id="backToTopBtn" class="back-to-top" type="button" aria-label="回到頁面頂端" hidden>↑ 回到頂端</button>
 
-<script type="module" src="./js/app.js?v=20261101-os-practice1"></script>
-<dialog id="siteNotice" class="site-notice" aria-labelledby="siteNoticeHeading" aria-describedby="siteNoticeText">
-    <h2 id="siteNoticeHeading">網站更新提醒</h2>
-    <div id="siteNoticeText">
-        <p>新增 <strong>考前必會</strong> 幫助不知怎麼讀的使用者 版主現在也很無助...</p>
-        <p>若有問題 就有問題吧 我也沒時間修理了</p>
-        <p>在此祝各位通過期中考~~</p>
-    </div>
-    <img class="site-notice-image" src="./images/notice-winter.jpg" alt="提醒視窗附圖：用餐中的 Winter" width="673" height="673">
-    <form method="dialog"><button type="submit" autofocus>我知道了</button></form>
-</dialog>
-<script type="module" src="./js/notice.js?v=20261101-notice1"></script>
+<script type="module" src="./js/app.js?v=20261102-quiet1"></script>
+
 </body>
 </html>
 

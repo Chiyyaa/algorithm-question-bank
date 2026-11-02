@@ -8,14 +8,14 @@ import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
 import { initNavigation } from "./navigation.js";
 import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261031-bank1";
-import { initMusic } from "./music.js";
+
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261030-replace1";
 import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';
 import { initBatch } from './batch.js?v=20261030-batch-v2';
 import { batchQuestionHref } from './batch-core.js?v=20261030-complete-u5';
 
 initAppearance();
-const { close: closeMusic } = initMusic();
+
 const clearHomeMotion = initHomeMotion();
 
 const QUESTIONS = [];
@@ -366,7 +366,7 @@ function enterSubject(subjectId, unitId, pushHistory = true, questionId = null) 
     brand.textContent = currentSubject.name + "題庫";
     if (currentSubject.id === "algorithm") brand.setAttribute("href", "https://canva.link/evygbbmrt3v2umy");
     else brand.removeAttribute("href");
-    closeMusic(false);
+
     clearHomeMotion();
     document.body.classList.remove("home-mode");
     document.getElementById("subjectHome").hidden = true;
