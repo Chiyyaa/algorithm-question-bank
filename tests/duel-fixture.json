@@ -1,0 +1,733 @@
+{
+  "rows": [
+    {
+      "subject": "algorithm",
+      "unit": "u2",
+      "question_id": 62,
+      "prompt": {
+        "id": 62,
+        "subject": "algorithm",
+        "unit": "u2",
+        "unitLabel": "U2",
+        "kind": "fill",
+        "stem": "lg* 4 = [__1__]。",
+        "title": "",
+        "options": [],
+        "blankCount": 1
+      },
+      "solution": {
+        "answers": [
+          "2"
+        ],
+        "answerKeys": [
+          "2"
+        ],
+        "answerText": "第 1 格：2",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "ede3b1f75c36603c0cd695970ea3518e700780b658116e4c400398e807074f10"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u2",
+      "question_id": 16,
+      "prompt": {
+        "id": 16,
+        "subject": "algorithm",
+        "unit": "u2",
+        "unitLabel": "U2",
+        "kind": "single",
+        "stem": "漸進上界是用下列哪一個漸進符號表示？",
+        "title": "漸進上界（Asymptotic upper bound）",
+        "options": [
+          "A. O",
+          "B. ω",
+          "C. Θ",
+          "D. Ω"
+        ],
+        "blankCount": 0
+      },
+      "solution": {
+        "expected": [
+          0
+        ],
+        "answerText": "A. O",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "44228f2b433ae628c9b7429862fa60995f472decc8a8782661deabdedd12cb77"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u3",
+      "question_id": 62,
+      "prompt": {
+        "id": 62,
+        "subject": "algorithm",
+        "unit": "u3",
+        "unitLabel": "U3",
+        "kind": "fill",
+        "stem": "歸納法中的「歸納假設」是？ [__1__]",
+        "title": "",
+        "options": [],
+        "blankCount": 1
+      },
+      "solution": {
+        "answers": [
+          "假設對於較小的輸入值解是正確的"
+        ],
+        "answerKeys": [
+          "假設對於較小的輸入值解是正確的"
+        ],
+        "answerText": "第 1 格：假設對於較小的輸入值解是正確的",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "f3519a09c500a4f1254e1320e94b4146da304d510fa44b3ddc2e97682d7b88be"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u3",
+      "question_id": 48,
+      "prompt": {
+        "id": 48,
+        "subject": "algorithm",
+        "unit": "u3",
+        "unitLabel": "U3",
+        "kind": "single",
+        "stem": "大師定理適用於？",
+        "title": "",
+        "options": [
+          "分治演算法的複雜度分析",
+          "動態規劃的路徑選擇",
+          "圖論中的最短路徑",
+          "資料結構的記憶體分配"
+        ],
+        "blankCount": 0
+      },
+      "solution": {
+        "expected": [
+          0
+        ],
+        "answerText": "分治演算法的複雜度分析",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "5b77094265c7a92eaf6120b8fa79926bd51c5e352a98d47fc6684193bb234af6"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u4",
+      "question_id": 60,
+      "prompt": {
+        "id": 60,
+        "subject": "algorithm",
+        "unit": "u4",
+        "unitLabel": "U4",
+        "kind": "fill",
+        "stem": "堆積樹的高度通常為 [__1__] (請用小寫英文回答)",
+        "title": "",
+        "options": [],
+        "blankCount": 1
+      },
+      "solution": {
+        "answers": [
+          "logn"
+        ],
+        "answerKeys": [
+          "logn"
+        ],
+        "answerText": "第 1 格：logn",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "509f7c855292aa30b27d3e479d3edde2203c84e0c55f6e0074575421ccc7802e"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u4",
+      "question_id": 3,
+      "prompt": {
+        "id": 3,
+        "subject": "algorithm",
+        "unit": "u4",
+        "unitLabel": "U4",
+        "kind": "single",
+        "stem": "堆積排序的第一步驟是？",
+        "title": "",
+        "options": [
+          "Increase-Key",
+          "Heap-Sort",
+          "Extract-Max",
+          "Build-Max-Heap"
+        ],
+        "blankCount": 0
+      },
+      "solution": {
+        "expected": [
+          3
+        ],
+        "answerText": "Build-Max-Heap",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "482e89200266e0e4a14c388dd4fa6894e2fc898b92efdf2ac91e2b2ac5e7429b"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "question_id": 1000000017,
+      "prompt": {
+        "id": 1000000017,
+        "subject": "algorithm",
+        "unit": "u5",
+        "unitLabel": "U5",
+        "kind": "fill",
+        "stem": "快速排序適用於 [**1**] 陣列排序 (請用小寫英文回答)",
+        "title": "",
+        "options": [],
+        "blankCount": 1
+      },
+      "solution": {
+        "answers": [
+          "large"
+        ],
+        "answerKeys": [
+          "large"
+        ],
+        "answerText": "第 1 格：large",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "977fb999b9620fd63e547c48b5ab15d90df6a7234b1ed2d4ba021b70cacd80fc"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u5",
+      "question_id": 1000000020,
+      "prompt": {
+        "id": 1000000020,
+        "subject": "algorithm",
+        "unit": "u5",
+        "unitLabel": "U5",
+        "kind": "single",
+        "stem": "下列何者是快速排序的特徵？",
+        "title": "",
+        "options": [
+          "A. 穩定排序 (Stable)",
+          "B. 原地排序 (In-place)",
+          "C. 需要 O(n) 額外空間",
+          "D. 非原地排序"
+        ],
+        "blankCount": 0
+      },
+      "solution": {
+        "expected": [
+          1
+        ],
+        "answerText": "B. 原地排序 (In-place)",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "493c26dbd4bc05d6572b3372680abe0f166c9f4c4bf12bb30537aa836121729f"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u6",
+      "question_id": 49,
+      "prompt": {
+        "id": 49,
+        "subject": "algorithm",
+        "unit": "u6",
+        "unitLabel": "U6",
+        "kind": "fill",
+        "stem": "決策樹的葉節點數量至少為 [__1__] (請用小寫英文回答)",
+        "title": "",
+        "options": [],
+        "blankCount": 1
+      },
+      "solution": {
+        "answers": [
+          "n!"
+        ],
+        "answerKeys": [
+          "n!"
+        ],
+        "answerText": "第 1 格：n!",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "dd76009e282ed4f16b91443cae0cf8ebd85787481f86ee7ca45bb57269367867"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u6",
+      "question_id": 11,
+      "prompt": {
+        "id": 11,
+        "subject": "algorithm",
+        "unit": "u6",
+        "unitLabel": "U6",
+        "kind": "single",
+        "stem": "決策樹模型證明了？",
+        "title": "",
+        "options": [
+          "A. 桶排序的正確性",
+          "B. 比較排序的極限",
+          "C. 線性排序的極限",
+          "D. 堆積排序的正確性"
+        ],
+        "blankCount": 0
+      },
+      "solution": {
+        "expected": [
+          1
+        ],
+        "answerText": "B. 比較排序的極限",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "ca02960151b93621cec250568a7832b63d94a48be9f0913c461d13aa42a5e58a"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u7",
+      "question_id": 46,
+      "prompt": {
+        "id": 46,
+        "subject": "algorithm",
+        "unit": "u7",
+        "unitLabel": "U7",
+        "kind": "fill",
+        "stem": "順序統計量問題中，我們假設元素是 [__1__] 的 (請用小寫英文回答)",
+        "title": "",
+        "options": [],
+        "blankCount": 1
+      },
+      "solution": {
+        "answers": [
+          "distinct"
+        ],
+        "answerKeys": [
+          "distinct"
+        ],
+        "answerText": "第 1 格：distinct",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "bb415daefb4b347af0970235d46b3fbee3bd7f7908d96742de1debdc81dd2a01"
+    },
+    {
+      "subject": "algorithm",
+      "unit": "u7",
+      "question_id": 12,
+      "prompt": {
+        "id": 12,
+        "subject": "algorithm",
+        "unit": "u7",
+        "unitLabel": "U7",
+        "kind": "single",
+        "stem": "尋找中位數是一種？",
+        "title": "",
+        "options": [
+          "A. 選擇問題",
+          "B. 插值問題",
+          "C. 雜湊問題",
+          "D. 圖形掃描"
+        ],
+        "blankCount": 0
+      },
+      "solution": {
+        "expected": [
+          0
+        ],
+        "answerText": "A. 選擇問題",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "9816b5c455d9213d9ed17c2d63b7be5cdd4270973f0d2497188f6fc84d10c3ef"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "question_id": 1000000221,
+      "prompt": {
+        "id": 1000000221,
+        "subject": "os",
+        "unit": "u2",
+        "unitLabel": "U2",
+        "kind": "fill",
+        "stem": "作業系統定義程式執行時的結構稱為 [__1__] (請用小寫英文回答)。",
+        "title": "",
+        "options": [],
+        "blankCount": 1
+      },
+      "solution": {
+        "answers": [
+          "process"
+        ],
+        "answerKeys": [
+          "process"
+        ],
+        "answerText": "第 1 格：process",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "bd30070be20f12f0b509d0fe9860f975d3422d3e651e2ba4583c01981da2075f"
+    },
+    {
+      "subject": "os",
+      "unit": "u2",
+      "question_id": 1,
+      "prompt": {
+        "id": 1,
+        "subject": "os",
+        "unit": "u2",
+        "unitLabel": "U2",
+        "kind": "single",
+        "stem": "什麼是作業系統？",
+        "title": "",
+        "options": [
+          "在使用者與電腦硬體之間充當中介的程式",
+          "儲存檔案的實體裝置",
+          "只用於遊戲的應用程式",
+          "編譯原始碼的編譯器"
+        ],
+        "blankCount": 0
+      },
+      "solution": {
+        "expected": [
+          0
+        ],
+        "answerText": "在使用者與電腦硬體之間充當中介的程式",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "1d052a77eddea820ec6d1f00ff57ac5f8eaaaf14279e9af4afb4e516775df85c"
+    },
+    {
+      "subject": "os",
+      "unit": "u3",
+      "question_id": 50,
+      "prompt": {
+        "id": 50,
+        "subject": "os",
+        "unit": "u3",
+        "unitLabel": "U3",
+        "kind": "fill",
+        "stem": "作業系統需要不斷地偵測可能的 [__1__]。(英文小寫回答)",
+        "title": "",
+        "options": [],
+        "blankCount": 1
+      },
+      "solution": {
+        "answers": [
+          "errors"
+        ],
+        "answerKeys": [
+          "errors"
+        ],
+        "answerText": "第 1 格：errors",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "0820db393c956a19eb59eb13dfb4dba81a8a9f2607a5a52725da6660c19517be"
+    },
+    {
+      "subject": "os",
+      "unit": "u3",
+      "question_id": 82,
+      "prompt": {
+        "id": 82,
+        "subject": "os",
+        "unit": "u3",
+        "unitLabel": "U3",
+        "kind": "single",
+        "stem": "微核心的缺點是？",
+        "title": "",
+        "options": [
+          "擴充性差",
+          "程式碼較多",
+          "效能開銷",
+          "安全性較差"
+        ],
+        "blankCount": 0
+      },
+      "solution": {
+        "expected": [
+          2
+        ],
+        "answerText": "效能開銷",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "8851cd6e8fe58af62630a8b8d9896f1bcd511bae53b0111dc8e18592d73d1f1e"
+    },
+    {
+      "subject": "os",
+      "unit": "u4",
+      "question_id": 13,
+      "prompt": {
+        "id": 13,
+        "subject": "os",
+        "unit": "u4",
+        "unitLabel": "U4",
+        "kind": "fill",
+        "stem": "[__1__]充當一個通道，允許兩個程序通訊。",
+        "title": "",
+        "options": [],
+        "blankCount": 1
+      },
+      "solution": {
+        "answers": [
+          "pipe"
+        ],
+        "answerKeys": [
+          "pipe"
+        ],
+        "answerText": "第 1 格：pipe",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "61c097c3069e162c76ab4336da7495349d7f27cb45268a189508966af2697c4a"
+    },
+    {
+      "subject": "os",
+      "unit": "u4",
+      "question_id": 72,
+      "prompt": {
+        "id": 72,
+        "subject": "os",
+        "unit": "u4",
+        "unitLabel": "U4",
+        "kind": "single",
+        "stem": "哪種排程器控制多重程式化的程度？",
+        "title": "",
+        "options": [
+          "長期排程器",
+          "中期排程器",
+          "短期排程器",
+          "CPU排程器"
+        ],
+        "blankCount": 0
+      },
+      "solution": {
+        "expected": [
+          0
+        ],
+        "answerText": "長期排程器",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "e1245f12ea6b3e7ef7955e85af4a6cd456db5d6b08d02479bd59bbd17c90c818"
+    },
+    {
+      "subject": "os",
+      "unit": "u5",
+      "question_id": 93,
+      "prompt": {
+        "id": 93,
+        "subject": "os",
+        "unit": "u5",
+        "unitLabel": "U5",
+        "kind": "fill",
+        "stem": "[__1__]  是指一個系統可以同時執行一個以上的任務。(請用小寫英文回答)",
+        "title": "",
+        "options": [],
+        "blankCount": 1
+      },
+      "solution": {
+        "answers": [
+          "parallelism"
+        ],
+        "answerKeys": [
+          "parallelism"
+        ],
+        "answerText": "第 1 格：parallelism",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "586ab6a01934ccb00e8ae1c15046bfebe370024aea37d25370125e383b697c61"
+    },
+    {
+      "subject": "os",
+      "unit": "u5",
+      "question_id": 19,
+      "prompt": {
+        "id": 19,
+        "subject": "os",
+        "unit": "u5",
+        "unitLabel": "U5",
+        "kind": "single",
+        "stem": "Java 執行緒通常由誰管理?",
+        "title": "",
+        "options": [
+          "編譯器",
+          "作業系統",
+          "Java 虛擬機(JVM)",
+          "程式設計師"
+        ],
+        "blankCount": 0
+      },
+      "solution": {
+        "expected": [
+          2
+        ],
+        "answerText": "Java 虛擬機(JVM)",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "6dbec31a4fea352bf49232c3fe46411fa3425667fc29001413370fcc70ec040b"
+    },
+    {
+      "subject": "os",
+      "unit": "u6",
+      "question_id": 19,
+      "prompt": {
+        "id": 19,
+        "subject": "os",
+        "unit": "u6",
+        "unitLabel": "U6",
+        "kind": "fill",
+        "stem": "吞吐量是單位時間內完成的 ________ 數量。\n（請用小寫英文回答）",
+        "title": "",
+        "options": [],
+        "blankCount": 1
+      },
+      "solution": {
+        "answers": [
+          "process"
+        ],
+        "answerKeys": [
+          "process"
+        ],
+        "answerText": "第 1 格：process",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "4ac61ef7683471c7dc16abcf6d9656b9562a5838752769082c68019a32c1260a"
+    },
+    {
+      "subject": "os",
+      "unit": "u6",
+      "question_id": 26,
+      "prompt": {
+        "id": 26,
+        "subject": "os",
+        "unit": "u6",
+        "unitLabel": "U6",
+        "kind": "single",
+        "stem": "CPU排程的核心目標是什麼？",
+        "title": "",
+        "options": [
+          "降低CPU使用率",
+          "最大化CPU利用率",
+          "最大化I/O等待時間",
+          "最小化程式碼複雜度"
+        ],
+        "blankCount": 0
+      },
+      "solution": {
+        "expected": [
+          1
+        ],
+        "answerText": "最大化CPU利用率",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "c938391f30fd71616a19fea54e13016ea405f1d2738c033b60ed2bc8c78e2bfd"
+    },
+    {
+      "subject": "os",
+      "unit": "treasure",
+      "question_id": 8,
+      "prompt": {
+        "id": 8,
+        "subject": "os",
+        "unit": "treasure",
+        "unitLabel": "挖寶單元",
+        "kind": "fill",
+        "stem": "已知有以下的四個行程 還有他們的到達時間與 cpu 運算需求\n\n若採用SJF 可搶先(preemptive) 請問 平均等待時間是多少 [__1__]",
+        "title": "SJF／SRTF 計算",
+        "options": [],
+        "blankCount": 1,
+        "image": "https://chiyyaa.github.io/algorithm-question-bank/images/os-treasure-19dbd3095c04.png",
+        "imageAlt": "CPU 排程題資料圖：SJF／SRTF 計算"
+      },
+      "solution": {
+        "answers": [
+          "6.5"
+        ],
+        "answerKeys": [
+          "6.5"
+        ],
+        "answerText": "第 1 格：6.5",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "465746f62524e07b4ce3f76f2310449fba8c1f9f8a07509cc315383522563790"
+    },
+    {
+      "subject": "os",
+      "unit": "treasure",
+      "question_id": 37,
+      "prompt": {
+        "id": 37,
+        "subject": "os",
+        "unit": "treasure",
+        "unitLabel": "挖寶單元",
+        "kind": "single",
+        "stem": "下圖為使用 FIFO CPU 排程演算法的排程結果\n\n請回答以下問題\n\n請問平均等待時間(waiting time)是多少",
+        "title": "FCFS／FIFO 計算",
+        "options": [
+          "24",
+          "17",
+          "27"
+        ],
+        "blankCount": 0,
+        "image": "https://chiyyaa.github.io/algorithm-question-bank/images/os-treasure-22bb3cb2a6ea.jpg",
+        "imageAlt": "CPU 排程題資料圖：FCFS／FIFO 計算"
+      },
+      "solution": {
+        "expected": [
+          1
+        ],
+        "answerText": "17",
+        "explanation": "測試解析"
+      },
+      "fingerprint": "ae1f04e691f576848aa5e304481e72a8ef7f38c480acd1d0c8b675815e6495b1"
+    }
+  ],
+  "checks": [
+    {
+      "id": "verification-1",
+      "prompt": {
+        "question": "aespa有幾位成員?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "expected": 2
+    },
+    {
+      "id": "verification-2",
+      "prompt": {
+        "question": "aespa的隊長是哪一位?",
+        "options": [
+          "Karina",
+          "Giselle",
+          "Winter",
+          "Ningning"
+        ]
+      },
+      "expected": 0
+    },
+    {
+      "id": "verification-3",
+      "prompt": {
+        "question": "請問<BLUE>是下列哪位solo的?",
+        "options": [
+          "Karina",
+          "Giselle",
+          "Winter",
+          "Ningning"
+        ]
+      },
+      "expected": 2
+    },
+    {
+      "id": "verification-4",
+      "prompt": {
+        "question": "請問aespa的韓國出道日期是哪天?",
+        "options": [
+          "2020/11/17",
+          "2020/10/10",
+          "2020/1/1",
+          "2020/12/25"
+        ]
+      },
+      "expected": 0
+    }
+  ]
+}
