@@ -9,7 +9,8 @@
     "maxPlays": 3,
     "biweeklyStartsAt": "2026-10-16T16:00:00+08:00",
     "biweeklyStartWeek": 3,
-    "weeksPerPeriod": 2
+    "weeksPerPeriod": 2,
+    "periodFourStartsAt": "2026-11-11T16:00:00+08:00"
   },
   "words": [
     {

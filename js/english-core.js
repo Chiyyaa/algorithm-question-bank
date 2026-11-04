@@ -3,6 +3,15 @@ export const QUIZ_AUDIO = Object.freeze({ autoDelayMs:1000, manualReplays:2 });
 export const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 
 export function weekInfo(now, schedule, wordCount) {
+    // The midterm postpones period 4 and expands only its vocabulary range.
+    const fourth = Date.parse(schedule.periodFourStartsAt);
+    if (Number.isFinite(fourth) && now >= Date.parse(schedule.biweeklyStartsAt)) {
+        const fourthActive = now >= fourth;
+        return { week:fourthActive ? 4 : 3, rawWeek:fourthActive ? 4 : 3,
+            start:fourthActive ? 151 : 101, end:Math.min(fourthActive ? 250 : 150, wordCount),
+            startsAt:fourthActive ? fourth : Date.parse(schedule.biweeklyStartsAt),
+            nextAt:fourthActive ? null : fourth, finished:false };
+    }
     const originalAnchor = Date.parse(schedule.weekOneStartsAt);
     const transition = Date.parse(schedule.biweeklyStartsAt);
     const biweekly = Number.isFinite(transition) && now >= transition;
@@ -106,3 +115,19 @@ export function createTotalQuiz(words, random = Math.random) {
     return { ...createQuiz(words, {week:null, start:1, end:words.length}, 30, random), mode:'total' };
 }
 
+
+export function vocabularyPeriods(schedule, wordCount) {
+    const periods = [];
+    let start = 1;
+    for (let week = 1; start <= wordCount; week++) {
+        const size = schedule.periodFourStartsAt && week === 4 ? 100 : schedule.wordsPerWeek;
+        const end = Math.min(start + size - 1, wordCount);
+        periods.push({week, start, end});
+        start = end + 1;
+    }
+    return periods;
+}
+
+export function createMidtermQuiz(words, random = Math.random) {
+    return { ...createQuiz(words, {week:null, start:1, end:150}, 20, random), mode:'midterm' };
+}
