@@ -146,8 +146,8 @@ async function checkResultScreens(browser, url, data) {
         assert.match(await page.locator('#weekHeading').innerText(),/第 3 期/);
         assert.match(await page.locator('#weekRange').innerText(),/101–150/);
         assert.match(await page.locator('#nextWeekTime').innerText(),/11\/11.*16:00/);
-        assert.equal(await page.locator('[data-view="total"]').isDisabled(),true);
-        assert.match(await page.locator('[data-view="total"]').innerText(),/總測驗（暫時關閉）/);
+        assert.equal(await page.locator('[data-view="total"]').count(),0);
+        assert.equal(await page.locator('[data-view="grammar"]').count(),1);
         await page.locator('#wordSearch').fill('zzzz-no-match');assert.match(await page.locator('#wordGroups').innerText(),/找不到/);
         await page.locator('#wordSearch').fill('645');assert.equal(await page.locator('#wordGroups tbody tr').count(),1);
         await page.locator('#wordSearch').fill('');
@@ -222,7 +222,7 @@ async function checkResultScreens(browser, url, data) {
         await page.goto(url+'english.html#total');await page.locator('.midterm-words').waitFor();
         assert.equal(await page.locator('#quizView').isVisible(),false);
         assert.deepEqual(errors,[]);await ctx.close();
-        console.log('PASS disabled total including old deep link, 150 pinned words, midterm reminder, no autoplay, one manual play, speech failure refund, independent saved sessions, 20 questions and 95-point grading, live rollover and mobile layout');
+        console.log('PASS hidden total including old deep link, 150 pinned words, midterm reminder, no autoplay, one manual play, speech failure refund, independent saved sessions, 20 questions and 95-point grading, live rollover and mobile layout');
         serverClock=Date.parse('2026-11-05T12:00:00+08:00');
         await checkResultScreens(browser,url,data);
         const unsupported=await browser.newContext();

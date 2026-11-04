@@ -98,3 +98,24 @@ details.word-group[open]>summary::after { content:'−'; }
 .english-announcement .primary-btn { margin-top:16px; }
 @media(max-width:500px){.english-announcement{padding:24px;}.english-announcement h2{font-size:21px;}}
 
+
+/* Midterm grammar choices and long technical sentences. */
+.grammar-count { border:0;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 24px;margin:20px 0;padding:0; }
+.grammar-count legend { width:100%;margin-bottom:14px;font-size:14px;font-weight:600; }
+.grammar-count label { display:flex;align-items:center;gap:7px;padding:12px 16px;border:1px solid var(--border);border-radius:12px;cursor:pointer; }
+.grammar-count input,.grammar-options input { accent-color:var(--primary);width:18px;height:18px;flex-shrink:0; }
+.grammar-question { font-size:20px;line-height:1.85;font-weight:500;overflow-wrap:anywhere;margin:0 0 25px; }
+.grammar-blank { white-space:nowrap;color:var(--primary);font-weight:700; }
+.grammar-options { border:0;padding:0;margin:0;display:grid;gap:12px;min-width:0; }
+.grammar-option { display:flex;align-items:flex-start;gap:12px;padding:16px;border:1px solid var(--border);border-radius:12px;line-height:1.6;cursor:pointer;overflow-wrap:anywhere; }
+.grammar-option input { margin-top:4px; }
+.grammar-option:has(input:checked) { border-color:#719a76;background:#eef5e9; }
+.grammar-option:has(input:focus-visible) { outline:3px solid #9abc9c88;outline-offset:2px; }
+.grammar-letter { font-weight:700;color:var(--primary);flex-shrink:0; }
+.grammar-option.option-correct { border-color:#87b27b;background:#edf7e8; }
+.grammar-option.option-incorrect { border-color:#dbaf86;background:#fcf2e6; }
+.grammar-explanation { line-height:1.9; }
+.grammar-results .review-item { line-height:1.85; }
+.grammar-review-options { padding-left:28px;font-size:14px;overflow-wrap:anywhere; }
+.grammar-results .quiz-actions { flex-wrap:wrap; }
+@media(max-width:600px) { .grammar-question { font-size:17px;line-height:1.85; }.grammar-option { padding:13px 11px;gap:9px;font-size:14px; }.grammar-card .quiz-progress-row { gap:12px;align-items:flex-start; }.grammar-card .quiz-progress-row span:last-child { white-space:nowrap; } }

@@ -1,0 +1,606 @@
+{
+  "title": "期中文法測驗",
+  "source": "進階英文_50題_精簡解析.md",
+  "questions": [
+    {
+      "id": 1,
+      "question": "The volumetric efficiency versus engine speed for various intake manifold configurations of an automotive four-stroke engine __ using the computer simulation based on thermodynamic modeling.",
+      "options": [
+        "which can be evaluated",
+        "to be evaluated",
+        "can be evaluating",
+        "can be evaluated"
+      ],
+      "answer": "D",
+      "explanation": "主詞是 The volumetric efficiency，空格要放主要動詞。「效率可以被評估」用 can be evaluated（can＋be＋過去分詞）。"
+    },
+    {
+      "id": 2,
+      "question": "__ pumping the fresh charge into the cylinders may be minimized by varying the amount of fuel injected per cycle with the air flow through the throttle.",
+      "options": [
+        "That the negative work",
+        "If the negative work",
+        "How the negative work",
+        "The negative work"
+      ],
+      "answer": "D",
+      "explanation": "句中已有動詞 may be minimized，前面只缺主詞 The negative work。pumping… 是補充這項功的內容，不用再加連接詞。"
+    },
+    {
+      "id": 3,
+      "question": "The technology of mobile computing is designed __ meet human demands ranging from business and government to social contacts.",
+      "options": [
+        "for",
+        "can",
+        "which",
+        "to"
+      ],
+      "answer": "D",
+      "explanation": "固定用法 be designed to＋原形動詞，表示「被設計用來……」，所以填 to meet。"
+    },
+    {
+      "id": 4,
+      "question": "The greatest problem confronting people today __ to transform other forms of energy into electrical energy.",
+      "options": [
+        "are",
+        "is",
+        "which are",
+        "which is"
+      ],
+      "answer": "B",
+      "explanation": "主詞的核心是單數 problem，所以動詞用 is。confronting people today 只是修飾 problem。"
+    },
+    {
+      "id": 5,
+      "question": "In these circumstances __ due to acceleration acts rearwards through the vehicle center of gravity with its magnitude equal to the tractive forces existing between the tires of the driven wheels and the road.",
+      "options": [
+        "of an inertia force",
+        "which an inertia force",
+        "where an inertia force",
+        "an inertia force"
+      ],
+      "answer": "D",
+      "explanation": "句首 In these circumstances 是背景，真正主詞為 an inertia force，後面 acts 是動詞。直接填名詞即可。"
+    },
+    {
+      "id": 6,
+      "question": "The bluetooth technology initially studied __ by Ericsson in 1994 has been developed to operate in a wireless and short-distance environment, providing the transmissions of voice and data.",
+      "options": [
+        "for mobile phone application",
+        "which mobile phone application",
+        "if mobile phone application",
+        "what mobile phone application"
+      ],
+      "answer": "A",
+      "explanation": "for＋名詞表示「為了……用途」，for mobile phone application 修飾 studied。主要動詞是後面的 has been developed。"
+    },
+    {
+      "id": 7,
+      "question": "Using General Packet Radio Service (GPRS) based on existing GSM networks, customers __ on to Internet, and only have to pay for these services on sending or receiving information.",
+      "options": [
+        "can be permanently logged",
+        "can permanently logged",
+        "which can be permanently logged",
+        "to be permanently logged"
+      ],
+      "answer": "A",
+      "explanation": "主詞 customers 後面需要動詞。「保持登入狀態」用 be logged on，所以選 can be permanently logged。記住 can 後接原形 be。"
+    },
+    {
+      "id": 8,
+      "question": "Today the computer is widely used in solving mathematical problems __ to do with weather forecasting and putting satellites into orbit.",
+      "options": [
+        "which having",
+        "having",
+        "are having",
+        "is having"
+      ],
+      "answer": "B",
+      "explanation": "having to do with＝「與……有關」，修飾前面的 problems。可理解成 problems which have to do with…。"
+    },
+    {
+      "id": 9,
+      "question": "An amplifying medium for lasers located in a cavity between two mirrors __ the intensity of light beam passing through it.",
+      "options": [
+        "which can increase",
+        "to increase",
+        "can increase",
+        "increasing"
+      ],
+      "answer": "C",
+      "explanation": "主詞核心是 medium，located… 是修飾語；句子缺主要動詞，因此用 can increase。can 後接原形動詞。"
+    },
+    {
+      "id": 10,
+      "question": "The butterfly valve mounted at the upstream end of the intake system __ to control the amount of air flow induced into an SI engine.",
+      "options": [
+        "can used",
+        "to used",
+        "which used",
+        "is used"
+      ],
+      "answer": "D",
+      "explanation": "「閥門被用來控制……」用 is used to control。mounted… 是修飾 valve，不是整句的主要動詞。"
+    },
+    {
+      "id": 11,
+      "question": "Forming a rectangular figure eight with both coils concentrically mounted on the middle leg, __ is called a shell-type transformer.",
+      "options": [
+        "in the core",
+        "the core",
+        "when the core",
+        "which the core"
+      ],
+      "answer": "B",
+      "explanation": "後面已有 is called，前面需要主詞 the core。句首 Forming… 是補充 core 的形狀。"
+    },
+    {
+      "id": 12,
+      "question": "The CIS-E Motronic engine management system can monitor the intake air temperature sensor to detect EGR system faults __ in permanent memory of the built-in diagnostic circuitry.",
+      "options": [
+        "which storing",
+        "are stored",
+        "to stored",
+        "stored"
+      ],
+      "answer": "D",
+      "explanation": "faults 是「被儲存」的故障資訊，用過去分詞 stored 修飾；可還原成 faults which are stored…。"
+    },
+    {
+      "id": 13,
+      "question": "Any sideways push exerted by the kerb __ steered to this modest degree can then be absorbed by the flexibility of the tire wall and suspension bushings.",
+      "options": [
+        "is against the rear wheels",
+        "against the rear wheels",
+        "which against the rear wheels",
+        "the rear wheels"
+      ],
+      "answer": "B",
+      "explanation": "句子主幹是 Any sideways push… can then be absorbed。against the rear wheels 表示「作用在後輪上」，不用另加動詞。"
+    },
+    {
+      "id": 14,
+      "question": "The effectiveness of translation from the driving torque applied to the wheels into a tractive force to propel the vehicle __ on the vertical load and the coefficient of friction existing between the tires and road.",
+      "options": [
+        "to depend",
+        "depending",
+        "which depends",
+        "depends"
+      ],
+      "answer": "D",
+      "explanation": "主詞核心是單數 effectiveness，空格要放主要動詞 depends。depend on＝「取決於」。"
+    },
+    {
+      "id": 15,
+      "question": "The vaporization of fuel occurring in the cylinder __ of the compression stroke cools the air for increasing the amount of charge induced from the intake manifold.",
+      "options": [
+        "is at a late stage",
+        "which at a late stage",
+        "a late stage",
+        "at a late stage"
+      ],
+      "answer": "D",
+      "explanation": "句子已有主要動詞 cools，只需補「在壓縮衝程的後期」這個時間片語：at a late stage。"
+    },
+    {
+      "id": 16,
+      "question": "The effect of this inertia force acting at the height of the center of gravity is __ a pitching couple on the car, thus increasing the load on the rear wheels and reducing it on the front ones.",
+      "options": [
+        "to impose",
+        "for impose",
+        "that impose",
+        "if impose"
+      ],
+      "answer": "A",
+      "explanation": "主幹是 The effect… is to impose…，用 to＋原形動詞說明作用：施加一個俯仰力偶。"
+    },
+    {
+      "id": 17,
+      "question": "Heat transfer from the gas can be coupled to the conduction analysis __ for capacitance only in a layer of thickness in series with a resistance measured for a steady state.",
+      "options": [
+        "accounting",
+        "which accounting",
+        "to counted",
+        "accounts"
+      ],
+      "answer": "A",
+      "explanation": "accounting for… 用來修飾 conduction analysis，表示「把……納入考量」。主動關係用 V-ing，主要動詞已有 can be coupled。"
+    },
+    {
+      "id": 18,
+      "question": "The two-stroke engine operating at 2000 rpm and made of cast iron __ a small amplitude of the oscillation formed inside the surface of the cylinder block.",
+      "options": [
+        "that giving",
+        "gives",
+        "to given",
+        "can gives"
+      ],
+      "answer": "B",
+      "explanation": "主詞核心是單數 engine，所以主要動詞用 gives。operating… 和 made… 都是修飾語；can gives 錯在 can 後未用原形。"
+    },
+    {
+      "id": 19,
+      "question": "In the simplest case of a four-wheel-drive vehicle having an equal distribution of weight between the front and rear wheels, __ of driving torque between its axles would seem to be acceptable.",
+      "options": [
+        "if an equal division",
+        "for an equal division",
+        "an equal division",
+        "that an equal division"
+      ],
+      "answer": "C",
+      "explanation": "句首 In… 是背景，would seem 前面需要主詞 an equal division。不要被前面的長片語干擾。"
+    },
+    {
+      "id": 20,
+      "question": "A star configuration __ of a series of computers connected through a central point with a device served as a knob.",
+      "options": [
+        "comprises",
+        "that comprises",
+        "comprise",
+        "to comprised"
+      ],
+      "answer": "A",
+      "explanation": "主詞 A star configuration 是單數，選 comprises。提醒：原句 comprises of 用法不標準；正確通常寫 comprises a series… 或 is composed of a series…。依原選項仍選 A。"
+    },
+    {
+      "id": 21,
+      "question": "Computer and information systems accepted by the general public __ for specialized activities are on the verge of astonishing advance, generally called the \"information revolution\".",
+      "options": [
+        "is as an useful tool",
+        "as an useful tool",
+        "are as an useful tool",
+        "an useful tool"
+      ],
+      "answer": "B",
+      "explanation": "accepted… as…＝「被接受為／被視為……」。主要動詞已有 are，所以選 as…，不用再加 is 或 are。提醒：原文 an useful tool 應為 a useful tool。"
+    },
+    {
+      "id": 22,
+      "question": "Charged particles trapped inside our planet's magnetic field make up the Van Allen radiation belts __ almost 20,000 kilometers above Earth.",
+      "options": [
+        "which locating",
+        "to located",
+        "located",
+        "are located"
+      ],
+      "answer": "C",
+      "explanation": "belts 是「位於」地球上方，用 located 修飾，可理解為 belts which are located…。主要動詞已有 make up。"
+    },
+    {
+      "id": 23,
+      "question": "The air introduced by the solenoid __ in addition to the air admitted by the fixed air bleeds.",
+      "options": [
+        "which being",
+        "to is",
+        "are",
+        "is"
+      ],
+      "answer": "D",
+      "explanation": "主詞核心是不可數名詞 air，視為單數，所以用 is。introduced by the solenoid 只是修飾 air。"
+    },
+    {
+      "id": 24,
+      "question": "The amount of vacuum applied to the servo is modulated using the cruise control power valve __ by the engine control module.",
+      "options": [
+        "governed",
+        "is governed",
+        "that governing",
+        "to governed"
+      ],
+      "answer": "A",
+      "explanation": "valve 是「被控制」的，用 governed 修飾；可還原成 valve which is governed by…。主要動詞已有 is modulated。"
+    },
+    {
+      "id": 25,
+      "question": "In some cases, information __ within the engine control module is sent by way of a data link to the body computer module as input information.",
+      "options": [
+        "which containing",
+        "to contained",
+        "is contained",
+        "contained"
+      ],
+      "answer": "D",
+      "explanation": "information 是「被包含／儲存在」模組內，用 contained 修飾。整句主要動詞是 is sent，不能直接再加 is contained。"
+    },
+    {
+      "id": 26,
+      "question": "The hole in the disk __ transmission of light through the light pipes from the light-emitting diode source to the phototransistor used as a light sensor.",
+      "options": [
+        "which allowing",
+        "to allows",
+        "can allows",
+        "allows"
+      ],
+      "answer": "D",
+      "explanation": "主詞核心是單數 hole，因此主要動詞用 allows。can allows 錯在 can 後面必須用原形 allow。"
+    },
+    {
+      "id": 27,
+      "question": "The voltage developed across the sensors results from the electromagnetic forces acting on electrons in metal __.",
+      "options": [
+        "is semiconductors",
+        "are semiconductors",
+        "is and semiconductors",
+        "and semiconductors"
+      ],
+      "answer": "D",
+      "explanation": "metal and semiconductors 是兩個並列名詞，表示「金屬與半導體」。整句已有 results，不需要再補 is 或 are。"
+    },
+    {
+      "id": 28,
+      "question": "Above the 8th floor, __ and inclined moment-resisting lattices holding a wall system of glass panels all tie back into the super-columns in order to counter both wind and seismic activity without being damaged.",
+      "options": [
+        "when steel trusses",
+        "that steel trusses",
+        "on steel trusses",
+        "steel trusses"
+      ],
+      "answer": "D",
+      "explanation": "主詞是 steel trusses and inclined… lattices，兩者共同搭配後面的 tie。空格只需放 steel trusses，不加連接詞或介系詞。"
+    },
+    {
+      "id": 29,
+      "question": "An inertia force acting rearwards __ of gravity due to acceleration is equal in magnitude to the tractive forces existing between the tires of the wheels and the road.",
+      "options": [
+        "is through the vehicle center",
+        "where through the vehicle center",
+        "which through the vehicle center",
+        "through the vehicle center"
+      ],
+      "answer": "D",
+      "explanation": "整句主要動詞已有 is equal，空格只需補 through the vehicle center of gravity，表示「通過車輛重心」。"
+    },
+    {
+      "id": 30,
+      "question": "To find the subsequent height of the feet above the baseline drawn through their initial position, __ in column 4 are added together algebraically one after the other, giving the values in column 5.",
+      "options": [
+        "with the values",
+        "which the values",
+        "the values",
+        "where the values"
+      ],
+      "answer": "C",
+      "explanation": "後面 are added 是動詞，前面需補主詞 the values。in column 4 修飾 values，表示第 4 欄中的數值。"
+    },
+    {
+      "id": 31,
+      "question": "The process usually __ taking thousands of images from videos featuring the faces of the target and the actor from different angles.",
+      "options": [
+        "is involves",
+        "involves",
+        "to involved",
+        "which involving"
+      ],
+      "answer": "B",
+      "explanation": "主詞 The process 是單數，動詞用 involves。固定搭配 involve＋V-ing，表示「涉及／包含做某事」。"
+    },
+    {
+      "id": 32,
+      "question": "The revenue __ by e-sports as a whole has also grown rapidly in recent times, now totaling $650 million per year and expected to climb to $4 billion by 2022.",
+      "options": [
+        "which generating",
+        "to generated",
+        "generated",
+        "is generated"
+      ],
+      "answer": "C",
+      "explanation": "revenue 是「被電競產生」的收入，所以用 generated 修飾。主要動詞是後面的 has also grown。"
+    },
+    {
+      "id": 33,
+      "question": "The oxygen sensor does not function __ reaches a rather high operating temperature, so, on some later models, a heater unit may be included to bring the sensor into operation quickly.",
+      "options": [
+        "which it",
+        "of it",
+        "until it",
+        "it"
+      ],
+      "answer": "C",
+      "explanation": "固定句型 not… until…＝「直到……才……」。意思是感測器直到達到高溫才會運作；until 後接 it reaches… 完整子句。"
+    },
+    {
+      "id": 34,
+      "question": "The concave eyepiece lens, or diverging lens, curves inward __ the image so that it spreads across the human retina to create a larger image than possible with just the human eye.",
+      "options": [
+        "and magnifies",
+        "to magnifies",
+        "which magnifies",
+        "can magnifies"
+      ],
+      "answer": "A",
+      "explanation": "同一主詞 lens 做兩個動作：curves inward and magnifies…。用 and 連接，兩個動詞都用第三人稱單數。"
+    },
+    {
+      "id": 35,
+      "question": "The recognition that __ of happiness and unhappiness can coexist much like love and hate in a close relationship may offer valuable clues on how to lead a happier life.",
+      "options": [
+        "feeling",
+        "due to feeling",
+        "can feeling",
+        "with feeling"
+      ],
+      "answer": "A",
+      "explanation": "that 後面需接完整子句，空格要放主詞，四個選項只有名詞 feeling 可用。此處指幸福與不幸福的感受能共存；原句用 feelings 會更自然。"
+    },
+    {
+      "id": 36,
+      "question": "What the economic theories can contribute to the management science __ building analytical models which help in recognizing the structure of managerial problem, and eliminating the minor details which might obstruct decision making.",
+      "options": [
+        "to",
+        "for",
+        "may is",
+        "is"
+      ],
+      "answer": "D",
+      "explanation": "What… can contribute… 整段當主詞，後面需要主要動詞 is。is building analytical models 表示「貢獻在於建立分析模型」，此處 building 是動名詞。"
+    },
+    {
+      "id": 37,
+      "question": "Food biotechnology will continue to make a significant impact on the global community, as long as research and development makes every effort to keep the public trust, provide economic fairness, __ the health of the ecosystem.",
+      "options": [
+        "is and protect",
+        "to and protect",
+        "and protect",
+        "and is protect"
+      ],
+      "answer": "C",
+      "explanation": "keep、provide、protect 是三個並列動作：to keep… , provide… , and protect…。共用前面的 to，最後只需 and protect。"
+    },
+    {
+      "id": 38,
+      "question": "Water supply can be naturally affected by climate, drought, and floods, but problems with misallocation of water resources, pollution of water sources, and difficulty __ and developing available water contribute to growing water crisis in the 21st century.",
+      "options": [
+        "in accessing",
+        "is in accessing",
+        "are in accessing",
+        "is accessing"
+      ],
+      "answer": "A",
+      "explanation": "固定搭配 difficulty in＋V-ing＝「在做某事上有困難」。因此用 in accessing，並與後面的 developing 並列。"
+    },
+    {
+      "id": 39,
+      "question": "A comparison of the skeletal structure of the two species reveals similarities such as hollow bones, while examination of their cellular anatomy indicates __ are directly related.",
+      "options": [
+        "which they",
+        "with they",
+        "that they",
+        "that with they"
+      ],
+      "answer": "C",
+      "explanation": "indicates that＋完整句子＝「顯示……」。that they are directly related 中，they 是主詞，are 是動詞。"
+    },
+    {
+      "id": 40,
+      "question": "Even though plenty of surveys indicate that the firstborns are out-performed among children, this declaration really says less __ the eldest than about not having many sibling, or living in an extended family.",
+      "options": [
+        "is about being",
+        "about being",
+        "are about being",
+        "has about being"
+      ],
+      "answer": "B",
+      "explanation": "比較結構 less about A than about B＝「與其說是關於 A，不如說是關於 B」。about 是介系詞，後接 being。"
+    },
+    {
+      "id": 41,
+      "question": "Whether a later model has a heated sensor or not can be identified by noting __ has three wires in the connector.",
+      "options": [
+        "which it",
+        "with it",
+        "than it",
+        "that it"
+      ],
+      "answer": "D",
+      "explanation": "noting that＋完整句子，表示「注意到……」。that it has three wires 是 noting 的受詞內容。"
+    },
+    {
+      "id": 42,
+      "question": "Theoretically the fact that the tractive forces are shared between four, rather than two, driven wheels should mean that a four-wheel-drive car can be accelerated harder out of a corner before __ loses its adhesion.",
+      "options": [
+        "when any tire",
+        "with any tire",
+        "any tire",
+        "that any tire"
+      ],
+      "answer": "C",
+      "explanation": "before 是連接詞，後面直接接完整句子 any tire loses its adhesion。any tire 是主詞，不需要再加 when 或 that。"
+    },
+    {
+      "id": 43,
+      "question": "Since installing optical fiber for each home is very expensive, a technology called ADSL which utilizes traditional network __ services similar to cable-modem system is developed to give minimal cost of installation and boost the telephone network to Internet application.",
+      "options": [
+        "to offered",
+        "to offer",
+        "for offer",
+        "offers"
+      ],
+      "answer": "B",
+      "explanation": "to offer＋受詞表示目的：「利用傳統網路來提供服務」。to 後面必須接原形 offer。"
+    },
+    {
+      "id": 44,
+      "question": "For the EGR system to operate properly, the vacuum hoses __ at the intake system must be securely connected so that the air induced from outside can be free of leak.",
+      "options": [
+        "to located",
+        "is located",
+        "located",
+        "which locating"
+      ],
+      "answer": "C",
+      "explanation": "hoses 是「位於」進氣系統的軟管，用 located 修飾。整句主要動詞是 must be securely connected。"
+    },
+    {
+      "id": 45,
+      "question": "One typical example of major takeover conducted by this company __ people an understanding of how management mistakes combined with angry retaliation from the buyer can harm each other.",
+      "options": [
+        "to give",
+        "which giving",
+        "can gives",
+        "gives"
+      ],
+      "answer": "D",
+      "explanation": "主詞核心是單數 example，所以主要動詞用 gives。conducted by this company 只是修飾 takeover；can gives 不符合 can＋原形。"
+    },
+    {
+      "id": 46,
+      "question": "An oscillator usually requires a vacuum-tube or transistor amplifier providing an amplified in-phase output which is then fed back to the input __ oscillation.",
+      "options": [
+        "is to sustain",
+        "to sustain",
+        "is sustaining",
+        "which sustaining"
+      ],
+      "answer": "B",
+      "explanation": "to sustain oscillation 表示目的：「為了維持振盪」。前面已有 is then fed back，不需再補一個 is。"
+    },
+    {
+      "id": 47,
+      "question": "Drain-water heat recovery systems can capture hot water that __ down the drain, carrying with it most of the energy used to heat water in a home.",
+      "options": [
+        "to go",
+        "can goes",
+        "going",
+        "goes"
+      ],
+      "answer": "D",
+      "explanation": "that 引導關係子句，修飾 hot water；that 後面缺動詞，所以填 goes。water 視為單數，動詞加 -es。"
+    },
+    {
+      "id": 48,
+      "question": "This assembly of closely spaced discs is sealed within the outer shell, which is almost completely filled with silicone fluid __ a viscosity about that of honey and remaining stable under wide variation in operating temperature.",
+      "options": [
+        "is having",
+        "has",
+        "which having",
+        "having"
+      ],
+      "answer": "D",
+      "explanation": "having… and remaining… 並列修飾 silicone fluid，表示「具有……且保持穩定」。主要動詞已有 is filled，不再直接加 has。"
+    },
+    {
+      "id": 49,
+      "question": "Fiber optics coupled with the recent invention of Integrated Services Digital Network systems, which allow various machines __ and communicate with each other regardless of data type or computer language, will create an information superhighway.",
+      "options": [
+        "is to understand",
+        "are to understand",
+        "can understand",
+        "to understand"
+      ],
+      "answer": "D",
+      "explanation": "固定句型 allow＋受詞＋to V，表示「允許／使……能夠……」。所以是 allow various machines to understand and communicate…。"
+    },
+    {
+      "id": 50,
+      "question": "Software encompasses not only \"application\" programs, which present a business or scientific problem in a form a computer can understand, but also the great variety of detailed and voluminous instructions stored in computer memory __ and automate the work of the machine.",
+      "options": [
+        "is to organize",
+        "to organized",
+        "which organizing",
+        "to organize"
+      ],
+      "answer": "D",
+      "explanation": "to organize and automate… 表示這些指令的用途：「用來組織並自動執行機器工作」。to 後接原形，organize 與 automate 並列。"
+    }
+  ]
+}

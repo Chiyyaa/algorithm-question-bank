@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#183e36">
 <title>英文｜學習題庫</title>
 <link rel="stylesheet" href="./css/style.css?v=20261007-os">
-<link rel="stylesheet" href="./css/english.css?v=20261104-midterm">
+<link rel="stylesheet" href="./css/english.css?v=20261104-grammar">
 </head>
 <body data-subject="english">
 <button id="englishMenuBtn" class="mobile-menu-btn" type="button" aria-label="收合選單" aria-controls="englishSidebar" aria-expanded="true">☰</button>
@@ -17,7 +17,7 @@
         <button class="nav-btn active" data-view="vocabulary" type="button" aria-current="page"><span aria-hidden="true">▤</span> 單字表</button>
         <button class="nav-btn" data-view="quiz" type="button"><span aria-hidden="true">✎</span> 當週測驗</button>
         <button class="nav-btn" data-view="midterm" type="button"><span aria-hidden="true">✎</span> 期中單字測驗</button>
-        <button class="nav-btn" data-view="total" type="button" disabled><span aria-hidden="true">◷</span> 總測驗（暫時關閉）</button>
+        <button class="nav-btn" data-view="grammar" type="button"><span aria-hidden="true">✓</span> 期中文法測驗</button>
     </nav>
     <a class="nav-btn return-home" href="./">↩ 切換科目</a>
     <div class="sidebar-note">第 3 期：101–150 號<br>第 4 期：11/11 16:00 更新<br>範圍：151–250 號<br><span class="timezone-label">台北時間 · UTC+8</span></div>
@@ -45,6 +45,9 @@
         <p id="quizWeekNotice" class="notice" role="status" hidden></p>
         <div id="quizContent"></div>
     </section>
+    <section id="grammarView" aria-label="期中文法測驗" hidden>
+        <div id="grammarContent"></div>
+    </section>
     </main>
     <p id="speechStatus" class="speech-status" role="status" aria-live="polite"></p>
     <footer class="english-footer"><span id="vocabularyFooter">專業英文・計算機應用</span><span>一次一點，慢慢記住。</span></footer>
@@ -58,7 +61,7 @@
     <p class="section-caption">每兩週推進 50 個單字；總測驗從全部單字隨機抽出 30 題。</p>
     <button id="dismissEnglishAnnouncement" class="primary-btn" type="button">我知道了</button>
 </dialog>
-<script type="module" src="./js/english.js?v=20261104-midterm"></script>
+<script type="module" src="./js/english.js?v=20261104-grammar"></script>
 </body>
 </html>
 

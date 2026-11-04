@@ -1,16 +1,20 @@
 import { weekInfo, wordsForWeek, quizPrompt, normalizeAnswer, createQuiz, createMidtermQuiz, vocabularyPeriods, submitAnswer, advanceQuiz, serverTime, QUIZ_AUDIO, resultRating, quizSummary, finishQuiz } from './english-core.js?v=20261104-midterm';
 
+import { createGrammarController } from './english-grammar.js?v=20261104-grammar';
+
 const $ = id => document.getElementById(id);
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const speakerIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4zM16 8c3 2 3 6 0 8M19 5c5 4 5 10 0 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const dataUrl = new URL('../data/english-vocabulary.json', import.meta.url);
 const taipei = new Intl.DateTimeFormat('zh-TW', { timeZone:'Asia/Taipei', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', hourCycle:'h23' });
 let data, currentWeek, quiz = null;
+const grammar = createGrammarController($('grammarContent'));
 const quizSessions = { quiz:null, midterm:null };
 const manualLimit = () => quiz?.mode === 'midterm' ? 1 : QUIZ_AUDIO.manualReplays;
 const isQuizView = () => view === 'quiz' || view === 'midterm';
 const quizLabel = value => value.mode === 'midterm' ? '期中單字測驗' : `第 ${value.week} 期 · 單字測驗`;
-let view = location.hash === '#midterm' ? 'midterm' : location.hash === '#quiz' ? 'quiz' : 'vocabulary';
+const viewFromHash = () => location.hash === '#grammar' ? 'grammar' : location.hash === '#midterm' ? 'midterm' : location.hash === '#quiz' ? 'quiz' : 'vocabulary';
+let view = viewFromHash();
 let clockBase = Date.now(), clockStart = performance.now(), clockSource = 'device', syncing = false;
 let activeSpeech = null, speechToken = 0, speechTimer, autoSpeechTimer;
 const hasSpeech = !!window.speechSynthesis && typeof window.SpeechSynthesisUtterance === 'function';
@@ -196,17 +200,20 @@ function renderWords() {
 $('wordSearch').addEventListener('input', renderWords);
 
 function showView(name, push = true) {
-    if (!['vocabulary','quiz','midterm','total'].includes(name)) return;
+    if (!['vocabulary','quiz','midterm','grammar','total'].includes(name)) return;
     if (name === 'total') name = 'vocabulary';
     stopSpeech();
     if (isQuizView()) quizSessions[view] = quiz;
     view = name;
     quiz = isQuizView() ? quizSessions[view] : null;
-    const hash = isQuizView() ? '#' + name : '';
+    const hash = isQuizView() || view === 'grammar' ? '#' + name : '';
     if (push && location.hash !== hash) history.pushState({englishView:name}, '', hash || location.pathname + location.search);
     $('vocabularyView').hidden = !data || view !== 'vocabulary';
     $('quizView').hidden = !data || !isQuizView();
-    $('englishHeading').textContent = view === 'midterm' ? '期中單字測驗' : view === 'quiz' ? '當週測驗' : '單字表';
+    $('grammarView').hidden = view !== 'grammar';
+    document.querySelector('.week-banner').hidden = view === 'grammar';
+    if (view === 'grammar') grammar.show();
+    $('englishHeading').textContent = view === 'grammar' ? '期中文法測驗' : view === 'midterm' ? '期中單字測驗' : view === 'quiz' ? '當週測驗' : '單字表';
     $('quizTitle').textContent = view === 'midterm' ? '期中單字測驗' : '當週單字測驗';
     document.querySelectorAll('[data-view]').forEach(button => {
         const active = button.dataset.view === view;
@@ -220,7 +227,7 @@ function showView(name, push = true) {
 }
 document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => showView(button.dataset.view)));
 $('goQuizBtn').addEventListener('click', () => showView('quiz'));
-window.addEventListener('popstate', () => showView(location.hash === '#midterm' ? 'midterm' : location.hash === '#quiz' ? 'quiz' : 'vocabulary', false));
+window.addEventListener('popstate', () => showView(viewFromHash(), false));
 
 function startCurrentQuiz() {
     quiz = view === 'midterm' ? createMidtermQuiz(data.words) : createQuiz(data.words, currentWeek, data.schedule.quizSize);
