@@ -1,5 +1,3 @@
-import { initClassicDuel as initDuel } from './classic-duel.js?v=20261103-leave1';
-import { initEssentials } from './essentials.js?v=20261101-os-essentials1';
 import { mergeQuestionVersions } from './question-versions.js?v=20261030-replace1';
 import { createQuestionLinkController } from './question-links.js?v=20261030-batch-v2';
 import { initPractice } from './practice.js?v=20261102-treasure1';
@@ -53,11 +51,9 @@ const practice = initPractice({
         return mergeQuestionVersions(builtIn,shared);
     }
 });
-const essentials = initEssentials();
-const duel = initDuel({
-    onVerificationFailed(){history.replaceState({...history.state,questionBank:{view:'home'}},'');leaveSubject(true);},
-    onEnterSubject(id){enterSubject(id,null,false);document.getElementById('duelNavBtn').click();}
-});
+// Do not restore or connect to rooms while classic duels are under maintenance.
+try { sessionStorage.removeItem('question_bank_duel_v1'); } catch {}
+if (history.state?.duelResume) history.replaceState({...history.state,duelResume:false},'');
 const PAGE_SIZE = 25;
 const batch = initBatch({
     enrichRows: (rows,entries) => questionLinks.enrichBatch(rows,entries),
@@ -329,8 +325,7 @@ function leaveSubject(fromHistory = false) {
     currentUnit = null;
     pendingQuestionTarget = null;
     practice.setSubject(null);
-    duel.setSubject(null);
-    essentials.setSubject(null);
+    document.getElementById('duelNavBtn').hidden = true;
     batch.setSubject(null);
     QUESTIONS.length = 0;
     answersVisible.clear();
@@ -359,8 +354,7 @@ function enterSubject(subjectId, unitId, pushHistory = true, questionId = null) 
     if (!currentSubject) return;
     pendingQuestionTarget = questionId != null ? {subject:subjectId,unit:unitId,id:questionId} : null;
     practice.setSubject(currentSubject.id);
-    duel.setSubject(currentSubject.id);
-    essentials.setSubject(currentSubject.id);
+    document.getElementById('duelNavBtn').hidden = !['algorithm','os'].includes(currentSubject.id);
     batch.setSubject(currentSubject.id);
     const selected = getUnit(currentSubject.id, unitId) || getUnit(currentSubject.id, currentSubject.defaultUnit);
     const bankState = {view:'bank',subjectId:currentSubject.id,unitId:selected.id,...(pendingQuestionTarget ? {questionId} : {})};
