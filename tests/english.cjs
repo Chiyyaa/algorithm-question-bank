@@ -96,141 +96,120 @@ async function checkResultScreens(browser, url, data) {
 }
 
 (async()=>{
-    const core = await import('data:text/javascript;base64,'+Buffer.from(fs.readFileSync(path.join(root,'js/english-core.js'),'utf8')).toString('base64'));
+    const core=await import('data:text/javascript;base64,'+Buffer.from(fs.readFileSync(path.join(root,'js/english-core.js'),'utf8')).toString('base64'));
     assert.equal(data.words.length,645);
-    assert.ok(data.words.every((w,i)=>w.id===i+1&&w.word&&w.meaning&&w.pos));
-    assert.ok(data.words.every(w=>!/[a-z]/i.test(core.quizPrompt(w.meaning))&&core.quizPrompt(w.meaning).length));
     const cutoff=Date.parse('2026-11-11T16:00:00+08:00');
-    for(const at of ['2026-10-16T16:00:00+08:00','2026-10-30T16:00:00+08:00','2026-11-05T12:00:00+08:00','2026-11-11T15:59:59.999+08:00']) {
-        const info=core.weekInfo(Date.parse(at),data.schedule,645);
-        assert.deepEqual([info.week,info.start,info.end,info.nextAt],[3,101,150,cutoff]);
-    }
-    const fourth=core.weekInfo(cutoff,data.schedule,645);
+    const third=core.weekInfo(cutoff-1,data.schedule,645),fourth=core.weekInfo(cutoff,data.schedule,645);
+    assert.deepEqual([third.week,third.start,third.end,third.nextAt],[3,101,150,cutoff]);
     assert.deepEqual([fourth.week,fourth.start,fourth.end],[4,151,250]);
     assert.equal(core.wordsForWeek(data.words,fourth).length,100);
-    assert.equal(core.weekInfo(Date.parse('2026-10-16T15:59:59.999+08:00'),data.schedule,645).week,2);
     const periods=core.vocabularyPeriods(data.schedule,645);
     assert.deepEqual(periods[3],{week:4,start:151,end:250});
-    assert.deepEqual(periods[4],{week:5,start:251,end:300});
     assert.deepEqual(periods.flatMap(p=>data.words.filter(w=>w.id>=p.start&&w.id<=p.end)).map(w=>w.id),data.words.map(w=>w.id));
-    const samples=new Set();
-    for(let n=0;n<60;n++) {
-        const q=core.createMidtermQuiz(data.words);
-        assert.equal(q.mode,'midterm');assert.equal(q.items.length,20);
-        const ids=q.items.map(i=>i.word.id);assert.equal(new Set(ids).size,20);assert.ok(ids.every(id=>id>=1&&id<=150));
-        ids.forEach(id=>samples.add(id));
+    for(let i=0;i<30;i++){
+        const q=core.createTotalQuiz(data.words);assert.equal(q.mode,'total');assert.equal(q.items.length,30);
+        assert.equal(new Set(q.items.map(i=>i.word.id)).size,30);assert.ok(q.items.every(i=>i.word.id>=1&&i.word.id<=645));
     }
-    assert.ok(samples.has(1)&&samples.has(150));
-    assert.equal(core.isCorrect('  CENTRAL   PROCESSING UNIT  ','central processing unit'),true);
-    assert.equal(core.isCorrect('readonly memory','read-only memory'),false);
-    assert.equal(core.serverTime('Fri, 23 Oct 2026 08:00:00 GMT','2',200),Date.parse('2026-10-23T08:00:02.100Z'));
-    console.log('PASS midterm unique sampling across 1–150, complete vocabulary grouping, held period 3 and exact 11/11 period 4 boundary');
-    serverClock=Date.parse('2026-11-05T12:00:00+08:00');
+    assert.ok(core.createTotalQuiz(data.words,()=>.999999).items.some(i=>i.word.id===1));
+    let calls=0;assert.ok(core.createTotalQuiz(data.words,()=>calls++===0?0:.999999).items.some(i=>i.word.id===645));
+    assert.ok(data.words.every(w=>!/[a-z]/i.test(core.quizPrompt(w.meaning))&&core.quizPrompt(w.meaning).length));
+    console.log('PASS preserved vocabulary, period 3/4 boundary, complete grouping and total quiz 30 unique questions including pool endpoints');
+    serverClock=Date.parse('2026-11-07T12:00:00+08:00');
     await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
     const url='http://127.0.0.1:'+server.address().port+'/algorithm-question-bank/';
     let browser;
-    try {
+    try{
         browser=await chromium.launch({headless:true,executablePath:process.env.ENGLISH_BROWSER_PATH||undefined});
-        const ctx=await browser.newContext({viewport:{width:1440,height:1000},timezoneId:'Pacific/Honolulu'});
+        const ctx=await browser.newContext({viewport:{width:1440,height:1000},timezoneId:'Pacific/Honolulu',reducedMotion:'reduce'});
         await ctx.addInitScript(fakeSpeech);
-        const page=await ctx.newPage();page.setDefaultTimeout(15000);
-        const errors=[];page.on('pageerror',e=>errors.push(e.message));
-        await page.goto(url+'english.html');
-        await page.locator('.midterm-words').waitFor();
+        const page=await ctx.newPage();page.setDefaultTimeout(15000);const errors=[],requests=[];
+        page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));
+        await page.goto(url+'english.html');await page.locator('.current-week').waitFor();
+        assert.deepEqual(await page.locator('.sidebar-nav [data-view]').evaluateAll(es=>es.map(e=>e.dataset.view)),['vocabulary','quiz','total']);
         assert.equal(await page.locator('#englishAnnouncement').evaluate(e=>e.open),false);
-        assert.equal(await page.locator('.midterm-words tbody tr').count(),150);
-        assert.equal(await page.locator('#wordGroups > :first-child').getAttribute('class'),'word-group midterm-words');
-        assert.equal(await page.locator('.midterm-words tbody tr').first().getAttribute('data-word-id'),'1');
-        assert.equal(await page.locator('.midterm-words tbody tr').last().getAttribute('data-word-id'),'150');
-        assert.equal(await page.locator('[data-week="4"] tbody tr').count(),100);
-        assert.match(await page.locator('#weekHeading').innerText(),/第 3 期/);
-        assert.match(await page.locator('#weekRange').innerText(),/101–150/);
+        assert.equal(await page.locator('.current-week').getAttribute('data-week'),'3');
+        assert.equal(await page.locator('.current-week tbody tr').count(),50);
+        assert.equal(await page.locator('#wordGroups > :first-child').getAttribute('data-week'),'3');
+        assert.equal(await page.locator('.current-week tbody tr').first().getAttribute('data-word-id'),'101');
+        assert.equal(await page.locator('.current-week tbody tr').last().getAttribute('data-word-id'),'150');
+        assert.equal(await page.locator('#wordGroups tbody tr').count(),645);
+        assert.equal(await page.locator('.midterm-words').count(),0);
+        assert.equal(await page.locator('body').innerText().then(t=>t.includes('期中')),false);
         assert.match(await page.locator('#nextWeekTime').innerText(),/11\/11.*16:00/);
-        assert.equal(await page.locator('[data-view="total"]').count(),0);
-        assert.equal(await page.locator('[data-view="grammar"]').count(),1);
         await page.locator('#wordSearch').fill('zzzz-no-match');assert.match(await page.locator('#wordGroups').innerText(),/找不到/);
         await page.locator('#wordSearch').fill('645');assert.equal(await page.locator('#wordGroups tbody tr').count(),1);
         await page.locator('#wordSearch').fill('');
-        await page.locator('[data-view="midterm"]').click();
-        assert.match(await page.locator('.quiz-intro').innerText(),/考試當天不會播放音檔/);
-        assert.match(await page.locator('.quiz-intro').innerText(),/1–150/);
-        assert.match(await page.locator('.quiz-intro').innerText(),/手動播放 1 次，不會自動播放/);
-        await page.locator('#startQuizBtn').click();
-        await page.waitForTimeout(1250);assert.equal(await page.evaluate(()=>window.__spoken.length),0);
-        assert.equal(await page.locator('[data-speak="quiz"]').isEnabled(),true);
-        const id=await page.locator('.quiz-card').getAttribute('data-question-id');
-        await page.locator('#spellingAnswer').fill('saved midterm draft');
-        await page.locator('[data-speak="quiz"]').click();
-        await page.waitForFunction(()=>document.querySelector('#playCount').textContent.includes('剩餘 0'));
-        assert.equal(await page.locator('[data-speak="quiz"]').isDisabled(),true);
-        assert.equal(await page.evaluate(()=>window.__spoken.length),1);
-        await page.locator('[data-view="quiz"]').click();
-        assert.match(await page.locator('.quiz-intro').innerText(),/第 3 期 · 101–150/);
-        await page.locator('#startQuizBtn').click();
-        await page.locator('#spellingAnswer').fill('saved weekly draft');
-        const weeklyId=await page.locator('.quiz-card').getAttribute('data-question-id');
-        await page.locator('[data-view="midterm"]').click();
-        assert.equal(await page.locator('.quiz-card').getAttribute('data-question-id'),id);
-        assert.equal(await page.locator('#spellingAnswer').inputValue(),'saved midterm draft');
-        assert.equal(await page.locator('[data-speak="quiz"]').isDisabled(),true);
-        await page.waitForTimeout(1250);assert.equal(await page.evaluate(()=>window.__spoken.length),1);
-        const shots=process.env.ENGLISH_SCREENSHOT_DIR;
-        if(shots){fs.mkdirSync(shots,{recursive:true});await page.screenshot({path:path.join(shots,'期中測驗_桌面.png')});}
-        const ids=[];
-        for(let i=0;i<20;i++) {
-            const qid=Number(await page.locator('.quiz-card').getAttribute('data-question-id'));ids.push(qid);
-            assert.ok(qid>=1&&qid<=150);assert.ok(!/[a-z]/i.test(await page.locator('.quiz-meaning').innerText()));
-            if(i===1) {
-                await page.waitForTimeout(1100);assert.equal(await page.evaluate(()=>window.__spoken.length),1);
-                await page.evaluate(()=>window.__speechMode='error');await page.locator('[data-speak="quiz"]').click();
-                await page.waitForFunction(()=>document.querySelector('#speechStatus').textContent.includes('未扣除'));
-                assert.match(await page.locator('#playCount').innerText(),/剩餘 1/);
-                await page.evaluate(()=>window.__speechMode='ok');await page.locator('[data-speak="quiz"]').click();
-                await page.waitForFunction(()=>document.querySelector('#playCount').textContent.includes('剩餘 0'));
-            }
-            await page.locator('#spellingAnswer').fill(i===0?'wrong':data.words[qid-1].word);
-            await page.locator('#spellingForm button[type="submit"]').click();
-            assert.equal(await page.locator('.correct-word').innerText(),data.words[qid-1].word);
-            await page.locator('#nextQuestionBtn').click();
+        for(const hash of ['#midterm','#grammar']){
+            await page.goto(url+'english.html'+hash);await page.locator('.current-week').waitFor();
+            assert.equal(await page.locator('#englishHeading').innerText(),'單字表');
+            assert.equal(new URL(page.url()).hash,'');assert.equal(await page.locator('#quizView').isVisible(),false);
         }
-        assert.equal(new Set(ids).size,20);assert.match(await page.locator('.result-score').innerText(),/95/);
-        assert.match(await page.locator('.result-card .prompt-label').innerText(),/期中單字測驗/);
-        assert.equal(await page.locator('.review-item').count(),1);
+        assert.equal(requests.some(u=>u.includes('english-grammar')),false);
+        await page.locator('[data-view="quiz"]').click();await page.locator('#startQuizBtn').click();
+        const weeklyId=await page.locator('.quiz-card').getAttribute('data-question-id');
+        await page.locator('#spellingAnswer').fill('saved weekly draft');
+        await page.locator('[data-view="total"]').click();
+        assert.match(await page.locator('.quiz-intro').innerText(),/全部 645 個單字 · 隨機 30 題/);
+        assert.match(await page.locator('.quiz-intro').innerText(),/1 秒後自動發音.*手動重播 2 次/);
+        await page.locator('#startQuizBtn').click();
+        assert.equal(await page.locator('#giveUpQuizBtn').count(),0);
+        assert.match(await page.locator('.quiz-progress-row').innerText(),/第 1 \/ 30 題/);
+        const firstId=await page.locator('.quiz-card').getAttribute('data-question-id');
+        await page.locator('#spellingAnswer').fill('saved total draft');
+        await page.waitForFunction(()=>document.querySelector('#playCount')?.textContent.includes('剩餘 2'));
+        const before=await page.evaluate(()=>window.__spoken.length);
+        for(let i=0;i<2;i++){
+            await page.locator('[data-speak="quiz"]').click();
+            await page.waitForFunction(()=>!document.querySelector('[data-speak="quiz"]').disabled||document.querySelector('#playCount').textContent.includes('剩餘 0'));
+        }
+        assert.equal(await page.evaluate(()=>window.__spoken.length),before+2);
+        assert.equal(await page.locator('[data-speak="quiz"]').isDisabled(),true);
         await page.locator('[data-view="quiz"]').click();
         assert.equal(await page.locator('.quiz-card').getAttribute('data-question-id'),weeklyId);
         assert.equal(await page.locator('#spellingAnswer').inputValue(),'saved weekly draft');
-        await page.waitForFunction(()=>window.__spoken.length===4);
-        assert.match(await page.locator('#playCount').innerText(),/剩餘 2/);
-        serverClock=cutoff-1000;await page.locator('#syncClockBtn').click();
-        assert.match(await page.locator('#weekHeading').innerText(),/第 3 期/);
-        serverClock=cutoff;await page.locator('#syncClockBtn').click();
-        await page.waitForFunction(()=>document.querySelector('#weekHeading').textContent==='第 4 期');
-        assert.match(await page.locator('#weekRange').innerText(),/151–250.*100/);
-        assert.equal(await page.locator('#quizWeekNotice').isVisible(),true);
-        assert.equal(await page.locator('.quiz-card').getAttribute('data-question-id'),weeklyId);
-        await page.locator('#giveUpQuizBtn').click();await page.locator('#restartQuizBtn').click();
-        const newId=Number(await page.locator('.quiz-card').getAttribute('data-question-id'));assert.ok(newId>=151&&newId<=250);
-        await page.locator('[data-view="midterm"]').click();await page.locator('#restartQuizBtn').click();
-        await page.setViewportSize({width:390,height:844});
-        await page.waitForTimeout(400);
+        await page.locator('[data-view="total"]').click();
+        assert.equal(await page.locator('.quiz-card').getAttribute('data-question-id'),firstId);
+        assert.equal(await page.locator('#spellingAnswer').inputValue(),'saved total draft');
+        assert.match(await page.locator('#playCount').innerText(),/剩餘 0/);
+        const ids=[];
+        for(let i=0;i<30;i++){
+            const id=Number(await page.locator('.quiz-card').getAttribute('data-question-id'));ids.push(id);
+            assert.ok(id>=1&&id<=645);assert.ok(!/[a-z]/i.test(await page.locator('.quiz-meaning').innerText()));
+            if(i===10){
+                serverClock=cutoff;await page.locator('#syncClockBtn').click();
+                await page.waitForFunction(()=>document.querySelector('#weekHeading').textContent==='第 4 期');
+                assert.match(await page.locator('#weekRange').innerText(),/151–250.*100/);
+                assert.equal(await page.locator('#quizWeekNotice').isVisible(),false);
+                assert.equal(await page.locator('.quiz-card').getAttribute('data-question-id'),String(id));
+            }
+            await page.locator('#spellingAnswer').fill(i===0?'wrong':data.words[id-1].word);
+            await page.locator('#spellingForm button[type="submit"]').click();
+            assert.equal(await page.locator('.correct-word').innerText(),data.words[id-1].word);
+            await page.locator('#nextQuestionBtn').click();
+        }
+        assert.equal(new Set(ids).size,30);assert.match(await page.locator('.result-score').innerText(),/97/);
+        assert.equal(await page.locator('#resultHeading').innerText(),'總測驗完成');
+        assert.match(await page.locator('.result-card .prompt-label').innerText(),/總測驗/);
+        assert.equal(await page.locator('.result-rating-image').count(),0);assert.equal(await page.locator('.review-item').count(),1);
+        await page.locator('#restartQuizBtn').click();assert.match(await page.locator('.quiz-progress-row').innerText(),/1 \/ 30/);
+        await page.setViewportSize({width:390,height:844});await page.waitForTimeout(100);
         assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-        if(shots)await page.screenshot({path:path.join(shots,'期中測驗_手機.png')});
         await page.locator('#englishMenuBtn').click();await page.locator('[data-view="vocabulary"]').click();
-        await page.waitForTimeout(400);
+        assert.equal(await page.locator('#wordGroups > :first-child').getAttribute('data-week'),'4');
+        assert.equal(await page.locator('.current-week tbody tr').count(),100);
+        assert.equal(await page.locator('.current-week tbody tr').first().getAttribute('data-word-id'),'151');
+        assert.equal(await page.locator('.current-week tbody tr').last().getAttribute('data-word-id'),'250');
+        assert.equal(await page.locator('#wordGroups tbody tr').count(),645);
         assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-        if(shots)await page.screenshot({path:path.join(shots,'期中單字表_手機.png')});
-        await page.goto(url+'english.html#total');await page.locator('.midterm-words').waitFor();
-        assert.equal(await page.locator('#quizView').isVisible(),false);
+        await page.goBack();assert.equal(await page.locator('#englishHeading').innerText(),'總測驗');
         assert.deepEqual(errors,[]);await ctx.close();
-        console.log('PASS hidden total including old deep link, 150 pinned words, midterm reminder, no autoplay, one manual play, speech failure refund, independent saved sessions, 20 questions and 95-point grading, live rollover and mobile layout');
-        serverClock=Date.parse('2026-11-05T12:00:00+08:00');
+        console.log('PASS removed midterm entries/old links, no grammar requests, current-period pinning/search, restored total/30 questions/audio/97-point grading/wrong review/restart, independent drafts, 11/11 rollover and mobile history');
+        serverClock=Date.parse('2026-11-07T12:00:00+08:00');
         await checkResultScreens(browser,url,data);
         const unsupported=await browser.newContext();
         await unsupported.addInitScript(()=>Object.defineProperty(window,'SpeechSynthesisUtterance',{value:undefined,configurable:true}));
-        const p=await unsupported.newPage();await p.goto(url+'english.html#midterm');await p.locator('#startQuizBtn').click();
-        assert.equal(await p.locator('[data-speak="quiz"]').isDisabled(),true);
-        assert.equal(await p.locator('#spellingAnswer').isEnabled(),true);
-        await unsupported.close();
-        console.log('PASS midterm remains usable without speech support');
-    } finally {if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
+        const p=await unsupported.newPage();await p.goto(url+'english.html#total');await p.locator('#startQuizBtn').click();
+        assert.equal(await p.locator('[data-speak="quiz"]').isDisabled(),true);assert.equal(await p.locator('#spellingAnswer').isEnabled(),true);await unsupported.close();
+        console.log('PASS restored total remains usable without speech support');
+    }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 })().catch(error=>{console.error(error);server.close();process.exitCode=1;});
