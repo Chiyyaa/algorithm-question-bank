@@ -12,12 +12,34 @@
 <link rel="stylesheet" href="./css/question-links.css?v=20261030-batch-v2">
 <link rel="stylesheet" href="./css/duel.css?v=20261102-duel1">
 <link rel="stylesheet" href="./css/classic-duel.css?v=20261103-classic2">
+<style>
+#subjectHome .home-actions{position:absolute;top:max(22px,env(safe-area-inset-top));right:max(24px,env(safe-area-inset-right));z-index:66;display:flex;gap:8px}
+#subjectHome .home-actions .home-theme-toggle{position:static}
+#homeGiftDialog{width:min(420px,calc(100% - 32px));margin:auto;padding:24px;background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:12px}
+#homeGiftDialog::backdrop{background:var(--backdrop)}
+#homeGiftDialog h2{margin:0 0 12px;font-size:1.25rem}
+#homeGiftDetails{overflow-wrap:anywhere}
+.home-gift-actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:20px}
+.home-gift-actions a{display:inline-flex;align-items:center;padding:9px 15px;text-decoration:none;border-radius:8px}
+@media(max-width:600px){#subjectHome .home-actions{top:max(16px,env(safe-area-inset-top));right:max(18px,env(safe-area-inset-right))}}
+</style>
 </head>
 <body class="home-mode muji-theme">
 <section id="subjectHome" class="subject-home" aria-labelledby="subjectHeading">
-    <button id="homeThemeBtn" class="home-theme-toggle" type="button" aria-label="切換夜間模式" aria-pressed="false">
-        <span class="theme-icon" aria-hidden="true"></span><span class="theme-label">夜間模式</span>
-    </button>
+    <div class="home-actions">
+        <button id="homeGiftBtn" class="home-theme-toggle" type="button">大禮包</button>
+        <button id="homeThemeBtn" class="home-theme-toggle" type="button" aria-label="切換夜間模式" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true"></span><span class="theme-label">夜間模式</span>
+        </button>
+    </div>
+    <dialog id="homeGiftDialog" aria-labelledby="homeGiftTitle" aria-describedby="homeGiftDetails">
+        <h2 id="homeGiftTitle">要下載大禮包嗎？</h2>
+        <p id="homeGiftDetails">CourseReader_Windows.zip（Windows，約 30 MB）</p>
+        <form method="dialog" class="home-gift-actions">
+            <button type="submit" autofocus>取消</button>
+            <a class="primary-btn" id="homeGiftDownload" href="https://github.com/Chiyyaa/algorithm-question-bank/releases/download/v2026.11.17-coursereader/CourseReader_Windows.zip" download>確認下載</a>
+        </form>
+    </dialog>
     <div class="home-art" aria-hidden="true">
         <span class="corner-glow corner-glow-top"></span><span class="corner-glow corner-glow-bottom"></span>
         <svg class="silver-ribbons" viewBox="0 0 1440 960" preserveAspectRatio="xMidYMid slice">
@@ -168,6 +190,10 @@
 
 <script type="module" src="./js/app.js?v=20261107-maintenance1"></script>
 
+<script>
+const giftDialog = document.getElementById('homeGiftDialog');
+document.getElementById('homeGiftBtn').addEventListener('click', () => giftDialog.showModal());
+document.getElementById('homeGiftDownload').addEventListener('click', () => giftDialog.close());
+</script>
 </body>
 </html>
-
