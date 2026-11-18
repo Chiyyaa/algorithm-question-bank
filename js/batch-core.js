@@ -9,10 +9,26 @@ function similarity(a,b){if(a===b)return 1;if(!a.size||!b.size)return 0;let shar
 function threadModels(text){return [...String(text).matchAll(/\b(many|one)\s*-?\s*to\s*-?\s*(many|one)\b/gi)].map(m=>m[1].toLowerCase()+'-to-'+m[2].toLowerCase()).sort();}
 function compatibleModels(a,b){const first=threadModels(a),second=threadModels(b);return !first.length||!second.length||JSON.stringify([...new Set(first)])===JSON.stringify([...new Set(second)]);}
 export function createBatchIndex(entries){
-    return entries.filter(e=>e&&['algorithm','os'].includes(e.subject)&&(/^u\d+$/.test(e.unit)||e.subject==='os'&&e.unit==='treasure')&&Number.isSafeInteger(e.id)&&e.id>0&&typeof e.question==='string').map(e=>{
+    return entries.filter(e=>e&&['algorithm','os'].includes(e.subject)&&(/^u\d+$/.test(e.unit)||e.subject==='os'&&e.unit==='treasure')&&Number.isSafeInteger(e.id)&&e.id>0&&typeof e.question==='string').flatMap(entry=>{
+        const variants = Array.isArray(entry.batch_variants) ? entry.batch_variants.filter(variant =>
+            variant && typeof variant.question === 'string' && Array.isArray(variant.options) &&
+            variant.options.length === entry.options?.length && variant.options.every(option => typeof option === 'string') &&
+            typeof variant.correct_answer === 'string') : [];
+        return [entry, ...variants.map(variant => ({...entry, question:variant.question, options:variant.options,
+            correct_answer:variant.correct_answer, question_aliases:[], originalEntry:entry}))].map(e=>{
         const stem=normalizeBatchText(e.question),options=(e.options||[]).map(stripBatchOption).map(normalizeBatchText);
         return {...e,normalizedStem:stem,normalizedStems:[stem,...(Array.isArray(e.question_aliases)?e.question_aliases.filter(s=>typeof s==='string'&&s.trim()).map(normalizeBatchText):[])],normalizedOptions:options,grams:grams(stem.toLowerCase()),blanks:blankCount(e.question)};
+        });
     });
+}
+function distinctReferences(entries) {
+    const seen = new Set();
+    return entries.map(entry => entry.originalEntry || entry).filter(entry => {
+        const key = entry.subject + ':' + entry.unit + ':' + entry.id;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    }).slice(0,3);
 }
 export function batchQuestionHref(entry){
     return './?subject='+encodeURIComponent(entry.subject)+'&unit='+encodeURIComponent(entry.unit)+'&question='+encodeURIComponent(entry.id);
@@ -55,13 +71,14 @@ export function compareBatchQuestions(questions,index,{subject,unit='all'}={}){
             const resolved=exact.map(e=>answerFor(input,e));
             if(resolved.every(Boolean)&&new Set(resolved.map(a=>a.signature)).size===1){
                 const notes=[...new Set(exact.map(e=>e.answer_note||'').filter(Boolean))];
-                return {input,status:'matched',answers:resolved[0].lines,notes,references:exact.slice(0,3),reason:''};
+                return {input,status:'matched',answers:resolved[0].lines,notes,references:distinctReferences(exact),reason:''};
             }
         }
         const inputGrams=grams(stem.toLowerCase());
-        const candidates=(same.length?same:eligible.filter(e=>compatibleModels(input.stem,e.question))).map(e=>({entry:e,score:(e.normalizedStems||[e.normalizedStem]).includes(stem)?1:similarity(inputGrams,e.grams)}))
+        const ranked=(same.length?same:eligible.filter(e=>compatibleModels(input.stem,e.question))).map(e=>({entry:e,score:(e.normalizedStems||[e.normalizedStem]).includes(stem)?1:similarity(inputGrams,e.grams)}))
             .filter(e=>e.score>=(stem.length<12?.8:.56)).sort((a,b)=>b.score-a.score||a.entry.unit.localeCompare(b.entry.unit)||a.entry.id-b.entry.id)
-            .slice(0,3).map(e=>e.entry);
+            .map(e=>e.entry);
+        const candidates = distinctReferences([...exact, ...ranked]);
         let reason=input.issues.length?input.issues.join('；'):!validInput?'匯入題目的選項代號、內容重複或題幹不完整，請核對原始檔案。':exact.some(e=>e.type==='disputed')?'題庫原標準答案有爭議，請開啟題庫查看提醒。':exact.some(e=>e.options_status==='known_options_only')?'題庫尚未確認完整選項，暫不自動套用答案。':exact.some(e=>e.image)?'題庫題目含圖片，請開啟題庫核對完整內容。':exact.some(e=>(/單選/.test(e.source_type||e.source_response_type||'')&&input.kind!=='single')||(/多選|複選/.test(e.source_type||e.source_response_type||'')&&input.kind!=='multiple'))?'匯入檔案與題庫的單選／多選題型不同，請核對原始題型。':exact.length?(exact.map(e=>answerFor(input,e)).every(Boolean)?'題庫存在不同答案版本，請人工核對。':'題庫答案無法完整對應本次選項或填空格式，請開啟題庫核對。'):same.length?'題幹相同，但選項內容、數量或填空格數不同。':'找到相近題目，請核對數值、條件與選項。';
         if(!candidates.length)reason=input.issues.length?reason+'；目前沒有可對應的題庫題目。':'目前沒有找到可可靠對應的題目。';
         return {input,status:candidates.length?'review':'unmatched',answers:[],notes:[],references:candidates,reason};

@@ -11,12 +11,14 @@ export const SUBJECTS = [
             { id: "u8", name: "U8", questionCount: 60, dataUrl: "../data/algorithm-u8.json" }
         ]
     },
-    { id: "os", name: "作業系統", available: true, defaultUnit: "u3", units: [
+    { id: "os", name: "作業系統", available: true, defaultUnit: "u2-u6", units: [
         { id: "u2", name: "U2", questionCount: 59, dataUrl: "../data/os-u2.json" },
         { id: "u3", name: "U3", questionCount: 294, dataUrl: "../data/os-u3.json" },
         { id: "u4", name: "U4", questionCount: 147, dataUrl: "../data/os-u4.json" },
         { id: "u5", name: "U5", questionCount: 127, dataUrl: "../data/os-u5.json" },
         { id: "u6", name: "U6", questionCount: 234, dataUrl: "../data/os-u6.json" },
+        { id: "u7", name: "U7", questionCount: 165, dataUrl: "../data/os-u7.json" },
+        { id: "u8", name: "U8", questionCount: 167, dataUrl: "../data/os-u8.json" },
         { id: "treasure", name: "挖寶單元", questionCount: 70, dataUrl: "../data/os-treasure.json" }
     ] }
 ];

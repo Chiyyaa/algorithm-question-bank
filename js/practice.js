@@ -1,4 +1,4 @@
-import { practiceUnits, PRACTICE_COUNTS, buildPracticePool, createPractice, gradePracticeQuestion, practiceSummary } from './practice-core.js?v=20261118-u8';
+import { practiceUnits, PRACTICE_COUNTS, buildPracticePool, createPractice, gradePracticeQuestion, practiceSummary } from './practice-core.js?v=20261118-os78';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function prepareVerificationQuestions(raw) {
@@ -55,7 +55,7 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
         pool=null;poolUnit=null;verificationPool=null;loading=true;$('practiceRetry').hidden=true;
         message('正在載入 '+unitLabel(unit)+'……');sync();
         try {
-            if(!practiceUnits(subject).length||!practiceUnits(subject).includes(unit))throw new Error((subject==='os'?'目前開放作業系統 U2～U6 與挖寶單元。':'目前開放演算法 U7、U8。'));
+            if(!practiceUnits(subject).length||!practiceUnits(subject).includes(unit))throw new Error((subject==='os'?'目前開放作業系統 U2～U8 與挖寶單元。':'目前開放演算法 U7、U8。'));
             const [questions,checks]=await Promise.all([
                 loadQuestions(requestedSubject,unit),
                 (async()=>{
@@ -187,8 +187,8 @@ export function initPractice({getContext,loadQuestions,onVerificationFailed}) {
         subject=next;version++;pool=null;poolUnit=null;verificationPool=null;verification=null;loading=false;session=null;opened=false;
         $('practiceUnit').innerHTML=practiceUnits(next).map(unit=>'<option value="'+unit+'">'+subjectLabel()+' '+(unit==='treasure'?'挖寶單元':unit.toUpperCase())+'</option>').join('');
         $('practiceUnit').value=next==='os'?'u3':'u8';
-        $('practiceDescription').textContent=next==='os'?'作業系統 U2～U6 與挖寶單元，每題作答後立即核對答案。全部題包含本單元所有可出題的題目。':'演算法 U7、U8，每題作答後立即核對答案。全部題包含本單元所有可出題的題目。';document.querySelector('[name="practiceCount"][value="30"]').checked=true;
-        $('practiceRetry').hidden=true;message((subject==='os'?'目前開放作業系統 U2～U6 與挖寶單元。':'目前開放演算法 U7、U8。'));render();
+        $('practiceDescription').textContent=next==='os'?'作業系統 U2～U8 與挖寶單元，每題作答後立即核對答案。全部題包含本單元所有可出題的題目。':'演算法 U7、U8，每題作答後立即核對答案。全部題包含本單元所有可出題的題目。';document.querySelector('[name="practiceCount"][value="30"]').checked=true;
+        $('practiceRetry').hidden=true;message((subject==='os'?'目前開放作業系統 U2～U8 與挖寶單元。':'目前開放演算法 U7、U8。'));render();
     }
     setSubject(null);
     return {setSubject};

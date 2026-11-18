@@ -1,17 +1,17 @@
 import { mergeQuestionVersions } from './question-versions.js?v=20261030-replace1';
-import { createQuestionLinkController } from './question-links.js?v=20261030-batch-v2';
-import { initPractice } from './practice.js?v=20261118-u8';
-import { practiceUnits } from './practice-core.js?v=20261118-u8';
+import { createQuestionLinkController } from './question-links.js?v=20261118-os78';
+import { initPractice } from './practice.js?v=20261118-os78';
+import { practiceUnits } from './practice-core.js?v=20261118-os78';
 import { curatePublishedQuestions } from './question-curation.js?v=20261031-bank1';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
 import { initNavigation } from "./navigation.js";
-import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261118-u8";
+import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261118-os78";
 
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261030-replace1";
 import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';
-import { initBatch } from './batch.js?v=20261102-treasure1';
-import { batchQuestionHref } from './batch-core.js?v=20261102-treasure1';
+import { initBatch } from './batch.js?v=20261118-os78';
+import { batchQuestionHref } from './batch-core.js?v=20261118-os78';
 
 initAppearance();
 
@@ -36,7 +36,7 @@ const practice = initPractice({
         leaveSubject(true);
     },
     async loadQuestions(subjectId, unitId) {
-        if (!practiceUnits(subjectId).includes(unitId)) throw new Error('目前開放演算法 U7、U8、作業系統 U2～U6 與挖寶單元。');
+        if (!practiceUnits(subjectId).includes(unitId)) throw new Error('目前開放演算法 U7、U8、作業系統 U2～U8 與挖寶單元。');
         // U5 uses the published shared bank and has no built-in JSON file.
         const unit = getUnit(subjectId, unitId) || (unitId === 'u5' ? {dataUrl:null,sharedOnly:true} : null);
         if (!unit) throw new Error('此單元尚無可用題庫，請稍後重試。');
@@ -96,7 +96,7 @@ const summary = document.getElementById("summary");
 const questionLinks=createQuestionLinkController({onReady:refreshQuestionLinkView});
 list.addEventListener('click',event=>{if(event.target.closest('[data-retry-question-links]'))questionLinks.retry();});
 function refreshQuestionLinkView(){
- if(!ready||currentSubject?.id!=='os'||!['u3','u4'].includes(currentUnit?.id))return;
+ if(!ready||currentSubject?.id!=='os'||!['u3','u4','u2-u6'].includes(currentUnit?.id))return;
  const focused=document.activeElement,focusId=focused?.id,answerId=focused?.getAttribute('data-toggle-answer'),relationId=focused?.getAttribute('data-target-id');
  const selection=focused===searchInput?[searchInput.selectionStart,searchInput.selectionEnd]:null,scroll=scrollY;
  const anchor=focused?.closest?.('.question-card')||list.querySelector('.batch-target')||Array.from(list.querySelectorAll('.question-card')).find(card=>card.getBoundingClientRect().bottom>100),anchorId=anchor?.getAttribute('data-id'),anchorTop=anchor?.getBoundingClientRect().top;
@@ -120,13 +120,13 @@ function getFilteredQuestions() {
     });
 }
 
-const combinedAlgorithmUnit = { id: "u2-u6", name: "U2 ~ U6" };
-const earlierAlgorithmIds = ["u2", "u3", "u4", "u5", "u6"];
+const combinedBankUnit = { id: "u2-u6", name: "U2 ~ U6" };
+const earlierUnitIds = ["u2", "u3", "u4", "u5", "u6"];
 const questionKey = q => q.bankUnit ? q.bankUnit + ":" + q.id : String(q.id);
 
 function getBankUnit(subjectId, unitId) {
-    return subjectId === "algorithm" && unitId === combinedAlgorithmUnit.id
-        ? combinedAlgorithmUnit
+    return ["algorithm", "os"].includes(subjectId) && unitId === combinedBankUnit.id
+        ? combinedBankUnit
         : getUnit(subjectId, unitId);
 }
 
@@ -274,9 +274,9 @@ function renderUnitChoices() {
     const grid = document.getElementById("unitGrid");
     const renderCard = unit => {
         const active = unit.id === currentUnit?.id;
-        const available = unit === combinedAlgorithmUnit || !!unit.dataUrl || !!unit.sharedOnly;
-        const counts = unit === combinedAlgorithmUnit
-            ? currentSubject.units.filter(item => earlierAlgorithmIds.includes(item.id))
+        const available = unit === combinedBankUnit || !!unit.dataUrl || !!unit.sharedOnly;
+        const counts = unit === combinedBankUnit
+            ? currentSubject.units.filter(item => earlierUnitIds.includes(item.id))
             : [unit];
         const count = counts.reduce((total, item) => total + item.questionCount +
             (sharedCounts.get(currentSubject.id + ':' + item.id) || 0), 0);
@@ -289,11 +289,7 @@ function renderUnitChoices() {
         </button>`;
     };
     const units = currentSubject.units;
-    if (currentSubject.id !== "algorithm") {
-        grid.innerHTML = units.map(renderCard).join("");
-        return;
-    }
-    grid.innerHTML = [combinedAlgorithmUnit, ...units.filter(unit => !earlierAlgorithmIds.includes(unit.id))]
+    grid.innerHTML = [combinedBankUnit, ...units.filter(unit => !earlierUnitIds.includes(unit.id))]
         .map(renderCard).join("");
 }
 const publishedUnitsReady = collaborationEnabled() ? publishedCounts().then(rows => {
@@ -380,7 +376,7 @@ function enterSubject(subjectId, unitId, pushHistory = true, questionId = null) 
     practice.setSubject(currentSubject.id);
     document.getElementById('duelNavBtn').hidden = !['algorithm','os'].includes(currentSubject.id);
     batch.setSubject(currentSubject.id);
-    const selected = getBankUnit(currentSubject.id, unitId) || getUnit(currentSubject.id, currentSubject.defaultUnit);
+    const selected = getBankUnit(currentSubject.id, unitId) || getBankUnit(currentSubject.id, currentSubject.defaultUnit);
     const bankState = {view:'bank',subjectId:currentSubject.id,unitId:selected.id,...(pendingQuestionTarget ? {questionId} : {})};
     if (pushHistory) history.pushState({ ...history.state, questionBank: bankState }, "", pendingQuestionTarget ? batchQuestionHref(pendingQuestionTarget) : location.pathname);
     else history.replaceState({ ...history.state, questionBank: bankState }, "");
@@ -414,9 +410,9 @@ async function loadQuestionBank() {
     const subject = currentSubject;
     const active = () => version === requestVersion;
     const sharedEnabled = collaborationEnabled();
-    const combined = unit === combinedAlgorithmUnit;
+    const combined = unit === combinedBankUnit;
     const sourceUnits = combined
-        ? earlierAlgorithmIds.map(id => getUnit(subject.id, id) || {id})
+        ? earlierUnitIds.map(id => getUnit(subject.id, id) || {id})
         : [unit];
     const requestShared = () => Promise.all(sourceUnits.map(source => (sharedEnabled
         ? Promise.resolve().then(() => loadPublishedQuestions(subject.id, source.id))
