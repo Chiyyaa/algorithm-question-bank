@@ -120,6 +120,16 @@ function getFilteredQuestions() {
     });
 }
 
+const combinedAlgorithmUnit = { id: "u2-u6", name: "U2 ~ U6" };
+const earlierAlgorithmIds = ["u2", "u3", "u4", "u5", "u6"];
+const questionKey = q => q.bankUnit ? q.bankUnit + ":" + q.id : String(q.id);
+
+function getBankUnit(subjectId, unitId) {
+    return subjectId === "algorithm" && unitId === combinedAlgorithmUnit.id
+        ? combinedAlgorithmUnit
+        : getUnit(subjectId, unitId);
+}
+
 function render() {
     questionLinks.prepare({subject:currentSubject?.id,unit:currentUnit?.id,questions:QUESTIONS});
     const term = normalize(searchInput.value);
@@ -142,8 +152,9 @@ function render() {
     }
 
     list.innerHTML = pageItems.map(q => {
+        const key = questionKey(q);
         const alwaysShowAnswer = q.type === "choice_options_missing";
-        const answerShown = alwaysShowAnswer || answersVisible.has(q.id) || (answersShown && !answersHidden.has(q.id));
+        const answerShown = alwaysShowAnswer || answersVisible.has(key) || (answersShown && !answersHidden.has(key));
         const options = q.options || [];
 
         const partialOptionsNote = q.options_status === "known_options_only"
@@ -159,9 +170,9 @@ function render() {
 
 
         return `
-        <article class="question-card" data-id="${q.id}">
+        <article class="question-card" data-id="${key}">
             <div class="card-top">
-                <div class="number">#${q.id}</div>
+                <div class="number">${q.bankUnit ? q.bankUnit.toUpperCase() + " · " : ""}#${q.id}</div>
                 <div class="badges">
                     <span class="badge">${escapeHtml(getTypeLabel(q.type))}</span>
                     ${q.shared_question ? '<span class="badge user-badge">友列協助題</span>' : ''}
@@ -177,7 +188,7 @@ function render() {
             ${partialOptionsNote}
 
             ${alwaysShowAnswer ? "" : `<button class="answer-btn" type="button"
-                    aria-expanded="${answerShown}" data-toggle-answer="${q.id}">
+                    aria-expanded="${answerShown}" data-toggle-answer="${key}">
                 ${answerShown ? "隱藏答案" : (q.type === "disputed" ? "顯示原標準答案與提醒" : "顯示正確答案")}
             </button>`}
 
@@ -198,7 +209,7 @@ function render() {
 }
 
 function toggleAnswer(id) {
-    const question = QUESTIONS.find(q => q.id === id);
+    const question = QUESTIONS.find(q => questionKey(q) === id);
     if (!question || question.type === "choice_options_missing") return;
     const shown = answersVisible.has(id) || (answersShown && !answersHidden.has(id));
     if (shown) {
@@ -255,21 +266,25 @@ document.getElementById("hideAllBtn").addEventListener("click", () => {
 
 list.addEventListener("click", event => {
     const button = event.target.closest("[data-toggle-answer]");
-    if (button) toggleAnswer(Number(button.dataset.toggleAnswer));
+    if (button) toggleAnswer(button.dataset.toggleAnswer);
 });
 
 function renderUnitChoices() {
     if (!currentSubject) return;
     const grid = document.getElementById("unitGrid");
-    const groupOpen = grid.querySelector(".unit-group[open]") !== null;
     const renderCard = unit => {
         const active = unit.id === currentUnit?.id;
-        const available = !!unit.dataUrl || !!unit.sharedOnly;
+        const available = unit === combinedAlgorithmUnit || !!unit.dataUrl || !!unit.sharedOnly;
+        const counts = unit === combinedAlgorithmUnit
+            ? currentSubject.units.filter(item => earlierAlgorithmIds.includes(item.id))
+            : [unit];
+        const count = counts.reduce((total, item) => total + item.questionCount +
+            (sharedCounts.get(currentSubject.id + ':' + item.id) || 0), 0);
         return `<button class="unit-card ${active ? "active" : ""}" data-unit="${escapeHtml(unit.id)}"
             type="button" ${available ? "" : "disabled"} ${active ? 'aria-current="true"' : ""}>
             <span class="unit-card-top"><span class="unit-card-name">${escapeHtml(unit.name)}</span>
             <span class="unit-card-status">${active ? "目前單元" : available ? "可練習" : "尚未開放"}</span></span>
-            <span class="unit-card-count">${available ? `<strong>${unit.questionCount + (sharedCounts.get(currentSubject.id + ':' + unit.id) || 0)}</strong> 題` : "準備中"}</span>
+            <span class="unit-card-count">${available ? `<strong>${count}</strong> 題` : "準備中"}</span>
             <span class="unit-card-action">${active ? "繼續練習" : available ? "進入題庫" : "敬請期待"}<span aria-hidden="true">${available ? "↗" : "—"}</span></span>
         </button>`;
     };
@@ -278,13 +293,8 @@ function renderUnitChoices() {
         grid.innerHTML = units.map(renderCard).join("");
         return;
     }
-    const earlierUnits = units.filter(unit => /^u[2-6]$/.test(unit.id));
-    const laterUnits = units.filter(unit => !earlierUnits.includes(unit));
-    grid.innerHTML = `<details class="unit-group"${groupOpen ? " open" : ""}>
-        <summary class="unit-card"><span class="unit-card-name">U2至U6</span>
-        <span class="unit-card-action">展開單元 <span aria-hidden="true">↓</span></span></summary>
-        <div class="unit-group-cards">${earlierUnits.map(renderCard).join("")}</div>
-    </details>${laterUnits.map(renderCard).join("")}`;
+    grid.innerHTML = [combinedAlgorithmUnit, ...units.filter(unit => !earlierAlgorithmIds.includes(unit.id))]
+        .map(renderCard).join("");
 }
 const publishedUnitsReady = collaborationEnabled() ? publishedCounts().then(rows => {
     mergeCollaborationUnits(rows.filter(row => Number(row.question_count)>0));
@@ -302,7 +312,7 @@ const publishedUnitsReady = collaborationEnabled() ? publishedCounts().then(rows
 }).catch(() => { /* Built-in counts remain available if the shared service is offline. */ }) : Promise.resolve();
 
 function selectUnit(unitId) {
-    const unit = getUnit(currentSubject?.id, unitId);
+    const unit = getBankUnit(currentSubject?.id, unitId);
     if (!unit) return;
     if (unit === currentUnit && ready) return;
     if (pendingQuestionTarget && (pendingQuestionTarget.subject !== currentSubject.id || pendingQuestionTarget.unit !== unit.id)) pendingQuestionTarget = null;
@@ -370,7 +380,7 @@ function enterSubject(subjectId, unitId, pushHistory = true, questionId = null) 
     practice.setSubject(currentSubject.id);
     document.getElementById('duelNavBtn').hidden = !['algorithm','os'].includes(currentSubject.id);
     batch.setSubject(currentSubject.id);
-    const selected = getUnit(currentSubject.id, unitId) || getUnit(currentSubject.id, currentSubject.defaultUnit);
+    const selected = getBankUnit(currentSubject.id, unitId) || getUnit(currentSubject.id, currentSubject.defaultUnit);
     const bankState = {view:'bank',subjectId:currentSubject.id,unitId:selected.id,...(pendingQuestionTarget ? {questionId} : {})};
     if (pushHistory) history.pushState({ ...history.state, questionBank: bankState }, "", pendingQuestionTarget ? batchQuestionHref(pendingQuestionTarget) : location.pathname);
     else history.replaceState({ ...history.state, questionBank: bankState }, "");
@@ -404,10 +414,15 @@ async function loadQuestionBank() {
     const subject = currentSubject;
     const active = () => version === requestVersion;
     const sharedEnabled = collaborationEnabled();
-    const requestShared = () => (sharedEnabled
-        ? Promise.resolve().then(() => loadPublishedQuestions(subject.id, unit.id))
-            .then(rows => rows.length ? curatePublishedQuestions(rows, subject.id, unit.id) : rows)
-        : Promise.resolve([])).then(questions => ({questions, failed:false}), () => ({questions:[], failed:true}));
+    const combined = unit === combinedAlgorithmUnit;
+    const sourceUnits = combined
+        ? earlierAlgorithmIds.map(id => getUnit(subject.id, id) || {id})
+        : [unit];
+    const requestShared = () => Promise.all(sourceUnits.map(source => (sharedEnabled
+        ? Promise.resolve().then(() => loadPublishedQuestions(subject.id, source.id))
+            .then(rows => rows.length ? curatePublishedQuestions(rows, subject.id, source.id) : rows)
+        : Promise.resolve([])).then(questions => ({questions, failed:false}), () => ({questions:[], failed:true}))));
+    const displayRows = (rows, source) => combined ? rows.map(q => ({...q, bankUnit:source.id})) : rows;
     // Start independent requests together; shared-service latency must not block built-in questions.
     const sharedRequest = requestShared();
     loading = true;
@@ -418,18 +433,19 @@ async function loadQuestionBank() {
     summary.textContent = "題庫載入中……";
     list.innerHTML = '<div class="empty" role="status">題庫載入中……</div>';
     try {
-        let builtInQuestions = [];
-        if (unit.dataUrl) {
-            const response = await fetch(new URL(unit.dataUrl, import.meta.url), { cache: "no-cache" });
+        const builtInByUnit = await Promise.all(sourceUnits.map(async source => {
+            if (!source.dataUrl) return [];
+            const response = await fetch(new URL(source.dataUrl, import.meta.url), { cache: "no-cache" });
             if (!response.ok) throw new Error("HTTP " + response.status);
-            builtInQuestions = await response.json();
-        }
-        if (!Array.isArray(builtInQuestions) || (unit.dataUrl && !builtInQuestions.length) ||
-            builtInQuestions.some(q => !q || !Number.isFinite(q.id) ||
+            const rows = await response.json();
+            if (!Array.isArray(rows) || !rows.length || rows.some(q => !q || !Number.isFinite(q.id) ||
                 typeof q.question !== "string" || typeof q.correct_answer !== "string") ||
-            new Set(builtInQuestions.map(q => q.id)).size !== builtInQuestions.length) {
-            throw new Error("Invalid question data");
-        }
+                new Set(rows.map(q => q.id)).size !== rows.length) {
+                throw new Error("Invalid question data");
+            }
+            return rows;
+        }));
+        const builtInQuestions = builtInByUnit.flatMap((rows, i) => displayRows(rows, sourceUnits[i]));
         if (version !== requestVersion) return;
         function footer(sharedCount, pending=false, failed=false) {
             const target = document.getElementById('bankFooter');
@@ -437,7 +453,7 @@ async function loadQuestionBank() {
                 (sharedEnabled ? pending ? '｜共用題目載入中……' : '｜共用 '+sharedCount+' 題' : '');
             if (failed) {
                 const warning=document.createElement('p');warning.className='missing';warning.setAttribute('role','status');
-                warning.append('共用題庫暫時無法載入，目前僅顯示內建題目。 ');
+                warning.append('共用題庫暫時無法載入，部分共用題目可能尚未顯示。 ');
                 const retry=document.createElement('button');retry.type='button';retry.textContent='重試共用題庫';
                 retry.addEventListener('click',async()=>{
                     if(loading||!active())return;
@@ -448,17 +464,36 @@ async function loadQuestionBank() {
                 warning.append(retry);target.append(warning);
             }
         }
-        function applyShared({questions:sharedQuestions,failed}) {
+        function applyShared(results) {
             const scroll=window.scrollY;
             const focused=document.activeElement;
             const answerFocus=list.contains(focused)?focused.getAttribute('data-toggle-answer'):null;
             const targetCard=list.querySelector('.batch-target');
             const targetId=targetCard?.dataset.id, targetFocused=focused===targetCard;
             const targetMargin=targetCard?.style.scrollMarginTop;
-            let merged;try{merged=mergeQuestionVersions(builtInQuestions,sharedQuestions);}catch{merged=builtInQuestions;failed=true;sharedQuestions=[];}
-            QUESTIONS.length=0;QUESTIONS.push(...merged);
-            if(!failed&&sharedEnabled){sharedCounts.set(subject.id+':'+unit.id,new Set(sharedQuestions.filter(q=>q.shared_question).map(q=>q.id)).size);renderUnitChoices();}
-            footer(new Set(sharedQuestions.filter(q=>q.shared_question).map(q=>q.id)).size,false,failed);
+            let sharedCount = 0;
+            let failed = false;
+            const merged = results.flatMap(({questions, failed:sourceFailed}, i) => {
+                const source = sourceUnits[i];
+                const builtIn = builtInByUnit[i];
+                failed ||= sourceFailed;
+                try {
+                    const rows = mergeQuestionVersions(builtIn, questions);
+                    if (!sourceFailed && sharedEnabled) {
+                        const count = new Set(questions.filter(q => q.shared_question).map(q => q.id)).size;
+                        sharedCounts.set(subject.id + ':' + source.id, count);
+                        sharedCount += count;
+                    }
+                    return displayRows(rows, source);
+                } catch {
+                    failed = true;
+                    return displayRows(builtIn, source);
+                }
+            });
+            QUESTIONS.length = 0;
+            QUESTIONS.push(...merged);
+            if (sharedEnabled) renderUnitChoices();
+            footer(sharedCount, false, failed);
             ready=true;controls.forEach(control=>{control.disabled=false;});render();
             const restored=targetId?list.querySelector('[data-id="'+targetId+'"]'):null;
             if(restored){restored.classList.add('batch-target');restored.tabIndex=-1;restored.style.scrollMarginTop=targetMargin;if(targetFocused)restored.focus({preventScroll:true});}
@@ -466,7 +501,7 @@ async function loadQuestionBank() {
             window.scrollTo({top:scroll,behavior:'instant'});
             revealQuestionTarget(true);
         }
-        if (unit.dataUrl) {
+        if (builtInQuestions.length) {
             QUESTIONS.push(...builtInQuestions);ready=true;
             controls.forEach(control=>{control.disabled=false;});footer(0,sharedEnabled);
             render();revealQuestionTarget(false);
@@ -499,7 +534,7 @@ function revealQuestionTarget(sharedComplete = false) {
     }
     searchInput.value='';currentFilter='all';currentPage=Math.floor(index/PAGE_SIZE)+1;
     document.querySelectorAll('.filter-btn').forEach(button=>button.classList.toggle('active',button.dataset.filter==='all'));
-    const resolvedId=QUESTIONS[index].id;answersHidden.delete(resolvedId);answersVisible.add(resolvedId);render();
+    const resolvedId=questionKey(QUESTIONS[index]);answersHidden.delete(resolvedId);answersVisible.add(resolvedId);render();
     const card=list.querySelector('[data-id="'+resolvedId+'"]');
     if(card){card.classList.add('batch-target');card.tabIndex=-1;card.style.scrollMarginTop=(document.querySelector('.toolbar').offsetHeight+90)+'px';card.focus({preventScroll:true});card.scrollIntoView({block:'start',behavior:'instant'});}
     if(matchMedia('(max-width: 850px)').matches)setSidebarOpen(false);
