@@ -1,12 +1,12 @@
 import { mergeQuestionVersions } from './question-versions.js?v=20261030-replace1';
 import { createQuestionLinkController } from './question-links.js?v=20261030-batch-v2';
-import { initPractice } from './practice.js?v=20261102-treasure1';
-import { practiceUnits } from './practice-core.js?v=20261102-treasure1';
+import { initPractice } from './practice.js?v=20261118-u8';
+import { practiceUnits } from './practice-core.js?v=20261118-u8';
 import { curatePublishedQuestions } from './question-curation.js?v=20261031-bank1';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
 import { initNavigation } from "./navigation.js";
-import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261102-treasure1";
+import { SUBJECTS, getUnit, mergeCollaborationUnits } from "./units.js?v=20261118-u8";
 
 import { loadPublishedQuestions, collaborationEnabled, publishedCounts } from "./collaboration-api.js?v=20261030-replace1";
 import { initAppearance, initHomeMotion } from './appearance.js?v=20261029-muji2';
@@ -36,7 +36,7 @@ const practice = initPractice({
         leaveSubject(true);
     },
     async loadQuestions(subjectId, unitId) {
-        if (!practiceUnits(subjectId).includes(unitId)) throw new Error('目前開放演算法 U2～U7、作業系統 U2～U6 與挖寶單元。');
+        if (!practiceUnits(subjectId).includes(unitId)) throw new Error('目前開放演算法 U7、U8、作業系統 U2～U6 與挖寶單元。');
         // U5 uses the published shared bank and has no built-in JSON file.
         const unit = getUnit(subjectId, unitId) || (unitId === 'u5' ? {dataUrl:null,sharedOnly:true} : null);
         if (!unit) throw new Error('此單元尚無可用題庫，請稍後重試。');
@@ -260,7 +260,9 @@ list.addEventListener("click", event => {
 
 function renderUnitChoices() {
     if (!currentSubject) return;
-    document.getElementById("unitGrid").innerHTML = currentSubject.units.map(unit => {
+    const grid = document.getElementById("unitGrid");
+    const groupOpen = grid.querySelector(".unit-group[open]") !== null;
+    const renderCard = unit => {
         const active = unit.id === currentUnit?.id;
         const available = !!unit.dataUrl || !!unit.sharedOnly;
         return `<button class="unit-card ${active ? "active" : ""}" data-unit="${escapeHtml(unit.id)}"
@@ -270,7 +272,19 @@ function renderUnitChoices() {
             <span class="unit-card-count">${available ? `<strong>${unit.questionCount + (sharedCounts.get(currentSubject.id + ':' + unit.id) || 0)}</strong> 題` : "準備中"}</span>
             <span class="unit-card-action">${active ? "繼續練習" : available ? "進入題庫" : "敬請期待"}<span aria-hidden="true">${available ? "↗" : "—"}</span></span>
         </button>`;
-    }).join("");
+    };
+    const units = currentSubject.units;
+    if (currentSubject.id !== "algorithm") {
+        grid.innerHTML = units.map(renderCard).join("");
+        return;
+    }
+    const earlierUnits = units.filter(unit => /^u[2-6]$/.test(unit.id));
+    const laterUnits = units.filter(unit => !earlierUnits.includes(unit));
+    grid.innerHTML = `<details class="unit-group"${groupOpen ? " open" : ""}>
+        <summary class="unit-card"><span class="unit-card-name">U2至U6</span>
+        <span class="unit-card-action">展開單元 <span aria-hidden="true">↓</span></span></summary>
+        <div class="unit-group-cards">${earlierUnits.map(renderCard).join("")}</div>
+    </details>${laterUnits.map(renderCard).join("")}`;
 }
 const publishedUnitsReady = collaborationEnabled() ? publishedCounts().then(rows => {
     mergeCollaborationUnits(rows.filter(row => Number(row.question_count)>0));
@@ -498,4 +512,3 @@ if (['algorithm','os'].includes(initialQuestionLink.subject) && (/^u(?:[2-9]|[1-
     if(getUnit(initialQuestionLink.subject,initialQuestionLink.unit))openLinkedQuestion();
     else publishedUnitsReady.then(openLinkedQuestion);
 }
-

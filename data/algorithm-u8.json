@@ -1,0 +1,1022 @@
+[
+  {
+    "id": 1,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-01",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "當堆疊已滿時再進行 push 操作，會發生什麼？",
+    "options": [
+      "A. 溢位 (Overflow)",
+      "B. 下溢 (Underflow)",
+      "C. 正常執行",
+      "D. 自動擴展"
+    ],
+    "options_status": "complete",
+    "correct_answer": "溢位 (Overflow)"
+  },
+  {
+    "id": 2,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-02",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "垃圾回收器（Garbage Collector）的功能是？",
+    "options": [
+      "A. 清理檔案系統",
+      "B. 自動回收不再使用的記憶體",
+      "C. 排序陣列",
+      "D. 優化堆疊存取"
+    ],
+    "options_status": "complete",
+    "correct_answer": "自動回收不再使用的記憶體"
+  },
+  {
+    "id": 3,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-03",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "鏈結串列相比陣列的優勢為？",
+    "options": [
+      "A. 隨機存取速度快",
+      "B. 插入與刪除彈性較大",
+      "C. 記憶體連續",
+      "D. 無需儲存指標"
+    ],
+    "options_status": "complete",
+    "correct_answer": "插入與刪除彈性較大"
+  },
+  {
+    "id": 4,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-04",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "指標 nil[L] 在鏈結串列中通常用於？",
+    "options": [
+      "A. 錯誤紀錄",
+      "B. 指向下一個清單",
+      "C. 作為哨兵(Sentinel)節點",
+      "D. 儲存資料"
+    ],
+    "options_status": "complete",
+    "correct_answer": "作為哨兵(Sentinel)節點"
+  },
+  {
+    "id": 5,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-05",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "下列哪種結構支援 FIFO？",
+    "options": [
+      "A. 二元樹",
+      "B. 堆疊",
+      "C. 佇列",
+      "D. 陣列"
+    ],
+    "options_status": "complete",
+    "correct_answer": "佇列"
+  },
+  {
+    "id": 6,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-06",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "在指標實作中，節點的記憶體通常透過什麼分配？",
+    "options": [
+      "A. 自動分配",
+      "B. 編譯器決定",
+      "C. 動態配置 (例如 malloc/new)",
+      "D. 靜態宣告"
+    ],
+    "options_status": "complete",
+    "correct_answer": "動態配置 (例如 malloc/new)"
+  },
+  {
+    "id": 7,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-07",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "鏈結串列（Linked List）的節點通常包含什麼？",
+    "options": [
+      "A. 僅指標",
+      "B. 鍵值與指標",
+      "C. 整數陣列",
+      "D. 僅鍵值"
+    ],
+    "options_status": "complete",
+    "correct_answer": "鍵值與指標"
+  },
+  {
+    "id": 8,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-08",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "佇列的 head 指標通常指向？",
+    "options": [
+      "A. 最後一個插入的元素",
+      "B. 下一個將被移除的元素",
+      "C. 隊伍中間的元素",
+      "D. NULL"
+    ],
+    "options_status": "complete",
+    "correct_answer": "下一個將被移除的元素"
+  },
+  {
+    "id": 9,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-09",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "當堆疊為空時再進行 pop 操作，會發生什麼？",
+    "options": [
+      "A. 溢位 (Overflow)",
+      "B. 正常執行",
+      "C. 無反應",
+      "D. 下溢 (Underflow)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "下溢 (Underflow)"
+  },
+  {
+    "id": 10,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-10",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "堆疊（Stack）資料結構遵循哪種原則？",
+    "options": [
+      "A. 隨機存取",
+      "B. 優先級最高先出",
+      "C. 先進先出 (FIFO)",
+      "D. 後進先出 (LIFO)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "後進先出 (LIFO)"
+  },
+  {
+    "id": 11,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-11",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "環狀鏈結串列（Circular Linked List）的最後一個節點指向？",
+    "options": [
+      "A. 隨機節點",
+      "B. 第一個節點 (頭節點)",
+      "C. NULL",
+      "D. 自己"
+    ],
+    "options_status": "complete",
+    "correct_answer": "第一個節點 (頭節點)"
+  },
+  {
+    "id": 12,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-12",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "下列哪種結構支援 LIFO？",
+    "options": [
+      "A. 佇列",
+      "B. 陣列",
+      "C. 雜湊表",
+      "D. 堆疊"
+    ],
+    "options_status": "complete",
+    "correct_answer": "堆疊"
+  },
+  {
+    "id": 13,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-13",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "堆疊的 top 指標通常初始值設定為？",
+    "options": [
+      "A. 設定為 NULL",
+      "B. 設定為 1",
+      "C. 設定為 -1",
+      "D. 設定為 0"
+    ],
+    "options_status": "complete",
+    "correct_answer": "設定為 0"
+  },
+  {
+    "id": 14,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-14",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "如果一個鏈結串列的 head 為 NULL，代表？",
+    "options": [
+      "A. 該清單已滿",
+      "B. 該清單為空",
+      "C. 該清單為環狀",
+      "D. 該清單只有一個元素"
+    ],
+    "options_status": "complete",
+    "correct_answer": "該清單為空"
+  },
+  {
+    "id": 15,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-15",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "在雙向鏈結串列中，每個節點通常有幾個指標？",
+    "options": [
+      "A. 4",
+      "B. 1",
+      "C. 2",
+      "D. 3"
+    ],
+    "options_status": "complete",
+    "correct_answer": "2"
+  },
+  {
+    "id": 16,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-16",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "在單向鏈結串列中，刪除一個節點的時間複雜度（已知指標）為？",
+    "options": [
+      "A. O(n)",
+      "B. O(log n)",
+      "C. O(n log n)",
+      "D. O(1)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "O(1)"
+  },
+  {
+    "id": 17,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-17",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "佇列（Queue）資料結構遵循哪種原則？",
+    "options": [
+      "A. 隨機存取",
+      "B. 後進先出 (LIFO)",
+      "C. 先進先出 (FIFO)",
+      "D. 優先級最高先出"
+    ],
+    "options_status": "complete",
+    "correct_answer": "先進先出 (FIFO)"
+  },
+  {
+    "id": 18,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-18",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "在佇列中，插入操作通常稱為？",
+    "options": [
+      "A. enqueue",
+      "B. dequeue",
+      "C. pop",
+      "D. push"
+    ],
+    "options_status": "complete",
+    "correct_answer": "enqueue"
+  },
+  {
+    "id": 19,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-19",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "下列何者是雙向鏈結串列（Doubly Linked List）的特點？",
+    "options": [
+      "A. 固定大小",
+      "B. 僅能向前遍歷",
+      "C. 可同時向前與向後遍歷",
+      "D. 僅能向後遍歷"
+    ],
+    "options_status": "complete",
+    "correct_answer": "可同時向前與向後遍歷"
+  },
+  {
+    "id": 20,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L8-SNAPSHOT-20",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "在堆疊中，刪除操作通常稱為？",
+    "options": [
+      "A. push",
+      "B. dequeue",
+      "C. enqueue",
+      "D. pop"
+    ],
+    "options_status": "complete",
+    "correct_answer": "pop"
+  },
+  {
+    "id": 21,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-21",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "雙向鏈結串列相比單向鏈結串列的優點？",
+    "options": [
+      "A. 更容易刪除節點",
+      "B. 每個節點節省記憶體",
+      "C. 更容易在節點前插入",
+      "D. 支援反向遍歷"
+    ],
+    "options_status": "complete",
+    "correct_answer": "更容易刪除節點\n更容易在節點前插入\n支援反向遍歷"
+  },
+  {
+    "id": 22,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-22",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "下列哪些操作會改變鏈結串列的結構？",
+    "options": [
+      "A. INSERT",
+      "B. SEARCH",
+      "C. DELETE",
+      "D. TRAVERSE"
+    ],
+    "options_status": "complete",
+    "correct_answer": "INSERT\nDELETE"
+  },
+  {
+    "id": 23,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-23",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "陣列實作 vs 指標實作，下列敘述正確的是？",
+    "options": [
+      "A. 指標實作無需記憶體",
+      "B. 陣列實作空間固定",
+      "C. 陣列實作存取快",
+      "D. 指標實作插入彈性好"
+    ],
+    "options_status": "complete",
+    "correct_answer": "陣列實作空間固定\n陣列實作存取快\n指標實作插入彈性好"
+  },
+  {
+    "id": 24,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-24",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "在雙向鏈結串列中，刪除節點 x 需要？",
+    "options": [
+      "A. prev[next[x]] = prev[x]",
+      "B. 更新指標",
+      "C. 移動資料",
+      "D. next[prev[x]] = next[x]"
+    ],
+    "options_status": "complete",
+    "correct_answer": "prev[next[x]] = prev[x]\n更新指標\nnext[prev[x]] = next[x]"
+  },
+  {
+    "id": 25,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-25",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "垃圾回收機制的應用場景為？",
+    "options": [
+      "A. 陣列大小變更",
+      "B. 動態物件管理",
+      "C. 指標安全性提升",
+      "D. 記憶體洩漏預防"
+    ],
+    "options_status": "complete",
+    "correct_answer": "動態物件管理\n指標安全性提升\n記憶體洩漏預防"
+  },
+  {
+    "id": 26,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-26",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "環狀鏈結串列適用於？",
+    "options": [
+      "A. 需要常數時間尋找最值",
+      "B. 處理 buffer",
+      "C. 作業系統排程",
+      "D. 需要循環遍歷的系統"
+    ],
+    "options_status": "complete",
+    "correct_answer": "處理 buffer\n作業系統排程\n需要循環遍歷的系統"
+  },
+  {
+    "id": 27,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-27",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "鏈結串列的常見變體有？",
+    "options": [
+      "A. 單向鏈結串列",
+      "B. 佇列",
+      "C. 環狀鏈結串列",
+      "D. 雙向鏈結串列"
+    ],
+    "options_status": "complete",
+    "correct_answer": "單向鏈結串列\n環狀鏈結串列\n雙向鏈結串列"
+  },
+  {
+    "id": 28,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-28",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "在陣列實作的堆疊中，需要維護的資訊有？",
+    "options": [
+      "A. 每個節點的指標",
+      "B. 陣列最大容量",
+      "C. top 指標",
+      "D. 陣列內容"
+    ],
+    "options_status": "complete",
+    "correct_answer": "陣列最大容量\ntop 指標\n陣列內容"
+  },
+  {
+    "id": 29,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-29",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "堆疊支援的基本操作包含？",
+    "options": [
+      "A. PUSH",
+      "B. STACK-EMPTY",
+      "C. POP",
+      "D. SEARCH"
+    ],
+    "options_status": "complete",
+    "correct_answer": "PUSH\nSTACK-EMPTY\nPOP"
+  },
+  {
+    "id": 30,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-30",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "下列哪些結構是動態的？",
+    "options": [
+      "A. 鏈結串列",
+      "B. 靜態陣列",
+      "C. 堆疊",
+      "D. 佇列"
+    ],
+    "options_status": "complete",
+    "correct_answer": "鏈結串列\n堆疊\n佇列"
+  },
+  {
+    "id": 31,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-31",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "關於 PUSH 操作，下列何者正確？",
+    "options": [
+      "A. 檢查 overflow",
+      "B. 檢查 underflow",
+      "C. 增加 top 指標",
+      "D. 將值放入 stack[top]"
+    ],
+    "options_status": "complete",
+    "correct_answer": "檢查 overflow\n增加 top 指標\n將值放入 stack[top]"
+  },
+  {
+    "id": 32,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-32",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "佇列支援的基本操作包含？",
+    "options": [
+      "A. IS-EMPTY",
+      "B. SEARCH",
+      "C. DEQUEUE",
+      "D. ENQUEUE"
+    ],
+    "options_status": "complete",
+    "correct_answer": "IS-EMPTY\nDEQUEUE\nENQUEUE"
+  },
+  {
+    "id": 33,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-33",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "下列哪些是動態集合（Dynamic Set）操作？",
+    "options": [
+      "A. INSERT",
+      "B. SEARCH",
+      "C. SORT",
+      "D. DELETE"
+    ],
+    "options_status": "complete",
+    "correct_answer": "INSERT\nSEARCH\nDELETE"
+  },
+  {
+    "id": 34,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-34",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "哨兵節點通常用於？",
+    "options": [
+      "A. 鏈結串列",
+      "B. 雜湊表",
+      "C. 佇列",
+      "D. 二元樹"
+    ],
+    "options_status": "complete",
+    "correct_answer": "鏈結串列\n雜湊表\n二元樹"
+  },
+  {
+    "id": 35,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-35",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "關於雙向鏈結串列，下列正確的有？",
+    "options": [
+      "A. 每個節點有 next 指標",
+      "B. 支援 O(1) 雙向遍歷",
+      "C. 插入節點需更新多個指標",
+      "D. 每個節點有 prev 指標"
+    ],
+    "options_status": "complete",
+    "correct_answer": "每個節點有 next 指標\n支援 O(1) 雙向遍歷\n插入節點需更新多個指標\n每個節點有 prev 指標"
+  },
+  {
+    "id": 36,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-36",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "鏈結串列的節點表示法通常包含？",
+    "options": [
+      "A. prev 指標",
+      "B. key 欄位",
+      "C. length 欄位",
+      "D. next 指標"
+    ],
+    "options_status": "complete",
+    "correct_answer": "prev 指標\nkey 欄位\nnext 指標"
+  },
+  {
+    "id": 37,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-37",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "鏈結串列的插入操作？",
+    "options": [
+      "A. 可以在 head 插入",
+      "B. 可以在 tail 插入",
+      "C. 可以在中間插入",
+      "D. 不需要指標移動"
+    ],
+    "options_status": "complete",
+    "correct_answer": "可以在 head 插入\n可以在 tail 插入\n可以在中間插入"
+  },
+  {
+    "id": 38,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-38",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "鏈結串列中的 search 操作複雜度取決於？",
+    "options": [
+      "A. 是否為排序列表",
+      "B. 清單長度",
+      "C. 指標的存取速度",
+      "D. 是否為環狀結構"
+    ],
+    "options_status": "complete",
+    "correct_answer": "清單長度"
+  },
+  {
+    "id": 39,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-39",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "鏈結串列的刪除操作需要注意？",
+    "options": [
+      "A. 更新前一個節點的 next 指標",
+      "B. 處理刪除頭尾節點的特殊情況",
+      "C. 刪除後釋放記憶體",
+      "D. 更新下一個節點的 prev 指標"
+    ],
+    "options_status": "complete",
+    "correct_answer": "更新前一個節點的 next 指標\n處理刪除頭尾節點的特殊情況\n刪除後釋放記憶體\n更新下一個節點的 prev 指標"
+  },
+  {
+    "id": 40,
+    "title": "",
+    "source_type": "多選",
+    "source_id": "L8-SNAPSHOT-40",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "choice",
+    "question": "哨兵節點（Sentinel）的好處是？",
+    "options": [
+      "A. 增加程式碼可讀性",
+      "B. 減少條件判斷式",
+      "C. 簡化邊界條件處理",
+      "D. 節省額外記憶體"
+    ],
+    "options_status": "complete",
+    "correct_answer": "增加程式碼可讀性\n減少條件判斷式\n簡化邊界條件處理"
+  },
+  {
+    "id": 41,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-41",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "雙向鏈結串列每個節點通常包含 [__1__] 與 prev 指標 (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "next"
+  },
+  {
+    "id": 42,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-42",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "在指標實作中，物件通常透過 [__1__] 進行配置 (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "allocate"
+  },
+  {
+    "id": 43,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-43",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "在鏈結串列中，刪除節點 x 後需更新其前後節點的 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "pointers"
+  },
+  {
+    "id": 44,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-44",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "鏈結串列的搜尋操作需要進行 [__1__] 遍歷 (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "linear"
+  },
+  {
+    "id": 45,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-45",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "動態記憶體配置通常使用 [__1__] 函數 (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "malloc"
+  },
+  {
+    "id": 46,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-46",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "PUSH(S, x)\n1 top[S] <- top[S] + 1\n2  [__1__]  <- x\n\nPOP(S)\n1 if STACK-EMPTY(S)\n2     then error \"underflow\"\n3     else top[S] <- top[S] - 1\n4          return  [__2__]",
+    "options": [],
+    "correct_answer": "（1）S[top[S]]\n（2）S[top[S]+1]"
+  },
+  {
+    "id": 47,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-47",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "當堆疊無法再容納新元素時，稱為 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "overflow"
+  },
+  {
+    "id": 48,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-48",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "鏈結串列是一種 [__1__] 資料結構 (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "dynamic"
+  },
+  {
+    "id": 49,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-49",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "堆疊刪除空堆疊的操作會造成 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "underflow"
+  },
+  {
+    "id": 50,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-50",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "鏈結串列的節點通常包含一個關鍵字域稱為 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "key"
+  },
+  {
+    "id": 51,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-51",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "鏈結串列中的哨兵節點通常稱為 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "sentinel"
+  },
+  {
+    "id": 52,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-52",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "佇列移除操作稱為 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "dequeue"
+  },
+  {
+    "id": 53,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-53",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "佇列遵循 [__1__] 原則 (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "fifo"
+  },
+  {
+    "id": 54,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-54",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "處理不再使用的物件的機制稱為 [__1__] (請用小寫英文回答，單字間留一空白)",
+    "options": [],
+    "correct_answer": "garbage collection"
+  },
+  {
+    "id": 55,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-55",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "LIST_INSERT(L, x)\n1 next[x] <- head[L]\n2 if head[L] != NIL\n3     then  [__1__]  <- x\n4 head[L] <- x\n5 prev[x] <- NIL",
+    "options": [],
+    "correct_answer": "prev[head[L]]"
+  },
+  {
+    "id": 56,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-56",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "在堆疊中，刪除操作稱為 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "pop"
+  },
+  {
+    "id": 57,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-57",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "環狀鏈結串列最後一個節點指向 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "head"
+  },
+  {
+    "id": 58,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-58",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "LIST_DELETE(L, x)\n▪ (Call LIST_SEARCH first O(n))\n1 if prev[x] != NIL\n2 then  [__1__]  <- next[x]\n3 else head[L] <- next[x]\n4 if next[x] != NIL\n5 then prev[next[x]] <-  [__2__]",
+    "options": [],
+    "correct_answer": "（1）next[prev[x]]\n（2）prev[x]"
+  },
+  {
+    "id": 59,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-59",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "在佇列中，插入操作稱為 [__1__] (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "enqueue"
+  },
+  {
+    "id": 60,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L8-SNAPSHOT-60",
+    "sources": [
+      "Algorithms_Ch07-08_Question_Bank.txt"
+    ],
+    "type": "fill_blank",
+    "question": "堆疊遵循 [__1__] 原則 (請用小寫英文回答)",
+    "options": [],
+    "correct_answer": "lifo"
+  }
+]
