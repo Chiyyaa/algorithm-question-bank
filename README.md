@@ -26,7 +26,7 @@
 
 網站依台北時間 06:00／18:00 切換日夜模式，也可手動切換。首頁右上角的「大禮包」位於日夜模式按鈕旁。點開後選「確認下載」，即可取得 Windows 版 `CourseReader_Windows.zip`（約 24 MB）。
 
-[查看 CourseReader 發行檔案](https://github.com/Chiyyaa/algorithm-question-bank/releases/tag/v2026.11.18-coursereader)
+[查看 CourseReader 發行檔案](https://github.com/Chiyyaa/algorithm-question-bank/releases/tag/v2026.11.24-coursereader)
 
 ## 題庫協作
 
