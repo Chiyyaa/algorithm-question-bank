@@ -1,5 +1,5 @@
 export const PRACTICE_UNITS = Object.freeze(['u7', 'u8']);
-export const OS_PRACTICE_UNITS = Object.freeze(['u2', 'u3', 'u4', 'u5', 'u6', 'u7', 'u8', 'treasure']);
+export const OS_PRACTICE_UNITS = Object.freeze(['u6', 'u7', 'u8']);
 export function practiceUnits(subject) { return subject==='algorithm'?PRACTICE_UNITS:subject==='os'?OS_PRACTICE_UNITS:[]; }
 export const PRACTICE_COUNTS = Object.freeze([15, 30, 'all']);
 
@@ -59,7 +59,7 @@ function prepareQuestion(question, subject, unit) {
         question:JSON.parse(JSON.stringify(question)),options,expected};
 }
 export function buildPracticePool(questions, subject, unit) {
-    if (!practiceUnits(subject).includes(unit)) throw new Error('目前開放演算法 U7、U8、作業系統 U2～U8 與挖寶單元測驗練習。');
+    if (!practiceUnits(subject).includes(unit)) throw new Error('目前開放演算法 U7、U8、作業系統 U6～U8測驗練習。');
     if (!Array.isArray(questions)) throw new Error('題庫格式不正確。');
     const unique=new Map();
     for (const question of questions) if(question&&Number.isFinite(question.id)) unique.set(question.id,question);
