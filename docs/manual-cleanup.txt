@@ -1,0 +1,20 @@
+待人工刪除的殘留檔案
+
+以下路徑相對於本 Git 儲存庫根目錄。14 檔均已排除於 static-assets.json，建置不會公開。依使用者規則，代理程式不批量刪檔；請使用者自行逐檔確認並刪除。保留其他預覽工作、工作區與 Git 歷史。
+
+css/essentials.css
+css/notice.css
+data/algorithm-exam-essentials.json
+data/os-exam-essentials.json
+images/exam-l4-017.png
+images/exam-l4-019.png
+images/notice-winter.jpg
+js/essentials.js
+js/music.js
+js/notice.js
+music/blue.mp3
+music/speed-of-summer.mp3
+music/supernova.mp3
+music/up.mp3
+
+刪除後請審查 git diff，另行提交刪除紀錄，才會從 GitHub main 的現行檔案移除。歷史版本仍會保留，這不是清除 Git 歷史。

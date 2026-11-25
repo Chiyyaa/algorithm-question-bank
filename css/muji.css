@@ -247,19 +247,6 @@ body.muji-theme #subjectHome .subject-status {
 body.muji-theme #subjectHome .home-collaboration { margin-top: 32px; }
 body.muji-theme #subjectHome .home-collaboration a { color: var(--muted); font-size: 13px; text-underline-offset: 5px; }
 body.muji-theme #subjectHome .home-collaboration a:hover { color: var(--link); }
-body.muji-theme #subjectHome .music-toggle { width: 54px; height: 54px; padding: 0; background: var(--card); border: 1px solid var(--border); border-radius: 50%; filter: none; }
-body.muji-theme #subjectHome .vinyl-record { background: transparent; border: 3px double var(--border); }
-body.muji-theme #subjectHome .vinyl-record::before { background: none; }
-body.muji-theme #subjectHome .vinyl-label { background: transparent; color: var(--link); }
-body.muji-theme #subjectHome .music-panel { background: var(--card); border-color: var(--border); color: var(--text); border-radius: 8px; backdrop-filter: none; box-shadow: none; }
-body.muji-theme #subjectHome :is(.music-now p, .music-time, .music-volume) { color: var(--muted); }
-body.muji-theme #subjectHome .music-controls button { background: var(--bg); color: var(--text); border-color: var(--border); width: 44px; height: 44px; padding: 0; border-radius: 50%; }
-body.muji-theme #subjectHome .music-track-list { border-color: var(--border); }
-body.muji-theme #subjectHome .music-track { background: transparent; color: var(--text); border: 1px solid transparent; border-radius: 5px; padding: 12px; }
-body.muji-theme #subjectHome .music-track.is-current { background: var(--primary-soft); color: var(--link); border-color: var(--border); box-shadow: none; }
-body.muji-theme #subjectHome .music-panel input[type="range"] { background: var(--border); accent-color: var(--primary); }
-body.muji-theme #subjectHome .music-panel input[type="range"]::-webkit-slider-thumb { background: var(--primary); border-color: var(--bg); box-shadow: none; }
-body.muji-theme #subjectHome .music-panel input[type="range"]::-moz-range-thumb { background: var(--primary); border-color: var(--bg); box-shadow: none; }
 body.muji-theme #subjectHome #homeSparkles { z-index: 64; }
 body.muji-theme #subjectHome .home-pointer-glow,
 body.muji-theme #subjectHome .home-pointer-ring {
@@ -281,7 +268,6 @@ body.muji-theme #subjectHome .is-over-control .home-pointer-ring { width: 48px; 
     body.muji-theme #subjectHome .subject-card:hover:not(:disabled)::before { opacity: var(--glow-strength); animation: none; }
     body.muji-theme #subjectHome .subject-card:hover .subject-icon { transform: translateY(-3px) rotate(-3deg); }
     body.muji-theme #subjectHome .subject-card:hover .subject-status { transform: translateX(3px); }
-    body.muji-theme #subjectHome .music-track:hover { background: var(--primary-soft); }
     body.muji-theme #subjectHome .home-theme-toggle:hover,
     body.muji-theme .study-theme-toggle:hover { background: var(--card); border-color: var(--primary); }
 }

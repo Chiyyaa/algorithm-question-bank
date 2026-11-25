@@ -3,3 +3,6 @@ tests/artifacts/
 .env
 .env.*
 *.local
+dist/
+.wrangler/
+work/
