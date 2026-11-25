@@ -1,7 +1,7 @@
 import { mergeQuestionVersions } from './question-versions.js?v=20261030-replace1';
 import { createQuestionLinkController } from './question-links.js?v=20261118-os78';
-import { initPractice } from './practice.js?v=20261118-os78';
-import { practiceUnits } from './practice-core.js?v=20261118-os78';
+import { initPractice } from './practice.js?v=20261125-os-practice';
+import { practiceUnits } from './practice-core.js?v=20261125-os-practice';
 import { curatePublishedQuestions } from './question-curation.js?v=20261031-bank1';
 import { escapeHtml, normalize, highlight, searchableText, getTypeLabel } from "./utils.js?v=20261017-formats1";
 import { mistakenAnswer } from "./custom-questions.js?v=20261029-no-private";
@@ -36,7 +36,7 @@ const practice = initPractice({
         leaveSubject(true);
     },
     async loadQuestions(subjectId, unitId) {
-        if (!practiceUnits(subjectId).includes(unitId)) throw new Error('目前開放演算法 U7、U8、作業系統 U2～U8 與挖寶單元。');
+        if (!practiceUnits(subjectId).includes(unitId)) throw new Error('目前開放演算法 U7、U8、作業系統 U6～U8。');
         // U5 uses the published shared bank and has no built-in JSON file.
         const unit = getUnit(subjectId, unitId) || (unitId === 'u5' ? {dataUrl:null,sharedOnly:true} : null);
         if (!unit) throw new Error('此單元尚無可用題庫，請稍後重試。');
