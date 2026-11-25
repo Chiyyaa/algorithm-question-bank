@@ -1,0 +1,41 @@
+name: Static website
+on:
+  push:
+    branches: [main]
+    paths: ['*.html', 'js/**', 'css/**', 'data/**', 'images/**', 'scripts/**', 'tests/deployment.cjs', 'static-assets.json', 'package*.json', 'wrangler.jsonc', '.github/workflows/static-site.yml']
+  pull_request:
+    paths: ['*.html', 'js/**', 'css/**', 'data/**', 'images/**', 'scripts/**', 'tests/deployment.cjs', 'static-assets.json', 'package*.json', 'wrangler.jsonc', '.github/workflows/static-site.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: static-site-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm run build
+      - run: npm run check:deploy
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          path: dist
+  pages:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

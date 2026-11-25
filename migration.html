@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>換站資料備份｜學習題庫</title>
+<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 20px;line-height:1.8;color:#26334b;background:#f7f8fa}main{padding:28px;background:white;border:1px solid #d7dce5;border-radius:12px}h1{font-size:1.65rem}button,input{font:inherit;max-width:100%}button{padding:10px 16px;margin:8px 0;cursor:pointer}a{color:#245e9e}label{display:block;margin-top:16px}#migrationStatus{min-height:3em;overflow-wrap:anywhere}@media(prefers-color-scheme:dark){body{background:#171e29;color:#e3e9f3}main{background:#222c3c;border-color:#536075}a{color:#a5ceff}}@media(max-width:480px){body{margin:20px auto}main{padding:18px}}</style></head>
+<body><main><a href="./index.html">回到學習題庫</a><h1>換站資料備份</h1>
+<p>GitHub Pages 與 Cloudflare 網址的瀏覽器資料各自儲存。請先在舊站匯出，再於新站開啟本頁匯入。</p>
+<p>備份包含答案顯示、日夜偏好及舊版私人題目儲存資料。舊版私人題目只保留原始資料，不會重新出現在題庫或送交協作。現有測驗進度只留在當次頁面，請先完成測驗再換站。</p>
+<p>備份不含登入憑證、密碼或對戰房間憑證。兩站使用同一個 Supabase 帳號，但需要分別登入；已送交協作的資料由原資料庫保留。</p>
+<h2>1. 在舊站匯出</h2><button id="exportBackup" type="button">匯出瀏覽器資料</button><p>備份可能含私人題目，請保存在自己的裝置，勿上傳到公開儲存庫。本頁不會把備份傳送到伺服器。</p>
+<h2>2. 在新站匯入</h2><label for="backupFile">選擇剛才匯出的 JSON 備份</label><input id="backupFile" type="file" accept="application/json,.json"><p>先檢查檔案，再確認匯入。已有同名資料會保留；容量不足時會顯示已匯入與失敗數量，來源檔及舊站資料均不會刪除。</p><button id="importBackup" type="button" disabled>匯入缺少的資料</button>
+<p id="migrationStatus" role="status" aria-live="polite"></p></main><script type="module" src="./js/migration.js"></script></body></html>
