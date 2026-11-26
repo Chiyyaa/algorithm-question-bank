@@ -1,0 +1,1184 @@
+[
+  {
+    "id": 1,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-001",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "在雜湊表中，鍵值（Key）到表索引（Index）的對應關係稱為？",
+    "options": [
+      "A. 鏈結串列",
+      "B. 雜湊函數 (Hash function)",
+      "C. 探測序列",
+      "D. 排序法則"
+    ],
+    "options_status": "complete",
+    "correct_answer": "雜湊函數 (Hash function)",
+    "source_question_number": 1,
+    "source_answer": "B",
+    "topic": "雜湊基本觀念與應用",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 2,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-002",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "什麼是「衝突」（Collision）？",
+    "options": [
+      "A. 雜湊表已滿",
+      "B. 兩個不同的鍵值雜湊到相同位置",
+      "C. 雜湊函數失效",
+      "D. 兩個相同的鍵值"
+    ],
+    "options_status": "complete",
+    "correct_answer": "兩個不同的鍵值雜湊到相同位置",
+    "source_question_number": 2,
+    "source_answer": "B",
+    "topic": "雜湊基本觀念與應用",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 3,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-003",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "假設雜湊表長度為 m，直接定址法（Direct addressing）適用於？",
+    "options": [
+      "A. 資料均勻分佈",
+      "B. 鍵值空間 U 很小",
+      "C. 資料無序",
+      "D. 鍵值空間 U 極大"
+    ],
+    "options_status": "complete",
+    "correct_answer": "鍵值空間 U 很小",
+    "source_question_number": 3,
+    "source_answer": "B",
+    "topic": "雜湊基本觀念與應用",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 4,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-004",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "雜湊表（Hash Table）的主要目的是為了實現什麼操作的平均 O(1) 效能？",
+    "options": [
+      "A. 排序 (Sorting)",
+      "B. 圖形搜尋 (Graph searching)",
+      "C. 字典運算 (Dictionary operations)",
+      "D. 樹狀遍歷 (Tree traversal)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "字典運算 (Dictionary operations)",
+    "source_question_number": 4,
+    "source_answer": "C",
+    "topic": "雜湊基本觀念與應用",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 5,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-008",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "下列何者最常被選作乘法雜湊法中的常數 A？",
+    "options": [
+      "A. 1 one",
+      "B. 2 two",
+      "C. (sqrt(5)-1)/2",
+      "D. 0 zero"
+    ],
+    "options_status": "complete",
+    "correct_answer": "(sqrt(5)-1)/2",
+    "source_question_number": 8,
+    "source_answer": "C",
+    "topic": "雜湊函數與設計",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 6,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-009",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "雜湊表的大小 m 若為質數，通常有助於？",
+    "options": [
+      "A. 提高雜湊函數複雜度",
+      "B. 降低搜尋速度",
+      "C. 減少衝突",
+      "D. 增加記憶體"
+    ],
+    "options_status": "complete",
+    "correct_answer": "減少衝突",
+    "source_question_number": 9,
+    "source_answer": "C",
+    "topic": "雜湊函數與設計",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 7,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-010",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "雜湊函數 h(k) = floor(m(kA mod 1)) 屬於哪種方法？",
+    "options": [
+      "A. 直接定址法 (Direct addressing)",
+      "B. 除法雜湊法 (Division method)",
+      "C. 乘法雜湊法 (Multiplication method)",
+      "D. 全域雜湊法 (Universal hashing)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "乘法雜湊法 (Multiplication method)",
+    "source_question_number": 10,
+    "source_answer": "C",
+    "topic": "雜湊函數與設計",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 8,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-011",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "若雜湊函數為 h(k) = k mod m，其中 m 為雜湊表大小，這種方法稱為？",
+    "options": [
+      "A. 開放定址法 (Open addressing)",
+      "B. 除法雜湊法 (Division method)",
+      "C. 乘法雜湊法 (Multiplication method)",
+      "D. 全域雜湊法 (Universal hashing)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "除法雜湊法 (Division method)",
+    "source_question_number": 11,
+    "source_answer": "B",
+    "topic": "雜湊函數與設計",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 9,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-016",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "雜湊表的效能很大程度上依賴於？",
+    "options": [
+      "A. 探測的次數",
+      "B. 記憶體大小",
+      "C. 雜湊函數的均勻性",
+      "D. 鏈結串列長度"
+    ],
+    "options_status": "complete",
+    "correct_answer": "雜湊函數的均勻性",
+    "source_question_number": 16,
+    "source_answer": "C",
+    "topic": "負載因子與效能",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 10,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-017",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "雜湊表的負載因子（Load factor, α）定義為？",
+    "options": [
+      "A. n+m",
+      "B. m/n",
+      "C. n/m",
+      "D. n*m"
+    ],
+    "options_status": "complete",
+    "correct_answer": "n/m",
+    "source_question_number": 17,
+    "source_answer": "C",
+    "topic": "負載因子與效能",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 11,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-022",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "下列何者是解決雜湊衝突（Collision）的方法？",
+    "options": [
+      "A. 二元搜尋 (Binary search)",
+      "B. 鏈結法 (Chaining)",
+      "C. 快速排序 (Quicksort)",
+      "D. 動態規劃 (Dynamic programming)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "鏈結法 (Chaining)",
+    "source_question_number": 22,
+    "source_answer": "B",
+    "topic": "碰撞處理與鏈結法",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 12,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-023",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "在鏈結法中，若所有鍵值都雜湊到同一個位置，搜尋時間複雜度為？",
+    "options": [
+      "A. Θ(n)",
+      "B. Θ(1)",
+      "C. Θ(n²)",
+      "D. Θ(log n)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "Θ(n)",
+    "source_question_number": 23,
+    "source_answer": "A",
+    "topic": "碰撞處理與鏈結法",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 13,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-026",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "下列何者是雜湊表刪除（Delete）操作的潛在問題？",
+    "options": [
+      "A. 鏈結法會導致無窮迴圈",
+      "B. 需要額外空間",
+      "C. 排序陣列無法運作",
+      "D. 開放定址法需標記已刪除位置"
+    ],
+    "options_status": "complete",
+    "correct_answer": "開放定址法需標記已刪除位置",
+    "source_question_number": 26,
+    "source_answer": "D",
+    "topic": "開放定址法",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 14,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-027",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "下列何者屬於開放定址法（Open addressing）？",
+    "options": [
+      "A. 連結串列 (Linked list)",
+      "B. 二元樹 (Binary tree)",
+      "C. 桶排序 (Bucket sort)",
+      "D. 線性探測 (Linear probing)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "線性探測 (Linear probing)",
+    "source_question_number": 27,
+    "source_answer": "D",
+    "topic": "開放定址法",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 15,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-028",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "在開放定址法中，負載因子 α 必須滿足什麼條件？",
+    "options": [
+      "A. α > 1",
+      "B. α <= 1",
+      "C. α < 0",
+      "D. α = 0"
+    ],
+    "options_status": "complete",
+    "correct_answer": "α <= 1",
+    "source_question_number": 28,
+    "source_answer": "B",
+    "topic": "開放定址法",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 16,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-029",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "在線性探測中，若發生衝突，下一個檢查的位置是？",
+    "options": [
+      "A. h(k, i+1) = (h(k, i) + 1) mod m",
+      "B. 隨機位置",
+      "C. h(k, i) + i²",
+      "D. h(k, i) + i*h²(k)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "h(k, i+1) = (h(k, i) + 1) mod m",
+    "source_question_number": 29,
+    "source_answer": "A",
+    "topic": "線性探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 17,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-036",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "開放定址法中的「二次探測（Quadratic probing）」的探測序列函數包含？",
+    "options": [
+      "A. i³",
+      "B. i²",
+      "C. i",
+      "D. log i"
+    ],
+    "options_status": "complete",
+    "correct_answer": "i²",
+    "source_question_number": 36,
+    "source_answer": "B",
+    "topic": "二次探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 18,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-042",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "雙重雜湊（Double hashing）的探測函數形式為？",
+    "options": [
+      "A. (h1(k) + i²) mod m",
+      "B. h1(k*i)",
+      "C. (h1(k) + i) mod m",
+      "D. (h1(k) + i*h²(k)) mod m"
+    ],
+    "options_status": "complete",
+    "correct_answer": "(h1(k) + i*h²(k)) mod m",
+    "source_question_number": 42,
+    "source_answer": "D",
+    "topic": "雙重雜湊",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 19,
+    "title": "",
+    "source_type": "單選",
+    "source_id": "L9-SOURCE-051",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "全域雜湊法（Universal hashing）的主要優點是？",
+    "options": [
+      "A. 空間複雜度為 O(1)",
+      "B. 減少衝突發生的機率",
+      "C. 保證沒有衝突",
+      "D. 不需要雜湊函數"
+    ],
+    "options_status": "complete",
+    "correct_answer": "減少衝突發生的機率",
+    "source_question_number": 51,
+    "source_answer": "B",
+    "topic": "全域雜湊與完全雜湊",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 20,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-005",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "下列哪些應用場景適合使用雜湊表？",
+    "options": [
+      "A. 符號表 (Symbol tables)",
+      "B. 快取系統 (Caching)",
+      "C. 二維陣列排序",
+      "D. 編譯器的變數儲存"
+    ],
+    "options_status": "complete",
+    "correct_answer": "符號表 (Symbol tables)\n快取系統 (Caching)\n編譯器的變數儲存",
+    "source_question_number": 5,
+    "source_answer": "A、B、D",
+    "topic": "雜湊基本觀念與應用",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 21,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-012",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "雜湊函數的設計原則包含？",
+    "options": [
+      "A. 減少衝突",
+      "B. 僅使用加法",
+      "C. 分布均勻",
+      "D. 計算快速"
+    ],
+    "options_status": "complete",
+    "correct_answer": "減少衝突\n分布均勻\n計算快速",
+    "source_question_number": 12,
+    "source_answer": "A、C、D",
+    "topic": "雜湊函數與設計",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 22,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-013",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "為什麼 m 選擇質數對除法雜湊法很重要？",
+    "options": [
+      "A. 沒有任何幫助",
+      "B. 提高運算效率",
+      "C. 減少衝突",
+      "D. 避免數值上的對稱性"
+    ],
+    "options_status": "complete",
+    "correct_answer": "減少衝突\n避免數值上的對稱性",
+    "source_question_number": 13,
+    "source_answer": "C、D",
+    "topic": "雜湊函數與設計",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 23,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-014",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "雜湊函數 h(k) = k mod m 中的 m？",
+    "options": [
+      "A. 影響分布效果",
+      "B. 可以選擇質數",
+      "C. 必須大於鍵值範圍",
+      "D. 是雜湊表的大小"
+    ],
+    "options_status": "complete",
+    "correct_answer": "影響分布效果\n可以選擇質數\n是雜湊表的大小",
+    "source_question_number": 14,
+    "source_answer": "A、B、D",
+    "topic": "雜湊函數與設計",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 24,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-018",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "關於雜湊表的平均效能，正確的有？",
+    "options": [
+      "A. 完全不依賴輸入分布",
+      "B. 與衝突解決機制有關",
+      "C. INSERT 預期為 O(1)",
+      "D. SEARCH 預期為 O(1+α)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "與衝突解決機制有關\nINSERT 預期為 O(1)\nSEARCH 預期為 O(1+α)",
+    "source_question_number": 18,
+    "source_answer": "B、C、D",
+    "topic": "負載因子與效能",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 25,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-019",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "關於雜湊表的負載因子 α，正確的有？",
+    "options": [
+      "A. 開放定址法 α 必須小於 1",
+      "B. α = n/m",
+      "C. α 代表每個位置平均儲存的元素個數",
+      "D. 鏈結法 α 可以大於 1"
+    ],
+    "options_status": "complete",
+    "correct_answer": "開放定址法 α 必須小於 1\nα = n/m\nα 代表每個位置平均儲存的元素個數\n鏈結法 α 可以大於 1",
+    "source_question_number": 19,
+    "source_answer": "A、B、C、D",
+    "topic": "負載因子與效能",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 26,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-024",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "解決雜湊衝突的技術有哪些？",
+    "options": [
+      "A. 完全雜湊 (Perfect hashing)",
+      "B. 鏈結法 (Chaining)",
+      "C. 開放定址法 (Open addressing)",
+      "D. 直接定址法 (Direct addressing)"
+    ],
+    "options_status": "complete",
+    "correct_answer": "完全雜湊 (Perfect hashing)\n鏈結法 (Chaining)\n開放定址法 (Open addressing)",
+    "source_question_number": 24,
+    "source_answer": "A、B、C",
+    "topic": "碰撞處理與鏈結法",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 27,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-025",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "雜湊技術中，常用的碰撞處理策略比較？",
+    "options": [
+      "A. 鏈結法需要額外指標空間",
+      "B. 開放定址法支援刪除操作較簡單",
+      "C. 鏈結法適合處理高負載因子",
+      "D. 開放定址法適合空間受限應用"
+    ],
+    "options_status": "complete",
+    "correct_answer": "鏈結法需要額外指標空間\n鏈結法適合處理高負載因子\n開放定址法適合空間受限應用",
+    "source_question_number": 25,
+    "source_answer": "A、C、D",
+    "topic": "碰撞處理與鏈結法",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 28,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-030",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "考慮將鍵值 10、22、31、4、15、28、17、88、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用線性探測（linear probing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |",
+    "options": [
+      "A. A[8]=59",
+      "B. A[0]=22",
+      "C. A[6]=28",
+      "D. A[3]=4"
+    ],
+    "options_status": "complete",
+    "correct_answer": "A[8]=59\nA[0]=22\nA[6]=28",
+    "source_question_number": 30,
+    "source_answer": "A、B、C",
+    "topic": "線性探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 29,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-031",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "考慮將鍵值 10、22、31、4、15、28、17、88、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用線性探測（linear probing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |",
+    "options": [
+      "A. A[9] = 10",
+      "B. A[8] = 59",
+      "C. A[4] = 15",
+      "D. A[6] = 28"
+    ],
+    "options_status": "complete",
+    "correct_answer": "A[8] = 59\nA[6] = 28",
+    "source_question_number": 31,
+    "source_answer": "B、D",
+    "topic": "線性探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 30,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-032",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "下列關於線性探測的敘述，正確的有？",
+    "options": [
+      "A. 容易發生群聚效應 (Primary clustering)",
+      "B. 在 α 接近 1 時效能急劇下降",
+      "C. 是一種開放定址法",
+      "D. 探測序列與關鍵字有關"
+    ],
+    "options_status": "complete",
+    "correct_answer": "容易發生群聚效應 (Primary clustering)\n在 α 接近 1 時效能急劇下降\n是一種開放定址法",
+    "source_question_number": 32,
+    "source_answer": "A、B、C",
+    "topic": "線性探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 31,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-037",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "考慮將鍵值 10、22、31、4、15、28、17、88、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用 c1 = 1 與 c2 = 3 的二次探測（quadratic probing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |",
+    "options": [
+      "A. A[10]=10",
+      "B. A[5]=4",
+      "C. A[7]=59",
+      "D. A[9]=15"
+    ],
+    "options_status": "complete",
+    "correct_answer": "A[10]=10\nA[7]=59",
+    "source_question_number": 37,
+    "source_answer": "A、C",
+    "topic": "二次探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 32,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-043",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "考慮將鍵值 10、22、31、4、15、28、17、88、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用 h1(k) = k 和 h2(k) = 1 + (k mod (m - 1)) 的雙重雜湊（double hashing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |",
+    "options": [
+      "A. A[4]=4",
+      "B. A[9]=10",
+      "C. A[7]=88",
+      "D. A[2]=59"
+    ],
+    "options_status": "complete",
+    "correct_answer": "A[4]=4\nA[7]=88\nA[2]=59",
+    "source_question_number": 43,
+    "source_answer": "A、C、D",
+    "topic": "雙重雜湊",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 33,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-044",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "雙重雜湊的探測序列優點？",
+    "options": [
+      "A. 需要更多計算資源",
+      "B. 減少二次群聚效應",
+      "C. 能產生較長的探測序列",
+      "D. 使用兩個雜湊函數"
+    ],
+    "options_status": "complete",
+    "correct_answer": "減少二次群聚效應\n能產生較長的探測序列\n使用兩個雜湊函數",
+    "source_question_number": 44,
+    "source_answer": "B、C、D",
+    "topic": "雙重雜湊",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 34,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-045",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "考慮將鍵值 10、22、31、4、15、28、17、88、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用 h1(k) = k 和 h2(k) = 1 + (k mod (m - 1)) 的雙重雜湊（double hashing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |",
+    "options": [
+      "A. A[3]=59",
+      "B. A[9]=17",
+      "C. A[6]=28",
+      "D. A[7]=88"
+    ],
+    "options_status": "complete",
+    "correct_answer": "A[6]=28\nA[7]=88",
+    "source_question_number": 45,
+    "source_answer": "C、D",
+    "topic": "雙重雜湊",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 35,
+    "title": "",
+    "source_type": "複選",
+    "source_id": "L9-SOURCE-052",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "choice",
+    "question": "全域雜湊法（Universal hashing）具有什麼特徵？",
+    "options": [
+      "A. 從函數族中隨機選擇雜湊函數",
+      "B. 降低特定惡意輸入造成大量衝突的風險",
+      "C. 需要儲存所有鍵值",
+      "D. 對任意一組輸入都能達到平均效果"
+    ],
+    "options_status": "complete",
+    "correct_answer": "從函數族中隨機選擇雜湊函數\n降低特定惡意輸入造成大量衝突的風險\n對任意一組輸入都能達到平均效果",
+    "source_question_number": 52,
+    "source_answer": "A、B、D",
+    "topic": "全域雜湊與完全雜湊",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 36,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-006",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "雜湊衝突是不可避免的，因為 ____________ 空間大於雜湊表大小 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "key",
+    "source_question_number": 6,
+    "source_answer": "key",
+    "topic": "雜湊基本觀念與應用",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 37,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-007",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "雜湊函數輸入的鍵值空間稱為 ____________ (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "universe",
+    "source_question_number": 7,
+    "source_answer": "universe",
+    "topic": "雜湊基本觀念與應用",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 38,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-015",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "除法雜湊法的計算公式為 h(k) = k ____________ m (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "mod",
+    "source_question_number": 15,
+    "source_answer": "mod",
+    "topic": "雜湊函數與設計",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 39,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-020",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "負載因子 α 定義為 ____________ 除以 m (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "n",
+    "source_question_number": 20,
+    "source_answer": "n",
+    "topic": "負載因子與效能",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 40,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-021",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "雜湊表搜尋的平均複雜度為 ____________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "O(1)",
+    "source_question_number": 21,
+    "source_answer": "O(1)",
+    "topic": "負載因子與效能",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 41,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-033",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "考慮將鍵值 10、31、22、15、17、88、14、28、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n線性探測（Linear Probing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |\n\nA[1] =   ____________ \nA[7] =   ____________",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "88/28",
+    "source_question_number": 33,
+    "source_answer": "88/28",
+    "topic": "線性探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 42,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-034",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "考慮將鍵值 10、31、22、15、17、88、14、28、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n線性探測（Linear Probing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |\n\nA[3] =   ____________ \nA[4] =   ____________",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "14/15",
+    "source_question_number": 34,
+    "source_answer": "14/15",
+    "topic": "線性探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 43,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-035",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "考慮將鍵值 10、31、22、15、17、88、14、28、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n線性探測（Linear Probing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |\n\nA[5] =   ____________ \nA[9] =   ____________",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "59/31",
+    "source_question_number": 35,
+    "source_answer": "59/31",
+    "topic": "線性探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 44,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-038",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "考慮將鍵值 10、31、22、15、17、88、14、28、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用 c1 = 1 與 c2 = 3 的二次探測（quadratic probing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |\n\nA[3] =   ____________ \nA[4] =   ____________",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "88/15",
+    "source_question_number": 38,
+    "source_answer": "88/15",
+    "topic": "二次探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 45,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-039",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "考慮將鍵值 10、31、22、15、17、88、14、28、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用 c1 = 1 與 c2 = 3 的二次探測（quadratic probing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |\n\nA[4] =   ____________ \nA[9] =   ____________",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "15/31",
+    "source_question_number": 39,
+    "source_answer": "15/31",
+    "topic": "二次探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 46,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-040",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "____________ 探測序列函數是 i^2 (請用小寫英文回答)",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "quadratic",
+    "source_question_number": 40,
+    "source_answer": "quadratic",
+    "topic": "二次探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 47,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-041",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "考慮將鍵值 10、31、22、15、17、88、14、28、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用 c1 = 1 與 c2 = 3 的二次探測（quadratic probing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |\n\nA[1] =   ____________ \nA[8] =   ____________",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "59/28",
+    "source_question_number": 41,
+    "source_answer": "59/28",
+    "topic": "二次探測",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 48,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-046",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "考慮將鍵值 10、31、22、15、17、88、14、28、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用 h1(k) = k 和 h2(k) = 1 + (k mod (m - 1)) 的雙重雜湊（double hashing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |\n\nA[1] =   ____________ \nA[6] =   ____________",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "59/17",
+    "source_question_number": 46,
+    "source_answer": "59/17",
+    "topic": "雙重雜湊",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 49,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-047",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "考慮將鍵值 10、31、22、15、17、88、14、28、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用 h1(k) = k 和 h2(k) = 3 + (k mod (m - 1)) 的雙重雜湊（double hashing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |\n\n無法藉此公式找到合法位置 的數 (先填小的值再填大的值)\n ____________  ____________",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "28/88",
+    "source_question_number": 47,
+    "source_answer": "28/88",
+    "topic": "雙重雜湊",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 50,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-048",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "考慮將鍵值 10、31、22、15、17、88、14、28、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用 h1(k) = k 和 h2(k) = 1 + (k mod (m - 1)) 的雙重雜湊（double hashing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |\n\nA[3] =   ____________ \nA[7] =   ____________",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "14/88",
+    "source_question_number": 48,
+    "source_answer": "14/88",
+    "topic": "雙重雜湊",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 51,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-049",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "考慮將鍵值 10、31、22、15、17、88、14、28、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用 h1(k) = k 和 h2(k) = 3 + (k mod (m - 1)) 的雙重雜湊（double hashing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |\n\nA[4] =   ____________ \nA[9] =   ____________",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "15/31",
+    "source_question_number": 49,
+    "source_answer": "15/31",
+    "topic": "雙重雜湊",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 52,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-050",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "考慮將鍵值 10、31、22、15、17、88、14、28、59 插入長度 m = 11 的雜湊表A中，使用開放定址法（open addressing）與輔助雜湊函數 h'(k) = k。 \n\n使用 h1(k) = k 和 h2(k) = 1 + (k mod (m - 1)) 的雙重雜湊（double hashing） 請問陣列A[0] - A[10] 的內容哪些正確\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|   |   |   |   |   |   |   |   |   |   |    |\n\nA[4] =   ____________ \nA[9] =   ____________",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "15/31",
+    "source_question_number": 50,
+    "source_answer": "15/31",
+    "topic": "雙重雜湊",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  },
+  {
+    "id": 53,
+    "title": "",
+    "source_type": "填空",
+    "source_id": "L9-SOURCE-053",
+    "sources": [
+      "演算法U9_題目選項與正確答案.txt",
+      "https://course-library-submissions.orange06.workers.dev/course-library/algorithms.html?v=theme-toggle-20261027"
+    ],
+    "type": "fill_blank",
+    "question": "完全雜湊的搜尋時間在最壞情況下為 ____________ (請用英文回答，表示形式為 請用log，不可用lg替代log，上標請用^，符號請用 {big-theta, theta, big-omega, omega, O, o,})",
+    "options": [],
+    "options_status": "not_applicable",
+    "correct_answer": "O(1)",
+    "source_question_number": 53,
+    "source_answer": "O(1)",
+    "topic": "全域雜湊與完全雜湊",
+    "answer_basis": "source_site_answer_not_independently_verified"
+  }
+]

@@ -8,7 +8,8 @@ export const SUBJECTS = [
             { id: "u4", name: "U4", questionCount: 60, dataUrl: "../data/algorithm-u4.json" },
             { id: "u6", name: "U6", questionCount: 74, dataUrl: "../data/algorithm-u6.json" },
             { id: "u7", name: "U7", questionCount: 60, dataUrl: "../data/algorithm-u7.json" },
-            { id: "u8", name: "U8", questionCount: 60, dataUrl: "../data/algorithm-u8.json" }
+            { id: "u8", name: "U8", questionCount: 60, dataUrl: "../data/algorithm-u8.json" },
+            { id: "u9", name: "U9", questionCount: 53, dataUrl: "../data/algorithm-u9.json" }
         ]
     },
     { id: "os", name: "作業系統", available: true, defaultUnit: "u2-u6", units: [
