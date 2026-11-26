@@ -112,4 +112,4 @@ Edge Function 測試涵蓋驗證 JWT、管理員資格、伺服器金鑰隔離�
 
 ## Cloudflare 測試站來源
 
-本次只調整部署相容性，不重跑 schema 或 migration。請依根目錄 README 的「Supabase 控制台設定與驗收」，在 COLLAB_ALLOWED_ORIGINS 保留 Pages 並加入確切測試 Origin；保持原驗證與管理員檢查。未實測前不得宣稱控制台設定或登入通過。未來人工產生對戰目錄可設定 DUEL_SOURCE_URL；既有絕對圖片網址由前端轉成當前部署的同名圖片，無需為換網域重建目錄。
+本次只調整部署相容性，不重跑 schema 或 migration。請依根目錄 README 的「Supabase 控制台設定與驗收」，在 COLLAB_ALLOWED_ORIGINS 保留 Pages 並加入正式 Origin https://algorithm-question-bank.winter0101.workers.dev；保持原驗證與管理員檢查。未實測前不得宣稱控制台設定或登入通過。未來人工產生對戰目錄可設定 DUEL_SOURCE_URL；既有絕對圖片網址由前端轉成當前部署的同名圖片，無需為換網域重建目錄。

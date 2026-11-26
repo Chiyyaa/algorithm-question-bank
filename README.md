@@ -2,7 +2,7 @@
 
 演算法、作業系統與英文共用同一套靜態原始碼。正式來源只有 [Chiyyaa/algorithm-question-bank](https://github.com/Chiyyaa/algorithm-question-bank)。
 
-目前對外入口仍為 [GitHub Pages](https://chiyyaa.github.io/algorithm-question-bank/)。Cloudflare 僅建立測試站；需使用者另外明確確認才切換主要網址。
+正式入口為 [Cloudflare 學習題庫](https://algorithm-question-bank.winter0101.workers.dev/)，[GitHub Pages](https://chiyyaa.github.io/algorithm-question-bank/) 保留備用。使用者已於 2026-11-26 明確確認切換；兩站共用既有 Supabase。
 
 ## 功能現況
 
@@ -43,29 +43,29 @@ npm run preview
 
 deployment.json 含來源 commit 與各公開檔案 SHA-256，供核對兩平台版本；本機未提交修改需搭配檔案雜湊核對，不能只看來源 commit。
 
-## Cloudflare 免費測試部署
+## Cloudflare 免費正式部署
 
 1. 使用者在自己的介面登入 Cloudflare，確認帳號維持 Workers Free；不接受任何付費升級。
 2. 在本機執行 npx wrangler login，使用者自行完成瀏覽器授權。不要把權杖貼到聊天室或提交 Git。
 3. 執行 npm run build、npm run check:deploy、npm run deploy:check。
-4. 執行 npm run deploy:cloudflare，部署名稱固定為 algorithm-question-bank-test。以命令實際回傳的 workers.dev 網址為準，不猜測帳號子網域。
-5. 把確切測試來源加入下節的 Supabase CORS；保留 Pages 來源。
+4. 執行 npm run deploy:cloudflare，部署名稱固定為 algorithm-question-bank。以命令實際回傳的 workers.dev 網址為準，不猜測帳號子網域。
+5. 把確切正式來源加入下節的 Supabase CORS；保留 Pages 來源。
 6. 核對部署網址的首頁、英文、協作、migration.html、deployment.json 和題庫資源。跨站帳號與協作需人工驗收；對決仍維護，標示未驗證。
 
 ### 後續由 GitHub 更新兩平台
 
-先審查並合併本分支。Pages Settings → Build and deployment → Source 改為 GitHub Actions，讓 .github/workflows/static-site.yml 發布 dist，維持原網址；切換前確認目前 Pages 發布已恢復正常。未切換前，原有 branch/Jekyll 發布仍可能公開儲存庫內的舊檔。
+Pages Settings → Build and deployment → Source 已設為 GitHub Actions，由 .github/workflows/static-site.yml 發布 dist，保留原網址。請勿改回直接公開整個儲存庫。
 
-Cloudflare Workers & Pages → algorithm-question-bank-test → Settings → Build，連接同一 GitHub 儲存庫，正式監聽 main；Build command 設 npm run build && npm run check:deploy，Deploy command 設 npm run deploy:cloudflare，Root directory 留空。連接與新增 GitHub App 權限由使用者確認。這是 Cloudflare 測試 Worker 的自動更新，並不切換網站主要對外入口。
+Cloudflare Workers & Pages → algorithm-question-bank → Settings → Build，連接同一 GitHub 儲存庫，正式監聽 main；Build command 設 npm run build && npm run check:deploy，Deploy command 設 npm run deploy:cloudflare，Root directory 留空。連接與新增 GitHub App 權限由使用者確認。此設定會自動更新 Cloudflare 正式站，Pages 也由同一 main 的網站變更觸發更新。
 
 只選一種 Cloudflare 部署途徑（Workers Builds 或人工 Wrangler），不要再疊加另一個自動部署工作。Pages 與 Cloudflare 各自建置同一 commit，README-only 變更不應觸發不必要發布；Cloudflare 可在 Build watch paths 設定與 Pages workflow 相同的前端及建置檔案範圍。
 
 ## Supabase 控制台設定與驗收
 
 1. 保留原專案 kzgfbfarihvzuutnkpfu，URL／publishable key 維持不變。
-2. Edge Function manage-collaborators 的 Secret COLLAB_ALLOWED_ORIGINS 設為 https://chiyyaa.github.io,https://實際測試網址.workers.dev。Origin 只含協定與主機，不含路徑、不含結尾斜線、不使用萬用字元。保留既有其他必要來源；不要在聊天室列出其他伺服器密鑰。
+2. Edge Function manage-collaborators 的 Secret COLLAB_ALLOWED_ORIGINS 設為 https://chiyyaa.github.io,https://algorithm-question-bank.winter0101.workers.dev。Origin 只含協定與主機，不含路徑、不含結尾斜線、不使用萬用字元。保留既有其他必要來源；不要在聊天室列出其他伺服器密鑰。
 3. 此修改是伺服器端設定，不需要改前端、RLS 或資料庫。以兩個來源各自 OPTIONS 預檢，確認回傳精確的 Access-Control-Allow-Origin 與 Vary: Origin。陌生來源仍應拒絕。不要藉測試建立或重設真實使用者密碼。
-4. Auth → URL Configuration：先保留原 Site URL（目前主入口仍為 Pages），核對 Redirect URLs。若控制台已使用郵件回呼／OAuth，加入實際使用的測試站回呼完整路徑，保留 Pages 路徑；目前前端使用帳密 token API，沒有新增 OAuth 流程。
+4. Auth → URL Configuration：核對 Site URL 與 Redirect URLs。既有 Site URL 為 http://localhost:3000，現有帳密 token API 不使用回呼，本次保留；未來啟用郵件或 OAuth 前須改成實際正式站並核對回呼。若控制台已使用郵件回呼／OAuth，加入實際使用的正式站回呼完整路徑，保留 Pages 路徑；目前前端使用帳密 token API，沒有新增 OAuth 流程。
 5. 若原本有第三方 OAuth，供應商回呼仍指向同一 Supabase 的 /auth/v1/callback；網站 redirectTo 允許清單與供應商回呼不是同一項設定。未啟用的 OAuth 不為本次部署新增。
 6. 兩站分別登入同一既有測試帳號，核對角色、公開題庫、本人草稿、審核頁。任何建立草稿、送審或核准等資料寫入，先由使用者指定測試帳號與測試資料。
 
@@ -87,7 +87,7 @@ Workers Builds Free 目前為每月 3,000 分鐘、同時 1 個建置。此案�
 
 ## 回復方案
 
-- 測試站失敗時，維持原 Pages 主入口，無須變更資料庫或搬回資料。
+- 正式站失敗時，改用 Pages 備用入口，無須變更資料庫或搬回資料。
 - Cloudflare 控制台選擇先前成功版本 Rollback，或在原始碼建立 revert commit 再部署；避免改寫 Git 歷史或強推。
 - Pages 已切成 Actions 後，先前成功的靜態版本可由對應 commit 重新建置發布；不要直接恢復整個儲存庫作公開目錄。
 - 暫停 Cloudflare 自動建置即可停止新版本推送，保留 GitHub 單一來源。此案不刪 Worker、不刪帳號、不刪資料庫。
@@ -98,3 +98,9 @@ Workers Builds Free 目前為每月 3,000 分鐘、同時 1 個建置。此案�
 自動檢查涵蓋公開檔案允許清單、大小／數量、JSON、來源雜湊、根路徑／專案子路徑引用、備份憑證隔離／衝突／容量不足、圖片相容與維護標示。瀏覽器檢查涵蓋公開輸出頁面與資源。
 
 真實 Cloudflare 部署、Supabase 控制台設定、兩站登入／角色／審核、跨站多人實戰與完整下載，均須記錄實測結果；未完成時明確列為未驗證。歷史 tests/run.cjs、essentials.cjs、notice.cjs 等保留供查考，不再作為目前功能規格。
+
+## 正式網址更名紀錄
+
+2026-11-26 經使用者確認，帳號子網域由 morris-yu0215 改為 winter0101，Worker 由 algorithm-question-bank-test 改為 algorithm-question-bank。舊 workers.dev 網址已停止服務，不假設有自動轉址；GitHub Pages 原網址不變。更名後須各站重新登入；舊站備份工具當時回報 0 項可匯出資料，其他裝置或瀏覽器的資料不在本次檢查範圍內。更名前已保留原資料庫，沒有資料庫遷移。
+
+Cloudflare 更名必須同步本檔、wrangler.jsonc、Workers Builds 連線及 Supabase COLLAB_ALLOWED_ORIGINS，避免下一次發布使用舊名稱。若要恢復主要入口，先使用 Pages；不要假設原帳號子網域永遠能重新取得。
